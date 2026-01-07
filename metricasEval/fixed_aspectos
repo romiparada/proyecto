@@ -1,0 +1,9 @@
+{
+    "patients": "patient registration and management",
+    "appointments": "appointments and consultation scheduling",
+    "medical_records": "electronic medical records that patients can consult, but not modify",
+    "staff": "physician registration and management",
+    "invoice": "invoice payment and notification",
+    "inventory": "inventory control of supplies in the hospital internal pharmacy",
+    "reports": "statistics of consultations and financial reports"
+}
