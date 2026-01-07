@@ -21,7 +21,7 @@ from nltk.translate.bleu_score import sentence_bleu
 from rouge_score import rouge_scorer
 
 LANG = "en"
-BERT_MODEL = "roberta-large"
+BERT_MODEL = "microsoft/deberta-xlarge-mnli"
 SBERT_MODEL = "sentence-transformers/all-mpnet-base-v2"
 SBERT_UMBRAL = 0.80
 CONSISTENCIA_UMBRAL = 0.85
@@ -221,3 +221,4 @@ class EvaluadorMetricas:
             "device": str(self.device),
             "cuda_disponible": torch.cuda.is_available()
         }
+
