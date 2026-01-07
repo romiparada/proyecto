@@ -1,0 +1,13 @@
+As administrative staff, I want to register patients with personal data and medical history to centralize information and facilitate care.
+As administrative staff, I want to modify the personal and contact data of a registered patient to keep the information updated.
+As authorized staff, I want to search for patients by name, document, or identifier to quickly access the required information.
+As a receptionist, I want to create medical appointments by associating patient, specialty, and physician to organize the schedule.
+As a receptionist, I want to modify or cancel existing appointments to manage changes in the medical schedule.
+As a patient, I want to be notified when my appointment is modified or canceled to reorganize if necessary.
+As an authorized medical professional, I want to record diagnoses, treatments, and clinical evolution in the electronic health record to track patient care.
+As a patient, I want to consult my electronic health record to access my medical information.
+As an administrator, I want to register medical professionals and their specialties to manage staff.
+As an administrator, I want to manage roles and access permissions to ensure proper system usage.
+As administrative staff, I want to generate electronic invoices for consultations and medication delivery to manage service billing.
+As a pharmacist, I want to register medications and supplies with stock and expiration dates to maintain inventory control.
+As an administrator, I want to generate reports on consultations, appointments, finances, and supply consumption to analyze hospital operations.
