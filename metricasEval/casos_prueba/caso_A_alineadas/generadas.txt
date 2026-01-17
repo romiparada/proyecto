@@ -1,13 +1,23 @@
-As administrative staff, I want to register patients with personal data and medical history to centralize information and facilitate care.
-As administrative staff, I want to modify the personal and contact data of a registered patient to keep the information updated.
-As authorized staff, I want to search for patients by name, document, or identifier to quickly access the required information.
-As a receptionist, I want to create medical appointments by associating patient, specialty, and physician to organize the schedule.
-As a receptionist, I want to modify or cancel existing appointments to manage changes in the medical schedule.
-As a patient, I want to be notified when my appointment is modified or canceled to reorganize if necessary.
-As an authorized medical professional, I want to record diagnoses, treatments, and clinical evolution in the electronic health record to track patient care.
-As a patient, I want to consult my electronic health record to access my medical information.
-As an administrator, I want to register medical professionals and their specialties to manage staff.
-As an administrator, I want to manage roles and access permissions to ensure proper system usage.
-As administrative staff, I want to generate electronic invoices for consultations and medication delivery to manage service billing.
-As a pharmacist, I want to register medications and supplies with stock and expiration dates to maintain inventory control.
-As an administrator, I want to generate reports on consultations, appointments, finances, and supply consumption to analyze hospital operations.
+As an administrative staff member, I want to register patients with personal data and medical background, so that the hospital can maintain accurate and complete patient records.
+As an administrative staff member, I want to modify the personal and contact details of a registered patient, so that patient information remains up to date.
+As an administrative staff member, I want to search for patients by name, identity document, or identifier number, so that I can quickly locate patient records.
+As an authorized user, I want to visualize a patient's complete information, so that I can review all relevant details for care or administration.
+As an administrative staff member, I want to create medical appointments by associating the patient, specialty, and professional, so that appointments are scheduled accurately.
+As an administrative staff member, I want to visualize the availability of registered doctors, so that I can schedule appointments efficiently.
+As an administrative staff member, I want to modify or cancel existing appointments, so that changes can be managed as needed.
+As a patient, I want to receive notifications when my appointment is modified or canceled, so that I am always informed about my schedule.
+As an administrative staff member, I want to manage the status of appointments throughout their lifecycle, so that the hospital can track appointment outcomes.
+As a doctor, I want to register diagnoses, treatments, and patient’s clinical progress in the electronic clinical record, so that patient care is well documented.
+As a patient, I want to consult my electronic clinical record, so that I can stay informed about my health history.
+As an administrator, I want to register medical professionals with their personal and contact details and associate specialties, so that the hospital can manage staff information.
+As an administrator, I want to define and modify attention hours and activate/deactivate professionals for scheduling, so that doctor availability is accurately reflected.
+As an administrator, I want to manage roles and access permissions to system functionalities, so that users only access features relevant to their role.
+As an administrative staff member, I want to generate electronic invoices for medical consultations and medication delivery, so that billing is accurate and efficient.
+As a patient, I want to receive automatic notifications with attached digital invoices when an invoice is generated, so that I am promptly informed about charges.
+As a pharmacist, I want to register medications and supplies with identification, stock, and expiration date, so that inventory is accurately tracked.
+As a pharmacist, I want to automatically update stock when registering medication deliveries, so that inventory levels remain current.
+As a pharmacist, I want to be notified when stock is low or items are about to expire, so that I can take timely action.
+As a pharmacist, I want to consult inventory sorted by available quantity or expiration date, so that I can manage stock efficiently.
+As an analyst, I want to generate reports on consultations by specialty, appointment status, financial income, and medication/supplies consumption, with date range filters, so that I can analyze hospital performance.
+As a system administrator, I want to ensure date validations prevent invalid ranges, so that data integrity is maintained.
+As a system administrator, I want to ensure notifications are sent within a reasonable time after triggering events, so that users are promptly informed.
