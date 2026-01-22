@@ -16,6 +16,9 @@ def cargar_aspectos(ruta: str) -> Dict[str, List[str]]:
         aspectos = json.load(f)   
     return aspectos
 
+def cargar_criterios(ruta):
+    with open(ruta, encoding="utf-8") as f:
+        return json.load(f)
 
 def cargar_metadata(dir_caso: str) -> Dict:
     ruta_metadata = os.path.join(dir_caso, "metadata.json")
