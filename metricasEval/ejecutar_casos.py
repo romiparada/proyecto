@@ -4,6 +4,7 @@ import argparse
 from datetime import datetime
 from io import StringIO
 import json
+import numpy as np
 
 from evaluador_metricas import EvaluadorMetricas
 from cargador_datos import (
@@ -14,6 +15,9 @@ from cargador_datos import (
     guardar_json,
     guardar_txt
 )
+
+from evaluador_criterios_aceptacion import EvaluadorCriteriosAceptacion
+from cargador_datos import cargar_criterios
 
 
 def timestamp():
@@ -40,12 +44,12 @@ def alinear_historias(resultados, evaluador):
         output.write(f"  F1: {bert['f1']:.4f}\n\n")
         
         bleu = res["bleu"]
-        output.write(f"  BLEU [{bleu['indice_match']}]: {bleu['texto_match']}\n")
-        output.write(f"  Score: {bleu['score']:.4f}\n\n")
+        #output.write(f"  BLEU [{bleu['indice_match']}]: {bleu['texto_match']}\n")
+        #output.write(f"  Score: {bleu['score']:.4f}\n\n")
         
-        rouge = res["rouge_l"]
-        output.write(f"  ROUGE-L [{rouge['indice_match']}]: {rouge['texto_match']}\n")
-        output.write(f"  F1: {rouge['score']:.4f}\n\n")
+        #rouge = res["rouge_l"]
+        #output.write(f"  ROUGE-L [{rouge['indice_match']}]: {rouge['texto_match']}\n")
+        #output.write(f"  F1: {rouge['score']:.4f}\n\n")
         
         output.write("---------------------------------")
     
@@ -53,8 +57,8 @@ def alinear_historias(resultados, evaluador):
     output.write(f"SBERT media: {agg['sbert']['media']:.4f} (±{agg['sbert']['std']:.4f})\n")
     output.write(f"Alineacion fuerte: {agg['sbert']['alineacion_fuerte_pct']:.1f}%\n\n")
     output.write(f"BERTScore media: {agg['bertscore']['media']:.4f} (±{agg['bertscore']['std']:.4f})\n")
-    output.write(f"BLEU media: {agg['bleu']['media']:.4f} (±{agg['bleu']['std']:.4f})\n")
-    output.write(f"ROUGE-L media: {agg['rouge_l']['media']:.4f} (±{agg['rouge_l']['std']:.4f})\n\n")
+    #output.write(f"BLEU media: {agg['bleu']['media']:.4f} (±{agg['bleu']['std']:.4f})\n")
+    #output.write(f"ROUGE-L media: {agg['rouge_l']['media']:.4f} (±{agg['rouge_l']['std']:.4f})\n\n")
     
     return output.getvalue()
 
@@ -94,6 +98,13 @@ def calcular_consistencia(score, solapamientos):
 
 def ejecutar_caso(nombre_caso, dir_casos, archivo_aspectos, evaluador, dir_salida):
     dir_caso = os.path.join(dir_casos, nombre_caso)
+
+
+    ruta_ca_gen = os.path.join(dir_caso, "ca_generados.json")
+    ruta_ca_exp = os.path.join(dir_caso, "ca_esperados.json")
+
+    criterios_generados = cargar_criterios(ruta_ca_gen)
+    criterios_esperados = cargar_criterios(ruta_ca_exp)
     
     print(f"\ncaso: {nombre_caso}")
     print("--------------------------")
@@ -145,15 +156,58 @@ def ejecutar_caso(nombre_caso, dir_casos, archivo_aspectos, evaluador, dir_salid
     if tiene_esperadas:
         salida_txt.write(f"Esperadas: {len(historias_esperadas)}\n")
     
-    if tiene_esperadas and metadata.get("evaluar_alineacion", True):
-        print("eval alineacion")
-        res_alineacion = evaluador.evaluar_alineacion(historias_generadas, historias_esperadas)
-        resultados["resultados"]["alineacion"] = res_alineacion
-        salida_txt.write(alinear_historias(res_alineacion, evaluador))
+    alineaciones = evaluador.evaluar_alineacion_sbert(
+        historias_generadas,
+        historias_esperadas
+    )
+
+    scores = np.array([a["sbert_sim"] for a in alineaciones])
+    p50 = np.percentile(scores, 50)
+    p75 = np.percentile(scores, 75)
+
+    for a in alineaciones:
+        if a["sbert_sim"] >= p75:
+            a["nivel"] = "alineacion_fuerte"
+        elif a["sbert_sim"] >= p50:
+            a["nivel"] = "alineacion_media"
+        else:
+            a["nivel"] = "no_alineada"
+
+    resultados["resultados"]["alineacion"] = alineaciones
+
+
+    historias_validas = [
+        a for a in alineaciones
+        if a["nivel"] != "no_alineada"
+    ]
+
+
+    evaluador_ca = EvaluadorCriteriosAceptacion(evaluador.model_sbert)
+
+    resultados_ca = []
+
+    for a in historias_validas:   # ← SOLO alineadas
+        idx_gen = a["indice"]
+        idx_ref = a["match_idx"]
+
+        ca_gen = criterios_generados[idx_gen]
+        ca_ref = criterios_esperados[idx_ref]
+
+        eval_ca = evaluador_ca.evaluar(ca_gen, ca_ref)
+
+        resultados_ca.append({
+            "historia_generada_idx": idx_gen,
+            "historia_referencia_idx": idx_ref,
+            "evaluacion": eval_ca
+        })
+
+    resultados["resultados"]["criterios_aceptacion"] = resultados_ca
     
     if metadata.get("evaluar_completitud", True):
         print("eval completitud")
-        comp_score, comp_detalle = evaluador.calcular_completitud(historias_generadas, aspect_embeddings)
+
+        historiasCompletitud = [a["generada"] for a in historias_validas]
+        comp_score, comp_detalle = evaluador.calcular_completitud(historiasCompletitud, aspect_embeddings)
         resultados["resultados"]["completitud"] = {
             "score": comp_score,
             "cobertura": comp_detalle
@@ -162,7 +216,9 @@ def ejecutar_caso(nombre_caso, dir_casos, archivo_aspectos, evaluador, dir_salid
     
     if metadata.get("evaluar_consistencia", True):
         print("eval consistencia")
-        cons_score, solapamientos = evaluador.calcular_consistencia(historias_generadas)
+
+        historiasConsistencia = [a["generada"] for a in historias_validas]
+        cons_score, solapamientos = evaluador.calcular_consistencia(historiasConsistencia)
         resultados["resultados"]["consistencia"] = {
             "score": cons_score,
             "pares_solapados": solapamientos
