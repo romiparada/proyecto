@@ -10,7 +10,7 @@ As an administrative staff member, I want to manage the status of appointments t
 As a doctor, I want to register diagnoses, treatments, and patient’s clinical progress in the electronic clinical record, so that patient care is well documented.
 As a patient, I want to consult my electronic clinical record, so that I can stay informed about my health history.
 As an administrator, I want to register medical professionals with their personal and contact details and associate specialties, so that the hospital can manage staff information.
-As an administrator, I want to define and modify attention hours and activate/deactivate professionals for scheduling, so that doctor availability is accurately reflected.
+As an administrator, I want to define and modify attention hours and activate or deactivate professionals for scheduling, so that doctor availability is accurately reflected.
 As an administrator, I want to manage roles and access permissions to system functionalities, so that users only access features relevant to their role.
 As an administrative staff member, I want to generate electronic invoices for medical consultations and medication delivery, so that billing is accurate and efficient.
 As a patient, I want to receive automatic notifications with attached digital invoices when an invoice is generated, so that I am promptly informed about charges.
@@ -18,6 +18,6 @@ As a pharmacist, I want to register medications and supplies with identification
 As a pharmacist, I want to automatically update stock when registering medication deliveries, so that inventory levels remain current.
 As a pharmacist, I want to be notified when stock is low or items are about to expire, so that I can take timely action.
 As a pharmacist, I want to consult inventory sorted by available quantity or expiration date, so that I can manage stock efficiently.
-As an analyst, I want to generate reports on consultations by specialty, appointment status, financial income, and medication/supplies consumption, with date range filters, so that I can analyze hospital performance.
+As an analyst, I want to generate reports on consultations by specialty, appointment status, financial income, and medication and supplies consumption, with date range filters, so that I can analyze hospital performance.
 As a system administrator, I want to ensure date validations prevent invalid ranges, so that data integrity is maintained.
 As a system administrator, I want to ensure notifications are sent within a reasonable time after triggering events, so that users are promptly informed.
