@@ -8,6 +8,7 @@ class EvaluadorCriteriosAceptacion:
         self.model = sbert_model
         self.umbral_escenario = umbral_escenario
 
+
         self.terminos_ambiguos = [
             "fast", "quick", "adequate", "appropriate",
             "correct", "proper", "user-friendly",
