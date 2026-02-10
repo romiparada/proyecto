@@ -1,0 +1,28 @@
+As administrative staff, I want to register a new patient’s personal data in order to add them to the system.
+As administrative staff, I want to edit a registered patient’s data to keep the information updated.
+As administrative staff, I want to register the patient’s medical background in their electronic medical record in order to know their health condition.
+As administrative staff or doctor, I want to search for a specific patient to manage appointments or review their electronic medical record.
+As administrative staff, I want to register an appointment to schedule the patient’s medical consultation.
+As administrative staff, I want to cancel an existing appointment to free up the doctor’s time slot.
+As administrative staff, I want to edit an existing appointment to change its date without losing the information.
+As a patient, I want to be notified when my appointment is modified or canceled to stay informed.
+As a doctor, I want to access the patient’s electronic medical record to review their previous information.
+As a doctor, I want to record the diagnosis made during the appointment to document the medical care provided.
+As a patient, I want to consult my electronic medical record to access my medical information.
+As administrative staff, I want to register doctors with their specialties and available schedules to enable appointment assignment.
+As administrative staff, I want to edit a registered doctor’s data to keep the information updated.
+As administrative staff, I want to deactivate a registered doctor to keep the information updated.
+As administrative staff, I want to activate a registered doctor to keep the information updated.
+As administrative staff, I want to define roles and permissions to control access to system functionalities.
+As administrative staff, I want to generate an invoice associated with a consultation to provide proof of payment.
+As administrative staff or pharmacist, I want to generate an invoice associated with a medication to provide proof of payment.
+As a patient, I want to receive a notification when there is a charge in order to access the invoice.
+As a pharmacist, I want to register medications or supplies to keep the hospital inventory updated.
+As a pharmacist, I want to edit the number of available medications or supplies to keep the inventory updated.
+As a pharmacist, I want to associate the medication with the patient who collected it so that the system generates the corresponding invoice.
+As a pharmacist, I want to consult how many units of a medication or supply are available to make timely decisions.
+As a pharmacist, I want to know when a medication or supply is about to expire to make timely decisions.
+As a pharmacist, I want to know when a medication or supply has low stock to make timely decisions.
+As an analyst, I want to view statistics of consultations by specialty to evaluate workload.
+As an analyst, I want to view financial reports of services to evaluate hospital income and performance.
+As an analyst, I want to view supply consumption to evaluate hospital inventory usage.
