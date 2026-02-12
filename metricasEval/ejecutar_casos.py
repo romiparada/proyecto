@@ -3,12 +3,9 @@ import sys
 import argparse
 from datetime import datetime
 from io import StringIO
-import json
-import numpy as np
 from evaluador_metricas import EvaluadorMetricas
 from evaluador_criterios_aceptacion import EvaluadorCriteriosAceptacion
 
-from evaluador_metricas import EvaluadorMetricas
 from cargador_datos import (
     cargar_historias,
     cargar_aspectos,
@@ -59,12 +56,6 @@ def ejecutar_caso(nombre_caso, dir_casos, archivo_aspectos, evaluador, dir_salid
     aspectos = cargar_aspectos(archivo_aspectos)
     print(f"Aspectos: {len(aspectos)}")
     
-    aspect_embeddings = {}
-    for nombre, descripciones in aspectos.items():
-        aspect_embeddings[nombre] = evaluador.model_sbert.encode(
-            descripciones, convert_to_tensor=True
-        )
-    
     ts = timestamp()
     resultados = {
         "timestamp": ts,
@@ -93,25 +84,30 @@ def ejecutar_caso(nombre_caso, dir_casos, archivo_aspectos, evaluador, dir_salid
         historias_esperadas
     )
     alineaciones = resultados_alineacion["por_historia"]
+    resultados["resultados"]["alineacion_historias"] = resultados_alineacion
 
-    scores = np.array([a["sbert"]["similitud"] for a in alineaciones])
-    p50 = np.percentile(scores, 50)
-    p75 = np.percentile(scores, 75)
+    coverage_historias = evaluador.calcular_coverage(
+        historias_generadas,
+        historias_esperadas,
+        threshold=0.75
+    )
+    diversidad_historias = evaluador.calcular_diversidad(
+        historias_generadas,
+        historias_esperadas,
+        threshold=0.75
+    )
 
-    for a in alineaciones:
-        if a["sbert"]["similitud"] >= p75:
-            a["nivel"] = "alineacion_fuerte"
-        elif a["sbert"]["similitud"] >= p50:
-            a["nivel"] = "alineacion_media"
-        else:
-            a["nivel"] = "no_alineada"
+    resultados["resultados"]["coverage_historias"] = {
+        "coverage": coverage_historias,
+        "diversity": diversidad_historias
+    }
 
-    resultados["resultados"]["alineacion"] = alineaciones
-
+    salida_txt.write(f"Coverage HU: {coverage_historias:.4f}\n")
+    salida_txt.write(f"Diversity HU: {diversidad_historias:.2f}%\n")
 
     historias_validas = [
         a for a in alineaciones
-        if a["nivel"] != "no_alineada"
+        if a.get("alineada", False)
     ]
 
 
@@ -121,6 +117,8 @@ def ejecutar_caso(nombre_caso, dir_casos, archivo_aspectos, evaluador, dir_salid
     evaluador_ca = EvaluadorCriteriosAceptacion(evaluador.model_sbert)
 
     resultados_ca = []
+    verificabilidad_global_detalle = []
+    ambiguedad_global_detalle = []
 
     for a in historias_validas:
         idx_gen = a["indice"]
@@ -130,14 +128,66 @@ def ejecutar_caso(nombre_caso, dir_casos, archivo_aspectos, evaluador, dir_salid
         ca_ref = criterios_esperados[idx_ref]
 
         eval_ca = evaluador_ca.evaluar(ca_gen, ca_ref)
+        score_verif, detalle_verif = evaluador_ca.evaluar_verificabilidad(ca_gen)
+        score_amb, detalle_amb = evaluador_ca.evaluar_ambiguedad(ca_gen)
+
+        verificabilidad_global_detalle.extend(detalle_verif)
+        ambiguedad_global_detalle.extend(detalle_amb)
 
         resultados_ca.append({
             "historia_generada_idx": idx_gen,
             "historia_referencia_idx": idx_ref,
-            "evaluacion": eval_ca
+            "evaluacion": eval_ca,
+            "verificabilidad": {
+                "score": score_verif,
+                "detalle": detalle_verif
+            },
+            "ambiguedad": {
+                "score": score_amb,
+                "detalle": detalle_amb
+            }
         })
 
-    resultados["resultados"]["criterios_aceptacion"] = resultados_ca
+    resultados["resultados"]["criterios_aceptacion"] = {
+        "pares_alineados_evaluados": len(resultados_ca),
+        "por_historia": resultados_ca
+    }
+
+    # Aplanar todos los criterios de las historias válidas para evaluar verificabilidad
+    todos_criterios = []
+    for a in historias_validas:
+        idx_gen = a["indice"]
+        todos_criterios.extend(criterios_generados[idx_gen])
+
+    score_verif_global, detalle_verif_global = evaluador_ca.evaluar_verificabilidad(todos_criterios)
+    score_amb_global, detalle_amb_global = evaluador_ca.evaluar_ambiguedad(todos_criterios)
+
+    resultados["resultados"]["calidad_criterios_global"] = {
+        "verificabilidad": {
+            "score": score_verif_global,
+            "detalle": detalle_verif_global
+        },
+        "ambiguedad": {
+            "score": score_amb_global,
+            "detalle": detalle_amb_global
+        }
+    }
+
+    print(f"Verificabilidad global CA (alineadas): {score_verif_global:.2f}")
+    print(f"Ambigüedad global CA (alineadas): {score_amb_global:.2f}")
+
+    historias_alineadas_texto = [a["generada"] for a in historias_validas]
+    cobertura_conceptual = evaluador.evaluar_coverage_conceptual(
+        historias_alineadas_texto,
+        aspectos,
+        threshold=0.70
+    )
+    resultados["resultados"]["coverage_conceptual"] = cobertura_conceptual
+
+    salida_txt.write(f"Verificabilidad CA (global alineadas): {score_verif_global:.4f}\n")
+    salida_txt.write(f"Ambigüedad CA (global alineadas): {score_amb_global:.4f}\n")
+    salida_txt.write(f"Coverage conceptual: {cobertura_conceptual['score']:.4f}\n")
+
 
     
     ts_safe = ts.replace(":", "-").replace(".", "-")
