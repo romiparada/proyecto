@@ -1,0 +1,5 @@
+As administrative staff or doctor, I want to search for a specific patient to manage appointments or review their medical history.
+As a pharmacist, I want to register medications or supplies to keep the hospital inventory updated.
+As a pharmacist, I want to register medications and supplies with identification, stock, and expiration date, so that inventory is accurately tracked.
+As a pharmacist, I want to edit the number of available medications or supplies to keep the inventory updated.
+As administrative staff, I want to register patients with personal data and medical background, so that the hospital maintains complete and accurate patient records.
