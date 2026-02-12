@@ -1,0 +1,1 @@
+As administrative staff, I want to handle appointments, so that scheduling is managed efficiently.
