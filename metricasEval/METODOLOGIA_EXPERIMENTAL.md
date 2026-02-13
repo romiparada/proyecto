@@ -1391,9 +1391,9 @@ casos_prueba/
 
 ---
 
-## 📊 Interpretación de Resultados
+## 📊 Interpretación de Resultados (caso_A_alineadas)
 
-### Resultado exitoso típico
+### Resultado REAL ejecutado
 ```
 LEVEL 1 - Alineación:
   Historias alineadas: 10/23 (43.48%)
@@ -1410,33 +1410,217 @@ LEVEL 3 - Criterios de Aceptación:
   No-ambigüedad global: 100.00%
 
 LEVEL 4 - Coverage Conceptual:
-  Cobertura: 42.86% (3/7)
+  Cobertura: 42.86% (3/7) [con aspectos en inglés]
+  Cobertura: 0.00% (0/7) [con aspectos en español - ERROR]
 ```
 
-### Interpretación
+### Interpretación POR NIVEL
 
-#### LEVEL 1
-- **Alineadas**: % de historias generadas que son suficientemente similares a las esperadas
-- **SBERT media**: similitud semántica promedio (0.70-0.80 típico)
-- **Strong/Conservative/Weak**: distribución de calidad de matches
+#### LEVEL 1: Alineación (43.48%)
+**¿Qué significa?**
+- Solo el 43.48% de las historias generadas son suficientemente similares a las esperadas
+- 13 de 23 historias son "débiles" (weak) → posiblemente off-topic o de baja calidad
 
-#### LEVEL 2
-- **Coverage alto**: el modelo cubre bien los requisitos esperados
-- **Coverage bajo**: faltan historias importantes
+**Análisis**:
+- **SBERT media 0.752**: similitud moderada (ok)
+  - <0.70: bajo
+  - 0.70-0.80: moderado ✓
+  - >0.80: alto
+- **Strong:Conservative ratio (2:8)**: la mayoría son conservative, no strong
+  - Historias son correctas pero no excelentes
+- **13 weak filtradas**: 56.5% de las generadas no pasaron el umbral
+  - Posible problema: modelo genera historias poco relevantes
 
-#### LEVEL 3
-- **Cobertura funcional**: ¿los CA generados cubren los esperados?
-  - <20%: muy baja
-  - 20-50%: moderada
-  - >50%: buena
-- **Verificabilidad**: % de CA que son testables (0% común si no hay keywords)
-- **No-ambigüedad**: % de CA sin términos vagos (100% = sin ambigüedad)
+**Ejemplo de weak filtrada**:
+```
+Gen #21: "As a system administrator, I want to ensure date validations prevent invalid ranges..."
+↔ Esp #6: "As administrative staff, I want to edit an existing appointment to change its date..."
+Similitud: 0.2953 ← MUY BAJA, historias no relacionadas
+```
 
-#### LEVEL 4
-- **Cobertura conceptual**: ¿las historias cubren todos los aspectos del dominio?
-  - <30%: muy baja
-  - 30-60%: moderada
-  - >60%: buena
+**¿Es bueno o malo?**
+- **43.48% alineadas** es MODERADO
+- Ideal: >60%
+- Preocupante si <30%
+
+#### LEVEL 2: Coverage (57.14%)
+**¿Qué significa?**
+- El 57.14% de las historias esperadas tienen al menos una historia generada similar
+- 12 historias esperadas no están cubiertas
+
+**Análisis**:
+```
+✓ CUBIERTAS (16):
+  - Registrar paciente (sim: 0.8596)
+  - Editar paciente (sim: 0.8613)
+  - Buscar paciente (sim: 0.8135)
+  - Notificar cambios turno (sim: 0.9751)
+  - Facturación (sim: 0.8533)
+  - Inventario farmacia (sim: 0.9030)
+  ...
+
+✗ NO CUBIERTAS (12):
+  - Registrar diagnóstico (sim: 0.7032 < 0.75)
+  - Desactivar médico (sim: 0.6037 < 0.75)
+  - Activar médico (sim: 0.7256 < 0.75)
+  - Factura consulta (sim: 0.7148 < 0.75)
+  - Factura medicación (sim: 0.6856 < 0.75)
+  - Stock bajo (sim: 0.6697 < 0.75)
+  - Reportes financieros (sim: 0.6742 < 0.75)
+  ...
+```
+
+**Patrones detectados**:
+- ✓ Cubre bien: gestión de pacientes, turnos básicos, consulta HC
+- ✗ Falta: gestión avanzada de médicos, facturación detallada, inventario avanzado, reportes
+
+**¿Es bueno o malo?**
+- **57.14% coverage** es MODERADO
+- Ideal: >70%
+- El modelo cubre casos de uso principales pero no secundarios
+
+#### LEVEL 3: CA Evaluation
+
+##### 3.1 Cobertura funcional (11.36%)
+**¿Qué significa?**
+- En promedio, solo el 11.36% de los CA esperados están cubiertos por los CA generados
+
+**Ejemplo Par #1** (gen=0, esp=0):
+```
+CA esperados (8):
+  ✗ "The system must request full name of the patient" → sim 0.6395 < 0.75
+  ✗ "The system must request date of birth..." → sim 0.5664 < 0.75
+  ✗ "The system must request sex..." → sim 0.4700 < 0.75
+  ✗ "The system must request an identity document..." → sim 0.7051 < 0.75
+  ✗ "The system must request contact information..." → sim 0.6045 < 0.75
+  ✓ "The identity document must be unique..." → sim 0.7971 ✓
+  ✓ "If the identity document already exists..." → sim 0.7777 ✓
+  ✓ "The system must generate a unique patient identifier" → sim 0.8235 ✓
+
+Cobertura: 3/8 = 37.5%
+
+CA generados (3):
+  "The system allows entry of personal and medical background data"
+  "Each patient receives a unique identifier"
+  "Duplicate identity documents or identifiers are not allowed"
+```
+
+**Análisis**:
+- CA generados son **genéricos** ("allows entry of data")
+- CA esperados son **específicos** ("must request full name", "must request DOB", etc.)
+- Los CA generados capturan la funcionalidad general pero no los detalles
+
+**¿Es bueno o malo?**
+- **11.36% es MUY BAJO** (promedio de 10 pares)
+- Ideal: >50%
+- Indica que los CA generados son de muy alto nivel (abstractos)
+
+##### 3.2 Verificabilidad (0.00%)
+**¿Qué significa?**
+- Ninguno de los 15 CA generados es completamente verificable (testable)
+
+**Razón**:
+```python
+# CA típico generado:
+"The system allows entry of personal and medical background data"
+  ✗ No tiene condición (if/when/given)
+  ✓ Tiene resultado observable ("allows")
+  → Parcialmente verificable, NO verificable
+
+# CA verificable sería:
+"When a patient is registered, the system must assign a unique identifier"
+  ✓ Condición: "when a patient is registered"
+  ✓ Resultado: "must assign"
+  → VERIFICABLE
+```
+
+**¿Es bueno o malo?**
+- **0% es común** cuando los CA no siguen formato Given-When-Then
+- No es necesariamente un error, indica que los CA no son automáticamente testables
+- Para mejorar: generar CA en formato "Given X, When Y, Then Z"
+
+##### 3.3 No-ambigüedad (100.00%)
+**¿Qué significa?**
+- Ninguno de los 15 CA contiene términos vagos detectados
+
+**Ejemplo**:
+```python
+# Sin ambigüedad (todos los CA reales):
+"The system allows entry of personal and medical background data"
+"Each patient receives a unique identifier"
+"Duplicate identity documents or identifiers are not allowed"
+→ Sin términos como "fast", "user-friendly", "appropriate"
+
+# Ambiguo (hipotético):
+"The system should be fast and user-friendly"
+                     ↑↑↑↑          ↑↑↑↑↑↑↑↑↑↑↑↑↑
+                  términos vagos detectados
+```
+
+**¿Es bueno o malo?**
+- **100% no-ambigüedad es EXCELENTE**
+- Los CA son claros y específicos (aunque de alto nivel)
+
+#### LEVEL 4: Conceptual Coverage (42.86% o 0.00%)
+
+##### Con aspectos en INGLÉS (42.86%)
+**¿Qué significa?**
+- 3 de 7 conceptos del dominio están cubiertos por las historias alineadas
+
+**Análisis**:
+```
+✓ CUBIERTOS:
+  - patients (0.7891): historia gen #0 "register patients with personal data..."
+  - appointments (0.7423): historia gen #6 "modify or cancel existing appointments..."
+  - medical_records (0.7234): historia gen #10 "consult my electronic clinical record..."
+
+✗ NO CUBIERTOS:
+  - staff (0.6823 < 0.70): no hay historias suficientemente similares a "physician registration and management"
+  - invoice (0.6234 < 0.70): "invoice generation and notification" no cubierta
+  - inventory (0.6512 < 0.70): "inventory control of supplies" no cubierta
+  - reports (0.5823 < 0.70): "statistics and financial reports" no cubierta
+```
+
+**¿Es bueno o malo?**
+- **42.86% es MODERADO**
+- Ideal: >60%
+- Cubre aspectos principales (pacientes, turnos, HC) pero no operativos (inventario, reportes)
+
+##### Con aspectos en ESPAÑOL (0.00%) - ERROR
+**¿Qué significa?**
+- Idioma mismatch: historias en inglés vs conceptos en español
+
+**Ejemplo**:
+```python
+# Concepto español:
+"registrar pacientes con datos personales"
+# Historia inglés:
+"register patients with personal data..."
+
+# Embeddings muy diferentes por idioma
+similitud = 0.4684 < 0.70 → NO CUBIERTO
+```
+
+**Solución**: siempre usar aspectos en el mismo idioma que las historias
+
+### Interpretación GLOBAL del caso
+
+**Fortalezas**:
+- ✓ CA sin ambigüedad (100%)
+- ✓ Cobertura moderada de historias esperadas (57%)
+- ✓ Cubre conceptos principales del dominio (pacientes, turnos, HC)
+
+**Debilidades**:
+- ✗ Solo 43% de historias generadas son relevantes (13 filtradas)
+- ✗ CA muy genéricos, cobertura funcional baja (11%)
+- ✗ CA no verificables (0%)
+- ✗ No cubre aspectos operativos (inventario, reportes, facturación detallada)
+
+**Recomendaciones**:
+1. Mejorar prompts para reducir historias weak (actualmente 56%)
+2. Generar CA más específicos y detallados
+3. Usar formato Given-When-Then para CA verificables
+4. Agregar historias para aspectos operativos faltantes
 
 ---
 
