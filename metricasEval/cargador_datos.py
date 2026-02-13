@@ -32,6 +32,21 @@ def cargar_metadata(dir_caso: str) -> Dict:
     return metadata
 
 
+
+def cargar_conjuntos_diversidad(ruta_json):
+    with open(ruta_json, "r", encoding="utf-8") as f:
+        data = json.load(f)
+
+    conjuntos = []
+    nombres = []
+
+    for modelo in data.get("modelos", []):
+        nombres.append(modelo["nombre"])
+        conjuntos.append(modelo["historias"])
+
+    return nombres, conjuntos
+
+
 def descubrir_casos(dir_casos: str) -> List[str]:
     if not os.path.isdir(dir_casos):
         return []

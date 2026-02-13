@@ -1,0 +1,8 @@
+{
+    "descripcion": "Historias alineadas - dominio hospitalario",
+    "dominio": "hospital",
+    "archivo_aspectos": "aspectos_hospital.json",
+    "evaluar_alineacion": true,
+    "evaluar_completitud": true,
+    "evaluar_consistencia": true
+}

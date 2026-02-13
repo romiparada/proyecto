@@ -1,0 +1,49 @@
+{
+  "modelos": [
+    {
+      "nombre": "clickup",
+      "historias": [
+        "As an administrative staff member, I want to register patients with personal data and medical background, so that the hospital can maintain accurate records.",
+        "As an administrative staff member, I want to modify personal and contact details of a registered patient, so that information stays updated.",
+        "As an administrative staff member, I want to search for patients by name or identifier, so that I can locate records quickly.",
+        "As an authorized user, I want to visualize a patient's complete information, so that I can review relevant details.",
+        "As an administrative staff member, I want to create medical appointments associating patient, specialty, and professional, so that scheduling is accurate.",
+        "As an administrative staff member, I want to visualize doctors availability, so that I can plan appointments.",
+        "As a patient, I want notifications when my appointment changes, so that I stay informed.",
+        "As a doctor, I want to register diagnoses and treatments in the clinical record, so that care is documented.",
+        "As an administrator, I want to manage user roles and permissions, so that access is controlled.",
+        "As a pharmacist, I want to register medications with stock and expiration date, so that inventory is tracked."
+      ]
+    },
+    {
+      "nombre": "gpt4",
+      "historias": [
+        "As a receptionist, I want to create patient profiles including demographics and history, so that onboarding is complete.",
+        "As a receptionist, I want to update patient contact data, ensuring accuracy.",
+        "As hospital staff, I want quick patient lookup through filters, reducing waiting time.",
+        "As a clinician, I want to open a full patient dashboard, supporting informed decisions.",
+        "As a scheduler, I want to assign doctors to consultation slots automatically, preventing conflicts.",
+        "As a scheduler, I want to see a calendar view of doctor availability.",
+        "As patients, we want alerts when appointments are modified.",
+        "As physicians, we want structured electronic health record entries.",
+        "As system administrators, we want permission-based access control.",
+        "As pharmacy staff, we want automatic stock tracking for medicines."
+      ]
+    },
+    {
+      "nombre": "claude",
+      "historias": [
+        "As hospital front desk personnel, I want a unified workflow to register new patients with medical details.",
+        "As administrative personnel, I need to edit patient contact information when changes occur.",
+        "As staff, I want advanced search options for patient lookup.",
+        "As healthcare professionals, I want access to a consolidated patient overview page.",
+        "As coordinators, I want dynamic appointment booking aligning specialties and professionals.",
+        "As staff members, I want a visual planning board showing doctor schedules.",
+        "As patients, we want transparent notifications regarding appointment updates.",
+        "As clinicians, we want standardized documentation for treatments and progress.",
+        "As administrators, we want centralized management of roles and system permissions.",
+        "As pharmacy teams, we want alerts for medications nearing expiration."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "diversidad_media": 39.13043478260869,
+  "diversidad_std": 0.0,
+  "num_comparaciones": 1,
+  "pairwise": [
+    {
+      "i": 0,
+      "j": 1,
+      "diversidad_pct": 39.13043478260869
+    }
+  ],
+  "modelos": [
+    "modelo_A",
+    "modelo_B"
+  ]
+}
