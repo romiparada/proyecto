@@ -1,14 +1,3 @@
-"""
-LEVEL 1 — Evaluación de Historias de Usuario (HU)
-
-Responsabilidades:
-- Matching SBERT (cosine similarity) contra HU_expected
-- Selección del mejor match (argmax)
-- BERTScore F1 como métrica secundaria (NO decide alineación)
-- Clasificación: Strong ≥ 0.80, Conservative ≥ 0.85, Weak < 0.80
-- Filtrado: Solo historias alineadas continúan al LEVEL 3
-"""
-
 import os
 import sys
 import warnings
@@ -18,7 +7,6 @@ os.environ["TRANSFORMERS_VERBOSITY"] = "error"
 warnings.filterwarnings("ignore")
 logging.getLogger("transformers").setLevel(logging.ERROR)
 
-# FIX Windows DLL loading
 if sys.platform == "win32":
     dll_path = os.path.join(sys.prefix, "Lib", "site-packages", "numpy.libs")
     if os.path.exists(dll_path):
@@ -34,9 +22,8 @@ from typing import List, Dict, Tuple, Optional
 from dataclasses import dataclass
 
 
-# Umbrales según metodología experimental
 UMBRAL_STRONG = 0.80      # Alineación fuerte
-UMBRAL_CONSERVATIVE = 0.85 # Alineación conservadora (subconjunto de strong)
+UMBRAL_CONSERVATIVE = 0.85 # Alineación conservadora
 
 BERT_MODEL = "microsoft/deberta-xlarge-mnli"
 LANG = "en"
@@ -44,7 +31,6 @@ LANG = "en"
 
 @dataclass
 class AlignmentResult:
-    """Resultado de alineación para una historia generada."""
     index_generated: int
     text_generated: str
     index_matched: int
@@ -55,32 +41,23 @@ class AlignmentResult:
     
     @property
     def is_aligned(self) -> bool:
-        """Historia está alineada si es strong o conservative."""
         return self.alignment_level in ("strong", "conservative")
 
 
-class StoryAlignmentEvaluator:
-    """
-    LEVEL 1: Evaluador de alineación de HU.
-    
-    Evalúa qué tan bien las historias generadas se alinean
-    con las historias esperadas usando SBERT.
-    
-    BERTScore se calcula como métrica informativa pero
-    NO participa en la decisión de alineación.
-    """
+class EvaluadorAlineacionHistorias:
+    #evaluamos alineacion con sbert
     
     def __init__(
         self,
         encoder,
-        umbral_strong: float = UMBRAL_STRONG,
-        umbral_conservative: float = UMBRAL_CONSERVATIVE,
+        umbral_fuerte: float = UMBRAL_STRONG,
+        umbral_conservador: float = UMBRAL_CONSERVATIVE,
         bert_model: str = BERT_MODEL,
         lang: str = LANG
     ):
         self.encoder = encoder
-        self.umbral_strong = umbral_strong
-        self.umbral_conservative = umbral_conservative
+        self.umbral_fuerte = umbral_fuerte
+        self.umbral_conservador = umbral_conservador
         self.bert_model = bert_model
         self.lang = lang
     
@@ -91,12 +68,6 @@ class StoryAlignmentEvaluator:
         text: str,
         matched_ref: str
     ) -> Optional[float]:
-        """
-        Calcula BERTScore F1 (métrica secundaria/informativa).
-        
-        Returns:
-            f1_score contra el match SBERT.
-        """
         try:
             cands = [text]
             refs = [matched_ref]
@@ -115,16 +86,12 @@ class StoryAlignmentEvaluator:
             return None
     
     def _classify_alignment(self, sbert_similarity: float) -> str:
-        """
-        Clasifica nivel de alineación basado en SBERT.
-        
-        - conservative: ≥ 0.85 (subconjunto más estricto)
-        - strong: ≥ 0.80
-        - weak: < 0.80
-        """
-        if sbert_similarity >= self.umbral_conservative:
+        # conservative: >= 0.85
+        # strong: >= 0.80 y < 0.85
+        # weak: < 0.80
+        if sbert_similarity >= self.umbral_conservador:
             return "conservative"
-        elif sbert_similarity >= self.umbral_strong:
+        elif sbert_similarity >= self.umbral_fuerte:
             return "strong"
         else:
             return "weak"
@@ -134,22 +101,10 @@ class StoryAlignmentEvaluator:
         stories_generated: List[str],
         stories_expected: List[str]
     ) -> Dict:
-        """
-        Evalúa alineación de historias generadas contra esperadas.
-        
-        Args:
-            stories_generated: Lista de HU generadas.
-            stories_expected: Lista de HU esperadas (referencia).
-            
-        Returns:
-            Diccionario con resultados de alineación.
-        """
-        # LEVEL 0: Codificar ambas listas en batch (eficiente)
-        emb_generated = self.encoder.encode_stories(stories_generated)  # [N_gen, 768]
-        emb_expected = self.encoder.encode_stories(stories_expected)    # [N_exp, 768]
+        emb_generated = self.encoder.encode_stories(stories_generated)
+        emb_expected = self.encoder.encode_stories(stories_expected)
         
         # Calcular matriz de similitud completa de una vez
-        # Shape: [N_gen, N_exp]
         similarity_matrix = util.cos_sim(emb_generated, emb_expected)
         
         alignments: List[AlignmentResult] = []
@@ -157,18 +112,18 @@ class StoryAlignmentEvaluator:
         scores_bert = []
         
         for i, gen_story in enumerate(stories_generated):
-            # Obtener similitudes de la fila i (historia generada i vs todas las esperadas)
+            #Obtener similitudes de la fila i (historia generada i vs todas las esperadas)
             similarities = similarity_matrix[i]
             
-            # Argmax: mejor match SBERT
+            #mejor match SBERT
             sbert_idx = int(similarities.argmax().item())
             sbert_sim = float(similarities[sbert_idx].item())
             sbert_match = stories_expected[sbert_idx]
             
-            # BERTScore (informativo, NO decide)
+            # BERTScore (informativo)
             bert_f1 = self._calculate_bertscore(gen_story, sbert_match)
             
-            # Clasificación basada SOLO en SBERT
+            #alineacion basada en sbert
             level = self._classify_alignment(sbert_sim)
             
             alignment = AlignmentResult(
@@ -186,14 +141,11 @@ class StoryAlignmentEvaluator:
             if bert_f1 is not None:
                 scores_bert.append(bert_f1)
         
-        # Separar historias alineadas (para LEVEL 3)
         aligned_stories = [a for a in alignments if a.is_aligned]
         
-        # Calcular scores solo de alineadas (metodológicamente correcto)
         scores_sbert_aligned = [a.sbert_similarity for a in aligned_stories]
         scores_bert_aligned = [a.bertscore_f1 for a in aligned_stories if a.bertscore_f1 is not None]
         
-        # Estadísticas agregadas
         return {
             "alignments": alignments,
             "aligned_stories": aligned_stories,
@@ -221,17 +173,12 @@ class StoryAlignmentEvaluator:
                 }
             },
             "config": {
-                "umbral_strong": self.umbral_strong,
-                "umbral_conservative": self.umbral_conservative,
+                "umbral_strong": self.umbral_fuerte,
+                "umbral_conservative": self.umbral_conservador,
             }
         }
     
     def get_aligned_pairs(self, alignment_results: Dict) -> List[Tuple[int, int]]:
-        """
-        Extrae pares (idx_generada, idx_esperada) de historias alineadas.
-        
-        Útil para pasar al LEVEL 3 (evaluación de CA).
-        """
         return [
             (a.index_generated, a.index_matched)
             for a in alignment_results["aligned_stories"]

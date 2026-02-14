@@ -255,7 +255,8 @@ class EvaluationPipeline:
                 "alignment_rate": level_1["aggregate"]["alignment_rate"],
             },
             "level_1_alignment": {
-                "sbert_mean": level_1["aggregate"]["sbert"]["mean"],
+                "sbert_mean_aligned": level_1["aggregate"]["sbert"]["mean_aligned"],
+                "sbert_mean_all": level_1["aggregate"]["sbert"]["mean_all"],
                 "aligned_count": level_1["aggregate"]["sbert"]["aligned_count"],
                 "strong_count": level_1["aggregate"]["sbert"]["strong_count"],
                 "conservative_count": level_1["aggregate"]["sbert"]["conservative_count"],

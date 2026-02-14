@@ -1,10 +1,3 @@
-"""
-LEVEL 0 — Representación Semántica
-
-Responsabilidad única: Codificar textos usando SBERT.
-Esta fase NO evalúa nada, solo prepara embeddings.
-"""
-
 import os
 import sys
 import warnings
@@ -21,7 +14,6 @@ logging.getLogger("huggingface_hub").setLevel(logging.ERROR)
 logging.getLogger("torch").setLevel(logging.ERROR)
 logging.getLogger("sentence_transformers").setLevel(logging.ERROR)
 
-# FIX Python 3.8+ DLL loading (Windows)
 if sys.platform == "win32":
     dll_path = os.path.join(sys.prefix, "Lib", "site-packages", "numpy.libs")
     if os.path.exists(dll_path):
@@ -35,19 +27,12 @@ from sentence_transformers import SentenceTransformer
 from typing import List, Union
 import numpy as np
 
-# Modelo SBERT recomendado para tareas de similaridad semántica
-# https://www.sbert.net/docs/sentence_transformer/pretrained_models.html
+
+#podemos cambiar el modelo sbert de aca y probar mas resultados tambien, quizas otro funciona mejor, por eso queda esta clase aparte
 SBERT_MODEL = "sentence-transformers/all-mpnet-base-v2"
 
 
 class SemanticEncoder:
-    """
-    LEVEL 0: Codificador semántico basado en SBERT.
-    
-    Responsabilidad: Generar embeddings para textos.
-    NO realiza evaluación ni comparación.
-    """
-
     def __init__(self, model_name: str = SBERT_MODEL, device: str = None):
         self.model_name = model_name
         self.device = device or ("cuda" if torch.cuda.is_available() else "cpu")
@@ -67,18 +52,6 @@ class SemanticEncoder:
         batch_size: int = 16,
         show_progress_bar: bool = False
     ):
-        """
-        Codifica uno o más textos en embeddings.
-        
-        Args:
-            texts: Texto o lista de textos a codificar.
-            convert_to_tensor: Si True, retorna tensor PyTorch.
-            batch_size: Tamaño de batch para codificación.
-            show_progress_bar: Mostrar barra de progreso.
-            
-        Returns:
-            Tensor o array numpy de embeddings.
-        """
         return self.model.encode(
             texts,
             convert_to_tensor=convert_to_tensor,
@@ -87,19 +60,15 @@ class SemanticEncoder:
         )
     
     def encode_stories(self, stories: List[str]):
-        """Codifica lista de historias de usuario."""
         return self.encode(stories, convert_to_tensor=True)
     
     def encode_acceptance_criteria(self, criteria: List[str]):
-        """Codifica lista de criterios de aceptación."""
         return self.encode(criteria, convert_to_tensor=True)
     
     def encode_concepts(self, concepts: List[str]):
-        """Codifica lista de conceptos del dominio."""
         return self.encode(concepts, convert_to_tensor=True)
     
     def get_config(self) -> dict:
-        """Retorna configuración del encoder."""
         return {
             "model_name": self.model_name,
             "device": str(self.device),

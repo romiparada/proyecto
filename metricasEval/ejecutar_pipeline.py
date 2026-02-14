@@ -113,7 +113,8 @@ def ejecutar_caso(
     print(f"\nLEVEL 1 - Alineación:")
     print(f"  Historias alineadas: {summary['input_stats']['stories_aligned']}/{summary['input_stats']['stories_generated']}")
     print(f"  Tasa de alineación: {summary['input_stats']['alignment_rate']:.2%}")
-    print(f"  SBERT media: {summary['level_1_alignment']['sbert_mean']:.3f}")
+    print(f"  SBERT media (alineadas): {summary['level_1_alignment']['sbert_mean_aligned']:.3f}")
+    print(f"  SBERT media (todas): {summary['level_1_alignment']['sbert_mean_all']:.3f}")
     print(f"  Alineadas (Strong+Conservative): {summary['level_1_alignment']['aligned_count']}")
     print(f"  Strong: {summary['level_1_alignment']['strong_count']}, Conservative: {summary['level_1_alignment']['conservative_count']}, Weak: {summary['level_1_alignment']['weak_count']}")
     

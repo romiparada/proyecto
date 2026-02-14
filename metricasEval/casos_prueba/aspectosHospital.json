@@ -1,0 +1,57 @@
+{
+    "patients": [
+        "patient registration",
+        "patient management",
+        "patient data and information",
+        "patient medical background",
+        "searching for patients",
+        "viewing patient records"
+    ],
+    "appointments": [
+        "appointment scheduling",
+        "consultation appointments",
+        "modifying appointments",
+        "canceling appointments",
+        "appointment notifications",
+        "doctor availability"
+    ],
+    "medical_records": [
+        "electronic medical records",
+        "electronic clinical records",
+        "patient medical history",
+        "clinical documentation",
+        "diagnosis and treatment records",
+        "accessing medical records"
+    ],
+    "staff": [
+        "physician registration",
+        "doctor management",
+        "medical staff information",
+        "professional specialties",
+        "staff roles and permissions",
+        "activating and deactivating doctors"
+    ],
+    "invoice": [
+        "invoice generation",
+        "electronic invoices",
+        "billing for consultations",
+        "billing for medications",
+        "payment notifications",
+        "invoice delivery"
+    ],
+    "inventory": [
+        "inventory control",
+        "medication stock",
+        "pharmacy supplies",
+        "stock management",
+        "expiration date tracking",
+        "low stock alerts"
+    ],
+    "reports": [
+        "statistical reports",
+        "financial reports",
+        "consultation statistics",
+        "billing summaries",
+        "system metrics"
+    ]
+}
