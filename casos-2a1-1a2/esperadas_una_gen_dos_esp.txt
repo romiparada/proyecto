@@ -1,0 +1,8 @@
+As administrative staff, I want to register a new patient's personal data in order to add them to the system.
+As administrative staff, I want to register the patient's medical background in their electronic medical record in order to know their health condition.
+As a pharmacist, I want to register medications to keep the hospital inventory updated.
+As a pharmacist, I want to register supplies to keep the hospital inventory updated.
+As administrative staff, I want to cancel an existing appointment to free up the doctor's time slot.
+As administrative staff, I want to edit an existing appointment to change its date without losing the information.
+As a doctor, I want to record the diagnosis made during the appointment to document the medical care provided.
+As administrative staff, I want to search for patients by name or document to manage appointments.

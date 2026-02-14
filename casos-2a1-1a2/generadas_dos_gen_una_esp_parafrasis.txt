@@ -1,0 +1,9 @@
+As a receptionist, I want to enter a new patient's personal information so that they are added to the hospital database.
+As a receptionist, I want to log the patient's clinical history into their digital health file so that their medical status is documented.
+As a receptionist, I want to look up patients using their full name or ID number so that I can find their profile quickly.
+As a physician, I want to document the clinical findings from the consultation to keep a record of the care delivered.
+As a physician, I want to note the prescribed therapy for the patient to maintain an accurate care plan.
+As a pharmacy technician, I want to add medicines with quantity on hand and shelf life to maintain an up-to-date drug inventory.
+As a pharmacy technician, I want to add medical materials with quantity on hand and shelf life to maintain an up-to-date supply inventory.
+As a receptionist, I want to book visits to arrange patient medical consultations.
+As a receptionist, I want to reschedule or remove existing visits to handle timetable adjustments.

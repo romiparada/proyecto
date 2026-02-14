@@ -1,0 +1,5 @@
+As a receptionist, I want to enter patients with their personal information and clinical history, so that the hospital keeps thorough and precise patient files.
+As a pharmacy technician, I want to add medicines and medical materials with quantity on hand, so that the drug and supply inventory is properly maintained.
+As a receptionist, I want to reschedule or remove existing visits, so that timetable adjustments can be handled.
+As a physician, I want to document the clinical findings from the consultation to keep a record of the care delivered.
+As a receptionist, I want to look up patients using their full name or ID number to arrange their visits.

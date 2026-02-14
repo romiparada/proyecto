@@ -1,0 +1,5 @@
+As administrative staff, I want to register patients with personal data and medical background, so that the hospital maintains complete and accurate patient records.
+As administrative staff, I want to search for patients by name or identity document, so that I can quickly locate their records.
+As a doctor, I want to record diagnoses and treatments in the patient's clinical record, so that medical care is well documented.
+As a pharmacist, I want to register medications and supplies with stock and expiration date, so that inventory is accurately tracked.
+As administrative staff, I want to create, modify, or cancel appointments, so that scheduling is managed efficiently.
