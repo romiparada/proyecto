@@ -1,0 +1,69 @@
+{
+    "patients": [
+        "patient registration and personal data",
+        "patient information management",
+        "patient medical background and history",
+        "searching and locating patients",
+        "viewing and accessing patient data",
+        "editing and updating patient records",
+        "patient identity and contact information"
+    ],
+    "appointments": [
+        "appointment scheduling and creation",
+        "medical consultation appointments",
+        "modifying and editing appointments",
+        "canceling appointments and freeing time slots",
+        "appointment notifications and alerts",
+        "doctor availability and scheduling",
+        "appointment status management",
+        "patient appointment tracking"
+    ],
+    "medical_records": [
+        "electronic medical records and clinical history",
+        "electronic clinical record documentation",
+        "patient medical and clinical information",
+        "diagnosis and treatment documentation",
+        "clinical progress and patient care records",
+        "accessing and reviewing medical records",
+        "consulting patient health history",
+        "secure medical record management"
+    ],
+    "staff": [
+        "physician and doctor registration",
+        "medical professional management",
+        "staff personal and contact information",
+        "medical specialties and professional data",
+        "staff roles and access permissions",
+        "activating and deactivating medical professionals",
+        "doctor working hours and availability",
+        "managing healthcare staff"
+    ],
+    "invoice": [
+        "invoice generation and creation",
+        "electronic invoices and billing",
+        "billing for medical consultations",
+        "billing for medication delivery",
+        "payment notifications and alerts",
+        "invoice delivery and distribution",
+        "billing associated with medical services",
+        "financial documentation and proof of payment"
+    ],
+    "inventory": [
+        "inventory control and management",
+        "medication and supplies stock",
+        "pharmacy inventory tracking",
+        "medication registration and cataloging",
+        "stock updates and replenishment",
+        "expiration date monitoring",
+        "low stock alerts and notifications",
+        "inventory sorting and organization"
+    ],
+    "reports": [
+        "statistical reports and analytics",
+        "financial reports and summaries",
+        "consultation statistics and metrics",
+        "billing summaries and financial data",
+        "system usage and performance metrics",
+        "healthcare data analysis"
+    ]
+}

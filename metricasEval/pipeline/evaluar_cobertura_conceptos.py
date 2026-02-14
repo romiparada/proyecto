@@ -1,18 +1,3 @@
-"""
-LEVEL 4 — Coverage Conceptual
-
-Responsabilidades:
-- Usar lista de conceptos/aspectos del dominio
-- Evaluar SOLO sobre historias alineadas
-- Calcular qué proporción de conceptos están cubiertos
-
-Conceptos pueden ser:
-- Aspectos funcionales del sistema
-- Entidades del dominio
-- Stakeholders
-- Requisitos no funcionales
-"""
-
 from sentence_transformers import util
 from typing import List, Dict, Tuple
 import numpy as np
@@ -20,18 +5,8 @@ import numpy as np
 # Umbral para considerar un concepto cubierto
 CONCEPT_COVERAGE_THRESHOLD = 0.70
 
-
-class ConceptCoverageEvaluator:
-    """
-    LEVEL 4: Evaluador de Cobertura Conceptual.
-    
-    Evalúa qué proporción de conceptos del dominio
-    están representados en las historias alineadas.
-    
-    IMPORTANTE: Solo evalúa sobre historias que pasaron
-    el filtro de alineación en LEVEL 1.
-    """
-    
+#esta clase deberia evaluar la proporcion de conceptos del dominiio que estan representados en las historias generadas
+class EvaluadorCoberturaConceptos:
     def __init__(
         self,
         encoder,
@@ -46,20 +21,7 @@ class ConceptCoverageEvaluator:
         concepts: Dict[str, List[str]],
         threshold: float = None
     ) -> Tuple[float, Dict]:
-        """
-        Evalúa cobertura de conceptos del dominio.
-        
-        Para cada concepto (conjunto de descripciones),
-        verifica si alguna historia alineada lo cubre.
-        
-        Args:
-            aligned_stories: Textos de historias alineadas.
-            concepts: Dict {nombre_concepto: [descripciones]}.
-            threshold: Umbral de similitud.
-            
-        Returns:
-            (score, detalle)
-        """
+        #para cada concepto, se verifica si alguna historia alineada lo cubre
         threshold = threshold or self.threshold
         
         if not concepts:
@@ -75,7 +37,7 @@ class ConceptCoverageEvaluator:
                 ]
             }
         
-        # Codificar historias alineadas
+        #codifico historias alineadas
         emb_stories = self.encoder.encode_stories(aligned_stories)
         if emb_stories.dim() == 1:
             emb_stories = emb_stories.unsqueeze(0)
@@ -84,14 +46,13 @@ class ConceptCoverageEvaluator:
         details = []
         
         for concept_name, descriptions in concepts.items():
-            # Codificar descripciones del concepto
+            #codifico conceptos del dominio
             emb_concept = self.encoder.encode(descriptions, convert_to_tensor=True)
 
             if emb_concept.dim() == 1:
                 emb_concept = emb_concept.unsqueeze(0)
             
-            # Buscar máxima similitud entre cualquier descripción
-            # del concepto y cualquier historia alineada
+            #busco maxima similitud entre descripciones del concepto y las historias alineadas
             max_sim = 0.0
             best_story_idx = -1
             best_description = None
@@ -134,19 +95,6 @@ class ConceptCoverageEvaluator:
         aspects: Dict[str, List[str]],
         threshold: float = None
     ) -> Dict:
-        """
-        Evalúa cobertura de aspectos funcionales.
-        
-        Wrapper de evaluate_concept_coverage para aspectos.
-        
-        Args:
-            aligned_stories: Historias alineadas.
-            aspects: Dict {nombre_aspecto: [descripciones]}.
-            threshold: Umbral.
-            
-        Returns:
-            Resultado de evaluación.
-        """
         score, detail = self.evaluate_concept_coverage(
             aligned_stories, aspects, threshold
         )
@@ -165,17 +113,6 @@ class ConceptCoverageEvaluator:
         stakeholders: List[str],
         threshold: float = None
     ) -> Dict:
-        """
-        Evalúa cobertura de stakeholders/actores.
-        
-        Args:
-            aligned_stories: Historias alineadas.
-            stakeholders: Lista de stakeholders esperados.
-            threshold: Umbral.
-            
-        Returns:
-            Resultado de evaluación.
-        """
         threshold = threshold or self.threshold
         
         if not stakeholders:
@@ -197,7 +134,6 @@ class ConceptCoverageEvaluator:
                 ]
             }
         
-        # Convertir a formato de conceptos
         stakeholder_concepts = {s: [s] for s in stakeholders}
         
         score, detail = self.evaluate_concept_coverage(

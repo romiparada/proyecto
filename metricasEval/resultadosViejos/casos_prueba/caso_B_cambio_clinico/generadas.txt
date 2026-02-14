@@ -1,3 +1,0 @@
-As a veterinarian, I want to register animal medical records to track treatments.
-As a clinic administrator, I want to schedule appointments for pets.
-As a veterinary assistant, I want to manage medication inventory for animals.

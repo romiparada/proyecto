@@ -1,6 +1,0 @@
-Evaluacion experimental 
-Caso: caso_A_alineadas
-Descripcion: Historias alineadas - dominio hospitalario
-Timestamp: 2026-02-06T04:51:59.496675
-Generadas: 23
-Esperadas: 28

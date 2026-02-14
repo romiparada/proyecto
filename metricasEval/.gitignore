@@ -1,2 +1,4 @@
-metricas-env/
+.venv/
 __pycache__/
+resultados/
+*.pyc

@@ -1,34 +1,16 @@
-"""
-LEVEL 2 — Coverage de Historias
-
-Responsabilidades:
-- Coverage(X,Y) = expected_stories_with_match / total_expected_stories
-- Diversity(X,Y) = 100 - Coverage(X,Y)
-
-Esta métrica evalúa qué proporción de historias esperadas
-tienen al menos un match en las historias generadas.
-"""
+# Coverage(X,Y) = expected_stories_with_match / total_expected_stories (paper)
+# Diversity(X,Y) = 100 - Coverage(X,Y) (paper)
 
 import numpy as np
 import itertools
 from sentence_transformers import util
 from typing import List, Dict, Tuple
 
-# Umbral por defecto para considerar que una historia está cubierta
+# Umbral para considerar que una historia esta cubierta
 COVERAGE_THRESHOLD = 0.75
 
 
-class StoryCoverageCalculator:
-    """
-    LEVEL 2: Calculador de Coverage y Diversidad de HU.
-    
-    Coverage: Proporción de historias esperadas que tienen
-    al menos un match (similitud ≥ umbral) en las generadas.
-    
-    Diversidad: Complemento del coverage (100 - coverage).
-    Útil para comparar outputs de diferentes LLMs.
-    """
-    
+class CalculadorCoberturaHistorias:
     def __init__(self, encoder, threshold: float = COVERAGE_THRESHOLD):
         self.encoder = encoder
         self.threshold = threshold
@@ -39,22 +21,6 @@ class StoryCoverageCalculator:
         stories_expected: List[str],
         threshold: float = None
     ) -> Tuple[float, Dict]:
-        """
-        Calcula coverage de historias esperadas.
-        
-        Coverage = covered_expected / total_expected
-        
-        Una historia esperada está "cubierta" si existe al menos
-        una historia generada con similitud ≥ umbral.
-        
-        Args:
-            stories_generated: HU generadas.
-            stories_expected: HU esperadas (referencia).
-            threshold: Umbral de similitud (default: self.threshold).
-            
-        Returns:
-            (score, detalle)
-        """
         threshold = threshold or self.threshold
         
         if not stories_expected:
@@ -63,7 +29,7 @@ class StoryCoverageCalculator:
         if not stories_generated:
             return 0.0, {"covered": 0, "total": len(stories_expected), "details": []}
         
-        # Codificar ambas listas
+        # Codificar las listas
         emb_gen = self.encoder.encode_stories(stories_generated)
         emb_exp = self.encoder.encode_stories(stories_expected)
         
@@ -106,19 +72,6 @@ class StoryCoverageCalculator:
         stories_set_2: List[str],
         threshold: float = None
     ) -> float:
-        """
-        Calcula diversidad entre dos conjuntos de historias.
-        
-        Diversity(X,Y) = 100 - Coverage(X,Y)
-        
-        Args:
-            stories_set_1: Primer conjunto (tratado como "generado").
-            stories_set_2: Segundo conjunto (tratado como "esperado").
-            threshold: Umbral de similitud.
-            
-        Returns:
-            Diversidad como porcentaje (0-100).
-        """
         coverage, _ = self.calculate_coverage(
             stories_set_1,
             stories_set_2,
@@ -132,21 +85,6 @@ class StoryCoverageCalculator:
         model_names: List[str] = None,
         threshold: float = None
     ) -> Dict:
-        """
-        Evalúa diversidad entre múltiples conjuntos de historias
-        generados por diferentes modelos/herramientas.
-        
-        Calcula diversidad pairwise y promedio general.
-        Basado en metodología del paper 2507.15157.
-        
-        Args:
-            model_story_sets: Lista de conjuntos de HU (uno por modelo).
-            model_names: Nombres de los modelos (opcional).
-            threshold: Umbral de similitud.
-            
-        Returns:
-            Diccionario con diversidad media, std y pairwise.
-        """
         n = len(model_story_sets)
         
         if n < 2:
