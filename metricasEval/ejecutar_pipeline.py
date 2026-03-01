@@ -36,8 +36,8 @@ def ejecutar_caso(
 ) -> dict:
     """
     Ejecuta evaluación completa para un caso de prueba.
-    
-    Sigue el pipeline LEVEL 0 → LEVEL 4.
+
+    Sigue el pipeline LEVEL 0 → LEVEL 5.
     """
     dir_caso = os.path.join(dir_casos, nombre_caso)
     
@@ -99,9 +99,10 @@ def ejecutar_caso(
     )
     
     # =====================================================
-    # Ejecutar pipeline LEVEL 0 → LEVEL 4
+    # Ejecutar pipeline LEVEL 0 → LEVEL 5
     # =====================================================
     print("\nEjecutando pipeline de evaluación...")
+    t_inicio = datetime.now()
     resultado = pipeline.run(input_data)
     
     # =====================================================
@@ -135,6 +136,19 @@ def ejecutar_caso(
         print(f"\nLEVEL 4 - Coverage Conceptual:")
         print(f"  Cobertura: {l4['concept_coverage']:.2%}")
         print(f"  Conceptos cubiertos: {l4['concepts_covered']}/{l4['concepts_total']}")
+
+    if "level_5_invest" in summary:
+        l5 = summary["level_5_invest"]
+        print(f"\nLEVEL 5 - Evaluación INVEST ({l5.get('model_used', '?')}):")
+        print(f"  Puntaje global: {l5['overall_mean']:.2f}/5.0")
+        print(f"  Historias evaluadas: {l5['valid_stories']} (errores: {l5['error_stories']})")
+        scores = l5.get("scores_per_criterion", {})
+        for c, mean in scores.items():
+            bar = "█" * int(round(mean)) + "░" * (5 - int(round(mean)))
+            print(f"  {c}: {bar} {mean:.2f}")
+
+    duracion = (datetime.now() - t_inicio).total_seconds()
+    print(f"\nTiempo total del caso: {duracion:.1f}s")
     
     # =====================================================
     # Guardar resultados
@@ -156,7 +170,7 @@ def ejecutar_caso(
 
 def main():
     parser = argparse.ArgumentParser(
-        description="Evaluación experimental de HU - Pipeline LEVEL 0-4"
+        description="Evaluación experimental de HU - Pipeline LEVEL 0-5"
     )
     
     parser.add_argument("--caso", required=True, help="Nombre del caso o 'todos'")
