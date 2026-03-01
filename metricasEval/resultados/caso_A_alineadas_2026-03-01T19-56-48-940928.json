@@ -1,0 +1,2161 @@
+{
+  "timestamp": "2026-03-01T19:46:52.981712",
+  "metadata": {
+    "descripcion": "Historias alineadas - dominio hospitalario",
+    "dominio": "hospital",
+    "archivo_aspectos": "aspectos_hospital.json",
+    "evaluar_alineacion": true,
+    "evaluar_completitud": true,
+    "evaluar_consistencia": true
+  },
+  "config": {
+    "umbral_strong": 0.8,
+    "umbral_conservative": 0.85,
+    "coverage_threshold": 0.75,
+    "ca_coverage_threshold": 0.75,
+    "concept_threshold": 0.7,
+    "encoder": {
+      "model_name": "sentence-transformers/all-mpnet-base-v2",
+      "device": "cpu",
+      "cuda_available": false
+    },
+    "invest_model": "gpt-4o",
+    "enable_invest": true
+  },
+  "level_1_alignment": {
+    "alignments": [
+      {
+        "index_generated": 0,
+        "text_generated": "As an administrative staff member, I want to register patients with personal data and medical background, so that the hospital can maintain accurate and complete patient records.",
+        "index_matched": 0,
+        "text_matched": "As administrative staff, I want to register the data of a new patient to admit them into the system.",
+        "sbert_similarity": 0.859626054763794,
+        "bertscore_f1": null,
+        "alignment_level": "conservative",
+        "is_aligned": true
+      },
+      {
+        "index_generated": 1,
+        "text_generated": "As an administrative staff member, I want to modify the personal and contact details of a registered patient, so that patient information remains up to date.",
+        "index_matched": 1,
+        "text_matched": "As administrative staff, I want to edit the data of a registered patient to keep the information up to date.",
+        "sbert_similarity": 0.8613033294677734,
+        "bertscore_f1": null,
+        "alignment_level": "conservative",
+        "is_aligned": true
+      },
+      {
+        "index_generated": 2,
+        "text_generated": "As an administrative staff member, I want to search for patients by name, identity document, or identifier number, so that I can quickly locate patient records.",
+        "index_matched": 3,
+        "text_matched": "As administrative staff or medical staff, I want to search for a specific patient to manage appointments or review their medical history.",
+        "sbert_similarity": 0.8134667277336121,
+        "bertscore_f1": null,
+        "alignment_level": "strong",
+        "is_aligned": true
+      },
+      {
+        "index_generated": 3,
+        "text_generated": "As an authorized user, I want to visualize a patient's complete information, so that I can review all relevant details for care or administration.",
+        "index_matched": 8,
+        "text_matched": "As a physician, I want to access the patient's electronic health record to review their previous information.",
+        "sbert_similarity": 0.6330983638763428,
+        "bertscore_f1": null,
+        "alignment_level": "weak",
+        "is_aligned": false
+      },
+      {
+        "index_generated": 4,
+        "text_generated": "As an administrative staff member, I want to create medical appointments by associating the patient, specialty, and professional, so that appointments are scheduled accurately.",
+        "index_matched": 10,
+        "text_matched": "As administrative staff, I want to register physicians with their specialties and schedules to enable appointment assignment.",
+        "sbert_similarity": 0.7802528738975525,
+        "bertscore_f1": null,
+        "alignment_level": "weak",
+        "is_aligned": false
+      },
+      {
+        "index_generated": 5,
+        "text_generated": "As an administrative staff member, I want to visualize the availability of registered doctors, so that I can schedule appointments efficiently.",
+        "index_matched": 10,
+        "text_matched": "As administrative staff, I want to register physicians with their specialties and schedules to enable appointment assignment.",
+        "sbert_similarity": 0.7443331480026245,
+        "bertscore_f1": null,
+        "alignment_level": "weak",
+        "is_aligned": false
+      },
+      {
+        "index_generated": 6,
+        "text_generated": "As an administrative staff member, I want to modify or cancel existing appointments, so that changes can be managed as needed.",
+        "index_matched": 5,
+        "text_matched": "As administrative staff, I want to cancel an existing appointment to free up the schedule.",
+        "sbert_similarity": 0.8293689489364624,
+        "bertscore_f1": null,
+        "alignment_level": "strong",
+        "is_aligned": true
+      },
+      {
+        "index_generated": 7,
+        "text_generated": "As a patient, I want to receive notifications when my appointment is modified or canceled, so that I am always informed about my schedule.",
+        "index_matched": 7,
+        "text_matched": "As a patient, I want to be notified when my appointment is modified or canceled to stay informed.",
+        "sbert_similarity": 0.9750573039054871,
+        "bertscore_f1": null,
+        "alignment_level": "conservative",
+        "is_aligned": true
+      },
+      {
+        "index_generated": 8,
+        "text_generated": "As an administrative staff member, I want to manage the status of appointments throughout their lifecycle, so that the hospital can track appointment outcomes.",
+        "index_matched": 4,
+        "text_matched": "As administrative staff, I want to register an appointment to schedule the patient's medical care.",
+        "sbert_similarity": 0.7598292231559753,
+        "bertscore_f1": null,
+        "alignment_level": "weak",
+        "is_aligned": false
+      },
+      {
+        "index_generated": 9,
+        "text_generated": "As a doctor, I want to register diagnoses, treatments, and patient’s clinical progress in the electronic clinical record, so that patient care is well documented.",
+        "index_matched": 2,
+        "text_matched": "As administrative staff, I want to record the patient's medical history in their electronic health record to understand their health status.",
+        "sbert_similarity": 0.7746932506561279,
+        "bertscore_f1": null,
+        "alignment_level": "weak",
+        "is_aligned": false
+      },
+      {
+        "index_generated": 10,
+        "text_generated": "As a patient, I want to consult my electronic clinical record, so that I can stay informed about my health history.",
+        "index_matched": 18,
+        "text_matched": "As a patient, I want to consult my electronic health record to access my medical information.",
+        "sbert_similarity": 0.9126583337783813,
+        "bertscore_f1": null,
+        "alignment_level": "conservative",
+        "is_aligned": true
+      },
+      {
+        "index_generated": 11,
+        "text_generated": "As an administrator, I want to register medical professionals with their personal and contact details and associate specialties, so that the hospital can manage staff information.",
+        "index_matched": 10,
+        "text_matched": "As administrative staff, I want to register physicians with their specialties and schedules to enable appointment assignment.",
+        "sbert_similarity": 0.8541029691696167,
+        "bertscore_f1": null,
+        "alignment_level": "conservative",
+        "is_aligned": true
+      },
+      {
+        "index_generated": 12,
+        "text_generated": "As an administrator, I want to define and modify attention hours and activate or deactivate professionals for scheduling, so that doctor availability is accurately reflected.",
+        "index_matched": 10,
+        "text_matched": "As administrative staff, I want to register physicians with their specialties and schedules to enable appointment assignment.",
+        "sbert_similarity": 0.6769433617591858,
+        "bertscore_f1": null,
+        "alignment_level": "weak",
+        "is_aligned": false
+      },
+      {
+        "index_generated": 13,
+        "text_generated": "As an administrator, I want to manage roles and access permissions to system functionalities, so that users only access features relevant to their role.",
+        "index_matched": 14,
+        "text_matched": "As administrative staff, I want to define roles and permissions to control access to system functionalities.",
+        "sbert_similarity": 0.8782137036323547,
+        "bertscore_f1": null,
+        "alignment_level": "conservative",
+        "is_aligned": true
+      },
+      {
+        "index_generated": 14,
+        "text_generated": "As an administrative staff member, I want to generate electronic invoices for medical consultations and medication delivery, so that billing is accurate and efficient.",
+        "index_matched": 15,
+        "text_matched": "As a patient, I want to have an invoice associated with a medical consultation as proof of payment.",
+        "sbert_similarity": 0.7148165702819824,
+        "bertscore_f1": null,
+        "alignment_level": "weak",
+        "is_aligned": false
+      },
+      {
+        "index_generated": 15,
+        "text_generated": "As a patient, I want to receive automatic notifications with attached digital invoices when an invoice is generated, so that I am promptly informed about charges.",
+        "index_matched": 17,
+        "text_matched": "As a patient, I want to receive a notification when a charge is generated to access the invoice.",
+        "sbert_similarity": 0.8533483743667603,
+        "bertscore_f1": null,
+        "alignment_level": "conservative",
+        "is_aligned": true
+      },
+      {
+        "index_generated": 16,
+        "text_generated": "As a pharmacist, I want to register medications and supplies with identification, stock, and expiration date, so that inventory is accurately tracked.",
+        "index_matched": 19,
+        "text_matched": "As a pharmacist, I want to register medications or supplies to keep the hospital inventory up to date.",
+        "sbert_similarity": 0.9030114412307739,
+        "bertscore_f1": null,
+        "alignment_level": "conservative",
+        "is_aligned": true
+      },
+      {
+        "index_generated": 17,
+        "text_generated": "As a pharmacist, I want to automatically update stock when registering medication deliveries, so that inventory levels remain current.",
+        "index_matched": 20,
+        "text_matched": "As a pharmacist, I want to edit the quantity of available medications or supplies to keep the inventory updated.",
+        "sbert_similarity": 0.7712513208389282,
+        "bertscore_f1": null,
+        "alignment_level": "weak",
+        "is_aligned": false
+      },
+      {
+        "index_generated": 18,
+        "text_generated": "As a pharmacist, I want to be notified when stock is low or items are about to expire, so that I can take timely action.",
+        "index_matched": 24,
+        "text_matched": "As a pharmacist, I want to know when a medication or supply has a low stock level to make timely decisions.",
+        "sbert_similarity": 0.6697014570236206,
+        "bertscore_f1": null,
+        "alignment_level": "weak",
+        "is_aligned": false
+      },
+      {
+        "index_generated": 19,
+        "text_generated": "As a pharmacist, I want to consult inventory sorted by available quantity or expiration date, so that I can manage stock efficiently.",
+        "index_matched": 24,
+        "text_matched": "As a pharmacist, I want to know when a medication or supply has a low stock level to make timely decisions.",
+        "sbert_similarity": 0.6576530337333679,
+        "bertscore_f1": null,
+        "alignment_level": "weak",
+        "is_aligned": false
+      },
+      {
+        "index_generated": 20,
+        "text_generated": "As an analyst, I want to generate reports on consultations by specialty, appointment status, financial income, and medication and supplies consumption, with date range filters, so that I can analyze hospital performance.",
+        "index_matched": 26,
+        "text_matched": "As an analyst, I want to view financial reports of services to evaluate income and economic performance of the hospital.",
+        "sbert_similarity": 0.6741498708724976,
+        "bertscore_f1": null,
+        "alignment_level": "weak",
+        "is_aligned": false
+      },
+      {
+        "index_generated": 21,
+        "text_generated": "As a system administrator, I want to ensure date validations prevent invalid ranges, so that data integrity is maintained.",
+        "index_matched": 6,
+        "text_matched": "As administrative staff, I want to edit an existing appointment to change its date without losing information.",
+        "sbert_similarity": 0.2952767610549927,
+        "bertscore_f1": null,
+        "alignment_level": "weak",
+        "is_aligned": false
+      },
+      {
+        "index_generated": 22,
+        "text_generated": "As a system administrator, I want to ensure notifications are sent within a reasonable time after triggering events, so that users are promptly informed.",
+        "index_matched": 7,
+        "text_matched": "As a patient, I want to be notified when my appointment is modified or canceled to stay informed.",
+        "sbert_similarity": 0.4071817994117737,
+        "bertscore_f1": null,
+        "alignment_level": "weak",
+        "is_aligned": false
+      }
+    ],
+    "aligned_stories": [
+      {
+        "index_generated": 0,
+        "index_matched": 0,
+        "sbert_similarity": 0.859626054763794,
+        "alignment_level": "conservative"
+      },
+      {
+        "index_generated": 1,
+        "index_matched": 1,
+        "sbert_similarity": 0.8613033294677734,
+        "alignment_level": "conservative"
+      },
+      {
+        "index_generated": 2,
+        "index_matched": 3,
+        "sbert_similarity": 0.8134667277336121,
+        "alignment_level": "strong"
+      },
+      {
+        "index_generated": 6,
+        "index_matched": 5,
+        "sbert_similarity": 0.8293689489364624,
+        "alignment_level": "strong"
+      },
+      {
+        "index_generated": 7,
+        "index_matched": 7,
+        "sbert_similarity": 0.9750573039054871,
+        "alignment_level": "conservative"
+      },
+      {
+        "index_generated": 10,
+        "index_matched": 18,
+        "sbert_similarity": 0.9126583337783813,
+        "alignment_level": "conservative"
+      },
+      {
+        "index_generated": 11,
+        "index_matched": 10,
+        "sbert_similarity": 0.8541029691696167,
+        "alignment_level": "conservative"
+      },
+      {
+        "index_generated": 13,
+        "index_matched": 14,
+        "sbert_similarity": 0.8782137036323547,
+        "alignment_level": "conservative"
+      },
+      {
+        "index_generated": 15,
+        "index_matched": 17,
+        "sbert_similarity": 0.8533483743667603,
+        "alignment_level": "conservative"
+      },
+      {
+        "index_generated": 16,
+        "index_matched": 19,
+        "sbert_similarity": 0.9030114412307739,
+        "alignment_level": "conservative"
+      }
+    ],
+    "aggregate": {
+      "total_generated": 23,
+      "total_expected": 28,
+      "total_aligned": 10,
+      "alignment_rate": 0.43478260869565216,
+      "sbert": {
+        "mean": 0.7521451400673907,
+        "std": 0.15329413252398882,
+        "aligned_count": 10,
+        "strong_count": 2,
+        "conservative_count": 8,
+        "weak_count": 13
+      },
+      "bertscore": {
+        "mean": null,
+        "std": null,
+        "available_count": 0
+      }
+    },
+    "config": {
+      "umbral_strong": 0.8,
+      "umbral_conservative": 0.85
+    }
+  },
+  "level_2_coverage": {
+    "story_coverage_score": 0.5714285714285714,
+    "diversity_complement": 42.85714285714286,
+    "covered": 16,
+    "total": 28,
+    "threshold": 0.75,
+    "details": [
+      {
+        "expected_idx": 0,
+        "expected_text": "As administrative staff, I want to register the data of a new patient to admit them into the system.",
+        "max_similarity": 0.859626054763794,
+        "covered": true,
+        "best_match_idx": 0,
+        "best_match_text": "As an administrative staff member, I want to register patients with personal data and medical background, so that the hospital can maintain accurate and complete patient records."
+      },
+      {
+        "expected_idx": 1,
+        "expected_text": "As administrative staff, I want to edit the data of a registered patient to keep the information up to date.",
+        "max_similarity": 0.8613033294677734,
+        "covered": true,
+        "best_match_idx": 1,
+        "best_match_text": "As an administrative staff member, I want to modify the personal and contact details of a registered patient, so that patient information remains up to date."
+      },
+      {
+        "expected_idx": 2,
+        "expected_text": "As administrative staff, I want to record the patient's medical history in their electronic health record to understand their health status.",
+        "max_similarity": 0.8123883008956909,
+        "covered": true,
+        "best_match_idx": 10,
+        "best_match_text": "As a patient, I want to consult my electronic clinical record, so that I can stay informed about my health history."
+      },
+      {
+        "expected_idx": 3,
+        "expected_text": "As administrative staff or medical staff, I want to search for a specific patient to manage appointments or review their medical history.",
+        "max_similarity": 0.8134667277336121,
+        "covered": true,
+        "best_match_idx": 2,
+        "best_match_text": "As an administrative staff member, I want to search for patients by name, identity document, or identifier number, so that I can quickly locate patient records."
+      },
+      {
+        "expected_idx": 4,
+        "expected_text": "As administrative staff, I want to register an appointment to schedule the patient's medical care.",
+        "max_similarity": 0.7598292231559753,
+        "covered": true,
+        "best_match_idx": 8,
+        "best_match_text": "As an administrative staff member, I want to manage the status of appointments throughout their lifecycle, so that the hospital can track appointment outcomes."
+      },
+      {
+        "expected_idx": 5,
+        "expected_text": "As administrative staff, I want to cancel an existing appointment to free up the schedule.",
+        "max_similarity": 0.8293689489364624,
+        "covered": true,
+        "best_match_idx": 6,
+        "best_match_text": "As an administrative staff member, I want to modify or cancel existing appointments, so that changes can be managed as needed."
+      },
+      {
+        "expected_idx": 6,
+        "expected_text": "As administrative staff, I want to edit an existing appointment to change its date without losing information.",
+        "max_similarity": 0.813035249710083,
+        "covered": true,
+        "best_match_idx": 6,
+        "best_match_text": "As an administrative staff member, I want to modify or cancel existing appointments, so that changes can be managed as needed."
+      },
+      {
+        "expected_idx": 7,
+        "expected_text": "As a patient, I want to be notified when my appointment is modified or canceled to stay informed.",
+        "max_similarity": 0.9750573039054871,
+        "covered": true,
+        "best_match_idx": 7,
+        "best_match_text": "As a patient, I want to receive notifications when my appointment is modified or canceled, so that I am always informed about my schedule."
+      },
+      {
+        "expected_idx": 8,
+        "expected_text": "As a physician, I want to access the patient's electronic health record to review their previous information.",
+        "max_similarity": 0.8693200945854187,
+        "covered": true,
+        "best_match_idx": 10,
+        "best_match_text": "As a patient, I want to consult my electronic clinical record, so that I can stay informed about my health history."
+      },
+      {
+        "expected_idx": 9,
+        "expected_text": "As a physician, I want to record the diagnosis made during the appointment to document the medical care provided.",
+        "max_similarity": 0.7031924724578857,
+        "covered": false,
+        "best_match_idx": -1,
+        "best_match_text": null
+      },
+      {
+        "expected_idx": 10,
+        "expected_text": "As administrative staff, I want to register physicians with their specialties and schedules to enable appointment assignment.",
+        "max_similarity": 0.8541029691696167,
+        "covered": true,
+        "best_match_idx": 11,
+        "best_match_text": "As an administrator, I want to register medical professionals with their personal and contact details and associate specialties, so that the hospital can manage staff information."
+      },
+      {
+        "expected_idx": 11,
+        "expected_text": "As administrative staff, I want to edit the data of a registered physician to keep the information up to date.",
+        "max_similarity": 0.8367373943328857,
+        "covered": true,
+        "best_match_idx": 1,
+        "best_match_text": "As an administrative staff member, I want to modify the personal and contact details of a registered patient, so that patient information remains up to date."
+      },
+      {
+        "expected_idx": 12,
+        "expected_text": "As administrative staff, I want to deactivate a registered physician to keep the information up to date.",
+        "max_similarity": 0.6036587953567505,
+        "covered": false,
+        "best_match_idx": -1,
+        "best_match_text": null
+      },
+      {
+        "expected_idx": 13,
+        "expected_text": "As administrative staff, I want to activate a registered physician to keep the information up to date.",
+        "max_similarity": 0.7256162762641907,
+        "covered": false,
+        "best_match_idx": -1,
+        "best_match_text": null
+      },
+      {
+        "expected_idx": 14,
+        "expected_text": "As administrative staff, I want to define roles and permissions to control access to system functionalities.",
+        "max_similarity": 0.8782137036323547,
+        "covered": true,
+        "best_match_idx": 13,
+        "best_match_text": "As an administrator, I want to manage roles and access permissions to system functionalities, so that users only access features relevant to their role."
+      },
+      {
+        "expected_idx": 15,
+        "expected_text": "As a patient, I want to have an invoice associated with a medical consultation as proof of payment.",
+        "max_similarity": 0.7148165702819824,
+        "covered": false,
+        "best_match_idx": -1,
+        "best_match_text": null
+      },
+      {
+        "expected_idx": 16,
+        "expected_text": "As a patient, I want to have an invoice associated with a medication as proof of payment.",
+        "max_similarity": 0.6855555176734924,
+        "covered": false,
+        "best_match_idx": -1,
+        "best_match_text": null
+      },
+      {
+        "expected_idx": 17,
+        "expected_text": "As a patient, I want to receive a notification when a charge is generated to access the invoice.",
+        "max_similarity": 0.8533483743667603,
+        "covered": true,
+        "best_match_idx": 15,
+        "best_match_text": "As a patient, I want to receive automatic notifications with attached digital invoices when an invoice is generated, so that I am promptly informed about charges."
+      },
+      {
+        "expected_idx": 18,
+        "expected_text": "As a patient, I want to consult my electronic health record to access my medical information.",
+        "max_similarity": 0.9126583337783813,
+        "covered": true,
+        "best_match_idx": 10,
+        "best_match_text": "As a patient, I want to consult my electronic clinical record, so that I can stay informed about my health history."
+      },
+      {
+        "expected_idx": 19,
+        "expected_text": "As a pharmacist, I want to register medications or supplies to keep the hospital inventory up to date.",
+        "max_similarity": 0.9030114412307739,
+        "covered": true,
+        "best_match_idx": 16,
+        "best_match_text": "As a pharmacist, I want to register medications and supplies with identification, stock, and expiration date, so that inventory is accurately tracked."
+      },
+      {
+        "expected_idx": 20,
+        "expected_text": "As a pharmacist, I want to edit the quantity of available medications or supplies to keep the inventory updated.",
+        "max_similarity": 0.7712513208389282,
+        "covered": true,
+        "best_match_idx": 17,
+        "best_match_text": "As a pharmacist, I want to automatically update stock when registering medication deliveries, so that inventory levels remain current."
+      },
+      {
+        "expected_idx": 21,
+        "expected_text": "As a pharmacist, I want to associate a medication with the patient who collected it so the system generates the corresponding invoice.",
+        "max_similarity": 0.669461727142334,
+        "covered": false,
+        "best_match_idx": -1,
+        "best_match_text": null
+      },
+      {
+        "expected_idx": 22,
+        "expected_text": "As a pharmacist, I want to check how many units of a medication or supply are available to make timely decisions.",
+        "max_similarity": 0.6333383321762085,
+        "covered": false,
+        "best_match_idx": -1,
+        "best_match_text": null
+      },
+      {
+        "expected_idx": 23,
+        "expected_text": "As a pharmacist, I want to know when a medication or supply is close to expiration to make timely decisions.",
+        "max_similarity": 0.6487194299697876,
+        "covered": false,
+        "best_match_idx": -1,
+        "best_match_text": null
+      },
+      {
+        "expected_idx": 24,
+        "expected_text": "As a pharmacist, I want to know when a medication or supply has a low stock level to make timely decisions.",
+        "max_similarity": 0.6697014570236206,
+        "covered": false,
+        "best_match_idx": -1,
+        "best_match_text": null
+      },
+      {
+        "expected_idx": 25,
+        "expected_text": "As an analyst, I want to view statistics of consultations by specialty to assess workload.",
+        "max_similarity": 0.6582397818565369,
+        "covered": false,
+        "best_match_idx": -1,
+        "best_match_text": null
+      },
+      {
+        "expected_idx": 26,
+        "expected_text": "As an analyst, I want to view financial reports of services to evaluate income and economic performance of the hospital.",
+        "max_similarity": 0.6741498708724976,
+        "covered": false,
+        "best_match_idx": -1,
+        "best_match_text": null
+      },
+      {
+        "expected_idx": 27,
+        "expected_text": "As an analyst, I want to view supply consumption to evaluate inventory usage in the hospital.",
+        "max_similarity": 0.6215823292732239,
+        "covered": false,
+        "best_match_idx": -1,
+        "best_match_text": null
+      }
+    ]
+  },
+  "level_3_criteria": {
+    "pair_results": [
+      {
+        "story_generated_idx": 0,
+        "story_expected_idx": 0,
+        "functional_coverage": 0.375,
+        "functional_coverage_details": [
+          {
+            "expected_ca": "The system must request full name of the patient",
+            "max_similarity": 0.6395106315612793,
+            "covered": false,
+            "best_match": null
+          },
+          {
+            "expected_ca": "The system must request date of birth of the patient",
+            "max_similarity": 0.5664487481117249,
+            "covered": false,
+            "best_match": null
+          },
+          {
+            "expected_ca": "The system must request sex of the patient",
+            "max_similarity": 0.46998131275177,
+            "covered": false,
+            "best_match": null
+          },
+          {
+            "expected_ca": "The system must request an identity document number",
+            "max_similarity": 0.7051372528076172,
+            "covered": false,
+            "best_match": null
+          },
+          {
+            "expected_ca": "The system must request contact information including email and phone number",
+            "max_similarity": 0.6045402884483337,
+            "covered": false,
+            "best_match": null
+          },
+          {
+            "expected_ca": "The identity document must be unique in the system",
+            "max_similarity": 0.797134280204773,
+            "covered": true,
+            "best_match": "Duplicate identity documents or identifiers are not allowed"
+          },
+          {
+            "expected_ca": "If the identity document already exists, an error message is displayed",
+            "max_similarity": 0.7777295112609863,
+            "covered": true,
+            "best_match": "Duplicate identity documents or identifiers are not allowed"
+          },
+          {
+            "expected_ca": "The system must generate a unique patient identifier",
+            "max_similarity": 0.8234747648239136,
+            "covered": true,
+            "best_match": "Each patient receives a unique identifier"
+          }
+        ],
+        "ambiguity_score": 1.0,
+        "ambiguity_details": [
+          {
+            "criteria": "The system allows entry of personal and medical background data",
+            "is_ambiguous": false,
+            "ambiguous_terms_found": []
+          },
+          {
+            "criteria": "Each patient receives a unique identifier",
+            "is_ambiguous": false,
+            "ambiguous_terms_found": []
+          },
+          {
+            "criteria": "Duplicate identity documents or identifiers are not allowed",
+            "is_ambiguous": false,
+            "ambiguous_terms_found": []
+          }
+        ],
+        "verifiability_score": 0.0,
+        "verifiability_details": [
+          {
+            "criteria": "The system allows entry of personal and medical background data",
+            "has_condition": false,
+            "has_observable_result": true,
+            "ambiguous_terms": [],
+            "is_verifiable": false
+          },
+          {
+            "criteria": "Each patient receives a unique identifier",
+            "has_condition": false,
+            "has_observable_result": false,
+            "ambiguous_terms": [],
+            "is_verifiable": false
+          },
+          {
+            "criteria": "Duplicate identity documents or identifiers are not allowed",
+            "has_condition": false,
+            "has_observable_result": false,
+            "ambiguous_terms": [],
+            "is_verifiable": false
+          }
+        ]
+      },
+      {
+        "story_generated_idx": 1,
+        "story_expected_idx": 1,
+        "functional_coverage": 0.4,
+        "functional_coverage_details": [
+          {
+            "expected_ca": "The system must allow editing the full name of a registered patient",
+            "max_similarity": 0.7204717397689819,
+            "covered": false,
+            "best_match": null
+          },
+          {
+            "expected_ca": "The system must allow editing the date of birth of a registered patient",
+            "max_similarity": 0.7347124218940735,
+            "covered": false,
+            "best_match": null
+          },
+          {
+            "expected_ca": "The system must allow editing the sex of a registered patient",
+            "max_similarity": 0.6669731140136719,
+            "covered": false,
+            "best_match": null
+          },
+          {
+            "expected_ca": "The system must allow editing the identity document of a registered patient",
+            "max_similarity": 0.763202428817749,
+            "covered": true,
+            "best_match": "The system allows editing of existing patient records"
+          },
+          {
+            "expected_ca": "The system must allow editing patient contact information including email and phone number",
+            "max_similarity": 0.781000018119812,
+            "covered": true,
+            "best_match": "The system allows editing of existing patient records"
+          }
+        ],
+        "ambiguity_score": 1.0,
+        "ambiguity_details": [
+          {
+            "criteria": "The system allows editing of existing patient records",
+            "is_ambiguous": false,
+            "ambiguous_terms_found": []
+          }
+        ],
+        "verifiability_score": 0.0,
+        "verifiability_details": [
+          {
+            "criteria": "The system allows editing of existing patient records",
+            "has_condition": false,
+            "has_observable_result": true,
+            "ambiguous_terms": [],
+            "is_verifiable": false
+          }
+        ]
+      },
+      {
+        "story_generated_idx": 2,
+        "story_expected_idx": 3,
+        "functional_coverage": 0.0,
+        "functional_coverage_details": [
+          {
+            "expected_ca": "The system must allow searching patients by full name",
+            "max_similarity": 0.5526796579360962,
+            "covered": false,
+            "best_match": null
+          },
+          {
+            "expected_ca": "The system must allow searching patients by identity document",
+            "max_similarity": 0.5477102994918823,
+            "covered": false,
+            "best_match": null
+          },
+          {
+            "expected_ca": "The system must allow searching patients by patient identifier",
+            "max_similarity": 0.5459415316581726,
+            "covered": false,
+            "best_match": null
+          },
+          {
+            "expected_ca": "The system must display a list of matching patient records",
+            "max_similarity": 0.3632394075393677,
+            "covered": false,
+            "best_match": null
+          }
+        ],
+        "ambiguity_score": 1.0,
+        "ambiguity_details": [
+          {
+            "criteria": "The system supports search by name, document, or identifier",
+            "is_ambiguous": false,
+            "ambiguous_terms_found": []
+          }
+        ],
+        "verifiability_score": 0.0,
+        "verifiability_details": [
+          {
+            "criteria": "The system supports search by name, document, or identifier",
+            "has_condition": false,
+            "has_observable_result": false,
+            "ambiguous_terms": [],
+            "is_verifiable": false
+          }
+        ]
+      },
+      {
+        "story_generated_idx": 6,
+        "story_expected_idx": 5,
+        "functional_coverage": 0.0,
+        "functional_coverage_details": [
+          {
+            "expected_ca": "The system must allow changing the appointment status to Canceled",
+            "max_similarity": 0.7496762275695801,
+            "covered": false,
+            "best_match": null
+          },
+          {
+            "expected_ca": "Canceled appointments must free the corresponding time slot in the physician schedule",
+            "max_similarity": 0.5891600847244263,
+            "covered": false,
+            "best_match": null
+          }
+        ],
+        "ambiguity_score": 1.0,
+        "ambiguity_details": [
+          {
+            "criteria": "The system allows editing and canceling of appointments",
+            "is_ambiguous": false,
+            "ambiguous_terms_found": []
+          },
+          {
+            "criteria": "Patients are notified of changes",
+            "is_ambiguous": false,
+            "ambiguous_terms_found": []
+          }
+        ],
+        "verifiability_score": 0.0,
+        "verifiability_details": [
+          {
+            "criteria": "The system allows editing and canceling of appointments",
+            "has_condition": false,
+            "has_observable_result": true,
+            "ambiguous_terms": [],
+            "is_verifiable": false
+          },
+          {
+            "criteria": "Patients are notified of changes",
+            "has_condition": false,
+            "has_observable_result": false,
+            "ambiguous_terms": [],
+            "is_verifiable": false
+          }
+        ]
+      },
+      {
+        "story_generated_idx": 7,
+        "story_expected_idx": 7,
+        "functional_coverage": 0.0,
+        "functional_coverage_details": [
+          {
+            "expected_ca": "The system must send an automatic notification when an appointment is modified",
+            "max_similarity": 0.5877862572669983,
+            "covered": false,
+            "best_match": null
+          },
+          {
+            "expected_ca": "The system must send an automatic notification when an appointment is canceled",
+            "max_similarity": 0.45047420263290405,
+            "covered": false,
+            "best_match": null
+          },
+          {
+            "expected_ca": "The notification must indicate whether the appointment was modified or canceled",
+            "max_similarity": 0.5197427272796631,
+            "covered": false,
+            "best_match": null
+          },
+          {
+            "expected_ca": "If modified, the notification must include the new appointment date",
+            "max_similarity": 0.5695437788963318,
+            "covered": false,
+            "best_match": null
+          }
+        ],
+        "ambiguity_score": 1.0,
+        "ambiguity_details": [
+          {
+            "criteria": "Notifications are sent promptly after changes",
+            "is_ambiguous": false,
+            "ambiguous_terms_found": []
+          }
+        ],
+        "verifiability_score": 0.0,
+        "verifiability_details": [
+          {
+            "criteria": "Notifications are sent promptly after changes",
+            "has_condition": false,
+            "has_observable_result": false,
+            "ambiguous_terms": [],
+            "is_verifiable": false
+          }
+        ]
+      },
+      {
+        "story_generated_idx": 10,
+        "story_expected_idx": 18,
+        "functional_coverage": 0.0,
+        "functional_coverage_details": [
+          {
+            "expected_ca": "The system must list all appointments associated with the patient",
+            "max_similarity": 0.4088068902492523,
+            "covered": false,
+            "best_match": null
+          },
+          {
+            "expected_ca": "The system must list all medications associated with the patient",
+            "max_similarity": 0.2735448479652405,
+            "covered": false,
+            "best_match": null
+          },
+          {
+            "expected_ca": "The system must list all invoices associated with the patient",
+            "max_similarity": 0.3313780725002289,
+            "covered": false,
+            "best_match": null
+          },
+          {
+            "expected_ca": "The system must allow sorting by date",
+            "max_similarity": 0.20566433668136597,
+            "covered": false,
+            "best_match": null
+          },
+          {
+            "expected_ca": "The system must allow sorting by physician",
+            "max_similarity": 0.27135229110717773,
+            "covered": false,
+            "best_match": null
+          },
+          {
+            "expected_ca": "The system must allow sorting by specialty",
+            "max_similarity": 0.1580733358860016,
+            "covered": false,
+            "best_match": null
+          },
+          {
+            "expected_ca": "The system must allow viewing detailed information of each item",
+            "max_similarity": 0.2511388659477234,
+            "covered": false,
+            "best_match": null
+          }
+        ],
+        "ambiguity_score": 1.0,
+        "ambiguity_details": [
+          {
+            "criteria": "Patients can view but not edit their records",
+            "is_ambiguous": false,
+            "ambiguous_terms_found": []
+          },
+          {
+            "criteria": "Access is restricted to authorized users",
+            "is_ambiguous": false,
+            "ambiguous_terms_found": []
+          }
+        ],
+        "verifiability_score": 0.0,
+        "verifiability_details": [
+          {
+            "criteria": "Patients can view but not edit their records",
+            "has_condition": false,
+            "has_observable_result": false,
+            "ambiguous_terms": [],
+            "is_verifiable": false
+          },
+          {
+            "criteria": "Access is restricted to authorized users",
+            "has_condition": false,
+            "has_observable_result": false,
+            "ambiguous_terms": [],
+            "is_verifiable": false
+          }
+        ]
+      },
+      {
+        "story_generated_idx": 11,
+        "story_expected_idx": 10,
+        "functional_coverage": 0.0,
+        "functional_coverage_details": [
+          {
+            "expected_ca": "The system must allow registering physician full name",
+            "max_similarity": 0.3864179253578186,
+            "covered": false,
+            "best_match": null
+          },
+          {
+            "expected_ca": "The system must allow registering physician identity document",
+            "max_similarity": 0.3990921378135681,
+            "covered": false,
+            "best_match": null
+          },
+          {
+            "expected_ca": "The system must allow registering physician contact details",
+            "max_similarity": 0.5201253294944763,
+            "covered": false,
+            "best_match": null
+          },
+          {
+            "expected_ca": "The system must allow associating one or more specialties to the physician",
+            "max_similarity": 0.5370550155639648,
+            "covered": false,
+            "best_match": null
+          },
+          {
+            "expected_ca": "The system must allow defining physician working hours",
+            "max_similarity": 0.37894096970558167,
+            "covered": false,
+            "best_match": null
+          },
+          {
+            "expected_ca": "The system must allow setting physician status as active or inactive",
+            "max_similarity": 0.4372594356536865,
+            "covered": false,
+            "best_match": null
+          },
+          {
+            "expected_ca": "Physician name must not be empty",
+            "max_similarity": 0.24602870643138885,
+            "covered": false,
+            "best_match": null
+          },
+          {
+            "expected_ca": "Physician identity document must not be empty",
+            "max_similarity": 0.2048407644033432,
+            "covered": false,
+            "best_match": null
+          }
+        ],
+        "ambiguity_score": 1.0,
+        "ambiguity_details": [
+          {
+            "criteria": "The system allows entry and editing of staff data and specialties",
+            "is_ambiguous": false,
+            "ambiguous_terms_found": []
+          }
+        ],
+        "verifiability_score": 0.0,
+        "verifiability_details": [
+          {
+            "criteria": "The system allows entry and editing of staff data and specialties",
+            "has_condition": false,
+            "has_observable_result": true,
+            "ambiguous_terms": [],
+            "is_verifiable": false
+          }
+        ]
+      },
+      {
+        "story_generated_idx": 13,
+        "story_expected_idx": 14,
+        "functional_coverage": 0.25,
+        "functional_coverage_details": [
+          {
+            "expected_ca": "The system must allow assigning a role to a registered user",
+            "max_similarity": 0.47733166813850403,
+            "covered": false,
+            "best_match": null
+          },
+          {
+            "expected_ca": "Allowed roles are administrative staff, physician, pharmacist, and analyst",
+            "max_similarity": 0.3443833589553833,
+            "covered": false,
+            "best_match": null
+          },
+          {
+            "expected_ca": "The system must validate permissions before executing an action",
+            "max_similarity": 0.8846729397773743,
+            "covered": true,
+            "best_match": "Permissions are validated before actions are executed"
+          },
+          {
+            "expected_ca": "Each user must have only one active role",
+            "max_similarity": 0.4930473268032074,
+            "covered": false,
+            "best_match": null
+          }
+        ],
+        "ambiguity_score": 1.0,
+        "ambiguity_details": [
+          {
+            "criteria": "The system enforces role-based access control",
+            "is_ambiguous": false,
+            "ambiguous_terms_found": []
+          },
+          {
+            "criteria": "Permissions are validated before actions are executed",
+            "is_ambiguous": false,
+            "ambiguous_terms_found": []
+          }
+        ],
+        "verifiability_score": 0.0,
+        "verifiability_details": [
+          {
+            "criteria": "The system enforces role-based access control",
+            "has_condition": false,
+            "has_observable_result": false,
+            "ambiguous_terms": [],
+            "is_verifiable": false
+          },
+          {
+            "criteria": "Permissions are validated before actions are executed",
+            "has_condition": false,
+            "has_observable_result": false,
+            "ambiguous_terms": [],
+            "is_verifiable": false
+          }
+        ]
+      },
+      {
+        "story_generated_idx": 15,
+        "story_expected_idx": 17,
+        "functional_coverage": 0.0,
+        "functional_coverage_details": [
+          {
+            "expected_ca": "The system must send an email notification to the patient",
+            "max_similarity": 0.4419931173324585,
+            "covered": false,
+            "best_match": null
+          },
+          {
+            "expected_ca": "The email subject must clearly identify it as a hospital invoice",
+            "max_similarity": 0.5643641948699951,
+            "covered": false,
+            "best_match": null
+          },
+          {
+            "expected_ca": "The email body must include invoice identifier",
+            "max_similarity": 0.610430121421814,
+            "covered": false,
+            "best_match": null
+          },
+          {
+            "expected_ca": "The email body must include patient name",
+            "max_similarity": 0.3347764313220978,
+            "covered": false,
+            "best_match": null
+          },
+          {
+            "expected_ca": "The email body must include invoice date",
+            "max_similarity": 0.5478661060333252,
+            "covered": false,
+            "best_match": null
+          },
+          {
+            "expected_ca": "The email body must include service type",
+            "max_similarity": 0.3560349643230438,
+            "covered": false,
+            "best_match": null
+          },
+          {
+            "expected_ca": "The email must include the invoice as a PDF attachment",
+            "max_similarity": 0.660674512386322,
+            "covered": false,
+            "best_match": null
+          },
+          {
+            "expected_ca": "The email must be sent within 10 minutes after invoice generation",
+            "max_similarity": 0.5497090816497803,
+            "covered": false,
+            "best_match": null
+          }
+        ],
+        "ambiguity_score": 1.0,
+        "ambiguity_details": [
+          {
+            "criteria": "Notifications are sent with invoice attachments",
+            "is_ambiguous": false,
+            "ambiguous_terms_found": []
+          }
+        ],
+        "verifiability_score": 0.0,
+        "verifiability_details": [
+          {
+            "criteria": "Notifications are sent with invoice attachments",
+            "has_condition": false,
+            "has_observable_result": false,
+            "ambiguous_terms": [],
+            "is_verifiable": false
+          }
+        ]
+      },
+      {
+        "story_generated_idx": 16,
+        "story_expected_idx": 19,
+        "functional_coverage": 0.1111111111111111,
+        "functional_coverage_details": [
+          {
+            "expected_ca": "The system must allow registering medication or supply name",
+            "max_similarity": 0.7520217299461365,
+            "covered": true,
+            "best_match": "The system allows entry of medication and supply data"
+          },
+          {
+            "expected_ca": "The system must allow registering manufacturer",
+            "max_similarity": 0.45066243410110474,
+            "covered": false,
+            "best_match": null
+          },
+          {
+            "expected_ca": "The system must allow registering available units",
+            "max_similarity": 0.4369383156299591,
+            "covered": false,
+            "best_match": null
+          },
+          {
+            "expected_ca": "The system must allow registering stock number",
+            "max_similarity": 0.4548455476760864,
+            "covered": false,
+            "best_match": null
+          },
+          {
+            "expected_ca": "The system must allow registering expiration date",
+            "max_similarity": 0.3435247242450714,
+            "covered": false,
+            "best_match": null
+          },
+          {
+            "expected_ca": "Expiration date must be later than the current date",
+            "max_similarity": 0.15573810040950775,
+            "covered": false,
+            "best_match": null
+          },
+          {
+            "expected_ca": "Stock number must be unique",
+            "max_similarity": 0.27762699127197266,
+            "covered": false,
+            "best_match": null
+          },
+          {
+            "expected_ca": "Medication name must not be empty",
+            "max_similarity": 0.4800052046775818,
+            "covered": false,
+            "best_match": null
+          },
+          {
+            "expected_ca": "Available units must not be negative",
+            "max_similarity": 0.1476089060306549,
+            "covered": false,
+            "best_match": null
+          }
+        ],
+        "ambiguity_score": 1.0,
+        "ambiguity_details": [
+          {
+            "criteria": "The system allows entry of medication and supply data",
+            "is_ambiguous": false,
+            "ambiguous_terms_found": []
+          }
+        ],
+        "verifiability_score": 0.0,
+        "verifiability_details": [
+          {
+            "criteria": "The system allows entry of medication and supply data",
+            "has_condition": false,
+            "has_observable_result": true,
+            "ambiguous_terms": [],
+            "is_verifiable": false
+          }
+        ]
+      }
+    ],
+    "aggregate": {
+      "num_aligned_pairs": 10,
+      "avg_functional_coverage": 0.11361111111111111,
+      "avg_ambiguity_score": 1.0,
+      "avg_verifiability_score": 0.0
+    },
+    "global_metrics": {
+      "total_criteria_evaluated": 15,
+      "verifiability": {
+        "score": 0.0,
+        "details": [
+          {
+            "criteria": "The system allows entry of personal and medical background data",
+            "has_condition": false,
+            "has_observable_result": true,
+            "ambiguous_terms": [],
+            "is_verifiable": false
+          },
+          {
+            "criteria": "Each patient receives a unique identifier",
+            "has_condition": false,
+            "has_observable_result": false,
+            "ambiguous_terms": [],
+            "is_verifiable": false
+          },
+          {
+            "criteria": "Duplicate identity documents or identifiers are not allowed",
+            "has_condition": false,
+            "has_observable_result": false,
+            "ambiguous_terms": [],
+            "is_verifiable": false
+          },
+          {
+            "criteria": "The system allows editing of existing patient records",
+            "has_condition": false,
+            "has_observable_result": true,
+            "ambiguous_terms": [],
+            "is_verifiable": false
+          },
+          {
+            "criteria": "The system supports search by name, document, or identifier",
+            "has_condition": false,
+            "has_observable_result": false,
+            "ambiguous_terms": [],
+            "is_verifiable": false
+          },
+          {
+            "criteria": "The system allows editing and canceling of appointments",
+            "has_condition": false,
+            "has_observable_result": true,
+            "ambiguous_terms": [],
+            "is_verifiable": false
+          },
+          {
+            "criteria": "Patients are notified of changes",
+            "has_condition": false,
+            "has_observable_result": false,
+            "ambiguous_terms": [],
+            "is_verifiable": false
+          },
+          {
+            "criteria": "Notifications are sent promptly after changes",
+            "has_condition": false,
+            "has_observable_result": false,
+            "ambiguous_terms": [],
+            "is_verifiable": false
+          },
+          {
+            "criteria": "Patients can view but not edit their records",
+            "has_condition": false,
+            "has_observable_result": false,
+            "ambiguous_terms": [],
+            "is_verifiable": false
+          },
+          {
+            "criteria": "Access is restricted to authorized users",
+            "has_condition": false,
+            "has_observable_result": false,
+            "ambiguous_terms": [],
+            "is_verifiable": false
+          },
+          {
+            "criteria": "The system allows entry and editing of staff data and specialties",
+            "has_condition": false,
+            "has_observable_result": true,
+            "ambiguous_terms": [],
+            "is_verifiable": false
+          },
+          {
+            "criteria": "The system enforces role-based access control",
+            "has_condition": false,
+            "has_observable_result": false,
+            "ambiguous_terms": [],
+            "is_verifiable": false
+          },
+          {
+            "criteria": "Permissions are validated before actions are executed",
+            "has_condition": false,
+            "has_observable_result": false,
+            "ambiguous_terms": [],
+            "is_verifiable": false
+          },
+          {
+            "criteria": "Notifications are sent with invoice attachments",
+            "has_condition": false,
+            "has_observable_result": false,
+            "ambiguous_terms": [],
+            "is_verifiable": false
+          },
+          {
+            "criteria": "The system allows entry of medication and supply data",
+            "has_condition": false,
+            "has_observable_result": true,
+            "ambiguous_terms": [],
+            "is_verifiable": false
+          }
+        ]
+      },
+      "ambiguity": {
+        "score": 1.0,
+        "details": [
+          {
+            "criteria": "The system allows entry of personal and medical background data",
+            "is_ambiguous": false,
+            "ambiguous_terms_found": []
+          },
+          {
+            "criteria": "Each patient receives a unique identifier",
+            "is_ambiguous": false,
+            "ambiguous_terms_found": []
+          },
+          {
+            "criteria": "Duplicate identity documents or identifiers are not allowed",
+            "is_ambiguous": false,
+            "ambiguous_terms_found": []
+          },
+          {
+            "criteria": "The system allows editing of existing patient records",
+            "is_ambiguous": false,
+            "ambiguous_terms_found": []
+          },
+          {
+            "criteria": "The system supports search by name, document, or identifier",
+            "is_ambiguous": false,
+            "ambiguous_terms_found": []
+          },
+          {
+            "criteria": "The system allows editing and canceling of appointments",
+            "is_ambiguous": false,
+            "ambiguous_terms_found": []
+          },
+          {
+            "criteria": "Patients are notified of changes",
+            "is_ambiguous": false,
+            "ambiguous_terms_found": []
+          },
+          {
+            "criteria": "Notifications are sent promptly after changes",
+            "is_ambiguous": false,
+            "ambiguous_terms_found": []
+          },
+          {
+            "criteria": "Patients can view but not edit their records",
+            "is_ambiguous": false,
+            "ambiguous_terms_found": []
+          },
+          {
+            "criteria": "Access is restricted to authorized users",
+            "is_ambiguous": false,
+            "ambiguous_terms_found": []
+          },
+          {
+            "criteria": "The system allows entry and editing of staff data and specialties",
+            "is_ambiguous": false,
+            "ambiguous_terms_found": []
+          },
+          {
+            "criteria": "The system enforces role-based access control",
+            "is_ambiguous": false,
+            "ambiguous_terms_found": []
+          },
+          {
+            "criteria": "Permissions are validated before actions are executed",
+            "is_ambiguous": false,
+            "ambiguous_terms_found": []
+          },
+          {
+            "criteria": "Notifications are sent with invoice attachments",
+            "is_ambiguous": false,
+            "ambiguous_terms_found": []
+          },
+          {
+            "criteria": "The system allows entry of medication and supply data",
+            "is_ambiguous": false,
+            "ambiguous_terms_found": []
+          }
+        ]
+      }
+    },
+    "config": {
+      "coverage_threshold": 0.75
+    }
+  },
+  "level_4_concepts": {
+    "aspect_coverage_score": 0.0,
+    "aspects_covered": 0,
+    "aspects_total": 7,
+    "threshold": 0.7,
+    "details": [
+      {
+        "concept": "pacientes",
+        "covered": false,
+        "max_similarity": 0.4684253931045532,
+        "best_description": "registrar pacientes con datos personales",
+        "best_story_idx": 0,
+        "best_story": "As an administrative staff member, I want to register patients with personal data and medical background, so that the hospital can maintain accurate and complete patient records."
+      },
+      {
+        "concept": "turnos",
+        "covered": false,
+        "max_similarity": 0.21206459403038025,
+        "best_description": "crear turnos medicos",
+        "best_story_idx": 5,
+        "best_story": "As a patient, I want to consult my electronic clinical record, so that I can stay informed about my health history."
+      },
+      {
+        "concept": "historia_clinica",
+        "covered": false,
+        "max_similarity": 0.5070092678070068,
+        "best_description": "acceder a historia clinica electronica",
+        "best_story_idx": 5,
+        "best_story": "As a patient, I want to consult my electronic clinical record, so that I can stay informed about my health history."
+      },
+      {
+        "concept": "personal",
+        "covered": false,
+        "max_similarity": 0.6302428245544434,
+        "best_description": "registrar medicos",
+        "best_story_idx": 6,
+        "best_story": "As an administrator, I want to register medical professionals with their personal and contact details and associate specialties, so that the hospital can manage staff information."
+      },
+      {
+        "concept": "facturacion",
+        "covered": false,
+        "max_similarity": 0.16018536686897278,
+        "best_description": "generar facturas electronicas",
+        "best_story_idx": 8,
+        "best_story": "As a patient, I want to receive automatic notifications with attached digital invoices when an invoice is generated, so that I am promptly informed about charges."
+      },
+      {
+        "concept": "inventario",
+        "covered": false,
+        "max_similarity": 0.5186806917190552,
+        "best_description": "registrar medicamentos e insumos",
+        "best_story_idx": 6,
+        "best_story": "As an administrator, I want to register medical professionals with their personal and contact details and associate specialties, so that the hospital can manage staff information."
+      },
+      {
+        "concept": "reportes",
+        "covered": false,
+        "max_similarity": 0.23344936966896057,
+        "best_description": "generar estadisticas de consultas",
+        "best_story_idx": 6,
+        "best_story": "As an administrator, I want to register medical professionals with their personal and contact details and associate specialties, so that the hospital can manage staff information."
+      }
+    ]
+  },
+  "level_5_invest": {
+    "story_results": [
+      {
+        "story_index": 0,
+        "story_text": "As an administrative staff member, I want to register patients with personal data and medical background, so that the hospital can maintain accurate and complete patient records.",
+        "classification": "Valid User Story",
+        "scores": {
+          "I": 5,
+          "N": 4,
+          "V": 5,
+          "E": 4,
+          "S": 4,
+          "T": 4
+        },
+        "justifications": {
+          "I": "The story is self-contained and does not depend on other stories.",
+          "N": "The level of detail allows for negotiation and prioritization.",
+          "V": "Maintaining accurate patient records is valuable for hospital operations.",
+          "E": "The task is technically feasible and can be estimated.",
+          "S": "The scope is manageable within a sprint.",
+          "T": "Acceptance criteria can be defined for testing the registration process."
+        },
+        "invest_mean": 4.333
+      },
+      {
+        "story_index": 1,
+        "story_text": "As an administrative staff member, I want to modify the personal and contact details of a registered patient, so that patient information remains up to date.",
+        "classification": "Valid User Story",
+        "scores": {
+          "I": 5,
+          "N": 4,
+          "V": 5,
+          "E": 4,
+          "S": 4,
+          "T": 4
+        },
+        "justifications": {
+          "I": "The story is independent and does not rely on other stories.",
+          "N": "Details are sufficient for negotiation and prioritization.",
+          "V": "Keeping patient information up to date is valuable for accuracy.",
+          "E": "The task is estimable in terms of effort and time.",
+          "S": "The scope is small enough for a sprint.",
+          "T": "Testing can be done by verifying the update functionality."
+        },
+        "invest_mean": 4.333
+      },
+      {
+        "story_index": 2,
+        "story_text": "As an administrative staff member, I want to search for patients by name, identity document, or identifier number, so that I can quickly locate patient records.",
+        "classification": "Valid User Story",
+        "scores": {
+          "I": 5,
+          "N": 4,
+          "V": 5,
+          "E": 4,
+          "S": 4,
+          "T": 4
+        },
+        "justifications": {
+          "I": "The story is self-contained and independent.",
+          "N": "The story allows for negotiation and prioritization.",
+          "V": "Quickly locating patient records is valuable for efficiency.",
+          "E": "The task is technically feasible and estimable.",
+          "S": "The scope is appropriate for a sprint.",
+          "T": "Testing can be done by verifying search functionality."
+        },
+        "invest_mean": 4.333
+      },
+      {
+        "story_index": 3,
+        "story_text": "As an authorized user, I want to visualize a patient's complete information, so that I can review all relevant details for care or administration.",
+        "classification": "Valid User Story",
+        "scores": {
+          "I": 5,
+          "N": 4,
+          "V": 5,
+          "E": 4,
+          "S": 4,
+          "T": 4
+        },
+        "justifications": {
+          "I": "The story is independent and does not depend on others.",
+          "N": "The level of detail allows for negotiation.",
+          "V": "Reviewing patient details is valuable for care and administration.",
+          "E": "The task is estimable in terms of effort.",
+          "S": "The scope is manageable within a sprint.",
+          "T": "Testing can be done by verifying the visualization of information."
+        },
+        "invest_mean": 4.333
+      },
+      {
+        "story_index": 4,
+        "story_text": "As an administrative staff member, I want to create medical appointments by associating the patient, specialty, and professional, so that appointments are scheduled accurately.",
+        "classification": "Valid User Story",
+        "scores": {
+          "I": 5,
+          "N": 4,
+          "V": 5,
+          "E": 4,
+          "S": 4,
+          "T": 4
+        },
+        "justifications": {
+          "I": "The story is self-contained and independent.",
+          "N": "The story allows for negotiation and prioritization.",
+          "V": "Accurate scheduling of appointments is valuable for hospital operations.",
+          "E": "The task is technically feasible and estimable.",
+          "S": "The scope is appropriate for a sprint.",
+          "T": "Testing can be done by verifying the appointment creation process."
+        },
+        "invest_mean": 4.333
+      },
+      {
+        "story_index": 5,
+        "story_text": "As an administrative staff member, I want to visualize the availability of registered doctors, so that I can schedule appointments efficiently.",
+        "classification": "Valid User Story",
+        "scores": {
+          "I": 5,
+          "N": 4,
+          "V": 5,
+          "E": 4,
+          "S": 4,
+          "T": 3
+        },
+        "justifications": {
+          "I": "The story is self-contained and does not depend on other stories.",
+          "N": "The level of detail allows for some negotiation and prioritization.",
+          "V": "The story provides clear value by improving appointment scheduling efficiency.",
+          "E": "The task is technically feasible and can be estimated.",
+          "S": "The scope is limited enough to be completed within a sprint.",
+          "T": "The story lacks specific acceptance criteria for testing."
+        },
+        "invest_mean": 4.167
+      },
+      {
+        "story_index": 6,
+        "story_text": "As an administrative staff member, I want to modify or cancel existing appointments, so that changes can be managed as needed.",
+        "classification": "Valid User Story",
+        "scores": {
+          "I": 5,
+          "N": 4,
+          "V": 5,
+          "E": 4,
+          "S": 4,
+          "T": 3
+        },
+        "justifications": {
+          "I": "The story is independent and understandable on its own.",
+          "N": "There is room for negotiation regarding the implementation details.",
+          "V": "It provides value by allowing flexibility in appointment management.",
+          "E": "The task is feasible and can be estimated.",
+          "S": "The scope is manageable within a sprint.",
+          "T": "The story does not specify acceptance criteria for testing."
+        },
+        "invest_mean": 4.167
+      },
+      {
+        "story_index": 7,
+        "story_text": "As a patient, I want to receive notifications when my appointment is modified or canceled, so that I am always informed about my schedule.",
+        "classification": "Valid User Story",
+        "scores": {
+          "I": 5,
+          "N": 4,
+          "V": 5,
+          "E": 4,
+          "S": 4,
+          "T": 3
+        },
+        "justifications": {
+          "I": "The story is self-contained and does not rely on other stories.",
+          "N": "The details allow for negotiation and prioritization.",
+          "V": "It provides value by keeping patients informed about their appointments.",
+          "E": "The task is technically feasible and can be estimated.",
+          "S": "The scope is small enough to be completed within a sprint.",
+          "T": "The story lacks specific acceptance criteria for testing."
+        },
+        "invest_mean": 4.167
+      },
+      {
+        "story_index": 8,
+        "story_text": "As an administrative staff member, I want to manage the status of appointments throughout their lifecycle, so that the hospital can track appointment outcomes.",
+        "classification": "Valid User Story",
+        "scores": {
+          "I": 5,
+          "N": 4,
+          "V": 5,
+          "E": 4,
+          "S": 4,
+          "T": 3
+        },
+        "justifications": {
+          "I": "The story is independent and understandable on its own.",
+          "N": "There is room for negotiation regarding the implementation details.",
+          "V": "It provides value by enabling tracking of appointment outcomes.",
+          "E": "The task is feasible and can be estimated.",
+          "S": "The scope is manageable within a sprint.",
+          "T": "The story does not specify acceptance criteria for testing."
+        },
+        "invest_mean": 4.167
+      },
+      {
+        "story_index": 9,
+        "story_text": "As a doctor, I want to register diagnoses, treatments, and patient’s clinical progress in the electronic clinical record, so that patient care is well documented.",
+        "classification": "Valid User Story",
+        "scores": {
+          "I": 5,
+          "N": 4,
+          "V": 5,
+          "E": 4,
+          "S": 4,
+          "T": 3
+        },
+        "justifications": {
+          "I": "The story is self-contained and does not depend on other stories.",
+          "N": "The level of detail allows for negotiation and prioritization.",
+          "V": "It provides value by ensuring comprehensive patient care documentation.",
+          "E": "The task is technically feasible and can be estimated.",
+          "S": "The scope is limited enough to be completed within a sprint.",
+          "T": "The story lacks specific acceptance criteria for testing."
+        },
+        "invest_mean": 4.167
+      },
+      {
+        "story_index": 10,
+        "story_text": "As a patient, I want to consult my electronic clinical record, so that I can stay informed about my health history.",
+        "classification": "Valid User Story",
+        "scores": {
+          "I": 5,
+          "N": 4,
+          "V": 5,
+          "E": 4,
+          "S": 4,
+          "T": 4
+        },
+        "justifications": {
+          "I": "The story is self-contained and does not depend on other stories.",
+          "N": "The level of detail allows for negotiation and prioritization.",
+          "V": "Provides clear value by allowing patients to access their health information.",
+          "E": "Technically feasible and can be estimated in terms of effort.",
+          "S": "Scope is limited enough to be completed within a sprint.",
+          "T": "Acceptance criteria can be defined to validate access to records."
+        },
+        "invest_mean": 4.333
+      },
+      {
+        "story_index": 11,
+        "story_text": "As an administrator, I want to register medical professionals with their personal and contact details and associate specialties, so that the hospital can manage staff information.",
+        "classification": "Valid User Story",
+        "scores": {
+          "I": 5,
+          "N": 4,
+          "V": 5,
+          "E": 4,
+          "S": 4,
+          "T": 4
+        },
+        "justifications": {
+          "I": "The story is independent and does not rely on other stories.",
+          "N": "Details are sufficient for negotiation and prioritization.",
+          "V": "Valuable for managing staff information effectively.",
+          "E": "Feasible to implement and estimate in terms of effort.",
+          "S": "Scope is manageable within a sprint.",
+          "T": "Test cases can be created to verify registration and association."
+        },
+        "invest_mean": 4.333
+      },
+      {
+        "story_index": 12,
+        "story_text": "As an administrator, I want to define and modify attention hours and activate or deactivate professionals for scheduling, so that doctor availability is accurately reflected.",
+        "classification": "Valid User Story",
+        "scores": {
+          "I": 5,
+          "N": 4,
+          "V": 5,
+          "E": 4,
+          "S": 4,
+          "T": 4
+        },
+        "justifications": {
+          "I": "The story is self-contained and independent.",
+          "N": "Details allow for negotiation and prioritization.",
+          "V": "Ensures accurate reflection of doctor availability, providing value.",
+          "E": "Technically feasible and estimable.",
+          "S": "Scope is appropriate for a sprint.",
+          "T": "Acceptance criteria can be defined for testing availability changes."
+        },
+        "invest_mean": 4.333
+      },
+      {
+        "story_index": 13,
+        "story_text": "As an administrator, I want to manage roles and access permissions to system functionalities, so that users only access features relevant to their role.",
+        "classification": "Valid User Story",
+        "scores": {
+          "I": 5,
+          "N": 4,
+          "V": 5,
+          "E": 4,
+          "S": 4,
+          "T": 4
+        },
+        "justifications": {
+          "I": "The story is independent and does not depend on other stories.",
+          "N": "Level of detail allows for negotiation and prioritization.",
+          "V": "Provides value by ensuring secure access to system functionalities.",
+          "E": "Feasible to implement and estimate.",
+          "S": "Scope is limited enough to be completed within a sprint.",
+          "T": "Test cases can be defined to verify role and permission management."
+        },
+        "invest_mean": 4.333
+      },
+      {
+        "story_index": 14,
+        "story_text": "As an administrative staff member, I want to generate electronic invoices for medical consultations and medication delivery, so that billing is accurate and efficient.",
+        "classification": "Valid User Story",
+        "scores": {
+          "I": 5,
+          "N": 4,
+          "V": 5,
+          "E": 4,
+          "S": 4,
+          "T": 4
+        },
+        "justifications": {
+          "I": "The story is self-contained and independent.",
+          "N": "Details are sufficient for negotiation and prioritization.",
+          "V": "Valuable for ensuring accurate and efficient billing.",
+          "E": "Technically feasible and can be estimated.",
+          "S": "Scope is appropriate for a sprint.",
+          "T": "Acceptance criteria can be defined to test invoice generation."
+        },
+        "invest_mean": 4.333
+      },
+      {
+        "story_index": 15,
+        "story_text": "As a patient, I want to receive automatic notifications with attached digital invoices when an invoice is generated, so that I am promptly informed about charges.",
+        "classification": "Valid User Story",
+        "scores": {
+          "I": 5,
+          "N": 4,
+          "V": 5,
+          "E": 4,
+          "S": 4,
+          "T": 4
+        },
+        "justifications": {
+          "I": "The story is self-contained and does not depend on other stories.",
+          "N": "The level of detail allows for negotiation and prioritization.",
+          "V": "Provides clear value by ensuring patients are informed about charges.",
+          "E": "Technically feasible and can be estimated in terms of effort.",
+          "S": "Scope is limited enough to be completed within a sprint.",
+          "T": "Includes acceptance criteria related to notification and invoice attachment."
+        },
+        "invest_mean": 4.333
+      },
+      {
+        "story_index": 16,
+        "story_text": "As a pharmacist, I want to register medications and supplies with identification, stock, and expiration date, so that inventory is accurately tracked.",
+        "classification": "Valid User Story",
+        "scores": {
+          "I": 5,
+          "N": 4,
+          "V": 5,
+          "E": 4,
+          "S": 4,
+          "T": 4
+        },
+        "justifications": {
+          "I": "The story is independent and does not rely on other stories.",
+          "N": "Details are sufficient for negotiation and prioritization.",
+          "V": "Valuable for accurate inventory tracking.",
+          "E": "Feasible and estimable in terms of time and effort.",
+          "S": "Scope is manageable within a sprint.",
+          "T": "Testable through inventory registration and tracking."
+        },
+        "invest_mean": 4.333
+      },
+      {
+        "story_index": 17,
+        "story_text": "As a pharmacist, I want to automatically update stock when registering medication deliveries, so that inventory levels remain current.",
+        "classification": "Valid User Story",
+        "scores": {
+          "I": 5,
+          "N": 4,
+          "V": 5,
+          "E": 4,
+          "S": 4,
+          "T": 4
+        },
+        "justifications": {
+          "I": "The story is self-contained and independent.",
+          "N": "Details allow for negotiation and prioritization.",
+          "V": "Ensures inventory levels are current, providing clear value.",
+          "E": "Technically feasible and estimable.",
+          "S": "Scope is appropriate for a sprint.",
+          "T": "Testable through stock update verification."
+        },
+        "invest_mean": 4.333
+      },
+      {
+        "story_index": 18,
+        "story_text": "As a pharmacist, I want to be notified when stock is low or items are about to expire, so that I can take timely action.",
+        "classification": "Valid User Story",
+        "scores": {
+          "I": 5,
+          "N": 4,
+          "V": 5,
+          "E": 4,
+          "S": 4,
+          "T": 4
+        },
+        "justifications": {
+          "I": "The story is independent and does not depend on others.",
+          "N": "Level of detail allows for negotiation.",
+          "V": "Provides value by enabling timely action on stock issues.",
+          "E": "Feasible and can be estimated.",
+          "S": "Scope is small enough for a sprint.",
+          "T": "Testable through notification system checks."
+        },
+        "invest_mean": 4.333
+      },
+      {
+        "story_index": 19,
+        "story_text": "As a pharmacist, I want to consult inventory sorted by available quantity or expiration date, so that I can manage stock efficiently.",
+        "classification": "Valid User Story",
+        "scores": {
+          "I": 5,
+          "N": 4,
+          "V": 5,
+          "E": 4,
+          "S": 4,
+          "T": 4
+        },
+        "justifications": {
+          "I": "The story is self-contained and independent.",
+          "N": "Details allow for negotiation and prioritization.",
+          "V": "Valuable for efficient stock management.",
+          "E": "Technically feasible and estimable.",
+          "S": "Scope is appropriate for a sprint.",
+          "T": "Testable through inventory consultation functionality."
+        },
+        "invest_mean": 4.333
+      },
+      {
+        "story_index": 20,
+        "story_text": "As an analyst, I want to generate reports on consultations by specialty, appointment status, financial income, and medication and supplies consumption, with date range filters, so that I can analyze hospital performance.",
+        "classification": "Valid User Story",
+        "scores": {
+          "I": 4,
+          "N": 4,
+          "V": 5,
+          "E": 4,
+          "S": 3,
+          "T": 3
+        },
+        "justifications": {
+          "I": "The story is mostly independent but may rely on existing data structures.",
+          "N": "The level of detail allows for negotiation on report specifics.",
+          "V": "The story provides clear value by enabling performance analysis.",
+          "E": "The story is estimable with known reporting tools and data.",
+          "S": "The scope is broad but can be broken down into smaller tasks.",
+          "T": "Acceptance criteria are implied but not explicitly stated."
+        },
+        "invest_mean": 3.833
+      },
+      {
+        "story_index": 21,
+        "story_text": "As a system administrator, I want to ensure date validations prevent invalid ranges, so that data integrity is maintained.",
+        "classification": "Valid User Story",
+        "scores": {
+          "I": 5,
+          "N": 4,
+          "V": 5,
+          "E": 4,
+          "S": 4,
+          "T": 3
+        },
+        "justifications": {
+          "I": "The story is self-contained and does not depend on other stories.",
+          "N": "The requirement is clear but allows for negotiation on validation specifics.",
+          "V": "Maintaining data integrity is a valuable goal.",
+          "E": "The task is technically feasible and can be estimated.",
+          "S": "The scope is manageable within a sprint.",
+          "T": "Specific acceptance criteria for validation are not detailed."
+        },
+        "invest_mean": 4.167
+      },
+      {
+        "story_index": 22,
+        "story_text": "As a system administrator, I want to ensure notifications are sent within a reasonable time after triggering events, so that users are promptly informed.",
+        "classification": "Valid User Story",
+        "scores": {
+          "I": 5,
+          "N": 4,
+          "V": 5,
+          "E": 4,
+          "S": 4,
+          "T": 3
+        },
+        "justifications": {
+          "I": "The story is independent and does not rely on other stories.",
+          "N": "The story allows for negotiation on what constitutes 'reasonable time'.",
+          "V": "Timely notifications are valuable for user experience.",
+          "E": "The task is estimable with known notification systems.",
+          "S": "The scope is appropriate for a sprint.",
+          "T": "Acceptance criteria for timing are not explicitly defined."
+        },
+        "invest_mean": 4.167
+      }
+    ],
+    "aggregate": {
+      "overall_mean": 4.261,
+      "scores_per_criterion": {
+        "I": {
+          "mean": 4.957,
+          "std": 0.209,
+          "min": 4,
+          "max": 5,
+          "distribution": {
+            "1": 0,
+            "2": 0,
+            "3": 0,
+            "4": 1,
+            "5": 22
+          }
+        },
+        "N": {
+          "mean": 4,
+          "std": 0.0,
+          "min": 4,
+          "max": 4,
+          "distribution": {
+            "1": 0,
+            "2": 0,
+            "3": 0,
+            "4": 23,
+            "5": 0
+          }
+        },
+        "V": {
+          "mean": 5,
+          "std": 0.0,
+          "min": 5,
+          "max": 5,
+          "distribution": {
+            "1": 0,
+            "2": 0,
+            "3": 0,
+            "4": 0,
+            "5": 23
+          }
+        },
+        "E": {
+          "mean": 4,
+          "std": 0.0,
+          "min": 4,
+          "max": 4,
+          "distribution": {
+            "1": 0,
+            "2": 0,
+            "3": 0,
+            "4": 23,
+            "5": 0
+          }
+        },
+        "S": {
+          "mean": 3.957,
+          "std": 0.209,
+          "min": 3,
+          "max": 4,
+          "distribution": {
+            "1": 0,
+            "2": 0,
+            "3": 1,
+            "4": 22,
+            "5": 0
+          }
+        },
+        "T": {
+          "mean": 3.652,
+          "std": 0.487,
+          "min": 3,
+          "max": 4,
+          "distribution": {
+            "1": 0,
+            "2": 0,
+            "3": 8,
+            "4": 15,
+            "5": 0
+          }
+        }
+      },
+      "valid_stories": 23,
+      "error_stories": 0
+    },
+    "language_detected": "en",
+    "model_used": "gpt-4o",
+    "total_stories": 23
+  },
+  "summary": {
+    "input_stats": {
+      "stories_generated": 23,
+      "stories_expected": 28,
+      "stories_aligned": 10,
+      "alignment_rate": 0.43478260869565216
+    },
+    "level_1_alignment": {
+      "sbert_mean": 0.7521451400673907,
+      "aligned_count": 10,
+      "strong_count": 2,
+      "conservative_count": 8,
+      "weak_count": 13
+    },
+    "level_2_coverage": {
+      "story_coverage": 0.5714285714285714,
+      "stories_covered": 16,
+      "stories_total": 28
+    },
+    "level_3_criteria": {
+      "pairs_evaluated": 10,
+      "avg_functional_coverage": 0.11361111111111111,
+      "avg_verifiability": 0.0,
+      "avg_ambiguity_score": 1.0,
+      "global_verifiability": 0.0,
+      "global_no_ambiguity": 1.0,
+      "global_ambiguity": 0.0
+    },
+    "level_4_concepts": {
+      "concept_coverage": 0.0,
+      "concepts_covered": 0,
+      "concepts_total": 7
+    },
+    "level_5_invest": {
+      "overall_mean": 4.261,
+      "valid_stories": 23,
+      "error_stories": 0,
+      "scores_per_criterion": {
+        "I": 4.957,
+        "N": 4,
+        "V": 5,
+        "E": 4,
+        "S": 3.957,
+        "T": 3.652
+      },
+      "model_used": "gpt-4o",
+      "language_detected": "en"
+    }
+  },
+  "caso": "caso_A_alineadas",
+  "num_generadas": 23,
+  "num_esperadas": 28
+}
