@@ -1,0 +1,12 @@
+Story #7: "As an administrative staff member, I want to modify or cancel existing appointments, so that changes can be managed as needed."
+   Defect type: atomic.conjunctions
+   Message: As an administrative staff member, I want to modify [* or *] cancel existing appointments, so that changes can be managed as needed.
+Story #8: "As a patient, I want to receive notifications when my appointment is modified or canceled, so that I am always informed about my schedule."
+   Defect type: atomic.conjunctions
+   Message: As a patient, I want to receive notifications when my appointment is modified [* or *] canceled, so that I am always informed about my schedule.
+Story #13: "As an administrator, I want to define and modify attention hours and activate or deactivate professionals for scheduling, so that doctor availability is accurately reflected."
+   Defect type: atomic.conjunctions
+   Message: As an administrator, I want to define [* and *] modify attention hours and activate [* or *] deactivate professionals for scheduling, so that doctor availability is accurately reflected.
+Story #19: "As a pharmacist, I want to be notified when stock is low or items are about to expire, so that I can take timely action."
+   Defect type: atomic.conjunctions
+   Message: As a pharmacist, I want to be notified when stock is low [* or *] items are about to expire, so that I can take timely action.
