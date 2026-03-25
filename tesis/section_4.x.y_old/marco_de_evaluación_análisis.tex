@@ -1,0 +1,296 @@
+\section{Marco de evaluación}
+\label{sec:marco-evaluacion-paper}
+
+El objetivo de esta sección es analizar si las métricas seleccionadas para la evaluación de los distintos casos de uso permiten medir la calidad de las historias de usuario generadas por las herramientas analizadas.
+
+\subsection{Introducción}
+La adopción de aplicaciones basadas en Inteligencia Artificial Generativa (GenAI) en la industria del software se ha acelerado rápidamente para tareas como generar documentación, analizar datos, crear reportes, implementar chatbots de soporte y generar o revisar código. Sin embargo, evaluar su calidad resulta especialmente complicado: a diferencia de los sistemas tradicionales deterministas, los modelos generativos producen salidas probabilísticas, no deterministas y de ``caja negra'', lo que hace insuficientes o difíciles de aplicar las técnicas clásicas de aseguramiento de calidad.
+
+% Esto de abajo podria ir en una nueva subseccion (busqueda de papers relacionados o busqueda de aplicaciones anteriores)
+%Y ya podemos poner lo del otro paper com oque encontramos (y aplicamos) Can LLMs Generate User Stories and Assess Their Quality?
+En este contexto, el estudio de Yu et al.\ analiza varios casos reales para entender cómo los equipos evalúan en la práctica la calidad de estas aplicaciones GenAI, qué métricas usan y qué problemas encuentran \cite{yu2026evaluating_genai_quality_multicase}.
+
+\subsubsection{Problema que aborda y métricas usadas}
+El estudio se centra en la diferencia entre (i) las métricas de evaluación propuestas en la literatura académica, diseñadas habitualmente para entornos controlados y datasets estandarizados, y (ii) las necesidades reales de evaluación en la industria, donde predominan restricciones contextuales, ausencia de datos etiquetados, lenguaje o dominio específico, y la necesidad de obtener resultados interpretables y accionables.
+Para analizar esta diferencia, los autores realizaron un estudio multi-caso en tres organizaciones industriales, mediante talleres y entrevistas semiestructuradas, además de recopilar diversos casos de uso de GenAI en ámbitos típicos de ingeniería de software (como generación de documentos, análisis de logs y reportes, chatbots de soporte, y generación/revisión de código) \cite{yu2026evaluating_genai_quality_multicase}.
+
+
+Como resultado, los autores señalan que, en entornos industriales, la evaluación de la calidad de las salidas de sistemas GenAI suele apoyarse en métricas relativamente \textit{livianas}, fáciles de interpretar y fuertemente dependientes del contexto de uso. En lugar de adoptar un único indicador universal, las métricas se organizan de forma natural en \textit{familias} según el foco de evaluación. Por ejemplo, cuando el foco está en la \textbf{calidad de la respuesta}, se utilizan métricas como \textit{accuracy} (qué tan frecuentemente la salida coincide con lo espemedianterado) y \textit{correctness} (validez funcional o semántica en el contexto). Cuando el foco está en la \textbf{utilidad para la tarea}, se consideran métricas como \textit{relevance}, especialmente en escenarios con recuperación de información (RAG) sobre documentación o en análisis de reportes. Para capturar la \textbf{adecuación respecto a expectativas humanas}, se reporta el uso de \textit{alignment}, mientras que para caracterizar \textbf{confiabilidad y estabilidad} frente a variaciones de entradas se emplea \textit{consistency}. Asimismo, se incluyen métricas orientadas a la \textbf{cobertura} de lo requerido (como \textit{completeness}), a la \textbf{explicabilidad práctica} (\textit{transparency}) y, cuando la veracidad es crítica, a la \textbf{fidelidad respecto a las fuentes} (\textit{factuality}), particularmente en chatbots y generación de documentación. Finalmente, también se contemplan consideraciones de \textbf{seguridad} (\textit{security}), vinculadas a riesgos derivados de la interacción u operación del sistema \cite{yu2026evaluating_genai_quality_multicase}.
+
+Además, el artículo discute que, cuando resulta viable, los equipos complementan estas métricas contextualizadas con métricas provenientes de la literatura (por ejemplo, de similitud semántica o de factualidad), y remarca desafíos recurrentes como la dificultad de escalar la verificación humana, la sensibilidad del manejo de contexto (p.\ ej., embeddings y recuperación) y la necesidad de que los puntajes sean interpretables para apoyar decisiones de ingeniería \cite{yu2026evaluating_genai_quality_multicase}.
+
+\subsection{Aplicabilidad al dominio de historias de usuario}
+Para que la evaluación resulte útil en el contexto de este trabajo, se considera
+necesario revisar las métricas reportadas en distintos proyectos y ámbitos de
+aplicación de sistemas basados en Inteligencia Artificial Generativa, y analizar
+cuáles de ellas pueden trasladarse de forma razonable al dominio de historias de
+usuario (HU). A diferencia de otras salidas típicas de GenAI (p.\ ej., resúmenes
+automáticos o respuestas conversacionales), una historia de usuario cumple el
+rol de artefacto de ingeniería de requisitos y, por tanto, se encuentra sujeta a
+convenciones relativamente estables, como el uso de una plantilla estructurada
+(\textit{Como <rol> quiero <capacidad> para <beneficio>}) o la definición de
+criterios de aceptación.
+
+Asimismo, las HU suelen evaluarse en función de atributos de calidad reconocidos
+por los equipos de desarrollo, tales como claridad, testabilidad, atomicidad y
+alineación con los objetivos del \textit{stakeholder}. En consecuencia, el
+conjunto de métricas adoptadas en este trabajo busca reflejar, al menos, tres
+aspectos complementarios: (i) que la historia contribuya efectivamente al
+propósito del \textit{backlog}, (ii) que se mantenga consistente con el contexto
+de entrada disponible (épica, descripción funcional y restricciones explícitas),
+y (iii) que presente un nivel de calidad textual y estructural suficiente como
+para que el equipo pueda utilizarla y refinarla sin un esfuerzo excesivo.
+
+Bajo este enfoque, se evita depender de métricas que asuman la existencia de una
+única formulación correcta o de un ``golden reference'' estricto (por ejemplo,
+métricas basadas exclusivamente en similitud de $n$-gramas), dado que en el
+dominio de historias de usuario distintas redacciones pueden ser igualmente
+válidas si preservan la intención, el alcance y las restricciones del requisito.
+En su lugar, se priorizan métricas livianas, interpretables y sensibles al
+contexto del proyecto, combinando chequeos automáticos basados en reglas o
+heurísticas con evaluación humana.
+
+\subsection{Criterios para seleccionar métricas}
+Para seleccionar las métricas de evaluación se define un conjunto de criterios
+orientados a obtener resultados medibles, interpretables y accionables en el
+dominio de historias de usuario (HU), teniendo en cuenta las particularidades
+de las salidas generadas por modelos de lenguaje.
+
+\textbf{Alineación con el objetivo de evaluación.} Se procura que cada métrica
+aporte evidencia directa sobre la calidad de la HU como artefacto de ingeniería
+de requisitos, y no únicamente sobre su corrección lingüística. En particular,
+las métricas deben contribuir a estimar si la historia es comprensible,
+implementable y validable dentro del contexto del proyecto.
+
+\textbf{Dependencia razonable de datos.} Se prioriza que las métricas no requieran
+\textit{ground truth} exhaustivo ni conjuntos etiquetados costosos de mantener,
+y que puedan apoyarse en los artefactos disponibles en un entorno real de
+desarrollo, tales como la descripción de la necesidad, la épica asociada, la
+documentación de contexto y las historias de usuario generadas.
+
+\textbf{Sensibilidad al contexto del proyecto.} Dado que la calidad de una HU
+depende fuertemente del dominio (glosario, reglas de negocio, restricciones
+técnicas y procesos), se favorece el uso de métricas que admitan umbrales o
+criterios configurables y que permitan penalizar desalineaciones con la
+información de entrada.
+
+Adicionalmente, se considera deseable que las métricas puedan organizarse de
+forma jerárquica, de modo que aquellas orientadas a validar correspondencia
+conceptual se apliquen como filtros previos, y las métricas de calidad más fina
+se utilicen únicamente sobre salidas que superan dichos filtros.
+
+\subsection{Métricas adoptadas y justificación}
+Con base en los criterios anteriores, se adopta un conjunto de métricas que busca capturar la calidad de historias de usuario desde perspectivas complementarias, de forma que cada una aporte una señal distinta y útil para el refinamiento.
+
+\subsubsection{Completitud (Completeness)}
+Se evalúa si la HU incluye los elementos mínimos esperados para que el equipo la utilice: rol, capacidad y beneficio; y, cuando corresponda, criterios de aceptación o condiciones de satisfacción. Se considera clave porque la ausencia de alguno de estos componentes suele impedir planificación, estimación o validación. Además, parte de esta métrica puede instrumentarse mediante chequeos estructurales (plantilla y presencia de secciones).
+
+\subsubsection{Corrección (Correctness) / Consistencia con la entrada}
+Se mide si la HU respeta hechos y restricciones provistos por el contexto (alcance, reglas de negocio, limitaciones técnicas). Dado que la generación automática puede introducir supuestos no respaldados, se busca que esta métrica señale desvíos relevantes. Para operacionalizarla, se contempla revisión humana y, cuando exista material de referencia suficiente, contrastes asistidos contra el contexto disponible.
+
+\subsubsection{Relevancia (Relevance)}
+Se estima en qué medida la HU responde a la necesidad planteada y no se desvía hacia funcionalidades secundarias, procurando que el valor para el \textit{stakeholder} quede explícito. Se justifica su inclusión porque contribuye a evitar que el \textit{backlog} incorpore historias plausibles pero fuera de alcance. Su medición se apoya en revisión experta y, cuando se cuenta con una épica o descripción base, en chequeos de alineación y cobertura de conceptos clave.
+
+\subsubsection{Métrica automática de similitud con referencia: BERTScore}
+\label{sec:bertscore}
+
+Con el fin de contar con una medida \textit{automática} de similitud entre una historia de usuario (HU) generada y una HU de referencia, se utiliza \textit{BERTScore} \cite{zhang2020bertscore}. A diferencia de métricas basadas en solapamiento superficial de palabras o $n$-gramas, BERTScore busca capturar \textbf{similitud semántica} a partir de representaciones contextuales (embeddings) generadas por modelos tipo BERT. Esto permite otorgar crédito cuando dos textos expresan la misma intención con redacciones distintas, lo cual es frecuente en el dominio de HU.
+
+Para su aplicación, cada HU generada se empareja con su correspondiente HU de referencia, elaborada por el equipo humano bajo los criterios de calidad definidos en este trabajo. Sobre cada par \textit{(generada, referencia)} se calcula BERTScore y se reporta principalmente el valor \textbf{F1}, por sintetizar en un único indicador el balance entre \textit{precision} y \textit{recall} semánticos \cite{zhang2020bertscore}. En la interpretación, valores más altos indican mayor cercanía semántica entre la HU generada y la HU de referencia.
+
+Dado que el estudio considera conjuntos de HU en español e inglés, se controla el idioma para preservar comparabilidad. En particular, se utiliza un \textbf{modelo multilingüe} para calcular BERTScore en ambos idiomas, manteniendo parámetros consistentes en todo el experimento. Alternativamente, en caso de observarse comportamientos significativamente distintos por idioma, se reportan resultados separados por español e inglés para evitar mezclar distribuciones no comparables.
+
+El rol de BERTScore en el marco de evaluación es proveer una señal cuantitativa, rápida y reproducible de similitud semántica entre la salida del sistema y la referencia humana. No obstante, un valor alto de BERTScore no garantiza por sí mismo que la HU sea de calidad en términos de ingeniería de requisitos (p.\ ej., ausencia de ambigüedad, completitud estructural, verificabilidad o adecuación al contexto del proyecto). Por ello, BERTScore se utiliza como métrica complementaria a criterios específicos del dominio y, cuando corresponde, a la evaluación humana \cite{yu2026evaluating_genai_quality_multicase}.
+
+\subsubsection{Por qué no se utilizan BLEU ni ROUGE}
+
+Si bien BLEU \cite{papineni2002bleu} y ROUGE \cite{lin2004rouge} son métricas clásicas en evaluación de generación de texto, se decidió no utilizarlas en este trabajo porque su señal resulta poco representativa para el dominio de historias de usuario (HU) y para el objetivo específico de comparar HU generadas contra HU de referencia elaboradas por el equipo.
+
+En primer lugar, ambas métricas se basan principalmente en \textit{solapamiento léxico} (coincidencia de $n$-gramas) entre la salida generada y una referencia. En el caso de las HU, es frecuente que existan múltiples formulaciones igualmente válidas que preservan la intención pero difieren en la elección de palabras, el orden sintáctico o el nivel de detalle. Bajo este escenario, BLEU/ROUGE penalizan paráfrasis y sinónimos, y tienden a subestimar salidas correctas que expresan la misma capacidad o beneficio con redacción distinta.
+
+En segundo lugar, las HU suelen ser textos breves y parcialmente estructurados (p.\ ej., plantilla \textit{Como <rol> quiero <capacidad> para <beneficio>}). En textos cortos, las métricas basadas en $n$-gramas se vuelven especialmente inestables: pequeñas variaciones superficiales (artículos, preposiciones o reordenamientos) pueden producir cambios desproporcionados en el puntaje, sin reflejar una diferencia real en la calidad del requisito.
+
+En tercer lugar, el objetivo de evaluación en HU prioriza atributos semánticos y de ingeniería de requisitos (capturar intención, alcance, restricciones y valor), más que la reproducción exacta de fragmentos textuales. ROUGE, por ejemplo, fue concebida principalmente para tareas de resumen, donde la cobertura por solapamiento puede ser una aproximación razonable; sin embargo, en HU puede favorecer una salida que \textit{repite} términos del texto de referencia sin necesariamente mejorar la precisión del requisito.
+
+Por estas razones, se privilegia una métrica más robusta frente a variaciones de redacción y más alineada con similitud de significado, optando por BERTScore (Sección~\ref{sec:bertscore}). En particular, BERTScore realiza un alineamiento \textit{suave} a nivel de tokens mediante representaciones contextuales, lo que permite otorgar crédito parcial a expresiones semánticamente cercanas aun cuando no coincidan exactamente en superficie \cite{zhang2020bertscore}.
+
+\subsubsection{Aqusa}
+Es una herramienta \cite{aqusa} que identifica defectos de calidad en las historias de usuario. Toma como entrada un archivo de texto que contiene una colección de historias de usuario (una por línea), realiza procesamiento lingüístico para detectar posibles defectos. Detecta defectos en las historias de usuario, como por ejemplo de formato o que las historias sean atómicas (no contengan and, or). La tabla extraida de \cite{aqusa-paper}:Table 1, enlista los diferentes criterios de calidad evaluados por Aqusa
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|l|p{7cm}|l|}
+\hline
+\textbf{Criteria} & \textbf{Descripción} & \textbf{Individual/Conjunto} \\
+\hline
+
+\multicolumn{3}{|l|}{\textit{Syntactic}} \\ \hline
+Well-formed & Una historia de usuario incluye al menos un rol y un medio. & Individual \\ \hline
+Atomic & Una historia expresa un requisito para exactamente una funcionalidad. & Individual \\ \hline
+Minimal & Una historia contiene únicamente rol, medio y fin. & Individual \\ \hline
+
+\multicolumn{3}{|l|}{\textit{Semantic}} \\ \hline
+Conceptually sound & El medio expresa una funcionalidad y el fin expresa una justificación. & Individual \\ \hline
+Problem-oriented & La historia especifica solo el problema, no la solución. & Individual \\ \hline
+Unambiguous & Evita términos o abstracciones que permitan múltiples interpretaciones. & Individual \\ \hline
+Conflict-free & No es inconsistente con otras historias de usuario. & Conjunto \\ \hline
+
+\multicolumn{3}{|l|}{\textit{Pragmatic}} \\ \hline
+Full sentence & Es una oración completa y bien formada. & Individual \\ \hline
+Estimable & No representa un requisito demasiado amplio difícil de planificar. & Individual \\ \hline
+Unique & Cada historia es única; se evitan duplicados. & Conjunto \\ \hline
+Uniform & Todas las historias emplean la misma plantilla. & Conjunto \\ \hline
+Independent & La historia es autocontenida y no depende de otras historias. & Conjunto \\ \hline
+Complete & El conjunto de historias permite una aplicación completa sin pasos faltantes. & Conjunto \\ \hline
+
+\end{tabular}
+\caption{Criterios de Calidad definidos en AQUSA}
+\end{table}
+
+
+\subsubsection{Evaluación humana}
+Dado que la calidad de una HU no puede capturarse completamente median-
+te una única métrica automática, se incorpora evaluación humana para validar
+aspectos que requieren juicio contextual. En particular, se revisa: (i) si la HU es
+relevante para la necesidad planteada, (ii) si respeta restricciones explícitas del
+contexto (alcance/reglas), y (iii) si su redacción y granularidad permiten que el
+equipo la refine e implemente sin ambigüedades significativas.
+
+Para evitar que la evaluación humana quede en apreciaciones informales y asegurar consistencia entre revisores, estos aspectos se operacionalizan mediante dos métricas manuales complementarias: \textit{Task-specific correctness rate} y \textit{Reviewer scorecard} \cite{yu2026evaluating_genai_quality_multicase}. La primera usa una lista de chequeo con reglas simples para confirmar si la historia incluye lo que la tarea pide y lo que aparece en el documento de origen. La segunda usa una planilla de evaluación con puntajes para que revisores califiquen la calidad de la historia en cosas como claridad, utilidad, qué tan completa es y si está en el formato correcto. En conjunto, ambas sirven para dejar evidencia de la evaluación y comparar resultados entre herramientas y distintas ejecuciones de forma repetible \cite{yu2026evaluating_genai_quality_multicase}.
+
+\paragraph{Relación con los aspectos evaluados.}
+Los criterios (i) y (ii) se evalúan principalmente con \textit{Task-specific correctness rate}, al verificar la correspondencia de la HU con la necesidad y las restricciones explícitas del documento fuente, así como la presencia de omisiones o adiciones no respaldadas (alucinaciones). El criterio (iii) se refleja principalmente en \textit{Reviewer scorecard}, donde revisores puntúan la calidad de redacción y la granularidad práctica para refinamiento e implementación \cite{yu2026evaluating_genai_quality_multicase}.
+
+\subsubsection{Task-specific correctness rate}
+(TSCR) es una métrica manual basada en reglas que mide, para una tarea dada, el porcentaje de elementos esperados que aparecen correctamente en la salida generada. Su aplicación requiere definir previamente qué se considera ``correcto'' para la tarea (ítems obligatorios derivados de la fuente o de la especificación de salida), y luego comparar la salida marcando presencia/ausencia y registrando adiciones incorrectas \cite{yu2026evaluating_genai_quality_multicase}.
+
+\paragraph{Objetivo.}
+El objetivo de TSCR es cuantificar la fidelidad de la HU generada respecto de lo esperado para el requerimiento de origen: (a) minimizar omisiones de información esencial y (b) detectar adiciones no justificadas por la fuente (alucinaciones), que comprometen relevancia y cumplimiento de restricciones \cite{yu2026evaluating_genai_quality_multicase}.
+
+\paragraph{Procedimiento de aplicación.}
+Se aplica con el siguiente protocolo:
+\begin{enumerate}
+    \item \textbf{Definir los ítems esperados} por HU, a partir del requisito o fragmento fuente asociado (y del formato mínimo requerido por la tarea).
+    \item \textbf{Comparar la HU generada} marcando qué ítems están presentes correctamente y cuáles faltan, y registrando cualquier contenido adicional no sustentado por la fuente.
+    \item \textbf{Consolidar resultados} en una planilla/checklist que permita computar la tasa por HU y promediar por ejecución/herramienta \cite{yu2026evaluating_genai_quality_multicase}.
+\end{enumerate}
+
+\paragraph{Cálculo.}
+Sea $Y$ el número total de ítems esperados y $X$ el número de ítems presentes correctamente. Se calcula:
+\[
+\text{TSCR} = \frac{X}{Y}\times 100
+\]
+Adicionalmente, se registra el número de elementos extra/incorrectos $Z$ (alucinaciones) y/o su severidad como evidencia cualitativa para interpretar la tasa \cite{yu2026evaluating_genai_quality_multicase}.
+
+\paragraph{Aplicacion.}
+Para cada HU generada se define una checklist mínima, derivada de la fuente:
+\begin{itemize}
+    \item \textbf{Actor/rol} explícito.
+    \item \textbf{Acción o funcionalidad principal} alineada al requerimiento de origen.
+    \item \textbf{Propósito/beneficio} (cuando corresponda según el texto fuente).
+    \item \textbf{Restricciones explícitas} del requisito (reglas, permisos, alcance) cuando estén presentes en la fuente.
+    \item \textbf{Criterios de aceptación mínimos} cuando la tarea exige su inclusión.
+\end{itemize}
+Luego se computa TSCR por HU y se promedia por lote (por herramienta y por documento). El análisis de los ítems omitidos y de las alucinaciones registradas permite identificar patrones sistemáticos (p.\,ej., omisión de restricciones o incorporación de supuestos no presentes), útiles para orientar mejoras del generador \cite{yu2026evaluating_genai_quality_multicase}.
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{|p{6cm}|c|c|p{5.5cm}|}
+\hline
+\textbf{Ítem esperado} & \textbf{Sí} & \textbf{No} & \textbf{Evidencia / observaciones (referencia a fuente)} \\
+\hline
+Actor/rol explícito &  &  &  \\
+\hline
+Acción alineada al requisito &  &  &  \\
+\hline
+Propósito/beneficio (si aplica) &  &  &  \\
+\hline
+Restricciones explícitas respetadas (si aplica) &  &  &  \\
+\hline
+Criterios de aceptación mínimos incluidos (si aplica) &  &  &  \\
+\hline
+Elementos extra/incorrectos (alucinaciones) & \multicolumn{2}{c|}{N/A} &  \\
+\hline
+\end{tabular}
+\caption{Plantilla sugerida: Checklist para calcular Task-specific correctness rate (por historia de usuario)}
+\end{table}
+
+\subsubsection{Reviewer scorecard}
+Es una forma de evaluación hecha por personas usando una planilla con criterios claros y una escala de puntaje (por ejemplo, de 1 a 5). La idea es que distintos revisores puedan evaluar las historias de usuario de manera parecida y comparables entre sí. A diferencia de TSCR, que se enfoca en chequear si están o no ciertos elementos específicos, la scorecard busca medir cosas más generales como si la historia se entiende bien y si realmente sirve para trabajar en el proyecto.
+\cite{yu2026evaluating_genai_quality_multicase}.
+
+\paragraph{Objetivo.}
+El objetivo es medir atributos de calidad difíciles de capturar con reglas o métricas automáticas: si la HU es comprensible, útil para el trabajo ágil real, y si su granularidad y forma permiten que el equipo la refine e implemente con bajo riesgo de interpretaciones divergentes \cite{yu2026evaluating_genai_quality_multicase}.
+
+\paragraph{Procedimiento de aplicación.}
+\begin{enumerate}
+    \item \textbf{Definir criterios y escala}: seleccionar criterios pertinentes al uso de HUs en un backlog y fijar una escala (p.\,ej., Likert 1--5) con anclas interpretables.
+    \item \textbf{Recolectar evaluaciones}: uno o más revisores puntúan cada criterio para cada HU y registran comentarios breves con evidencia (qué parte del texto motiva la puntuación).
+    \item \textbf{Consolidar resultados}: se promedian puntajes por criterio y por herramienta, y se analiza la dispersión (acuerdo/desacuerdo) y los comentarios como insumo para iteraciones de mejora \cite{yu2026evaluating_genai_quality_multicase}.
+\end{enumerate}
+
+\begin{comment}
+Para mantener la carga cognitiva baja y favorecer consistencia, se propone una scorecard de 4 criterios:
+\begin{itemize}
+    \item \textbf{Claridad}: redacción comprensible, sin ambigüedades significativas.
+    \item \textbf{Utilidad}: aporta información accionable para desarrollo/validación.
+    \item \textbf{Completitud percibida}: incluye lo necesario (a nivel HU) para poder refinarse sin depender de supuestos implícitos.
+    \item \textbf{Granularidad adecuada}: tamaño y alcance razonables para planificación/refinamiento (evita épicas disfrazadas de HU).
+\end{itemize}
+\end{comment}
+
+Los criterios a utilizar serán los que define el estandar INVEST para las historias de usuario.
+
+El estandar INVEST, busca que las historias sean independientes, negociables, valiosas, estimables, pequeñas y testeables. 
+% By Romi: Este estandar ya fue explicado en otra seccion anterior creo. Lo de SMART revisando la definicion no se bien si aplica
+
+Cada criterio se puntúa en escala Likert 1--5 (técnica psicométrica utilizada en encuestas para medir actitudes u opiniones) (1 = muy deficiente, 3 = aceptable, 5 = excelente), con espacio para comentario. Cuando un criterio no aplica, se marca N/A y se justifica \cite{yu2026evaluating_genai_quality_multicase}.
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{|p{5.3cm}|c|c|c|c|c|}
+\hline
+\textbf{Criterio} & \textbf{1} & \textbf{2} & \textbf{3} & \textbf{4} & \textbf{5} \\
+\hline
+I - Independiente &  &  &  &  &  \\
+\hline
+N - Negociable &  &  &  &  &   \\
+\hline
+V - Valiosa &  &  &  &  &    \\
+\hline
+E - Estimable &  &  &  &  &    \\
+\hline
+S - Pequeña &  &  &  &  &    \\
+\hline
+T - Testeable &  &  &  &  &    \\
+\hline
+\end{tabular}
+\caption{Plantilla sugerida: Reviewer scorecard (Likert 1--5) para evaluación humana de historias de usuario}
+\end{table}
+
+\subsubsection{Integración en el flujo de evaluación}
+Estas métricas manuales se aplican en dos pasos para cada historia. Primero se usa TSCR, que es una lista de chequeo para ver si la historia incluye lo que debería según el requisito y para anotar si falta algo o si agrega cosas que no están en la fuente. Después se usa la \textit{Reviewer scorecard}, donde uno o más revisores ponen puntajes (por ejemplo de 1 a 5) para evaluar la calidad general de la historia, como qué tan clara y útil es.
+
+En ambos pasos se deja evidencia de la evaluación, por ejemplo indicando de qué parte del documento salió la información y agregando observaciones. Esto permite revisar el proceso más adelante y repetir la evaluación de forma consistente. Además, los resultados se usan para mejorar el proceso de generación en la siguiente iteración, ajustando la forma en que se pide la salida o aplicando reglas simples para corregir errores comunes.
+\cite{yu2026evaluating_genai_quality_multicase}.
+
+\subsubsection{Evaluacion de Epicas}
+Para cada historia se categorizara la misma como Epica (historia dividible), ya sea por detección de conjunción o presencia de palabras amplias como ‘manage’ en lugar acción especifica como ‘create’, ‘edit’, ‘delete’.%, el Bertscore con respecto a las esperadas y la evaluación manual humana. De esta manera, tenemos el caso donde nuestra solucion esperada genera varias historias que estan reflejadas en una sola de la historia generada. 
+
+%El conjunto de solucion esperada de historias de usuario fue construida para que cumpla, dentro de lo posible, con la condicion de que las historias sean atomicas.
+
+%El caso de epicas puede disminuir el bertscore para la herramienta, por lo que identificar las epicas nos permite detectar cuando el bertscore es bajo debido a las mismas.
+
+%Utilizaremos la salida de Bertscore como ayuda para la evaluacio manual; Las posibles sub-historias esperadas releacionadas a la epica generada son las de mayor bertscore, de esta manera podemos identificar rapidamente como la epica podria ser sub-dividida.
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{|p{6cm}|c|c|p{5.5cm}|}
+\hline
+\textbf{Evaluacion Epica} & \textbf{Sí } & \textbf{No} & \textbf{Evidencia / observaciones (referencia a fuente)} \\
+\hline
+Divisible &  &  &  Justificacion de division, ya sea por detección de conjunción o presencia de palabras amplias como `manage' en lugar acción especifica como `create', `edit', `delete'.\\
+\hline
+\end{tabular}
+\caption{Evaluacion de Epicas}
+\end{table}

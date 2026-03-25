@@ -1,0 +1,77 @@
+%\section{}
+En este capitulo se analizan las soluciones disponibles que permiten generar historias de usuario mediante inteligencia artificial (IA). El enfoque adoptado se basa en seleccionar herramientas, tanto comerciales como de código abierto, que cuenten con una implementación funcional y que permitan su evaluación. %los aspectos funcionales detallados a continuación.
+
+%Se definieron requerimientos funcionales que consideramos deben ser cubiertos por las herramientas. En primer lugar, las herramientas deben basar la generación de historias de usuario en alguna fuente de entrada, comMetodologíaso documentos de requisitos, texto plano y fuentes extra como audio. Nos interesa ademas, la capacidad de detección de posibles conflictos o incoherencias en los requerimientos. %Además, deben incorporar capacidades de verificación, de forma que sea posible identificar conflictos o incoherencias en los requisitos analizados. 
+%Como siguiente requisito, se tiene la trazabilidad de la historia generada. La herramienta debe vincular cada historia generada con su fuente original para poder rastrear el origen de la información. Por último, las herramientas deben incluir criterios de aceptación para cada historia generada.
+
+%La búsqueda se realizó en cuatro ámbitos principales: motores de búsqueda generales, repositorios de código abierto, tiendas o mercados dentro de herramientas de gestión de proyectos y plataformas de inteligencia artificial. Para cada herramienta seleccionada, se registraron aspectos como el tipo de entrada y salida soportado, el nivel de integración con otras herramientas, el modelo de IA utilizado % y su nivel de madurez.
+%También se utilizó una búsqueda asistida con modelos conversacionales para complementar los resultados obtenidos. %[REF – incluir referencia metodológica sobre revisión sistemática o búsqueda asistida].
+
+% \input{section_2.1.x/objetivo de la busqueda}
+
+
+% \input{section_2.1.x/metodologia de busqueda}
+
+% \input{section_2.1.x/etapas del procedimiento de inclusión y exclusión aplicado}
+
+% \input{section_2.1.x/criterios de seleccion de herramientas}
+
+
+\begin{comment}
+\subsection{Recuperación inicial de resultados}
+
+En esta sección se documenta la ejecución práctica de la metodología de búsqueda definida en la sección anterior. Esta ejecución produjo un conjunto de resultados que fueron evaluados mediante el procedimiento de tres etapas, el cual fue diseñado en base a los criterios de inclusión/exclusión establecidos.
+
+Esta sección documenta la ejecución práctica de la metodología de búsqueda definida en la sección 2.1.3. El objetivo fue identificar herramientas y repositorios que integran inteligencia artificial (IA) o modelos de lenguaje de gran escala (LLM) en la generación automática de historias de usuario, así como en tareas relacionadas con los aspectos de interés definidos. El proceso se desarrolló siguiendo los principios de reproducibilidad y trazabilidad adoptados en la metodología, manteniendo un registro estructurado de las fuentes consultadas, los filtros aplicados y los resultados obtenidos.
+
+En el ámbito de los motores de búsqueda, la exploración inicial mediante \textbf{Google} permitió identificar un conjunto representativo de herramientas comerciales y académicas. Entre ellas se destacaron StoriesOnBoard AI, una plataforma SaaS que integra elaboración automatizada de historias a partir de descripciones del producto; Visure Requirements AI Platform, una suite empresarial de gestión de requisitos con módulos basados en IA para análisis de documentos y trazabilidad; y Modern Requirements4DevOps AI, un complemento para Azure DevOps que permite generar historias de usuario, casos de prueba, y documentación técnica de forma automatizada. También se identificaron herramientas experimentales como Geneus, orientada a la generación automática de historias desde texto plano y AITable for User Stories, que utiliza hojas de cálculo para automatizar la creación y gestión de historias dentro de equipos ágiles.
+
+En el caso de \textbf{GitHub}, la búsqueda se orientó a localizar repositorios de código abierto activos que emplearan técnicas de IA o LLM para la generación o validación de historias. Se identificaron varios proyectos relevantes, como aisingapore/bmad-aisg-aiml, que implementa un flujo completo de generación de historias mediante aprendizaje automático y modelos de lenguaje; melahn/use, enfocado en la creación de historias de usuario a partir de hojas de cálculo; y GuardianUI/storycheck, que colabora con modelos de IA para producir historias estructuradas en formato Markdown. Otros proyectos, como itdojp/ae-framework y sdlc-copilot, apuntan a integrar capacidades de generación y análisis dentro de flujos de trabajo más amplios, incluyendo mecanismos de verificación alineados a los aspectos de interés definidos.
+
+De forma complementaria, se realizó una búsqueda en los marketplaces de Atlassian y Azure, con el objetivo de identificar extensiones y complementos que integraran IA generativa en herramientas de gestión de proyectos. En este contexto se destacaron ProductGo, que utiliza GPT-4 para automatizar la creación de historias y epics en Jira; AI Agile Story/Bug Generation, que combina generación de historias y detección de inconsistencias. En el entorno de Azure, la herramienta Copilot4DevOps (Modern Requirements) ofrece funcionalidades que integran generación automática de historias de usuario, casos de prueba y documentación técnica.
+
+Finalmente la búsqueda en la plataforma Perplexity permitió corroborar y ampliar los resultados obtenidos mediante motores tradicionales, mostrando consistencia en las herramientas más relevantes. Entre los resultados más destacados se encuentran StoriesOnBoard AI, StoryCraft, Visure AI Requirements Management y ClickUp AI, los cuales, al igual que los anteriores, serán analizados en la Sección 2.1.3. una tendencia clara hacia soluciones de elaboración automática y verificación de historias, apoyadas principalmente en modelos GPT-3,5, GPT-4 o equivalentes. Sin embargo, se observa que pocas herramientas abordan de manera explícita la vinculación automática con las fuentes y la detección integral de conflictos, lo que subraya la relevancia del enfoque propuesto en este proyecto.
+\end{comment}
+
+%La aplicación de la metodología permitió obtener una base representativa de herramientas actuales, tanto comerciales como de código abierto, sobre las cuales se construirá el análisis comparativo y la evaluación de capacidades descritas en las secciones posteriores.
+
+% \input{section_2.1.x/ejecucion de la busqueda}
+
+% \input{section_2.1.x/analisis de herramientas}
+
+% \newpage
+% \input{section_2.1.x/seleccion de herramientas}
+
+%\subsubsection{Procedimiento general de prueba}
+%Para asegurar reproducibilidad, las pruebas siguieron una estructura uniforme:
+%\begin{itemize}
+    %\item \textbf{Selección del candidato:} Se eligieron herramientas que cumplieran los criterios de inclusión (implementadas, disponibles públicamente, ejecutables o probables de integrar en pipelines).
+    %\item \textbf{Escenario de entrada: } Se empleó un documento de requisitos sintético representativo (fragmentos de descripciones de sistema y reuniones, en inglés y español) con trazas simuladas a HU.
+    %\item \textbf{Ejecución: } Se analizaron las salidas generadas por cada herramienta, observando estructura, formato, completitud y relación con el texto fuente.
+    %\item \textbf{Evaluación: } Se aplicaron los criterios definidos en la Sección 2.2.2:
+    %\begin{itemize}
+        %\item \textbf{Procesamiento multiformato.}
+        %\item \textbf{Generación automática de historias.}
+        %\item \textbf{Trazabilidad y vínculo fuente–HU.}
+        %\item \textbf{Validación de calidad (criterios INVEST, legibilidad, completitud).}
+        %\item \textbf{Detección de inconsistencias, ambigüedades o duplicidades.}
+        %\item \textbf{Disponibilidad técnica y posibilidad de integración.}
+    %\end{itemize}
+%\end{itemize}
+%Cada herramienta recibió una puntuación cualitativa (Alta, Media, Baja o Nula) en cada eje de análisis.
+%Las pruebas se registraron mediante capturas, logs y tablas comparativas, cuyos resultados se sintetizan a continuación.
+%\subsubsection{Resultados de la evaluación}
+%\subsubsection{Cobertura funcional básica}
+
+% Los capítulos pueden incluir secciones como esta, que además pueden hacer referencia a otras secciones, como por ejemplo a la Sección~\ref{sec:segunda}.
+%\section{Tercera Sección}\label{sec:segunda}
+%Esta sección además tiene una subsección.
+%\subsection{La Subsección}
+%Esta es la subsección.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{herramientas/objetivo de la busqueda}
+\input{herramientas/metodologia de busqueda}
+\input{herramientas/ejecucion de la busqueda}
+% \input{revision/herramientas/filtrado}
+\input{herramientas/analisis de herramientas}
+\input{herramientas/seleccion de herramientas}

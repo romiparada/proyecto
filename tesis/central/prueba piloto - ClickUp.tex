@@ -1,0 +1,36 @@
+\section{Prueba piloto: Click Up}
+
+La herramienta ClickUp \cite{clickup} se utilizó como prueba piloto y primer acercamiento al análisis, ya que se considera una herramienta popular utilizada en la gestión de proyectos. Además, posee una integración con inteligencia artificial llamada Brain AI \cite{brainai}.
+
+ClickUp es una herramienta comercial; no es posible acceder a su código e implementación, pero sí fue posible hacer uso de la prueba gratuita.
+
+ClickUp lanzó Brain AI en el año 2024 \cite{brainai}, y permite utilizar agentes dentro de la aplicación. Según la documentación oficial, Brain AI se apoya en modelos avanzados y además permite conectar modelos externos desde la propia interfaz (p. ej., ChatGPT o Claude). \cite{clickupai,clickupai2} %La integración está construida con ChatGPT-4o y ChatGPT-4.1 \cite{clickupai}. Asimismo, también es posible utilizar otros modelos directamente, como ChatGPT GPT-5, ChatGPT GPT-5 Mini, Claude Sonnet 4, Claude Opus 4, Gemini 2.5 Pro y Gemini 2.5 Flash \cite{clickupai2}.
+
+Se consideró presente la capacidad de generación automática de historias de usuario, dadas las capacidades de los agentes de procesar los datos e información dentro de un entorno de trabajo y crear tarjetas o tareas automáticamente. Además, en el blog \cite{clickupai3} se ejemplifica cómo generar historias de usuario dentro de la plataforma. El agente permite refinar, resumir o mejorar la salida de la IA, lo que posibilita verificar las salidas, en línea con los aspectos de interés definidos.
+
+Para corroborar las capacidades, cada integrante se registró con un usuario y probó las características de Brain AI hasta que se alcanzó la cuota de uso paga.
+
+Se utilizó el documento técnico de prueba, tanto pasándolo como archivo adjunto dentro del chat de Brain AI en la plataforma, como subiéndolo al espacio de trabajo y solicitando que el asistente lo utilizara como fuente para la creación de la instrucción definida en la sección anterior.
+
+A partir de esto, se confirmó la capacidad de cubrir los aspectos de interés definidos (elaboración de historias, criterios y verificación de conflictos) a partir del archivo de prueba inconsistente. La herramienta permite verificar o refinar las historias antes de confirmar su creación. Además, es posible solicitar que incluya vinculación con las fuentes entre el archivo de requisitos y la historia de usuario. Dentro de los tipos de entrada, se probó con PDF y también con texto directamente. La salida puede ser estructurada según la instrucción que se le indique a la IA; sin embargo, con la instrucción básica utilizada, las historias son devueltas como texto, y es posible confirmar la creación de la tarea. No es posible descargar en diferentes formatos, pero sí copiarla para crear un documento fuera de la herramienta.
+
+Las pruebas fueron realizadas una vez por cada integrante del equipo, para identificar cómo evaluar la calidad de cada capacidad y definir la mejor metodología posible. En todos los casos, se generaron siete historias de usuario completas, correspondientes a los mismos requerimientos definidos, con un nivel adecuado de coherencia y un grado de interacción principalmente automático, con la posibilidad de refinar la historia en caso de ser necesario.
+
+Analizando las historias de usuario desde la perspectiva INVEST, se verificó que la mayoría cumple con ser Independiente, Negociable y Valiosa, aunque no Estimable, Pequeña ni Testeable. Esto se debe a que el documento de prueba es superficial y no indaga en detalles que permitirían mejorar la historia. Por ejemplo, en la historia generada de Historia Clínica Electrónica: ``Como médico autorizado, quiero acceder y registrar diagnósticos, tratamientos y evolución en la historia clínica electrónica de mis pacientes para dar seguimiento adecuado. Criterios de aceptación:
+Solo personal autorizado puede acceder a la historia clínica.
+Se registra un log de accesos y modificaciones.
+Se pueden añadir diagnósticos, tratamientos y estudios.
+'' No se detallan la cantidad de información a registrar ni las reglas de validación de acceso, lo que dificulta estimar el esfuerzo requerido (Estimable) y diseñar pruebas objetivas (Testable). Además, la historia agrupa varias funcionalidades, como acceso, registro de diagnósticos, tratamientos, estudios y logging, por lo que no es pequeña, a menos que se subdivida en tareas. %(Sugerencia de respaldo: agregar cita breve a INVEST/Agile Alliance aquí para dar fundamento metodológico.)
+
+En cuanto a los criterios de aceptación, evaluados bajo el enfoque SMART, se observó que generalmente no son muy Específicos, Medibles ni Alcanzables, pero sí Relevantes. Los criterios carecen de detalles precisos que permitan una validación objetiva. Por ejemplo, para la Gestión de Pacientes, el criterio ``Se puede crear un nuevo paciente ingresando nombre, documento, contacto y antecedentes médicos'' no especifica qué datos exactos son obligatorios, ni qué formato o validaciones deben cumplir (como longitud del documento, tipos de datos o validación de contacto). Sin embargo, este nivel de detalle tampoco estaba incluido en el documento de entrada, por lo que resulta difícil evaluar este aspecto de los criterios de aceptación con la fuente utilizada. %(Sugerencia de respaldo: agregar referencia a SMART original o guía académica que se use en el resto del informe.)
+
+En cuanto a la detección de inconsistencias, se observó un desempeño aceptable, ya que el agente logró identificar correctamente los conflictos presentes en los documentos, aunque en algunos casos marcó como inconsistencias situaciones que solo correspondían a falta de detalle, evidenciando cierta sensibilidad excesiva en la interpretación. Por ejemplo, para la historia de Facturación y Cobro:
+`` Como responsable de facturación, quiero generar facturas electrónicas y notificar a los pacientes para asegurar el cobro de los servicios. Criterios de aceptación:
+Se puede generar una factura electrónica por cada servicio prestado.
+El paciente recibe la notificación de la factura emitida.'' Detectó como inconsistencia:
+``No se aclara el canal de notificación a pacientes (email, SMS, app).''.
+
+Asimismo, se verificó que la herramienta puede mantener vinculación con las fuentes entre las historias generadas y el documento fuente, agregando referencias a las secciones de origen cuando se le solicita. Por ejemplo, al final de la historia agrega correctamente:``Referencia: Sección 3.1 del documento.'' También se comprobó que permite la creación de subtareas y la vinculación con épicas, aunque estas acciones deben ser indicadas explícitamente por el usuario, ya que no se realizan de manera automática.
+
+%En general, los resultados confirman que ClickUp Brain AI posee capacidades sólidas para la elaboración de historias de usuario a partir de documentos de requisitos, con integración contextual, vinculación con las fuentes y verificación, aunque requiere ajustes en las instrucciones e interacción con el analista para mejorar la calidad y consistencia de las salidas generadas.
+

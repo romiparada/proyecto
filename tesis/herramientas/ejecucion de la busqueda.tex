@@ -1,0 +1,29 @@
+\section{Ejecución de la búsqueda}
+En esta sección se documenta la ejecución de la metodología de búsqueda definida. El proceso se desarrolló de forma estructurada, para cada motor o entorno de búsqueda se registraron las fuentes consultadas, los filtros aplicados y los resultados obtenidos.
+
+\subsection{Aplicación de la cadena de búsqueda}
+
+El procedimiento se ejecutó siguiendo criterios de trazabilidad y reproducibilidad, manteniendo registros de las consultas y de los resultados. Además, la ejecución y la revisión se distribuyeron entre distintos integrantes del equipo. Las búsquedas se realizaron en diferentes motores y entornos, con el fin de obtener una base representativa del período 2022-2025.
+
+En Google se identificaron soluciones que aplican IA generativa a tareas del ciclo de vida de requisitos. Se encontraron plataformas como StoriesOnBoard AI, Miro y Beam AI. También se identificaron herramientas integradas a entornos de trabajo ágil, como Copilot4DevOps, Modern Requirements AI y ClickUp AI, orientadas a la generación y gestión de historias de usuario.
+
+En GitHub la búsqueda se centró en repositorios activos de código abierto que emplean IA para generar o validar historias de usuario. Entre los repositorios identificados se encuentran melahn/user-story-generator, kapadias/story-craft, nilenso/storymachine y jonverrier/RequirementLinter.
+
+En marketplaces de Atlassian y Azure se encontraron complementos basados en IA generativa para la gestión de proyectos, como Storygenie, AutoStory, AI User Story y Test Case Generator for Jira. También se identificaron opciones que incorporan validaciones básicas en documentos de entrada o que agregan vinculación con fuentes dentro del ciclo de desarrollo.
+
+\subsection{Uso de herramientas de inteligencia artificial para la búsqueda}
+
+Se utilizó Perplexity en modo Investigation con un único prompt en inglés y con un rango temporal acotado (2022--2025). Se restringieron los resultados a herramientas reales y utilizables, tanto open source como comerciales, excluyendo ideas sin implementación o pruebas de concepto. Para cada resultado se registraron el nombre y el enlace oficial, el modo de uso (CLI, plugin o SaaS), la documentación disponible, la fecha o versión más reciente, la licencia y una breve descripción orientada a los aspectos de interés. Además, se limitó la salida a un conjunto breve, sin duplicados y con un máximo de diez resultados.
+
+Con Gemini se siguieron dos recorridos con la misma estructura, en tres mensajes consecutivos: listado inicial, refinamiento técnico y selección con pasos de verificación. La diferencia entre ambos recorridos fue el modo del primer mensaje (en el primer caso, Deep Research; en el segundo, modo normal).
+
+En el primer recorrido, el inicio con Deep Research solicitó, en inglés, un listado de herramientas públicas entre 2022 y 2025 que cumplieran en conjunto los aspectos de interés definidos, evitando repeticiones. El resultado indicó que no se identificó una herramienta que integrara todos los aspectos de forma verificable en ese período. En iteraciones posteriores se mencionó a aqua ALM (AI Copilot) como candidata y se sugirió una verificación mínima en su versión SaaS, aunque quedó pendiente confirmarlo de manera concluyente.
+
+En el segundo recorrido se repitió la misma secuencia, con el primer mensaje en modo normal. Se obtuvo un conjunto preliminar más amplio y luego se refinó la información con datos prácticos. El cierre incluyó una selección final con pasos para probar cada opción, incluyendo herramientas como GitHub Spec-Kit, RequirementLinter y AI Requirements Engineer Assistant, además de un prototipo como GeneUS, junto con indicaciones para su ejecución o prueba.
+
+\subsubsection{Recuperación inicial de resultados}
+Como resultado de la aplicación de la cadena de búsqueda y del uso de herramientas de inteligencia artificial, se obtuvo un conjunto consolidado de herramientas, plataformas y repositorios que cumplen parcial o totalmente con los aspectos de interés. La lista completa se incluye en el Capitulo \ref{cap:anexo} Anexo 2, diferenciada por fuente de búsqueda y fecha de recuperación.
+
+A este conjunto se le aplicará el procedimiento de inclusión y exclusión descrito en la metodología, con el fin de filtrar la base inicial y conformar el conjunto final de herramientas que se analizará en la siguiente etapa. Este procedimiento permitirá descartar resultados redundantes, no verificables o fuera del alcance definido, y asegurar que la muestra final sea coherente con los objetivos del estudio.
+
+\input{herramientas/filtrado}

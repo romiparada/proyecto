@@ -1,0 +1,174 @@
+%La parte central del trabajo refiere a lo que es producción propia o aporte del
+%proyecto de grado, incluyendo las decisiones tomadas. Por ejemplo, puede incluir
+%los requerimientos, el análisis y el diseño de la solución. Si el proyecto tiene una
+%implementación, debe describirse en términos de decisiones tomadas en ese sentido.
+%Los detalles de programación se dejan para los anexos.
+
+Esta sección se describe los pasos que llevamos luego de la revisión de antecedentes y obtención del ranking de herramientas.
+
+Como primer paso nos enfocamos en realizar una prueba piloto con la herramienta ClickUp, que luego derivo en ajustes tanto del documento de entrada, como la construcción de una solución esperada y su traducción al ingles. Y finalmente la decisión de evaluar solamente la generacion de historias producidas por esta herramienta.
+
+\input{central/prueba piloto - ClickUp}
+
+\section{Mejora de la entrada}
+
+Dada la prueba piloto de Click Up, se decidió agregar detalles faltantes al documentos de requerimientos, agregando detalles como los Actores participantes del sistema.
+
+Ademas, se reviso el prompt, agregando instrucciones como la plantilla de las historias de usuario, instruyendo el contenido que debe incluir para su verificación, evitando ambigüedades.
+
+\begin{verbatim}
+Genera historias de usuario a partir del siguiente documento de requisitos.
+
+Identificá los requerimientos funcionales del documento y redacta historias de usuario
+en formato estándar:
+“Como <rol>, quiero <objetivo>, para <beneficio>”.
+
+Las historias deben ser claras y concisas.
+
+Para cada historia incluí además:
+- criterios de aceptación básicos
+- indicar si la historia debería considerarse una épica (sí/no)
+- referencia al fragmento del documento utilizado para generarla
+
+Si detectas inconsistencias, ambigüedades o contradicciones en el documento,
+indica explícitamente en qué parte se encuentran.
+
+Adjunto el documento
+\end{verbatim}
+
+\section{Generación de historias esperadas}
+
+Luego de la prueba piloto, surgieron dudas sobre como corroborar la completitud de la solución de manera formal. Si bien se tiene como marco de referencia el documento de requisitos y algunos de las funcionalidades principales que cubre, aun surgieron dudas de como corroborar que efectivamente todas las funcionalidades descritas en el documento eran cubiertas. Para esto se decidió analizar por nuestro lado y generar las historias de usuario nosotros, como analistas expertos y utilizar la solución como referencia.
+
+Las historias fueron revisadas y pasaron por un proceso de reescritura al detectar detalles faltantes o posibles épicas que fueron divididas. De esta manera, construimos una solución esperada lo mas completa posible para la comparación.
+
+La versión final de las historias esperadas se encuentra en la tabla \ref{tab:historias_esperadas} y sus criterios en la tabla \ref{tab:criterios_esperados}.
+
+\section{Traducción al Ingles}
+El documento de requisitos, las historias esperadas y los prompts fueron redactados en español. Sin embargo, se decidió crear una versión en Ingles, dado que los modelos reciben un mayor entrenamiento en ingles \cite{zhang2023multilingualLLM} y suelen tener mejores resultados. En primer lugar se tradujo el documento de requisitos, con ayuda de ChatGPT, definiendo así un vocabulario, para luego traducir las historias esperadas de manera consistente.
+
+El prompt fue traducido al ingles y se muestra en la figura \ref{fig:prompt_simple}.
+
+\begin{figure}[h!]
+\begin{verbatim}
+Generate user stories from the following requirements document.
+Identify the functional requirements in the document and write user stories
+in standard format:
+"As a <role>, I want to <goal>, so that <benefit>."
+The stories should be clear and concise.
+For each story, also include:
+- basic acceptance criteria
+- indicate if the story should be considered an epic (yes/no)
+- reference to the section of the document used to generate it
+If you detect inconsistencies, ambiguities, or contradictions in the document,
+explicitly indicate where they are found.
+I have attached the document.
+\end{verbatim}
+\caption{Prompt simple utilizado para la generación de historias de usuario}
+\label{fig:prompt_simple}
+\end{figure}
+
+\section{Tipos de evaluación}
+\label{central-enfoque}
+
+Con el objetivo de formalizar la evaluación, se analizo el articulo \cite{yu2026evaluating_genai_quality_multicase}, donde se evalúan salidas generadas por inteligencia artificial para un caso de uso definido. En este articulo se nombran diferentes metodologías, separadas por manual, automática o asistida por inteligencia artificial, que pueden ser utilizadas para validar diferentes aspectos de la salida generada, como la completitud, la exactitud, la relevancia, etc. Esto se puede ver en la Tabla \ref{table:aritculo-eval} extraída del articulo.
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{|p{2.5cm} | p{2.5cm} | p{2.5cm} | p{2.5cm}|}
+\hline
+\textbf{Métrica} & \textbf{Evaluación manual} & \textbf{Evaluación automatizada} & \textbf{Evaluación asistida por IA} \\
+\hline
+
+\textbf{Exactitud (Acc.)} & 
+Sí (revisión manual) & 
+Sí (verificaciones automáticas) & 
+No \\
+
+\textbf{Corrección (Corr.)} & 
+Sí (verificación manual) & 
+Sí (validación automatizada) & 
+No \\
+
+\textbf{Alineación (Align.)} & 
+Sí (evaluación de expertos) & 
+Sí (análisis semántico) & 
+Sí (modelos de IA) \\
+
+\textbf{Completitud (Comp.)} & 
+Sí (verificación manual) & 
+Sí (verificaciones automáticas) & 
+No \\
+
+\textbf{Relevancia (Rel.)} & 
+Sí (revisión subjetiva) & 
+No & 
+Sí (puntuación con IA) \\
+
+\textbf{Factualidad (Fac.)} & 
+Sí (verificación de hechos) & 
+No & 
+Sí (verificación con IA) \\
+
+\textbf{Seguridad (Sec.)} & 
+Sí (revisión de seguridad) & 
+Sí (escaneo de vulnerabilidades) & 
+No \\
+
+\textbf{Transparencia (Tran.)} & 
+Sí (revisión de claridad) & 
+No & 
+No \\
+
+\hline
+\end{tabular}
+\caption{Tabla 12 extraída de Evaluating the quality of GenAI applications in software
+engineering: a multi-case study: Tipos de evaluación para las métricas identificadas}
+\label{table:aritculo-eval}
+\end{table}
+
+Para el caso de uso de generación de documentos utilizando inteligencia artificial, el artículo define como se mide cada aspecto de calidad, ejemplificado en la Tabla \ref{table:aritculo-eval2} extraída también del articulo. Este caso de uso se aproxima a la generación automática de historias de usuario, ya que el texto es generado por la inteligencia artificial a partir de un documento.
+
+\begin{longtable}{|p{3cm}| p{4cm} |p{4cm}|}
+\caption{Tabla 14 extraída de Evaluating the quality of GenAI applications in software
+engineering: a multi-case study: Métricas y prácticas sugeridas para la generación de documentos}
+\label{table:aritculo-eval2}\\
+\hline
+\textbf{Aspecto de calidad} & \textbf{Métrica} & \textbf{Pasos para aplicarla en la práctica} \\
+\hline
+
+\textbf{Exactitud} &
+Tasa de corrección específica de la tarea (basada en reglas) &
+Paso 1: Definir el contenido requerido (por ejemplo, los tres cambios principales). \newline
+Paso 2: Contar los elementos capturados frente a los omitidos o alucinados. \newline
+Paso 3: Utilizar listas de verificación o plantillas para una revisión estructurada. \\
+
+\hline
+
+\textbf{Relevancia} &
+BERTScore (similitud semántica basada en embeddings) &
+Paso 1: Comparar la salida de la IA generativa con ejemplos citados. \newline
+Paso 2: Establecer rangos de umbral según el tipo de tarea. \newline
+Paso 3: Aplicar en modo batch para múltiples resúmenes. \\
+
+\hline
+
+\textbf{Factualidad} &
+FActScore (coincidencia basada en embeddings y a nivel de entidades) &
+Paso 1: Aplicar en contenido de alto riesgo (por ejemplo, documentos de cumplimiento). \newline
+Paso 2: Automatizar la comparación con documentos fuente confiables si es posible. \newline
+Paso 3: Agregar revisión manual para casos límite. \\
+
+\hline
+
+\textbf{Alineación con las expectativas} &
+Tarjeta de evaluación del revisor (lista de verificación o puntuación humana) &
+Paso 1: Solicitar a los interesados que evalúen claridad, cobertura y utilidad. \newline
+Paso 2: Utilizar escalas tipo Likert o formularios de puntuación basados en tareas. \newline
+Paso 3: Recopilar retroalimentación para mejorar los prompts y el flujo de revisión. \\
+
+\hline
+\end{longtable}
+
+% Esto capaz que se puede mejorar con lo que se habia escrito antes, sobre porque se descartaron algunos de los algoritmos del articulo
+Se analizaron las técnicas automáticas propuestas en el articulo y se decidió que podría ser posible utilizar BERTScore para evaluar la similitud semántica de las historias generadas con respecto a una solución esperada o el documento de requisitos. Otros algoritmos automáticos como FActScore fueron descartados por ser más estrictos y no aplicables al dominio de historias de usuario, donde es posible utilizar sinónimos o inferir requerimientos de los documentos de requisitos. Teniendo esto en cuenta, se decidió definir un proceso completo de evaluación para historias de usuario, especificando evaluación manual, automática o asistida, definidos en el Capitulo \ref{cap:evaluacion}.

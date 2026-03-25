@@ -1,0 +1,12 @@
+\subsection{BERTScore}
+\label{sec:bertscore}
+
+Con el fin de contar con una medida \textit{automática} de similitud entre una historia de usuario (HU) generada y una HU de referencia, se utiliza \textit{BERTScore} \cite{zhang2020bertscore}. A diferencia de métricas basadas en solapamiento superficial de palabras o $n$-gramas, BERTScore busca capturar \textbf{similitud semántica} a partir de representaciones contextuales (embeddings) generadas por modelos tipo BERT. Esto permite otorgar crédito cuando dos textos expresan la misma intención con redacciones distintas, lo cual es frecuente en el dominio de HU.
+
+Para su aplicación, cada HU generada se empareja con su correspondiente HU de referencia, elaborada por el equipo humano bajo los criterios de calidad definidos en este trabajo. Sobre cada par \textit{(generada, referencia)} se calcula BERTScore y se reporta principalmente el valor \textbf{F1}, por sintetizar en un único indicador el balance entre \textit{precision} y \textit{recall} semánticos \cite{zhang2020bertscore}. En la interpretación, valores más altos indican mayor cercanía semántica entre la HU generada y la HU de referencia.
+
+Dado que el estudio considera conjuntos de HU en español e inglés, se controla el idioma para preservar comparabilidad. En particular, se utiliza un \textbf{modelo multilingüe} para calcular BERTScore en ambos idiomas, manteniendo parámetros consistentes en todo el experimento.\footnote{Alternativamente, en caso de observarse comportamientos significativamente distintos por idioma, se reportan resultados separados por español e inglés para evitar mezclar distribuciones no comparables.}
+
+El rol de BERTScore en el marco de evaluación es proveer una señal cuantitativa, rápida y reproducible de similitud semántica entre la salida del sistema y la referencia humana. No obstante, un valor alto de BERTScore no garantiza por sí mismo que la HU sea de calidad en términos de ingeniería de requisitos (p.\ ej., ausencia de ambigüedad, completitud estructural, verificabilidad o adecuación al contexto del proyecto). Por ello, BERTScore se utiliza como métrica complementaria a los criterios específicos del dominio y, cuando corresponde, a la evaluación humana \cite{yu2026genai_quality}.
+
+Esto resulta apropiado para HU, donde no existe una única redacción correcta y la comparación debe ser robusta a paráfrasis, sinónimos y reordenamientos que preservan intención.

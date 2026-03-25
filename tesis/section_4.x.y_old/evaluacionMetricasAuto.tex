@@ -1,0 +1,269 @@
+\section{Metodología de evaluación automática}
+\label{sec:metodologia_evaluacion}
+Presentamos una investigación que propone una metodología de evaluación automática para analizar la calidad de historias de usuario, junto con sus criterios de aceptación, generadas por herramientas basadas en modelos de lenguaje (inteligencia artificial).
+
+El objetivo es construir un proceso sistemático y reproducible que permita evaluar múltiples dimensiones de la calidad de las herramientas de IA analizadas. Es importante observar que no se evalúan directamente las herramientas, si no que las historias de usuario generadas a partir de las mismas son utilizadas como input en el framework desarrollado. La metodología se limita a evaluar un dominio específico, previamente definido, y busca estudiar la calidad de un conjunto de historias de usuario (con respectivos criterios de aceptación).
+
+La Figura~\ref{fig:metodologia_pipeline} presenta el diseño de la metodología
+de evaluación automática desarrollada en este trabajo.
+El proceso se estructura como un pipeline multinivel, donde cada nivel evalúa una dimensión específica del problema. Este enfoque permite descomponer la evaluación en distintas dimensiones.
+
+\paragraph{Entradas del proceso}
+
+Para cada caso experimental se consideran los siguientes conjuntos:
+
+\begin{itemize}
+    \item Historias de usuario generadas ($G$)
+    \item Historias de usuario esperadas ($E$)
+    \item Criterios de aceptación generados ($CA_G$)
+    \item Criterios de aceptación esperados ($CA_E$)
+    \item Lista de conceptos relevantes del dominio ($C$)
+\end{itemize}
+
+Las historias esperadas con sus criterios de aceptación asociados, junto con la lista de conceptos relevantes del dominio constituyen el
+conjunto de referencia para la evaluación (ground truth), contra el cual se
+comparan los resultados producidos por cada herramienta.
+
+\subsection{Nivel 1: Alineación semántica}
+Este nivel busca determinar si cada historia generada corresponde funcionalmente con alguna historia esperada. Para esto, se utiliza un modelo de embeddings basado en SBERT, que representa cada historia como un vector en un espacio semántico. La similitud entre dos historias
+se calcula mediante la similitud coseno entre sus vectores; un valor alto indica
+mayor cercanía semántica entre los textos comparados.
+
+Sea:
+
+\[
+\mathbf{g_i} = \text{encode}(G_i), \quad
+\mathbf{e_j} = \text{encode}(E_j)
+\]
+
+donde $\mathbf{g_i}$ y $\mathbf{e_j}$ son las representaciones vectoriales
+de las historias generadas y esperadas, respectivamente.
+
+La similitud entre una historia generada $G_i$ y una historia esperada $E_j$
+se calcula mediante la similitud coseno:
+
+\[
+\text{sim}(G_i, E_j) =
+\frac{\mathbf{g_i} \cdot \mathbf{e_j}}
+{\|\mathbf{g_i}\| \cdot \|\mathbf{e_j}\|}
+\]
+
+Para cada historia generada se identifica la historia esperada más cercana:
+
+\[
+E_{j^*} = \arg\max_j \text{sim}(G_i, E_j)
+\]
+
+En función del valor de similitud obtenido, las historias se clasifican en
+tres categorías:
+
+\begin{itemize}
+\item \textbf{Alineación fuerte}: $\text{sim} \geq 0.85$
+\item \textbf{Alineada}: $0.80 \leq \text{sim} < 0.85$
+\item \textbf{No alineada}: $\text{sim} < 0.80$
+\end{itemize}
+
+Solo las historias con $\text{sim} \geq 0.80$ se consideran alineadas y
+continúan en los niveles posteriores del pipeline.
+
+\paragraph{Justificación de umbrales}
+Los valores adoptados para los umbrales se basan en estudios empíricos que analizan la
+correlación entre similitud semántica y juicio humano. En particular, se ha
+observado que valores de similitud superiores a 0.85 alcanzan aproximadamente
+un 95\% de acuerdo humano, mientras que valores cercanos a 0.80 capturan
+equivalencia semántica en alrededor del 70\% de los casos.
+En este trabajo, el umbral de 0.80 se utiliza como criterio de
+alineación.
+
+\subsection{Nivel 2: Cobertura de historias}
+El segundo nivel evalúa qué proporción de las historias esperadas está
+efectivamente representada en el conjunto generado.
+
+Para cada historia esperada $E_j$ se calcula:
+
+\[
+\text{max\_sim}(E_j) = \max_i \text{sim}(G_i, E_j)
+\]
+
+Una historia esperada se considera cubierta si:
+
+\[
+\text{max\_sim}(E_j) \geq 0.75
+\]
+
+La cobertura global se define como:
+
+\[
+\text{Coverage} =
+\frac{\# \text{historias cubiertas}}
+{\# \text{historias esperadas}}
+\]
+
+En este nivel se mide la completitud funcional que cubren las historias generadas.
+
+\subsection{Nivel 3: Evaluación de criterios de aceptación}
+
+En este nivel evaluamos la calidad estructural y funcional de los criterios de aceptación asociados a las historias de usuario generadas. A diferencia de los niveles anteriores, este análisis se realiza exclusivamente sobre las historias alineadas en el nivel 1, ya que los criterios de aceptación dependen directamente del contexto funcional de cada historia, y no resulta relevante analizar criterios de aceptación de historias que no tuvieron una alineación con nuestro conjunto de historias esperadas (ground truth).
+
+\paragraph{Enfoque de evaluación}
+
+El análisis se realiza por par alineado $(h_{\text{gen}}, h_{\text{exp}})$, comparando:
+
+\begin{itemize}
+    \item Los criterios de aceptación generados ($CA_{\text{gen}}$)
+    \item Los criterios de aceptación esperados ($CA_{\text{exp}}$)
+\end{itemize}
+
+Se consideran tres dimensiones complementarias:
+
+\textbf{Cobertura funcional de criterios}
+Aquí evaluamos si los criterios generados representan los mismos escenarios que los criterios esperados. La comparación se realiza para cada historia alineada del Nivel 1, para cada criterio esperado se busca el criterio generado más similar:
+
+\[
+\max_{c_g \in CA_{\text{gen}}} \text{sim}(c_e, c_g)
+\]
+
+Un criterio esperado se considera cubierto si:
+
+\[
+\text{sim}(c_e, c_g) \geq 0.75
+\]
+
+La cobertura funcional para una historia se define como:
+
+\[
+\text{Coverage}_{CA}(i) = 
+\frac{\#CA_{\text{cubiertos}}}{\#CA_{\text{esperados}}}
+\]
+
+\textbf{Interpretación:}
+
+\begin{itemize}
+    \item Valores altos indican que los escenarios funcionales están bien representados
+    \item Valores bajos indican pérdida de detalle o simplificación en los criterios generados
+\end{itemize}
+
+\textbf{Ambigüedad en los criterios de aceptación}
+Esta dimensión evalúa si los criterios contienen términos considerados "vagos" o ambiguos, que dificulten la interpretación o validación del mismo.
+El puntaje de ambigüedad se define como:
+
+\[
+\text{Ambig\"uedad}(i) = 
+1 - \frac{\#CA_{\text{ambiguos}}}{\#CA_{\text{generados}}}
+\]
+
+Se consideran ambiguos los criterios que contienen términos no cuantificables (por ejemplo: \textit{fast}, \textit{adequate}, \textit{user-friendly}).
+
+\textbf{Interpretación:}
+
+\begin{itemize}
+    \item $1.0$ indican sin ambigüedad
+    \item Valores bajos indican criterios poco precisos
+\end{itemize}
+
+\textbf{Verificabilidad de criterios de aceptación}
+Se estudia si los criterios pueden ser utilizados directamente para testing.
+Un criterio se considera verificable si:
+\begin{itemize}
+    \item Describe un resultado observable
+    \item No contiene ambigüedad (dimensión anterior)
+\end{itemize}
+El puntaje se define como:
+
+\[
+\text{Verificabilidad}(i) = 
+\frac{\#CA_{\text{verificables}}}{\#CA_{\text{generados}}}
+\]
+
+\textbf{Interpretación:}
+
+\begin{itemize}
+    \item Valores altos indican criterios testeables
+    \item Valores bajos indican necesidad de refinamiento
+\end{itemize}
+
+
+\subsection{Nivel 4: Cobertura conceptual}
+Este nivel evalúa si las historias generadas cubren los conceptos clave del dominio.
+
+Para cada concepto $c$:
+
+\[
+\max_{i} \text{sim}(c, G_i)
+\]
+
+Se considera cubierto si:
+
+\[
+\text{sim} \geq 0.70
+\]
+
+La cobertura conceptual es:
+
+\[
+\text{Cobertura} = 
+\frac{\#\text{conceptos cubiertos}}{\#\text{conceptos totales}}
+\]
+
+Este nivel mide la proporción de aspectos relevantes definidos para el dominio son cubiertos por las historias de usuario generadas.
+
+\subsection{Discusión metodológica}
+
+La combinación de los cuatro niveles permite analizar el problema desde múltiples perspectivas complementarias, abordando distintas dimensiones de calidad en las historias de usuario generadas:
+
+\begin{itemize}
+    \item \textbf{Nivel 1} Evalúa la validez semántica mediante la alineación entre historias generadas y esperadas
+    \item \textbf{Nivel 2} Mide la completitud funcional del conjunto generado respecto al dominio
+    \item \textbf{Nivel 3} Analiza la calidad de los criterios de aceptación en términos de cobertura, ambigüedad y verificabilidad
+    \item \textbf{Nivel 4} Evalúa la cobertura conceptual del dominio
+\end{itemize}
+
+En conjunto, estos niveles permiten analizar distintas dimensiones definidas para el análisis, diferenciando entre similitud semántica, cobertura funcional y representación del dominio.
+
+\subsection{Limitaciones de la metodología}
+
+A pesar de sus ventajas, la metodología presenta limitaciones relevantes que deben ser consideradas en la interpretación de los resultados.
+
+\textbf{Limitaciones de métricas automáticas}
+
+Las métricas basadas en embeddings, como SBERT, permiten capturar similitud semántica entre textos, pero no garantizan equivalencia funcional entre los artefactos evaluados.
+
+Diversos trabajos han señalado que las métricas automáticas tradicionales dependen en gran medida de coincidencias superficiales y fallan en capturar matices profundos del lenguaje (\textit{deep nuances}), especialmente en tareas complejas como generación de texto o especificaciones. Este problema es discutido en el estudio \textit{A Survey on LLM-as-a-Judge} \cite{llm_judge_survey_2024}.
+
+En consecuencia, dos historias de usuario pueden presentar alta similitud semántica, pero diferir significativamente en términos de comportamiento funcional, restricciones o cobertura de requisitos.
+
+\textbf{Definición del ground truth}
+
+El conjunto de historias de usuario esperadas fue construido por analistas a partir de la especificación del dominio, y no mediante un proceso de elicitación directa con usuarios finales. Esto introduce una limitación relevante: el \textit{ground truth} no constituye una representación única ni absoluta de los requisitos del sistema.
+
+En el contexto de ingeniería de requisitos, no existe una única descomposición correcta de historias de usuario. Diferentes analistas pueden producir conjuntos válidos que:
+
+\begin{itemize}
+    \item Varían en granularidad (historias más atómicas vs. más consolidadas)
+    \item Priorizan distintos aspectos funcionales
+    \item Utilizan formulaciones lingüísticas diferentes
+    \item Expresan el mismo requisito mediante estructuras distintas
+\end{itemize}
+
+Por lo tanto, el \textit{ground truth} utilizado en esta evaluación debe interpretarse como una instancia válida del dominio, pero no como una verdad absoluta.
+
+Esto implica que la evaluación mide \textbf{alineación relativa} respecto a una referencia específica, y no necesariamente corrección funcional absoluta. En consecuencia, soluciones generadas pueden ser válidas desde el punto de vista funcional y, sin embargo, obtener bajas puntuaciones de similitud debido a diferencias de formulación, granularidad o modelado del dominio.
+
+\textbf{Evaluación parcial de criterios de aceptación}
+
+La evaluación de criterios de aceptación (Nivel 3) se realiza únicamente sobre historias previamente alineadas en el Nivel 1. Esta decisión evita comparaciones semánticamente inválidas entre historias no relacionadas.
+
+Sin embargo, esta estrategia reduce el alcance del análisis, ya que excluye criterios asociados a historias no alineadas, lo que implica que no se evalúa la totalidad del sistema generado en términos de calidad de criterios de aceptación.
+
+\subsection{Síntesis}
+
+La metodología propuesta permite evaluar de forma estructurada la calidad de historias de usuario generadas automáticamente mediante un enfoque multinivel.
+
+El diseño combina:
+
+\begin{itemize}
+    \item Métricas de similitud semántica
+    \item Análisis de cobertura funcional
+    \item Evaluación estructural de criterios de aceptación
+    \item Medición de cobertura conceptual del dominio
+\end{itemize}

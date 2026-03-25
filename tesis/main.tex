@@ -1,0 +1,1071 @@
+\documentclass{prgrado}
+\usepackage{comment}
+\usepackage{ragged2e}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{pdflscape}
+\usepackage{adjustbox}
+\usepackage{rotating}
+\usepackage{float}
+\usepackage{svg}
+\usepackage{multirow}
+
+\usepackage{pgfplots}
+\usepackage{xcolor}
+\pgfplotsset{compat=1.18}
+
+\usepackage{array}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\setlength{\emergencystretch}{3em}
+
+
+\title{Análisis de herramientas para la generación automática de historias de usuario y evaluación de las mismas}       
+
+\author{Romina Parada, Gonzalo Caricot Layera, Valentin Dutra y Keiver Fajardo}  
+
+% Fecha de la defensa
+\date{\today}                                 
+\supervisor{Diego Vallespir}                
+\cclicense{by}{4.0}
+
+\hypersetup{
+  colorlinks   = true,
+  urlcolor     = blue,
+  linkcolor    = blue,
+  citecolor    = red
+}
+\usepackage{longtable}
+\begin{document}
+\setcounter{secnumdepth}{3} 
+
+\frontmatter
+\maketitle
+
+\chapter{Agradecimientos}
+\input{agradecimientos}
+\chapter{Resumen}
+\input{resumen}
+
+% índice
+\tableofcontents
+
+
+\mainmatter
+\input{introduccion}
+
+% Antecedentes
+\chapter{Revisión de antecedentes}
+\label{cap:antecedentes}
+\input{revision/main}
+% Revisión de antecedentes (productos, procesos, publicaciones, etc., tanto a nivel académico como comercial).
+% Puede incluir, si es necesario, una breve introducción a los conceptos necesarios para comprender el trabajo.
+
+%El objetivo de este capítulo es presentar la revisión de antecedentes sobre la generación automática de historias de usuario con la utilización de inteligencia artificial. Con este fin, se definieron metodologías tanto para buscar y seleccionar las herramientas, como para analizar las mismas. También se explica el enfoque de análisis aplicado y se muestran los resultados observados, con el fin de evaluar en qué medida cada herramienta cubre los aspectos funcionales definidos para este proyecto.
+
+
+
+% parte central
+\chapter{Revision de herramientas}
+\label{cap:herramientas}
+\input{herramientas/main}
+
+\chapter{Evaluación piloto}
+\label{cap:central}
+\input{central/main}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Metodología de evaluación de historias de usuario}
+\label{cap:evaluacion}
+\input{evaluacion/main}
+
+\chapter{Resultados y discusión}
+\label{cap:resultados}
+\input{resultados/main}
+%\input{section_4.x.y/marco_de_evaluación_análisis}
+%\input{section_4.x.y/resultados_de_la_evaluación_y_comparación}
+%\clearpage
+%\input{section_4.x.y/evaluacionMetricasAuto}
+%\input{section_4.x.y/resultadosClickupMetricasAuto}
+\begin{comment}
+\clearpage
+\begin{figure}[p]
+  \centering
+  \includegraphics[
+    width=\textwidth,
+    height=\textheight,
+    keepaspectratio
+  ]{figs/diagrama_01.jpg}
+  \caption{Arquitectura general del proceso de evaluación de historias de usuario y criterios de aceptación.}
+  \label{fig:eval-arquitectura}
+\end{figure}
+\clearpage
+
+\begin{figure}[p]
+  \centering
+  \includegraphics[
+    width=\textwidth,
+    height=\textheight,
+    keepaspectratio
+  ]{figs/diagrama_02.jpg}
+  \caption{Flujo detallado de evaluación: alineación HU--CA, cobertura conceptual, ambigüedad y diversidad.}
+  \label{fig:eval-arquitectura}
+\end{figure}
+\clearpage
+\end{comment}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%conclusiones
+\chapter{Conclusiones y trabajo futuro}
+\label{cap:conclusiones}
+
+En este capítulo se evalúan los resultados alcanzados y
+dificultades encontradas, se establece lo que se planteó hacer y lo que se hizo
+realmente, cuales fueron los aportes, se muestran posibles extensiones al trabajo, se
+realiza una autocrítica de lo que se hizo y lo que faltó (por problemas de tiempo,
+recursos, cómo se puede continuar, qué cosas hacer, prioridades, etc.) y se incluye
+información sobre la gestión del proyecto, si aplica
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Parte final
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+o
+{ % inicio backmatter
+
+\backmatter % no numerar capítulos 
+
+% referencias bibliográficas
+
+\newpage
+\bibliographystyle{apacite}
+\bibliography{referencias}
+
+} % fin backmatter
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% anexos
+
+% --- Anexos (sin numeración y sin secciones internas) ---
+\cleardoublepage
+\phantomsection
+\chapter*{Anexos}
+\label{cap:anexo}
+\addcontentsline{toc}{chapter}{Anexos}
+\markboth{Anexos}{Anexos}
+
+% ===== Anexo 1 =====
+\vspace{0.75\baselineskip}
+{\large\bfseries Anexo 1 — Prompts y evaluación de herramientas\par}
+\vspace{0.25\baselineskip}
+
+
+Este anexo recopila los \textit{prompts} empleados durante la búsqueda y evaluación de herramientas, con el fin de asegurar la trazabilidad y reproducibilidad del proceso de recolección de información. Se incluyen las consultas realizadas en las plataformas Perplexity y Gemini, así como el registro y control de cambios realizados.
+
+\medskip
+\textbf{Perplexity — Prompt utilizado}
+\begin{quote}
+Estamos realizando un estudio de investigación sistemático en el área de Ingeniería de Software.  
+El objetivo es identificar y analizar herramientas existentes que automaticen ciertos aspectos de la ingeniería de requisitos, en particular:  
+(a) la generación automática de historias de usuario a partir de documentos/archivos de entrada,  
+(b) la validación de la calidad de los requisitos en las historias generadas, y  
+(c) la detección de inconsistencias, ambigüedades o duplicidades en los documentos/archivos utilizados como entrada.  
+
+Devuelve únicamente herramientas implementadas y disponibles actualmente (código abierto o comerciales) que puedan probarse de forma práctica. Excluye artículos académicos, propuestas conceptuales o repositorios sin código ejecutable.  
+
+Para cada herramienta válida, incluir:  
+- Nombre  
+- Enlace oficial o repositorio  
+- Canal de uso (CLI, plugin, API, SaaS, paquete, etc.)  
+- Enlace de instalación o documentación  
+- Fecha o versión del último lanzamiento  
+- Tipo de licencia (si es de código abierto)  
+- Breve descripción de sus funcionalidades principales  
+
+Considerar únicamente resultados del período 2022–2025.  
+Idioma: inglés.  
+Fuentes sugeridas: GitHub, GitLab, Bitbucket y marketplaces de software (Atlassian Marketplace, Azure DevOps, JetBrains, etc.).  
+Evitar resultados que sean solo artículos o datasets sin ejecutables.  
+
+Proporciona una lista concisa y sin duplicados con las 10 herramientas más relevantes.
+\end{quote}
+
+\newpage
+
+\medskip
+\textbf{Gemini — Proceso en tres etapas}
+
+\textit{Mensaje 1 — Listado inicial con enlaces oficiales. Objetivo: obtener un conjunto preliminar de herramientas candidatas.}
+\par\textbf{Prompt literal}
+\begin{quote}
+Siguiendo el alcance de la investigación, lista las herramientas implementadas (2022–2025) que puedan probarse de forma práctica y que estén relacionadas con:  
+(a) la generación automática de historias de usuario a partir de documentos/archivos de entrada,  
+(b) la validación de la calidad de los requisitos en las historias generadas, y  
+(c) la detección de inconsistencias, ambigüedades o duplicidades en los documentos/archivos utilizados como entrada.    
+
+Devuelve únicamente el nombre de la herramienta y los enlaces oficiales al producto o repositorio.  
+Idioma: inglés. Evita duplicados por nombre o dominio.
+\end{quote}
+
+\textit{Mensaje 2 — Refinamiento técnico. Objetivo: obtener detalles técnicos sobre cada herramienta identificada.}
+\par\textbf{Prompt literal}
+\begin{quote}
+Para cada herramienta listada anteriormente, proporciona la siguiente información:  
+- Canal de uso (CLI, paquete, plugin de Jira/Azure DevOps/VS Code, SaaS, Docker, API)  
+- Enlace a la guía de instalación o documentación (README/docs)  
+- Fecha o versión del último lanzamiento y estado de mantenimiento  
+- Tipo de licencia (si es de código abierto)  
+
+Devuelve los resultados en formato de tabla Markdown con las columnas:  
+\{Nombre | Enlace oficial | Canal de uso | Instalación | Versión/Lanzamiento | Licencia\}.
+\end{quote}
+
+\textit{Mensaje 3 — Selección final y verificación rápida. Objetivo: seleccionar las herramientas más relevantes y confirmar que sean ejecutables o factibles de evaluar.}
+\par\textbf{Prompt literal}
+\begin{quote}
+De la tabla anterior, selecciona las 10 herramientas más relevantes (por nombre o dominio) que mejor se ajusten al alcance de la investigación.  
+Para cada una, agrega los pasos mínimos de comprobación (por ejemplo, comando de instalación, ejecución en Docker o enlace de registro) que permitan verificar rápidamente su funcionamiento.  
+
+Devuelve una lista breve, clara y directamente accionable.
+\end{quote}
+
+\medskip
+\textbf{Registro y control de cambios}
+\par Durante la búsqueda, se almacenó para cada ejecución la siguiente información:
+\begin{itemize}
+    \item \textbf{Prompt utilizado}
+    \item \textbf{Marca temporal}
+    \item \textbf{Modelo de IA empleado} (Gemini o Perplexity)
+    \item \textbf{Resultados obtenidos}
+\end{itemize}
+
+% ===== Anexo 2 =====
+\newpage
+\vspace{0.75\baselineskip}
+{\large\bfseries Anexo 2\par}
+\vspace{0.25\baselineskip}
+
+A continuación se listan, tal como aparecen en las ejecuciones documentadas (sin duplicados; se enumeran todas las ejecuciones por herramienta).
+
+\begin{center}
+\begin{longtable}{|
+>{\RaggedRight\arraybackslash}p{6.5cm}|
+>{\RaggedRight\arraybackslash}p{4cm}|
+>{\RaggedRight\arraybackslash}p{3.5cm}|}
+\caption{Herramientas de IA, fuente de búsqueda y fecha de ejecución} \\
+\hline
+\textbf{Herramienta} & \textbf{Motor de búsqueda} & \textbf{Fecha de ejecución} \\
+\hline
+\endfirsthead
+
+\multicolumn{3}{c}%
+{{\bfseries \tablename\ \thetable{} -- continuación}} \\
+\hline
+\textbf{Herramienta} & \textbf{Motor de búsqueda} & \textbf{Fecha de ejecución} \\
+\hline
+\endhead
+
+\hline \multicolumn{3}{r}{{Continúa en la siguiente página}} \\
+\endfoot
+
+\hline
+\endlastfoot
+
+ScopeMaster / Story Analyser for Jira & Perplexity & 22/10/2025 \\
+RequirementLinter & Perplexity / Gemini & 22/10/2025 -- 24/10/2025 \\
+POPal --- AI Test Case \& User Story Generator for Jira & Perplexity / Gemini & 22/10/2025 -- 24/10/2025 \\
+StoryCraft & Perplexity / GitHub & 22/10/2025 -- 24/10/2025 \\
+StoryTest (by ScopeMaster) & Perplexity & 22/10/2025 \\
+Visual Narrator & Perplexity & 22/10/2025 \\
+Featmap & Perplexity & 22/10/2025 \\
+USeR (User Story eReviewer) & Perplexity & 22/10/2025 \\
+reqSuite RM & Perplexity & 22/10/2025 \\
+AQUSA (Automatic Quality User Story Artisan) & Perplexity / Gemini & 22/10/2025 -- 24/10/2025 \\
+Modern Requirements4DevOps & Perplexity / Gemini / Marketplace & 22/10/2025 -- 24/10/2025 \\
+Copilot4DevOps & Perplexity / Google / Marketplace & 22/10/2025 -- 24/10/2025 \\
+Ambiguity Detection Using LLMs (ChaseMcClellan) & Perplexity & 22/10/2025 \\
+RE-Ambiguity-Detection-Experiment (+ OpenReq) & Perplexity & 22/10/2025 \\
+Reqnroll & Perplexity & 22/10/2025 \\
+Curiosity Software --- Quality Modeller & Gemini & 24/10/2025 \\
+aqua ALM (AI Copilot) & Gemini / Marketplace & 24/10/2025 \\
+GitHub Spec-Kit & Gemini / GitHub & 24/10/2025 \\
+AI Requirements Engineer Assistant & Gemini & 24/10/2025 \\
+GeneUS & Gemini / Google & 24/10/2025 \\
+QVscribe & Gemini & 24/10/2025 \\
+Automated User Story Generation with Test Case Specification (GPT-4.0 based) & Gemini & 24/10/2025 \\
+StoriesOnBoard & Google & 22/10/2025 -- 24/10/2025 \\
+Beam AI User Stories & Google & 22/10/2025 \\
+ClickUp & Google & 22/10/2025 -- 24/10/2025 \\
+Quanter AI & Google & 24/10/2025 \\
+Miro & Google & 24/10/2025 \\
+RequirementLinter Public & GitHub & 22/10/2025 -- 24/10/2025 \\
+StoryMachine & GitHub & 22/10/2025 -- 24/10/2025 \\
+Agile-bot & GitHub & 22/10/2025 -- 24/10/2025 \\
+User Story Generator & GitHub & 22/10/2025 -- 24/10/2025 \\
+%Story-craft & GitHub & 22/10/2025 -- 24/10/2025 \\
+AI-Driven Agile Team & GitHub & 24/10/2025 \\
+AutoDev Editor & GitHub & 24/10/2025 \\
+Specifai & GitHub & 24/10/2025 \\
+StoryBot & GitHub & 24/10/2025 \\
+UST - User Story Tutor & GitHub & 24/10/2025 \\
+UserStory QE - Agent & Marketplace & 22/10/2025 -- 24/10/2025 \\
+QAssert TestCase and UserStory Generator & Marketplace & 22/10/2025 -- 24/10/2025 \\
+AI Agile Story / Bug Generation & Marketplace & 22/10/2025 -- 24/10/2025 \\
+AI Requirements Copilot for Jira & Marketplace & 22/10/2025 -- 24/10/2025 \\
+Storygenie & Marketplace & 22/10/2025 -- 24/10/2025 \\
+AutoStory: AI-Powered Ticket Creation for Jira & Marketplace & 24/10/2025 \\
+\hline
+\end{longtable}
+\end{center}
+
+
+\begin{comment}
+    
+\begin{longtable}{|p{10cm}|p{5cm}|}
+\caption{Herramientas de IA y fuentes de ejecución} \\
+\hline
+\textbf{Herramienta} & \textbf{Ejecuciones} \\
+\hline
+\endfirsthead
+
+\multicolumn{2}{c}%
+{{\bfseries \tablename\ \thetable{} -- continuación}} \\
+\hline
+\textbf{Herramienta} & \textbf{Ejecuciones} \\
+\hline
+\endhead
+
+\hline \multicolumn{2}{r}{{Continúa en siguiente página}} \\
+\endfoot
+
+\hline
+\endlastfoot
+
+ScopeMaster / Story Analyser for Jira & Perplexity 01, Gemini 03 \\
+RequirementLinter & Perplexity 01, Gemini 01, Gemini 02 \\
+POPal --- AI Test Case \& User Story Generator for Jira & Perplexity 01, Gemini 01 \\
+StoryCraft & Perplexity 01, Perplexity 02 \\
+StoryTest (by ScopeMaster) & Perplexity 01 \\
+Visual Narrator & Perplexity 01 \\
+Featmap & Perplexity 01 \\
+USeR (User Story eReviewer) & Perplexity 01 \\
+reqSuite RM & Perplexity 01 \\
+AQUSA (Automatic Quality User Story Artisan) & Perplexity 01, Gemini 03 \\
+Kollabe User Story Generator & Perplexity 02 \\
+Easy-Peasy AI --- User Story Generator & Perplexity 02 \\
+Modern Requirements4DevOps & Perplexity 02, Gemini 03 \\
+Copilot4DevOps & Perplexity 02 \\
+rmToo & Perplexity 02 \\
+Ambiguity Detection Using LLMs (ChaseMcClellan) & Perplexity 02 \\
+ambiguity\_detection & Perplexity 02 \\
+RE-Ambiguity-Detection-Experiment (+ OpenReq) & Perplexity 02 \\
+Reqnroll & Perplexity 02 \\
+Curiosity Software --- Quality Modeller & Gemini 01 \\
+aqua ALM (AI Copilot) & Gemini 01, Gemini 03 \\
+GitHub Spec-Kit & Gemini 02 \\
+LLM Azure Function App & Gemini 02 \\
+AI Requirements Engineer Assistant & Gemini 02 \\
+GeneUS & Gemini 02 \\
+aqua (Declarative CLI Version Manager) & Gemini 03 \\
+QVscribe & Gemini 03 \\
+GenAI-Enabled Backlog Grooming (Prototype) & Gemini 03 \\
+Automated User Story Generation with Test Case Specification (GPT-4.0 based) & Gemini 03 \\
+MyAgileCopilot --- ChatGPT for Product Backlog & Gemini 03 \\
+AI User Story \& Test Case Generator for Jira & Gemini 03 \\
+TestRay --- Requirements \& Test Management for Jira & Gemini 03 \\
+AI Test Case Generator for Azure (bakeqa) & Gemini 03 \\
+Aqua & Google 02 \\
+Get Generative AI & Google 02 \\
+Inflectra & Google 02 \\
+|
+Beam AI User Stories & Google 01 \\
+Intelligent User Story Assistan & Google 01 \\
+ClickUp & Google 01, Google 02 \\
+StoriesOnBoard & Google 01, Google 02 \\
+Quanter AI & Google 02 \\
+Miro & Google 02 \\
+RequirementLinter Public & Github 01 \\
+TraceVibe & Github 01 \\
+StoryCraft - Professional User Story Generator & Github 01 \\
+Agile-bot & Github 01, Github 02 \\
+StoryMachine & Github 01, Github 02 \\
+Cursor rules for Agile & Github 01, Github 02 \\
+Copilot4DevOps & Google 01, Google 02 \\
+User Story Generator & Github 01, Github 02\\
+Story-craft & Github 01, Github 02\\
+AI-Driven Agile Team & Github 02 \\
+AutoDev Editor & Github 02 \\
+Multiagent-Prioritization & Github 02 \\
+Spec Kit & Github 02 \\
+Specifai & Github 02 \\
+StoryBot & Github 02 \\
+UST - User Story Tutor & Github 02 \\
+Vibe Coder MCP Server & Github 02 \\
+3 AI Amigos: Multi-Agent Product Development Team & Github 02 \\
+UserStory QE - Agent & Marketplace 01 \\
+QAssert TestCase and UserStory Generator & Marketplace 01 \\
+AI Agile Story / Bug Generation & Marketplace 01 \\
+AI Issue Breakdown Assistant for Jira (Cloud and Private AI) & Marketplace 01 \\
+AI Issues Automator for Jira & Marketplace 01 \\
+CirrusInsightsNow.AI & Marketplace 01 \\
+DevGenius & Marketplace 01 \\
+Qlerify Software Modeler & Marketplace 01 \\
+Agile User Story Map, Portfolio Roadmaps and Persona for Jira & Marketplace 01 \\
+AI Test Case and User Story Issue Auto Generator for Jira & Marketplace 01, Marketplace 02 \\
+AI User Story and Test Case Generator for Jira & Marketplace 01, Marketplace 02 \\
+AI Assistant Extension for Azure DevOps & Marketplace 01, Marketplace 02 \\
+AI Requirements Copilot for Jira & Marketplace 01, Marketplace 02 \\
+Storygenie & Marketplace 01, Marketplace 02 \\
+AI Test Case Generator & Marketplace 02 \\
+Story Analyser & Marketplace 02 \\
+AutoStory: AI-Powered Ticket Creation for Jira & Marketplace 02 \\
+
+
+\hline
+\end{longtable}
+\end{comment}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% ===== Anexo 3 =====
+\newpage
+\vspace{0.75\baselineskip}
+{\large\bfseries Anexo 3\par}
+\vspace{0.25\baselineskip}
+
+Este anexo contiene las historias de usuario esperadas construidas por nosotros, en la tabla \ref{tab:historias_esperadas}, junto a sus criterios de aceptación en la tabla \ref{tab:criterios_esperados}.
+
+\begin{longtable}{|c|p{12cm}|}
+\caption{Historias de Usuario Esperadas} \label{tab:historias_esperadas} \\
+\hline
+\textbf{Referencia} & \textbf{Historia de usuario} \\
+\hline
+\endfirsthead
+
+\caption{Historias de Usuario Esperadas - Continuación} \\
+\hline
+\textbf{Referencia} & \textbf{Historia de usuario} \\
+\hline
+\endhead
+
+\hline
+\endfoot
+
+\hline
+\endlastfoot
+
+HUE1 & As administrative staff, I want to register a new patient's data to enroll them in the system. \\ \hline
+HUE2 & As the system, I want to generate a unique patient number to identify each record. \\ \hline
+HUE3 & As administrative staff, I want to edit a registered patient's data to keep the information up to date. \\ \hline
+HUE4 & As administrative staff, I want to register a patient's medical background in their electronic clinical record to understand their health status. \\ \hline
+HUE5 & As administrative staff, I want to search for a patient by their name to access their information. \\ \hline
+HUE6 & As administrative staff, I want to search for a patient by their identity document to retrieve their record. \\ \hline
+HUE7 & As administrative staff, I want to search for a patient by their patient number to retrieve their record. \\ \hline
+HUE8 & As a doctor, I want to search for a patient by their name to consult their clinical record. \\ \hline
+HUE9 & As a doctor, I want to search for a patient by their identity document to access their clinical record. \\ \hline
+HUE10 & As a doctor, I want to search for a patient by their patient number to access their clinical record. \\ \hline
+HUE11 & As administrative staff, I want to view a patient's complete information to consult their personal data. \\ \hline
+HUE12 & As administrative staff, I want to view a patient's scheduled appointments to consult their information. \\ \hline
+HUE13 & As administrative staff, I want to register an appointment to schedule a patient's medical care. \\ \hline
+HUE14 & As administrative staff, I want to cancel an existing appointment to free up the time slot in the schedule. \\ \hline
+HUE15 & As administrative staff, I want to edit an existing appointment to change its date without losing the information. \\ \hline
+HUE16 & As a patient, I want to be notified by email when my appointment is modified so I stay informed. \\ \hline
+HUE17 & As a patient, I want to be notified by text message to my phone number when my appointment is modified so I stay informed. \\ \hline
+HUE18 & As a doctor, I want to access a patient's clinical record to review their prior information. \\ \hline
+HUE19 & As a doctor, I want to register the diagnosis made during the appointment to document the medical care provided. \\ \hline
+HUE20 & As a patient, I want to consult my electronic clinical record to access my medical information. \\ \hline
+HUE21 & As administrative staff, I want to register doctors with their respective specialties to enroll them in the system. \\ \hline
+HUE22 & As administrative staff, I want to define a doctor's attention hours to enable appointment assignment. \\ \hline
+HUE23 & As administrative staff, I want to edit a registered doctor's data to keep the information up to date. \\ \hline
+HUE24 & As administrative staff, I want to edit a doctor's attention hours to keep the information up to date. \\ \hline
+HUE25 & As administrative staff, I want to deactivate a registered doctor to keep the information up to date. \\ \hline
+HUE26 & As administrative staff, I want to activate a registered doctor to keep the information up to date. \\ \hline
+HUE27 & As the system, I want to define system roles to organize access to functionalities. \\ \hline
+HUE28 & As the system, I want to associate permissions with each role to control access to system functionalities. \\ \hline
+HUE29 & As administrative staff, I want to generate an invoice associated with an appointment to have a payment receipt. \\ \hline
+HUE30 & As the system, I want to generate a unique identifier to identify each invoice. \\ \hline
+HUE31 & As a pharmacist, I want to generate an invoice associated with a medication to have a payment receipt. \\ \hline
+HUE32 & As a pharmacist, I want to search for a patient by their identity document to consult the patient's medications. \\ \hline
+HUE33 & As a pharmacist, I want to view a patient's medications to consult their medications. \\ \hline
+HUE34 & As administrative staff, I want to generate an invoice associated with a medication to have a payment receipt. \\ \hline
+HUE35 & As administrative staff, I want to view a patient's medications to consult their medications. \\ \hline
+HUE36 & As a patient, I want to receive an email notification with the invoice attached to access the payment receipt. \\ \hline
+HUE37 & As a patient, I want to be notified by text message to my phone number with the invoice information to stay informed about the charge. \\ \hline
+HUE38 & As a pharmacist, I want to register medications to keep the hospital inventory up to date. \\ \hline
+HUE39 & As a pharmacist, I want to register supplies to keep the hospital inventory up to date. \\ \hline
+HUE40 & As a pharmacist, I want to edit how many medications are available to keep the hospital inventory up to date. \\ \hline
+HUE41 & As a pharmacist, I want to edit how many supplies are available to keep the hospital inventory up to date. \\ \hline
+HUE42 & As a pharmacist, I want to associate a medication with the patient who collected it so the system generates the corresponding invoice. \\ \hline
+HUE43 & As a pharmacist, I want to consult the medication inventory sorted by available quantity. \\ \hline
+HUE44 & As a pharmacist, I want to consult the medication inventory sorted by expiration date. \\ \hline
+HUE45 & As a pharmacist, I want to consult the supply inventory sorted by available quantity. \\ \hline
+HUE46 & As a pharmacist, I want to consult the supply inventory sorted by expiration date. \\ \hline
+HUE47 & As a pharmacist, I want to check how many units of a medication are available to make timely decisions. \\ \hline
+HUE48 & As a pharmacist, I want to check how many units of a supply are available to make timely decisions. \\ \hline
+HUE49 & As a pharmacist, I want to search for a medication by its name to access its information. \\ \hline
+HUE50 & As a pharmacist, I want to search for a supply by its name to access its information. \\ \hline
+HUE51 & As a pharmacist, I want to know when a medication is about to expire to make timely decisions. \\ \hline
+HUE52 & As a pharmacist, I want to know when a supply is about to expire to make timely decisions. \\ \hline
+HUE53 & As a pharmacist, I want to know when a medication has a low number of available units to make timely decisions. \\ \hline
+HUE54 & As a pharmacist, I want to know when a supply has a low number of available units to make timely decisions. \\ \hline
+HUE55 & As an analyst, I want to view appointment statistics by specialty to evaluate the workload. \\ \hline
+HUE56 & As an analyst, I want to view financial reports of the services to evaluate the hospital's income and economic performance. \\ \hline
+HUE57 & As an analyst, I want to view supply consumption to evaluate the hospital's inventory usage. \\ \hline
+\end{longtable}
+
+\begin{longtable}{|c|c|p{9cm}|}
+\caption{Criterios de aceptación Esperados} 
+\label{tab:criterios_esperados} \\
+\hline
+\textbf{Referencia CAE} & \textbf{Ref. HUE} & \textbf{Criterio de aceptación} \\
+\hline
+\endfirsthead
+
+\caption{Criterios de aceptación Esperados - Continuación} \\
+\hline
+\textbf{Referencia CAE} & \textbf{Ref. HUE} & \textbf{Criterio de aceptación} \\
+\hline
+\endhead
+
+\hline
+\endfoot
+
+\hline
+\endlastfoot
+ACE1.1 & HUE1 & The system must request the full name, date of birth, sex, identity document, and contact details (email address and phone number). \\ \hline
+ACE1.2 & HUE1 & The system must display an error if a patient with the entered identity document already exists. \\ \hline
+ACE1.3 & HUE1 & The system must assign a unique patient number to the new patient. \\ \hline
+
+ACE3.1 & HUE3 & The system must allow modifying the full name, date of birth, sex, identity document, and contact details (email address and phone number). \\ \hline
+
+ACE4.1 & HUE4 & The system must allow entering the patient's blood type. \\ \hline
+ACE4.2 & HUE4 & The system must allow entering chronic diseases, allergies, relevant injuries, and regular medications along with the date they started/occurred, with the option to indicate "from birth". \\ \hline
+
+ACE5.1 & HUE5 & The system must display a search field that allows entering the name. \\ \hline
+ACE5.2 & HUE5 & The system must display a list of patients whose names match the entered data. \\ \hline
+
+ACE6.1 & HUE6 & The system must display a search field that allows entering the identity document. \\ \hline
+ACE6.2 & HUE6 & The system must display a list of patients whose documents match the entered data. \\ \hline
+
+ACE7.1 & HUE7 & The system must display a search field that allows entering the patient number. \\ \hline
+ACE7.2 & HUE7 & The system must display a list of patients whose patient numbers match the entered data. \\ \hline
+
+ACE8.1 & HUE8 & The system must display a search field that allows entering the name. \\ \hline
+ACE8.2 & HUE8 & The system must display a list of patients whose names match the entered data. \\ \hline
+
+ACE9.1 & HUE9 & The system must display a search field that allows entering the identity document. \\ \hline
+ACE9.2 & HUE9 & The system must display a list of patients whose documents match the entered data. \\ \hline
+
+ACE10.1 & HUE10 & The system must have a search field that allows searching by patient number. \\ \hline
+ACE10.2 & HUE10 & The system must display a list of patients whose patient numbers match the entered data. \\ \hline
+
+ACE11.1 & HUE11 & The system must display the patient's personal data: full name, date of birth, sex, identity document, and contact details (email address and phone number). \\ \hline
+ACE11.2 & HUE11 & The system must display the patient number. \\ \hline
+
+ACE12.1 & HUE12 & The system must display the appointment details: specialty, doctor, schedule, and status. \\ \hline
+
+ACE13.1 & HUE13 & The system must allow selecting the specialty and doctor for the appointment. \\ \hline
+ACE13.2 & HUE13 & The system must display the available time slots in the selected doctor's schedule. \\ \hline
+ACE13.3 & HUE13 & The system must display an error if an appointment already exists at that time slot. \\ \hline
+ACE13.4 & HUE13 & The system must change the appointment status to "Confirmed" after a successful registration. \\ \hline
+
+ACE14.1 & HUE14 & The system must allow changing the appointment status to "Canceled". \\ \hline
+ACE14.2 & HUE14 & The system must make the previous time slot available again in the doctor's schedule. \\ \hline
+
+ACE15.1 & HUE15 & The system must allow editing the date and time of an existing appointment. \\ \hline
+ACE15.2 & HUE15 & The system must validate that the new time slot is available. \\ \hline
+
+ACE16.1 & HUE16 & The system must indicate in the notification if the appointment was canceled. \\ \hline
+ACE16.2 & HUE16 & The system must indicate in the notification if the appointment had a schedule change. \\ \hline
+ACE16.3 & HUE16 & The system must include the new appointment date in the notification when a date change occurs. \\ \hline
+
+ACE17.1 & HUE17 & The system must indicate in the notification if the appointment was canceled. \\ \hline
+ACE17.2 & HUE17 & The system must indicate in the notification if the appointment had a schedule change. \\ \hline
+ACE17.3 & HUE17 & The system must include the new appointment date in the notification when a date change occurs. \\ \hline
+
+ACE18.1 & HUE18 & The system must allow access to the clinical record only to users with the doctor role. \\ \hline
+ACE18.2 & HUE18 & The system must list the diagnoses for each appointment confirmed by the patient. \\ \hline
+ACE18.3 & HUE18 & The system must display the patient's medical background. \\ \hline
+
+ACE19.1 & HUE19 & The system must include the date, name, and specialty of the responsible doctor in each record. \\ \hline
+ACE19.2 & HUE19 & The system must allow marking the appointment as Attended when a diagnosis is registered. \\ \hline
+ACE19.3 & HUE19 & The system must allow marking the appointment as Not attended. \\ \hline
+ACE19.4 & HUE19 & The system must prevent registering a diagnosis when the appointment is marked as Not attended. \\ \hline
+
+ACE20.1 & HUE20 & The system must list all appointments associated with the patient. \\ \hline
+ACE20.2 & HUE20 & The system must list all medications associated with the patient. \\ \hline
+ACE20.3 & HUE20 & The system must list all invoices associated with the patient. \\ \hline
+ACE20.4 & HUE20 & The system must allow sorting the information by date, responsible doctor, or specialty. \\ \hline
+ACE20.5 & HUE20 & The system must allow viewing the details of each listed item. \\ \hline
+ACE21.1 & HUE21 & The system must allow registering the doctor's full name, identity document number, and contact details (email address and phone number). \\ \hline
+ACE21.2 & HUE21 & The system must allow associating a specialty with the doctor being registered. \\ \hline
+ACE21.3 & HUE21 & The system must allow defining the doctor's status as active or inactive. \\ \hline
+ACE21.4 & HUE21 & The doctor's name and identity document cannot be left empty in the registration. \\ \hline
+
+ACE22.1 & HUE22 & The system must allow defining the start time and end time per day of the week. \\ \hline
+ACE22.2 & HUE22 & The system must allow defining more than one time slot per day. \\ \hline
+ACE22.3 & HUE22 & The system must display an error if the time slots for the same day overlap. \\ \hline
+ACE22.4 & HUE22 & The system must display an error if the start times precede the end times. \\ \hline
+
+ACE23.1 & HUE23 & The system must allow editing the doctor's full name, identity document number, and contact details. \\ \hline
+
+ACE24.1 & HUE24 & The system must allow editing the days of the week for attention. \\ \hline
+ACE24.2 & HUE24 & The system must allow editing the start time and end time for a day of the week. \\ \hline
+ACE24.3 & HUE24 & The system must display an error if the time slots for the same day overlap. \\ \hline
+ACE24.4 & HUE24 & The system must display an error if the start times precede the end times. \\ \hline
+
+ACE25.1 & HUE25 & The system must allow changing the doctor's status to inactive. \\ \hline
+ACE26.1 & HUE26 & The system must allow changing the doctor's status to active. \\ \hline
+
+ACE27.1 & HUE27 & The system must define the following roles: administrative staff, doctor, pharmacist, analyst, and patient. \\ \hline
+
+ACE28.1 & HUE28 & The system must associate functionalities with each role. \\ \hline
+ACE28.2 & HUE28 & The system must display an error if a user accesses a functionality not defined in their role. \\ \hline
+
+ACE29.1 & HUE29 & The system must include in the invoice the patient's full name, appointment specialty, date, and total cost. \\ \hline
+ACE29.2 & HUE29 & The system must include a unique identifier in the invoice. \\ \hline
+ACE29.3 & HUE29 & The system must associate the invoice with the patient and the appointment. \\ \hline
+
+ACE31.1 & HUE31 & The system must include in the invoice the patient's full name, medication name, date, and total cost. \\ \hline
+ACE31.2 & HUE31 & The system must include a unique identifier in the invoice. \\ \hline
+ACE31.3 & HUE31 & The system must associate the invoice with the patient and the medication. \\ \hline
+
+ACE32.1 & HUE32 & The system must have a search field that allows searching by identity document. \\ \hline
+ACE32.2 & HUE32 & The system must display a list of results matching the entered data. \\ \hline
+
+ACE33.1 & HUE33 & The system must list the patient's medications. \\ \hline
+ACE33.2 & HUE33 & The system must allow generating the invoice. \\ \hline
+
+ACE34.1 & HUE34 & The system must include in the invoice the patient's full name, medication name, date, and total cost. \\ \hline
+ACE34.2 & HUE34 & The system must include a unique identifier in the invoice. \\ \hline
+ACE34.3 & HUE34 & The system must associate the invoice with the patient and the medication. \\ \hline
+
+ACE35.1 & HUE35 & The system must list the patient's medications. \\ \hline
+ACE35.2 & HUE35 & The system must allow generating the invoice. \\ \hline
+
+ACE36.1 & HUE36 & The system must send an email to the patient's email address containing: invoice identifier, patient name, date, and service type (appointment or medication). \\ \hline
+ACE36.2 & HUE36 & The system must include in the subject line that it is a hospital invoice. \\ \hline
+ACE36.3 & HUE36 & The system must include the invoice attached in PDF format. \\ \hline
+ACE36.4 & HUE36 & The system must send the email within 10 minutes after the invoice is generated. \\ \hline
+
+ACE37.1 & HUE37 & The system must send a text message to the patient's phone number containing: invoice identifier, patient name, date, and service type (appointment or medication). \\ \hline
+ACE37.2 & HUE37 & The system must include the total cost of the invoice. \\ \hline
+ACE37.3 & HUE37 & The system must send the text message within 10 minutes after the invoice is generated. \\ \hline
+
+ACE38.1 & HUE38 & The system must register each medication with name, manufacturer, available units, stock number, and expiration date. \\ \hline
+ACE38.2 & HUE38 & The system must display an error if the expiration date is earlier than the current date. \\ \hline
+ACE38.3 & HUE38 & The system must display an error if the stock number is not unique. \\ \hline
+ACE38.4 & HUE38 & The system must display an error if the medication name is left empty. \\ \hline
+ACE38.5 & HUE38 & The system must display an error if the number of available units is less than 0. \\ \hline
+
+ACE39.1 & HUE39 & The system must register each supply with name, manufacturer, available units, stock number, and expiration date. \\ \hline
+ACE39.2 & HUE39 & The system must display an error if the expiration date is less than or equal to the current date. \\ \hline
+ACE39.3 & HUE39 & The system must display an error if the stock number already exists in the system. \\ \hline
+ACE39.4 & HUE39 & The system must display an error if the supply name is left empty. \\ \hline
+ACE39.5 & HUE39 & The system must display an error if the number of available units is less than 0. \\ \hline
+
+ACE40.1 & HUE40 & The system must allow modifying the available units. \\ \hline
+ACE40.2 & HUE40 & The system must display an error if the number of available units is less than 0. \\ \hline
+
+ACE41.1 & HUE41 & The system must allow modifying the available units. \\ \hline
+ACE41.2 & HUE41 & The system must display an error if the number of available units is less than 0. \\ \hline
+
+ACE42.1 & HUE42 & The system must associate the collected medication with the patient. \\ \hline
+ACE42.2 & HUE42 & The system must allow selecting the quantity to collect. \\ \hline
+ACE42.3 & HUE42 & The system must update the available units according to the collected quantity. \\ \hline
+ACE42.4 & HUE42 & The system must display an error if the collected quantity exceeds the available units. \\ \hline
+
+ACE43.1 & HUE43 & The system must display the medication name and the number of available units. \\ \hline
+ACE43.2 & HUE43 & The system sorts from lowest to highest. \\ \hline
+
+ACE44.1 & HUE44 & The system must display the medication name and the expiration date. \\ \hline
+ACE44.2 & HUE44 & The system sorts from lowest to highest. \\ \hline
+
+ACE45.1 & HUE45 & The system must display the supply name and the number of available units. \\ \hline
+ACE45.2 & HUE45 & The system sorts from lowest to highest. \\ \hline
+
+ACE46.1 & HUE46 & The system must display the supply name and the expiration date. \\ \hline
+ACE46.2 & HUE46 & The system sorts from lowest to highest. \\ \hline
+
+ACE47.1 & HUE47 & The system must display the number of available units of the medication. \\ \hline
+ACE48.1 & HUE48 & The system must display the number of available units of the supply. \\ \hline
+
+ACE49.1 & HUE49 & The system must have a search field that allows searching by medication name. \\ \hline
+ACE49.2 & HUE49 & The system must display a list of medications whose names match the entered data. \\ \hline
+
+ACE50.1 & HUE50 & The system must have a search field that allows searching by supply name. \\ \hline
+ACE50.2 & HUE50 & The system must display a list of supplies whose names match the entered data. \\ \hline
+
+ACE51.1 & HUE51 & The system must allow listing all medications and sorting them by expiration date. \\ \hline
+ACE51.2 & HUE51 & The system must display the medication's expiration date. \\ \hline
+ACE51.3 & HUE51 & The system must highlight in red when one month remains before the medication expires. \\ \hline
+
+ACE52.1 & HUE52 & The system must allow listing all supplies and sorting them by expiration date. \\ \hline
+ACE52.2 & HUE52 & The system must display the supply's expiration date. \\ \hline
+ACE52.3 & HUE52 & The system must highlight in red when one month remains before the supply expires. \\ \hline
+
+ACE53.1 & HUE53 & The system must allow listing all medications and sorting them by available units. \\ \hline
+ACE53.2 & HUE53 & The system must display the number of available units of the medication. \\ \hline
+ACE53.3 & HUE53 & The system must highlight in red when fewer than 10 units remain. \\ \hline
+
+ACE54.1 & HUE54 & The system must allow listing all supplies and sorting them by available units. \\ \hline
+ACE54.2 & HUE54 & The system must display the number of available units of the supply. \\ \hline
+ACE54.3 & HUE54 & The system must highlight in red when fewer than 10 units remain. \\ \hline
+
+ACE55.1 & HUE55 & The system must list all existing specialties. \\ \hline
+ACE55.2 & HUE55 & The system must allow choosing a specialty. \\ \hline
+ACE55.3 & HUE55 & The system must display the total number of appointments: overall, attended, canceled, confirmed, and not attended. \\ \hline
+ACE55.4 & HUE55 & The system must allow choosing a date range. \\ \hline
+ACE55.5 & HUE55 & The system must display an error if the start date is later than the end date. \\ \hline
+ACE55.6 & HUE55 & The system must display an error if the end date is later than the current date. \\ \hline
+
+ACE56.1 & HUE56 & The system must display the hospital's total income. \\ \hline
+ACE56.2 & HUE56 & The system must display the income by specialty. \\ \hline
+ACE56.3 & HUE56 & The system must display the income by medication. \\ \hline
+ACE56.4 & HUE56 & The system must allow choosing the query date range. \\ \hline
+ACE56.5 & HUE56 & The system must display an error if the start date is later than the end date. \\ \hline
+ACE56.6 & HUE56 & The system must display an error if the end date is later than the current date. \\ \hline
+
+ACE57.1 & HUE57 & The system must allow filtering by name. \\ \hline
+ACE57.2 & HUE57 & The system must list all supplies sorted by consumption (number of units collected). \\ \hline
+ACE57.3 & HUE57 & The system must display the total number of units collected. \\ \hline
+ACE57.4 & HUE57 & The system must allow choosing the query date range. \\ \hline
+ACE57.5 & HUE57 & The system must display an error if the start date is later than the end date. \\ \hline
+ACE57.6 & HUE57 & The system must display an error if the end date is later than the current date. \\ \hline
+\end{longtable}
+
+% ===== Anexo 4 =====
+\newpage
+\vspace{0.75\baselineskip}
+{\large\bfseries Anexo 4\par}
+\vspace{0.25\baselineskip}
+
+Alineación de historias generadas y las tres correspondientes historias esperadas, aquellas que tienen la mayor similitud semántica.
+
+% \renewcommand{\arraystretch}{1.2}
+
+% \begin{longtable}{|c|c|c|c|}
+% \hline
+% \textbf{\#} & \textbf{Historia generada} & \textbf{Top-3 historias esperadas} & \textbf{Similitud} \\
+% \hline
+% \endfirsthead
+
+% \hline
+% \textbf{\#} & \textbf{Historia generada} & \textbf{Top-3 historias esperadas} & \textbf{Similitud} \\
+% \hline
+% \endhead
+
+% 0 &
+% As an administrative staff member, I want to register patients with personal data and medical background...
+% &
+% \parbox{\linewidth}{\centering
+% As administrative staff, I want to register a new patient's data to enroll them in the system. \\
+% As administrative staff, I want to register a patient's medical background in their electronic clinical record to understand their health status. \\
+% As administrative staff, I want to register an appointment to schedule a patient's medical care.
+% }
+% &
+% 0.8612 / 0.8227 / 0.7280
+% \\ \hline
+
+% 1 &
+% As an administrative staff member, I want to modify the personal and contact details of a registered patient...
+% &
+% \parbox{\linewidth}{\centering
+% As administrative staff, I want to edit a registered patient's data to keep the information up to date. \\
+% As administrative staff, I want to edit a registered doctor's data to keep the information up to date. \\
+% As administrative staff, I want to edit a doctor's attention hours to keep the information up to date.
+% }
+% &
+% 0.8599 / 0.8337 / 0.6954
+% \\ \hline
+
+% 2 &
+% As an administrative staff member, I want to search for patients by name, identity document, or identifier number...
+% &
+% \parbox{\linewidth}{\centering
+% As administrative staff, I want to search for a patient by their patient number to retrieve their record. \\
+% As administrative staff, I want to search for a patient by their identity document to retrieve their record. \\
+% As administrative staff, I want to search for a patient by their name to access their information.
+% }
+% &
+% 0.8921 / 0.8908 / 0.8800
+% \\ \hline
+
+% 3 &
+% As an authorized user, I want to visualize a patient's complete information...
+% &
+% \parbox{\linewidth}{\centering
+% As administrative staff, I want to view a patient's complete information to consult their personal data. \\
+% As administrative staff, I want to view a patient's scheduled appointments to consult their information. \\
+% As a doctor, I want to access a patient's clinical record to review their prior information.
+% }
+% &
+% 0.8349 / 0.6402 / 0.6389
+% \\ \hline
+
+% 4 &
+% As an administrative staff member, I want to create medical appointments by associating the patient, specialty, and professional...
+% &
+% \parbox{\linewidth}{\centering
+% As administrative staff, I want to register an appointment to schedule a patient's medical care. \\
+% As administrative staff, I want to define a doctor's attention hours to enable appointment assignment. \\
+% As administrative staff, I want to register doctors with their respective specialties to enroll them in the system.
+% }
+% &
+% 0.7197 / 0.7018 / 0.6890
+% \\ \hline
+
+% 5 &
+% As an administrative staff member, I want to visualize the availability of registered doctors...
+% &
+% \parbox{\linewidth}{\centering
+% As administrative staff, I want to register doctors with their respective specialties to enroll them in the system. \\
+% As administrative staff, I want to view a patient's scheduled appointments to consult their information. \\
+% As an analyst, I want to view appointment statistics by specialty to evaluate the workload.
+% }
+% &
+% 0.6867 / 0.6610 / 0.6383
+% \\ \hline
+
+% 6 &
+% As an administrative staff member, I want to modify or cancel existing appointments...
+% &
+% \parbox{\linewidth}{\centering
+% As administrative staff, I want to cancel an existing appointment to free up the time slot in the schedule. \\
+% As administrative staff, I want to edit an existing appointment to change its date without losing the information. \\
+% As administrative staff, I want to edit a doctor's attention hours to keep the information up to date.
+% }
+% &
+% 0.8235 / 0.8067 / 0.6964
+% \\ \hline
+
+% 7 &
+% As a patient, I want to receive notifications when my appointment is modified or canceled...
+% &
+% \parbox{\linewidth}{\centering
+% As a patient, I want to be notified by email when my appointment is modified so I stay informed. \\
+% As a patient, I want to be notified by text message to my phone number when my appointment is modified so I stay informed. \\
+% As administrative staff, I want to view a patient's scheduled appointments to consult their information.
+% }
+% &
+% 0.9096 / 0.8544 / 0.6655
+% \\ \hline
+
+% 8 &
+% As an administrative staff member, I want to manage the status of appointments throughout their lifecycle...
+% &
+% \parbox{\linewidth}{\centering
+% As administrative staff, I want to register an appointment to schedule a patient's medical care. \\
+% As administrative staff, I want to view a patient's scheduled appointments to consult their information. \\
+% As administrative staff, I want to define a doctor's attention hours to enable appointment assignment.
+% }
+% &
+% 0.7575 / 0.7293 / 0.6764
+% \\ \hline
+
+% 9 &
+% As a doctor, I want to register diagnoses, treatments, and patient’s clinical progress...
+% &
+% \parbox{\linewidth}{\centering
+% As administrative staff, I want to register a patient's medical background in their electronic clinical record to understand their health status. \\
+% As a doctor, I want to register the diagnosis made during the appointment to document the medical care provided. \\
+% As a patient, I want to consult my electronic clinical record to access my medical information.
+% }
+% &
+% 0.8207 / 0.7201 / 0.6893
+% \\ \hline
+
+% 10 &
+% As a patient, I want to consult my electronic clinical record...
+% &
+% \parbox{\linewidth}{\centering
+% As a patient, I want to consult my electronic clinical record to access my medical information. \\
+% As administrative staff, I want to register a patient's medical background in their electronic clinical record to understand their health status. \\
+% As a doctor, I want to access a patient's clinical record to review their prior information.
+% }
+% &
+% 0.9514 / 0.8082 / 0.7764
+% \\ \hline
+
+% 11 &
+% As an administrator, I want to register medical professionals...
+% &
+% \begin{tabular}{c}
+% As administrative staff, I want to register doctors with their respective specialties to enroll them in the system. \\
+% As administrative staff, I want to activate a registered doctor to keep the information up to date. \\
+% As administrative staff, I want to register a new patient's data to enroll them in the system.
+% \end{tabular}
+% &
+% 0.8332 / 0.7226 / 0.7187
+% \\ \hline
+
+% 12 &
+% As an administrator, I want to define and modify attention hours...
+% &
+% \begin{tabular}{c}
+% As administrative staff, I want to define a doctor's attention hours to enable appointment assignment. \\
+% As administrative staff, I want to edit a doctor's attention hours to keep the information up to date. \\
+% As administrative staff, I want to register an appointment to schedule a patient's medical care.
+% \end{tabular}
+% &
+% 0.8282 / 0.7965 / 0.6766
+% \\ \hline
+
+% 13 &
+% As an administrator, I want to manage roles and access permissions...
+% &
+% \begin{tabular}{c}
+% As the system, I want to define system roles to organize access to functionalities. \\
+% As the system, I want to associate permissions with each role to control access to system functionalities. \\
+% As administrative staff, I want to edit a doctor's attention hours to keep the information up to date.
+% \end{tabular}
+% &
+% 0.7749 / 0.7596 / 0.2863
+% \\ \hline
+
+% 14 &
+% As an administrative staff member, I want to generate electronic invoices...
+% &
+% \begin{tabular}{c}
+% As administrative staff, I want to generate an invoice associated with a medication to have a payment receipt. \\
+% As administrative staff, I want to generate an invoice associated with an appointment to have a payment receipt. \\
+% As a pharmacist, I want to generate an invoice associated with a medication to have a payment receipt.
+% \end{tabular}
+% &
+% 0.8436 / 0.8177 / 0.7646
+% \\ \hline
+
+% 15 &
+% As a patient, I want to receive automatic notifications with attached digital invoices...
+% &
+% \begin{tabular}{c}
+% As a patient, I want to be notified by text message to my phone number with the invoice information to stay informed about the charge. \\
+% As a patient, I want to receive an email notification with the invoice attached to access the payment receipt. \\
+% As administrative staff, I want to generate an invoice associated with a medication to have a payment receipt.
+% \end{tabular}
+% &
+% 0.7938 / 0.7842 / 0.6950
+% \\ \hline
+
+% 16 &
+% As a pharmacist, I want to register medications and supplies...
+% &
+% \begin{tabular}{c}
+% As a pharmacist, I want to register supplies to keep the hospital inventory up to date. \\
+% As a pharmacist, I want to register medications to keep the hospital inventory up to date. \\
+% As a pharmacist, I want to consult the medication inventory sorted by expiration date to identify medications about to expire.
+% \end{tabular}
+% &
+% 0.8840 / 0.8820 / 0.7716
+% \\ \hline
+
+% 17 &
+% As a pharmacist, I want to automatically update stock...
+% &
+% \begin{tabular}{c}
+% As a pharmacist, I want to register medications to keep the hospital inventory up to date. \\
+% As a pharmacist, I want to register supplies to keep the hospital inventory up to date. \\
+% As a pharmacist, I want to edit how many medications are available to keep the hospital inventory up to date.
+% \end{tabular}
+% &
+% 0.6956 / 0.6826 / 0.6626
+% \\ \hline
+
+% 18 &
+% As a pharmacist, I want to be notified when stock is low...
+% &
+% \begin{tabular}{c}
+% As a pharmacist, I want to consult the supply inventory sorted by expiration date to identify supplies about to expire. \\
+% As a pharmacist, I want to know when a supply is about to expire to make timely decisions. \\
+% As a pharmacist, I want to consult the medication inventory sorted by expiration date to identify medications about to expire.
+% \end{tabular}
+% &
+% 0.7368 / 0.7102 / 0.7092
+% \\ \hline
+
+% 19 &
+% As a pharmacist, I want to consult inventory sorted by available quantity...
+% &
+% \begin{tabular}{c}
+% As a pharmacist, I want to consult the supply inventory sorted by expiration date to identify supplies about to expire. \\
+% As a pharmacist, I want to consult the supply inventory sorted by available quantity to quickly identify supplies with the lowest or highest stock. \\
+% As a pharmacist, I want to consult the medication inventory sorted by available quantity to quickly identify medications with the lowest or highest stock.
+% \end{tabular}
+% &
+% 0.8704 / 0.8611 / 0.8601
+% \\ \hline
+
+% 20 &
+% As an analyst, I want to generate reports...
+% &
+% \begin{tabular}{c}
+% As an analyst, I want to view financial reports of the services to evaluate the hospital's income and economic performance. \\
+% As an analyst, I want to view appointment statistics by specialty to evaluate the workload. \\
+% As an analyst, I want to view supply consumption to evaluate the hospital's inventory usage.
+% \end{tabular}
+% &
+% 0.6356 / 0.6126 / 0.5485
+% \\ \hline
+
+% 21 &
+% As a system administrator, I want to ensure date validations prevent invalid ranges...
+% &
+% \begin{tabular}{c}
+% As a pharmacist, I want to consult the supply inventory sorted by expiration date to identify supplies about to expire. \\
+% As a pharmacist, I want to consult the medication inventory sorted by expiration date to identify medications about to expire. \\
+% As a pharmacist, I want to know when a medication is about to expire to make timely decisions.
+% \end{tabular}
+% &
+% 0.3132 / 0.3044 / 0.2991
+% \\ \hline
+
+% 22 &
+% As a system administrator, I want to ensure notifications are sent within a reasonable time...
+% &
+% \begin{tabular}{c}
+% As a patient, I want to be notified by email when my appointment is modified so I stay informed. \\
+% As a pharmacist, I want to know when a supply is about to expire to make timely decisions. \\
+% As a patient, I want to be notified by text message to my phone number when my appointment is modified so I stay informed.
+% \end{tabular}
+% &
+% 0.4149 / 0.3442 / 0.3435
+% \\ \hline
+
+% \end{longtable}
+
+\begin{longtable}{|c|c|c|}
+\hline
+\textbf{Ref. Historia Generada} & \textbf{Top-3 Ref. Historia Esperada} & \textbf{Similitud} \\
+\hline
+\endfirsthead
+
+\hline
+\textbf{Ref. Historia Generada} & \textbf{Top-3 Ref. Historia Esperada} & \textbf{Similitud Semantica} \\
+\hline
+\endhead
+
+HU1 & HUE1 | HUE4 | HUE13 & 0.8612 | 0.8227 | 0.7280 \\ \hline
+HU2 & HUE3 | HUE23 | HUE24 & 0.8599 | 0.8337 | 0.6954 \\ \hline
+HU3 & HUE7 | HUE6 | HUE5 & 0.8921 | 0.8908 | 0.8800 \\ \hline
+HU4 & HUE11 | HUE12 | HUE18 & 0.8349 | 0.6402 | 0.6389 \\ \hline
+HU5 & HUE13 | HUE22 | HUE21 & 0.7197 | 0.7018 | 0.6890 \\ \hline
+HU6 & HUE21 | HUE12 | HUE55 & 0.6867 | 0.6610 | 0.6383 \\ \hline
+HU7 & HUE14 | HUE15 | HUE24 & 0.8235 | 0.8067 | 0.6964 \\ \hline
+HU8 & HUE16 | HUE17 | HUE12 & 0.9096 | 0.8544 | 0.6655 \\ \hline
+HU9 & HUE13 | HUE12 | HUE22 & 0.7575 | 0.7293 | 0.6764 \\ \hline
+HU10 & HUE4 | HUE19 | HUE20 & 0.8207 | 0.7201 | 0.6893 \\ \hline
+HU11 & HUE20 | HUE4 | HUE18 & 0.9514 | 0.8082 | 0.7764 \\ \hline
+HU12 & HUE21 | HUE26 | HUE1 & 0.8332 | 0.7226 | 0.7187 \\ \hline
+HU13 & HUE22 | HUE24 | HUE13 & 0.8282 | 0.7965 | 0.6766 \\ \hline
+HU14 & HUE27 | HUE28 | HUE24 & 0.7749 | 0.7596 | 0.2863 \\ \hline
+HU15 & HUE34 | HUE29 | HUE31 & 0.8436 | 0.8177 | 0.7646 \\ \hline
+HU16 & HUE37 | HUE36 | HUE34 & 0.7938 | 0.7842 | 0.6950 \\ \hline
+HU17 & HUE39 | HUE38 | HUE44 & 0.8840 | 0.8820 | 0.7716 \\ \hline
+HU18 & HUE38 | HUE39 | HUE40 & 0.6956 | 0.6826 | 0.6626 \\ \hline
+HU19 & HUE46 | HUE52 | HUE44 & 0.7368 | 0.7102 | 0.7092 \\ \hline
+HU20 & HUE46 | HUE45 | HUE43 & 0.8704 | 0.8611 | 0.8601 \\ \hline
+HU21 & HUE56 | HUE55 | HUE57 & 0.6356 | 0.6126 | 0.5485 \\ \hline
+HU22 & HUE46 | HUE44 | HUE51 & 0.3132 | 0.3044 | 0.2991 \\ \hline
+HU23 & HUE16 | HUE52 | HUE17 & 0.4149 | 0.3442 | 0.3435 \\ \hline
+\end{longtable}
+
+
+\end{document}

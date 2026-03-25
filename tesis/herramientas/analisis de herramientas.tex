@@ -1,0 +1,91 @@
+\section{Análisis de herramientas}
+
+El objetivo del análisis fue entender qué tan disponibles, capaces y maduras son las herramientas que encontramos para la generación automática de historias de usuario. Para ello, registramos tres tipos de información: datos generales de cada herramienta, sus capacidades declaradas y observadas, y la calidad de las historias de usuario generadas.
+
+En la información general se documentó el nombre de la herramienta, la disponibilidad del código fuente, el tipo de licencia, la familia de modelos empleada y el año de lanzamiento. También se distinguió si la herramienta es una solución independiente o si funciona como complemento dentro de un sistema de gestión de proyectos.
+
+Para obtener estos datos se consultó el sitio web o el repositorio de cada herramienta. En las que tienen código en GitHub, la información se tomó del archivo de descripción del repositorio. En las soluciones comerciales se revisaron la página principal, blogs, videos de demostración y páginas de preguntas frecuentes. En los complementos, la información se obtuvo desde la página de la tienda correspondiente. Cuando faltaban detalles (por ejemplo, el tipo de modelo de inteligencia artificial), se verificaron dentro de la propia herramienta.
+
+Luego se analizaron las capacidades. Primero se relevaron las funcionalidades declaradas públicamente; ante dudas o ambigüedades, se realizaron pruebas directas. Las herramientas con código disponible se ejecutaron en un entorno local usando la última versión publicada, registrando la fecha de prueba. En las herramientas comerciales que ofrecían prueba gratuita, se utilizó ese mecanismo y se registró la fecha. En los casos en que no existía versión de prueba, se envió un correo electrónico solicitando acceso.
+
+Para las pruebas se elaboraron documentos de requisitos sobre un mismo dominio: un sistema de gestión hospitalaria. La idea fue simular entradas realistas que una herramienta de generación de historias de usuario podría recibir. Se prepararon dos variantes principales: (i) un documento técnico, redactado por un analista a partir de una solicitud de un cliente, con especificaciones acotadas y consistentes; y (ii) un documento en lenguaje natural, con estilo más narrativo, que simula un texto escrito por un cliente, con descripciones generales y necesidades expresadas de forma no técnica.
+
+Con estas dos versiones se buscó evaluar la capacidad de las herramientas para trabajar con fuentes de requisitos de distinta naturaleza. En entornos reales, los requisitos aparecen tanto en documentos formales como en correos, entrevistas o textos poco estructurados. Incluir ambas perspectivas permitió observar si las herramientas son capaces de producir resultados consistentes en distintos niveles de formalidad y precisión.
+
+A partir de estos documentos base se generaron dos variantes adicionales con conflictos introducidos de forma deliberada. En particular, se incluyó una contradicción respecto del acceso y edición de la historia clínica electrónica (solo personal autorizado versus editable por el paciente). El objetivo fue evaluar si las herramientas son sensibles a este tipo de inconsistencias tempranas en el análisis.
+
+Este proceso permitió analizar el comportamiento de las herramientas en distintos escenarios de entrada, variando la formalidad del lenguaje, la coherencia de los requisitos y la presencia de conflictos. Para ampliar el alcance, uno de los documentos se convirtió a audio, de modo de evaluar el desempeño frente a una fuente no textual y no estructurada y registrar la capacidad de procesamiento multiformato.
+
+De forma transversal, se registró además el grado de interacción requerido con el analista, incluyendo el tipo de prompts necesarios (por ejemplo, si la herramienta exige plantillas específicas o reformulaciones) y si permite validar o refinar las historias generadas en iteraciones sucesivas.
+
+En resumen, para cada herramienta se respondieron de manera sistemática las siguientes preguntas:
+
+\begin{itemize}
+    \item Uso de prompt: si requiere prompting explícito, plantillas o ajustes iterativos, y qué nivel de interacción demanda al analista.
+    \item Generación automática de historias de usuario: si genera historias de usuario a partir de requisitos a nivel global (visión del sistema completo) y/o a nivel de cada requerimiento individual.
+    \item Cobertura y granularidad: cuántas historias genera por ejecución (Total de Historias Generadas), si produce historias por requerimiento y cómo se distribuyen por macroproceso del dominio (Gestión de Pacientes, Agenda y Turnos, Historia Clínica Electrónica, Administración de Personal, Facturación y Cobro, Inventario de Farmacia, Reportes y Estadísticas). Se marcó además si las historias son utilizables o si tienden a ser épicas demasiado grandes.
+    \item Inclusión y calidad de criterios de aceptación: si la herramienta incluye criterios de aceptación y, en ese caso, cómo se comportan en términos de coherencia, especificidad, medibilidad y verificabilidad.
+    \item Detección de inconsistencias: si identifica la inconsistencia introducida en los documentos y cómo la reporta (tipo de conflicto y severidad).
+    \item Validación de la calidad de las historias: si soporta, de forma explícita o implícita, la validación de las historias según propiedades estructurales como las del modelo INVEST.
+    \item Trazabilidad (requisitos $\leftrightarrow$ historias de usuario): si mantiene un enlace recuperable al documento original, su nombre, la sección correspondiente y, cuando aplica, la épica que agrupa la información.
+    \item Procesamiento multiformato y formatos de entrada: qué tipos de entrada soporta (texto, documentos, audio) y qué nivel de soporte brinda a fuentes no estructuradas.
+    \item Salida estructurada: si ofrece resultados en formatos estructurados (por ejemplo, tablas, formatos serializables o estructuras que faciliten la integración con sistemas de gestión de proyectos).
+\end{itemize}
+
+\subsection{Diseño de prompts para la evaluación}
+Dado que las herramientas evaluadas presentan distintos grados de automatización e interacción (algunas generan historias automáticamente y otras requieren instrucciones explícitas), se definieron dos niveles de prompting para controlar el costo de interacción y, a la vez, medir el desempeño bajo guía metodológica.
+
+\paragraph{Prompt simple (línea base).}
+Se utilizó como baseline para evaluar capacidades mínimas con baja intervención del analista. Operacionalmente, un prompt se considera “simple” si:
+(i) mantiene un único objetivo principal (generar historias a partir de un documento),
+(ii) solicita criterios de aceptación e inconsistencias sin imponer un formato estricto de salida,
+(iii) exige trazabilidad de forma genérica (referencia a sección/frase),
+y (iv) puede reutilizarse sin modificaciones significativas entre herramientas.
+
+Este diseño busca aproximar un escenario realista de adopción, donde se espera que la automatización reduzca el esfuerzo del analista y no dependa de prompt engineering específico. También permite comparar herramientas en condiciones homogéneas, minimizando sesgos introducidos por limitaciones de interfaz (p. ej., longitud de entrada, ausencia de soporte de tablas, o flujos guiados).
+
+\paragraph{Prompt completo (alineado con la metodología).}
+Se empleó un prompt más elaborado para evaluar el desempeño bajo un escenario de máxima exigencia metodológica, solicitando: una historia por requerimiento, marcación de épicas, trazabilidad explícita, criterios de aceptación con propiedades de calidad, detección de inconsistencias con severidad, y evaluación INVEST con justificación. Este segundo nivel permite medir si las herramientas pueden satisfacer los aspectos de interés cuando el analista provee instrucciones detalladas, y cuantificar la sensibilidad de la herramienta al nivel de especificación del prompt.
+
+\paragraph{Racional del enfoque de dos niveles.}
+El uso de ambos prompts permite distinguir entre: (a) capacidades intrínsecas de la herramienta con mínima guía, y (b) capacidades alcanzables bajo una interacción más intensa. Esta comparación es relevante porque el “costo de interacción” (tiempo y complejidad del prompting) constituye un factor práctico de adopción, especialmente al evaluar múltiples herramientas con tiempo acotado.
+
+\begin{table}[h!]
+\centering
+\caption{Rol de cada prompt en el diseño experimental}
+\begin{tabular}{|p{1.5cm} |p{4cm} |p{5cm}|}
+\hline
+\textbf{Prompt} & \textbf{Objetivo} & \textbf{Qué permite observar} \\
+\hline
+Simple (baseline) & Evaluar capacidades mínimas con baja intervención y alta comparabilidad & Automatización realista, dependencias de prompting, trazabilidad básica, detección básica de conflictos \\
+Completo (metodológico) & Evaluar desempeño bajo guía alineada con INVEST y salida estructurada & Capacidad máxima bajo instrucciones, sensibilidad al nivel de detalle, cumplimiento metodológico, estructuración y consistencia de reportes \\
+\hline
+\end{tabular}
+\end{table}
+
+
+\subsubsection{Generación automática de historias de usuario}
+
+La capacidad de generar automáticamente una historia por cada requerimiento es el núcleo del problema. Para este criterio se midió la cobertura (qué proporción de los requisitos relevantes se transforman en historias) y la granularidad (si las historias son accionables o si se agrupan en épicas demasiado generales). Se registró el Total de Historias Generadas como indicador de productividad por ejecución y la cobertura por requerimiento. 
+
+Se distinguió el modo de obtención: automático (sin intervención), refinado (con aclaraciones menores) o manual (cuando el analista debe analizar la salida para obtener una historia útil). Esto permite separar la capacidad intrínseca de la herramienta del costo de interacción. También se diferenció entre herramientas que procesan documentos completos (nivel global) y las que lo hacen por requerimiento (nivel individual). Además, se marcó Épica (sí/no) cuando el resultado superaba el tamaño razonable para un sprint.
+
+\subsection{Inclusión y calidad de criterios de aceptación}
+
+Los criterios de aceptación convierten la historia en una unidad testable, es decir, que puede verificarse y estimarse. Se registró su inclusión (sí/no) y, cuando estuvieron presentes, se evaluó su calidad según cuatro rasgos: coherencia (no contradicen a la historia ni entre sí), especificidad (baja ambigüedad), medibilidad (umbrales o estados observables) y verificabilidad (que un tercero pueda comprobarlos de forma binaria).
+
+Estos rasgos se apoyan en las características de requisitos de buena calidad propuestas por la norma IEEE~830 (correctos, completos, consistentes, no ambiguos y verificables)~\cite{ieee830} y en guías de práctica ágil sobre criterios de aceptación claros y observables~\cite{atlassian_acceptance_criteria,agile_business_requirements_user_stories}. Los aspectos de especificidad y medibilidad se alinean, además, con los componentes Specific y Measurable del enfoque SMART para formular objetivos~\cite{doran_smart}.
+
+\subsection{Detección de inconsistencias}
+
+La identificación de contradicciones, ambigüedades o duplicidades es especialmente relevante en dominios sensibles como el sanitario. Se evaluó de forma binaria (sí con justificación / no con justificación) y se exigió que la herramienta señalara el fragmento o sección que fundamentaba el hallazgo, indicando el tipo de conflicto y su severidad. Esto permitió distinguir falsos positivos de observaciones reproducibles y valorar tanto la precisión (capacidad de apuntar al texto exacto) como la exhaustividad (detección de múltiples conflictos cuando existen), en línea con las recomendaciones de calidad y consistencia de requisitos de IEEE~830~\cite{ieee830}.
+
+\subsection{Validación de la calidad de las historias de usuario según el modelo INVEST}
+
+Se utilizó el modelo INVEST por su amplia difusión en metodologías ágiles y porque resume propiedades clave de una buena historia: independiente, negociable, valiosa, estimable, small y testable~\cite{wake_invest,cohn_user_stories_applied}. Estas propiedades sirvieron como marco para analizar en qué medida las historias generadas por cada herramienta son efectivamente utilizables en un contexto de desarrollo iterativo. La dimensión testable se conectó directamente con la presencia y calidad de criterios de aceptación, mientras que valiosa y estimable se vincularon con la claridad del beneficio para un actor y la acotación del alcance de la historia.
+
+\subsection{Trazabilidad entre requisitos e historias de usuario}
+
+Se consideró que había trazabilidad cuando la herramienta mantenía un vínculo explícito entre cada historia y su requerimiento de origen, a través de una referencia recuperable al documento original, su nombre, la sección o ancla correspondiente y, cuando aplica, la épica asociada. La justificación debía permitir llegar sin ambigüedad al fragmento fuente. Este criterio se fundamenta en la importancia de la trazabilidad para auditoría, gobernanza y cumplimiento normativo descrita en la literatura de especificación de requisitos~\cite{ieee830}.
+
+Con esta metodología, las herramientas se analizaron no solo por su capacidad de generar historias de usuario, sino también por la calidad estructural de los resultados, su consistencia semántica, la trazabilidad obtenida, el grado de automatización y la forma en que interactúan con el analista y con distintos formatos de entrada. Esto permite comparar de manera objetiva su nivel de madurez y su potencial de adopción en contextos reales.

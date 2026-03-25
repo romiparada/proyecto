@@ -1,0 +1,46 @@
+\subsection{Prueba piloto: ClickUp}
+Se aplicó el framework de evaluación automática multinivel descrito en la Sección 4.1 sobre las historias de usuario generadas por ClickUp Brain en el dominio de gestión hospitalaria. 
+
+\paragraph{Nivel 1: Alineación semántica de historias}
+
+El análisis de alineación produjo una tasa de alineación de $\rho = 43.48\%$ (10 de 23 historias), con una similitud media de $0.864 \pm 0.038$ para las historias alineadas y $0.744 \pm 0.147$ para el conjunto completo.
+
+La tasa de alineación observada indica que menos de la mitad de las historias generadas presentan correspondencia semántica significativa con el ground truth. Sin embargo, las historias que sí logran alinearse muestran una alta consistencia.
+
+\paragraph{Nivel 2: Cobertura funcional del dominio}
+
+\paragraph{Resultados agregados}
+
+El score de cobertura funcional alcanza un 48.57\%.
+Esto indica que el sistema no genera cobertura funcional total, siendo esto una concecuencia directa de las limitaciones presentadas para el framework desarrollado.
+Estos resultados indican que ClickUp prioriza la representación de funcionalidades centrales, omitiendo casos límite y requisitos no funcionales.
+
+\paragraph{Nivel 3: Evaluación de criterios de aceptación}
+
+\textbf{Resultados agregados}
+
+La cobertura funcional de criterios de aceptación es del 10.0\%, con una verificabilidad global del 37.5\% y ausencia total de ambigüedad (100\%).
+
+Los resultados muestran una discrepancia estructural significativa entre la generación de historias y la especificación de criterios de aceptación. Mientras que las historias capturan adecuadamente el concepto funcional, los criterios de aceptación no logran reflejar escenarios verificables.
+
+Esta brecha (48.57\% vs 10.0\%) evidencia que la evaluación basada únicamente en similitud semántica de alto nivel es insuficiente para determinar la calidad de los requisitos.
+
+\paragraph{Nivel 4: Cobertura conceptual}
+
+La cobertura conceptual alcanza el 85.71\%, indicando que la mayoría de las áreas del dominio están representadas por las historias generadas, lo que confirma que el modelo logra identificar correctamente las áreas funcionales principales del sistema. Sin embargo, esta cobertura conceptual elevada contrasta con la baja cobertura funcional y de criterios de aceptación, evidenciando la baja identificación del dominio total.
+
+\paragraph{Resumen de resultados}
+
+El análisis conjunto muestra los siguientes resultados:
+
+\begin{itemize}
+\item Alta cobertura conceptual (85.71\%)
+\item Cobertura funcional moderada (48.57\%)
+\item Baja alineación efectiva (43.48\%)
+\item Cobertura crítica de criterios de aceptación (10.0\%)
+\end{itemize}
+
+Los resultados demuestran que la evaluación basada exclusivamente en métricas específicas o similitud superficial es insuficiente para caracterizar la calidad de las historias de usuario generadas por modelos LLM.
+En este caso, la evaluación bastó para identificar que ClickUp muestra un desempeño adecuado para tareas de exploración conceptual y generación inicial, pero insuficiente para producción directa de historias de usuario listas para desarrollo, requiriendo refinamiento humano significativo.
+
+

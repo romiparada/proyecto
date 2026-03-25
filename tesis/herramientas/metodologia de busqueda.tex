@@ -1,0 +1,182 @@
+\section{Metodología de búsqueda}
+%\subsubsection{Enfoque general}
+%La metodología se orientó a identificar herramientas que cumplieran con el objetivo de la búsqueda definido previamente.
+Se priorizó la selección de soluciones implementadas y con funcionalidades verificables. El período de análisis abarcó desde 2022 hasta 2025, cuando el uso de grandes modelos de lenguaje como GPT-3 se extendió en aplicaciones, como fue mencionado en el capitulo \ref{cap:antecedentes}.
+
+%\subsubsection{Criterios de inclusión/exclusión}
+%Se definieron criterios de inclusión y exclusión para asegurar la relevancia de las herramientas seleccionadas y para que su evaluación fuera posible dentro del alcance del proyecto. %Además, se establecieron de forma explícita para mantener la transparencia y reproducibilidad del proceso de selección.
+Se definieron criterios de inclusión y exclusión que se describen a continuación utilizados para asegurar la relevancia de las herramientas, para la posibilidad de la evoluciona de las mismas y la reproducibilidad de la búsqueda.
+
+Se incluyeron soluciones desarrolladas durante el período 2022–2025 que contaran con una implementación accesible y funcional, ya sea mediante código disponible, demostraciones públicas o servicios en línea. También se exigió el uso de inteligencia artificial, en particular modelos de lenguaje, para generar historias de usuario de forma automática. De manera adicional, se buscó que las herramientas ofrecieran capacidades como detección de inconsistencias o ambigüedades, validación de calidad de las historias generadas, trazabilidad entre requisitos o documentos de entrada e inclusión de criterios de aceptación. También se valoró que contaran con mecanismos de gestión de historias de usuario y con integración a sistemas de gestión de proyectos, ya que esto facilita su uso en entornos ágiles.
+
+Se excluyeron soluciones sin mantenimiento activo o cuya funcionalidad no estuviera vinculada de forma directa con la generación de historias de usuario. Asimismo, se descartaron prototipos conceptuales o académicos sin evidencia de ejecución práctica o sin resultados reproducibles.
+
+Estos criterios permitieron obtener un conjunto de herramientas coherente con los objetivos de la investigación y asegurar que la evaluación posterior se realizara sobre soluciones efectivamente implementadas.
+
+\section{Estrategia de búsqueda}
+La búsqueda se realizó en cuatro ámbitos principales: motores de búsqueda generales, repositorios de código abierto, tiendas o mercados dentro de herramientas de gestión de proyectos y plataformas de inteligencia artificial. Para cada herramienta encontrada, se registraron aspectos como el tipo de entrada y salida soportado, el nivel de integración con otras herramientas y el modelo de IA utilizado. % y su nivel de madurez.
+%También se utilizó una búsqueda asistida con modelos conversacionales para complementar los resultados obtenidos. 
+
+Para llevar a cabo el proceso, se ejecutaron distintas cadenas de búsqueda en Google. Además de la búsqueda general, se incluyeron búsquedas específicas en espacios como GitHub y distintos marketplaces (mercados) de software.
+La construcción de la cadena se llevó a cabo mediante un proceso iterativo de refinamiento. Cada versión fue documentada junto con los cambios introducidos, con el objetivo de garantizar la transparencia y la reproducibilidad del proceso de revisión.
+El registro de versiones de la cadena de búsqueda se presenta en la Tabla \ref{table:cadenas-busqueda}.
+
+\newpage
+\begin{longtable}{|c|p{10cm}|p{3cm}|}
+\caption{Registro y refinamiento de la cadena de búsqueda}
+\label{table:cadenas-busqueda} \\
+\hline
+\textbf{Versión} & \textbf{Cadena de búsqueda} & \textbf{Observaciones} \\
+\hline
+v1 & 
+\begin{verbatim} 
+("user story generation" OR "AI user story tool" OR
+"AI user story assistant" OR
+"generate user stories with AI" OR "LLM user stories")
+AND ("acceptance criteria" OR "quality validation" OR
+"consistency checking" OR "inconsistency detection" OR
+"traceability" OR "requirements linkage" OR
+"user story quality") AND ("tool" OR "platform" OR
+"system" OR "plugin" OR "assistant")
+
+\end{verbatim}
+& Primera versión basada en los términos del objetivo general. \\
+\hline
+v2 & 
+\begin{verbatim} 
+("user story" OR "user stories") AND
+("generative" OR "generation" OR "generate" OR
+"automate" OR "automation" OR "creation" OR 
+"AI" OR "artificial intelligence" OR 
+"language model" OR "LLM" OR
+"natural language processing" OR "NLP" OR
+"agent" OR "assistant") AND ("tool" OR "application" OR
+"platform" OR "service" OR "system" OR "extension" OR
+"solution" OR "integration" OR "integrated") AND
+("requirement" OR "engineering" OR "software" OR
+"project" OR "product" OR "management" OR "agile") AND
+("acceptance criteria" OR "traceability" OR
+"inconsistency" OR "consistency" OR "ambiguity" OR
+"conflict" OR "contradiction" OR "quality" OR
+"validation")
+
+\end{verbatim}
+& Mejora en separación de términos \\
+\hline
+\end{longtable}
+
+% Explcacion de armado de la cadena
+La cadena de búsqueda se organizó por conceptos. En primer lugar, se incluyeron los términos principales asociados a historias de usuario (``user story'' y ``user stories''). Luego se agregaron términos vinculados a IA y a generación automática (por ejemplo, ``AI'' y ``generation''). A continuación se incluyeron términos para limitar los resultados a soluciones concretas (por ejemplo, ``tool''). Por último, se incorporaron términos del contexto de desarrollo de software (por ejemplo, ``software'').
+
+\begin{verbatim} 
+("user story" OR "user stories") AND
+("generative" OR "generation" OR "generate" OR
+"automate" OR "automation" OR "creation" OR 
+"AI" OR "artificial intelligence" OR 
+"language model" OR"LLM" OR
+"natural language processing" OR "NLP" OR
+"agent" OR "assistant") AND ("tool" OR "application" OR
+"platform" OR "service" OR "system" OR "extension" OR
+"solution" OR "integration" OR "integrated") AND
+("requirement" OR "engineering" OR "software" OR
+"project" OR "product" OR "management" OR "agile")
+\end{verbatim}
+
+
+Además, se definió un conjunto de requerimientos adicionales a la generación automática de historias. Para reflejarlo en la búsqueda, se agregó un bloque extra a la cadena, que exige al menos uno de esos requerimientos.
+
+\begin{verbatim}
+("acceptance criteria" OR "traceability" OR
+"inconsistency" OR "consistency" OR "ambiguity" OR
+"conflict" OR "contradiction" OR "quality" OR
+"validation")  
+\end{verbatim}
+
+Por lo tanto la cadena completa es:
+\begin{verbatim} 
+("user story" OR "user stories") AND
+("generative" OR "generation" OR "generate" OR
+"automate" OR "automation" OR "creation" OR 
+"AI" OR "artificial intelligence" OR 
+"language model" OR "LLM" OR
+"natural language processing" OR "NLP" OR
+"agent" OR "assistant") AND ("tool" OR "application" OR
+"platform" OR "service" OR "system" OR "extension" OR
+"solution" OR "integration" OR "integrated") AND
+("requirement" OR "engineering" OR "software" OR
+"project" OR "product" OR "management" OR "agile")
+AND ("acceptance criteria" OR "traceability" OR
+"inconsistency" OR "consistency" OR "ambiguity" OR
+"conflict" OR "contradiction" OR "quality" OR
+"validation")
+\end{verbatim}
+
+Para restringir la búsqueda a resultados de GitHub, se utilizó la cadena de Google con el prefijo 
+\begin{verbatim}
+site:github.com
+\end{verbatim} 
+
+Esto permitió enfocarla en repositorios y páginas del sitio. De manera similar, para buscar complementos o extensiones en tiendas de aplicaciones, se aplicó la cadena en Google con un prefijo de sitios específico:
+\begin{verbatim}
+  (site:marketplace.atlassian.com OR 
+  site:marketplace.visualstudio.com OR
+  site:plugins.jetbrains.com OR
+  site:azure.microsoft.com/en-us/marketplace OR 
+  site:gitlab.com/explore/projects)  
+\end{verbatim}
+
+
+%\paragraph{Búsqueda asistida mediante inteligencia artificial}
+Para complementar la revisión basada en cadenas de búsqueda, se emplearon modelos conversacionales de inteligencia artificial para identificar soluciones aplicables al proyecto. Los modelos utilizados fueron Gemini y Perplexity. Los prompts utilizados se presentan en el Capitulo \ref{cap:anexo} Anexo~1.
+
+La búsqueda consistió en ejecutar instrucciones o prompts orientados a las funcionalidades de interés, como generación automática de historias de usuario, validación de calidad y detección de inconsistencias. También se contemplaron aspectos como el formato de salida, el tipo de entrada/salida soportado, la integración con otras herramientas y la capacidad de generar criterios de aceptación.
+
+Si bien no se aplicaron técnicas de prompt engineering como objetivo del estudio, se realizaron iteraciones a partir de un prompt base, ajustando redacción y nivel de detalle según los resultados. En el caso de Gemini, se partió de un prompt inicial y luego se continuó la conversación para guiar la búsqueda con mayor precisión, sin cambiar el propósito de la instrucción. Este enfoque iterativo buscó mejorar la claridad de las consultas y mantener el proceso controlado.
+%(Sugerencia de referencia: (si se desea, citar un recurso breve sobre mejores prácticas de reproducibilidad con LLMs o logging de prompts).)
+
+ %Estos se elaboraron a partir de las preguntas de investigación definidas, con el objetivo de orientar la búsqueda hacia herramientas que cubrieran los aspectos de interés del proyecto.
+
+En el caso de Gemini, se aprovechó su capacidad conversacional para realizar una búsqueda guiada en tres etapas. En la primera etapa se obtuvo un listado inicial de herramientas candidatas. En la segunda etapa se solicitó información técnica detallada de cada herramienta (implementación, tipo de licencia y fecha de la última versión). En la tercera etapa se seleccionaron las 10 herramientas que mejor se ajustaron a los criterios de elegibilidad definidos en la metodología.
+
+El uso y refinamiento de los prompts tuvo como objetivo identificar soluciones implementadas entre 2022 y 2025, priorizando aquellas verificables mediante repositorios, APIs o servicios disponibles. Además de restricciones temporales, se exigió una salida estructurada.
+
+Para favorecer la trazabilidad y la reproducibilidad, en cada ejecución se registraron el prompt utilizado, la marca temporal, el modelo empleado y los resultados obtenidos, incluidos en el Capitulo \ref{cap:anexo}, Anexo 1.
+
+%(Sugerencia de referencia: (añadir una cita a prácticas de registro/trazabilidad en revisiones sistemáticas o paquetes de reproducibilidad).)
+
+El uso del idioma inglés corresponde a la consistencia con el idioma de búsqueda, ya que las principales fuentes técnicas y repositorios internacionales publican la información en inglés.
+%\paragraph{Proceso conversacional para Gemini}
+%\paragraph{Prompt más adecuado}
+%\subsubsection{Análisis de los resultados}
+%De cada herramienta identificada durante la búsqueda, se registraron los siguientes datos: nombre de la herramienta, implementación disponible, tipo de licencia, año de publicación, descripción general de la herramienta, modelo de IA utilizado, estado de madurez, además de indicar si la misma funciona como solución independiente o está integrada en otro sistema.
+%Estos datos conforman la base de información necesaria para la evaluación posterior de herramientas, donde compararemos las diferentes soluciones indicando para cada una las capacidades de interés implementadas.
+% \subsection{Ejecución de Búsqueda}
+% \subsubsection{Google}
+% Utilizando la cadena de búsqueda, se encontraron:
+% \begin{itemize}
+%     \item Leveraging LLMs for User Stories in AI Systems: UStAI Dataset %https://arxiv.org/pdf/2504.00513 
+%     En este trabajo, se construye un conjunto de datos de historias de usuario para evaluar la eficacia de los LLM en la generación de los mismos. El conjunto de datos se encuentra disponible en GitHub. https://github.com/asmayamani/UStAI No se propone una aplicación con los requerimientos que buscamos.
+%     \item Take Loads Off Your Developers: Automated User Story Generation using Large Language Model 
+%     % https://www.researchgate.net/publication/387245191_Take_Loads_Off_Your_Developers_Automated_User_Story_Generation_using_Large_Language_Model
+%     En este trabajo se propone una aplicación llamada “Geneus”, la herramienta genera historias de usuario desde documentos de requisitos en formato JSON, utilizando GPT-4 turbo. Ademas, proponen la técnica "Refine and Thought" (RaT) que primero limpia el texto de tokens irrelevantes y luego genera las historias. Evalúan la herramienta con BERTScore, AlignScore y encuesta RUST a 76 desarrolladores mostró mejoras sobre métodos base.
+%     Se encuentra disponible la herramienta web (http://64.23.208.52/) y datos de evaluación en Zenodo https://zenodo.org/records/13334761. Solo ofrecen acceso a la herramienta funcionando y a los datos generados para validación.
+%     \item Formal requirements engineering and large language models: A two-way roadmap
+%     Los autores proponen combinar LLMs (como ChatGPT) con métodos formales matemáticos: los LLMs harían accesibles las técnicas formales complejas mientras que los métodos formales verificarían que lo generado por los LLMs sea correcto, pero es una visión teórica.
+%     % https://www.sciencedirect.com/science/article/pii/S0950584925000369
+%     \item Enhancing Requirements Engineering with Large Language Models: From Elicitation and Classification to Traceability, Ambiguity Management and  API Recommendation %https://webthesis.biblio.polito.it/35398/1/tesi.pdf
+%     Tesis que explora el uso de LLM para la obtencion de requerimientos. No se si ponerlo o que lo usemos como referencia? 
+%     \item Automated Requirements Engineering Framework for Model-Driven Development
+% % https://kclpure.kcl.ac.uk/ws/portalfiles/portal/324984252/2025_Umar_Muhammad_Aminu_1894251_ethesis.pdf
+% \end{itemize}
+% \subsubsection{ChatGPT}
+
+% Utilizando la indicación, se encontró:
+% \begin{itemize}
+%     \item User Story Generator (UStG)
+%     \item AI for User Story Generation (AIGUS)
+%     \item REQUIRE (Requirements Engineering with AI en esfor User Story Generation)
+%     \item RequirementsAI %https://requirementsai.com/
+%     \item NLP-based User Story Generator 
+% \end{itemize}
+% \subsubsection{Github}
+% Basado en los resultados anteriores? 
