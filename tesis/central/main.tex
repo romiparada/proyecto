@@ -4,17 +4,17 @@
 %implementación, debe describirse en términos de decisiones tomadas en ese sentido.
 %Los detalles de programación se dejan para los anexos.
 
-Esta sección se describe los pasos que llevamos luego de la revisión de antecedentes y obtención del ranking de herramientas.
+En esta sección se describen los pasos que llevamos luego de la revisión de antecedentes y obtención del ranking de herramientas.
 
-Como primer paso nos enfocamos en realizar una prueba piloto con la herramienta ClickUp, que luego derivo en ajustes tanto del documento de entrada, como la construcción de una solución esperada y su traducción al ingles. Y finalmente la decisión de evaluar solamente la generacion de historias producidas por esta herramienta.
+Como primer paso nos enfocamos en realizar una prueba piloto con la herramienta ClickUp, que luego derivó en ajustes tanto del documento de entrada, como la construcción de una solución esperada y su traducción al inglés. Y finalmente la decisión de evaluar solamente la generación de historias producidas por esta herramienta.
 
 \input{central/prueba piloto - ClickUp}
 
 \section{Mejora de la entrada}
 
-Dada la prueba piloto de Click Up, se decidió agregar detalles faltantes al documentos de requerimientos, agregando detalles como los Actores participantes del sistema.
+Dada la prueba piloto de Click Up, se decidió agregar detalles faltantes al documento de requerimientos, agregando detalles como los Actores participantes del sistema.
 
-Ademas, se reviso el prompt, agregando instrucciones como la plantilla de las historias de usuario, instruyendo el contenido que debe incluir para su verificación, evitando ambigüedades.
+Además, se revisó el prompt, agregando instrucciones como la plantilla de las historias de usuario, instruyendo el contenido que debe incluir para su verificación, evitando ambigüedades.
 
 \begin{verbatim}
 Genera historias de usuario a partir del siguiente documento de requisitos.
@@ -38,16 +38,16 @@ Adjunto el documento
 
 \section{Generación de historias esperadas}
 
-Luego de la prueba piloto, surgieron dudas sobre como corroborar la completitud de la solución de manera formal. Si bien se tiene como marco de referencia el documento de requisitos y algunos de las funcionalidades principales que cubre, aun surgieron dudas de como corroborar que efectivamente todas las funcionalidades descritas en el documento eran cubiertas. Para esto se decidió analizar por nuestro lado y generar las historias de usuario nosotros, como analistas expertos y utilizar la solución como referencia.
+Luego de la prueba piloto, surgieron dudas sobre cómo corroborar la completitud de la solución de manera formal. Si bien se tiene como marco de referencia el documento de requisitos y algunos de las funcionalidades principales que cubre, aun surgieron dudas de cómo corroborar que efectivamente todas las funcionalidades descritas en el documento eran cubiertas. Para esto se decidió analizar por nuestro lado y generar las historias de usuario nosotros, como analistas expertos y utilizar la solución como referencia.
 
-Las historias fueron revisadas y pasaron por un proceso de reescritura al detectar detalles faltantes o posibles épicas que fueron divididas. De esta manera, construimos una solución esperada lo mas completa posible para la comparación.
+Las historias fueron revisadas y pasaron por un proceso de reescritura al detectar detalles faltantes o posibles épicas que fueron divididas. De esta manera, construimos una solución esperada lo más completa posible para la comparación.
 
 La versión final de las historias esperadas se encuentra en la tabla \ref{tab:historias_esperadas} y sus criterios en la tabla \ref{tab:criterios_esperados}.
 
-\section{Traducción al Ingles}
-El documento de requisitos, las historias esperadas y los prompts fueron redactados en español. Sin embargo, se decidió crear una versión en Ingles, dado que los modelos reciben un mayor entrenamiento en ingles \cite{zhang2023multilingualLLM} y suelen tener mejores resultados. En primer lugar se tradujo el documento de requisitos, con ayuda de ChatGPT, definiendo así un vocabulario, para luego traducir las historias esperadas de manera consistente.
+\section{Traducción al inglés}
+El documento de requisitos, las historias esperadas y los prompts fueron redactados en español. Sin embargo, se decidió crear una versión en inglés, dado que los modelos reciben un mayor entrenamiento en inglés \cite{zhang2023multilingualLLM} y suelen tener mejores resultados. En primer lugar se tradujo el documento de requisitos, con ayuda de ChatGPT, definiendo así un vocabulario, para luego traducir las historias esperadas de manera consistente.
 
-El prompt fue traducido al ingles y se muestra en la figura \ref{fig:prompt_simple}.
+El prompt fue traducido al inglés y se muestra en la figura \ref{fig:prompt_simple}.
 
 \begin{figure}[h!]
 \begin{verbatim}
@@ -71,7 +71,7 @@ I have attached the document.
 \section{Tipos de evaluación}
 \label{central-enfoque}
 
-Con el objetivo de formalizar la evaluación, se analizo el articulo \cite{yu2026evaluating_genai_quality_multicase}, donde se evalúan salidas generadas por inteligencia artificial para un caso de uso definido. En este articulo se nombran diferentes metodologías, separadas por manual, automática o asistida por inteligencia artificial, que pueden ser utilizadas para validar diferentes aspectos de la salida generada, como la completitud, la exactitud, la relevancia, etc. Esto se puede ver en la Tabla \ref{table:aritculo-eval} extraída del articulo.
+Con el objetivo de formalizar la evaluación, se analizó el artículo \cite{yu2026evaluating_genai_quality_multicase}, donde se evalúan salidas generadas por inteligencia artificial para un caso de uso definido. En este artículo se nombran diferentes metodologías, separadas por manual, automática o asistida por inteligencia artificial, que pueden ser utilizadas para validar diferentes aspectos de la salida generada, como la completitud, la exactitud, la relevancia, etc. Esto se puede ver en la Tabla \ref{table:aritculo-eval} extraída del artículo.
 
 \begin{table}[h!]
 \centering
@@ -127,7 +127,7 @@ engineering: a multi-case study: Tipos de evaluación para las métricas identif
 \label{table:aritculo-eval}
 \end{table}
 
-Para el caso de uso de generación de documentos utilizando inteligencia artificial, el artículo define como se mide cada aspecto de calidad, ejemplificado en la Tabla \ref{table:aritculo-eval2} extraída también del articulo. Este caso de uso se aproxima a la generación automática de historias de usuario, ya que el texto es generado por la inteligencia artificial a partir de un documento.
+Para el caso de uso de generación de documentos utilizando inteligencia artificial, el artículo define como se mide cada aspecto de calidad, ejemplificado en la Tabla \ref{table:aritculo-eval2} extraída también del artículo. Este caso de uso se aproxima a la generación automática de historias de usuario, ya que el texto es generado por la inteligencia artificial a partir de un documento.
 
 \begin{longtable}{|p{3cm}| p{4cm} |p{4cm}|}
 \caption{Tabla 14 extraída de Evaluating the quality of GenAI applications in software
@@ -170,5 +170,5 @@ Paso 3: Recopilar retroalimentación para mejorar los prompts y el flujo de revi
 \hline
 \end{longtable}
 
-% Esto capaz que se puede mejorar con lo que se habia escrito antes, sobre porque se descartaron algunos de los algoritmos del articulo
-Se analizaron las técnicas automáticas propuestas en el articulo y se decidió que podría ser posible utilizar BERTScore para evaluar la similitud semántica de las historias generadas con respecto a una solución esperada o el documento de requisitos. Otros algoritmos automáticos como FActScore fueron descartados por ser más estrictos y no aplicables al dominio de historias de usuario, donde es posible utilizar sinónimos o inferir requerimientos de los documentos de requisitos. Teniendo esto en cuenta, se decidió definir un proceso completo de evaluación para historias de usuario, especificando evaluación manual, automática o asistida, definidos en el Capitulo \ref{cap:evaluacion}.
+% Esto capaz que se puede mejorar con lo que se habia escrito antes, sobre porque se descartaron algunos de los algoritmos del artículo
+Se analizaron las técnicas automáticas propuestas en el artículo y se decidió que podría ser posible utilizar BERTScore para evaluar la similitud semántica de las historias generadas con respecto a una solución esperada o el documento de requisitos. Otros algoritmos automáticos como FActScore fueron descartados por ser más estrictos y no aplicables al dominio de historias de usuario, donde es posible utilizar sinónimos o inferir requerimientos de los documentos de requisitos. Teniendo esto en cuenta, se decidió definir un proceso completo de evaluación para historias de usuario, especificando evaluación manual, automática o asistida, definidos en el Capítulo \ref{cap:evaluacion}.

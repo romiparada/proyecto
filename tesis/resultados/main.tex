@@ -1,11 +1,11 @@
-En este capítulo se presentan los resultados obtenidos a partir de la evaluación de la salida de la herramienta ClickUp, siguiendo la metodología descripta en el capítulo \ref{cap:evaluacion}.
+En este capítulo se presentan los resultados obtenidos a partir de la evaluación de la salida de la herramienta ClickUp, siguiendo la metodología descrita en el capítulo \ref{cap:evaluacion}.
 
 \section{Salida de la herramienta ClickUp}
 La salida de la herramienta sigue el formato indicado en el prompt \ref{fig:prompt_simple} y consta de historias de usuario, donde cada una incluye criterios de aceptación, referencia al documento e indicación de si es una épica, además de una sección final titulada Inconsistencies, Ambiguities, or Contradictions (Inconsistencias, ambigüedades o contradicciones). 
 
 Las historias generadas se presentan en la tabla \ref{tab:historias_clickup}, junto a sus criterios de aceptación en la tabla \ref{tab:criterios_clickup}, las referencias al documento de requisitos en la tabla \ref{tab:referencias_clickup} e indicación de si es una épica en la tabla \ref{tab:epicas_clickup}.
 
-Las inconsistencias, ambiguedades o contradicciones detectadas en el documento se presentan en la tabla \ref{tab:inconsistencias_clickup}.
+Las inconsistencias, ambigüedades o contradicciones detectadas en el documento se presentan en la tabla \ref{tab:inconsistencias_clickup}.
 
 \begin{longtable}{|c|p{12cm}|}
 \caption{Historias Generadas por ClickUp} \label{tab:historias_clickup} \\
@@ -378,7 +378,7 @@ En la tabla \ref{tab:alucinaciones}, se muestra la detección de alucinaciones p
 \caption{Detección de alucinaciones en resultado de ClickUp con respecto al documento de requisitos}
 \label{tab:alucinaciones} \\
 \hline
-\textbf{Referencia HU} & \textbf{Actor Coherente} & \textbf{Acción Coherente} & \textbf{Propósito Coherente}  & \textbf{Alucinacion} \\ \hline
+\textbf{Referencia HU} & \textbf{Actor Coherente} & \textbf{Acción Coherente} & \textbf{Propósito Coherente}  & \textbf{Alucinación} \\ \hline
 \endfirsthead
 
 \hline
@@ -416,16 +416,16 @@ HU23 & No & Si & No & Si \\
 \end{longtable}
 
 
-El * indica que la historia HU4 introduce un rol nuevo Authorized User que abarca tanto el actor Administrative staff member y Doctor, que si bien es correcto no esta presente en el documento de requisitos.
+El * indica que la historia HU4 introduce un rol nuevo Authorized User que abarca tanto el actor Administrative staff member y Doctor, que si bien es correcto no está presente en el documento de requisitos.
 
-De manera similar, el * indica que las historias HU12, HU13, HU14 introducen un rol nuevo Administrador, que no esta definido en el documento de requisitos. En este caso, la IA tuvo que inferir tomando uno de los caminos posibles, que es crear un rol nuevo para asignarle estas funcionalidades (otro camino podría haber sido asignarselas al administrative staff member).
+De manera similar, el * indica que las historias HU12, HU13, HU14 introducen un rol nuevo Administrador, que no está definido en el documento de requisitos. En este caso, la IA tuvo que inferir tomando uno de los caminos posibles, que es crear un rol nuevo para asignarle estas funcionalidades (otro camino podría haber sido asignarselas al administrative staff member).
 
-Las historias HU22 y HU23 son consideradas como alucinaciones, ya que no son coherente la presencia de un administrador de sistema que valide funcionalidades automatizadas por el sistema, es mas una restricción del sistema.
+Las historias HU22 y HU23 son consideradas como alucinaciones, ya que no es coherente la presencia de un administrador de sistema que valide funcionalidades automatizadas por el sistema, es más una restricción del sistema.
 
-\[\# Historias_{Alucinaciones} = 2 \]
+\[\# Historias_{Alucinaciónes} = 2 \]
 
 \subsection{Discusión sobre resultado obtenido en la detección de alucinaciones}
-No podemos afirmar que la solución generada esta libre de alucinaciones. Se encontraron 2 historias de usuario clasificadas como alucinaciones, lo que representa un 8,7\% del total. En ambos casos, las historias expresan funcionalidades automatizadas por el sistema asignadas a un actor incoherente, aunque los requerimientos sí están presentes en el documento de requisitos y su contenido se mantiene dentro del dominio definido. Un analista podría corregirlas fácilmente reemplazando el actor específico por el sistema como sujeto. De no realizarse esta corrección, podrían derivar en decisiones de implementación incorrectas, como la construcción de un rol de usuario que nunca llegaría a utilizarse.
+No podemos afirmar que la solución generada está libre de alucinaciones. Se encontraron 2 historias de usuario clasificadas como alucinaciones, lo que representa un 8,7\% del total. En ambos casos, las historias expresan funcionalidades automatizadas por el sistema asignadas a un actor incoherente, aunque los requerimientos sí están presentes en el documento de requisitos y su contenido se mantiene dentro del dominio definido. Un analista podría corregirlas fácilmente reemplazando el actor específico por el sistema como sujeto. De no realizarse esta corrección, podrían derivar en decisiones de implementación incorrectas, como la construcción de un rol de usuario que nunca llegaría a utilizarse.
 
 \section{Quality User Story Framework}
 
@@ -803,7 +803,7 @@ R23 & Sí \\
 Las referencias a las secciones del documento son correctas, lo que indica que la herramienta logra mantener la trazabilidad con el documento de entrada.
 
 \section{Metodología automática de evaluación}
-El proceso de evaluación compara un conjunto de 23 historias de usuario generadas automáticamente mediante un modelo de lenguaje contra un conjunto de 57 historias de usuario esperadas, elaboradas manualmente por analistas humanos. Adicionalmente se generó automáticamente un conjunto de funcionalidades del dominio a partir del documento de requisitos del producto (PDR) que posteriormente fué refinado, siendo el conjunto final una cantidad de 54 funcionalidades que permiten evaluar la cobertura funcional de ambas soluciones.
+El proceso de evaluación compara un conjunto de 23 historias de usuario generadas automáticamente mediante un modelo de lenguaje contra un conjunto de 57 historias de usuario esperadas, elaboradas manualmente por analistas humanos. Adicionalmente se generó automáticamente un conjunto de funcionalidades del dominio a partir del documento de requisitos del producto (PDR) que posteriormente fue refinado, siendo el conjunto final una cantidad de 54 funcionalidades que permiten evaluar la cobertura funcional de ambas soluciones.
 El análisis se estructura en tres dimensiones principales:
 \begin{itemize}
     \item Alineación semántica entre historias generadas y esperadas 
@@ -865,7 +865,7 @@ Un ejemplo de esto es la siguiente historia generada:
 \end{table}
 
 Esta historia presenta una similitud significativamente baja con sus mejores coincidencias (0.3132), las cuales además pertenecen a funcionalidades no relacionadas con el dominio de la historia generada. Esto evidencia una limitación del LLM a la hora de generar este tipo de requisitos, representando al menos en este caso un requisito no funcional como una historia de usuario.
-En conjunto estos resultados evidencian limitaciones del enfoque basado (al menor de manera explusiva) en similitud semántica, ya que puede producir alineaciones incorrectas desde el punto de vista funcional y no capturar de manera adecuada las diferencias en granularidad o tipo de requisito.
+En conjunto estos resultados evidencian limitaciones del enfoque basado (al menor de manera exclusiva) en similitud semántica, ya que puede producir alineaciones incorrectas desde el punto de vista funcional y no capturar de manera adecuada las diferencias en granularidad o tipo de requisito.
 Esto refuerza la necesidad de complementar la evaluación automática con un análisis manual que permita validar la correspondencia funcional real entre historias, aunque  el enfoque propuesto facilita significativamente este proceso, para el caso de la alineación semántica la presentación de las mejores coincidencias (top-3) permite al analista identificar rápidamente las relaciones más relevantes y detectar posibles inconsistencias, como alineaciones incorrectas o casos de baja similitud. La evaluación automática entonces no reemplaza la revisión manual, sino que actúa como una herramienta de apoyo que mejora la eficiencia. 
 Los resultados de alineación si bien son relevantes y evidencian parte de la calidad de la generación, no resultan suficientes para asegurar la correctitud del contenido generado, es necesario analizar adicionalmente otras dimensiones, como la cobertura del dominio o la detección de alucinaciones.
 
@@ -900,7 +900,7 @@ Las funcionalidades no cubiertas se observan en aspectos relacionados con las re
 
 \subsubsection{Comparación entre conjuntos}
 La comparación entre ambos conjuntos evidencia que las historias generadas alcanzan un nivel de cobertura funcional comparable al de las historias esperadas. Las diferencias observadas son mínimas, con una leve mejora en la proporción de funcionalidades completamente cubiertas y una reducción en la cantidad de funcionalidades no cubiertas por parte del conjunto generado.
-Ambos conjuntos comparten un mismo compartamiento, una alta representación de funcionalidades explícitas y una baja cobertura de aspectos implícitos, que se pueden también ver como requisitos no funcionales, particularmente funcionalidades relacionadas con identificadores únicos, control de acceso y reglas de consistencia del sistema no son capturadas de manera directa por ninguno de los dos conjuntos. Se puede concluir que el modelo no introduce mejoras significativas en la cobertura del dominio, sino que produce un tipo de representación similar a la que realizan los analistas humanos, pero tampoco empeora el nivel de cobertura, en ciertos casos dividiendo una funcionalidad en mas de una historia pero de todos modos incluyendo la esencia de la misma.
+Ambos conjuntos comparten un mismo comportamiento, una alta representación de funcionalidades explícitas y una baja cobertura de aspectos implícitos, que se pueden también ver como requisitos no funcionales, particularmente funcionalidades relacionadas con identificadores únicos, control de acceso y reglas de consistencia del sistema no son capturadas de manera directa por ninguno de los dos conjuntos. Se puede concluir que el modelo no introduce mejoras significativas en la cobertura del dominio, sino que produce un tipo de representación similar a la que realizan los analistas humanos, pero tampoco empeora el nivel de cobertura, en ciertos casos dividiendo una funcionalidad en más de una historia pero de todos modos incluyendo la esencia de la misma.
 \subsubsection{Conclusiones}
 Los resultados indican que el modelo es capaz de generar historias de usuario que alcanzan un nivel de cobertura funcional equivalente al de un conjunto elaborado manualmente por analistas human
 
@@ -925,7 +925,7 @@ Posibles alucinaciones & 2 & 8.70\% \\
 \label{tab:hallucinations}
 \end{table}
 
-Los resultados indican que la mayoría de las historias generadas (69.57\%) se encuentran alineadas con funcionalidades presentes en el dominio, esto muestra una alta capacidad del modelo para generar contenido coherente con los requisitos del sistema. Estas historias presentan valores de similitud alto y corresponden a funcionalidades explícitas del dominio, como la gestión de pacientes, turnos, historia clínica e inventario. Por otro lado, un 21.74\% de las historias se clasifican como inciertas. En estos casos, si bien se observa una correspondencia semántica parcial con el dominio (valores de similitud intermedios, entre 0.60 y 0.75), la relación funcional no es completamente clara. Este comportamiento está asociado a diferencias de granularidad o a la combinación de múltiples funcionalidades en una única historia. Y finalmente, se identifican dos casos (8.70\%) clasificados como posibles alucinaciones. Estas historias presentan valores de similitud bajos (inferiores a 0.50) y no tienen una correspondencia funcional directa en el conjunto esperado, en particular para nuestro caso corresponden a restricciones del sistema o requisitos no funcionales, como la validación de rangos de fechas o el envío en tiempo correcto de notificaciones. Este tipo de funcionalidades no se expresan normalmente como historias de usuario ya que no estan directamente relacionadas con una acción, lo que explica la baja alineación semántica.
+Los resultados indican que la mayoría de las historias generadas (69.57\%) se encuentran alineadas con funcionalidades presentes en el dominio, esto muestra una alta capacidad del modelo para generar contenido coherente con los requisitos del sistema. Estas historias presentan valores de similitud alto y corresponden a funcionalidades explícitas del dominio, como la gestión de pacientes, turnos, historia clínica e inventario. Por otro lado, un 21.74\% de las historias se clasifican como inciertas. En estos casos, si bien se observa una correspondencia semántica parcial con el dominio (valores de similitud intermedios, entre 0.60 y 0.75), la relación funcional no es completamente clara. Este comportamiento está asociado a diferencias de granularidad o a la combinación de múltiples funcionalidades en una única historia. Y finalmente, se identifican dos casos (8.70\%) clasificados como posibles alucinaciones. Estas historias presentan valores de similitud bajos (inferiores a 0.50) y no tienen una correspondencia funcional directa en el conjunto esperado, en particular para nuestro caso corresponden a restricciones del sistema o requisitos no funcionales, como la validación de rangos de fechas o el envío en tiempo correcto de notificaciones. Este tipo de funcionalidades no se expresan normalmente como historias de usuario ya que no están directamente relacionadas con una acción, lo que explica la baja alineación semántica.
 
 En conjunto, estos resultados sugieren que el modelo presenta una baja tasa de alucinación y es capaz de generar historias consistentes con el dominio. Sin embargo, los casos inciertos y de posible alucinación evidencian algunas limitaciones en la representación de cierto tipo de funcionalidades, restricciones del sistema y aspectos no funcionales. Concluimos que la detección de alucinaciones basada en similitud semántica resulta una herramienta útil para identificar inconsistencias, pero debe ser complementada con revisión manual para una mayor precisión.
 

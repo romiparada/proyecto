@@ -3,13 +3,13 @@ El objetivo de esta sección es definir una metodología que permita evaluar la 
 
 Con esta evaluación se busca determinar si las historias de usuario generadas tienen la calidad necesaria y suficiente como para ser utilizadas en procesos de desarrollo de software y si representan adecuadamente el dominio funcional definido en el documento de requisitos desde el que fueron generadas. Se busca determinar adicionalmente en qué medida el conjunto de historias generado se aproxima a una solución construida manualmente por analistas humanos para el mismo dominio, y también detectar posibles inconsistencias o contenido incorrecto introducido durante la generación automática.
 
-El estudio en conjunto de estas dimensiones nos permiten determinar un veredicto para las historias de usuario generadas, considerando tanto utilidad práctica en el desarrollo de software, coherencia interna de cada historia, su fidelidad con las demas historias del conjunto y su correspondencia con el dominio del documento de requisitos.
+El estudio en conjunto de estas dimensiones nos permite determinar un veredicto para las historias de usuario generadas, considerando tanto utilidad práctica en el desarrollo de software, coherencia interna de cada historia, su fidelidad con las demás historias del conjunto y su correspondencia con el dominio del documento de requisitos.
 
 \section{Aspectos de calidad evaluados}
 
 El análisis de calidad de las historias de usuario se basa en el Quality User Story Framework (QUSF), el cual define tres dimensiones fundamentales de calidad: sintáctica, semántica y pragmática. Este framework permite evaluar las propiedades internas de las historias de usuario sin considerar aún su correspondencia con la fuente de origen.
 Sin embargo, como uno de los objetivos de este trabajo es evaluar también la fidelidad de las historias generadas respecto al documento de requisitos del producto (PDR), se incorporan además aspectos relacionados con la relación entre las historias generadas y el documento de requisitos, como la correctitud de la solución respecto a la fuente de información, cobertura del dominio funcional y trazabilidad entre las historias generadas y los requisitos del documento, esto nos permite analizar cómo se corresponden las historias generadas y el documento de requisitos desde dos perspectivas complementarias. Por un lado con la correctitud evaluamos si las historias generadas se corresponden correctamente a las funcionalidades definidas para el dominio, y para la cobertura estudiamos si las funcionalidades del dominio se encuentran presentes en el conjunto de historias generadas. Para esto es necesario contar con un ground truth que contemple coherentemente el dominio, por lo que se generan tanto historias de usuario esperadas como funcionalidades extraídas del PDR, con el objetivo de medir que porcentaje de este dominio es cubierto por las historias generadas.
-Adicionalmente fue incoportado a la evaluación el criterio INVEST como un análisis complementario, si bien QUSF proporciona que permite analizar la calidad estructural y conceptual de las historias, INVEST introduce criterios relevantes para su uso práctico dentro de procesos ágiles, tales como independencia, negociabilidad o estimabilidad, que no se encuentran completamente contemplados en el QUSF. 
+Adicionalmente fue incorporado a la evaluación el criterio INVEST como un análisis complementario, si bien QUSF proporciona que permite analizar la calidad estructural y conceptual de las historias, INVEST introduce criterios relevantes para su uso práctico dentro de procesos ágiles, tales como independencia, negociabilidad o estimabilidad, que no se encuentran completamente contemplados en el QUSF. 
 \newline
 
 Se definen entonces las siguientes dimensiones para la evaluación.
@@ -26,16 +26,16 @@ Finalmente, se evalúa la correspondencia entre las historias generadas y los re
 
 \section{Como se evalúa cada aspecto}
 %Cómo evaluamos cada aspecto, las tablas de SI o No, si se sus 1 al 5 Sbert, implementación
-Como fue comentado en el Capitulo \ref{cap:central} Sección \ref{central-enfoque}, en el estudio de \cite{yu2026evaluating_genai_quality_multicase} se identifican tres maneras de evaluar soluciones creadas con inteligencia artificial, de manera automática, de manera manual por analistas o expertos en el área y de manera asistida.
+Como fue comentado en el Capítulo \ref{cap:central} Sección \ref{central-enfoque}, en el estudio de \cite{yu2026evaluating_genai_quality_multicase} se identifican tres maneras de evaluar soluciones creadas con inteligencia artificial, de manera automática, de manera manual por analistas o expertos en el área y de manera asistida.
 
 Para las evaluaciones manuales existen estrategias como Reviewer scorecard utilizando una escala como Likert.
 
 El criterio INVEST es analizado de manera manual por nosotros, como analistas expertos. Seguiremos la estrategia Reviewer scorecard, para cada aspecto de INVEST se asigna un puntaje de la escala Likert (1 al 5) donde (1 = muy deficiente, 3 = aceptable, 5 = excelente). De esta manera se obtiene para cada aspecto de INVEST un puntaje evaluados para cada historia.
-Aplicamos también la evaluación del criterio SMALL, agregando la clasificacion de Épica a la evaluación, para contabilizar las historias que abarcan mas de una funcionalidad y por lo tanto requieren refinamiento.
+Aplicamos también la evaluación del criterio SMALL, agregando la clasificación de Épica a la evaluación, para contabilizar las historias que abarcan más de una funcionalidad y por lo tanto requieren refinamiento.
 
-Los criterios presentados por QUSF, son evaluados manual y automaticamente. Criterios del caracter sintactico son evaluados utilizando la implementacion parcial del esquema de evaluacion propuesto, presentado por los mismos autores: AQUSA \cite{aqusa}.
-Esta implementación cubre los criterios sintácticos de atomicidad, minimal y buen formato. Ademas de cubrir aspectos pragmaticos de unicidad (deteccion de duplica exacta), uniforme (mismo formato en el conjunto de historias).
-Estos criterios son entonces analizados de manera automatica corriendo la aplicación de toma como entrada la lista de historias de usuario, sin incluir criterios de aceptación y devuelve la lista de defectos por historia.
+Los criterios presentados por QUSF, son evaluados manual y automaticamente. Criterios del carácter sintáctico son evaluados utilizando la implementación parcial del esquema de evaluación propuesto, presentado por los mismos autores: AQUSA \cite{aqusa}.
+Esta implementación cubre los criterios sintácticos de atomicidad, minimal y buen formato. Ademas de cubrir aspectos pragmáticos de unicidad (detección de duplicado exacta), uniforme (mismo formato en el conjunto de historias).
+Estos criterios son entonces analizados de manera automática corriendo la aplicación que toma como entrada la lista de historias de usuario, sin incluir criterios de aceptación y devuelve la lista de defectos por historia.
 El resto de criterios presentados en el esquema de evaluación QUSF son detectados de manera manual. Por simplicidad y dado que cada criterio tiene una descripción clara, descritos en la tabla \ref{table:qusf}, se marca SI o No a su cumplimiento, por historia para aquellos que evalúan a nivel individual y para el conjunto.
 
 \begin{table}[h!]
@@ -69,8 +69,8 @@ Complete & El conjunto de historias permite una aplicación completa sin pasos f
 \label{table:qusf}
 \end{table}
 
-La cobertura del documento de requisitos sera analizada de manera automática, utilizando un algoritmo de similitud semántica, Sentence BERT \cite{reimers-2019-sentence-bert}. Se mide la similitud semántica historia por historia con respecto a una solución construida por nosotros, como analistas expertos, para el dominio presentado. Se tiene entones, el conjunto de historias generadas y el conjunto de historias esperadas, donde las historias generadas por la herramienta deben corresponder a las historias esperadas en la solución completa.
-Sentence BERT calcula la similitud entre oraciones y devuelve un valor, lo que permite definir un umbral de similitud semántica donde dos historias se consideran similares. En caso de igualar o superar el umbral, una historia esperada encuentra una correspondencia con una historia generada, y la funcionalidad se considera cubierta. La evaluación uno a uno tiene la particularidad de no cubrir el caso en el que dos historias se correspondan a una, ya que el puntaje semántico puede dar bajo. Para esto las historias esperadas fueron revisadas y apuntan a ser atómicas, por lo que una historia de usuario esperada no debería corresponder a dos historias generadas. Para cubrir el caso contrario, en el una historia generadas se corresponde a dos historias esperadas, se consideran como Epicas, donde las historias generados pordian ser divisibles. Para esto se recae en la evaluacion manual, realizada para INVEST donde se analiza el criterio Small, si la historia no es small, es posible que su correspondencia sea de dos o mas a uno.
+La cobertura del documento de requisitos será analizada de manera automática, utilizando un algoritmo de similitud semántica, Sentence BERT \cite{reimers-2019-sentence-bert}. Se mide la similitud semántica historia por historia con respecto a una solución construida por nosotros, como analistas expertos, para el dominio presentado. Se tiene entonces, el conjunto de historias generadas y el conjunto de historias esperadas, donde las historias generadas por la herramienta deben corresponder a las historias esperadas en la solución completa.
+Sentence BERT calcula la similitud entre oraciones y devuelve un valor, lo que permite definir un umbral de similitud semántica donde dos historias se consideran similares. En caso de igualar o superar el umbral, una historia esperada encuentra una correspondencia con una historia generada, y la funcionalidad se considera cubierta. La evaluación uno a uno tiene la particularidad de no cubrir el caso en el que dos historias se correspondan a una, ya que el puntaje semántico puede dar bajo. Para esto las historias esperadas fueron revisadas y apuntan a ser atómicas, por lo que una historia de usuario esperada no debería corresponder a dos historias generadas. Para cubrir el caso contrario, en el una historia generadas se corresponde a dos historias esperadas, se consideran como Epicas, donde las historias generados podrían ser divisibles. Para esto se recae en la evaluación manual, realizada para INVEST donde se analiza el criterio Small, si la historia no es small, es posible que su correspondencia sea de dos o mas a uno.
 Los criterios de aceptación también son evaluados uno a uno cuando se encuentra una pareja historia generada, historia esperada. De esta manera podemos evaluar si los criterios esperados para la funcionalidad son cubiertos. En el diagrama \ref{fig:sbert-hist} se ilustra el proceso de evaluación.
 
 \begin{figure}[h!]
@@ -80,7 +80,7 @@ Los criterios de aceptación también son evaluados uno a uno cuando se encuentr
     height=\textheight,
     keepaspectratio
   ]{figs/sbert-hist.png}
-  \caption{Diagrama de la evaluación de similitud semántica de historias y sus criterios de aceptacion.}
+  \caption{Diagrama de la evaluación de similitud semántica de historias y sus criterios de aceptación.}
   \label{fig:sbert-hist}
 \end{figure}
 
@@ -122,7 +122,7 @@ En los casos en que la similitud se encuentra en el rango intermedio, se realiza
 
 La detección de alucinaciones o elementos incorrectos se analizan con respecto al documento de requisitos, y corresponden a elementos que no están presentes en el mismo. Para su detección se segmenta la descripción de la historia de usuario en Actor, Acción y Propósito y se marca la coherencia como Si o No para cada segmento. Se considera como una alucinación si la descripción de la historia tiene elementos que claramente no existen o son incoherentes con respecto al documento de requisitos.
 
-Finalmente la trazabilidad sera evaluada de manera manual, verificando que la referencia presente en la historia sea correcta a la sección en el documento. Marcaremos SI o NO.
+Finalmente la trazabilidad será evaluada de manera manual, verificando que la referencia presente en la historia sea correcta a la sección en el documento. Marcaremos SI o NO.
 
 \section{Procedimiento y Diagrama de evaluación}
 
@@ -140,19 +140,19 @@ En el diagrama \ref{fig:diag-eval} se ilustra el proceso de evaluación.
 
 La entrada se divide en dos, por un lado se tiene el documento de requisitos y por otro la instrucción o prompt, descrito en la figura \ref{fig:prompt_simple}.
 % Agregar referencia al documenot
-El documento de requisitos fue definido en la sección, es utilizado por el analista experto y la herramienta de generacion de historias de usuario para generar soluciones esperadas y generadas respectivamente. Por otro lado se tiene la instrucción o prompt que se utiliza para indicarle a la herramienta la salida deseada. Como se vio en la sección de selección de herramientas, no todas las herramientas requieren de un prompt pero aquellas que si lo requieren se utiliza el prompt simple. % agregar referencia al prompt.
+El documento de requisitos fue definido en la sección, es utilizado por el analista experto y la herramienta de generación de historias de usuario para generar soluciones esperadas y generadas respectivamente. Por otro lado se tiene la instrucción o prompt que se utiliza para indicarle a la herramienta la salida deseada. Como se vio en la sección de selección de herramientas, no todas las herramientas requieren de un prompt pero aquellas que si lo requieren se utiliza el prompt simple. % agregar referencia al prompt.
 
 Una vez generadas ambas soluciones, se procede a realizar la evaluación.
 
-Como se explico en la sección anterior, la evaluación tiene procedimientos automáticos, manuales y semi-automáticos. Para los procedimientos manuales, uno de nosotros es seleccionado como analista experto y es el encargado de evaluar la historia y otro es el analista revisor, encargado de revisar la evaluación.
+Como se explicó en la sección anterior, la evaluación tiene procedimientos automáticos, manuales y semi-automáticos. Para los procedimientos manuales, uno de nosotros es seleccionado como analista experto y es el encargado de evaluar la historia y otro es el analista revisor, encargado de revisar la evaluación.
 
 El primer paso de la evaluación es la detección de alucinaciones, esto nos permite contabilizar y descartar para los pasos siguientes todas las historias consideradas como alucinaciones.
 
-El siguiente paso es la evaluacion de QUSF semántica manual del criterio Conceptually Sound (conceptualmente correcto) que nos permite identificar si la historia es coherente en si misma. Todas aquellas que no lo cumplan serán descartadas.
+El siguiente paso es la evaluación de QUSF semántica manual del criterio Conceptually Sound (conceptualmente correcto) que nos permite identificar si la historia es coherente en si misma. Todas aquellas que no lo cumplan serán descartadas.
 
-Para las siguiente se evaluara QUSF, primero los criterios automáticos, utilizando la herramienta AQUSA \cite{aqusa} y luego los manuales. 
+Para las siguiente se evaluará QUSF, primero los criterios automáticos, utilizando la herramienta AQUSA \cite{aqusa} y luego los manuales. 
 
-Siguiente paso sera evaluar INVEST, incluyendo el criterio extra de deteccion de Épica para aquellas que no cumplan con el criterio Pequeño (Small).
+Siguiente paso será evaluar INVEST, incluyendo el criterio extra de detección de Épica para aquellas que no cumplan con el criterio Pequeño (Small).
 
 La prueba automática de similitud semántica evalúa primero la cobertura de historia esperada y luego la cobertura de criterios dentro de esta historia.
 
