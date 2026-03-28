@@ -1,0 +1,263 @@
+[
+  [
+    "The system must request the full name, date of birth, sex, identity document, and contact details (email address and phone number).",
+    "The system must display an error if a patient with the entered identity document already exists.",
+    "The system must assign a unique patient number to the new patient."
+  ],
+  [],
+  [
+    "The system must allow modifying the full name, date of birth, sex, identity document, and contact details (email address and phone number)."
+  ],
+  [
+    "The system must allow entering the patient's blood type.",
+    "The system must allow entering chronic diseases, allergies, relevant injuries, and regular medications along with the date they started/occurred, with the option to indicate \"from birth\"."
+  ],
+  [
+    "The system must display a search field that allows entering the name.",
+    "The system must display a list of patients whose names match the entered data."
+  ],
+  [
+    "The system must display a search field that allows entering the identity document.",
+    "The system must display a list of patients whose documents match the entered data."
+  ],
+  [
+    "The system must display a search field that allows entering the patient number.",
+    "The system must display a list of patients whose patient numbers match the entered data."
+  ],
+  [
+    "The system must display a search field that allows entering the name.",
+    "The system must display a list of patients whose names match the entered data."
+  ],
+  [
+    "The system must display a search field that allows entering the identity document.",
+    "The system must display a list of patients whose documents match the entered data."
+  ],
+  [
+    "The system must have a search field that allows searching by patient number.",
+    "The system must display a list of patients whose patient numbers match the entered data."
+  ],
+  [
+    "The system must display the patient's personal data: full name, date of birth, sex, identity document, and contact details (email address and phone number).",
+    "The system must display the patient number."
+  ],
+  [
+    "The system must display the appointment details: specialty, doctor, schedule, and status."
+  ],
+  [
+    "The system must allow selecting the specialty and doctor for the appointment.",
+    "The system must display the available time slots in the selected doctor's schedule.",
+    "The system must display an error if an appointment already exists at that time slot.",
+    "The system must change the appointment status to \"Confirmed\" after a successful registration."
+  ],
+  [
+    "The system must allow changing the appointment status to \"Canceled\".",
+    "The system must make the previous time slot available again in the doctor's schedule."
+  ],
+  [
+    "The system must allow editing the date and time of an existing appointment.",
+    "The system must validate that the new time slot is available."
+  ],
+  [
+    "The system must indicate in the notification if the appointment was canceled.",
+    "The system must indicate in the notification if the appointment had a schedule change.",
+    "The system must include the new appointment date in the notification when a date change occurs."
+  ],
+  [
+    "The system must indicate in the notification if the appointment was canceled.",
+    "The system must indicate in the notification if the appointment had a schedule change.",
+    "The system must include the new appointment date in the notification when a date change occurs."
+  ],
+  [
+    "The system must allow access to the clinical record only to users with the doctor role.",
+    "The system must list the diagnoses for each appointment confirmed by the patient.",
+    "The system must display the patient's medical background."
+  ],
+  [
+    "The system must include the date, name, and specialty of the responsible doctor in each record.",
+    "The system must allow marking the appointment as Attended when a diagnosis is registered.",
+    "The system must allow marking the appointment as Not attended.",
+    "The system must prevent registering a diagnosis when the appointment is marked as Not attended."
+  ],
+  [
+    "The system must list all appointments associated with the patient.",
+    "The system must list all medications associated with the patient.",
+    "The system must list all invoices associated with the patient.",
+    "The system must allow sorting the information by date, responsible doctor, or specialty.",
+    "The system must allow viewing the details of each listed item."
+  ],
+  [
+    "The system must allow registering the doctor's full name, identity document number, and contact details (email address and phone number).",
+    "The system must allow associating a specialty with the doctor being registered.",
+    "The system must allow defining the doctor's status as active or inactive.",
+    "The doctor's name and identity document cannot be left empty in the registration."
+  ],
+  [
+    "The system must allow defining the start time and end time per day of the week.",
+    "The system must allow defining more than one time slot per day.",
+    "The system must display an error if the time slots for the same day overlap.",
+    "The system must display an error if the start times precede the end times."
+  ],
+  [
+    "The system must allow editing the doctor's full name, identity document number, and contact details."
+  ],
+  [
+    "The system must allow editing the days of the week for attention.",
+    "The system must allow editing the start time and end time for a day of the week.",
+    "The system must display an error if the time slots for the same day overlap.",
+    "The system must display an error if the start times precede the end times."
+  ],
+  [
+    "The system must allow changing the doctor's status to inactive."
+  ],
+  [
+    "The system must allow changing the doctor's status to active."
+  ],
+  [
+    "The system must define the following roles: administrative staff, doctor, pharmacist, analyst, and patient."
+  ],
+  [
+    "The system must associate functionalities with each role.",
+    "The system must display an error if a user accesses a functionality not defined in their role."
+  ],
+  [
+    "The system must include in the invoice the patient's full name, appointment specialty, date, and total cost.",
+    "The system must include a unique identifier in the invoice.",
+    "The system must associate the invoice with the patient and the appointment."
+  ],
+  [],
+  [
+    "The system must include in the invoice the patient's full name, medication name, date, and total cost.",
+    "The system must include a unique identifier in the invoice.",
+    "The system must associate the invoice with the patient and the medication."
+  ],
+  [
+    "The system must have a search field that allows searching by identity document.",
+    "The system must display a list of results matching the entered data."
+  ],
+  [
+    "The system must list the patient's medications.",
+    "The system must allow generating the invoice."
+  ],
+  [
+    "The system must include in the invoice the patient's full name, medication name, date, and total cost.",
+    "The system must include a unique identifier in the invoice.",
+    "The system must associate the invoice with the patient and the medication."
+  ],
+  [
+    "The system must list the patient's medications.",
+    "The system must allow generating the invoice."
+  ],
+  [
+    "The system must send an email to the patient's email address containing: invoice identifier, patient name, date, and service type (appointment or medication).",
+    "The system must include in the subject line that it is a hospital invoice.",
+    "The system must include the invoice attached in PDF format.",
+    "The system must send the email within 10 minutes after the invoice is generated."
+  ],
+  [
+    "The system must send a text message to the patient's phone number containing: invoice identifier, patient name, date, and service type (appointment or medication).",
+    "The system must include the total cost of the invoice.",
+    "The system must send the text message within 10 minutes after the invoice is generated."
+  ],
+  [
+    "The system must register each medication with name, manufacturer, available units, stock number, and expiration date.",
+    "The system must display an error if the expiration date is earlier than the current date.",
+    "The system must display an error if the stock number is not unique.",
+    "The system must display an error if the medication name is left empty.",
+    "The system must display an error if the number of available units is less than 0."
+  ],
+  [
+    "The system must register each supply with name, manufacturer, available units, stock number, and expiration date.",
+    "The system must display an error if the expiration date is less than or equal to the current date.",
+    "The system must display an error if the stock number already exists in the system.",
+    "The system must display an error if the supply name is left empty.",
+    "The system must display an error if the number of available units is less than 0."
+  ],
+  [
+    "The system must allow modifying the available units.",
+    "The system must display an error if the number of available units is less than 0."
+  ],
+  [
+    "The system must allow modifying the available units.",
+    "The system must display an error if the number of available units is less than 0."
+  ],
+  [
+    "The system must associate the collected medication with the patient.",
+    "The system must allow selecting the quantity to collect.",
+    "The system must update the available units according to the collected quantity.",
+    "The system must display an error if the collected quantity exceeds the available units."
+  ],
+  [
+    "The system must display the medication name and the number of available units.",
+    "The system sorts from lowest to highest."
+  ],
+  [
+    "The system must display the medication name and the expiration date.",
+    "The system sorts from lowest to highest."
+  ],
+  [
+    "The system must display the supply name and the number of available units.",
+    "The system sorts from lowest to highest."
+  ],
+  [
+    "The system must display the supply name and the expiration date.",
+    "The system sorts from lowest to highest."
+  ],
+  [
+    "The system must display the number of available units of the medication."
+  ],
+  [
+    "The system must display the number of available units of the supply."
+  ],
+  [
+    "The system must have a search field that allows searching by medication name.",
+    "The system must display a list of medications whose names match the entered data."
+  ],
+  [
+    "The system must have a search field that allows searching by supply name.",
+    "The system must display a list of supplies whose names match the entered data."
+  ],
+  [
+    "The system must allow listing all medications and sorting them by expiration date.",
+    "The system must display the medication's expiration date.",
+    "The system must highlight in red when one month remains before the medication expires."
+  ],
+  [
+    "The system must allow listing all supplies and sorting them by expiration date.",
+    "The system must display the supply's expiration date.",
+    "The system must highlight in red when one month remains before the supply expires."
+  ],
+  [
+    "The system must allow listing all medications and sorting them by available units.",
+    "The system must display the number of available units of the medication.",
+    "The system must highlight in red when fewer than 10 units remain."
+  ],
+  [
+    "The system must allow listing all supplies and sorting them by available units.",
+    "The system must display the number of available units of the supply.",
+    "The system must highlight in red when fewer than 10 units remain."
+  ],
+  [
+    "The system must list all existing specialties.",
+    "The system must allow choosing a specialty.",
+    "The system must display the total number of appointments: overall, attended, canceled, confirmed, and not attended.",
+    "The system must allow choosing a date range.",
+    "The system must display an error if the start date is later than the end date.",
+    "The system must display an error if the end date is later than the current date."
+  ],
+  [
+    "The system must display the hospital's total income.",
+    "The system must display the income by specialty.",
+    "The system must display the income by medication.",
+    "The system must allow choosing the query date range.",
+    "The system must display an error if the start date is later than the end date.",
+    "The system must display an error if the end date is later than the current date."
+  ],
+  [
+    "The system must allow filtering by name.",
+    "The system must list all supplies sorted by consumption (number of units collected).",
+    "The system must display the total number of units collected.",
+    "The system must allow choosing the query date range.",
+    "The system must display an error if the start date is later than the end date.",
+    "The system must display an error if the end date is later than the current date."
+  ]
+]

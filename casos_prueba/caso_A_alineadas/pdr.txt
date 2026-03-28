@@ -1,0 +1,99 @@
+Requirements Document (PRD)
+Hospital Management System
+
+1. Introduction
+The hospital wishes to implement a software system that allows centralizing the management of the institution.
+The main objective is to improve internal organization, reduce administrative errors, and facilitate access to the information necessary for the patient's care.
+The system must integrate clinical and administrative information, allowing the management of different hospital processes.
+
+2. Scope of the system
+The system must cover the following processes:
+● Patient management
+● Medical appointment administration
+● Electronic medical record
+● Medical staff management
+● Billing and service collection
+● Medication and supplies inventory control
+● Report and statistics generation
+
+3. System Actors
+The system will be used by different types of users, each one with specific responsibilities within hospital management:
+● Administrative staff: User responsible for patient management, medical appointment administration, and billing and collection processes.
+● Doctor: User in charge of medical care for patients and of recording and consulting the electronic medical record.
+● Pharmacist: User responsible for managing the inventory of medications and supplies, as well as recording medication delivery.
+● Analyst: User in charge of consulting and analyzing system reports and statistics.
+● Patient: User who can consult their personal information and their electronic medical record, as well as receive notifications related to appointments and billing.
+
+4. Functional requirements
+
+4.1 Patient management
+The system must allow:
+● Register patients with personal data and medical background.
+● Assignment of a unique identifier to each patient.
+● Modify the personal and contact details of a registered patient.
+● Record medical background (such as blood type, allergies, chronic diseases, and regular medication).
+● Search for patients by name, identity document, or identifier number.
+● Visualize a patient's complete information.
+
+4.2 Appointments and medical schedule
+The system must allow:
+● Creating medical appointments by associating the patient, specialty, and professional.
+● Visualize the availability of registered doctors.
+● Avoiding the assignment of overlapped appointments.
+● Modify the date and time of an existing appointment.
+● Cancel previously assigned appointments.
+● Notify the patient when an appointment is modified or canceled.
+● Manage the status of appointments throughout their lifecycle.
+
+Appointments may be found, among others, in the following states:
+● Confirmed
+● Canceled
+● Attended
+● Not attended
+
+4.3 Electronic clinic history
+The system must have an electronic clinic history system that allows:
+● Register diagnoses, treatments, and patient's clinical progress.
+● Users must be able to edit their electronic clinical record.
+● Each record done in the electronic clinical record must have an associated date.
+● Restrict the access to clinical information only to authorized users.
+● Allow that patients consult their electronic clinical records, but it can't be modified by them.
+
+4.4 Medical staff management
+The system must allow:
+● Register medical professionals with their personal and contact details.
+● Association of medical specialties with each professional.
+● Definition and modification of attention hours.
+● Activate or deactivate professionals for your availability in the agenda.
+● Manage roles and access permissions to system functionalities.
+● Validate permissions before executing actions.
+
+4.5 Billing and collection
+The system must allow:
+● Generating electronic invoices for medical consultations.
+● Generating electronic invoices for the delivery of medications.
+● Associating invoices to patients and the corresponding services.
+● Assigning a unique identifier to each invoice.
+● Sending automatic notifications to patients when an invoice is generated.
+● Attach the invoice in digital format to the notification sent.
+
+4.6 Inventory of medicines and supplies
+The system must allow:
+● Register medications and supplies with identification information, available stock, and expiration date.
+● Automatically update stock when registering medication deliveries.
+● Detect minimum stock levels.
+● Notify medications or supplies about to expire.
+● Consult inventory sorted by available quantity or expiration date.
+
+4.7 Reports and statistics
+The system must allow generating reports that include, at least:
+● Number of consultations by specialty.
+● Appointment status.
+● Financial reports income.
+● Medication and supplies consumption.
+● Filters by date ranges for all reports.
+
+5. General considerations
+● Date validations must prevent invalid ranges.
+● Notifications must be sent within a reasonable time after the events that trigger them.
+● Each patient's identity document and identifier should be unique.
