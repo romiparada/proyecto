@@ -40,9 +40,9 @@ def _compare_ca_matrix(
             score = float(sim_matrix[gi][ei].item())
             comparisons.append({
                 "generated_criterion": g_criterion,
-                "generated_index": gi,
+                "generated_index": gi + 1,
                 "expected_criterion": e_criterion,
-                "expected_index": ei,
+                "expected_index": ei + 1,
                 "similarity": round(score, 4),
                 "status": _classify(score, config),
             })
@@ -89,8 +89,8 @@ def evaluate_ca_alignment(
         best_match = top_matches[0]
         exp_idx = best_match["index"]
 
-        gen_ca: List[str] = ca_generated[gen_idx] if gen_idx < len(ca_generated) else []
-        exp_ca: List[str] = ca_expected[exp_idx] if 0 <= exp_idx < len(ca_expected) else []
+        gen_ca: List[str] = ca_generated[gen_idx - 1] if gen_idx - 1 < len(ca_generated) else []
+        exp_ca: List[str] = ca_expected[exp_idx - 1] if 1 <= exp_idx <= len(ca_expected) else []
 
         # Comparación cruzada completa gen_CA × exp_CA
         ca_comparisons = _compare_ca_matrix(gen_ca, exp_ca, encoder, config)

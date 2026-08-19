@@ -6,6 +6,7 @@ from typing import List, Dict, Tuple
 
 from ..similarity.metrics import compute_similarity_matrix, top_k_matches
 from ..config.settings import PipelineConfig
+from .llm_judge import evaluate_coverage_with_llm
 
 
 def classify_coverage(score: float, config: PipelineConfig) -> str:
@@ -22,6 +23,9 @@ def evaluate_functional_coverage(
     generated: List[str],
     encoder,
     config: PipelineConfig,
+    use_llm_judge: bool = False,
+    api_key: str = "",
+    llm_model: str = "",
 ) -> Dict:
     """Calcula cobertura de cada funcionalidad respecto a las historias generadas."""
     aspect_texts = [text for _, text in aspects]
@@ -38,12 +42,12 @@ def evaluate_functional_coverage(
         status = classify_coverage(best_score, config)
 
         results.append({
-            "functionality_index": i,
+            "functionality_index": i + 1,
             "category": category,
             "functionality": aspect_text,
             "coverage_status": status,
             "best_match": {
-                "story_index": matches[0]["index"] if matches else -1,
+                "story_index": matches[0]["index"] if matches else 0,
                 "story_text": matches[0]["text"] if matches else "",
                 "similarity": best_score,
             },
@@ -64,4 +68,8 @@ def evaluate_functional_coverage(
         "uncovered_rate": round(counts["not_covered"] / total, 4) if total else 0.0,
     }
 
-    return {"results": results, "summary": summary}
+    coverage_data = {"results": results, "summary": summary}
+    if use_llm_judge and api_key and llm_model:
+        return evaluate_coverage_with_llm(coverage_data, api_key, llm_model)
+    
+    return coverage_data

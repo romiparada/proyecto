@@ -1,0 +1,545 @@
+Capítulo 6
+
+Método de evaluación de
+historias de usuario
+En este capítulo se presenta un método de evaluación de historias de usuario
+y otros elementos relevantes como la trazabilidad entre la historia de usuario y
+documentación. En el contexto de este proyecto, el método fue construido para la
+evaluación de la salida generada a partir de un documento de requisitos por una
+herramienta que utiliza inteligencia artificial. Esta salida incluye: el conjunto
+de historias de usuario, donde cada una presenta una referencia permitiendo
+la trazabilidad con el documento de requisitos, una indicación si la misma es
+épica, y la detección de inconsistencias presentes en el documento de requisitos.
+Para la generación de esta salida se propone utilizar el prompt de la Figura 5.1,
+que instruye a la herramienta a generar esta salida con el contenido a analizar,
+el documento de requisitos (Anexo G), que contiene una inconsistencia, y el
+conjunto de historias de usuario generadas por nosotros (Anexo C). Sin embargo,
+esta evaluación puede ser utilizada con cualquier conjunto de historias de usuario
+generadas, ya sea por inteligencia artificial o por analistas, a partir de alguna
+documentación y conjunto de historias esperadas para ese dominio.
+En este capitulo se define el objetivo de la evaluación (Sección 6.1) y se establecen los aspectos a analizar (Sección 6.2), que combinan marcos de evaluación
+como INVEST con análisis adicionales que surgieron a partir de la evaluación
+piloto (Capítulo 5) y que se consideran relevantes en el contexto del trabajo.
+Para su aplicación, se determina cómo se evalúa cada aspecto, indicando si el
+procedimiento es manual, automático o asistido (semi-automático)(Sección 6.3).
+Finalmente, se presenta el procedimiento completo Sección 6.4).
+
+6.1.
+
+Objetivo de evaluación
+
+El método de evaluación propuesto busca determinar la calidad de la salida o solución generada por la herramienta que utiliza inteligencia artificial. La
+herramienta genera un conjunto de historias de usuario a partir de alguna docu49
+
+mentación (p.ej. un documento de requisitos). Se busca evaluar si las historias
+están bien redactadas y pueden ser utilizadas en la práctica para el desarrollo de
+software. Además, el método analiza si las historias cubren las funcionalidades
+propuestas en el documento de requisitos. También se busca determinar en qué
+medida el conjunto de historias generado se aproxima a (o es mejor que) una
+solución construida por analistas humanos y detectar posibles inconsistencias o
+contenido incorrecto (alucinaciones) introducido durante la generación. Finalmente, también se busca evaluar la trazabilidad, la detección de inconsistencias
+en el documento y la clasificación de las historias como épicas.
+
+6.2.
+
+Aspectos a evaluar
+
+A partir de los objetivos definidos, se derivan los siguientes aspectos a evaluar de la solución generada: la calidad de cada historia, la calidad del conjunto
+de historias, la cobertura de las funcionalidades por parte del conjunto de historias, la similitud con una solución humana y la detección de alucinaciones.
+Además, la correctitud de la trazabilidad, de las inconsistencias detectadas por
+la herramienta y de la clasificación de cada historia como épica. La Figura 6.1
+presenta los aspectos a evaluar y como se definen. En esta sección se describe
+cada uno de ellos.
+
+Figura 6.1: Diferentes aspectos de la solución generada a evaluar por el método.
+
+6.2.1.
+
+Calidad de historias de usuario
+
+Como se definió en el Capitulo 2, Sección 2.1, una historia de usuario es una
+descripción de uso de un sistema desde la perspectiva del usuario y representa el
+entendimiento compartido de un equipo sobre lo que el sistema debería hacer. Es
+usual que las historias especifiquen el actor, la acción y el objetivo del escenario
+50
+
+que describen. Es de interés, entonces, identificar estándares de calidad que
+permitan reconocer cuando una historia esta bien redactada y tiene utilidad en
+el desarrollo de software.
+En la evaluación piloto (Capitulo 5) se utilizó el marco de evaluación INVEST. Este criterio permite evaluar distintas características que deben tener las
+historias de usuario para considerarlas útiles para el desarrollo del sistema. Según INVEST, las historias deben ser, en lo posible, independientes, negociables,
+valiosas, estimables, pequeñas y testeable.
+Para mejorar el método y complementar la forma de evaluar la calidad de las
+historias, se decidió realizar una búsqueda para extender el criterio INVEST y
+analizar si existen otros métodos de evaluación de calidad de historias de usuario.
+Como resultado, se encontró el Quality User Story Framework (QUSF) (Garm
+Lucassen, 2015), un método de evaluación de historias de usuario que define
+tres dimensiones fundamentales de calidad: sintáctica, semántica y pragmática.
+Estas dimensiones presentan diferentes criterios que se muestran en la Tabla
+6.1. La calidad sintáctica analiza la estructura textual de las historias sin considerar su significado, incluyendo aspectos como la gramática, la redacción y
+el cumplimiento de la estructura esperada. La calidad semántica evalúa el significado del contenido, verificando que las historias sean claras, consistentes y
+correctamente relacionadas dentro del dominio del problema. Finalmente, la calidad pragmática analiza cómo las historias pueden ser interpretadas por los
+desarrolladores.
+Si bien QUSF permite analizar la calidad estructural y conceptual de las
+historias, INVEST introduce criterios relevantes para su uso práctico dentro de
+procesos ágiles, tales como independencia, negociabilidad o estimabilidad, que
+no se encuentran completamente contemplados en QUSF. En definitiva, ambos
+métodos (INVEST y QUSF) se complementan para evaluar la calidad de las
+historias de usuario.
+
+6.2.2.
+
+Calidad del conjunto de historias de usuario
+
+Como se puede observar en la Tabla 6.1, dentro de los criterios propuestos
+por QUSF, algunos de ellos se evalúan a nivel de conjunto. Se evalúa que el
+conjunto de historias de usuario sea completo (sin historias faltantes), redactado
+de manera uniforme (con la misma plantilla), contenga historias únicas (no
+repetidas) y libre de conflictos. Ademas, al igual que INVEST, se analiza la
+independencia de la historia con respecto a las demás del conjunto. Se utilizan
+estos criterios para determinar la calidad del conjunto de historias de usuario.
+
+6.2.3.
+
+Cobertura del dominio
+
+Por otro lado, uno de los objetivos de este trabajo es evaluar la cobertura de
+las historias generadas respecto al documento de requisitos del producto, permitiendo identificar posibles omisiones en la generación automática. Para esto
+se utiliza un ground truth que contemple coherentemente el dominio, utilizando tanto las historias de usuario esperadas (Sección 5.4) como un conjunto de
+51
+
+Criterio
+
+Descripción
+
+Individual
+o Conjunto
+
+Sintáctico
+Well-formed
+Una historia de usuario incluye al me- Individual
+Bien formada
+nos un rol y un medio.
+Atomic
+Una historia expresa un requisito para Individual
+Atómica
+exactamente una funcionalidad.
+Minimal
+Una historia contiene únicamente rol, Individual
+Mínima
+medio y fin.
+Semántico
+Conceptually sound El medio expresa una funcionalidad y Individual
+Conceptualmente sóli- el fin expresa una justificación.
+do
+Problem-oriented
+La historia especifica solo el problema, Individual
+Orientado al problema no la solución.
+Unambiguous
+Evita términos o abstracciones que per- Individual
+Libre de ambigüedad mitan múltiples interpretaciones.
+Conflict-free
+No es inconsistente con otras historias Conjunto
+Libre de conflictos
+de usuario.
+Pragmático
+Full sentence
+Es una oración completa y bien forma- Individual
+Oración completa
+da.
+Estimable
+No representa un requisito demasiado Individual
+Estimable
+amplio difícil de planificar.
+Unique
+Cada historia es única; se evitan dupli- Conjunto
+Única
+cados.
+Uniform
+Todas las historias emplean la misma Conjunto
+Uniforme
+plantilla.
+Independent
+La historia es autocontenida y no de- Conjunto
+Independiente
+pende de otras historias.
+Complete
+El conjunto de historias permite una Conjunto
+Completo
+aplicación completa sin pasos faltantes.
+Tabla 6.1: Criterios de Quality User Story framework (QUSF)
+
+52
+
+funcionalidades extraídas del documento (Anexo C.2), con el objetivo de medir
+qué porcentaje del dominio es cubierto por las historias generadas. Para realizar
+esta comparación, es posible utilizar un algoritmo de similitud semántica como
+BERTScore (encontrado en el análisis de la sección 5.7), sin embargo se optó
+por Sentence-BERT (SBERT), cuya aplicación y motivo de elección se detalla
+en la Sección 6.3.
+
+6.2.4.
+
+Similitud con una solución humana
+
+Ademas de la cobertura del dominio, la similitud de las historias de usuario
+generadas con las historias de usuario esperadas permiten comparar la solución
+generada, en el contexto de este proyecto generadas por una herramienta automáticamente con inteligencia artificial, con una solución elaborada por analistas
+para el mismo documento.
+
+6.2.5.
+
+Detección de alucinaciones generadas
+
+Si bien los aspectos evaluados en la calidad de las historias de usuario, como el aspecto conceptualmente sólido de QUSF y la similitud con una solución
+humana, permiten identificar errores en las historias de usuario, es de interés
+determinar las historias que pueden ser consideradas como alucinación, identificando casos en los que la herramienta que utiliza inteligencia artificial introduce
+elementos o funcionalidades no presentes e incoherentes con respecto al documento de requisitos del producto.
+
+6.2.6.
+
+Correctitud de trazabilidad, épicas e inconsistencias
+
+Los aspectos descritos anteriormente evalúan una parte de la solución generada: las historias de usuario. Adicionalmente, el método evalúa los requerimientos
+extra de trazabilidad, clasificación a épicas y detección de inconsistencias también presentes en la solución generada. Para esto, se evalúa la correctitud de
+la trazabilidad, verificando si cada historia puede vincularse con la sección del
+documento a partir de la cual fue derivada, cuales de las historias clasificadas
+como épicas son correctamente clasificadas y si la herramienta detecta correctamente las inconsistencias presentes en el documento. En el contexto de este
+proyecto, el documento de requisitos utilizado para la generación presenta una
+inconsistencia que se espera que la herramienta reporte junto al conjunto de historias de usuario. Esta inconsistencia puede resultar en dos historias que entren
+en conflicto si no se detecta y resuelve.
+Se decidió utilizar este enfoque multidimensional ya que una historia puede
+estar bien formada sintácticamente (cumplir QUSF sintáctico), pero describir
+funcionalidades incorrectas o inexistentes, o, al revés, describir funcionalidades
+correctas pero con una estructura deficiente o generando una inconsistencia con
+cualquier otra historia de usuario presente. De forma análoga, una historia puede
+ser correcta tanto a nivel sintáctico como funcional y aun así no poder vincularse
+con la sección del documento de la que se derivó, dificultando su validación
+53
+
+posterior. La combinación de estas evaluaciones permite detectar problemas en
+cualquiera de las dimensiones anteriores.
+
+6.3.
+
+Método de evaluación
+
+En el Capítulo 5, Sección 5.7, a partir del estudio de (Yu y cols., 2026), se
+identifican tres maneras de evaluar soluciones creadas con inteligencia artificial:
+de manera automática, de manera manual por analistas o expertos en el área y de
+manera asistida. Siguiendo esta clasificación, el método de evaluación propuesto
+combina estos tres enfoques para analizar distintos aspectos de las historias
+generadas.
+En esta sección se presenta para cada marco, herramienta o método de evaluación utilizado, el aspecto que evalúa y cómo se aplican a la solución generada
+para obtener su evaluación.
+
+6.3.1.
+
+Criterios INVEST
+
+La calidad de historias de usuario se evalúa aplicando los criterios INVEST
+para cada una de las historias. El criterio small o pequeño de INVEST permite comparar la clasificación de épica incluida en la salida generada para cada
+historia.
+INVEST es aplicado de manera manual por los analistas, considerados como
+expertos. Se sigue la estrategia Reviewer Scorecard (Yu y cols., 2026), donde
+para cada aspecto de INVEST se asigna un puntaje de la escala Likert (Likert,
+1932) (1 al 5) donde 1 indica que el criterio no se cumple en absoluto, 2 que se
+cumple de forma deficiente, 3 que se cumple de forma aceptable, 4 que se cumple de forma buena y 5 que se cumple de forma excelente. De esta manera se
+obtiene para cada aspecto de INVEST un puntaje evaluado para cada historia.
+Se extiende la evaluación del criterio small, agregando la clasificación de épica
+a la evaluación, para contabilizar las historias que abarcan más de una funcionalidad y por lo tanto requieren refinamiento. Ademas, esto permite comparar
+la clasificación generada por la herramienta automáticamente.
+
+6.3.2.
+
+Criterios QUSF
+
+Los criterios QUSF evalúan dos aspectos: la calidad de las historias de usuario y la calidad del conjunto de historias de usuario.
+Los criterios presentados por QUSF son evaluados manual y automáticamente. Los criterios de carácter sintáctico son evaluados utilizando la implementación parcial del esquema de evaluación propuesto, presentado por los mismos
+autores: AQUSA (Aqusa Core, 2025). Esta implementación cubre los criterios
+sintácticos de atomicidad, minimal y buen formato, además de cubrir aspectos
+pragmáticos de unicidad (detección de duplicado exacto) y uniformidad (mismo
+formato en el conjunto de historias). Estos criterios son entonces analizados de
+manera automática corriendo la aplicación que toma como entrada la lista de
+54
+
+historias de usuario, sin incluir criterios de aceptación y devuelve la lista de
+defectos por historia. El resto de criterios presentados en el esquema de evaluación QUSF son detectados de manera manual. Por simplicidad y dado que cada
+criterio tiene una descripción clara, descritos en la Tabla 6.1, se marca Sí o No
+a su cumplimiento, por historia para aquellos que aplican a nivel individual y
+de forma conjunta para aquellos que aplican a nivel del conjunto de historias.
+
+6.3.3.
+
+Detección de alucinaciones
+
+Una de las maneras de evaluar la detección de alucinaciones es de manera
+manual evaluando la coherencia interna de cada historia respecto al documento de requisitos. Para esto, la descripción de la historia se segmenta en Actor,
+Acción y Propósito, y se verifica para cada componente si corresponde con elementos definidos en el documento de requisitos, indicando de manera binaria
+para cada historia si cada segmento es correcto (Si/No). Se considera la historia
+de usuario como una alucinación cuando alguno de estos segmentos introduce
+elementos inexistentes o incoherentes con el dominio (por ejemplo, actores no
+definidos o funcionalidades no descritas en el documento).
+
+6.3.4.
+
+Evaluación de la trazabilidad
+
+La correctitud de la trazabilidad se evalúa de manera manual, verificando
+que la referencia presente en la historia de usuario generada sea coherente con
+la sección correspondiente en el documento de requisitos. Para cada historia se
+indica de forma binaria (Si/No) si la referencia es correcta.
+
+6.3.5.
+
+Detección de inconsistencias
+
+La detección de inconsistencias se evalúa de manera manual si la herramienta
+detecta inconsistencia presentes en el documento utilizado para la generación
+de historias y si las mismas son correctas. Para cada inconsistencia conocida
+presente en el documento se indica si la reporta o no y, en caso de reportar
+otras no esperadas, si las mismas son correctas.
+
+6.3.6.
+
+Evaluación semántica basada en Sentence-BERT
+
+Los aspectos de cobertura del dominio y similitud con una solución humana
+son análisis que requieren comparar textos semánticamente.
+Para realizar esta comparación, se utiliza la librería Sentence Transformer
+(Transformers, 2025) la cual implementa Sentence-BERT (SBERT) (Reimers y
+Gurevych, 2019). SBERT es una modificación de BERT optimizada para generar representaciones vectoriales (embeddings) de oraciones, permitiendo calcular
+la similitud semántica entre textos de forma eficiente. En este trabajo se utiliza el modelo sentence-transformers/all-mpnet-base-v2, uno de los modelos con
+mejor rendimiento disponible (Sentence Transformers, 2025). Los embeddings
+generados se pueden comparar mediante la similitud coseno y obtener un valor
+55
+
+que representa la similitud semántica entre los textos. El resultado se encuentra
+en el rango [−1, 1] y cuanto más similares sean las representaciones vectoriales
+de dos textos, más cercano a 1 será el valor de similitud coseno, lo que indica
+una mayor similitud semántica entre los textos. Los embeddings y los valores de
+similitud coseno dependen tanto del modelo utilizado como del dominio de los
+textos.
+Se realizo una búsqueda con la intención de encontrar un umbral ya establecido que permita clasificar el valor de similitud coseno para textos correspondientes a historias de usuario. Se encontró el articulo Can LLMs Generate User
+Stories and Assess Their Quality?, donde se utiliza la similitud coseno para
+evaluar la similitud de historias de usuario generadas por modelos de lenguaje.
+En este articulo, se determina un umbral de 0,80 para considerar dos historias
+como sistemáticamente similares. Este umbral fue seleccionado a partir de un
+estudio de evaluación humana diseñado para calibrar las evaluaciones de similitud. Sin embargo, no es posible utilizar directamente este umbral en nuestra
+evaluación ya que el estudio utiliza el modelo OpenAI’s text-embedding-3-small
+para la transformación a embeddings, diferente al utilizado en este trabajo.
+Por lo tanto, durante la evaluación de similitud semántica, se obtienen los
+tres puntajes mas altos de similitud entre los textos a comparar para determinar si son similares manualmente. Esta comparación se emplea para apoyar tres
+aspectos clave de la evaluación: el análisis de similitud semántica entre historias generadas y esperadas, la evaluación de cobertura de funcionalidades del
+sistema, y la detección de alucinaciones.
+6.3.6.1.
+
+Cobertura de funcionalidades del sistema
+
+Para determinar el grado en el que las historias de usuario generadas cubren
+el dominio descrito por el documento, es necesario determinar si todos los comportamientos del sistema que se describen en él se encuentran también descritos
+por al menos una de las historias generadas. El comportamiento de un sistema
+es también conocido como funcionalidad.
+Se construye primero un conjunto de funcionalidades esperadas a partir del
+documento de requisitos. Una forma directa de obtener este conjunto es realizar
+una extracción manual de funcionalidades, sin embargo este proceso introduce
+un costo de análisis comparable al de generar manualmente las historias de
+usuario, lo cual reduce el beneficio de la automatización realizada y de la cual se
+está evaluando la calidad. Por este motivo se adopta un enfoque semi-automático
+en el cual un LLM genera una lista inicial de funcionalidades del sistema. Este
+conjunto es posteriormente revisado y refinado por un analista humano para
+asegurar la correctitud y completitud del conjunto final.
+Una vez obtenido el conjunto de funcionalidades del dominio, se evalúa la
+cobertura comparando dichas funcionalidades con las historias de usuario generadas. En la Figura 6.2 se ilustra el proceso. Primero, un LLM analiza el
+documento de requisitos y genera una lista inicial de funcionalidades del sistema. Luego, un analista humano revisa y corrige dicho conjunto. El modelo
+utilizado para esta tarea es ChatGPT (versión gratuita), basado en el modelo
+56
+
+GPT-5.2, y para la extracción inicial de funcionalidades se utilizó el siguiente
+prompt:
+Extract the main functionalities described in the
+following PRD, organize them by modules, and return
+the output as JSON.
+Observemos que en esta etapa se evalúan historias de usuario generadas por
+inteligencia artificial utilizando un conjunto de funcionalidades cuya extracción
+inicial también fue asistida por un modelo de lenguaje. Sin embargo, estos procesos poseen diferentes niveles de complejidad. Extraer funcionalidades desde un
+documento de requisitos consiste principalmente en identificar capacidades funcionales explícitas presentes en el texto, mientras que la generación de historias
+de usuario requiere interpretar dichas funcionalidades y producir especificaciones
+estructuradas que incluyan actores y objetivos. Por este motivo, la extracción
+de funcionalidades es una tarea más acotada. A continuación, se generan embeddings semánticos para las funcionalidades y las historias de usuario utilizando
+Sentence-BERT. Finalmente, para cada funcionalidad se calcula la similitud semántica con todas las historias mediante similitud coseno, identificando las tres
+historias con mayor similitud. Obtener las tres historias con mayor puntaje facilita el análisis de casos ambiguos en los que una funcionalidad puede distribuirse
+entre múltiples historias.
+
+Figura 6.2: Diagrama de la búsqueda semántica de funcionalidades.
+A partir de estas tres historias con mayor similitud semántica, se evalúa si
+la historia cubre o no la funcionalidad.
+Para la evaluación automática de la cobertura de funcionalidades, es necesario la definición de un umbral, que permita determinar la cobertura en función
+del valor de similitud semántica de la mejor correspondencia obtenida. Mas aun,
+un segundo umbral es utilizado para casos inciertos que requieran una revisión
+manual. Por lo tanto, pare obtener una cobertura automática, se deben definir
+los umbrales u1 y u2 a partir de los resultados para clasificar las funcionalidades como cubiertas, posiblemente cubiertas y no cubiertas. Esta clasificación se
+explica en la Tabla 6.2. Estos umbrales permiten la clasificación automática de
+las funcionalidades.
+57
+
+Similitud
+≥ u1
+[u2 ; u1 )
+< u2
+
+Clasificación
+Cubierta
+
+Interpretación
+Funcionalidad cubierta por al
+menos una historia generada
+Posiblemente cubierta Posible cobertura, requiere revisión manual
+No cubierta
+Funcionalidad probablemente no
+cubierta, requiere revisión manual
+
+Tabla 6.2: Clasificación de cobertura funcional según similitud semántica
+
+En los casos en que la similitud se encuentra en el rango intermedio, se realiza una revisión manual por parte de los analistas para determinar si la funcionalidad está efectivamente representada en alguna historia generada. Además,
+incluso en casos de baja similitud semántica se realiza una revisión manual, ya
+que una funcionalidad puede estar distribuida en múltiples historias de usuario (caso 1-a-N) o, inversamente, una historia generada tipo épica puede cubrir
+múltiples funcionalidades (caso N-a-1), por lo que se evalúa manualmente para
+evitar falsos negativos.
+6.3.6.2.
+
+Alineación de historias de usuario
+
+Se plantea el objetivo de medir qué tan similares son las historias generadas
+respecto a las historias esperadas (ground truth), evaluando si la solución generada se aproxima a la solución construida manualmente por analistas expertos
+para el mismo dominio. Se busca evaluar la correspondencia semántica del conjunto de historias generadas frente al conjunto de historias esperadas elaborado
+manualmente por los analistas (Anexo C.1). Este conjunto de historias esperadas (ground truth) representa una solución para el dominio del documento, y fue
+elaborado siguiendo buenas prácticas de especificación de historias de usuario,
+es decir que son historias atómicas (un requisito por historia), bien formadas
+(incluyendo rol, acción y fin), completas y consistentes (que abarcan el conjunto
+completo de funcionalidades sin introducir inconsistencias o ambigüedades).
+El método de evaluación consiste en comparar cada historia generada contra
+el conjunto completo de historias esperadas para identificar su mejor correspondencia. Se generan embeddings para ambos conjuntos y se construye una
+matriz de similitud S ∈ Rm×p , donde m es el número de historias generadas y
+p el número de historias esperadas. Para cada historia generada se recuperan
+las mejores tres historias esperadas con mayor similitud, permitiendo analizar
+casos ambiguos y detectar posibles patrones de comportamiento del modelo.
+Con estos resultados de similitud se puede clasificar el grado de alineación
+de las historias generadas utilizando umbrales, similar a los definidos en la Tabla 6.2. Historias alineadas (similitud ≥ u′1 ) describen la misma funcionalidad
+que las esperadas, aunque potencialmente con diferente formulación. Los casos
+en el rango intermedio requieren revisión manual para determinar si la diferencia
+58
+
+se debe a una variación léxica o a una funcionalidad diferente.
+Un aspecto importante de esta evaluación es el tratamiento de casos especiales derivados de la diferencia de granularidad entre historias generadas y
+esperadas. Para esto las historias esperadas fueron revisadas y apuntan a ser
+atómicas, por lo que una historia de usuario esperada no debería corresponder
+a dos historias generadas. Para cubrir el caso contrario, en el que una historia
+generada se corresponde a dos historias esperadas, se consideran como épicas,
+donde las historias generadas podrían ser divisibles. Para esto se recurre a la
+evaluación manual, realizada para INVEST donde se analiza el criterio Small,
+si la historia no es small, es posible que su correspondencia sea de dos o más a
+uno.
+Los criterios de aceptación también son evaluados uno a uno cuando se encuentra una pareja historia generada, historia esperada. De esta manera se puede evaluar si los criterios esperados para la funcionalidad son cubiertos. En la
+Figura 6.3 se ilustra el método de evaluación.
+
+Figura 6.3: Diagrama de la evaluación de similitud semántica de historias y sus
+criterios de aceptación.
+
+6.3.6.3.
+
+Detección de alucinaciones
+
+La detección de alucinaciones busca identificar historias de usuario generadas
+que describen funcionalidades inexistentes o incorrectas con respecto al dominio
+definido en el documento de requisitos.
+Es posible detectar alucinaciones de manera semi-automática reutilizando
+los valores de similitud obtenidos en la evaluación de alineación de historias de
+usuario. Dado que una historia con baja similitud respecto a todas las historias
+esperadas puede no corresponder a ninguna funcionalidad válida del dominio, se
+utiliza el valor máximo de similitud de cada historia generada como indicador
+de alineación.
+Cada historia se clasifica según el valor de similitud obtenido utilizando los
+umbrales definidos en la Tabla 6.2, donde las categorías se denominan Alineadas, Inciertas y Posibles alucinaciones respectivamente. La validación manual
+es obligatoria para los casos clasificados como Inciertas o Posibles alucinaciones, con el objetivo de distinguir entre falsos positivos (historias que describen
+funcionalidades válidas pero con variaciones léxicas significativas respecto al
+59
+
+conjunto) y alucinaciones reales (historias que introducen elementos sin respaldo en el documento de requisitos, como actores no definidos o funcionalidades
+no presentes en el dominio).
+6.3.6.4.
+
+Representación mediante grafo de similitud semántica
+
+Como complemento al análisis de similitud semántica utilizado para evaluar la cobertura y la alineación de las historias de usuario, se implementó una
+representación gráfica basada en grafos.
+En el grafo se representan como nodos tres elementos: las funcionalidades del
+dominio, según el proceso descrito en la Sección 6.3.6.1, las historias de usuario
+generadas, producidas por la herramienta automática, y las historias de usuario
+esperadas, ground truth construidas por analistas.
+Las relaciones entre los elementos se representan con aristas ponderadas, y su
+peso corresponde al valor de similitud semántica calculado con Sentence-BERT.
+Se definen dos tipos de relaciones: la de cobertura, la cual conecta funcionalidades con historias generadas, representando en qué medida cubre una cierta
+funcionalidad del dominio. La relación de alineación, la cual conecta historias
+generadas con historias esperadas, representando la correspondencia semántica
+entre ambas.
+Por lo tanto, el grafo representa a todos los elementos como nodos y estos
+se conectan a través de una arista cuando la similitud supera el umbral mínimo
+para cada tipo de relación. Esto permite visualizar las relaciones presentes y
+faltantes para las historias generadas. Por ejemplo un nodo que representa una
+funcionalidad y no presenta aristas puede significar una omisión en la generación, o múltiples historias esperadas conectadas a una historia generada puede
+significar que la historia generada es una potencial épica.
+Es importante aclarar que la inclusión del grafo no introduce información
+adicional, sino que reorganiza los resultados obtenidos en la evaluación de similitud realizada para la cobertura de dominio y similitud con una solución
+esperada.
+
+6.4.
+
+Procedimiento de evaluación
+
+En la Figura 6.4 se ilustra el método de evaluación descrito. La entrada se
+divide en dos: por un lado, el documento de requisitos; por el otro, la instrucción
+o prompt. Este documento es utilizado tanto por el analista experto como por la
+herramienta de generación de historias de usuario para producir las soluciones
+esperada y generada, respectivamente. Una vez generadas ambas soluciones, se
+procede a realizar la evaluación.
+En el contexto de este proyecto se utiliza el prompt, descrita en la Figura 5.1,
+y el documento de requisitos corresponde al sistema de gestión hospitalaria
+presentado en el Capítulo 5 para la generacion de ambas soluciones.
+Como se explicó en la sección anterior, la evaluación tiene procedimientos
+automáticos, manuales y semi-automáticos. Para los procedimientos manuales,
+60
+
+Figura 6.4: Arquitectura general del método de evaluación de historias de usuario.
+
+61
+
+uno de los analistas se selecciona como analista experto, encargado de evaluar
+la historia, y otro como analista revisor, encargado de revisar la evaluación.
+El primer paso de la evaluación es la detección de inconsistencias, donde se
+analiza la sección de la salida generada por la herramienta donde se reporta la
+inconsistencia presente en el documento, si se resuelve en la historia correspondiente y, en caso de incluir otras inconsistencias reportadas, la correctitud de
+las mismas.
+El siguiente paso de la evaluación es la detección de alucinaciones, lo que
+permite contabilizar y descartar, para los pasos siguientes, todas las historias
+consideradas alucinaciones. Posteriormente, es la evaluación manual del criterio
+semántico Conceptually Sound (conceptualmente correcto) de QUSF, que permite identificar si la historia es coherente en sí misma. Todas aquellas que no lo
+cumplan se descartan.
+Sobre las historias restantes se evalúa el resto de los criterios de QUSF,
+primero los automáticos, utilizando la herramienta AQUSA (Aqusa Core, 2025),
+y luego los manuales. Luego evaluamos las historias según el criterio INVEST,
+incluyendo el criterio adicional de detección de épica para aquellas historias que
+no cumplan con el criterio Pequeño (Small).
+La prueba automática de similitud semántica evalúa primero la alineación
+de cada historia generada con sus historias esperadas mas similares, y luego,
+la cobertura de los criterios de aceptación dentro de esa historia. Además, se
+evalúa automáticamente la cobertura funcional, obteniendo una correspondencia
+historia-funcionalidad. Finalmente, el par de analistas experto-revisor evalúa la
+trazabilidad de manera manual.
+Definido el método y el procedimiento de evaluación, en el Capítulo 7 se
+presenta su aplicación sobre las historias de usuario generadas por la herramienta seleccionada, junto con la discusión de los resultados obtenidos en cada
+dimensión.
+
+62
+
+

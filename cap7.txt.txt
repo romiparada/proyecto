@@ -1,0 +1,1921 @@
+Capítulo 7
+
+Resultados y discusión
+En este capítulo se presentan los resultados obtenidos al aplicar el marco de
+evaluación definido en el Capítulo 6 sobre la salida de la herramienta ClickUp,
+seleccionada para la evaluación piloto (Capítulo 5).
+La evaluación busca determinar si las historias de usuario generadas tienen
+la calidad necesaria y suficiente para ser utilizadas en procesos de desarrollo de
+software, si representan adecuadamente los requerimientos funcionales del documento de requisitos, en qué medida se aproximan a una solución construida
+manualmente por analistas y si introducen contenido incorrecto durante la generación. Para responder a estas preguntas, se aplica el método antes mencionado.
+El capítulo se organiza presentando, primero los resultados obtenidos y luego su discusión, siguiendo el procedimiento de evaluación definido en la Sección 6.4. En primera instancia se obtiene la salida de la herramienta, contenida
+en el Anexo 6 (Sección 7.1). Luego se procede con la evaluación de detección de
+inconsistencias, donde se analiza la correctitud de las inconsistencias y ambigüedades del documento de requisitos reportadas por la herramienta (Sección 7.2).
+Como paso siguiente, se realiza la detección de alucinaciones, donde se evalúa
+la identificación de historias que introducen elementos no presentes en el documento de requisitos (Sección 7.3). Posteriormente, se analiza la calidad de
+las historias según QUSF, considerando la evaluación sintáctica, semántica y
+pragmática (Sección 7.4), así como la usabilidad en contexto ágil mediante los
+criterios INVEST y la clasificación como épica de la historia de usuario (Sección 7.5). A continuación, se presenta el análisis de similitud semántica, que
+incluye la alineación con las historias esperadas, los criterios de aceptación, la
+cobertura del dominio funcional, la detección de alucinaciones y la representación mediante grafo (Sección 7.6). Se aborda también la trazabilidad, entendida
+como la correspondencia entre cada historia y la sección del documento de la
+que se deriva (Sección 7.7). Finalmente, se presenta una discusión general de
+los resultados, que integra todos los aspectos anteriormente evaluados junto con
+sus limitaciones (Sección 7.8).
+63
+
+7.1.
+
+Salida de la herramienta ClickUp
+
+Para generar las historias de usuario, se utilizo el prompt definido anteriormente, Figura 5.1, el mismo indica que la herramienta debe tomar el documento
+de requisitos, G.3, y la salida debe ser historias de usuario, donde cada una incluye criterios de aceptación, referencia al documento e indicación para cada
+historia de usuario si la misma es considerada por la herramienta como una historia épica. Además, contiene una sección final titulada “Inconsistencies, Ambiguities, or Contradictions”, correspondiente a las inconsistencias, ambigüedades
+o contradicciones detectadas en el documento. En la Tabla 7.1 se muestran las
+historias generadas por la herramienta, sin incluir los criterios de aceptación ni
+la restante información asociada a la misma. El conjunto completo de la salida
+generada se encuentra en el Anexo F.
+Tabla 7.1: Historias Generadas por ClickUp
+Referencia Historia de usuario
+HU1
+As an administrative staff member, I want to register patients
+with personal data and medical background, so that the hospital
+can maintain accurate and complete patient records.
+HU2
+As an administrative staff member, I want to modify the personal
+and contact details of a registered patient, so that patient information remains up to date.
+HU3
+As an administrative staff member, I want to search for patients
+by name, identity document, or identifier number, so that I can
+quickly locate patient records.
+HU4
+As an authorized user, I want to visualize a patient’s complete
+information, so that I can review all relevant details for care or
+administration.
+HU5
+As an administrative staff member, I want to create medical appointments by associating the patient, specialty, and professional,
+so that appointments are scheduled accurately.
+HU6
+As an administrative staff member, I want to visualize the availability of registered doctors, so that I can schedule appointments
+efficiently.
+HU7
+As an administrative staff member, I want to modify or cancel
+existing appointments, so that changes can be managed as needed.
+HU8
+As a patient, I want to receive notifications when my appointment
+is modified or canceled, so that I am always informed about my
+schedule.
+HU9
+As an administrative staff member, I want to manage the status
+of appointments throughout their lifecycle, so that the hospital
+can track appointment outcomes.
+
+64
+
+Tabla 7.1: Historias Generadas por ClickUp - Continuación
+Referencia Historia de usuario
+HU10
+As a doctor, I want to register diagnoses, treatments, and patient’s
+clinical progress in the electronic clinical record, so that patient
+care is well documented.
+HU11
+As a patient, I want to consult my electronic clinical record, so
+that I can stay informed about my health history.
+HU12
+As an administrator, I want to register medical professionals with
+their personal and contact details and associate specialties, so that
+the hospital can manage staff information.
+HU13
+As an administrator, I want to define and modify attention hours
+and activate or deactivate professionals for scheduling, so that
+doctor availability is accurately reflected.
+HU14
+As an administrator, I want to manage roles and access permissions to system functionalities, so that users only access features
+relevant to their role.
+HU15
+As an administrative staff member, I want to generate electronic
+invoices for medical consultations and medication delivery, so that
+billing is accurate and efficient.
+HU16
+As a patient, I want to receive automatic notifications with attached digital invoices when an invoice is generated, so that I am
+promptly informed about charges.
+HU17
+As a pharmacist, I want to register medications and supplies with
+identification, stock, and expiration date, so that inventory is accurately tracked.
+HU18
+As a pharmacist, I want to automatically update stock when registering medication deliveries, so that inventory levels remain current.
+HU19
+As a pharmacist, I want to be notified when stock is low or items
+are about to expire, so that I can take timely action.
+HU20
+As a pharmacist, I want to consult inventory sorted by available
+quantity or expiration date, so that I can manage stock efficiently.
+HU21
+As an analyst, I want to generate reports on consultations by
+specialty, appointment status, financial income, and medication
+and supplies consumption, with date range filters, so that I can
+analyze hospital performance.
+HU22
+As a system administrator, I want to ensure date validations prevent invalid ranges, so that data integrity is maintained.
+HU23
+As a system administrator, I want to ensure notifications are sent
+within a reasonable time after triggering events, so that users are
+promptly informed.
+
+65
+
+7.2.
+
+Detección de inconsistencias
+
+Se recuerda que el documento de requisitos presenta una inconsistencia y,
+a partir de lo instruido en el prompt, se espera que la herramienta logre identificarla o resolverla. Analizando la salida de ClickUp, la herramienta devuelve
+una sección al final de su salida titulada “Inconsistencies, Ambiguities, or Contradictions”. El contenido de la sección es el siguiente:
+Ambiguity: In section 4.3, “Users must be able to edit their
+electronic clinical record.”
+It is unclear if “users” refers only to doctors or
+also to administrative staff. Clarification is needed.
+Ambiguity: In section 4.4, “Manage roles and access
+permissions to system functionalities.”
+The specific roles and permissions are not detailed.
+Ambiguity: Notification timing (“within a reasonable time”)
+in section 5 is not precisely defined.
+Para su análisis asignamos una referencia según la tabla 7.2
+Tabla 7.2: Referencias de las ambigüedades detectadas por ClickUp
+Referencia Descripción
+A1
+In section 4.3, “Users must be able to edit
+their electronic clinical record.” It is unclear
+if “users” refers only to doctors or also to administrative staff. Clarification is needed.
+A2
+In section 4.4, “Manage roles and access permissions to system functionalities.” The specific roles and permissions are not detailed.
+A3
+Notification timing (“within a reasonable time”) in section 5 is not precisely defined.
+Se tiene entonces que la herramienta detecta tres ambigüedades y no clasifica
+ninguna de ellas como inconsistencia. La ambigüedad A1 esta relacionada con la
+inconsistencia del documento de requisitos G.3, donde se afirma que los usuarios
+pueden editar la historia clínica electrónica, pero no se detecta la contradicción
+sobre la posibilidad de que los pacientes sean considerados como usuarios y,
+por esto, puedan editar su historia clínica. Las historias generadas para este
+requerimiento no presentan una contradicción, ya que HU10 asigna la edición de
+la historia clínica al médico y HU11 le otorga al paciente únicamente la consulta.
+Por lo tanto, las historias generadas a partir de un documento que contiene una
+inconsistencia son consistentes entre si, ya que la herramienta logra resolver la
+misma.
+La Tabla 7.3 muestra el análisis de las ambigüedades detectadas por la herramienta en el documento de requisitos. Al contrastar A1, A2 y A3 con las
+66
+
+ambigüedades del documento (Tabla 5.2), se observa que la herramienta reporta correctamente tres de ellas: A1 se corresponde con AR7 (“users must be able
+to edit their electronic clinical record”), A2 con AR12 (“manage roles and access permissions”) y A3 con AR19 (“within a reasonable time”). Sin embargo,
+las reporta como observaciones globales y no las señala en las historias específicas que las heredan. AR7 se resuelve en HU10. AR12 se mantiene en HU14,
+que describe un control de acceso por roles sin enumerarlos. AR19 reaparece en
+AC8.1 (“Notifications are sent promptly after changes”) y AC23.1 (“Notifications
+are sent shortly after relevant events”) mediante expresiones como “promptly” o
+“shortly after”. Del total de veinte ambigüedades identificadas en el documento,
+la herramienta reporta solo tres.
+Tabla 7.3: Evaluación de ambigüedades detectadas por ClickUp
+Referencia A Correcta
+A1
+Sí
+A2
+Sí
+A3
+Sí
+
+7.3.
+
+Detección de alucinaciones
+
+En esta sección se analizan las historias, con la intención de detectar cuales
+de ellas pueden ser consideradas como alucinaciones, corroborando la coherencia
+del Actor, Acción y Propósito presentes en las mismas.
+En la Figura 7.1 se presentan los resultados de la detección de alucinaciones
+realizada sobre las historias de usuario generadas por ClickUp.
+Alucinación 8,7 %
+
+91,3 %
+
+Propósito Coherente
+
+95,7 %
+
+Acción Coherente
+
+100 %
+
+Actor Coherente
+0%
+
+4,3 %
+
+91,3 %
+
+20 %
+
+40 %
+
+8,7 %
+
+60 %
+
+80 %
+
+100 %
+
+Porcentaje de historias de usuario
+Sí
+
+No
+
+Figura 7.1: Evaluación de coherencia y detección de alucinaciones (23 historias
+de usuario evaluadas, expresado en porcentaje).
+67
+
+En la Tabla 7.4, se muestra la detección de alucinaciones para cada historia.
+Tabla 7.4: Detección de alucinaciones en resultado de ClickUp con respecto al
+documento de requisitos
+Referencia HU Actor
+Coherente
+HU1
+Sí
+HU2
+Sí
+HU3
+Sí
+HU4
+Sí*
+HU5
+Sí
+HU6
+Sí
+HU7
+Sí
+HU8
+Sí
+HU9
+Sí
+HU10
+Sí
+HU11
+Sí
+HU12
+Sí*
+HU13
+Sí*
+HU14
+Sí*
+HU15
+Sí
+HU16
+Sí
+HU17
+Sí
+HU18
+Sí
+HU19
+Sí
+HU20
+Sí
+HU21
+Sí
+HU22
+No
+HU23
+No
+
+Acción
+Coherente
+Sí
+Sí
+Sí
+Sí
+Sí
+Sí
+Sí
+Sí
+Sí
+Sí
+Sí
+Sí
+Sí
+Sí
+Sí
+Sí
+Sí
+Sí
+Sí
+Sí
+Sí
+Sí
+Sí
+
+Propósito
+Coherente
+Sí
+Sí
+Sí
+Sí
+Sí
+Sí
+Sí
+Sí
+Sí
+Sí
+Sí
+Sí
+Sí
+Sí
+Sí
+Sí
+Sí
+Sí
+Sí
+Sí
+Sí
+Sí
+No
+
+Alucinación
+No
+No
+No
+No
+No
+No
+No
+No
+No
+No
+No
+No
+No
+No
+No
+No
+No
+No
+No
+No
+No
+Sí
+Sí
+
+El * indica que la historia HU4 introduce un rol nuevo “authorized user ” que
+abarca tanto al actor “administrative staff member ” como al doctor, que si bien
+es correcto no está presente en el documento de requisitos.
+De manera similar, el * indica que las historias HU12, HU13 y HU14 introducen un nuevo rol llamado administrador, que no está definido en el documento
+de requisitos. En este caso, la herramienta toma uno de los caminos posibles, que
+es crear un rol nuevo para asignarle estas funcionalidades (otro camino podría
+haber sido asignárselas al “administrative staff member ”).
+Las historias HU22 y HU23 son consideradas como alucinaciones, ya que no
+es coherente la presencia de un administrador de sistema que valide funcionalidades automatizadas por el sistema.
+#HistoriasAlucinaciones = 2
+68
+
+En cuanto a la discusión de los resultados obtenidos, no puede afirmarse
+que la solución generada se encuentra libre de alucinaciones. Se clasificaron dos
+historias de usuario como alucinaciones, lo que representa un 8,7 % del total. En
+ambos casos, las historias expresan funcionalidades automatizadas por el sistema
+asignadas a un actor incoherente, aunque los requerimientos sí están presentes
+en el documento de requisitos y su contenido se mantiene dentro del dominio
+definido. Un analista podría corregirlas fácilmente reemplazando el actor específico por el sistema como sujeto. De no realizarse esta corrección, podrían derivar
+en decisiones de implementación incorrectas, como la construcción de un rol de
+usuario que nunca llegaría a utilizarse.
+
+7.4.
+
+Quality User Story Framework
+
+En esta sección se evalúan las historias de usuario y su conjunto a partir de
+Quality User Story Framework (QUSF) para determinar su calidad según los
+criterios semánticos, sintácticos y pragmáticos definidos por el marco.
+La evaluación según QUSF se dividió en tablas de acuerdo con la dimensión
+analizada.
+
+7.4.1.
+
+Criterios Semánticos
+
+Para cumplir con los criterios semánticos, cada historia debe ser conceptualmente sólida, orientada al problema, libre de ambigüedad y conflictos.
+En la Figura 7.2 se presentan los porcentajes de cumplimiento a partir de
+los resultados obtenidos.
+Conceptually Sound
+
+91 %
+
+Problem-Oriented
+
+Unambiguous
+
+83 %
+
+17 %
+
+39 %
+
+61 %
+
+Conflict-Free
+0%
+
+9%
+
+100 %
+
+20 %
+
+40 %
+
+60 %
+
+80 %
+
+100 %
+
+Porcentaje de historias de usuario
+Sí
+
+No
+
+Figura 7.2: Cumplimiento de criterios semánticos según el QUSF (23 historias de
+usuario, expresado en porcentaje). El criterio Unambiguous presenta el mayor
+índice de incumplimiento (57 %).
+69
+
+La Tabla 7.5 presenta la evaluación semántica individual de cada historia de
+usuario.
+Tabla 7.5: Evaluación semántica de historias de usuario según QUSF
+Historia Conceptually Problemsound
+oriented
+Conceptualmente Orientado
+sólido
+problema
+HU1
+Sí
+Sí
+HU2
+Sí
+Sí
+HU3
+Sí
+Sí
+HU4
+Sí
+Sí
+HU5
+Sí
+Sí
+HU6
+Sí
+Sí
+HU7
+Sí
+Sí
+HU8
+Sí
+Sí
+HU9
+Sí
+Sí
+HU10
+Sí
+Sí
+HU11
+Sí
+Sí
+HU12
+Sí
+Sí
+HU13
+Sí
+Sí
+HU14
+Sí
+Sí
+HU15
+Sí
+Sí
+HU16
+Sí
+No
+HU17
+Sí
+Sí
+HU18
+Sí
+No
+HU19
+Sí
+Sí
+HU20
+Sí
+Sí
+HU21
+Sí
+Sí
+HU22
+No
+No
+HU23
+No
+No
+
+Unambiguous Conflict-free
+Libre de ambi- Libre de conflical güedad
+tos
+No*
+No*
+Sí
+No*
+Sí
+Sí
+Sí
+No*
+Sí
+No*
+No*
+Sí
+No*
+No*
+No*
+No*
+Sí
+Sí
+No*
+Sí
+No
+No*
+No
+
+Sí
+Sí
+Sí
+Sí
+Sí
+Sí
+Sí*
+Sí
+Sí*
+Sí
+Sí
+Sí
+Sí
+Sí
+Sí
+Sí
+Sí
+Sí
+Sí
+Sí
+Sí
+Sí
+Sí
+
+Las historias que no se consideran como conceptualmente sólidas o conceptually sound son la HU22 y HU23. Estas no describen funcionalidades que el
+administrador pueda ejecutar en el sistema, sino restricciones que el sistema
+debe cumplir internamente: HU22 corresponde a una validación técnica y HU23
+a un requisito de rendimiento.
+Las historias HU16 y HU18 no siguen el criterio de ser orientadas al problema
+o problem-oriented por tener en cuenta el término “automatic”, que indica cómo
+debe funcionar el sistema en lugar de describir la necesidad del usuario. De igual
+manera, HU22 nombra directamente las validaciones de fecha como solución al
+problema de integridad, y HU23 establece un tiempo razonable de envío, lo cual
+es una restricción de implementación, no una necesidad del usuario.
+Con respecto al criterio de no ambigüedad o unambiguous, la mayoría de las
+70
+
+historias marcadas como No* en este criterio heredan ambigüedades del documento de requisitos. Para lograr identificar cuales ambigüedades se trasladaron
+del documento hacia las historias generadas, se utilizan las ambigüedades identificadas en el Capitulo 5 Sección 5.6, listadas en la Tabla 5.2. La Tabla 7.6
+resume, para cada ambigüedad, si fue resuelta en la solución generada por la
+herramienta junto a las historias de usuario (HU) o criterios de aceptación (AC)
+en los que se evidencia la decisión. De las veinte ambigüedades identificadas en el
+documento, solamente AR7 fue resuelta por completo y tres de manera parcial.
+Tabla 7.6: Resolución de las ambigüedades del documento de requisitos en las
+historias generadas por ClickUp
+Ref. Estado
+AR1 No resuelta
+AR2 No resuelta
+
+Historias / Criterios
+HU1
+HU1
+
+AR3 Parcial
+
+HU1, AC1.3
+
+AR4 No resuelta
+
+HU4
+
+AR5 No resuelta
+
+HU2
+
+AR6 No resuelta
+AR7 Resuelta
+AR8 No resuelta
+
+HU8
+HU10
+HU11, HU4
+
+AR9 No resuelta
+
+HU10, HU11
+
+AR10 Parcial
+
+HU13, AC13.1
+
+AR11 No resuelta
+AR12 No resuelta
+
+HU13, AC13.2
+HU14, AC14.1
+
+AR13 No resuelta
+
+HU15
+
+AR14 No resuelta
+AR15 No resuelta
+
+HU16
+HU19, AC19.1
+
+AR16 No resuelta
+
+HU19, AC19.1
+
+AR17 Parcial
+
+HU19
+
+AR18 No resuelta
+
+HU21
+
+71
+
+Razón
+“personal data” se mantiene
+mantiene “medical background”,
+omite la especificación
+se define la unicidad del “identity
+document” pero no su tipo
+no enumera que información se
+debe mostrar
+no enumera que es “personal data”
+no hay canales de notificación
+Se asigna al doctor
+se mantiene el termino “authorized users”
+se mantiene el termino en HU10,
+HU11
+se mantiene el termino HU13, se
+especifica a “working hours”
+no se especifica que implica
+no se especifican los roles y funcionalidades restrictas
+no se especifica que se incluye en
+el “electronic invoice”
+no hay canales de notificación
+faltan los umbrales que definen
+“minimum stock”
+faltan los umbrales que definen
+“upcoming expirations”
+se resuelve que sea al “pharmacist” pero no el canal
+se mantiene la expresión “financial income” sin detallar que aspectos financieros
+
+Tabla 7.6: Resolución de las ambigüedades del documento de requisitos en las
+historias generadas por ClickUp - Continuación
+Ref. Estado
+AR19 No resuelta
+
+Historias / Criterios
+HU23, AC23.1
+
+AR20 No resuelta
+
+HU22, AC22.1
+
+Razón
+no se define el tiempo de “shortly
+after”
+no se define que corresponde a un
+“invalid ranges”
+
+Por lo tanto, el * en HU1 y HU2 corresponde a que, si bien “personal data” y
+“contact details” son elementos ambiguos, el documento tampoco los especifica
+(AR1, AR2 y AR3 en HU1; AR5 en HU2), por lo que exigir mayor precisión implicaría introducir información que podrían considerarse como una alucinación
+de la herramienta. El * en HU10 y HU11 indica que “electronic clinical record”
+es un término presente en el documento y ambiguo (AR9); la herramienta retoma la misma expresión del documento sin ampliarla, por lo que exigir mayor
+precisión implicaría definir detalles del requerimiento que podrían considerarse
+como una alucinación de la herramienta de no ser acertados. HU11 hereda adicionalmente AR8 al referir a “authorized users”, también presente en HU4. HU4
+también incluye el termino “complete information” (AR4) para el paciente sin
+especificar que podría incluir esta información. En HU8, HU16 y HU23 no se
+especifica el canal de notificación (AR6 en HU8, AR14 en HU16); HU8 y HU23
+mantienen además la vaguedad de “reasonable time” del documento (AR19).
+En HU13, “attention hours” (AR10) se mantiene pero se especifica a “working
+hours”, termino menos ambiguo y no se aclara el efecto de activar o desactivar
+un profesional (AR11). En HU14, “manage” es demasiado amplio y la matriz
+de roles no está enumerada (AR12). En HU19, faltan los umbrales que definen
+“minimum stock” (AR15) y “upcoming expirations” (AR16). En HU22, “rangos inválidos” no tiene una definición precisa (AR20). En HU21, se mantiene la
+expresión “financial income” sin detallar que aspectos financieros se deben reportar, manteniendo la ambigüedad del documento (AR18), aunque no presenta
+* ya que también incluye el nuevo termino “hospital performance” sin delimitar
+el alcance del reporte a económico, utilidad o consumo.
+Por otro lado, se tienen las historias clasificadas como No, que presentan
+términos ambiguos que no aparecen en el documento y son introducido por la
+herramienta al redactar la historia, como el comentado anteriormente “hospital
+performance” en HU21 y “triggering events” y “shortly after” en HU23.
+De las catorce historias marcadas como No o No* en el criterio unambiguous,
+doce presentan una ambigüedad completamente heredada del documento de
+requisitos y dos combinan ambigüedades heredadas con expresiones introducidas
+por la herramienta al redactar la historia: HU21 agrega “hospital performance”,
+y HU23 reformula el tiempo razonable como “shortly after”.
+Al contrastar la resolución de las ambigüedades del documento (Tabla 7.6)
+entre la salida de la herramienta y las historias esperadas (Tabla 5.3), se observa
+una diferencia significativa en el tratamiento de las ambigüedades. Las historias
+generadas por la herramienta resuelven una única ambigüedad de forma com72
+
+pleta (AR7, al asignar el acceso a la historia clínica al rol de doctor en HU10)
+y tres de forma parcial (AR3, AR10 y AR17). Las restantes no son resueltas.
+En contraste, las historias esperadas construidas por los analistas resuelven de
+forma completa o parcial las 20 ambigüedades identificadas, tomando decisiones
+y especificando información adicional a partir del mismo documento ambiguo.
+Finalmente, para el criterio de libre de conflictos o conflict-free, el * en HU7
+y HU9 indica que quizás haya un conflicto entre ambas historias, ya que las dos
+tratan sobre modificar citas y HU7 podría incluir lo descrito en HU9. No hay
+una contradicción directa, pero la frontera entre ellas no está del todo clara.
+
+7.4.2.
+
+Criterios Sintácticos
+
+Para cumplir con los criterios sintácticos cada historia debe esta bien formada, ser atómica y minimal. Para evaluar esto se utiliza la herramienta AQUSA
+(Aqusa Core, 2025), la cual evalúa estos criterios automáticamente.
+En la Figura 7.3 se presentan los porcentajes de cumplimiento a partir de
+los resultados obtenidos.
+Well-Formed
+
+100 %
+
+Atomic
+
+83 %
+
+Minimal
+0%
+
+17 %
+
+100 %
+
+20 %
+
+40 %
+
+60 %
+
+80 %
+
+100 %
+
+Porcentaje de historias de usuario
+Sí
+
+No
+
+Figura 7.3: Cumplimiento de criterios sintácticos según el QUSF (23 historias
+de usuario, expresado en porcentaje). Únicamente el criterio Atomic presenta
+incumplimientos (17 %, correspondiente a HU7, HU8, HU13 y HU19).
+La Tabla 7.7 muestra los resultados de la evaluación sintáctica de cada historia.
+Tabla 7.7: Evaluación sintáctica de historias de usuario según QUSF
+Referencia HU Well-formed
+Bien formada
+HU1
+Sí
+HU2
+Sí
+HU3
+Sí
+HU4
+Sí
+
+73
+
+Atomic
+Atómica
+Sí
+Sí
+Sí
+Sí
+
+Minimal
+Mínima
+Sí
+Sí
+Sí
+Sí
+
+Tabla 7.7: Evaluación sintáctica de historias de usuario según QUSF - Continuación
+Referencia HU Well-formed
+Bien formada
+HU5
+Sí
+HU6
+Sí
+HU7
+Sí
+HU8
+Sí
+HU9
+Sí
+HU10
+Sí
+HU11
+Sí
+HU12
+Sí
+HU13
+Sí
+HU14
+Sí
+HU15
+Sí
+HU16
+Sí
+HU17
+Sí
+HU18
+Sí
+HU19
+Sí
+HU20
+Sí
+HU21
+Sí
+HU22
+Sí
+HU23
+Sí
+
+Atomic
+Atómica
+Sí
+Sí
+No
+No
+Sí
+Sí
+Sí
+Sí
+No
+Sí
+Sí
+Sí
+Sí
+Sí
+No
+Sí
+Sí
+Sí
+Sí
+
+Minimal
+Mínima
+Sí
+Sí
+Sí
+Sí
+Sí
+Sí
+Sí
+Sí
+Sí
+Sí
+Sí
+Sí
+Sí
+Sí
+Sí
+Sí
+Sí
+Sí
+Sí
+
+Al correr la automatización de aqusa-core, el algoritmo solamente encontró
+el defecto de atomic.conjunctions, detectando conjunciones en las historias HU7,
+HU8, HU13 y HU19.
+
+7.4.3.
+
+Criterios Pragmáticos
+
+Para cumplir con los criterios pragmáticos, cada historia debe ser una oración
+completa, estimable, única e independiente. Ademas, el conjunto de historias
+debe ser completo y uniforme. La evaluación se aplica sobre las 21 historias no
+clasificadas como alucinaciones.
+En la Figura 7.4 se presentan los porcentajes de cumplimiento a partir de
+los resultados obtenidos.
+En la Tabla 7.8 se muestra el resultado de la evaluación pragmática de las
+historias.
+Tabla 7.8: Evaluación pragmática de historias de usuario según QUSF
+Historia Full sentence
+Estimable
+Oración completa
+HU1
+Sí
+No
+
+74
+
+Unique
+Única
+Sí
+
+Independent
+Independiente
+Sí
+
+Tabla 7.8: Evaluación pragmática de historias de usuario según QUSF - continuación
+Historia Full sentence
+Estimable
+Oración completa
+HU2
+Sí
+Sí
+HU3
+Sí
+Sí
+HU4
+Sí
+No
+HU5
+Sí
+Sí
+
+Unique
+Única
+Sí
+Sí
+Sí*
+Sí
+
+HU6
+HU7
+HU8
+HU9
+HU10
+HU11
+HU12
+HU13
+HU14
+HU15
+HU16
+HU17
+HU18
+HU19
+HU20
+HU21
+
+Sí
+Sí
+Sí
+Sí
+Sí
+Sí
+Sí
+Sí
+Sí
+Sí
+Sí
+Sí
+Sí
+Sí
+Sí
+Sí
+
+Sí
+No*
+No
+No
+No
+No
+No
+No
+No
+Sí
+No
+Sí
+No
+Sí
+Sí
+Sí
+
+Sí
+No, HU9
+Sí
+No, HU7
+Sí
+Sí
+Sí
+Sí
+Sí
+Sí
+Sí
+Sí
+Sí
+Sí
+Sí
+Sí
+
+HU22
+HU23
+
+-
+
+-
+
+-
+
+Independent
+Independiente
+No, HU1
+No, HU1
+No, HU1
+No, HU1 y
+HU12
+No, HU12
+No, HU5
+No, HU7
+No, HU5
+No, HU1
+No, HU10
+Sí
+No, HU12
+Sí
+Sí
+No, HU15
+Sí
+No, HU17
+No, HU18
+No, HU17
+No, HU15 y
+HU17
+-
+
+El * en el aspecto Estimable para HU7 indica que podría ser estimable si se
+considera editar y cancelar citas como acciones similares.
+La no estimabilidad observada en el 57,1 % de las historias está asociada a
+dos causas principales. De las doce historias marcadas como no estimables, ocho
+son también ambiguas (HU1, HU4, HU8, HU10, HU11, HU13, HU14 y HU16).
+En estos casos, la ambigüedad heredada del documento de requisitos dificulta
+dimensionar el esfuerzo de implementación: los campos obligatorios (AR1, AR2,
+AR4), los roles autorizados y la matriz de permisos (AR8, AR12), el alcance del
+registro clínico (AR9), los canales y formato de notificación (AR6, AR14) y el
+efecto de activar o desactivar profesionales (AR10, AR11) no están definidos.
+Las cuatro historias restantes (HU7, HU9, HU12 y HU18) no son estimables por
+razones de atomicidad o tamaño: agrupan varias acciones o cubren un alcance
+excesivo para planificar con precisión.
+Las historias que son ambiguas pero estimables (HU2, HU19 y HU21) refieren
+a funcionalidades acotadas cuya lógica general puede dimensionarse aunque los
+75
+
+Full sentence
+
+100 %
+
+Estimable
+
+43 %
+
+57 %
+
+Unique
+
+Independent
+0%
+
+90 %
+
+24 %
+
+10 %
+
+76 %
+
+20 %
+
+40 %
+
+60 %
+
+80 %
+
+100 %
+
+Porcentaje de historias de usuario
+Sí
+
+No
+
+Figura 7.4: Cumplimiento de criterios pragmáticos según el QUSF (21 historias
+de usuario, expresado en porcentaje).
+
+detalles específicos permanezcan abiertos.
+El * en el aspecto Única de HU4 indica que la historia podría no ser única
+si HU3 incluyera la visualización de los datos del usuario.
+Para el aspecto Independiente, en QUSF se define la dependencia de Causality, es decir que una historia necesita ser completada primero que otra. Se
+marca como No para el caso de Causality, indicando las historias de las que
+depende.
+La Tabla 7.9 finaliza la evaluación del conjunto de historias de usuario, indicando si es completo y uniforme.
+
+Complete Uniform
+Completo Uniforme
+Sí*
+Sí
+
+Tabla 7.9: Evaluación de completitud del conjunto de historias según QUSF
+
+El * en el aspecto Completo indica que el conjunto fue considerado completo respecto a las funcionalidades explícitas del documento de requisitos. Sin
+embargo, durante la construcción de la solución esperada se identificaron funcionalidades implícitas no cubiertas por ninguna de las dos soluciones, como el
+acceso al sistema, que incluiría la autenticación de usuarios, habitual en este
+tipo de sistemas.
+76
+
+7.4.4.
+
+Discusión sobre resultado obtenido en QUSF
+
+En la dimensión semántica, la mayoría de las historias, con excepción de las
+historias alucinadas, cumplen con ser conceptualmente sólidas y estar orientadas
+al problema, lo que indica que el contenido generado es coherente. El aspecto
+más problemático es la ambigüedad, presente en la mayoría de las historias, un
+60,8 % del total, aunque es heredada directamente del documento de requisitos
+y no puede atribuirse exclusivamente a la herramienta. No se detectaron conflictos directos entre historias, lo que refuerza la consistencia interna del conjunto
+generado. Por lo que las historias de usuario generadas son coherentes en sí
+mismas y con respecto al conjunto.
+En la dimensión sintáctica, las historias están bien formadas y siguen una
+plantilla común de forma consistente. Sin embargo, se encontraron conjunciones en cuatro de ellas, un 17 % del total, que requerirían refinamiento y una
+separación de las funcionalidades conjuntas en diferentes historias. Por lo que
+las historias de usuario generadas están bien redactadas en sí mismas y con
+respecto al conjunto.
+En la dimensión pragmática, considerando únicamente las 21 historias no
+clasificadas como alucinaciones, la totalidad constituyen oraciones completas y
+el 90,5 % son únicas, siendo HU7 y HU9 las únicas con superposición entre sí.
+En cuanto a la estimabilidad, solo el 42,9 % de las historias fue considerado
+estimable, lo que indica que varias agrupan demasiadas funcionalidades como
+para poder planificar su desarrollo con precisión. Respecto a la independencia,
+únicamente el 23,8 % de las historias fue considerado independiente, aunque las
+dependencias encontradas son esperables en el desarrollo de un sistema donde
+algunas funcionalidades deben completarse antes que otras. Para mejorar este
+aspecto, se podría agregar al prompt una indicación para que la herramienta
+marque las dependencias entre historias, o vincularlas manualmente por parte
+del analista o mediante el uso del agente. Por lo que las historias generadas
+pueden ser utilizadas como base, pero requieren una revisión previa para reducir
+ambigüedades, subdividir aquellas que agrupan más de una funcionalidad y
+aclarar el orden de desarrollo para el equipo.
+
+7.5.
+
+INVEST
+
+Siguiendo la metodología descrita en el Capítulo 6, las historias generadas
+se evalúan según los seis criterios del modelo INVEST, asignando a cada uno
+un puntaje del 1 al 5, y se agrega la detección de épicas (Sección 6.4) para
+identificar las que agrupan más de una funcionalidad. La evaluación se aplica
+sobre las 21 historias no clasificadas como alucinaciones.
+En la Figura 7.5 se muestran los porcentajes de cumplimiento a partir de los
+resultados obtenidos.
+La Tabla 7.10 muestra la evaluación de INVEST de cada historia de usuario.
+
+77
+
+I
+
+14,3 %
+
+61,9 %
+
+N 4,8 %
+V 4,8 %
+
+28,6 %
+
+23,8 %
+
+S
+
+23,8 %
+
+0%
+
+19,0 %
+
+95,2 %
+
+E
+
+T
+
+4,8 %
+
+66,7 %
+
+42,9 %
+
+23,8 %
+
+33,3 %
+
+28,6 %
+
+28,6 %
+
+23,8 %
+
+25 %
+
+9,5 %
+
+9,5 % 4,8 %
+
+28,6 %
+
+50 %
+
+14,3 %
+
+75 %
+
+4,8 %
+
+100 %
+
+Porcentaje de historias de usuario
+1
+
+2
+
+3
+
+4
+
+5
+
+Figura 7.5: Distribución de puntuaciones INVEST por criterio (21 historias de
+usuario evaluadas, expresado en porcentaje). Los criterios N (Negociable) y V
+(Valiosa) presentan las puntuaciones más altas, mientras que E (Estimable), S
+(Small) y T (Testable) concentran la mayoría de puntuaciones bajas.
+Tabla 7.10: INVEST para cada historia
+Referencia HU I N V E S T Épica
+HU1
+5 5 5 2 1 2
+Sí
+HU2
+3 5 5 2 3 2
+No
+HU3
+3 5 5 3 4 4
+No
+HU4
+3 2 4 2 2 1
+Sí
+HU5
+2 5 5 2 3 3
+No
+HU6
+3 5 4 3 3 3
+No
+HU7
+3 5 5 2 2 2
+Sí
+HU8
+3 5 5 1 2 1
+Sí
+HU9
+2 5 2 2 1 1
+Sí
+HU10
+3 5 5 2 2 2
+Sí
+HU11
+3 5 5 1 1 2
+Sí
+HU12
+5 5 5 2 3 3
+No
+HU13
+3 5 5 3 2 4
+Sí
+HU14
+4 5 4 1 1 1
+Sí
+HU15
+5 5 5 3 3 3
+No
+HU16
+3 5 5 1 2 3
+Sí
+HU17
+5 5 5 3 4 3
+No
+
+78
+
+Tabla 7.10: INVEST para cada historia - Continuación
+Referencia HU I N V E S T Épica
+HU18
+3 5 4 4 3 4
+No
+HU19
+3 5 4 2 2 1
+Sí
+HU20
+3 5 4 4 5 5
+No
+HU21
+2 5 5 1 1 1
+Sí
+HU22
+- - - - - HU23
+- - - - - HU22 y HU23 no se evalúan por haber sido clasificadas como alucinaciones.
+
+7.5.1.
+
+Discusión sobre resultado obtenido en INVEST
+
+Se tiene entonces que el 23,8 % obtuvo un puntaje de 4 o 5 en independencia, lo que es consistente con lo observado en QUSF, donde las dependencias
+encontradas son esperables en un sistema donde algunas funcionalidades deben
+completarse antes que otras. Respecto a ser negociable y valiosa, el 95,2 % obtuvo un puntaje de 4 o 5 en ambos criterios, lo que indica que las historias
+describen funcionalidades con un propósito coherente y pueden ser discutidas
+entre el equipo de desarrollo y el cliente.
+Por otro lado, solo el 9,5 % fue considerado estimable y el 57,1 % fue clasificado como épica, donde solo el 14,3 % obtuvo un puntaje de 4 o 5 en ser pequeña.
+Por ultimo, únicamente el 19 % fue considerado testeable. El bajo puntaje en
+estos criterios se debe a que las historias tienden a agrupar varias funcionalidades en una sola y, ademas, como fue visto anteriormente en el análisis de
+QUSF, presentan términos ambiguos. Esto dificulta estimar el trabajo necesario
+y definir pruebas concretas.
+En contraste, los criterios Negociable y Valiosa no se ven afectados por la
+ambigüedad y tamaño de las mismas, lo que sugiere que la herramienta describe
+correctamente la funcionalidad requerida.
+En conjunto, las historias generadas transmiten correctamente el valor y la
+intención de cada funcionalidad, pero deben ser refinadas y divididas para ser
+utilizadas por el equipo de desarrollo y el cliente.
+
+7.5.2.
+
+Comparación sobre el resultado obtenido de Épicas
+
+Como fue indicado en el prompt utilizado, Figura 5.1, se espera que la herramienta indique, para cada historia de usuario, si la misma es épica o no. A
+partir de la clasificación realizada por nosotros, es posible comparar la clasificación realizada por la herramienta con la de un analista.
+La herramienta clasificó la totalidad de las historias generadas como no épicas, como se puede observar en la Tabla F.4 del Anexo F. Sin embargo, con
+la evaluación realizada manualmente, se identificó que la mayoría deberían ser
+consideradas como tal, lo que es coherente con la diferencia en el numero de
+historias generadas y esperadas (23 y 57 respectivamente). La razón por la cual
+79
+
+el numero es mayor para las historias esperadas es que estas fueron construidas
+aplicando explícitamente el criterio pequeño de INVEST, según el cual cada
+historia debe cubrir exactamente una funcionalidad para un actor específico.
+Esto se puede ver en el conjunto esperado por ejemplo en la búsqueda de paciente, donde se aplican búsquedas por nombre, por documento de identidad y
+por número de paciente en tres historias distintas (HUE5, HUE6 y HUE7).
+ClickUp en cambio consolidó todas esas variantes en una única historia, por
+ejemplo HU3 agrupa la búsqueda por los tres campos en un solo enunciado. El
+mismo patrón se repite en otros módulos:
+HU7 (modificar o cancelar cita) agrupa HUE14 + HUE15
+HU8 (notificación de modificación de turno) agrupa HUE16 + HUE17
+HU15 (generar factura electrónica) agrupa HUE29 + HUE31 + HUE34
+HU20 (consultar inventario) agrupa HUE43 + HUE44 + HUE45 + HUE46
+HU21 (generar reportes) agrupa HUE55 + HUE56 + HUE57
+En conclusión, la diferencia de 23 contra 57 historias es esperable, ClickUp
+cubre el dominio pero a una granularidad de épica, generando historias que
+pueden ser divisibles.
+
+7.6.
+
+Similitud semántica
+
+Siguiendo la método descrito en el Capítulo 6, en la Sección 6.3.6, el proceso de evaluación compara el conjunto de 23 historias de usuario generadas por
+ClickUp, Anexo F, con el conjunto de 57 historias de usuario esperadas elaboradas por nosotros, Anexo C.1. Adicionalmente, se generó automáticamente un
+conjunto de funcionalidades del dominio a partir del documento de requisitos,
+siendo el conjunto final de 54 funcionalidades que permiten evaluar la cobertura
+funcional de ambas soluciones, Anexo C.2.
+
+7.6.1.
+
+Definición de umbrales de similitud
+
+En esta sección se describe la definición realizada de los umbrales u1 y u2 para
+determinar automáticamente el grado de similitud de las historia de usuario.
+Se toma el valor inicial u1 = 0, 8 y se realiza el ajuste empíricamente a
+partir de los puntajes de similitud realizando la comparación iterativa sobre
+ambos conjuntos. Se observó historias de usuario con un puntaje menor a 0, 8 y,
+aun así, representan la misma funcionalidad que la historia esperada con la que
+obtenían mayor puntaje de similitud. Esto sucede por ejemplo con las historias
+HU9, HU14 y HU16 (0, 75, 0, 77 y 0, 79 respectivamente). Para no descartar
+estas alineaciones válidas, se fijó el umbral de aceptación en u1 = 0, 75.
+Por otro lado, las historias HU5, HU6, HU18, HU19 y HU21 presentan puntajes en el rango 0,60 ≤ x < 0,75, e indica que las historias se encuentran
+80
+
+relacionadas semánticamente, aunque no pueden considerarse equivalentes. Por
+lo tanto se define u2 = 0, 60
+Finalmente, los puntajes menores a 0,60, como el caso de HU21 respecto a
+HUE57, corresponden a historias que no abarcan la misma funcionalidad o que
+no representan funcionalidades reales dentro del dominio, como ocurre en los
+casos de HU22 y HU23.
+
+7.6.2.
+
+Alineación semántica entre historias generadas y esperadas
+
+Siguiendo el método de evaluación, la alineación semántica se realiza de manera automática iterando sobre las historias de usuario generadas y obteniendo
+las tres historias esperadas con mayor puntaje de similitud. La alineación semántica entre historias generadas e historias esperadas se muestra en el Anexo D.1.
+Los resultados de alineación indican que la herramienta logra generar historias de usuario que capturan en gran medida la intención semántica de las
+funcionalidades del sistema. En la Tabla 7.11 se puede ver los porcentajes de
+historias de usuario según su similitud semántica. La mayoría de las historias se
+encuentran alineadas y se obtuvo un valor promedio de similitud de 0, 7714, el
+cual sugiere que, en general, las historias generadas mantienen coherencia con
+los requisitos definidos en el conjunto esperado.
+Similitud Semántica
+Número de Historias Generadas Porcentaje
+Alineadas (≥ 0,75)
+16
+69,57 %
+Posible alineamiento (≥ 0,6)
+5
+21,74 %
+Ausente (< 0,6)
+2
+8,70 %
+Tabla 7.11: Porcentaje de similitud semántica de las historias de usuario generadas
+Se observa que en algunos casos una única historia generada presenta alta
+similitud con múltiples historias esperadas. En la Tabla 7.12 se muestra un
+ejemplo que representa esta situación.
+Para interpretar estos resultados, es importante considerar que la evaluación
+de similitud semántica funciona correctamente como filtro: identifica las historias
+que pertenecen al dominio del problema y detecta las posibles correspondencias.
+Sin embargo, este análisis de similitud semántica falla en distinguir diferencias
+de actor, granularidad o alcance dentro de una misma área funcional. En el
+ejemplo presentado en la Tabla 7.12, HU10 (“As a doctor, I want to register
+diagnoses, treatments, and patient’s clinical progress in the electronic clinical
+record") tiene su mayor similitud (0, 8207) con HUE4 (“As administrative staff,
+I want to register a patient’s medical background in their electronic clinical
+record"), porque ambas comparten vocabulario de registro y historia clínica. La
+diferencia de actor, médico y personal administrativo, no resulta suficientemente
+distintiva en este caso.
+
+81
+
+Tabla 7.12: Ejemplo de correspondencia múltiple
+Ref. Historia Generada Ref. Historia Esperada Similar Similitud
+HUE4
+0,8207
+HU10
+HUE19
+0,7201
+HUE20
+0,6893
+En el caso presentado en la Tabla 7.12, la historia que mejor representa
+esta funcionalidad aparece en segundo lugar con un valor de similitud menor,
+aunque igualmente es un valor significativo. Esta situación refuerza la utilidad
+de obtener un ranking de coincidencias, ya que permite al analista humano
+revisar manualmente los casos en los que la mejor correspondencia funcional no
+coincide con el primer resultado del ranking. En el ejemplo presentado, resulta
+evidente que la correspondencia más adecuada es la segunda historia esperada.
+Por otro lado, los casos de baja similitud corresponden principalmente a
+historias que no tienen una correspondencia directa en el conjunto esperado. La
+Tabla 7.13 muestra un ejemplo de esto para la historia generada HU22.
+Ref. Historia Generada Ref. Historia Esperada Similar Similitud
+HUE46
+0,3132
+HU22
+HUE44
+0,3044
+HUE51
+0,2991
+
+Tabla 7.13: Ejemplo de baja similitud semántica entre historias generadas y
+esperadas
+Esta historia presenta una similitud significativamente baja con sus mejores coincidencias (0, 3132), las cuales además pertenecen a funcionalidades no
+relacionadas con el dominio de la historia generada.
+Los resultados de alineación, si bien son relevantes y evidencian parte de la
+calidad de la generación, pueden ser complementados adicionalmente con otras
+dimensiones, como la cobertura del dominio o la detección de alucinaciones.
+
+7.6.3.
+
+Análisis de similitud semántica de criterios de aceptación entre historias alineadas
+
+Luego de obtener la alineación semántica de las historias generadas con las
+historias esperadas, se analizó la alineación de los criterios de aceptación generados con los criterios de aceptación esperados. Para las historias generadas
+que no tienen una historia esperada alineada, no se realizó esta comparación.
+En el Anexo D.1 se muestra la similitud semántica para todos los criterios de
+aceptación generados con las referencias correspondientes.
+En resumen, de los 31 criterios de aceptación generados, la mayoría no obtuvo
+alineación con los criterios de aceptación esperados. Solamente cinco criterios
+son similares a los esperados y nueve presentan un posible alineamiento. Los
+porcentajes se muestran en la Tabla 7.14
+82
+
+Similitud Semántica
+Criterios Generados Porcentaje
+Alineadas (≥ 0,75)
+5
+16,13 %
+Posible alineamiento (≥ 0,6)
+9
+29,03 %
+Ausente (< 0,6)
+17
+54,84 %
+Tabla 7.14: Porcentaje de similitud semántica de los criterios de aceptación
+generados
+
+El análisis de alineación de criterios de aceptación compara para cada historia generada los criterios de la misma contra los de su mejor correspondencia en
+el conjunto esperado. Se obtuvo una baja tasa de alineación, 16, 13 % de criterios con similitud mayor o igual a 0, 75. Al comparar manualmente los criterios
+de dos historias alineadas, se puede observar una diferencia en la granularidad.
+Las historias esperadas fueron construidas con criterios de aceptación con alto
+grado de especificación. Por ejemplo, el registro de medicamentos (HUE38) tiene cinco criterios separados que cubren campos obligatorios, validación de fecha
+de vencimiento, unicidad del número de stock y restricciones de valores de entrada, en cambio, la herramienta generó para la historia equivalente (HU17) un
+único criterio: “The system allows entry of medication and supply data”. Para
+la alineación, Sentence-BERT no puede reconocer que ese criterio general puede
+cubrir los cinco criterios específicos esperados.
+Otro resultado observable en los criterios generados es que no se incluyen
+criterios de borde y manejo de errores. Mientras que los criterios esperados
+incluyen condiciones negativas o casos de error (por ejemplo, restricciones de
+solapamiento de turno, ACE13.3, o validaciones de formato, ACE22.3), ClickUp
+generó criterios orientados al flujo normal del sistema, omitiendo estos casos de
+borde. Estos casos son significativos para determinar si una historia es Testeable
+(criterio INVEST), lo que es coherente con el bajo puntaje obtenido en dicho
+criterio (Tabla 7.10). Se puede notar además una diferencia en la redacción y
+en el nivel de detalle en ambos conjuntos, en el caso de los generados se puede
+ver variabilidad en la estructura, además de una tendencia a descripciones más
+concisas y generales. En contraste con los criterios esperados que especifican
+de manera exhaustiva, por ejemplo ACE1.1 especifica nombre completo, fecha
+de nacimiento, sexo, documento de identidad, dirección de correo electrónico
+y número telefónico, mientras que los criterios generados utilizan formulaciones
+más abstractas o generales, el correspondiente AC1.1 simplemente refiere a estos
+datos como personal data, y esto dificulta la alineación semántica, incluso cuando
+se está describiendo el mismo comportamiento del sistema.
+En conclusión, si bien los criterios generados capturan correctamente las funcionalidades principales del sistema, presentan limitaciones en aspectos claves,
+como la granularidad, la inclusión de validaciones y casos de error, y en el nivel
+de detalle en la especificación de cada criterio, esto reduce la utilidad de los
+criterios generados para su uso directo en la definición de casos de prueba y
+verificación de requisitos.
+83
+
+7.6.4.
+
+Cobertura del dominio funcional
+
+En esta sección se presentan los resultados de cobertura obtenidos al aplicar
+el análisis definido en el Capítulo 6 sobre los conjuntos de historias esperadas
+y generadas. El análisis se basa en el grado de correspondencia semántica entre
+las funcionalidades del dominio y las historias de usuario.
+La Tabla 7.15 muestra los porcentajes de cobertura del dominio funcional.
+Estado de cobertura Historias esperadas Historias generadas
+Cubierta
+18 (33,3 %)
+17 (31,5 %)
+Parcialmente cubierta
+24 (44,4 %)
+24 (44,4 %)
+No cubierta
+12 (22,2 %)
+13 (24,1 %)
+Tabla 7.15: Cobertura del dominio funcional
+El detalle completo de la evaluación por funcionalidad, incluyendo las correspondencias semánticas y los valores de similitud, se presenta en el Anexo D.2
+para las historias esperadas y las historias generadas.
+Los resultados muestran que ambos conjuntos presentan una distribución de
+cobertura altamente similar. En ambos casos, el 44, 4 % de las funcionalidades
+se encuentran parcialmente cubiertas, mientras que 33, 3 % presenta cobertura
+completa.
+Las funcionalidades completamente cubiertas corresponden al registro de pacientes (F1), búsqueda de pacientes (F5), acceso a información personal y clínica
+de pacientes (F7), modificación de citas (F11), cancelación de citas (F12), notificación de modificaciones o cancelaciones de citas (F13), edición de historias
+clínicas (F17), acceso de los médicos a la historia clínica (F21), consulta de la
+historia clínica por parte de los pacientes (F22), definición y modificación de horarios de atención (F27), generación de facturas para consultas médicas (F32),
+generación de facturas para la entrega de medicamentos (F33), asignación de un
+identificador único a las facturas (F35), registro de medicamentos e insumos médicos (F40), almacenamiento del stock y fechas de vencimiento de medicamentos
+(F41), notificación del próximo vencimiento de medicamentos o insumos (F44),
+consulta del inventario ordenado por cantidad o fecha de vencimiento (F45),
+seguimiento del inventario de farmacia y disponibilidad de insumos (F46), generación de reportes financieros de ingresos hospitalarios (F49) y generación de
+reportes sobre el estado de los turnos (F51). En estos casos, se observan valores
+de similitud elevados y correspondencias directas entre las funcionalidades del
+documento de requisitos y las historias de usuario generadas.
+Las funcionalidades parcialmente cubiertas corresponden a la asignación de
+un identificador único a cada paciente (F2), modificación de la información
+personal y de contacto de pacientes (F3), registro de antecedentes médicos de
+pacientes (F4), visualización de la disponibilidad de médicos registrados (F9),
+registro de diagnósticos, tratamientos y evolución clínica del paciente (F16),
+asociación de una fecha a cada registro de historia clínica (F18), almacenamiento
+de información médica y clínica de pacientes (F19), restricción del acceso a la
+84
+
+información clínica a usuarios autorizados (F20), asociación de especialidades
+médicas a profesionales (F25), gestión de información de profesionales médicos
+(F26), definición y modificación de horarios de atención médica (F27), envío de
+notificaciones automáticas cuando se generan facturas (F36), actualización del
+stock del inventario al registrar entregas de medicamentos (F42), consulta del
+inventario ordenado por cantidad o fecha de vencimiento (F45), seguimiento del
+inventario de farmacia y disponibilidad de insumos (F46), gestión del control de
+stock de medicamentos e insumos (F47), generación de reportes financieros de
+ingresos hospitalarios (F49), generación de reportes sobre el estado de los turnos
+(F51) y filtrado de reportes mediante rangos de fechas (F53). Las funcionalidades
+parcialmente cubiertas reflejan casos en los que la correspondencia semántica es
+significativa, pero no suficiente para alcanzar el umbral de cobertura completa.
+Las funcionalidades no cubiertas corresponden a evitar la asignación de turnos superpuestos (F10), gestionar el estado de los citas a lo largo de su ciclo
+de vida (F14), gestionar los estados de los citas como confirmado, cancelado o
+atendido (F15), restringir el acceso a la información clínica mediante mecanismos de seguridad para historias clínicas electrónicas (F23), activar o desactivar
+profesionales para su disponibilidad en la agenda (F29), validar los permisos
+antes de ejecutar acciones (F31), gestionar la facturación y cobro de servicios de
+salud (F38), almacenar documentos financieros y comprobantes de pago (F39),
+detectar niveles mínimos de stock (F43), generar reportes estadísticos de datos
+hospitalarios (F48), aplicar filtros por rangos de fechas para los reportes (F53) y
+analizar el uso del sistema y métricas hospitalarias (F54). En estos casos, los valores de similitud obtenidos no alcanzan el umbral establecido para considerar
+que existe una correspondencia suficiente entre las funcionalidades del documento de requisitos y las historias de usuario generadas. Esto indica que dichas
+funcionalidades no presentan una representación adecuada dentro del conjunto
+de historias generado o que la correspondencia identificada no resulta suficiente
+para validar su cobertura.
+En la Tabla 7.15 también se presenta los valores de cobertura para las historias esperadas, lo cual permite comparar los resultados de el conjunto de
+historias generadas con el de historias esperadas. Se observa que ambos conjuntos alcanzan un nivel de cobertura funcional comparable similar, con una
+leve mejora en la proporción de funcionalidades completamente cubiertas y una
+reducción en la cantidad de funcionalidades no cubiertas por parte del conjunto
+generado.
+
+7.6.5.
+
+Detección de alucinaciones
+
+La implementación automática de similitud semántica permitió definir una
+detección de alucinaciones semi-automática, complementando el análisis manual
+realizado. El análisis de alucinaciones se realizó sobre el conjunto completo de
+23 historias de usuario generadas, evaluando su correspondencia con el dominio
+funcional definido. La clasificación se basa en el grado de alineación semántica
+identificado mediante similitud con embeddings, complementado con un análisis
+manual de cada caso.
+85
+
+Los resultados obtenidos se presentan en la Tabla 7.16.
+Clasificación
+Cantidad Porcentaje
+Alineadas
+16
+69,57 %
+Inciertas
+5
+21,74 %
+Posibles alucinaciones
+2
+8,70 %
+Tabla 7.16: Resultados de detección de alucinaciones
+Los resultados indican que la mayoría de las historias generadas (69,57 %) se
+encuentran alineadas con funcionalidades presentes en el dominio, esto muestra
+una alta capacidad del modelo para generar contenido coherente con los requisitos del sistema. Estas historias presentan valores de similitud altos y corresponden a funcionalidades explícitas del dominio, como la gestión de pacientes,
+turnos, historia clínica e inventario. Por otro lado, un 21,74 % de las historias se
+clasifican como inciertas. En estos casos, si bien se observa una correspondencia
+semántica parcial con el dominio (valores de similitud intermedios, entre 0,60 y
+0,75), la relación funcional no es del todo clara. Analizando los casos se observa
+que esto está asociado a diferencias de granularidad a la hora de representar, o
+a la combinación de múltiples funcionalidades en una única historia. Además,
+se identifican dos casos (8,70 %) clasificados como posibles alucinaciones. Estas historias presentan valores de similitud bajos (inferiores a 0,50) y no tienen
+una correspondencia funcional directa en el conjunto esperado, en particular,
+para este caso corresponden a las historias de usuario consideradas como alucinaciones en la evaluación manual. Como se comentó para estas historias, este
+tipo de funcionalidades son automatizadas por parte del sistema y no están
+directamente relacionadas con una acción de un actor.
+En conjunto, estos resultados sugieren que el modelo presenta una baja tasa de alucinación y es capaz de generar historias consistentes con el dominio.
+Sin embargo, los casos inciertos y de posible alucinación evidencian algunas limitaciones en la representación de algunas funcionalidades y restricciones del
+sistema. Se concluye que la detección de alucinaciones basada en similitud semántica resulta una herramienta útil para identificar inconsistencias.
+En cuanto a la discusión de la similitud semántica, los resultados de la evaluación semántica son consistentes con las conclusiones de la evaluación manual en varios puntos concretos. La baja correspondencia en criterios de aceptación (16,13 % alineados) se corresponde con la baja estimabilidad encontrada en
+QUSF (42,9 %) e INVEST (9,5 %). La alta alineación de historias (91,30 % con
+al menos posible alineamiento) es coherente con lo observado en QUSF, donde la
+mayoría de las historias son conceptualmente sólidas y orientadas al problema,
+y en INVEST, donde el 95,2 % se consideran negociables y valiosas. Por último,
+la detección de alucinaciones por similitud semántica identificó las mismas dos
+historias (HU22 y HU23) que el análisis manual. Esta consistencia entre ambos
+enfoques sugiere que la evaluación automática puede funcionar como un primer
+filtro antes de la revisión manual, ayudando a identificar los casos que necesitan
+más atención.
+86
+
+Por otro lado, los resultados también muestran limitaciones del uso de
+SBERT. Como se observó en los casos de alineación incorrecta, textos que
+comparten vocabulario pueden obtener valores de similitud altos a pesar de
+referirse a funcionalidades distintas, mientras que diferencias como quién realiza
+una acción o el nivel de detalle de una historia no son capturadas por el modelo.
+Esto debe tenerse en cuenta a la hora de interpretar los valores de similitud
+obtenidos.
+
+7.6.6.
+
+Análisis del grafo de similitud semántica
+
+El grafo de similitud semántica permite analizar la estructura de las relaciones entre historias generadas, historias esperadas y funcionalidades del dominio, esta representación aporta una visión complementaria al análisis basado en
+valores de similitud, lo que resulta útil para identificar patrones estructurales
+asociados a alineación, cobertura parcial y ausencia de correspondencias.
+En general, el grafo presenta múltiples componentes conectados que corresponden a distintos subdominios funcionales (por ejemplo, pacientes, facturación,
+inventario y reportes). Dentro de estos componentes se observan agrupamientos densos, donde historias generadas, historias esperadas y funcionalidades se
+conectan mediante valores de similitud elevados, indicando una adecuada alineación semántica del modelo en estos casos.
+
+Figura 7.6: Vista global del grafo de similitud semántica.
+87
+
+Sin embargo, el principal valor del grafo es la identificación de posibles inconsistencias respecto al comportamiento esperado. Se observan nodos que no
+presentan conexiones significativas con el resto del grafo, es decir, nodos aislados.
+Estos nodos corresponden a elementos que no alcanzan los umbrales de similitud
+mínimos, lo que puede indicar una ausencia de correspondencia semántica para
+alguno de los elementos analizados.
+
+Figura 7.7: Ejemplos de historias generadas sin correspondencia semántica.
+El análisis de estos casos permite validar la consistencia del grafo con los
+resultados previamente discutidos en la sección de detección de alucinaciones.
+Particularmente, las historias:
+“As a system administrator, I want to ensure notifications are sent within
+a reasonable time after triggering events...”
+“As a system administrator, I want to ensure date validations prevent
+invalid ranges...”
+aparecen como nodos aislados en el grafo, sin conexiones hacia funcionalidades ni historias esperadas. Este comportamiento indica que dichas historias no
+presentan similitud semántica suficiente con el dominio funcional definido. Esto
+se corresponde con el análisis de alucinaciones realizado, donde se identificaron
+estas historias como contenido no alineado con los requerimientos del sistema.
+En resumen, el grafo confirma que se trata de posibles alucinaciones del modelo, es decir, historias generadas que no pueden ser correspondidas a ninguna
+historia esperada ni funcionalidad definida.
+En la figura anterior también se pueden identificar casos en los que funcionalidades o historias esperadas no presentan conexiones con historias generadas.
+En estos casos, el grafo evidencia una falta de cobertura del modelo, indicando
+que ciertos requerimientos del dominio no han sido representados correctamente
+en la salida generada.
+Además se observan situaciones donde las conexiones existen pero presentan
+valores de similitud intermedios y se distribuyen entre múltiples nodos, en estos
+casos no se identifica una correspondencia clara, sino una dispersión de relaciones
+semánticas.
+Finalmente, también se identifican casos donde una única historia generada
+se conecta con múltiples funcionalidades o historias esperadas. Este comportamiento indica una agregación de requerimientos en una sola historia, lo que
+88
+
+Figura 7.8: Ejemplos de historias generadas sin correspondencia semántica.
+
+Figura 7.9: Ejemplo de cobertura parcial con similitudes distribuidas.
+
+Figura 7.10: Ejemplo de historia generada con múltiples correspondencias.
+
+89
+
+sugiere que la generación de historias por parte del modelo tiende a agrupar
+más de una funcionalidad si las mismas están relacionadas.
+En conjunto, el grafo permite identificar tres comportamientos relevantes
+del modelo: (i) alineación correcta, evidenciada por agrupamientos densos, (ii)
+cobertura parcial, que se puede identificar por conexiones distribuidas con similitud intermedia, y (iii) ausencia de correspondencia, lo que se logra identificar
+mediante nodos aislados, estos casos de nodos aislados son además consistentes
+con el análisis previo, en el que las dos historias catalogadas como alucinación
+son las mismas que el grafo representó como nodos aislados.
+
+7.7.
+
+Trazabilidad
+
+La Tabla 7.17 muestra la evaluación de la trazabilidad a partir de la referencia presente en la historia.
+Tabla 7.17: Evaluación de trazabilidad de ClickUp
+Referencia R Correcta
+R1
+Sí
+R2
+Sí
+R3
+Sí
+R4
+Sí
+R5
+Sí
+R6
+Sí
+R7
+Sí
+R8
+Sí
+R9
+Sí
+R10
+Sí
+R11
+Sí
+R12
+Sí
+R13
+Sí
+R14
+Sí
+R15
+Sí
+R16
+Sí
+R17
+Sí
+R18
+Sí
+R19
+Sí
+R20
+Sí
+R21
+Sí
+R22
+Sí
+R23
+Sí
+En cuanto a la discusión de los resultados obtenidos, las referencias a las
+secciones del documento son correctas, lo que indica que la herramienta logra
+mantener la trazabilidad con el documento de requisitos.
+90
+
+7.8.
+
+Discusión general de los resultados
+
+Esta sección se identifican los patrones que aparecen al considerar las métricas en conjunto, se analiza la consistencia entre los enfoques utilizados y se
+reconocen las limitaciones del análisis realizado. Además, se compara con el conjunto de historias esperadas, redactadas por los analistas, ejercicio que permite
+valorar la herramienta no solo por su desempeño absoluto sino también frente a
+la alternativa manual, evidenciando ventajas, desventajas y el compromiso entre
+calidad y tiempo que su uso implica.
+El 60.8 % de las historias resultó ambiguo en QUSF. La mayor parte de esta
+ambigüedad no fue introducida por la herramienta, sino heredada del documento de requisitos: expresiones como “promptly”, “low number” o “about to expire”.
+Estas ambigüedades impactan en los resultados del criterios INVEST: el 9,5 %
+de las historias fue considerado estimable y el 19 % testeable. De las diecinueve
+historias no estimables, doce son también ambiguas, lo que evidencia que ambos resultados están vinculados y que la ambigüedad heredada explica una parte
+significativa de los puntajes bajos en estimabilidad. Análogamente, de las diecisiete historias no testeables, once son ambiguas. En esta dimensión, las historias
+esperadas resultan superiores, al ser elaboradas por especialistas humanos con
+conocimiento del dominio, registran y resuelven la ambigüedad mediante decisiones explícitas en lugar de transcribir literalmente las expresiones imprecisas
+del documento original. La herramienta no compensa por sí sola la ambigüedad
+heredada, dado que carece del juicio contextual propio del analista experimentado; su contribución se ubica entonces en el plano del costo y la velocidad,
+ya que produce el primer borrador en una fracción del tiempo que requiere la
+redacción manual experta, pero el resultado exige una revisión posterior.
+La diferencia de cantidad entre los dos conjuntos, 23 historias generadas
+frente a 57 esperadas, se explica por la tendencia de la herramienta a agrupar varias funcionalidades en un único enunciado. HU3 agrupa la búsqueda por
+nombre, documento e identificador (HUE5 a HUE7); HU20 reúne la consulta
+de inventario para medicamentos e insumos por cantidad y por fecha (HUE43 a
+HUE46); HU8 combina la notificación por correo electrónico y por mensaje de
+texto (HUE16 y HUE17). Este patrón se cruza con la ambigüedad: cuando una
+historia agrupa varias funcionalidades y además contiene términos imprecisos,
+los criterios de aceptación tienden a generalizarse, lo que dificulta la formulación de pruebas concretas y se refleja en el 57,1 % de historias clasificadas como
+épicas en INVEST. En contraste, el conjunto de historias esperadas tiene un número mayor de historias, lo cual refleja una descomposición por funcionalidad
+y especificación realizada con el criterio y contexto de los analistas del equipo,
+apuntando a que cada funcionalidad se expresa de manera independiente y verificable. La herramienta, en cambio, prioriza la síntesis y agrupa funcionalidades
+que un especialista habría separado, lo que reduce la atomicidad pero acorta
+drásticamente el tiempo de generación; el costo de su uso en este aspecto se
+traduce en trabajo adicional de refinamiento previo, ya que la generación del
+conjunto es realizada en cuestión de segundos y se mantiene por debajo del
+tiempo total de redacción manual. Dada que la trazabilidad de la herramienta
+91
+
+es correcta, la sub-especificación de las historias de usuario generadas puede ser
+una ventaja para la fácil lectura y detección de alucinaciones o artefactos no
+deseados en una primera instancia.
+En cobertura del dominio, las historias generadas cubren el 75,9 % de las funcionalidades del dominio (diecisiete funcionalidades completamente cubiertas y
+24 parcialmente cubiertas sobre las 54 evaluadas, Tabla 7.15), proporción comparable al 77,7 % del conjunto de historias esperadas. Adicionalmente, el 91,30 %
+de las historias generadas presenta al menos posible alineamiento semántico con
+alguna historia esperada (Tabla 7.11), métrica que indica que las historias producidas describen funcionalidades pertenecientes al dominio del problema y que
+no debe confundirse con la cobertura. Sin embargo, la herramienta omite funcionalidades no enunciadas explícitamente, como la autenticación de usuarios, y
+no diferencia las acciones por rol cuando el documento lo permite. La cobertura
+es alta a nivel general, pero pierde precisión en lo implícito al dominio y en la
+diferenciación de actores que comparten una misma funcionalidad. Bajo este criterio, las historias esperadas son nuevamente superiores, dado que los analistas
+humanos completan el dominio con funcionalidades implícitas y diferencian las
+acciones por rol a partir del conocimiento del sistema, capacidades inferenciales
+que la herramienta no demuestra al limitarse al texto literal del documento.
+La inteligencia artificial cubre la mayor parte del dominio en una fracción del
+tiempo, pero deja huecos que un especialista identifica de manera natural; la
+conveniencia de su uso depende, una vez más, de aceptar un punto de partida
+amplio y rápido a cambio de un trabajo posterior de detección y completado de
+funcionalidades faltantes.
+Los tres enfoques utilizados para detectar alucinaciones convergen en el mismo resultado. El análisis manual identificó HU22 y HU23 como historias sin
+correspondencia con el documento; la similitud semántica las detectó como las
+dos historias con mayor distancia al conjunto esperado; el grafo de similitud
+las representó como nodos aislados. Esta convergencia tiene una implicancia
+metodológica: la similitud semántica puede emplearse como un primer filtro automático para identificar candidatos a alucinación previo a la revisión manual,
+lo que reduce el costo de la revisión exhaustiva en conjuntos de mayor tamaño.
+La proporción detectada corresponde al 8,7 % del total. El conjunto esperado,
+al provenir de la redacción experta del equipo con fundamento directo en el
+documento de requisitos y en el modelo del sistema, no presenta alucinaciones,
+lo que confirma la superioridad de la elaboración humana en términos de fidelidad al dominio. Las historias generadas introducen un riesgo que la redacción
+manual no comparte; aunque la proporción detectada es acotada y los métodos
+automáticos permiten identificarla con bajo costo, la garantía de ausencia total
+de alucinaciones requiere de la intervención de especialistas, lo que mantiene
+a la herramienta como apoyo inicial pero no como salida directa al equipo de
+desarrollo.
+La consistencia entre los tres enfoques de evaluación, manual, similitud semántica y grafo, refuerza la confianza en los resultados, pero permite identificar
+las limitaciones de las métricas utilizadas. La similitud semántica con SBERT
+depende del modelo elegido, y los umbrales se establecieron a partir del análi92
+
+sis empírico y no de un estándar externo. Las evaluaciones QUSF e INVEST
+contienen un componente subjetivo asociado al juicio del analista, particularmente en la determinación de la ambigüedad y la estimabilidad. Estas limitaciones no invalidan los resultados, pero deben tenerse en cuenta al interpretar
+las comparaciones y al generalizar las conclusiones. Aun considerando estas limitaciones, el balance comparativo se mantiene, las historias redactadas por los
+analistas humanos del equipo resultan superiores en cada dimensión evaluada,
+dado que combinan precisión léxica, conocimiento del dominio y decisiones explícitas frente a la ambigüedad, atributos que provienen del juicio profesional.
+La herramienta basada en inteligencia artificial no alcanza ese nivel de calidad,
+pero reduce sustancialmente el tiempo de producción, lo que la posiciona como
+apoyo al trabajo de los especialistas más que como reemplazo del mismo.
+En conjunto, las historias generadas cubren el dominio en su mayor parte,
+pero arrastran ambigüedad del documento original, agrupan funcionalidades que
+serían separables y contienen un número reducido de alucinaciones detectadas
+de manera consistente por las tres formas de evaluación.
+
+93
+
+

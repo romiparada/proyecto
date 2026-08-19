@@ -22,9 +22,9 @@ def evaluate_story_matching(
     results = []
     for i, gen_text in enumerate(generated):
         matches = top_k_matches(sim_matrix, i, expected, k=config.top_k)
-        best = matches[0] if matches else {"index": -1, "text": "", "similarity": 0.0}
+        best = matches[0] if matches else {"index": 0, "text": "", "similarity": 0.0}
         results.append({
-            "generated_index": i,
+            "generated_index": i + 1,
             "generated_story": gen_text,
             "best_expected_index": best["index"],
             "best_expected_story": best["text"],

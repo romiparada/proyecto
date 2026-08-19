@@ -24,7 +24,7 @@ def top_k_matches(
     return [
         {
             "rank": rank + 1,
-            "index": int(idx),
+            "index": int(idx) + 1,
             "text": texts_b[int(idx)],
             "similarity": round(float(score), 4),
         }

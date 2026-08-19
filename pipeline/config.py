@@ -14,8 +14,8 @@ class PipelineConfig:
     coverage_threshold_partial: float = 0.60
 
     # Dimensiones 2 & 3 - Umbrales de similitud/alucinación
-    hallucination_threshold_aligned: float = 0.60
-    hallucination_threshold_uncertain: float = 0.50
+    hallucination_threshold_aligned: float = 0.75
+    hallucination_threshold_uncertain: float = 0.60
 
     # Umbrales de matching de Criterios de Aceptación
     criteria_threshold_matching: float = 0.75

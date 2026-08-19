@@ -7,10 +7,10 @@ import argparse
 import sys
 from pathlib import Path
 
-from .config.settings import PipelineConfig
-from .embeddings.encoder import create_encoder
-from .io.loaders import load_stories, load_criteria, load_aspects, align_criteria_to_stories
-from .io.reporters import (
+from .config import PipelineConfig
+from .embeddings import create_encoder
+from .data_io import load_stories, load_criteria, load_aspects, align_criteria_to_stories
+from .data_io import (
     save_coverage_report,
     save_matching_report,
     save_hallucination_report,
@@ -18,10 +18,10 @@ from .io.reporters import (
     save_semantic_graph,
     print_summary,
 )
-from .matching.ca_alignment import evaluate_ca_alignment
-from .coverage.functional_coverage import evaluate_functional_coverage
-from .matching.story_matching import evaluate_story_matching
-from .hallucination.detector import detect_hallucinations
+from .evaluator import evaluate_ca_alignment
+from .evaluator import evaluate_functional_coverage
+from .evaluator import evaluate_story_matching
+from .evaluator import detect_hallucinations
 
 
 def parse_args():
@@ -217,7 +217,7 @@ def main() -> int:
     if args.refinement:
         print("\n--- Refinamiento Asistido por LLM ---")
         try:
-            from .refinement.refinement_module import run_refinement
+            from .refinement import run_refinement
             import json
             
             prd_text = Path(args.prd).read_text(encoding="utf-8")
