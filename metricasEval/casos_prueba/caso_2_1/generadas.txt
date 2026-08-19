@@ -1,2 +1,0 @@
-As administrative staff, I want to create appointments to schedule patient consultations.
-As administrative staff, I want to update or remove scheduled appointments to handle changes in the timetable.

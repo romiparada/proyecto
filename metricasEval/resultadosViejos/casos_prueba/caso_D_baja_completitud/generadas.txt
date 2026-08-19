@@ -1,7 +1,0 @@
-As a librarian, I want to register and manage library users to allow access to digital services.
-As a librarian, I want to modify or deactivate user accounts to keep the database updated.
-As a librarian, I want to upload books, authors, and categories to organize the digital catalog.
-As a user, I want to search for books using different criteria to find material of interest.
-As a user, I want to request loans of digital or physical books to access the content.
-As a system, I want to control loan deadlines and block overdue requests to ensure availability.
-As an administrator, I want to generate reports on loans and catalog usage to analyze user behavior.

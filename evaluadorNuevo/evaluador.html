@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Eval semi-automático</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #ffffff;
+            color: #000000;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .topbar {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #000;
+        }
+
+        .app-container {
+            display: flex;
+            gap: 20px;
+            height: 85vh;
+        }
+
+        .sidebar {
+            width: 300px;
+            border: 1px solid #000;
+            overflow-y: auto;
+            padding: 10px;
+        }
+
+        .main-content {
+            flex: 1;
+            border: 1px solid #000;
+            overflow-y: auto;
+            padding: 20px;
+        }
+
+        .list-item {
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+            cursor: pointer;
+        }
+
+        .list-item:hover {
+            background: #f0f0f0;
+        }
+
+        .list-item.active {
+            background: #d0d0d0;
+            border-left: 4px solid #000;
+            font-weight: bold;
+        }
+
+        .status-indicator {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border: 1px solid #000;
+            margin-right: 5px;
+        }
+
+        .status-indicator.done {
+            background-color: #000;
+        }
+
+        .card {
+            border: 1px solid #ccc;
+            padding: 15px;
+            margin-bottom: 20px;
+            background: #f9f9f9;
+        }
+
+        .header-title {
+            font-weight: bold;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+            border-bottom: 1px solid #999;
+            padding-bottom: 5px;
+        }
+
+        .btn {
+            padding: 10px 15px;
+            cursor: pointer;
+            border: 1px solid #000;
+            background: #eee;
+            font-size: 1em;
+        }
+
+        .btn:hover {
+            background: #ddd;
+        }
+
+        .options-group {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+
+        .option-btn {
+            flex: 1;
+            padding: 10px;
+            cursor: pointer;
+            border: 1px solid #888;
+            background: #fff;
+        }
+
+        .option-btn.selected {
+            background: #333;
+            color: #fff;
+            border-color: #000;
+        }
+
+        .predictions-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .prediction-card {
+            border: 1px dashed #666;
+            padding: 10px;
+            cursor: pointer;
+            background: #fff;
+        }
+
+        .prediction-card:hover {
+            background: #fdfdfd;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #000;
+            box-sizing: border-box;
+        }
+
+        .hidden {
+            display: none !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="topbar">
+        <h2 id="mainTitle">Evaluador</h2>
+        <div>
+            <span id="statsText" style="margin-right: 15px;">Progreso: 0 / 0</span>
+            <input type="file" id="csvFileInput" accept=".csv" class="btn" />
+            <button id="exportBtn" class="btn hidden">Guardar Evaluación (Exportar CSV)</button>
+        </div>
+    </div>
+
+    <div id="emptyState" style="text-align: center; margin-top: 100px;">
+        <h3>Por favor, selecciona un archivo CSV local para comenzar.</h3>
+        <p>No se necesita servidor. Todo corre local y se guarda como descarga.</p>
+    </div>
+
+    <div id="contentWrapper" class="app-container hidden">
+        <div class="sidebar">
+            <h3 id="sidebarHeader">Elementos</h3>
+            <div id="itemList"></div>
+        </div>
+
+        <div class="main-content">
+            <div class="card">
+                <div class="header-title" id="mainLabel">Elemento Evaluado</div>
+                <div id="mainText" style="font-size: 1.1em; white-space: pre-wrap;"></div>
+            </div>
+
+            <div class="card">
+                <div class="header-title">Clasificación Manual</div>
+                <div class="options-group" id="optionsGroup"></div>
+
+                <div style="margin-bottom: 15px;">
+                    <label style="font-weight: bold;">Correspondencias Reales (IDs enteros separados por comas):</label>
+                    <input type="text" id="matchesInput" placeholder="Ej: 1, 4, 15 (o texto libre según el modo)" />
+                </div>
+
+                <div style="margin-bottom: 15px;">
+                    <label style="font-weight: bold;">Notas adicionales:</label>
+                    <input type="text" id="notesInput" placeholder="Anotaciones extra..." />
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="header-title">Posibles Coincidencias</div>
+                <div id="predictionsGrid" class="predictions-grid"></div>
+            </div>
+
+            <div style="display: flex; justify-content: space-between; margin-top: 20px;">
+                <button class="btn" onclick="nav(-1)">&laquo; Anterior</button>
+                <button class="btn" onclick="nav(1)">Siguiente &raquo;</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const textRefs = { "hue": { "As administrative staff, I want to register a new patient's data to enroll them in the system.": "HUE1", "As the system, I want to generate a unique patient number to identify each record.": "HUE2", "As administrative staff, I want to edit a registered patient's data to keep the information up to date.": "HUE3", "As administrative staff, I want to register a patient's medical background in their electronic clinical record to understand their health status.": "HUE4", "As administrative staff, I want to search for a patient by their name to access their information.": "HUE5", "As administrative staff, I want to search for a patient by their identity document to retrieve their record.": "HUE6", "As administrative staff, I want to search for a patient by their patient number to retrieve their record.": "HUE7", "As a doctor, I want to search for a patient by their name to consult their clinical record.": "HUE8", "As a doctor, I want to search for a patient by their identity document to access their clinical record.": "HUE9", "As a doctor, I want to search for a patient by their patient number to access their clinical record.": "HUE10", "As administrative staff, I want to view a patient's complete information to consult their personal data.": "HUE11", "As administrative staff, I want to view a patient's scheduled appointments to consult their information.": "HUE12", "As administrative staff, I want to register an appointment to schedule a patient's medical care.": "HUE13", "As administrative staff, I want to cancel an existing appointment to free up the time slot in the schedule.": "HUE14", "As administrative staff, I want to edit an existing appointment to change its date without losing the information.": "HUE15", "As a patient, I want to be notified by email when my appointment is modified so I stay informed.": "HUE16", "As a patient, I want to be notified by text message to my phone number when my appointment is modified so I stay informed.": "HUE17", "As a doctor, I want to access a patient's clinical record to review their prior information.": "HUE18", "As a doctor, I want to register the diagnosis made during the appointment to document the medical care provided.": "HUE19", "As a patient, I want to consult my electronic clinical record to access my medical information.": "HUE20", "As administrative staff, I want to register doctors with their respective specialties to enroll them in the system.": "HUE21", "As administrative staff, I want to define a doctor's attention hours to enable appointment assignment.": "HUE22", "As administrative staff, I want to edit a registered doctor's data to keep the information up to date.": "HUE23", "As administrative staff, I want to edit a doctor's attention hours to keep the information up to date.": "HUE24", "As administrative staff, I want to deactivate a registered doctor to keep the information up to date.": "HUE25", "As administrative staff, I want to activate a registered doctor to keep the information up to date.": "HUE26", "As the system, I want to define system roles to organize access to functionalities.": "HUE27", "As the system, I want to associate permissions with each role to control access to system functionalities.": "HUE28", "As administrative staff, I want to generate an invoice associated with an appointment to have a payment receipt.": "HUE29", "As the system, I want to generate a unique identifier to identify each invoice.": "HUE30", "As a pharmacist, I want to generate an invoice associated with a medication to have a payment receipt.": "HUE31", "As a pharmacist, I want to search for a patient by their identity document to consult the patient's medications.": "HUE32", "As a pharmacist, I want to view a patient's medications to consult their medications.": "HUE33", "As administrative staff, I want to generate an invoice associated with a medication to have a payment receipt.": "HUE34", "As administrative staff, I want to view a patient's medications to consult their medications.": "HUE35", "As a patient, I want to receive an email notification with the invoice attached to access the payment receipt.": "HUE36", "As a patient, I want to be notified by text message to my phone number with the invoice information to stay informed about the charge.": "HUE37", "As a pharmacist, I want to register medications to keep the hospital inventory up to date.": "HUE38", "As a pharmacist, I want to register supplies to keep the hospital inventory up to date.": "HUE39", "As a pharmacist, I want to edit how many medications are available to keep the hospital inventory up to date.": "HUE40", "As a pharmacist, I want to edit how many supplies are available to keep the hospital inventory up to date.": "HUE41", "As a pharmacist, I want to associate a medication with the patient who collected it so the system generates the corresponding invoice.": "HUE42", "As a pharmacist, I want to consult the medication inventory sorted by available quantity.": "HUE43", "As a pharmacist, I want to consult the medication inventory sorted by expiration date.": "HUE44", "As a pharmacist, I want to consult the supply inventory sorted by available quantity.": "HUE45", "As a pharmacist, I want to consult the supply inventory sorted by expiration date.": "HUE46", "As a pharmacist, I want to check how many units of a medication are available to make timely decisions.": "HUE47", "As a pharmacist, I want to check how many units of a supply are available to make timely decisions.": "HUE48", "As a pharmacist, I want to search for a medication by its name to access its information.": "HUE49", "As a pharmacist, I want to search for a supply by its name to access its information.": "HUE50", "As a pharmacist, I want to know when a medication is about to expire to make timely decisions.": "HUE51", "As a pharmacist, I want to know when a supply is about to expire to make timely decisions.": "HUE52", "As a pharmacist, I want to know when a medication has a low number of available units to make timely decisions.": "HUE53", "As a pharmacist, I want to know when a supply has a low number of available units to make timely decisions.": "HUE54", "As an analyst, I want to view appointment statistics by specialty to evaluate the workload.": "HUE55", "As an analyst, I want to view financial reports of the services to evaluate the hospital's income and economic performance.": "HUE56", "As an analyst, I want to view supply consumption to evaluate the hospital's inventory usage.": "HUE57" }, "hug": { "As an administrative staff member, I want to register patients with personal data and medical background, so that the hospital can maintain accurate and complete patient records.": "HU1", "As an administrative staff member, I want to modify the personal and contact details of a registered patient, so that patient information remains up to date.": "HU2", "As an administrative staff member, I want to search for patients by name, identity document, or identifier number, so that I can quickly locate patient records.": "HU3", "As an authorized user, I want to visualize a patient's complete information, so that I can review all relevant details for care or administration.": "HU4", "As an administrative staff member, I want to create medical appointments by associating the patient, specialty, and professional, so that appointments are scheduled accurately.": "HU5", "As an administrative staff member, I want to visualize the availability of registered doctors, so that I can schedule appointments efficiently.": "HU6", "As an administrative staff member, I want to modify or cancel existing appointments, so that changes can be managed as needed.": "HU7", "As a patient, I want to receive notifications when my appointment is modified or canceled, so that I am always informed about my schedule.": "HU8", "As an administrative staff member, I want to manage the status of appointments throughout their lifecycle, so that the hospital can track appointment outcomes.": "HU9", "As a doctor, I want to register diagnoses, treatments, and patient’s clinical progress in the electronic clinical record, so that patient care is well documented.": "HU10", "As a patient, I want to consult my electronic clinical record, so that I can stay informed about my health history.": "HU11", "As an administrator, I want to register medical professionals with their personal and contact details and associate specialties, so that the hospital can manage staff information.": "HU12", "As an administrator, I want to define and modify attention hours and activate or deactivate professionals for scheduling, so that doctor availability is accurately reflected.": "HU13", "As an administrator, I want to manage roles and access permissions to system functionalities, so that users only access features relevant to their role.": "HU14", "As an administrative staff member, I want to generate electronic invoices for medical consultations and medication delivery, so that billing is accurate and efficient.": "HU15", "As a patient, I want to receive automatic notifications with attached digital invoices when an invoice is generated, so that I am promptly informed about charges.": "HU16", "As a pharmacist, I want to register medications and supplies with identification, stock, and expiration date, so that inventory is accurately tracked.": "HU17", "As a pharmacist, I want to automatically update stock when registering medication deliveries, so that inventory levels remain current.": "HU18", "As a pharmacist, I want to be notified when stock is low or items are about to expire, so that I can take timely action.": "HU19", "As a pharmacist, I want to consult inventory sorted by available quantity or expiration date, so that I can manage stock efficiently.": "HU20", "As an analyst, I want to generate reports on consultations by specialty, appointment status, financial income, and medication and supplies consumption, with date range filters, so that I can analyze hospital performance.": "HU21", "As a system administrator, I want to ensure date validations prevent invalid ranges, so that data integrity is maintained.": "HU22", "As a system {administrator}, I want to ensure notifications are sent within a reasonable time after triggering events, so that users are promptly informed.": "HU23" }, "cae": { "The system must request the full name, date of birth, sex, identity document, and contact details (email address and phone number).": "ACE1.1", "The system must display an error if a patient with the entered identity document already exists.": "ACE1.2", "The system must assign a unique patient number to the new patient.": "ACE1.3", "The system must allow modifying the full name, date of birth, sex, identity document, and contact details (email address and phone number).": "ACE3.1", "The system must allow entering the patient's blood type.": "ACE4.1", "The system must allow entering chronic diseases, allergies, relevant injuries, and regular medications along with the date they started/occurred, with the option to indicate \"from birth\".": "ACE4.2", "The system must display a search field that allows entering the name.": "ACE8.1", "The system must display a list of patients whose names match the entered data.": "ACE8.2", "The system must display a search field that allows entering the identity document.": "ACE9.1", "The system must display a list of patients whose documents match the entered data.": "ACE9.2", "The system must display a search field that allows entering the patient number.": "ACE7.1", "The system must display a list of patients whose patient numbers match the entered data.": "ACE10.2", "The system must have a search field that allows searching by patient number.": "ACE10.1", "The system must display the patient's personal data: full name, date of birth, sex, identity document, and contact details (email address and phone number).": "ACE11.1", "The system must display the patient number.": "ACE11.2", "The system must display the appointment details: specialty, doctor, schedule, and status.": "ACE12.1", "The system must allow selecting the specialty and doctor for the appointment.": "ACE13.1", "The system must display the available time slots in the selected doctor's schedule.": "ACE13.2", "The system must display an error if an appointment already exists at that time slot.": "ACE13.3", "The system must change the appointment status to \"Confirmed\" after a successful registration.": "ACE13.4", "The system must allow changing the appointment status to \"Canceled\".": "ACE14.1", "The system must make the previous time slot available again in the doctor's schedule.": "ACE14.2", "The system must allow editing the date and time of an existing appointment.": "ACE15.1", "The system must validate that the new time slot is available.": "ACE15.2", "The system must indicate in the notification if the appointment was canceled.": "ACE17.1", "The system must indicate in the notification if the appointment had a schedule change.": "ACE17.2", "The system must include the new appointment date in the notification when a date change occurs.": "ACE17.3", "The system must allow access to the clinical record only to users with the doctor role.": "ACE18.1", "The system must list the diagnoses for each appointment confirmed by the patient.": "ACE18.2", "The system must display the patient's medical background.": "ACE18.3", "The system must include the date, name, and specialty of the responsible doctor in each record.": "ACE19.1", "The system must allow marking the appointment as Attended when a diagnosis is registered.": "ACE19.2", "The system must allow marking the appointment as Not attended.": "ACE19.3", "The system must prevent registering a diagnosis when the appointment is marked as Not attended.": "ACE19.4", "The system must list all appointments associated with the patient.": "ACE20.1", "The system must list all medications associated with the patient.": "ACE20.2", "The system must list all invoices associated with the patient.": "ACE20.3", "The system must allow sorting the information by date, responsible doctor, or specialty.": "ACE20.4", "The system must allow viewing the details of each listed item.": "ACE20.5", "The system must allow registering the doctor's full name, identity document number, and contact details (email address and phone number).": "ACE21.1", "The system must allow associating a specialty with the doctor being registered.": "ACE21.2", "The system must allow defining the doctor's status as active or inactive.": "ACE21.3", "The doctor's name and identity document cannot be left empty in the registration.": "ACE21.4", "The system must allow defining the start time and end time per day of the week.": "ACE22.1", "The system must allow defining more than one time slot per day.": "ACE22.2", "The system must display an error if the time slots for the same day overlap.": "ACE24.3", "The system must display an error if the start times precede the end times.": "ACE24.4", "The system must allow editing the doctor's full name, identity document number, and contact details.": "ACE23.1", "The system must allow editing the days of the week for attention.": "ACE24.1", "The system must allow editing the start time and end time for a day of the week.": "ACE24.2", "The system must allow changing the doctor's status to inactive.": "ACE25.1", "The system must allow changing the doctor's status to active.": "ACE26.1", "The system must define the following roles: administrative staff, doctor, pharmacist, analyst, and patient.": "ACE27.1", "The system must associate functionalities with each role.": "ACE28.1", "The system must display an error if a user accesses a functionality not defined in their role.": "ACE28.2", "The system must include in the invoice the patient's full name, appointment specialty, date, and total cost.": "ACE29.1", "The system must include a unique identifier in the invoice.": "ACE34.2", "The system must associate the invoice with the patient and the appointment.": "ACE29.3", "The system must include in the invoice the patient's full name, medication name, date, and total cost.": "ACE34.1", "The systedatem must associate the invoice with the patient and the medication.": "ACE31.3", "The system must have a search field that allows searching by identity document.": "ACE32.1", "The system must display a list of results matching the entered data.": "ACE32.2", "The system must list the patient's medications.": "ACE35.1", "The system must allow generating the invoice.": "ACE35.2", "The system must associate the invoice with the patient and the medication.": "ACE34.3", "The system must send an email to the patient's email address containing: invoice identifier, patient name, date, and service type (appointment or medication).": "ACE36.1", "The system must include in the subject line that it is a hospital invoice.": "ACE36.2", "The system must include the invoice attached in PDF format.": "ACE36.3", "The system must send the email within 10 minutes after the invoice is generated.": "ACE36.4", "The system must send a text message to the patient's phone number containing: invoice identifier, patient name, date, and service type (appointment or medication).": "ACE37.1", "The system must include the total cost of the invoice.": "ACE37.2", "The system must send the text message within 10 minutes after the invoice is generated.": "ACE37.3", "The system must register each medication with name, manufacturer, available units, stock number, and expiration date.": "ACE38.1", "The system must display an error if the expiration date is earlier than the current date.": "ACE38.2", "The system must display an error if the stock number is not unique.": "ACE38.3", "The system must display an error if the medication name is left empty.": "ACE38.4", "The system must display an error if the number of available units is less than 0.": "ACE41.2", "The system must register each supply with name, manufacturer, available units, stock number, and expiration date.": "ACE39.1", "The system must display an error if the expiration date is less than or equal to the current date.": "ACE39.2", "The system must display an error if the stock number already exists in the system.": "ACE39.3", "The system must display an error if the supply name is left empty.": "ACE39.4", "The system must allow modifying the available units.": "ACE41.1", "The system must associate the collected medication with the patient.": "ACE42.1", "The system must allow selecting the quantity to collect.": "ACE42.2", "The system must update the available units according to the collected quantity.": "ACE42.3", "The system must display an error if the collected quantity exceeds the available units.": "ACE42.4", "The system must display the medication name and the number of available units.": "ACE43.1", "The system sorts from lowest to highest.": "ACE46.2", "The system must display the medication name and the expiration date.": "ACE44.1", "The system must display the supply name and the number of available units.": "ACE45.1", "The system must display the supply name and the expiration date.": "ACE46.1", "The system must display the number of available units of the medication.": "ACE53.2", "The system must display the number of available units of the supply.": "ACE54.2", "The system must have a search field that allows searching by medication name.": "ACE49.1", "The system must display a list of medications whose names match the entered data.": "ACE49.2", "The system must have a search field that allows searching by supply name.": "ACE50.1", "The system must display a list of supplies whose names match the entered data.": "ACE50.2", "The system must allow listing all medications and sorting them by expiration date.": "ACE51.1", "The system must display the medication's expiration date.": "ACE51.2", "The system must highlight in red when one month remains before the medication expires.": "ACE51.3", "The system must allow listing all supplies and sorting them by expiration date.": "ACE52.1", "The system must display the supply's expiration date.": "ACE52.2", "The system must highlight in red when one month remains before the supply expires.": "ACE52.3", "The system must allow listing all medications and sorting them by available units.": "ACE53.1", "The system must highlight in red when fewer than 10 units remain.": "ACE54.3", "The system must allow listing all supplies and sorting them by available units.": "ACE54.1", "The system must list all existing specialties.": "ACE55.1", "The system must allow choosing a specialty.": "ACE55.2", "The system must display the total number of appointments: overall, attended, canceled, confirmed, and not attended.": "ACE55.3", "The system must allow choosing a date range.": "ACE55.4", "The system must display an error if the start date is later than the end date.": "ACE57.5", "The system must display an error if the end date is later than the current date.": "ACE57.6", "The system must display the hospital's total income.": "ACE56.1", "The system must display the income by specialty.": "ACE56.2", "The system must display the income by medication.": "ACE56.3", "The system must allow choosing the query date range.": "ACE57.4", "The system must allow filtering by name.": "ACE57.1", "The system must list all supplies sorted by consumption (number of units collected).": "ACE57.2", "The system must display the total number of units collected.": "ACE57.3" }, "cag": { "The system allows entry of personal and medical background data": "AC1.1", "Each patient receives a unique identifier": "AC1.2", "Duplicate identity documents or identifiers are not allowed": "AC1.3", "The system allows editing of existing patient records": "AC2.1", "The system supports search by name, document, or identifier": "AC3.1", "The system displays all patient data in a single view": "AC4.1", "The system allows selection of patient, specialty, and doctor": "AC5.1", "Overlapping appointments are prevented": "AC5.2", "The system displays doctors’ schedules and availability": "AC6.1", "The system allows editing and canceling of appointments": "AC7.1", "Patients are notified of changes": "AC7.2", "Notifications are sent promptly after changes": "AC8.1", "Appointment statuses include Confirmed, Canceled, Attended, and Not attended": "AC9.1", "The system allows entry and editing of clinical records": "AC10.1", "Each entry is timestamped": "AC10.2", "Patients can view but not edit their records": "AC11.1", "Access is restricted to authorized users": "AC11.2", "The system allows entry and editing of staff data and specialties": "AC12.1", "The system supports setting and updating working hours": "AC13.1", "Professionals can be activated or deactivated for scheduling": "AC13.2", "The system enforces role-based access control": "AC14.1", "Permissions are validated before actions are executed": "AC14.2", "The system generates invoices with unique identifiers": "AC15.1", "Invoices are associated with patients and services": "AC15.2", "Notifications are sent with invoice attachments": "AC16.1", "The system allows entry of medication and supply data": "AC17.1", "Stock is updated in real time upon delivery": "AC18.1", "The system detects minimum stock and upcoming expirations and sends notifications": "AC19.1", "Inventory can be sorted by quantity or expiration": "AC20.1", "Reports include all specified metrics": "AC21.1", "Reports can be filtered by date range": "AC21.2", "The system does not allow invalid date ranges": "AC22.1", "Notifications are sent shortly after relevant events": "AC23.1" } };
+
+        function getRef(text) {
+            if (!text) return '';
+            let cleanText = text.replace(/\s*\\hline/g, '').trim();
+            for (let cat in textRefs) {
+                if (textRefs[cat][cleanText]) return textRefs[cat][cleanText];
+            }
+            // fallback by inclusion
+            for (let cat in textRefs) {
+                for (let key in textRefs[cat]) {
+                    if (key.includes(cleanText) || cleanText.includes(key)) {
+                        return textRefs[cat][key];
+                    }
+                }
+            }
+            return '';
+        }
+
+        function formatWithRef(text) {
+            if (!text) return '';
+            let ref = getRef(text);
+            return ref ? `[${ref}] ${text}` : text;
+        }
+
+        const MODE_ALINEACION = {
+            idCol: 'ID Hist Generada', mainTextLbl: 'Historia Generada', mainTextCol: 'Historia Generada',
+            simCols: Array.from({ length: 10 }, (_, i) => `Historia Esperada ${i + 1} (Similitud)`),
+            classCol: 'Clasificación', evalCol: 'Correspondencias Reales (IDs)', noteCol: 'Notas',
+            options: ['Alineada', 'Posiblemente alineada', 'Ausente'], multiSelect: true, defaultVisible: 3, defaultSaveName: 'revision_manual_alineacion.csv',
+            title: 'Análisis de Similitud de Historias Generadas vs Historias Esperadas'
+        };
+
+        const MODE_COBERTURA = {
+            idCol: 'ID Func', mainTextLbl: 'Funcionalidad Esperada', mainTextCol: 'Funcionalidad Esperada',
+            catCol: 'Categoria', simCols: ['Historia Sugerida 1 (Similitud)', 'Historia Sugerida 2 (Similitud)', 'Historia Sugerida 3 (Similitud)'],
+            classCol: 'Clasificación', evalCol: 'Correspondencias Reales (IDs)', noteCol: 'Notas',
+            options: ['Cubierta', 'Posiblemente cubierta', 'No cubierta'], multiSelect: false, defaultVisible: 3, defaultSaveName: 'revision_manual_cobertura.csv',
+            title: 'Cobertura de funcionalidades'
+        };
+
+        const MODE_CA = {
+            idCol: 'ID_Hist_Generada', mainTextLbl: 'Criterio de Aceptación Generado', mainTextCol: 'CA_Generado',
+            simCols: ['CA_Esp_1', 'CA_Esp_2', 'CA_Esp_3'], simScores: ['Sim_1', 'Sim_2', 'Sim_3'], simSources: ['Hist_Esp_1', 'Hist_Esp_2', 'Hist_Esp_3'],
+            classCol: null, evalCol: 'Correspondencias Reales (IDs)', noteCol: 'Notas', options: null, multiSelect: true, defaultVisible: 3, defaultSaveName: 'evaluacion_ca_revisada.csv',
+            title: 'Análisis de Similitud de Criterios Generados vs Criterios Esperados'
+        };
+
+        const MODE_ALUCINACION = {
+            idCol: 'ID Hist Generada', mainTextLbl: 'Historia Generada', mainTextCol: 'Historia Generada',
+            simCols: ['Historia Esperada Mejor'],
+            classCol: 'Clasificacion Alucinacion', evalCol: 'Notas', noteCol: 'Notas',
+            options: ['Alucinación', 'No Alucinación'], multiSelect: false, defaultVisible: 1, defaultSaveName: 'hallucination_report_revisado.csv',
+            title: 'Análisis de Alucinaciones'
+        };
+
+        let appState = { modeInfo: null, rows: [], cols: [], currentIndex: 0, saveName: 'export.csv' };
+
+        const dom = {
+            input: document.getElementById('csvFileInput'), exportBtn: document.getElementById('exportBtn'),
+            emptyState: document.getElementById('emptyState'), wrapper: document.getElementById('contentWrapper'),
+            itemList: document.getElementById('itemList'), mainLabel: document.getElementById('mainLabel'), mainText: document.getElementById('mainText'),
+            predictionsGrid: document.getElementById('predictionsGrid'), optionsGroup: document.getElementById('optionsGroup'),
+            matchesInput: document.getElementById('matchesInput'), notesInput: document.getElementById('notesInput'),
+            statsText: document.getElementById('statsText'), mainTitle: document.getElementById('mainTitle')
+        };
+
+        dom.input.addEventListener('change', (e) => {
+            const file = e.target.files[0];
+            if (!file) return;
+            const reader = new FileReader();
+            reader.onload = (ev) => {
+                const text = ev.target.result;
+                parseCSV(text);
+                if (appState.rows.length > 0) {
+                    dom.emptyState.classList.add('hidden');
+                    dom.wrapper.classList.remove('hidden');
+                    dom.exportBtn.classList.remove('hidden');
+                    appState.currentIndex = 0;
+                    renderSidebar();
+                    loadItem(0);
+                    updateStats();
+                }
+            };
+            reader.readAsText(file);
+        });
+
+        dom.exportBtn.addEventListener('click', () => {
+            let csvContent = appState.cols.join(';') + '\n' + appState.rows.map(row => appState.cols.map(c => `"${(row[c] || '').replace(/"/g, '""')}"`).join(';')).join('\n');
+            const blob = new Blob(["\uFEFF" + csvContent], { type: 'text/csv;charset=utf-8;' });
+            const a = document.createElement('a');
+            a.href = URL.createObjectURL(blob);
+            a.download = appState.modeInfo.defaultSaveName;
+            a.click();
+        });
+
+        dom.notesInput.addEventListener('input', () => { saveCurrentState(); });
+        dom.matchesInput.addEventListener('input', () => { saveCurrentState(); updateStats(); renderPredictionsGrid(); });
+
+        function parseCSV(text) {
+            const lines = text.split('\n');
+            if (lines.length < 1) return;
+            appState.cols = lines[0].split(';').map(c => c.trim().replace(/^"|"$/g, ''));
+            const dataLines = lines.slice(1).filter(l => l.trim() !== '');
+            appState.rows = dataLines.map(line => {
+                const values = []; let inQuotes = false; let curr = '';
+                for (let i = 0; i < line.length; i++) {
+                    const c = line[i];
+                    if (c === '"') { inQuotes = !inQuotes; }
+                    else if (c === ';' && !inQuotes) { values.push(curr); curr = ''; }
+                    else { curr += c; }
+                }
+                values.push(curr);
+                const obj = {};
+                appState.cols.forEach((c, idx) => { obj[c] = values[idx] ? values[idx].trim() : ''; });
+                return obj;
+            });
+
+            if (appState.cols.includes('Clasificacion Alucinacion')) appState.modeInfo = MODE_ALUCINACION;
+            else if (appState.cols.includes('CA_Generado')) appState.modeInfo = MODE_CA;
+            else if (appState.cols.includes('ID Func')) appState.modeInfo = MODE_COBERTURA;
+            else appState.modeInfo = MODE_ALINEACION;
+
+            document.getElementById('mainTitle').innerText = appState.modeInfo.title;
+        }
+
+        function isEvaluated(row) {
+            if (appState.modeInfo.classCol) {
+                return (row[appState.modeInfo.classCol] !== undefined && row[appState.modeInfo.classCol].trim() !== '') ||
+                    (row[appState.modeInfo.evalCol] !== undefined && row[appState.modeInfo.evalCol].trim() !== '');
+            }
+            return row[appState.modeInfo.evalCol] !== undefined && row[appState.modeInfo.evalCol].trim() !== '';
+        }
+
+        function renderSidebar() {
+            dom.itemList.innerHTML = '';
+            appState.rows.forEach((row, idx) => {
+                const div = document.createElement('div');
+                div.className = `list-item ${idx === appState.currentIndex ? 'active' : ''}`;
+                let snippet = row[appState.modeInfo.mainTextCol] || '';
+                let ref = getRef(snippet);
+                if (snippet.length > 50) snippet = snippet.substring(0, 50) + '...';
+                if (ref) snippet = `[${ref}] ${snippet}`;
+                div.innerHTML = `<span class="status-indicator ${isEvaluated(row) ? 'done' : ''}"></span> [${row[appState.modeInfo.idCol]}] ${snippet}`;
+                div.onclick = () => loadItem(idx);
+                dom.itemList.appendChild(div);
+            });
+        }
+
+        function updateStats() {
+            const done = appState.rows.filter(r => isEvaluated(r)).length;
+            dom.statsText.innerText = `Progreso: ${done} / ${appState.rows.length}`;
+            Array.from(dom.itemList.children).forEach((el, idx) => {
+                const marker = el.querySelector('.status-indicator');
+                if (isEvaluated(appState.rows[idx])) marker.classList.add('done');
+                else marker.classList.remove('done');
+            });
+        }
+
+        function getSelectedIds() {
+            const val = dom.matchesInput.value.trim();
+            if (!val) return [];
+            return val.split(',').map(s => s.trim()).filter(s => s);
+        }
+
+        function loadItem(index) {
+            if (index < 0 || index >= appState.rows.length) return;
+            appState.currentIndex = index;
+            Array.from(dom.itemList.children).forEach((el, i) => { if (i === index) el.classList.add('active'); else el.classList.remove('active'); });
+            const row = appState.rows[index];
+            const m = appState.modeInfo;
+
+            dom.mainLabel.innerText = `${m.mainTextLbl} [${row[m.idCol]}]`;
+            dom.mainText.innerText = formatWithRef(row[m.mainTextCol] || 'N/A');
+
+            const currentClass = row[m.classCol] || '';
+            dom.optionsGroup.innerHTML = '';
+            if (m.options) {
+                dom.optionsGroup.classList.remove('hidden');
+                m.options.forEach(opt => {
+                    const btn = document.createElement('button');
+                    btn.className = `option-btn ${currentClass === opt ? 'selected' : ''}`;
+                    btn.innerText = opt;
+                    btn.dataset.val = opt;
+                    btn.onclick = () => selectOption(opt);
+                    dom.optionsGroup.appendChild(btn);
+                });
+            } else {
+                dom.optionsGroup.classList.add('hidden');
+            }
+
+            dom.matchesInput.value = row[m.evalCol] || '';
+            dom.notesInput.value = row[m.noteCol] || '';
+            renderPredictionsGrid();
+        }
+
+        function selectOption(opt) {
+            const row = appState.rows[appState.currentIndex];
+            row[appState.modeInfo.classCol] = opt;
+            Array.from(dom.optionsGroup.children).forEach(b => { if (b.dataset.val === opt) b.classList.add('selected'); else b.classList.remove('selected'); });
+            if (appState.modeInfo.multiSelect && opt === 'Posiblemente alineada') {
+                renderPredictionsGrid(true);
+            } else {
+                renderPredictionsGrid(false);
+            }
+            saveCurrentState(); updateStats();
+        }
+
+        function saveCurrentState() {
+            const row = appState.rows[appState.currentIndex];
+            const m = appState.modeInfo;
+            row[m.evalCol] = dom.matchesInput.value;
+            row[m.noteCol] = dom.notesInput.value;
+        }
+
+        function toggleMatch(idStr) {
+            let sel = getSelectedIds();
+            if (sel.includes(idStr)) sel = sel.filter(x => x !== idStr);
+            else { if (!appState.modeInfo.multiSelect) sel = [idStr]; else sel.push(idStr); }
+            dom.matchesInput.value = sel.join(', ');
+            saveCurrentState(); renderPredictionsGrid(); updateStats();
+        }
+
+        function renderPredictionsGrid(showAll = false) {
+            dom.predictionsGrid.innerHTML = '';
+            const row = appState.rows[appState.currentIndex];
+            const m = appState.modeInfo;
+            const selIds = getSelectedIds();
+            const shouldShowAll = m.multiSelect && ((row[m.classCol] || '') === 'Posiblemente alineada' || showAll);
+            const limit = shouldShowAll ? 10 : m.defaultVisible;
+            let count = 0;
+
+            for (let i = 0; i < 10; i++) {
+                if (count >= limit) break;
+                if (count >= limit) break;
+                if (m === MODE_CA) {
+                    if (!row[m.simCols[i]]) continue;
+                    let text = row[m.simCols[i]];
+                    let score = row[m.simScores[i]] || '';
+                    let source = row[m.simSources[i]] || '';
+                    const div = document.createElement('div');
+                    div.className = `prediction-card ${selIds.includes(String(i + 1)) ? 'selected' : ''}`;
+                    div.innerHTML = `<b>Opción ${i + 1} [Similitud: ${score}] [ID Origen: ${source}]</b><br/>${formatWithRef(text)}`;
+                    div.onclick = () => toggleMatch(String(i + 1));
+                    if (selIds.includes(String(i + 1))) div.style.background = '#ddd';
+                    dom.predictionsGrid.appendChild(div);
+                    count++;
+                } else if (m === MODE_ALUCINACION) {
+                    if (!row[m.simCols[i]]) continue;
+                    let text = row[m.simCols[i]];
+                    let score = row["Similitud Maxima"] || '';
+                    let threshold = row["Umbral Dinamico"] || '';
+                    const div = document.createElement('div');
+                    div.className = 'prediction-card';
+                    div.innerHTML = `<b>Mejor Coincidencia Encontrada [Similitud: ${score}] (Umbral de corte: ${threshold})</b><br/>${formatWithRef(text)}`;
+                    dom.predictionsGrid.appendChild(div);
+                    count++;
+                } else {
+                    let colData = row[m.simCols[i]];
+                    if (!colData) continue;
+                    let match = colData.match(/^\[([^\]]+)\]\s*\[([0-9.]+)\]\s*(.*)$/);
+                    let idVal = '', scoreVal = '', textVal = colData;
+                    if (match) { idVal = match[1]; scoreVal = match[2]; textVal = match[3]; }
+                    const div = document.createElement('div');
+                    div.className = 'prediction-card';
+                    div.innerHTML = `<b>Sugerencia ${i + 1} (ID: ${idVal || '?'}) [Similitud: ${scoreVal}]</b><br/>${formatWithRef(textVal)}`;
+                    if (idVal) {
+                        div.onclick = () => toggleMatch(idVal);
+                        if (selIds.includes(idVal)) div.style.background = '#ddd';
+                    }
+                    dom.predictionsGrid.appendChild(div);
+                    count++;
+                }
+            }
+            if (m.multiSelect && !shouldShowAll && count < 10 && row[m.simCols[m.defaultVisible]]) {
+                const btn = document.createElement('button');
+                btn.className = 'btn';
+                btn.innerText = 'Cargar más opciones (Revisión Completa)';
+                btn.onclick = () => renderPredictionsGrid(true);
+                dom.predictionsGrid.appendChild(btn);
+            }
+        }
+
+        function nav(step) {
+            let next = appState.currentIndex + step;
+            if (next >= 0 && next < appState.rows.length) loadItem(next);
+        }
+    </script>
+</body>
+
+</html>

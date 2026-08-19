@@ -1,0 +1,70 @@
+{
+    "patients": [
+        "register patients with personal and medical data",
+        "assign a unique identifier to each patient",
+        "modify patient personal and contact information",
+        "record patient medical background such as allergies or chronic diseases",
+        "search patients by name identity document or identifier",
+        "view complete patient information",
+        "access patient personal and clinical information"
+    ],
+    "appointments": [
+        "create medical appointments linking patient specialty and doctor",
+        "view availability of registered doctors",
+        "prevent overlapping medical appointments",
+        "modify appointment date and time",
+        "cancel existing appointments",
+        "notify patients when appointments are modified or canceled",
+        "manage appointment lifecycle and status",
+        "track appointment states such as confirmed canceled or attended"
+    ],
+    "medical_records": [
+        "register diagnoses treatments and clinical progress",
+        "edit electronic clinical records",
+        "associate a date with each clinical record entry",
+        "store patient medical and clinical information",
+        "restrict access to clinical information to authorized users",
+        "allow doctors to access and review patient clinical history",
+        "allow patients to consult their electronic clinical record",
+        "secure management of electronic medical records"
+    ],
+    "staff": [
+        "register medical professionals with personal information",
+        "associate medical specialties with professionals",
+        "manage medical professional information",
+        "define and modify doctor attention hours",
+        "activate or deactivate medical professionals for scheduling",
+        "manage healthcare staff availability",
+        "manage user roles and access permissions",
+        "validate permissions before performing system actions"
+    ],
+    "invoice": [
+        "generate electronic invoices for medical consultations",
+        "generate invoices for medication delivery",
+        "associate invoices with patients and medical services",
+        "assign a unique identifier to each invoice",
+        "send automatic notifications when invoices are generated",
+        "attach digital invoices to patient notifications",
+        "manage billing related to healthcare services",
+        "store financial documents and proof of payment"
+    ],
+    "inventory": [
+        "register medications and medical supplies in the system",
+        "store stock levels and expiration dates of medications",
+        "update inventory stock when medication deliveries are recorded",
+        "detect minimum stock levels in the inventory",
+        "notify when medications or supplies are about to expire",
+        "consult inventory sorted by quantity or expiration date",
+        "track pharmacy inventory and supplies availability",
+        "manage medication and supplies stock control"
+    ],
+    "reports": [
+        "generate statistical reports for healthcare data",
+        "generate financial reports of hospital income",
+        "report number of consultations by medical specialty",
+        "report appointment status statistics",
+        "report medication and supplies consumption",
+        "filter reports using date ranges",
+        "analyze system usage and healthcare metrics"
+    ]
+}

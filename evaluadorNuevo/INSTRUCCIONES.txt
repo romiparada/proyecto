@@ -1,0 +1,43 @@
+nota: hay una carpeta con las revisiones manuales terminadas
+1. requisitos previos
+
+tener Python 3.8+
+
+entorno virtual
+En Windows:
+python -m venv venv
+venv\Scripts\activate
+
+En Linux/Mac:
+python3 -m venv venv
+source venv/bin/activate
+
+instalar librerías necesarias:
+pip install -r requirements.txt
+
+2. ejecutar evaluación
+
+tener los archivos de texto y json en la carpeta `datos/` y seguir este orden, hay dependencias:
+
+1. ejecutar primero estos en cualquier orden
+python generar_csv_similitud.py
+python generar_csv_cobertura.py <- IGNORAR POR AHORA
+
+
+2. Revisión manual
+Ejecutando el paso anterior, se tienen los archivos para cargar con el evaluador.html. 
+Esto se debe revisar manualmente (hay una carpeta con las revisiones manuales terminadas)
+Una vez revisado, tanto las generadas como las esperadas, se exportan ambos archivos y se generan los archivos:
+`revision_manual_alineacion.csv`
+`revision_manual_cobertura.csv`
+con los datos que se seleccionaron cargados (se puede volver a editar, la forma de guardar tu progreso es exportar
+y para retomar se importa ese archivo que se exportó)
+
+3. Ejecutar scripts independientes
+Una vez se tiene el archivo `revision_manual_alineacion.csv`, con los datos cargados, se ejecutan los script:
+(deben estar los .py en el mismo lugar que revision_manual_alineacion.csv)
+python generar_csv_ca_alignment.py (tambien estarían los datos cargados de este analisis en datosManualesCargados)
+python generar_csv_alucinaciones.py (si se tiene revision_manual_alineacion.csv en la misma carpeta, 
+se usan los umbrales inteligentes en base el mejor valor de no correspondencia y peor valor de correspondencia (en 
+la alineación)) -> detecta bien las dos alucinaciones
+
