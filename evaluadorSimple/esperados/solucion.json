@@ -1,0 +1,434 @@
+[
+  {
+    "desc": "As administrative staff, I want to register a new patient's data to enroll them in the system.",
+    "ac": [
+      "The system must request the full name, date of birth, sex, identity document, and contact details (email address and phone number).",
+      "The system must display an error if a patient with the entered identity document already exists.",
+      "The system must assign a unique patient number to the new patient."
+    ]
+  },
+  {
+    "desc": "As the system, I want to generate a unique patient number to identify each record.",
+    "ac": []
+  },
+  {
+    "desc": "As administrative staff, I want to edit a registered patient's data to keep the information up to date.",
+    "ac": [
+      "The system must allow modifying the full name, date of birth, sex, identity document, and contact details (email address and phone number)."
+    ]
+  },
+  {
+    "desc": "As administrative staff, I want to register a patient's medical background in their electronic clinical record to understand their health status.",
+    "ac": [
+      "The system must allow entering the patient's blood type.",
+      "The system must allow entering chronic diseases, allergies, relevant injuries, and regular medications along with the date they started/occurred, with the option to indicate \"from birth\"."
+    ]
+  },
+  {
+    "desc": "As administrative staff, I want to search for a patient by their name to access their information.",
+    "ac": [
+      "The system must display a search field that allows entering the name.",
+      "The system must display a list of patients whose names match the entered data."
+    ]
+  },
+  {
+    "desc": "As administrative staff, I want to search for a patient by their identity document to retrieve their record.",
+    "ac": [
+      "The system must display a search field that allows entering the identity document.",
+      "The system must display a list of patients whose documents match the entered data."
+    ]
+  },
+  {
+    "desc": "As administrative staff, I want to search for a patient by their patient number to retrieve their record.",
+    "ac": [
+      "The system must display a search field that allows entering the patient number.",
+      "The system must display a list of patients whose patient numbers match the entered data."
+    ]
+  },
+  {
+    "desc": "As a doctor, I want to search for a patient by their name to consult their clinical record.",
+    "ac": [
+      "The system must display a search field that allows entering the name.",
+      "The system must display a list of patients whose names match the entered data."
+    ]
+  },
+  {
+    "desc": "As a doctor, I want to search for a patient by their identity document to access their clinical record.",
+    "ac": [
+      "The system must display a search field that allows entering the identity document.",
+      "The system must display a list of patients whose documents match the entered data."
+    ]
+  },
+  {
+    "desc": "As a doctor, I want to search for a patient by their patient number to access their clinical record.",
+    "ac": [
+      "The system must have a search field that allows searching by patient number.",
+      "The system must display a list of patients whose patient numbers match the entered data."
+    ]
+  },
+  {
+    "desc": "As administrative staff, I want to view a patient's complete information to consult their personal data.",
+    "ac": [
+      "The system must display the patient's personal data: full name, date of birth, sex, identity document, and contact details (email address and phone number).",
+      "The system must display the patient number."
+    ]
+  },
+  {
+    "desc": "As administrative staff, I want to view a patient's scheduled appointments to consult their information.",
+    "ac": [
+      "The system must display the appointment details: specialty, doctor, schedule, and status."
+    ]
+  },
+  {
+    "desc": "As administrative staff, I want to register an appointment to schedule a patient's medical care.",
+    "ac": [
+      "The system must allow selecting the specialty and doctor for the appointment.",
+      "The system must display the available time slots in the selected doctor's schedule.",
+      "The system must display an error if an appointment already exists at that time slot.",
+      "The system must change the appointment status to \"Confirmed\" after a successful registration."
+    ]
+  },
+  {
+    "desc": "As administrative staff, I want to cancel an existing appointment to free up the time slot in the schedule.",
+    "ac": [
+      "The system must allow changing the appointment status to \"Canceled\".",
+      "The system must make the previous time slot available again in the doctor's schedule."
+    ]
+  },
+  {
+    "desc": "As administrative staff, I want to edit an existing appointment to change its date without losing the information.",
+    "ac": [
+      "The system must allow editing the date and time of an existing appointment.",
+      "The system must validate that the new time slot is available."
+    ]
+  },
+  {
+    "desc": "As a patient, I want to be notified by email when my appointment is modified so I stay informed.",
+    "ac": [
+      "The system must indicate in the notification if the appointment was canceled.",
+      "The system must indicate in the notification if the appointment had a schedule change.",
+      "The system must include the new appointment date in the notification when a date change occurs."
+    ]
+  },
+  {
+    "desc": "As a patient, I want to be notified by text message to my phone number when my appointment is modified so I stay informed.",
+    "ac": [
+      "The system must indicate in the notification if the appointment was canceled.",
+      "The system must indicate in the notification if the appointment had a schedule change.",
+      "The system must include the new appointment date in the notification when a date change occurs."
+    ]
+  },
+  {
+    "desc": "As a doctor, I want to access a patient's clinical record to review their prior information.",
+    "ac": [
+      "The system must allow access to the clinical record only to users with the doctor role.",
+      "The system must list the diagnoses for each appointment confirmed by the patient.",
+      "The system must display the patient's medical background."
+    ]
+  },
+  {
+    "desc": "As a doctor, I want to register the diagnosis made during the appointment to document the medical care provided.",
+    "ac": [
+      "The system must include the date, name, and specialty of the responsible doctor in each record.",
+      "The system must allow marking the appointment as Attended when a diagnosis is registered.",
+      "The system must allow marking the appointment as Not attended.",
+      "The system must prevent registering a diagnosis when the appointment is marked as Not attended."
+    ]
+  },
+  {
+    "desc": "As a patient, I want to consult my electronic clinical record to access my medical information.",
+    "ac": [
+      "The system must list all appointments associated with the patient.",
+      "The system must list all medications associated with the patient.",
+      "The system must list all invoices associated with the patient.",
+      "The system must allow sorting the information by date, responsible doctor, or specialty.",
+      "The system must allow viewing the details of each listed item."
+    ]
+  },
+  {
+    "desc": "As administrative staff, I want to register doctors with their respective specialties to enroll them in the system.",
+    "ac": [
+      "The system must allow registering the doctor's full name, identity document number, and contact details (email address and phone number).",
+      "The system must allow associating a specialty with the doctor being registered.",
+      "The system must allow defining the doctor's status as active or inactive.",
+      "The doctor's name and identity document cannot be left empty in the registration."
+    ]
+  },
+  {
+    "desc": "As administrative staff, I want to define a doctor's attention hours to enable appointment assignment.",
+    "ac": [
+      "The system must allow defining the start time and end time per day of the week.",
+      "The system must allow defining more than one time slot per day.",
+      "The system must display an error if the time slots for the same day overlap.",
+      "The system must display an error if the start times precede the end times."
+    ]
+  },
+  {
+    "desc": "As administrative staff, I want to edit a registered doctor's data to keep the information up to date.",
+    "ac": [
+      "The system must allow editing the doctor's full name, identity document number, and contact details."
+    ]
+  },
+  {
+    "desc": "As administrative staff, I want to edit a doctor's attention hours to keep the information up to date.",
+    "ac": [
+      "The system must allow editing the days of the week for attention.",
+      "The system must allow editing the start time and end time for a day of the week.",
+      "The system must display an error if the time slots for the same day overlap.",
+      "The system must display an error if the start times precede the end times."
+    ]
+  },
+  {
+    "desc": "As administrative staff, I want to deactivate a registered doctor to keep the information up to date.",
+    "ac": [
+      "The system must allow changing the doctor's status to inactive."
+    ]
+  },
+  {
+    "desc": "As administrative staff, I want to activate a registered doctor to keep the information up to date.",
+    "ac": [
+      "The system must allow changing the doctor's status to active."
+    ]
+  },
+  {
+    "desc": "As the system, I want to define system roles to organize access to functionalities.",
+    "ac": [
+      "The system must define the following roles: administrative staff, doctor, pharmacist, analyst, and patient."
+    ]
+  },
+  {
+    "desc": "As the system, I want to associate permissions with each role to control access to system functionalities.",
+    "ac": [
+      "The system must associate functionalities with each role.",
+      "The system must display an error if a user accesses a functionality not defined in their role."
+    ]
+  },
+  {
+    "desc": "As administrative staff, I want to generate an invoice associated with an appointment to have a payment receipt.",
+    "ac": [
+      "The system must include in the invoice the patient's full name, appointment specialty, date, and total cost.",
+      "The system must include a unique identifier in the invoice.",
+      "The system must associate the invoice with the patient and the appointment."
+    ]
+  },
+  {
+    "desc": "As the system, I want to generate a unique identifier to identify each invoice.",
+    "ac": []
+  },
+  {
+    "desc": "As a pharmacist, I want to generate an invoice associated with a medication to have a payment receipt.",
+    "ac": [
+      "The system must include in the invoice the patient's full name, medication name, date, and total cost.",
+      "The system must include a unique identifier in the invoice.",
+      "The system must associate the invoice with the patient and the medication."
+    ]
+  },
+  {
+    "desc": "As a pharmacist, I want to search for a patient by their identity document to consult the patient's medications.",
+    "ac": [
+      "The system must have a search field that allows searching by identity document.",
+      "The system must display a list of results matching the entered data."
+    ]
+  },
+  {
+    "desc": "As a pharmacist, I want to view a patient's medications to consult their medications.",
+    "ac": [
+      "The system must list the patient's medications.",
+      "The system must allow generating the invoice."
+    ]
+  },
+  {
+    "desc": "As administrative staff, I want to generate an invoice associated with a medication to have a payment receipt.",
+    "ac": [
+      "The system must include in the invoice the patient's full name, medication name, date, and total cost.",
+      "The system must include a unique identifier in the invoice.",
+      "The system must associate the invoice with the patient and the medication."
+    ]
+  },
+  {
+    "desc": "As administrative staff, I want to view a patient's medications to consult their medications.",
+    "ac": [
+      "The system must list the patient's medications.",
+      "The system must allow generating the invoice."
+    ]
+  },
+  {
+    "desc": "As a patient, I want to receive an email notification with the invoice attached to access the payment receipt.",
+    "ac": [
+      "The system must send an email to the patient's email address containing: invoice identifier, patient name, date, and service type (appointment or medication).",
+      "The system must include in the subject line that it is a hospital invoice.",
+      "The system must include the invoice attached in PDF format.",
+      "The system must send the email within 10 minutes after the invoice is generated."
+    ]
+  },
+  {
+    "desc": "As a patient, I want to be notified by text message to my phone number with the invoice information to stay informed about the charge.",
+    "ac": [
+      "The system must send a text message to the patient's phone number containing: invoice identifier, patient name, date, and service type (appointment or medication).",
+      "The system must include the total cost of the invoice.",
+      "The system must send the text message within 10 minutes after the invoice is generated."
+    ]
+  },
+  {
+    "desc": "As a pharmacist, I want to register medications to keep the hospital inventory up to date.",
+    "ac": [
+      "The system must register each medication with name, manufacturer, available units, stock number, and expiration date.",
+      "The system must display an error if the expiration date is earlier than the current date.",
+      "The system must display an error if the stock number is not unique.",
+      "The system must display an error if the medication name is left empty.",
+      "The system must display an error if the number of available units is less than 0."
+    ]
+  },
+  {
+    "desc": "As a pharmacist, I want to register supplies to keep the hospital inventory up to date.",
+    "ac": [
+      "The system must register each supply with name, manufacturer, available units, stock number, and expiration date.",
+      "The system must display an error if the expiration date is less than or equal to the current date.",
+      "The system must display an error if the stock number already exists in the system.",
+      "The system must display an error if the supply name is left empty.",
+      "The system must display an error if the number of available units is less than 0."
+    ]
+  },
+  {
+    "desc": "As a pharmacist, I want to edit how many medications are available to keep the hospital inventory up to date.",
+    "ac": [
+      "The system must allow modifying the available units.",
+      "The system must display an error if the number of available units is less than 0."
+    ]
+  },
+  {
+    "desc": "As a pharmacist, I want to edit how many supplies are available to keep the hospital inventory up to date.",
+    "ac": [
+      "The system must allow modifying the available units.",
+      "The system must display an error if the number of available units is less than 0."
+    ]
+  },
+  {
+    "desc": "As a pharmacist, I want to associate a medication with the patient who collected it so the system generates the corresponding invoice.",
+    "ac": [
+      "The system must associate the collected medication with the patient.",
+      "The system must allow selecting the quantity to collect.",
+      "The system must update the available units according to the collected quantity.",
+      "The system must display an error if the collected quantity exceeds the available units."
+    ]
+  },
+  {
+    "desc": "As a pharmacist, I want to consult the medication inventory sorted by available quantity to quickly identify medications with the lowest or highest stock.",
+    "ac": [
+      "The system must display the medication name and the number of available units.",
+      "The system sorts from lowest to highest."
+    ]
+  },
+  {
+    "desc": "As a pharmacist, I want to consult the medication inventory sorted by expiration date to identify medications about to expire.",
+    "ac": [
+      "The system must display the medication name and the expiration date.",
+      "The system sorts from lowest to highest."
+    ]
+  },
+  {
+    "desc": "As a pharmacist, I want to consult the supply inventory sorted by available quantity to quickly identify supplies with the lowest or highest stock.",
+    "ac": [
+      "The system must display the supply name and the number of available units.",
+      "The system sorts from lowest to highest."
+    ]
+  },
+  {
+    "desc": "As a pharmacist, I want to consult the supply inventory sorted by expiration date to identify supplies about to expire.",
+    "ac": [
+      "The system must display the supply name and the expiration date.",
+      "The system sorts from lowest to highest."
+    ]
+  },
+  {
+    "desc": "As a pharmacist, I want to check how many units of a medication are available to make timely decisions.",
+    "ac": [
+      "The system must display the number of available units of the medication."
+    ]
+  },
+  {
+    "desc": "As a pharmacist, I want to check how many units of a supply are available to make timely decisions.",
+    "ac": [
+      "The system must display the number of available units of the supply."
+    ]
+  },
+  {
+    "desc": "As a pharmacist, I want to search for a medication by its name to access its information.",
+    "ac": [
+      "The system must have a search field that allows searching by medication name.",
+      "The system must display a list of medications whose names match the entered data."
+    ]
+  },
+  {
+    "desc": "As a pharmacist, I want to search for a supply by its name to access its information.",
+    "ac": [
+      "The system must have a search field that allows searching by supply name.",
+      "The system must display a list of supplies whose names match the entered data."
+    ]
+  },
+  {
+    "desc": "As a pharmacist, I want to know when a medication is about to expire to make timely decisions.",
+    "ac": [
+      "The system must allow listing all medications and sorting them by expiration date.",
+      "The system must display the medication's expiration date.",
+      "The system must highlight in red when one month remains before the medication expires."
+    ]
+  },
+  {
+    "desc": "As a pharmacist, I want to know when a supply is about to expire to make timely decisions.",
+    "ac": [
+      "The system must allow listing all supplies and sorting them by expiration date.",
+      "The system must display the supply's expiration date.",
+      "The system must highlight in red when one month remains before the supply expires."
+    ]
+  },
+  {
+    "desc": "As a pharmacist, I want to know when a medication has a low number of available units to make timely decisions.",
+    "ac": [
+      "The system must allow listing all medications and sorting them by available units.",
+      "The system must display the number of available units of the medication.",
+      "The system must highlight in red when fewer than 10 units remain."
+    ]
+  },
+  {
+    "desc": "As a pharmacist, I want to know when a supply has a low number of available units to make timely decisions.",
+    "ac": [
+      "The system must allow listing all supplies and sorting them by available units.",
+      "The system must display the number of available units of the supply.",
+      "The system must highlight in red when fewer than 10 units remain."
+    ]
+  },
+  {
+    "desc": "As an analyst, I want to view appointment statistics by specialty to evaluate the workload.",
+    "ac": [
+      "The system must list all existing specialties.",
+      "The system must allow choosing a specialty.",
+      "The system must display the total number of appointments: overall, attended, canceled, confirmed, and not attended.",
+      "The system must allow choosing a date range.",
+      "The system must display an error if the start date is later than the end date.",
+      "The system must display an error if the end date is later than the current date."
+    ]
+  },
+  {
+    "desc": "As an analyst, I want to view financial reports of the services to evaluate the hospital's income and economic performance.",
+    "ac": [
+      "The system must display the hospital's total income.",
+      "The system must display the income by specialty.",
+      "The system must display the income by medication.",
+      "The system must allow choosing the query date range.",
+      "The system must display an error if the start date is later than the end date.",
+      "The system must display an error if the end date is later than the current date."
+    ]
+  },
+  {
+    "desc": "As an analyst, I want to view supply consumption to evaluate the hospital's inventory usage.",
+    "ac": [
+      "The system must allow filtering by name.",
+      "The system must list all supplies sorted by consumption (number of units collected).",
+      "The system must display the total number of units collected.",
+      "The system must allow choosing the query date range.",
+      "The system must display an error if the start date is later than the end date.",
+      "The system must display an error if the end date is later than the current date."
+    ]
+  }
+]

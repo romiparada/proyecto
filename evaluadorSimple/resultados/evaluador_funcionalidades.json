@@ -1,0 +1,13 @@
+[
+  {
+    "id": "F1",
+    "desc": "Register patients with personal and medical data",
+    "alineacion": [
+      {
+        "sim": 0.8768045902252197,
+        "id": "HU1"
+      }
+    ],
+    "eval": "Alineada"
+  }
+]

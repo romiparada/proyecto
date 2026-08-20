@@ -1,0 +1,13 @@
+[
+  {
+    "id": "HU1",
+    "desc": "As an administrative staff member, I want to register patients with personal data and medical background, so that the hospital can maintain accurate and complete patient records.",
+    "alineacion": [
+      {
+        "sim": 0.8170087337493896,
+        "id": "HUE1"
+      }
+    ],
+    "eval": "Alineada"
+  }
+]
