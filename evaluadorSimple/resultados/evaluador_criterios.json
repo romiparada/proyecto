@@ -4,74 +4,22 @@
     "desc": "The system allows entry of personal and medical background data.",
     "alineacion": [
       {
+        "id": "ACE1.1",
+        "desc": "The system must request the full name, date of birth, sex, identity document, and contact details (email address and phone number).",
         "sim": 0.6262912154197693,
-        "id": "ACE1.1"
-      }
-    ],
-    "eval": "Alineada"
-  },
-  {
-    "id": "AC1.2",
-    "desc": "Each patient receives a unique identifier.",
-    "alineacion": [
+        "eval": "Alineada"
+      },
       {
-        "sim": 0.7944409847259521,
-        "id": "ACE1.3"
-      }
-    ],
-    "eval": "Alineada"
-  },
-  {
-    "id": "AC1.3",
-    "desc": "Duplicate identity documents or identifiers are not allowed.",
-    "alineacion": [
+        "id": "ACE1.3",
+        "desc": "The system must assign a unique patient number to the new patient.",
+        "sim": 0.5087906718254089,
+        "eval": "No Alineada"
+      },
       {
-        "sim": 0.6143319606781006,
-        "id": "ACE1.2"
-      }
-    ],
-    "eval": "Alineada"
-  },
-  {
-    "id": "AC2.1",
-    "desc": "The system allows editing of existing patient records.",
-    "alineacion": [
-      {
-        "sim": 0.5526004433631897,
-        "id": "ACE3.1"
-      }
-    ],
-    "eval": "Alineada"
-  },
-  {
-    "id": "AC3.1",
-    "desc": "The system supports search by name, document, or identifier.",
-    "alineacion": [
-      {
-        "sim": 0.523820161819458,
-        "id": "ACE7.1"
-      }
-    ],
-    "eval": "Alineada"
-  },
-  {
-    "id": "AC3.1",
-    "desc": "The system supports search by name, document, or identifier.",
-    "alineacion": [
-      {
-        "sim": 0.62112957239151,
-        "id": "ACE6.1"
-      }
-    ],
-    "eval": "Alineada"
-  },
-  {
-    "id": "AC3.1",
-    "desc": "The system supports search by name, document, or identifier.",
-    "alineacion": [
-      {
-        "sim": 0.6144641637802124,
-        "id": "ACE5.1"
+        "id": "ACE1.2",
+        "desc": "The system must display an error if a patient with the entered identity document already exists.",
+        "sim": 0.46177083253860474,
+        "eval": "No Alineada"
       }
     ],
     "eval": "Alineada"
