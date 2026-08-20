@@ -1,6 +1,6 @@
 
 import json
-from evaluador import evaluar_smilares
+from evaluador import evaluar_similares
 
 with open("resultados/similitud_historias_criterios_all.json", "r", encoding="utf-8") as file:
     similitud_historias = json.load(file)
@@ -22,7 +22,7 @@ for i in range(len(historias_evaluadas)):
 res = []
 for historia_similar_alineada in historias_similares_alineadas:
     criterios = historia_similar_alineada["ac"]
-    evaluar_smilares(res, criterios, "ac_sim")    
+    evaluar_similares(res, criterios, "ac_sim")    
     print("1- Siguiente historia")
     print("2- Salir")
     while True:

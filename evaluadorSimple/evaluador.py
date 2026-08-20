@@ -1,4 +1,4 @@
-def evaluar_smilares(res, elementos, sim_key):
+def evaluar_similares(res, elementos, sim_key):
     clasificacion = ["Alineada", "No Alineada"]
     current_top = 5    
     for elemento in elementos:
