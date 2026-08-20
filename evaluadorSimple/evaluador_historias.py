@@ -1,6 +1,6 @@
 
 import json
-from evaluador.py import evaluador
+from evaluador import evaluar_smilares
 
 with open("resultados/similitud_historias_all.json", "r", encoding="utf-8") as file:
     similitud_historias = json.load(file)
