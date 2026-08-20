@@ -21,10 +21,10 @@ for i in range(len(historias_evaluadas)):
                 if historia_evaluada_alineacion["id"] == similitud_historia["id"]:
                     historias_similares_alineadas.append(similitud_historia)
 
+res = []
 for historia_similar_alineada in historias_similares_alineadas:
     criterios = historia_similar_alineada["ac"]
     for criterio in criterios:
-        res = []
         print(criterio["id"])
         print(criterio["desc"])
         print("\n")

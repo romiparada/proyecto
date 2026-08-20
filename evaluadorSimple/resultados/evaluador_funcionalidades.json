@@ -1,13 +1,8 @@
 [
   {
-    "id": "F1",
-    "desc": "Register patients with personal and medical data",
-    "alineacion": [
-      {
-        "sim": 0.8768045902252197,
-        "id": "HU1"
-      }
-    ],
-    "eval": "Alineada"
+    "id": "F2",
+    "desc": "Assign a unique identifier to each patient",
+    "alineacion": [],
+    "eval": "Ausente"
   }
 ]

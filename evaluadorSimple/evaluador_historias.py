@@ -10,13 +10,13 @@ def borrar_lineas(n):
 
 clasificacion = ["Alineada", "Posible", "Ausente"]
 
+res = []
 for historia in similitud_historias:
     print(historia["id"])
     print(historia["desc"])
     print("\n")
 
     similares = historia["h_sim"]
-    res = []
     res_h = {"id": historia["id"], "desc": historia["desc"], "alineacion": [], "eval": "Ausente"}
     top = 0
     for similar in similares:

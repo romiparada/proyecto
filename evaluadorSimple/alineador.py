@@ -25,7 +25,7 @@ criterios_esperados = [historia["ac"] for historia in solucion_esperada]
 historias_generadas = [historia["desc"] for historia in solucion_generada] 
 criterios_generados = [historia["ac"] for historia in solucion_generada]
 
-model = SentenceTransformer("sentence-transformers/all-MiniLM-L6-v2")
+model = SentenceTransformer("sentence-transformers/all-mpnet-base-v2")
 
 embeddings_esperadas = model.encode(historias_esperadas)
 embeddings_generadas = model.encode(historias_generadas)

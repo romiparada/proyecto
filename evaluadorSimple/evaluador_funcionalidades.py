@@ -10,13 +10,13 @@ def borrar_lineas(n):
 
 clasificacion = ["Alineada", "Posible", "Ausente"]
 
+res = []
 for funcionalidad in similitud_funcionalidad:
     print(funcionalidad["id"])
     print(funcionalidad["desc"])
     print("\n")
 
     similares = funcionalidad["h_sim"]
-    res = []
     res_f = {"id": funcionalidad["id"], "desc": funcionalidad["desc"], "alineacion": [], "eval": "Ausente"}
     top = 0
     for similar in similares:

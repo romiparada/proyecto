@@ -1,11 +1,11 @@
 [
   {
-    "id": "AC1.1",
-    "desc": "The system allows entry of personal and medical background data.",
+    "id": "AC1.3",
+    "desc": "Duplicate identity documents or identifiers are not allowed.",
     "alineacion": [
       {
-        "sim": 0.535284698009491,
-        "id": "ACE1.1"
+        "sim": 0.6143319606781006,
+        "id": "ACE1.2"
       }
     ],
     "eval": "Alineada"
