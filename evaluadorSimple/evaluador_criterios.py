@@ -10,12 +10,13 @@ with open("resultados/evaluador_historias.json", "r", encoding="utf-8") as file:
 clasificacion = ["Alineada", "Posible", "Ausente"]
 historias_similares_alineadas = []
 for i in range(len(historias_evaluadas)):
-    if historias_evaluadas[i]["eval"] != clasificacion[2]:
+    if historias_evaluadas[i]["eval"] == clasificacion[0]:
         similitud_historia_evaluada = similitud_historias[i]["h_sim"]
         for historia_evaluada_alineacion in historias_evaluadas[i]["alineacion"]:
-            for similitud_historia in similitud_historia_evaluada:
-                if historia_evaluada_alineacion["id"] == similitud_historia["id"]:
-                    historias_similares_alineadas.append(similitud_historia)
+            if historia_evaluada_alineacion["eval"] == clasificacion[0]:
+                for similitud_historia in similitud_historia_evaluada:
+                    if historia_evaluada_alineacion["id"] == similitud_historia["id"]:
+                        historias_similares_alineadas.append(similitud_historia)
 
 res = []
 for historia_similar_alineada in historias_similares_alineadas:
