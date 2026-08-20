@@ -9,7 +9,7 @@ clasificacion = ["Alineada", "Posible", "Ausente"]
 res = []
 for historia in similitud_historias:
     similares = historia["h_sim"]
-    res_h = {"id": historia["id"], "desc": historia["desc"], "alineacion": [], "eval": "Ausente"}
+    res_i = {"id": historia["id"], "desc": historia["desc"], "alineacion": [], "eval": "Ausente"}
     top = 0
     for similar in similares:
         top = top + 1
@@ -43,30 +43,25 @@ for historia in similitud_historias:
         if opcion == 4:
             break
 
+        res_alineacion = {"id": similar["id"], "desc": similar["desc"], "sim": similar["sim"], "eval": clasificacion[opcion-1]}
+        res_i["alineacion"].append(res_alineacion)
+
         if opcion == 1:              
-            if res_h["eval"] != clasificacion[0]:
-                res_h["alineacion"] = []
             if (top <= 3):
-                res_h["eval"] = clasificacion[0]
+                res_i["eval"] = clasificacion[0]
             else:
-                res_h["eval"] = clasificacion[1]
-            res_h["alineacion"].append({"sim": similar["sim"], "id": similar["id"]})
-        else:
+                res_i["eval"] = clasificacion[1]
+        else:     
             if opcion == 2:
-                if ["eval"] == clasificacion[2]:
-                    res_h["alineacion"] = []
-                    res_h["eval"] = clasificacion[1]
-                res_h["alineacion"].append({"sim": similar["sim"], "id": similar["id"]})
-            else:
-                if ["eval"] == clasificacion[2]:
-                    res_h["alineacion"].append({"sim": similar["sim"], "id": similar["id"]})
+                if res_i["eval"] == clasificacion[2]:
+                    res_i["eval"] = clasificacion[1]
         
         if (top >= 3):
-            if res_h["eval"] != clasificacion[2]:
+            if res_i["eval"] != clasificacion[2]:
                 break
 
-    res.append(res_h)
-    print("Evaluacion: ", res_h["eval"])
+    res.append(res_i)
+    print("Evaluacion: ", res_i["eval"])
 
     print("1- Siguiente")
     print("2- Salir")

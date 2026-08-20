@@ -21,7 +21,7 @@ res = []
 for historia_similar_alineada in historias_similares_alineadas:
     criterios = historia_similar_alineada["ac"]
     for criterio in criterios:
-        res_c = {"id": criterio["id"], "desc": criterio["desc"], "alineacion": [], "eval": "Ausente"}
+        res_i = {"id": criterio["id"], "desc": criterio["desc"], "alineacion": [], "eval": "Ausente"}
         top = 0
         similares = criterio["ac_sim"]
         for similar in similares:
@@ -57,30 +57,25 @@ for historia_similar_alineada in historias_similares_alineadas:
             if opcion == 4:
                 break
 
+            res_alineacion = {"id": similar["id"], "desc": similar["desc"], "sim": similar["sim"], "eval": clasificacion[opcion-1]}
+            res_i["alineacion"].append(res_alineacion)
+
             if opcion == 1:              
-                if res_c["eval"] != clasificacion[0]:
-                    res_c["alineacion"] = []
                 if (top <= 3):
-                    res_c["eval"] = clasificacion[0]
+                    res_i["eval"] = clasificacion[0]
                 else:
-                    res_c["eval"] = clasificacion[1]
-                res_c["alineacion"].append({"sim": similar["sim"], "id": similar["id"]})
+                    res_i["eval"] = clasificacion[1]
             else:     
                 if opcion == 2:
-                    if ["eval"] == clasificacion[2]:
-                        res_c["alineacion"] = []
-                        res_c["eval"] = clasificacion[1]
-                    res_c["alineacion"].append({"sim": similar["sim"], "id": similar["id"]})
-                else:
-                    if ["eval"] == clasificacion[2]:
-                        res_c["alineacion"].append({"sim": similar["sim"], "id": similar["id"]})
+                    if res_i["eval"] == clasificacion[2]:
+                        res_i["eval"] = clasificacion[1]
             
             if (top >= 3):
-                if res_c["eval"] != clasificacion[2]:
+                if res_i["eval"] != clasificacion[2]:
                     break
 
-        res.append(res_c)
-        print("Evaluacion: ", res_c["eval"])
+        res.append(res_i)
+        print("Evaluacion: ", res_i["eval"])
 
         print("1- Siguiente")
         print("2- Salir")
