@@ -23,5 +23,764 @@
       }
     ],
     "eval": "Alineada"
+  },
+  {
+    "id": "HU2",
+    "desc": "As an administrative staff member, I want to modify the personal and contact details of a registered patient, so that patient information remains up to date.",
+    "alineacion": [
+      {
+        "id": "HUE3",
+        "desc": "As administrative staff, I want to edit a registered patient's data to keep the information up to date.",
+        "sim": 0.8599282503128052,
+        "eval": "Alineada"
+      },
+      {
+        "id": "HUE23",
+        "desc": "As administrative staff, I want to edit a registered doctor's data to keep the information up to date.",
+        "sim": 0.8337119221687317,
+        "eval": "No Alineada"
+      },
+      {
+        "id": "HUE24",
+        "desc": "As administrative staff, I want to edit a doctor's attention hours to keep the information up to date.",
+        "sim": 0.6954217553138733,
+        "eval": "No Alineada"
+      },
+      {
+        "id": "HUE1",
+        "desc": "As administrative staff, I want to register a new patient's data to enroll them in the system.",
+        "sim": 0.6384193301200867,
+        "eval": "No Alineada"
+      },
+      {
+        "id": "HUE4",
+        "desc": "As administrative staff, I want to register a patient's medical background in their electronic clinical record to understand their health status.",
+        "sim": 0.6163924336433411,
+        "eval": "No Alineada"
+      }
+    ],
+    "eval": "Alineada"
+  },
+  {
+    "id": "HU3",
+    "desc": "As an administrative staff member, I want to search for patients by name, identity document, or identifier number, so that I can quickly locate patient records.",
+    "alineacion": [
+      {
+        "id": "HUE7",
+        "desc": "As administrative staff, I want to search for a patient by their patient number to retrieve their record.",
+        "sim": 0.8920508623123169,
+        "eval": "Alineada"
+      },
+      {
+        "id": "HUE6",
+        "desc": "As administrative staff, I want to search for a patient by their identity document to retrieve their record.",
+        "sim": 0.8908185958862305,
+        "eval": "Alineada"
+      },
+      {
+        "id": "HUE5",
+        "desc": "As administrative staff, I want to search for a patient by their name to access their information.",
+        "sim": 0.879988431930542,
+        "eval": "Alineada"
+      },
+      {
+        "id": "HUE10",
+        "desc": "As a doctor, I want to search for a patient by their patient number to access their clinical record.",
+        "sim": 0.8512654304504395,
+        "eval": "Alineada"
+      },
+      {
+        "id": "HUE9",
+        "desc": "As a doctor, I want to search for a patient by their identity document to access their clinical record.",
+        "sim": 0.8506389856338501,
+        "eval": "No Alineada"
+      }
+    ],
+    "eval": "Alineada"
+  },
+  {
+    "id": "HU4",
+    "desc": "As an authorized user, I want to visualize a patient's complete information, so that I can review all relevant details for care or administration.",
+    "alineacion": [
+      {
+        "id": "HUE11",
+        "desc": "As administrative staff, I want to view a patient's complete information to consult their personal data.",
+        "sim": 0.8348504304885864,
+        "eval": "Alineada"
+      },
+      {
+        "id": "HUE12",
+        "desc": "As administrative staff, I want to view a patient's scheduled appointments to consult their information.",
+        "sim": 0.6401694416999817,
+        "eval": "No Alineada"
+      },
+      {
+        "id": "HUE18",
+        "desc": "As a doctor, I want to access a patient's clinical record to review their prior information.",
+        "sim": 0.6389214992523193,
+        "eval": "Alineada"
+      },
+      {
+        "id": "HUE35",
+        "desc": "As administrative staff, I want to view a patient's medications to consult their medications.",
+        "sim": 0.637816309928894,
+        "eval": "No Alineada"
+      },
+      {
+        "id": "HUE20",
+        "desc": "As a patient, I want to consult my electronic clinical record to access my medical information.",
+        "sim": 0.6214684844017029,
+        "eval": "No Alineada"
+      }
+    ],
+    "eval": "Alineada"
+  },
+  {
+    "id": "HU5",
+    "desc": "As an administrative staff member, I want to create medical appointments by associating the patient, specialty, and professional, so that appointments are scheduled accurately.",
+    "alineacion": [
+      {
+        "id": "HUE13",
+        "desc": "As administrative staff, I want to register an appointment to schedule a patient's medical care.",
+        "sim": 0.7196779847145081,
+        "eval": "Alineada"
+      },
+      {
+        "id": "HUE22",
+        "desc": "As administrative staff, I want to define a doctor's attention hours to enable appointment assignment.",
+        "sim": 0.70175701379776,
+        "eval": "No Alineada"
+      },
+      {
+        "id": "HUE21",
+        "desc": "As administrative staff, I want to register doctors with their respective specialties to enroll them in the system.",
+        "sim": 0.6889938712120056,
+        "eval": "No Alineada"
+      },
+      {
+        "id": "HUE12",
+        "desc": "As administrative staff, I want to view a patient's scheduled appointments to consult their information.",
+        "sim": 0.6586726903915405,
+        "eval": "No Alineada"
+      },
+      {
+        "id": "HUE24",
+        "desc": "As administrative staff, I want to edit a doctor's attention hours to keep the information up to date.",
+        "sim": 0.6007315516471863,
+        "eval": "No Alineada"
+      }
+    ],
+    "eval": "Alineada"
+  },
+  {
+    "id": "HU6",
+    "desc": "As an administrative staff member, I want to visualize the availability of registered doctors, so that I can schedule appointments efficiently.",
+    "alineacion": [
+      {
+        "id": "HUE21",
+        "desc": "As administrative staff, I want to register doctors with their respective specialties to enroll them in the system.",
+        "sim": 0.6866763830184937,
+        "eval": "No Alineada"
+      },
+      {
+        "id": "HUE12",
+        "desc": "As administrative staff, I want to view a patient's scheduled appointments to consult their information.",
+        "sim": 0.6610073447227478,
+        "eval": "No Alineada"
+      },
+      {
+        "id": "HUE55",
+        "desc": "As an analyst, I want to view appointment statistics by specialty to evaluate the workload.",
+        "sim": 0.6383475065231323,
+        "eval": "No Alineada"
+      },
+      {
+        "id": "HUE22",
+        "desc": "As administrative staff, I want to define a doctor's attention hours to enable appointment assignment.",
+        "sim": 0.6158920526504517,
+        "eval": "No Alineada"
+      },
+      {
+        "id": "HUE13",
+        "desc": "As administrative staff, I want to register an appointment to schedule a patient's medical care.",
+        "sim": 0.5976335406303406,
+        "eval": "Alineada"
+      }
+    ],
+    "eval": "Alineada"
+  },
+  {
+    "id": "HU7",
+    "desc": "As an administrative staff member, I want to modify or cancel existing appointments, so that changes can be managed as needed.",
+    "alineacion": [
+      {
+        "id": "HUE14",
+        "desc": "As administrative staff, I want to cancel an existing appointment to free up the time slot in the schedule.",
+        "sim": 0.8234935402870178,
+        "eval": "Alineada"
+      },
+      {
+        "id": "HUE15",
+        "desc": "As administrative staff, I want to edit an existing appointment to change its date without losing the information.",
+        "sim": 0.806688129901886,
+        "eval": "Alineada"
+      },
+      {
+        "id": "HUE24",
+        "desc": "As administrative staff, I want to edit a doctor's attention hours to keep the information up to date.",
+        "sim": 0.6964181661605835,
+        "eval": "No Alineada"
+      },
+      {
+        "id": "HUE13",
+        "desc": "As administrative staff, I want to register an appointment to schedule a patient's medical care.",
+        "sim": 0.6025980710983276,
+        "eval": "No Alineada"
+      },
+      {
+        "id": "HUE12",
+        "desc": "As administrative staff, I want to view a patient's scheduled appointments to consult their information.",
+        "sim": 0.5762932300567627,
+        "eval": "No Alineada"
+      }
+    ],
+    "eval": "Alineada"
+  },
+  {
+    "id": "HU8",
+    "desc": "As a patient, I want to receive notifications when my appointment is modified or canceled, so that I am always informed about my schedule.",
+    "alineacion": [
+      {
+        "id": "HUE16",
+        "desc": "As a patient, I want to be notified by email when my appointment is modified so I stay informed.",
+        "sim": 0.909567654132843,
+        "eval": "Alineada"
+      },
+      {
+        "id": "HUE17",
+        "desc": "As a patient, I want to be notified by text message to my phone number when my appointment is modified so I stay informed.",
+        "sim": 0.8544334769248962,
+        "eval": "Alineada"
+      },
+      {
+        "id": "HUE12",
+        "desc": "As administrative staff, I want to view a patient's scheduled appointments to consult their information.",
+        "sim": 0.6655009984970093,
+        "eval": "No Alineada"
+      },
+      {
+        "id": "HUE24",
+        "desc": "As administrative staff, I want to edit a doctor's attention hours to keep the information up to date.",
+        "sim": 0.6074865460395813,
+        "eval": "No Alineada"
+      },
+      {
+        "id": "HUE13",
+        "desc": "As administrative staff, I want to register an appointment to schedule a patient's medical care.",
+        "sim": 0.6063112616539001,
+        "eval": "No Alineada"
+      }
+    ],
+    "eval": "Alineada"
+  },
+  {
+    "id": "HU9",
+    "desc": "As an administrative staff member, I want to manage the status of appointments throughout their lifecycle, so that the hospital can track appointment outcomes.",
+    "alineacion": [
+      {
+        "id": "HUE13",
+        "desc": "As administrative staff, I want to register an appointment to schedule a patient's medical care.",
+        "sim": 0.7575075626373291,
+        "eval": "No Alineada"
+      },
+      {
+        "id": "HUE12",
+        "desc": "As administrative staff, I want to view a patient's scheduled appointments to consult their information.",
+        "sim": 0.7292633056640625,
+        "eval": "No Alineada"
+      },
+      {
+        "id": "HUE22",
+        "desc": "As administrative staff, I want to define a doctor's attention hours to enable appointment assignment.",
+        "sim": 0.6764017939567566,
+        "eval": "No Alineada"
+      },
+      {
+        "id": "HUE19",
+        "desc": "As a doctor, I want to register the diagnosis made during the appointment to document the medical care provided.",
+        "sim": 0.6672351360321045,
+        "eval": "No Alineada"
+      },
+      {
+        "id": "HUE24",
+        "desc": "As administrative staff, I want to edit a doctor's attention hours to keep the information up to date.",
+        "sim": 0.649925708770752,
+        "eval": "No Alineada"
+      }
+    ],
+    "eval": "No Alineada"
+  },
+  {
+    "id": "HU10",
+    "desc": "As a doctor, I want to register diagnoses, treatments, and patient’s clinical progress in the electronic clinical record, so that patient care is well documented.",
+    "alineacion": [
+      {
+        "id": "HUE4",
+        "desc": "As administrative staff, I want to register a patient's medical background in their electronic clinical record to understand their health status.",
+        "sim": 0.8206973075866699,
+        "eval": "No Alineada"
+      },
+      {
+        "id": "HUE19",
+        "desc": "As a doctor, I want to register the diagnosis made during the appointment to document the medical care provided.",
+        "sim": 0.7201403379440308,
+        "eval": "Alineada"
+      },
+      {
+        "id": "HUE20",
+        "desc": "As a patient, I want to consult my electronic clinical record to access my medical information.",
+        "sim": 0.6892874240875244,
+        "eval": "No Alineada"
+      },
+      {
+        "id": "HUE1",
+        "desc": "As administrative staff, I want to register a new patient's data to enroll them in the system.",
+        "sim": 0.6373454928398132,
+        "eval": "No Alineada"
+      },
+      {
+        "id": "HUE38",
+        "desc": "As a pharmacist, I want to register medications to keep the hospital inventory up to date.",
+        "sim": 0.6089714765548706,
+        "eval": "No Alineada"
+      }
+    ],
+    "eval": "Alineada"
+  },
+  {
+    "id": "HU11",
+    "desc": "As a patient, I want to consult my electronic clinical record, so that I can stay informed about my health history.",
+    "alineacion": [
+      {
+        "id": "HUE20",
+        "desc": "As a patient, I want to consult my electronic clinical record to access my medical information.",
+        "sim": 0.9514197707176208,
+        "eval": "Alineada"
+      },
+      {
+        "id": "HUE4",
+        "desc": "As administrative staff, I want to register a patient's medical background in their electronic clinical record to understand their health status.",
+        "sim": 0.8082257509231567,
+        "eval": "No Alineada"
+      },
+      {
+        "id": "HUE18",
+        "desc": "As a doctor, I want to access a patient's clinical record to review their prior information.",
+        "sim": 0.7763671875,
+        "eval": "No Alineada"
+      },
+      {
+        "id": "HUE11",
+        "desc": "As administrative staff, I want to view a patient's complete information to consult their personal data.",
+        "sim": 0.7405574321746826,
+        "eval": "No Alineada"
+      },
+      {
+        "id": "HUE19",
+        "desc": "As a doctor, I want to register the diagnosis made during the appointment to document the medical care provided.",
+        "sim": 0.6778534650802612,
+        "eval": "No Alineada"
+      }
+    ],
+    "eval": "Alineada"
+  },
+  {
+    "id": "HU12",
+    "desc": "As an administrator, I want to register medical professionals with their personal and contact details and associate specialties, so that the hospital can manage staff information.",
+    "alineacion": [
+      {
+        "id": "HUE21",
+        "desc": "As administrative staff, I want to register doctors with their respective specialties to enroll them in the system.",
+        "sim": 0.8331976532936096,
+        "eval": "Alineada"
+      },
+      {
+        "id": "HUE26",
+        "desc": "As administrative staff, I want to activate a registered doctor to keep the information up to date.",
+        "sim": 0.7226264476776123,
+        "eval": "No Alineada"
+      },
+      {
+        "id": "HUE1",
+        "desc": "As administrative staff, I want to register a new patient's data to enroll them in the system.",
+        "sim": 0.7186564207077026,
+        "eval": "No Alineada"
+      },
+      {
+        "id": "HUE13",
+        "desc": "As administrative staff, I want to register an appointment to schedule a patient's medical care.",
+        "sim": 0.7092331051826477,
+        "eval": "No Alineada"
+      },
+      {
+        "id": "HUE4",
+        "desc": "As administrative staff, I want to register a patient's medical background in their electronic clinical record to understand their health status.",
+        "sim": 0.6672890186309814,
+        "eval": "No Alineada"
+      }
+    ],
+    "eval": "Alineada"
+  },
+  {
+    "id": "HU13",
+    "desc": "As an administrator, I want to define and modify attention hours and activate/deactivate professionals for scheduling, so that doctor availability is accurately reflected.",
+    "alineacion": [
+      {
+        "id": "HUE22",
+        "desc": "As administrative staff, I want to define a doctor's attention hours to enable appointment assignment.",
+        "sim": 0.8293026089668274,
+        "eval": "Alineada"
+      },
+      {
+        "id": "HUE24",
+        "desc": "As administrative staff, I want to edit a doctor's attention hours to keep the information up to date.",
+        "sim": 0.7910474538803101,
+        "eval": "Alineada"
+      },
+      {
+        "id": "HUE13",
+        "desc": "As administrative staff, I want to register an appointment to schedule a patient's medical care.",
+        "sim": 0.6735475659370422,
+        "eval": "No Alineada"
+      },
+      {
+        "id": "HUE12",
+        "desc": "As administrative staff, I want to view a patient's scheduled appointments to consult their information.",
+        "sim": 0.6199449300765991,
+        "eval": "No Alineada"
+      },
+      {
+        "id": "HUE26",
+        "desc": "As administrative staff, I want to activate a registered doctor to keep the information up to date.",
+        "sim": 0.602165162563324,
+        "eval": "Alineada"
+      }
+    ],
+    "eval": "Alineada"
+  },
+  {
+    "id": "HU14",
+    "desc": "As an administrator, I want to manage roles and access permissions to system functionalities, so that users only access features relevant to their role.",
+    "alineacion": [
+      {
+        "id": "HUE27",
+        "desc": "As the system, I want to define system roles to organize access to functionalities.",
+        "sim": 0.7749392986297607,
+        "eval": "Alineada"
+      },
+      {
+        "id": "HUE28",
+        "desc": "As the system, I want to associate permissions with each role to control access to system functionalities.",
+        "sim": 0.759575366973877,
+        "eval": "Alineada"
+      },
+      {
+        "id": "HUE24",
+        "desc": "As administrative staff, I want to edit a doctor's attention hours to keep the information up to date.",
+        "sim": 0.2862640917301178,
+        "eval": "No Alineada"
+      },
+      {
+        "id": "HUE22",
+        "desc": "As administrative staff, I want to define a doctor's attention hours to enable appointment assignment.",
+        "sim": 0.28296607732772827,
+        "eval": "No Alineada"
+      },
+      {
+        "id": "HUE3",
+        "desc": "As administrative staff, I want to edit a registered patient's data to keep the information up to date.",
+        "sim": 0.2698711156845093,
+        "eval": "No Alineada"
+      }
+    ],
+    "eval": "Alineada"
+  },
+  {
+    "id": "HU15",
+    "desc": "As an administrative staff member, I want to generate electronic invoices for medical consultations and medication delivery, so that billing is accurate and efficient.",
+    "alineacion": [
+      {
+        "id": "HUE34",
+        "desc": "As administrative staff, I want to generate an invoice associated with a medication to have a payment receipt.",
+        "sim": 0.8436040282249451,
+        "eval": "Alineada"
+      },
+      {
+        "id": "HUE29",
+        "desc": "As administrative staff, I want to generate an invoice associated with an appointment to have a payment receipt.",
+        "sim": 0.817711353302002,
+        "eval": "Alineada"
+      },
+      {
+        "id": "HUE31",
+        "desc": "As a pharmacist, I want to generate an invoice associated with a medication to have a payment receipt.",
+        "sim": 0.7646281719207764,
+        "eval": "No Alineada"
+      },
+      {
+        "id": "HUE36",
+        "desc": "As a patient, I want to receive an email notification with the invoice attached to access the payment receipt.",
+        "sim": 0.5841235518455505,
+        "eval": "No Alineada"
+      },
+      {
+        "id": "HUE37",
+        "desc": "As a patient, I want to be notified by text message to my phone number with the invoice information to stay informed about the charge.",
+        "sim": 0.5621364116668701,
+        "eval": "No Alineada"
+      }
+    ],
+    "eval": "Alineada"
+  },
+  {
+    "id": "HU16",
+    "desc": "As a patient, I want to receive automatic notifications with attached digital invoices when an invoice is generated, so that I am promptly informed about charges.",
+    "alineacion": [
+      {
+        "id": "HUE37",
+        "desc": "As a patient, I want to be notified by text message to my phone number with the invoice information to stay informed about the charge.",
+        "sim": 0.7937950491905212,
+        "eval": "Alineada"
+      },
+      {
+        "id": "HUE36",
+        "desc": "As a patient, I want to receive an email notification with the invoice attached to access the payment receipt.",
+        "sim": 0.7842453122138977,
+        "eval": "Alineada"
+      },
+      {
+        "id": "HUE34",
+        "desc": "As administrative staff, I want to generate an invoice associated with a medication to have a payment receipt.",
+        "sim": 0.6949561238288879,
+        "eval": "No Alineada"
+      },
+      {
+        "id": "HUE29",
+        "desc": "As administrative staff, I want to generate an invoice associated with an appointment to have a payment receipt.",
+        "sim": 0.682033360004425,
+        "eval": "No Alineada"
+      },
+      {
+        "id": "HUE31",
+        "desc": "As a pharmacist, I want to generate an invoice associated with a medication to have a payment receipt.",
+        "sim": 0.6445319652557373,
+        "eval": "No Alineada"
+      }
+    ],
+    "eval": "Alineada"
+  },
+  {
+    "id": "HU17",
+    "desc": "As a pharmacist, I want to register medications and supplies with identification, stock, and expiration date, so that inventory is accurately tracked.",
+    "alineacion": [
+      {
+        "id": "HUE39",
+        "desc": "As a pharmacist, I want to register supplies to keep the hospital inventory up to date.",
+        "sim": 0.8840276002883911,
+        "eval": "Alineada"
+      },
+      {
+        "id": "HUE38",
+        "desc": "As a pharmacist, I want to register medications to keep the hospital inventory up to date.",
+        "sim": 0.8820039629936218,
+        "eval": "Alineada"
+      },
+      {
+        "id": "HUE44",
+        "desc": "As a pharmacist, I want to consult the medication inventory sorted by expiration date to identify medications about to expire.",
+        "sim": 0.7715839147567749,
+        "eval": "No Alineada"
+      },
+      {
+        "id": "HUE46",
+        "desc": "As a pharmacist, I want to consult the supply inventory sorted by expiration date to identify supplies about to expire.",
+        "sim": 0.7607625722885132,
+        "eval": "No Alineada"
+      },
+      {
+        "id": "HUE43",
+        "desc": "As a pharmacist, I want to consult the medication inventory sorted by available quantity to quickly identify medications with the lowest or highest stock.",
+        "sim": 0.686186671257019,
+        "eval": "No Alineada"
+      }
+    ],
+    "eval": "Alineada"
+  },
+  {
+    "id": "HU18",
+    "desc": "As a pharmacist, I want to automatically update stock when registering medication deliveries, so that inventory levels remain current.",
+    "alineacion": [
+      {
+        "id": "HUE38",
+        "desc": "As a pharmacist, I want to register medications to keep the hospital inventory up to date.",
+        "sim": 0.6955901980400085,
+        "eval": "No Alineada"
+      },
+      {
+        "id": "HUE39",
+        "desc": "As a pharmacist, I want to register supplies to keep the hospital inventory up to date.",
+        "sim": 0.6825560927391052,
+        "eval": "No Alineada"
+      },
+      {
+        "id": "HUE40",
+        "desc": "As a pharmacist, I want to edit how many medications are available to keep the hospital inventory up to date.",
+        "sim": 0.6625889539718628,
+        "eval": "No Alineada"
+      },
+      {
+        "id": "HUE43",
+        "desc": "As a pharmacist, I want to consult the medication inventory sorted by available quantity to quickly identify medications with the lowest or highest stock.",
+        "sim": 0.6448027491569519,
+        "eval": "No Alineada"
+      },
+      {
+        "id": "HUE41",
+        "desc": "As a pharmacist, I want to edit how many supplies are available to keep the hospital inventory up to date.",
+        "sim": 0.6422282457351685,
+        "eval": "No Alineada"
+      }
+    ],
+    "eval": "No Alineada"
+  },
+  {
+    "id": "HU19",
+    "desc": "As a pharmacist, I want to be notified when stock is low or items are about to expire, so that I can take timely action.",
+    "alineacion": [
+      {
+        "id": "HUE46",
+        "desc": "As a pharmacist, I want to consult the supply inventory sorted by expiration date to identify supplies about to expire.",
+        "sim": 0.7368255257606506,
+        "eval": "No Alineada"
+      },
+      {
+        "id": "HUE52",
+        "desc": "As a pharmacist, I want to know when a supply is about to expire to make timely decisions.",
+        "sim": 0.7102000713348389,
+        "eval": "Alineada"
+      },
+      {
+        "id": "HUE44",
+        "desc": "As a pharmacist, I want to consult the medication inventory sorted by expiration date to identify medications about to expire.",
+        "sim": 0.7092223167419434,
+        "eval": "No Alineada"
+      },
+      {
+        "id": "HUE51",
+        "desc": "As a pharmacist, I want to know when a medication is about to expire to make timely decisions.",
+        "sim": 0.6483432054519653,
+        "eval": "Alineada"
+      },
+      {
+        "id": "HUE45",
+        "desc": "As a pharmacist, I want to consult the supply inventory sorted by available quantity to quickly identify supplies with the lowest or highest stock.",
+        "sim": 0.6475881338119507,
+        "eval": "No Alineada"
+      }
+    ],
+    "eval": "Alineada"
+  },
+  {
+    "id": "HU20",
+    "desc": "As a pharmacist, I want to consult inventory sorted by available quantity or expiration date, so that I can manage stock efficiently.",
+    "alineacion": [
+      {
+        "id": "HUE46",
+        "desc": "As a pharmacist, I want to consult the supply inventory sorted by expiration date to identify supplies about to expire.",
+        "sim": 0.8703727126121521,
+        "eval": "Alineada"
+      },
+      {
+        "id": "HUE45",
+        "desc": "As a pharmacist, I want to consult the supply inventory sorted by available quantity to quickly identify supplies with the lowest or highest stock.",
+        "sim": 0.8611047267913818,
+        "eval": "Alineada"
+      },
+      {
+        "id": "HUE43",
+        "desc": "As a pharmacist, I want to consult the medication inventory sorted by available quantity to quickly identify medications with the lowest or highest stock.",
+        "sim": 0.860111653804779,
+        "eval": "Alineada"
+      },
+      {
+        "id": "HUE44",
+        "desc": "As a pharmacist, I want to consult the medication inventory sorted by expiration date to identify medications about to expire.",
+        "sim": 0.8354376554489136,
+        "eval": "Alineada"
+      },
+      {
+        "id": "HUE52",
+        "desc": "As a pharmacist, I want to know when a supply is about to expire to make timely decisions.",
+        "sim": 0.6632443070411682,
+        "eval": "No Alineada"
+      }
+    ],
+    "eval": "Alineada"
+  },
+  {
+    "id": "HU21",
+    "desc": "As an analyst, I want to generate reports on consultations by specialty, appointment status, financial income, and medication/supplies consumption, with date range filters, so that I can analyze hospital performance.",
+    "alineacion": [
+      {
+        "id": "HUE56",
+        "desc": "As an analyst, I want to view financial reports of the services to evaluate the hospital's income and economic performance.",
+        "sim": 0.6317234039306641,
+        "eval": "Alineada"
+      },
+      {
+        "id": "HUE55",
+        "desc": "As an analyst, I want to view appointment statistics by specialty to evaluate the workload.",
+        "sim": 0.6165250539779663,
+        "eval": "Alineada"
+      },
+      {
+        "id": "HUE57",
+        "desc": "As an analyst, I want to view supply consumption to evaluate the hospital's inventory usage.",
+        "sim": 0.5420498847961426,
+        "eval": "Alineada"
+      },
+      {
+        "id": "HUE11",
+        "desc": "As administrative staff, I want to view a patient's complete information to consult their personal data.",
+        "sim": 0.5238321423530579,
+        "eval": "No Alineada"
+      },
+      {
+        "id": "HUE12",
+        "desc": "As administrative staff, I want to view a patient's scheduled appointments to consult their information.",
+        "sim": 0.511269748210907,
+        "eval": "No Alineada"
+      }
+    ],
+    "eval": "Alineada"
+  },
+  {
+    "id": "HU22",
+    "desc": "As a system administrator, I want to ensure date validations prevent invalid ranges, so that data integrity is maintained.",
+    "alineacion": [
+      {
+        "id": "HUE46",
+        "desc": "As a pharmacist, I want to consult the supply inventory sorted by expiration date to identify supplies about to expire.",
+        "sim": 0.3132343292236328,
+        "eval": "No Alineada"
+      }
+    ],
+    "eval": "No Alineada"
+  },
+  {
+    "id": "HU23",
+    "desc": "As a system administrator, I want to ensure notifications are sent within a reasonable time after triggering events, so that users are promptly informed.",
+    "alineacion": [],
+    "eval": "No Alineada"
   }
 ]
