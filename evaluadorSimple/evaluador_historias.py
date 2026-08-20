@@ -4,23 +4,21 @@ import json
 with open("resultados/similitud_historias_all.json", "r", encoding="utf-8") as file:
     similitud_historias = json.load(file)
 
-def borrar_lineas(n):
-    for _ in range(n):
-        print("\033[1A\033[2K", end="")
-
 clasificacion = ["Alineada", "Posible", "Ausente"]
 
 res = []
 for historia in similitud_historias:
-    print(historia["id"])
-    print(historia["desc"])
-    print("\n")
-
     similares = historia["h_sim"]
     res_h = {"id": historia["id"], "desc": historia["desc"], "alineacion": [], "eval": "Ausente"}
     top = 0
     for similar in similares:
         top = top + 1
+
+        print("\n")
+        print(historia["id"])
+        print(historia["desc"])
+        print("\n")
+
         print(similar["id"])
         print(similar["desc"])
 
@@ -36,13 +34,11 @@ for historia in similitud_historias:
 
                 if opcion in [1, 2, 3, 4]:
                     break
-                borrar_lineas(1)
 
 
             except ValueError:
                 pass
 
-        borrar_lineas(9)
 
         if opcion == 4:
             break
@@ -55,10 +51,15 @@ for historia in similitud_historias:
             else:
                 res_h["eval"] = clasificacion[1]
             res_h["alineacion"].append({"sim": similar["sim"], "id": similar["id"]})
-        else:     
-            if res_h["eval"] != clasificacion[0]:
-                res_h["eval"] = clasificacion[opcion-1]
+        else:
+            if opcion == 2:
+                if ["eval"] == clasificacion[2]:
+                    res_h["alineacion"] = []
+                    res_h["eval"] = clasificacion[1]
                 res_h["alineacion"].append({"sim": similar["sim"], "id": similar["id"]})
+            else:
+                if ["eval"] == clasificacion[2]:
+                    res_h["alineacion"].append({"sim": similar["sim"], "id": similar["id"]})
         
         if (top >= 3):
             if res_h["eval"] != clasificacion[2]:
@@ -76,14 +77,9 @@ for historia in similitud_historias:
             if opcion in [1, 2]:
                 break
 
-            borrar_lineas(1)
-
-
         except ValueError:
             pass
-    if opcion == 1:
-        borrar_lineas(8)
-    else:
+    if opcion != 1:
         break
 
 with open(f"resultados/evaluador_historias.json", "w", encoding="utf-8") as file:

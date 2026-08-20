@@ -39,5 +39,258 @@
       }
     ],
     "eval": "Alineada"
+  },
+  {
+    "id": "HU4",
+    "desc": "As an authorized user, I want to visualize a patient's complete information, so that I can review all relevant details for care or administration.",
+    "alineacion": [
+      {
+        "sim": 0.8348504304885864,
+        "id": "HUE11"
+      },
+      {
+        "sim": 0.6389214992523193,
+        "id": "HUE18"
+      }
+    ],
+    "eval": "Alineada"
+  },
+  {
+    "id": "HU5",
+    "desc": "As an administrative staff member, I want to create medical appointments by associating the patient, specialty, and professional, so that appointments are scheduled accurately.",
+    "alineacion": [
+      {
+        "sim": 0.7196779847145081,
+        "id": "HUE13"
+      }
+    ],
+    "eval": "Alineada"
+  },
+  {
+    "id": "HU6",
+    "desc": "As an administrative staff member, I want to visualize the availability of registered doctors, so that I can schedule appointments efficiently.",
+    "alineacion": [
+      {
+        "sim": 0.5976335406303406,
+        "id": "HUE13"
+      }
+    ],
+    "eval": "Posible"
+  },
+  {
+    "id": "HU7",
+    "desc": "As an administrative staff member, I want to modify or cancel existing appointments, so that changes can be managed as needed.",
+    "alineacion": [
+      {
+        "sim": 0.8234935402870178,
+        "id": "HUE14"
+      },
+      {
+        "sim": 0.806688129901886,
+        "id": "HUE15"
+      }
+    ],
+    "eval": "Alineada"
+  },
+  {
+    "id": "HU8",
+    "desc": "As a patient, I want to receive notifications when my appointment is modified or canceled, so that I am always informed about my schedule.",
+    "alineacion": [
+      {
+        "sim": 0.909567654132843,
+        "id": "HUE16"
+      },
+      {
+        "sim": 0.8544334769248962,
+        "id": "HUE17"
+      }
+    ],
+    "eval": "Alineada"
+  },
+  {
+    "id": "HU9",
+    "desc": "As an administrative staff member, I want to manage the status of appointments throughout their lifecycle, so that the hospital can track appointment outcomes.",
+    "alineacion": [],
+    "eval": "Ausente"
+  },
+  {
+    "id": "HU10",
+    "desc": "As a doctor, I want to register diagnoses, treatments, and patient’s clinical progress in the electronic clinical record, so that patient care is well documented.",
+    "alineacion": [
+      {
+        "sim": 0.7201403379440308,
+        "id": "HUE19"
+      }
+    ],
+    "eval": "Alineada"
+  },
+  {
+    "id": "HU11",
+    "desc": "As a patient, I want to consult my electronic clinical record, so that I can stay informed about my health history.",
+    "alineacion": [
+      {
+        "sim": 0.9514197707176208,
+        "id": "HUE20"
+      }
+    ],
+    "eval": "Alineada"
+  },
+  {
+    "id": "HU12",
+    "desc": "As an administrator, I want to register medical professionals with their personal and contact details and associate specialties, so that the hospital can manage staff information.",
+    "alineacion": [
+      {
+        "sim": 0.8331976532936096,
+        "id": "HUE21"
+      }
+    ],
+    "eval": "Alineada"
+  },
+  {
+    "id": "HU13",
+    "desc": "As an administrator, I want to define and modify attention hours and activate/deactivate professionals for scheduling, so that doctor availability is accurately reflected.",
+    "alineacion": [
+      {
+        "sim": 0.8293026089668274,
+        "id": "HUE22"
+      },
+      {
+        "sim": 0.7910474538803101,
+        "id": "HUE24"
+      }
+    ],
+    "eval": "Alineada"
+  },
+  {
+    "id": "HU14",
+    "desc": "As an administrator, I want to manage roles and access permissions to system functionalities, so that users only access features relevant to their role.",
+    "alineacion": [
+      {
+        "sim": 0.7749392986297607,
+        "id": "HUE27"
+      },
+      {
+        "sim": 0.759575366973877,
+        "id": "HUE28"
+      }
+    ],
+    "eval": "Alineada"
+  },
+  {
+    "id": "HU15",
+    "desc": "As an administrative staff member, I want to generate electronic invoices for medical consultations and medication delivery, so that billing is accurate and efficient.",
+    "alineacion": [
+      {
+        "sim": 0.8436040282249451,
+        "id": "HUE34"
+      },
+      {
+        "sim": 0.817711353302002,
+        "id": "HUE29"
+      }
+    ],
+    "eval": "Alineada"
+  },
+  {
+    "id": "HU16",
+    "desc": "As a patient, I want to receive automatic notifications with attached digital invoices when an invoice is generated, so that I am promptly informed about charges.",
+    "alineacion": [
+      {
+        "sim": 0.7937950491905212,
+        "id": "HUE37"
+      },
+      {
+        "sim": 0.7842453122138977,
+        "id": "HUE36"
+      }
+    ],
+    "eval": "Alineada"
+  },
+  {
+    "id": "HU17",
+    "desc": "As a pharmacist, I want to register medications and supplies with identification, stock, and expiration date, so that inventory is accurately tracked.",
+    "alineacion": [
+      {
+        "sim": 0.8840276002883911,
+        "id": "HUE39"
+      },
+      {
+        "sim": 0.8820039629936218,
+        "id": "HUE38"
+      }
+    ],
+    "eval": "Alineada"
+  },
+  {
+    "id": "HU18",
+    "desc": "As a pharmacist, I want to automatically update stock when registering medication deliveries, so that inventory levels remain current.",
+    "alineacion": [
+      {
+        "id": "HUE42",
+        "sim": 0.5389548540115356
+      }
+    ],
+    "eval": "Posible"
+  },
+  {
+    "id": "HU19",
+    "desc": "As a pharmacist, I want to be notified when stock is low or items are about to expire, so that I can take timely action.",
+    "alineacion": [
+      {
+        "sim": 0.7102000713348389,
+        "id": "HUE52"
+      }
+    ],
+    "eval": "Alineada"
+  },
+  {
+    "id": "HU20",
+    "desc": "As a pharmacist, I want to consult inventory sorted by available quantity or expiration date, so that I can manage stock efficiently.",
+    "alineacion": [
+      {
+        "sim": 0.8703727126121521,
+        "id": "HUE46"
+      },
+      {
+        "sim": 0.8611047267913818,
+        "id": "HUE45"
+      },
+      {
+        "sim": 0.860111653804779,
+        "id": "HUE43"
+      }
+    ],
+    "eval": "Alineada"
+  },
+  {
+    "id": "HU21",
+    "desc": "As an analyst, I want to generate reports on consultations by specialty, appointment status, financial income, and medication/supplies consumption, with date range filters, so that I can analyze hospital performance.",
+    "alineacion": [
+      {
+        "sim": 0.6317234039306641,
+        "id": "HUE56"
+      },
+      {
+        "sim": 0.6165250539779663,
+        "id": "HUE55"
+      },
+      {
+        "sim": 0.5420498847961426,
+        "id": "HUE57"
+      }
+    ],
+    "eval": "Alineada"
+  },
+  {
+    "id": "HU22",
+    "desc": "As a system administrator, I want to ensure date validations prevent invalid ranges, so that data integrity is maintained.",
+    "alineacion": [],
+    "eval": "Ausente"
+  },
+  {
+    "id": "HU23",
+    "desc": "As a system administrator, I want to ensure notifications are sent within a reasonable time after triggering events, so that users are promptly informed.",
+    "alineacion": [],
+    "eval": "Ausente"
   }
 ]

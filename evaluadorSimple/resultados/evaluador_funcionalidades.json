@@ -15,98 +15,297 @@
     "desc": "Assign a unique identifier to each patient",
     "alineacion": [
       {
-        "sim": 0.5327528715133667,
-        "id": "HU5"
-      },
-      {
-        "sim": 0.5319581031799316,
-        "id": "HU1"
-      },
-      {
         "sim": 0.5239272713661194,
         "id": "HU3"
-      },
+      }
+    ],
+    "eval": "Alineada"
+  },
+  {
+    "id": "F3",
+    "desc": "Modify patient personal and contact information",
+    "alineacion": [
       {
-        "sim": 0.4428849518299103,
+        "sim": 0.9010364413261414,
         "id": "HU2"
-      },
+      }
+    ],
+    "eval": "Alineada"
+  },
+  {
+    "id": "F4",
+    "desc": "Record patient medical background such as allergies or chronic diseases",
+    "alineacion": [
       {
-        "sim": 0.4359031915664673,
-        "id": "HU9"
-      },
+        "sim": 0.6643303632736206,
+        "id": "HU1"
+      }
+    ],
+    "eval": "Alineada"
+  },
+  {
+    "id": "F5",
+    "desc": "Search patients by name, identity document or identifier",
+    "alineacion": [
       {
-        "sim": 0.42416948080062866,
-        "id": "HU10"
-      },
+        "sim": 0.8749357461929321,
+        "id": "HU3"
+      }
+    ],
+    "eval": "Alineada"
+  },
+  {
+    "id": "F6",
+    "desc": "View complete patient information",
+    "alineacion": [
       {
-        "sim": 0.41241273283958435,
-        "id": "HU12"
-      },
-      {
-        "sim": 0.39923644065856934,
-        "id": "HU17"
-      },
-      {
-        "sim": 0.37209001183509827,
+        "sim": 0.7575284838676453,
         "id": "HU4"
-      },
+      }
+    ],
+    "eval": "Alineada"
+  },
+  {
+    "id": "F7",
+    "desc": "Access patient personal and clinical information",
+    "alineacion": [
       {
-        "sim": 0.3718637526035309,
-        "id": "HU6"
-      },
-      {
-        "sim": 0.3252943754196167,
-        "id": "HU21"
-      },
-      {
-        "sim": 0.3166220486164093,
+        "sim": 0.6721223592758179,
         "id": "HU11"
       },
       {
-        "sim": 0.31547921895980835,
-        "id": "HU13"
-      },
-      {
-        "sim": 0.31074005365371704,
-        "id": "HU15"
-      },
-      {
-        "sim": 0.28088557720184326,
-        "id": "HU18"
-      },
-      {
-        "sim": 0.24954894185066223,
-        "id": "HU16"
-      },
-      {
-        "sim": 0.2467016577720642,
-        "id": "HU8"
-      },
-      {
-        "sim": 0.19697558879852295,
-        "id": "HU7"
-      },
-      {
-        "sim": 0.1880079060792923,
-        "id": "HU20"
-      },
-      {
-        "sim": 0.08323875069618225,
-        "id": "HU19"
-      },
-      {
-        "sim": 0.07665637135505676,
-        "id": "HU14"
-      },
-      {
-        "sim": 0.025916602462530136,
-        "id": "HU22"
-      },
-      {
-        "sim": 0.02332529053092003,
-        "id": "HU23"
+        "sim": 0.6640796661376953,
+        "id": "HU4"
       }
     ],
+    "eval": "Alineada"
+  },
+  {
+    "id": "F8",
+    "desc": "Create medical appointments linking patient, specialty and doctor",
+    "alineacion": [
+      {
+        "sim": 0.875446081161499,
+        "id": "HU5"
+      }
+    ],
+    "eval": "Alineada"
+  },
+  {
+    "id": "F9",
+    "desc": "View availability of registered doctors",
+    "alineacion": [
+      {
+        "sim": 0.7268349528312683,
+        "id": "HU6"
+      }
+    ],
+    "eval": "Alineada"
+  },
+  {
+    "id": "F10",
+    "desc": "Prevent overlapping medical appointments",
+    "alineacion": [
+      {
+        "sim": 0.5690890550613403,
+        "id": "HU5"
+      },
+      {
+        "sim": 0.534018337726593,
+        "id": "HU9"
+      },
+      {
+        "sim": 0.43780696392059326,
+        "id": "HU6"
+      }
+    ],
+    "eval": "Ausente"
+  },
+  {
+    "id": "F11",
+    "desc": "Modify appointment date and time",
+    "alineacion": [
+      {
+        "sim": 0.7490205764770508,
+        "id": "HU7"
+      }
+    ],
+    "eval": "Alineada"
+  },
+  {
+    "id": "F12",
+    "desc": "Cancel existing appointments",
+    "alineacion": [
+      {
+        "sim": 0.7144713401794434,
+        "id": "HU7"
+      }
+    ],
+    "eval": "Alineada"
+  },
+  {
+    "id": "F13",
+    "desc": "Notify patients when appointments are modified or canceled",
+    "alineacion": [
+      {
+        "sim": 0.8102291822433472,
+        "id": "HU8"
+      }
+    ],
+    "eval": "Alineada"
+  },
+  {
+    "id": "F14",
+    "desc": "Manage appointment lifecycle and status",
+    "alineacion": [
+      {
+        "sim": 0.7930425405502319,
+        "id": "HU9"
+      }
+    ],
+    "eval": "Alineada"
+  },
+  {
+    "id": "F15",
+    "desc": "Track appointment states such as confirmed, canceled or attended",
+    "alineacion": [
+      {
+        "sim": 0.6798989176750183,
+        "id": "HU9"
+      },
+      {
+        "sim": 0.51688551902771,
+        "id": "HU7"
+      }
+    ],
+    "eval": "Alineada"
+  },
+  {
+    "id": "F16",
+    "desc": "Register diagnoses, treatments and clinical progress",
+    "alineacion": [
+      {
+        "sim": 0.7249699831008911,
+        "id": "HU10"
+      }
+    ],
+    "eval": "Alineada"
+  },
+  {
+    "id": "F17",
+    "desc": "Edit electronic clinical records",
+    "alineacion": [
+      {
+        "sim": 0.6263439655303955,
+        "id": "HU2"
+      }
+    ],
+    "eval": "Alineada"
+  },
+  {
+    "id": "F18",
+    "desc": "Associate a date with each clinical record entry",
+    "alineacion": [
+      {
+        "sim": 0.6071735620498657,
+        "id": "HU10"
+      }
+    ],
+    "eval": "Alineada"
+  },
+  {
+    "id": "F19",
+    "desc": "Store patient medical and clinical information",
+    "alineacion": [
+      {
+        "sim": 0.6765543222427368,
+        "id": "HU10"
+      },
+      {
+        "sim": 0.6680725812911987,
+        "id": "HU1"
+      },
+      {
+        "sim": 0.6071587800979614,
+        "id": "HU5"
+      }
+    ],
+    "eval": "Alineada"
+  },
+  {
+    "id": "F20",
+    "desc": "Restrict access to clinical information to authorized users",
+    "alineacion": [
+      {
+        "sim": 0.371441513299942,
+        "id": "HU14"
+      }
+    ],
+    "eval": "Posible"
+  },
+  {
+    "id": "F21",
+    "desc": "Allow doctors to access and review patient clinical history",
+    "alineacion": [
+      {
+        "sim": 0.5377680063247681,
+        "id": "HU4"
+      }
+    ],
+    "eval": "Posible"
+  },
+  {
+    "id": "F22",
+    "desc": "Allow patients to consult their electronic clinical record",
+    "alineacion": [
+      {
+        "sim": 0.7987211346626282,
+        "id": "HU11"
+      }
+    ],
+    "eval": "Alineada"
+  },
+  {
+    "id": "F23",
+    "desc": "Secure management of electronic medical records",
+    "alineacion": [
+      {
+        "sim": 0.4462004601955414,
+        "id": "HU4"
+      }
+    ],
+    "eval": "Posible"
+  },
+  {
+    "id": "F24",
+    "desc": "Register medical professionals with personal information",
+    "alineacion": [
+      {
+        "sim": 0.7957522869110107,
+        "id": "HU12"
+      }
+    ],
+    "eval": "Alineada"
+  },
+  {
+    "id": "F25",
+    "desc": "Associate medical specialties with professionals",
+    "alineacion": [
+      {
+        "sim": 0.6695049405097961,
+        "id": "HU5"
+      },
+      {
+        "sim": 0.6161085963249207,
+        "id": "HU12"
+      }
+    ],
+    "eval": "Alineada"
+  },
+  {
+    "id": "F26",
+    "desc": "Manage medical professional information",
+    "alineacion": [],
     "eval": "Ausente"
   }
 ]

@@ -7,10 +7,6 @@ with open("resultados/similitud_historias_criterios_all.json", "r", encoding="ut
 with open("resultados/evaluador_historias.json", "r", encoding="utf-8") as file:
     historias_evaluadas = json.load(file)
 
-def borrar_lineas(n):
-    for _ in range(n):
-        print("\033[1A\033[2K", end="")
-
 clasificacion = ["Alineada", "Posible", "Ausente"]
 historias_similares_alineadas = []
 for i in range(len(historias_evaluadas)):
@@ -25,13 +21,16 @@ res = []
 for historia_similar_alineada in historias_similares_alineadas:
     criterios = historia_similar_alineada["ac"]
     for criterio in criterios:
-        print(criterio["id"])
-        print(criterio["desc"])
-        print("\n")
         res_c = {"id": criterio["id"], "desc": criterio["desc"], "alineacion": [], "eval": "Ausente"}
         top = 0
         similares = criterio["ac_sim"]
         for similar in similares:
+
+            print("\n")
+            print(criterio["id"])
+            print(criterio["desc"])
+            print("\n")
+
             top = top + 1
             print(similar["id"])
             print(similar["desc"])
@@ -54,7 +53,6 @@ for historia_similar_alineada in historias_similares_alineadas:
                 except ValueError:
                     pass
 
-            borrar_lineas(9)
 
             if opcion == 4:
                 break
@@ -68,9 +66,14 @@ for historia_similar_alineada in historias_similares_alineadas:
                     res_c["eval"] = clasificacion[1]
                 res_c["alineacion"].append({"sim": similar["sim"], "id": similar["id"]})
             else:     
-                if res_c["eval"] != clasificacion[0]:
-                    res_c["eval"] = clasificacion[opcion-1]
+                if opcion == 2:
+                    if ["eval"] == clasificacion[2]:
+                        res_c["alineacion"] = []
+                        res_c["eval"] = clasificacion[1]
                     res_c["alineacion"].append({"sim": similar["sim"], "id": similar["id"]})
+                else:
+                    if ["eval"] == clasificacion[2]:
+                        res_c["alineacion"].append({"sim": similar["sim"], "id": similar["id"]})
             
             if (top >= 3):
                 if res_c["eval"] != clasificacion[2]:
@@ -89,14 +92,11 @@ for historia_similar_alineada in historias_similares_alineadas:
                     salir = True
                     break
 
-                borrar_lineas(1)
 
 
             except ValueError:
                 pass
-        if opcion == 1:
-            borrar_lineas(8)
-        else:
+        if opcion != 1:
             break
     print("1- Siguiente historia")
     print("2- Salir")
@@ -108,15 +108,12 @@ for historia_similar_alineada in historias_similares_alineadas:
                 salir = True
                 break
 
-            borrar_lineas(1)
 
 
         except ValueError:
             pass
-    if opcion == 1:
-        borrar_lineas(8)
-    else:
-            break
+    if opcion != 1:
+        break
     
 
 with open(f"resultados/evaluador_criterios.json", "w", encoding="utf-8") as file:
