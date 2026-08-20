@@ -1,11 +1,11 @@
 {
-  "total_evaluadas": 1,
+  "total_evaluadas": 23,
   "Alineada": {
-    "total": 1,
-    "porcentaje": 100.0
+    "total": 18,
+    "porcentaje": 78.26086956521739
   },
   "No Alineada": {
-    "total": 0,
-    "porcentaje": 0.0
+    "total": 5,
+    "porcentaje": 21.73913043478261
   }
 }

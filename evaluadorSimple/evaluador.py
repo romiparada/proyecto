@@ -1,6 +1,5 @@
-def evaluar_similares(res, elementos, sim_key):
+def evaluar_similares(res, elementos, sim_key, current_top=5):
     clasificacion = ["Alineada", "No Alineada"]
-    current_top = 5    
     for elemento in elementos:
         res_i = {"id": elemento["id"], "desc": elemento["desc"], "alineacion": [], "eval": clasificacion[1]}
         top = 0

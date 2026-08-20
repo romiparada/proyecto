@@ -87,7 +87,7 @@
         "id": "HUE10",
         "desc": "As a doctor, I want to search for a patient by their patient number to access their clinical record.",
         "sim": 0.8512654304504395,
-        "eval": "Alineada"
+        "eval": "No Alineada"
       },
       {
         "id": "HUE9",
@@ -204,10 +204,10 @@
         "id": "HUE13",
         "desc": "As administrative staff, I want to register an appointment to schedule a patient's medical care.",
         "sim": 0.5976335406303406,
-        "eval": "Alineada"
+        "eval": "No Alineada"
       }
     ],
-    "eval": "Alineada"
+    "eval": "No Alineada"
   },
   {
     "id": "HU7",

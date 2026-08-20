@@ -22,7 +22,7 @@ for i in range(len(historias_evaluadas)):
 res = []
 for historia_similar_alineada in historias_similares_alineadas:
     criterios = historia_similar_alineada["ac"]
-    evaluar_similares(res, criterios, "ac_sim")    
+    evaluar_similares(res, criterios, "ac_sim", 3)    
     print("1- Siguiente historia")
     print("2- Salir")
     while True:
