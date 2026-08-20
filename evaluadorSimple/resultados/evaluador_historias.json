@@ -1,11 +1,41 @@
 [
   {
+    "id": "HU1",
+    "desc": "As an administrative staff member, I want to register patients with personal data and medical background, so that the hospital can maintain accurate and complete patient records.",
+    "alineacion": [
+      {
+        "sim": 0.8611697554588318,
+        "id": "HUE1"
+      }
+    ],
+    "eval": "Alineada"
+  },
+  {
     "id": "HU2",
     "desc": "As an administrative staff member, I want to modify the personal and contact details of a registered patient, so that patient information remains up to date.",
     "alineacion": [
       {
         "sim": 0.8599282503128052,
         "id": "HUE3"
+      }
+    ],
+    "eval": "Alineada"
+  },
+  {
+    "id": "HU3",
+    "desc": "As an administrative staff member, I want to search for patients by name, identity document, or identifier number, so that I can quickly locate patient records.",
+    "alineacion": [
+      {
+        "sim": 0.8920508623123169,
+        "id": "HUE7"
+      },
+      {
+        "sim": 0.8908185958862305,
+        "id": "HUE6"
+      },
+      {
+        "sim": 0.879988431930542,
+        "id": "HUE5"
       }
     ],
     "eval": "Alineada"
