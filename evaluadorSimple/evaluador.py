@@ -27,7 +27,6 @@ def evaluar_similares(res, elementos, sim_key):
 
                     if opcion in [1, 2, 3]:
                         break
-                    borrar_lineas(1)
 
 
                 except ValueError:
