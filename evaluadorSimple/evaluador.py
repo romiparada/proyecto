@@ -7,13 +7,21 @@ def evaluar_similares(res, elementos, sim_key, current_top=5):
         for similar in similares:
 
             print("\n")
+            if "h_id" in elemento:
+                print(elemento["h_id"])
+                print(elemento["h_desc"])
             print(elemento["id"])
             print(elemento["desc"])
+
+
             print("\n")
 
             top = top + 1
             print(similar["id"])
             print(similar["desc"])
+            if "h_id" in similar:
+                print(similar["h_id"])
+                print(similar["h_desc"])
 
             print("\nClasificación")
             print("1 - Alineada")
