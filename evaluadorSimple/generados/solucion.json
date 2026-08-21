@@ -2,149 +2,149 @@
   {
     "desc": "As an administrative staff member, I want to register patients with personal data and medical background, so that the hospital can maintain accurate and complete patient records.",
     "ac": [
-      "The system allows entry of personal and medical background data.",
-      "Each patient receives a unique identifier.",
-      "Duplicate identity documents or identifiers are not allowed."
+      "The system allows entry of personal and medical background data",
+      "Each patient receives a unique identifier",
+      "Duplicate identity documents or identifiers are not allowed"
     ]
   },
   {
     "desc": "As an administrative staff member, I want to modify the personal and contact details of a registered patient, so that patient information remains up to date.",
     "ac": [
-      "The system allows editing of existing patient records."
+      "The system allows editing of existing patient records"
     ]
   },
   {
     "desc": "As an administrative staff member, I want to search for patients by name, identity document, or identifier number, so that I can quickly locate patient records.",
     "ac": [
-      "The system supports search by name, document, or identifier."
+      "The system supports search by name, document, or identifier"
     ]
   },
   {
     "desc": "As an authorized user, I want to visualize a patient's complete information, so that I can review all relevant details for care or administration.",
     "ac": [
-      "The system displays all patient data in a single view."
+      "The system displays all patient data in a single view"
     ]
   },
   {
     "desc": "As an administrative staff member, I want to create medical appointments by associating the patient, specialty, and professional, so that appointments are scheduled accurately.",
     "ac": [
-      "The system allows selection of patient, specialty, and doctor.",
-      "Overlapping appointments are prevented."
+      "The system allows selection of patient, specialty, and doctor",
+      "Overlapping appointments are prevented"
     ]
   },
   {
     "desc": "As an administrative staff member, I want to visualize the availability of registered doctors, so that I can schedule appointments efficiently.",
     "ac": [
-      "The system displays doctors’ schedules and availability."
+      "The system displays doctors’ schedules and availability"
     ]
   },
   {
     "desc": "As an administrative staff member, I want to modify or cancel existing appointments, so that changes can be managed as needed.",
     "ac": [
-      "The system allows editing and canceling of appointments.",
-      "Patients are notified of changes."
+      "The system allows editing and canceling of appointments",
+      "Patients are notified of changes"
     ]
   },
   {
     "desc": "As a patient, I want to receive notifications when my appointment is modified or canceled, so that I am always informed about my schedule.",
     "ac": [
-      "Notifications are sent promptly after changes."
+      "Notifications are sent promptly after changes"
     ]
   },
   {
     "desc": "As an administrative staff member, I want to manage the status of appointments throughout their lifecycle, so that the hospital can track appointment outcomes.",
     "ac": [
-      "Appointment statuses include Confirmed, Canceled, Attended, Not attended."
+      "Appointment statuses include Confirmed, Canceled, Attended, Not attended"
     ]
   },
   {
     "desc": "As a doctor, I want to register diagnoses, treatments, and patient’s clinical progress in the electronic clinical record, so that patient care is well documented.",
     "ac": [
-      "The system allows entry and editing of clinical records.",
-      "Each entry is timestamped."
+      "The system allows entry and editing of clinical records",
+      "Each entry is timestamped"
     ]
   },
   {
     "desc": "As a patient, I want to consult my electronic clinical record, so that I can stay informed about my health history.",
     "ac": [
-      "Patients can view but not edit their records.",
-      "Access is restricted to authorized users."
+      "Patients can view but not edit their records",
+      "Access is restricted to authorized users"
     ]
   },
   {
     "desc": "As an administrator, I want to register medical professionals with their personal and contact details and associate specialties, so that the hospital can manage staff information.",
     "ac": [
-      "The system allows entry and editing of staff data and specialties."
+      "The system allows entry and editing of staff data and specialties"
     ]
   },
   {
     "desc": "As an administrator, I want to define and modify attention hours and activate/deactivate professionals for scheduling, so that doctor availability is accurately reflected.",
     "ac": [
-      "The system supports setting and updating working hours.",
-      "Professionals can be activated or deactivated for scheduling."
+      "The system supports setting and updating working hours",
+      "Professionals can be activated or deactivated for scheduling"
     ]
   },
   {
     "desc": "As an administrator, I want to manage roles and access permissions to system functionalities, so that users only access features relevant to their role.",
     "ac": [
-      "The system enforces role-based access control.",
-      "Permissions are validated before actions are executed."
+      "The system enforces role-based access control",
+      "Permissions are validated before actions are executed"
     ]
   },
   {
     "desc": "As an administrative staff member, I want to generate electronic invoices for medical consultations and medication delivery, so that billing is accurate and efficient.",
     "ac": [
-      "The system generates invoices with unique identifiers.",
-      "Invoices are associated with patients and services."
+      "The system generates invoices with unique identifiers",
+      "Invoices are associated with patients and services"
     ]
   },
   {
     "desc": "As a patient, I want to receive automatic notifications with attached digital invoices when an invoice is generated, so that I am promptly informed about charges.",
     "ac": [
-      "Notifications are sent with invoice attachments."
+      "Notifications are sent with invoice attachments"
     ]
   },
   {
     "desc": "As a pharmacist, I want to register medications and supplies with identification, stock, and expiration date, so that inventory is accurately tracked.",
     "ac": [
-      "The system allows entry of medication/supply data."
+      "The system allows entry of medication/supply data"
     ]
   },
   {
     "desc": "As a pharmacist, I want to automatically update stock when registering medication deliveries, so that inventory levels remain current.",
     "ac": [
-      "Stock is updated in real time upon delivery."
+      "Stock is updated in real time upon delivery"
     ]
   },
   {
     "desc": "As a pharmacist, I want to be notified when stock is low or items are about to expire, so that I can take timely action.",
     "ac": [
-      "The system detects minimum stock and upcoming expirations and sends notifications."
+      "The system detects minimum stock and upcoming expirations and sends notifications"
     ]
   },
   {
     "desc": "As a pharmacist, I want to consult inventory sorted by available quantity or expiration date, so that I can manage stock efficiently.",
     "ac": [
-      "Inventory can be sorted by quantity or expiration."
+      "Inventory can be sorted by quantity or expiration"
     ]
   },
   {
     "desc": "As an analyst, I want to generate reports on consultations by specialty, appointment status, financial income, and medication/supplies consumption, with date range filters, so that I can analyze hospital performance.",
     "ac": [
-      "Reports include all specified metrics.",
-      "Reports can be filtered by date range."
+      "Reports include all specified metrics",
+      "Reports can be filtered by date range"
     ]
   },
   {
     "desc": "As a system administrator, I want to ensure date validations prevent invalid ranges, so that data integrity is maintained.",
     "ac": [
-      "The system does not allow invalid date ranges."
+      "The system does not allow invalid date ranges"
     ]
   },
   {
     "desc": "As a system administrator, I want to ensure notifications are sent within a reasonable time after triggering events, so that users are promptly informed.",
     "ac": [
-      "Notifications are sent shortly after relevant events."
+      "Notifications are sent shortly after relevant events"
     ]
   }
 ]
