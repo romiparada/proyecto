@@ -101,6 +101,7 @@ for i_f in range(len(embeddings_funcionalidades)):
         res_f_s = {}
         res_f_s["id"] = f"HU{int(idx) + 1}"
         res_f_s["desc"] = historias_generadas[idx]
+        res_f_s["ac"] = criterios_generados[idx]
         res_f_s["sim"] = float(score)
         res_f["h_sim"].append(res_f_s)
     

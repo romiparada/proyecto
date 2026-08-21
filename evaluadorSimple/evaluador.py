@@ -22,6 +22,10 @@ def evaluar_similares(res, elementos, sim_key, current_top=5):
             if "h_id" in similar:
                 print(similar["h_id"])
                 print(similar["h_desc"])
+            if "ac" in similar:
+                print("Criterios de aceptacion")
+                for criterio in similar["ac"]:
+                    print("- " + criterio)
 
             print("\nClasificación")
             print("1 - Alineada")
