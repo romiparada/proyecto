@@ -1,0 +1,4395 @@
+[
+  {
+    "id": "HU1",
+    "desc": "As an administrative staff member, I want to register patients with personal data and medical background, so that the hospital can maintain accurate and complete patient records.",
+    "h_sim": [
+      {
+        "id": "HUE1",
+        "desc": "As administrative staff, I want to register a new patient's data to enroll them in the system.",
+        "sim": 0.8611697554588318,
+        "ac": [
+          {
+            "id": "AC1.1",
+            "desc": "The system allows entry of personal and medical background data.",
+            "ac_sim": [
+              {
+                "id": "ACE1.1",
+                "desc": "The system must request the full name, date of birth, sex, identity document, and contact details (email address and phone number).",
+                "sim": 0.6262912154197693
+              },
+              {
+                "id": "ACE1.3",
+                "desc": "The system must assign a unique patient number to the new patient.",
+                "sim": 0.5087906718254089
+              },
+              {
+                "id": "ACE1.2",
+                "desc": "The system must display an error if a patient with the entered identity document already exists.",
+                "sim": 0.46177083253860474
+              }
+            ]
+          },
+          {
+            "id": "AC1.2",
+            "desc": "Each patient receives a unique identifier.",
+            "ac_sim": [
+              {
+                "id": "ACE1.3",
+                "desc": "The system must assign a unique patient number to the new patient.",
+                "sim": 0.7944409847259521
+              },
+              {
+                "id": "ACE1.2",
+                "desc": "The system must display an error if a patient with the entered identity document already exists.",
+                "sim": 0.5879970788955688
+              },
+              {
+                "id": "ACE1.1",
+                "desc": "The system must request the full name, date of birth, sex, identity document, and contact details (email address and phone number).",
+                "sim": 0.3561069965362549
+              }
+            ]
+          },
+          {
+            "id": "AC1.3",
+            "desc": "Duplicate identity documents or identifiers are not allowed.",
+            "ac_sim": [
+              {
+                "id": "ACE1.2",
+                "desc": "The system must display an error if a patient with the entered identity document already exists.",
+                "sim": 0.6143319606781006
+              },
+              {
+                "id": "ACE1.1",
+                "desc": "The system must request the full name, date of birth, sex, identity document, and contact details (email address and phone number).",
+                "sim": 0.4339950978755951
+              },
+              {
+                "id": "ACE1.3",
+                "desc": "The system must assign a unique patient number to the new patient.",
+                "sim": 0.405264288187027
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "HUE4",
+        "desc": "As administrative staff, I want to register a patient's medical background in their electronic clinical record to understand their health status.",
+        "sim": 0.8226608037948608,
+        "ac": [
+          {
+            "id": "AC1.1",
+            "desc": "The system allows entry of personal and medical background data.",
+            "ac_sim": [
+              {
+                "id": "ACE4.2",
+                "desc": "The system must allow entering chronic diseases, allergies, relevant injuries, and regular medications along with the date they started/occurred, with the option to indicate \"from birth\".",
+                "sim": 0.5473064184188843
+              },
+              {
+                "id": "ACE4.1",
+                "desc": "The system must allow entering the patient's blood type.",
+                "sim": 0.475571870803833
+              }
+            ]
+          },
+          {
+            "id": "AC1.2",
+            "desc": "Each patient receives a unique identifier.",
+            "ac_sim": [
+              {
+                "id": "ACE4.2",
+                "desc": "The system must allow entering chronic diseases, allergies, relevant injuries, and regular medications along with the date they started/occurred, with the option to indicate \"from birth\".",
+                "sim": 0.4882555603981018
+              },
+              {
+                "id": "ACE4.1",
+                "desc": "The system must allow entering the patient's blood type.",
+                "sim": 0.46315205097198486
+              }
+            ]
+          },
+          {
+            "id": "AC1.3",
+            "desc": "Duplicate identity documents or identifiers are not allowed.",
+            "ac_sim": [
+              {
+                "id": "ACE4.2",
+                "desc": "The system must allow entering chronic diseases, allergies, relevant injuries, and regular medications along with the date they started/occurred, with the option to indicate \"from birth\".",
+                "sim": 0.2216443568468094
+              },
+              {
+                "id": "ACE4.1",
+                "desc": "The system must allow entering the patient's blood type.",
+                "sim": 0.13783791661262512
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "HUE13",
+        "desc": "As administrative staff, I want to register an appointment to schedule a patient's medical care.",
+        "sim": 0.7280365228652954,
+        "ac": [
+          {
+            "id": "AC1.1",
+            "desc": "The system allows entry of personal and medical background data.",
+            "ac_sim": [
+              {
+                "id": "ACE13.1",
+                "desc": "The system must allow selecting the specialty and doctor for the appointment.",
+                "sim": 0.4892888367176056
+              },
+              {
+                "id": "ACE13.2",
+                "desc": "The system must display the available time slots in the selected doctor's schedule.",
+                "sim": 0.4144858419895172
+              },
+              {
+                "id": "ACE13.3",
+                "desc": "The system must display an error if an appointment already exists at that time slot.",
+                "sim": 0.23084190487861633
+              },
+              {
+                "id": "ACE13.4",
+                "desc": "The system must change the appointment status to \"Confirmed\" after a successful registration.",
+                "sim": 0.1978018879890442
+              }
+            ]
+          },
+          {
+            "id": "AC1.2",
+            "desc": "Each patient receives a unique identifier.",
+            "ac_sim": [
+              {
+                "id": "ACE13.1",
+                "desc": "The system must allow selecting the specialty and doctor for the appointment.",
+                "sim": 0.5176430940628052
+              },
+              {
+                "id": "ACE13.2",
+                "desc": "The system must display the available time slots in the selected doctor's schedule.",
+                "sim": 0.3815124034881592
+              },
+              {
+                "id": "ACE13.3",
+                "desc": "The system must display an error if an appointment already exists at that time slot.",
+                "sim": 0.29763174057006836
+              },
+              {
+                "id": "ACE13.4",
+                "desc": "The system must change the appointment status to \"Confirmed\" after a successful registration.",
+                "sim": 0.25410640239715576
+              }
+            ]
+          },
+          {
+            "id": "AC1.3",
+            "desc": "Duplicate identity documents or identifiers are not allowed.",
+            "ac_sim": [
+              {
+                "id": "ACE13.4",
+                "desc": "The system must change the appointment status to \"Confirmed\" after a successful registration.",
+                "sim": 0.31586015224456787
+              },
+              {
+                "id": "ACE13.3",
+                "desc": "The system must display an error if an appointment already exists at that time slot.",
+                "sim": 0.2839665412902832
+              },
+              {
+                "id": "ACE13.1",
+                "desc": "The system must allow selecting the specialty and doctor for the appointment.",
+                "sim": 0.20217552781105042
+              },
+              {
+                "id": "ACE13.2",
+                "desc": "The system must display the available time slots in the selected doctor's schedule.",
+                "sim": 0.1156737357378006
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "HUE21",
+        "desc": "As administrative staff, I want to register doctors with their respective specialties to enroll them in the system.",
+        "sim": 0.7007442712783813,
+        "ac": [
+          {
+            "id": "AC1.1",
+            "desc": "The system allows entry of personal and medical background data.",
+            "ac_sim": [
+              {
+                "id": "ACE21.1",
+                "desc": "The system must allow registering the doctor's full name, identity document number, and contact details (email address and phone number).",
+                "sim": 0.6184711456298828
+              },
+              {
+                "id": "ACE21.2",
+                "desc": "The system must allow associating a specialty with the doctor being registered.",
+                "sim": 0.4794253408908844
+              },
+              {
+                "id": "ACE21.3",
+                "desc": "The system must allow defining the doctor's status as active or inactive.",
+                "sim": 0.439830482006073
+              },
+              {
+                "id": "ACE21.4",
+                "desc": "The doctor's name and identity document cannot be left empty in the registration.",
+                "sim": 0.4044017195701599
+              }
+            ]
+          },
+          {
+            "id": "AC1.2",
+            "desc": "Each patient receives a unique identifier.",
+            "ac_sim": [
+              {
+                "id": "ACE21.1",
+                "desc": "The system must allow registering the doctor's full name, identity document number, and contact details (email address and phone number).",
+                "sim": 0.5650414228439331
+              },
+              {
+                "id": "ACE21.4",
+                "desc": "The doctor's name and identity document cannot be left empty in the registration.",
+                "sim": 0.5250577330589294
+              },
+              {
+                "id": "ACE21.2",
+                "desc": "The system must allow associating a specialty with the doctor being registered.",
+                "sim": 0.5128893852233887
+              },
+              {
+                "id": "ACE21.3",
+                "desc": "The system must allow defining the doctor's status as active or inactive.",
+                "sim": 0.4601459205150604
+              }
+            ]
+          },
+          {
+            "id": "AC1.3",
+            "desc": "Duplicate identity documents or identifiers are not allowed.",
+            "ac_sim": [
+              {
+                "id": "ACE21.4",
+                "desc": "The doctor's name and identity document cannot be left empty in the registration.",
+                "sim": 0.5542006492614746
+              },
+              {
+                "id": "ACE21.1",
+                "desc": "The system must allow registering the doctor's full name, identity document number, and contact details (email address and phone number).",
+                "sim": 0.4583134353160858
+              },
+              {
+                "id": "ACE21.2",
+                "desc": "The system must allow associating a specialty with the doctor being registered.",
+                "sim": 0.2907176911830902
+              },
+              {
+                "id": "ACE21.3",
+                "desc": "The system must allow defining the doctor's status as active or inactive.",
+                "sim": 0.2075803577899933
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "HUE11",
+        "desc": "As administrative staff, I want to view a patient's complete information to consult their personal data.",
+        "sim": 0.6981948614120483,
+        "ac": [
+          {
+            "id": "AC1.1",
+            "desc": "The system allows entry of personal and medical background data.",
+            "ac_sim": [
+              {
+                "id": "ACE11.1",
+                "desc": "The system must display the patient's personal data: full name, date of birth, sex, identity document, and contact details (email address and phone number).",
+                "sim": 0.7491862773895264
+              },
+              {
+                "id": "ACE11.2",
+                "desc": "The system must display the patient number.",
+                "sim": 0.5556460618972778
+              }
+            ]
+          },
+          {
+            "id": "AC1.2",
+            "desc": "Each patient receives a unique identifier.",
+            "ac_sim": [
+              {
+                "id": "ACE11.2",
+                "desc": "The system must display the patient number.",
+                "sim": 0.6704012155532837
+              },
+              {
+                "id": "ACE11.1",
+                "desc": "The system must display the patient's personal data: full name, date of birth, sex, identity document, and contact details (email address and phone number).",
+                "sim": 0.6378601789474487
+              }
+            ]
+          },
+          {
+            "id": "AC1.3",
+            "desc": "Duplicate identity documents or identifiers are not allowed.",
+            "ac_sim": [
+              {
+                "id": "ACE11.1",
+                "desc": "The system must display the patient's personal data: full name, date of birth, sex, identity document, and contact details (email address and phone number).",
+                "sim": 0.3006907105445862
+              },
+              {
+                "id": "ACE11.2",
+                "desc": "The system must display the patient number.",
+                "sim": 0.25473418831825256
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "HU2",
+    "desc": "As an administrative staff member, I want to modify the personal and contact details of a registered patient, so that patient information remains up to date.",
+    "h_sim": [
+      {
+        "id": "HUE3",
+        "desc": "As administrative staff, I want to edit a registered patient's data to keep the information up to date.",
+        "sim": 0.8599282503128052,
+        "ac": [
+          {
+            "id": "AC2.1",
+            "desc": "The system allows editing of existing patient records.",
+            "ac_sim": [
+              {
+                "id": "ACE3.1",
+                "desc": "The system must allow modifying the full name, date of birth, sex, identity document, and contact details (email address and phone number).",
+                "sim": 0.5526004433631897
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "HUE23",
+        "desc": "As administrative staff, I want to edit a registered doctor's data to keep the information up to date.",
+        "sim": 0.8337119221687317,
+        "ac": [
+          {
+            "id": "AC2.1",
+            "desc": "The system allows editing of existing patient records.",
+            "ac_sim": [
+              {
+                "id": "ACE23.1",
+                "desc": "The system must allow editing the doctor's full name, identity document number, and contact details.",
+                "sim": 0.7503469586372375
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "HUE24",
+        "desc": "As administrative staff, I want to edit a doctor's attention hours to keep the information up to date.",
+        "sim": 0.6954217553138733,
+        "ac": [
+          {
+            "id": "AC2.1",
+            "desc": "The system allows editing of existing patient records.",
+            "ac_sim": [
+              {
+                "id": "ACE24.1",
+                "desc": "The system must allow editing the days of the week for attention.",
+                "sim": 0.376548707485199
+              },
+              {
+                "id": "ACE24.2",
+                "desc": "The system must allow editing the start time and end time for a day of the week.",
+                "sim": 0.371463418006897
+              },
+              {
+                "id": "ACE24.3",
+                "desc": "The system must display an error if the time slots for the same day overlap.",
+                "sim": 0.17261211574077606
+              },
+              {
+                "id": "ACE24.4",
+                "desc": "The system must display an error if the start times precede the end times.",
+                "sim": 0.09553832560777664
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "HUE1",
+        "desc": "As administrative staff, I want to register a new patient's data to enroll them in the system.",
+        "sim": 0.6384193301200867,
+        "ac": [
+          {
+            "id": "AC2.1",
+            "desc": "The system allows editing of existing patient records.",
+            "ac_sim": [
+              {
+                "id": "ACE1.3",
+                "desc": "The system must assign a unique patient number to the new patient.",
+                "sim": 0.628138542175293
+              },
+              {
+                "id": "ACE1.2",
+                "desc": "The system must display an error if a patient with the entered identity document already exists.",
+                "sim": 0.48229506611824036
+              },
+              {
+                "id": "ACE1.1",
+                "desc": "The system must request the full name, date of birth, sex, identity document, and contact details (email address and phone number).",
+                "sim": 0.2994486391544342
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "HUE4",
+        "desc": "As administrative staff, I want to register a patient's medical background in their electronic clinical record to understand their health status.",
+        "sim": 0.6163924336433411,
+        "ac": [
+          {
+            "id": "AC2.1",
+            "desc": "The system allows editing of existing patient records.",
+            "ac_sim": [
+              {
+                "id": "ACE4.2",
+                "desc": "The system must allow entering chronic diseases, allergies, relevant injuries, and regular medications along with the date they started/occurred, with the option to indicate \"from birth\".",
+                "sim": 0.4508814811706543
+              },
+              {
+                "id": "ACE4.1",
+                "desc": "The system must allow entering the patient's blood type.",
+                "sim": 0.442314475774765
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "HU3",
+    "desc": "As an administrative staff member, I want to search for patients by name, identity document, or identifier number, so that I can quickly locate patient records.",
+    "h_sim": [
+      {
+        "id": "HUE7",
+        "desc": "As administrative staff, I want to search for a patient by their patient number to retrieve their record.",
+        "sim": 0.8920508623123169,
+        "ac": [
+          {
+            "id": "AC3.1",
+            "desc": "The system supports search by name, document, or identifier.",
+            "ac_sim": [
+              {
+                "id": "ACE7.1",
+                "desc": "The system must display a search field that allows entering the patient number.",
+                "sim": 0.523820161819458
+              },
+              {
+                "id": "ACE7.2",
+                "desc": "The system must display a list of patients whose patient numbers match the entered data.",
+                "sim": 0.3676239550113678
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "HUE6",
+        "desc": "As administrative staff, I want to search for a patient by their identity document to retrieve their record.",
+        "sim": 0.8908185958862305,
+        "ac": [
+          {
+            "id": "AC3.1",
+            "desc": "The system supports search by name, document, or identifier.",
+            "ac_sim": [
+              {
+                "id": "ACE6.1",
+                "desc": "The system must display a search field that allows entering the identity document.",
+                "sim": 0.62112957239151
+              },
+              {
+                "id": "ACE6.2",
+                "desc": "The system must display a list of patients whose documents match the entered data.",
+                "sim": 0.4894271492958069
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "HUE5",
+        "desc": "As administrative staff, I want to search for a patient by their name to access their information.",
+        "sim": 0.879988431930542,
+        "ac": [
+          {
+            "id": "AC3.1",
+            "desc": "The system supports search by name, document, or identifier.",
+            "ac_sim": [
+              {
+                "id": "ACE5.1",
+                "desc": "The system must display a search field that allows entering the name.",
+                "sim": 0.6144641637802124
+              },
+              {
+                "id": "ACE5.2",
+                "desc": "The system must display a list of patients whose names match the entered data.",
+                "sim": 0.44173508882522583
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "HUE10",
+        "desc": "As a doctor, I want to search for a patient by their patient number to access their clinical record.",
+        "sim": 0.8512654304504395,
+        "ac": [
+          {
+            "id": "AC3.1",
+            "desc": "The system supports search by name, document, or identifier.",
+            "ac_sim": [
+              {
+                "id": "ACE10.1",
+                "desc": "The system must have a search field that allows searching by patient number.",
+                "sim": 0.5952114462852478
+              },
+              {
+                "id": "ACE10.2",
+                "desc": "The system must display a list of patients whose patient numbers match the entered data.",
+                "sim": 0.3676239550113678
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "HUE9",
+        "desc": "As a doctor, I want to search for a patient by their identity document to access their clinical record.",
+        "sim": 0.8506389856338501,
+        "ac": [
+          {
+            "id": "AC3.1",
+            "desc": "The system supports search by name, document, or identifier.",
+            "ac_sim": [
+              {
+                "id": "ACE9.1",
+                "desc": "The system must display a search field that allows entering the identity document.",
+                "sim": 0.62112957239151
+              },
+              {
+                "id": "ACE9.2",
+                "desc": "The system must display a list of patients whose documents match the entered data.",
+                "sim": 0.4894271492958069
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "HU4",
+    "desc": "As an authorized user, I want to visualize a patient's complete information, so that I can review all relevant details for care or administration.",
+    "h_sim": [
+      {
+        "id": "HUE11",
+        "desc": "As administrative staff, I want to view a patient's complete information to consult their personal data.",
+        "sim": 0.8348504304885864,
+        "ac": [
+          {
+            "id": "AC4.1",
+            "desc": "The system displays all patient data in a single view.",
+            "ac_sim": [
+              {
+                "id": "ACE11.2",
+                "desc": "The system must display the patient number.",
+                "sim": 0.6183780431747437
+              },
+              {
+                "id": "ACE11.1",
+                "desc": "The system must display the patient's personal data: full name, date of birth, sex, identity document, and contact details (email address and phone number).",
+                "sim": 0.5973355174064636
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "HUE12",
+        "desc": "As administrative staff, I want to view a patient's scheduled appointments to consult their information.",
+        "sim": 0.6401694416999817,
+        "ac": [
+          {
+            "id": "AC4.1",
+            "desc": "The system displays all patient data in a single view.",
+            "ac_sim": [
+              {
+                "id": "ACE12.1",
+                "desc": "The system must display the appointment details: specialty, doctor, schedule, and status.",
+                "sim": 0.5587224960327148
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "HUE18",
+        "desc": "As a doctor, I want to access a patient's clinical record to review their prior information.",
+        "sim": 0.6389214992523193,
+        "ac": [
+          {
+            "id": "AC4.1",
+            "desc": "The system displays all patient data in a single view.",
+            "ac_sim": [
+              {
+                "id": "ACE18.3",
+                "desc": "The system must display the patient's medical background.",
+                "sim": 0.6568102836608887
+              },
+              {
+                "id": "ACE18.2",
+                "desc": "The system must list the diagnoses for each appointment confirmed by the patient.",
+                "sim": 0.5643596053123474
+              },
+              {
+                "id": "ACE18.1",
+                "desc": "The system must allow access to the clinical record only to users with the doctor role.",
+                "sim": 0.38127338886260986
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "HUE35",
+        "desc": "As administrative staff, I want to view a patient's medications to consult their medications.",
+        "sim": 0.637816309928894,
+        "ac": [
+          {
+            "id": "AC4.1",
+            "desc": "The system displays all patient data in a single view.",
+            "ac_sim": [
+              {
+                "id": "ACE35.1",
+                "desc": "The system must list the patient's medications.",
+                "sim": 0.4688912034034729
+              },
+              {
+                "id": "ACE35.2",
+                "desc": "The system must allow generating the invoice.",
+                "sim": 0.21591515839099884
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "HUE20",
+        "desc": "As a patient, I want to consult my electronic clinical record to access my medical information.",
+        "sim": 0.6214684844017029,
+        "ac": [
+          {
+            "id": "AC4.1",
+            "desc": "The system displays all patient data in a single view.",
+            "ac_sim": [
+              {
+                "id": "ACE20.1",
+                "desc": "The system must list all appointments associated with the patient.",
+                "sim": 0.5940907001495361
+              },
+              {
+                "id": "ACE20.3",
+                "desc": "The system must list all invoices associated with the patient.",
+                "sim": 0.5285832285881042
+              },
+              {
+                "id": "ACE20.2",
+                "desc": "The system must list all medications associated with the patient.",
+                "sim": 0.48057228326797485
+              },
+              {
+                "id": "ACE20.5",
+                "desc": "The system must allow viewing the details of each listed item.",
+                "sim": 0.4792402386665344
+              },
+              {
+                "id": "ACE20.4",
+                "desc": "The system must allow sorting the information by date, responsible doctor, or specialty.",
+                "sim": 0.4328230023384094
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "HU5",
+    "desc": "As an administrative staff member, I want to create medical appointments by associating the patient, specialty, and professional, so that appointments are scheduled accurately.",
+    "h_sim": [
+      {
+        "id": "HUE13",
+        "desc": "As administrative staff, I want to register an appointment to schedule a patient's medical care.",
+        "sim": 0.7196779847145081,
+        "ac": [
+          {
+            "id": "AC5.1",
+            "desc": "The system allows selection of patient, specialty, and doctor.",
+            "ac_sim": [
+              {
+                "id": "ACE13.1",
+                "desc": "The system must allow selecting the specialty and doctor for the appointment.",
+                "sim": 0.882560670375824
+              },
+              {
+                "id": "ACE13.2",
+                "desc": "The system must display the available time slots in the selected doctor's schedule.",
+                "sim": 0.6266120672225952
+              },
+              {
+                "id": "ACE13.3",
+                "desc": "The system must display an error if an appointment already exists at that time slot.",
+                "sim": 0.2930790185928345
+              },
+              {
+                "id": "ACE13.4",
+                "desc": "The system must change the appointment status to \"Confirmed\" after a successful registration.",
+                "sim": 0.28038591146469116
+              }
+            ]
+          },
+          {
+            "id": "AC5.2",
+            "desc": "Overlapping appointments are prevented.",
+            "ac_sim": [
+              {
+                "id": "ACE13.3",
+                "desc": "The system must display an error if an appointment already exists at that time slot.",
+                "sim": 0.6279420256614685
+              },
+              {
+                "id": "ACE13.2",
+                "desc": "The system must display the available time slots in the selected doctor's schedule.",
+                "sim": 0.43891245126724243
+              },
+              {
+                "id": "ACE13.1",
+                "desc": "The system must allow selecting the specialty and doctor for the appointment.",
+                "sim": 0.42420071363449097
+              },
+              {
+                "id": "ACE13.4",
+                "desc": "The system must change the appointment status to \"Confirmed\" after a successful registration.",
+                "sim": 0.4074971377849579
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "HUE22",
+        "desc": "As administrative staff, I want to define a doctor's attention hours to enable appointment assignment.",
+        "sim": 0.70175701379776,
+        "ac": [
+          {
+            "id": "AC5.1",
+            "desc": "The system allows selection of patient, specialty, and doctor.",
+            "ac_sim": [
+              {
+                "id": "ACE22.2",
+                "desc": "The system must allow defining more than one time slot per day.",
+                "sim": 0.33665966987609863
+              },
+              {
+                "id": "ACE22.1",
+                "desc": "The system must allow defining the start time and end time per day of the week.",
+                "sim": 0.3153618276119232
+              },
+              {
+                "id": "ACE22.3",
+                "desc": "The system must display an error if the time slots for the same day overlap.",
+                "sim": 0.21601708233356476
+              },
+              {
+                "id": "ACE22.4",
+                "desc": "The system must display an error if the start times precede the end times.",
+                "sim": 0.11777231097221375
+              }
+            ]
+          },
+          {
+            "id": "AC5.2",
+            "desc": "Overlapping appointments are prevented.",
+            "ac_sim": [
+              {
+                "id": "ACE22.3",
+                "desc": "The system must display an error if the time slots for the same day overlap.",
+                "sim": 0.5778213739395142
+              },
+              {
+                "id": "ACE22.2",
+                "desc": "The system must allow defining more than one time slot per day.",
+                "sim": 0.4620816707611084
+              },
+              {
+                "id": "ACE22.1",
+                "desc": "The system must allow defining the start time and end time per day of the week.",
+                "sim": 0.37613457441329956
+              },
+              {
+                "id": "ACE22.4",
+                "desc": "The system must display an error if the start times precede the end times.",
+                "sim": 0.3174654245376587
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "HUE21",
+        "desc": "As administrative staff, I want to register doctors with their respective specialties to enroll them in the system.",
+        "sim": 0.6889938712120056,
+        "ac": [
+          {
+            "id": "AC5.1",
+            "desc": "The system allows selection of patient, specialty, and doctor.",
+            "ac_sim": [
+              {
+                "id": "ACE21.2",
+                "desc": "The system must allow associating a specialty with the doctor being registered.",
+                "sim": 0.7212491035461426
+              },
+              {
+                "id": "ACE21.3",
+                "desc": "The system must allow defining the doctor's status as active or inactive.",
+                "sim": 0.6416811943054199
+              },
+              {
+                "id": "ACE21.1",
+                "desc": "The system must allow registering the doctor's full name, identity document number, and contact details (email address and phone number).",
+                "sim": 0.5961011052131653
+              },
+              {
+                "id": "ACE21.4",
+                "desc": "The doctor's name and identity document cannot be left empty in the registration.",
+                "sim": 0.4494723677635193
+              }
+            ]
+          },
+          {
+            "id": "AC5.2",
+            "desc": "Overlapping appointments are prevented.",
+            "ac_sim": [
+              {
+                "id": "ACE21.3",
+                "desc": "The system must allow defining the doctor's status as active or inactive.",
+                "sim": 0.3930349349975586
+              },
+              {
+                "id": "ACE21.4",
+                "desc": "The doctor's name and identity document cannot be left empty in the registration.",
+                "sim": 0.35038211941719055
+              },
+              {
+                "id": "ACE21.2",
+                "desc": "The system must allow associating a specialty with the doctor being registered.",
+                "sim": 0.32324761152267456
+              },
+              {
+                "id": "ACE21.1",
+                "desc": "The system must allow registering the doctor's full name, identity document number, and contact details (email address and phone number).",
+                "sim": 0.28233176469802856
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "HUE12",
+        "desc": "As administrative staff, I want to view a patient's scheduled appointments to consult their information.",
+        "sim": 0.6586726903915405,
+        "ac": [
+          {
+            "id": "AC5.1",
+            "desc": "The system allows selection of patient, specialty, and doctor.",
+            "ac_sim": [
+              {
+                "id": "ACE12.1",
+                "desc": "The system must display the appointment details: specialty, doctor, schedule, and status.",
+                "sim": 0.7211299538612366
+              }
+            ]
+          },
+          {
+            "id": "AC5.2",
+            "desc": "Overlapping appointments are prevented.",
+            "ac_sim": [
+              {
+                "id": "ACE12.1",
+                "desc": "The system must display the appointment details: specialty, doctor, schedule, and status.",
+                "sim": 0.38113969564437866
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "HUE24",
+        "desc": "As administrative staff, I want to edit a doctor's attention hours to keep the information up to date.",
+        "sim": 0.6007315516471863,
+        "ac": [
+          {
+            "id": "AC5.1",
+            "desc": "The system allows selection of patient, specialty, and doctor.",
+            "ac_sim": [
+              {
+                "id": "ACE24.1",
+                "desc": "The system must allow editing the days of the week for attention.",
+                "sim": 0.24840596318244934
+              },
+              {
+                "id": "ACE24.2",
+                "desc": "The system must allow editing the start time and end time for a day of the week.",
+                "sim": 0.22955670952796936
+              },
+              {
+                "id": "ACE24.3",
+                "desc": "The system must display an error if the time slots for the same day overlap.",
+                "sim": 0.21601708233356476
+              },
+              {
+                "id": "ACE24.4",
+                "desc": "The system must display an error if the start times precede the end times.",
+                "sim": 0.11777231097221375
+              }
+            ]
+          },
+          {
+            "id": "AC5.2",
+            "desc": "Overlapping appointments are prevented.",
+            "ac_sim": [
+              {
+                "id": "ACE24.3",
+                "desc": "The system must display an error if the time slots for the same day overlap.",
+                "sim": 0.5778213739395142
+              },
+              {
+                "id": "ACE24.2",
+                "desc": "The system must allow editing the start time and end time for a day of the week.",
+                "sim": 0.39007264375686646
+              },
+              {
+                "id": "ACE24.1",
+                "desc": "The system must allow editing the days of the week for attention.",
+                "sim": 0.3821564018726349
+              },
+              {
+                "id": "ACE24.4",
+                "desc": "The system must display an error if the start times precede the end times.",
+                "sim": 0.3174654245376587
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "HU6",
+    "desc": "As an administrative staff member, I want to visualize the availability of registered doctors, so that I can schedule appointments efficiently.",
+    "h_sim": [
+      {
+        "id": "HUE21",
+        "desc": "As administrative staff, I want to register doctors with their respective specialties to enroll them in the system.",
+        "sim": 0.6866763830184937,
+        "ac": [
+          {
+            "id": "AC6.1",
+            "desc": "The system displays doctors’ schedules and availability.",
+            "ac_sim": [
+              {
+                "id": "ACE21.3",
+                "desc": "The system must allow defining the doctor's status as active or inactive.",
+                "sim": 0.6224767565727234
+              },
+              {
+                "id": "ACE21.1",
+                "desc": "The system must allow registering the doctor's full name, identity document number, and contact details (email address and phone number).",
+                "sim": 0.5620991587638855
+              },
+              {
+                "id": "ACE21.2",
+                "desc": "The system must allow associating a specialty with the doctor being registered.",
+                "sim": 0.5360912680625916
+              },
+              {
+                "id": "ACE21.4",
+                "desc": "The doctor's name and identity document cannot be left empty in the registration.",
+                "sim": 0.3802185654640198
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "HUE12",
+        "desc": "As administrative staff, I want to view a patient's scheduled appointments to consult their information.",
+        "sim": 0.6610073447227478,
+        "ac": [
+          {
+            "id": "AC6.1",
+            "desc": "The system displays doctors’ schedules and availability.",
+            "ac_sim": [
+              {
+                "id": "ACE12.1",
+                "desc": "The system must display the appointment details: specialty, doctor, schedule, and status.",
+                "sim": 0.8279082179069519
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "HUE55",
+        "desc": "As an analyst, I want to view appointment statistics by specialty to evaluate the workload.",
+        "sim": 0.6383475065231323,
+        "ac": [
+          {
+            "id": "AC6.1",
+            "desc": "The system displays doctors’ schedules and availability.",
+            "ac_sim": [
+              {
+                "id": "ACE55.3",
+                "desc": "The system must display the total number of appointments: overall, attended, canceled, confirmed, and not attended.",
+                "sim": 0.5622400045394897
+              },
+              {
+                "id": "ACE55.2",
+                "desc": "The system must allow choosing a specialty.",
+                "sim": 0.46358978748321533
+              },
+              {
+                "id": "ACE55.4",
+                "desc": "The system must allow choosing a date range.",
+                "sim": 0.4347772002220154
+              },
+              {
+                "id": "ACE55.1",
+                "desc": "The system must list all existing specialties.",
+                "sim": 0.4105076193809509
+              },
+              {
+                "id": "ACE55.5",
+                "desc": "The system must display an error if the start date is later than the end date.",
+                "sim": 0.38236817717552185
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "HUE22",
+        "desc": "As administrative staff, I want to define a doctor's attention hours to enable appointment assignment.",
+        "sim": 0.6158920526504517,
+        "ac": [
+          {
+            "id": "AC6.1",
+            "desc": "The system displays doctors’ schedules and availability.",
+            "ac_sim": [
+              {
+                "id": "ACE22.1",
+                "desc": "The system must allow defining the start time and end time per day of the week.",
+                "sim": 0.5203641653060913
+              },
+              {
+                "id": "ACE22.3",
+                "desc": "The system must display an error if the time slots for the same day overlap.",
+                "sim": 0.4677765667438507
+              },
+              {
+                "id": "ACE22.2",
+                "desc": "The system must allow defining more than one time slot per day.",
+                "sim": 0.4489440619945526
+              },
+              {
+                "id": "ACE22.4",
+                "desc": "The system must display an error if the start times precede the end times.",
+                "sim": 0.3578662872314453
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "HUE13",
+        "desc": "As administrative staff, I want to register an appointment to schedule a patient's medical care.",
+        "sim": 0.5976335406303406,
+        "ac": [
+          {
+            "id": "AC6.1",
+            "desc": "The system displays doctors’ schedules and availability.",
+            "ac_sim": [
+              {
+                "id": "ACE13.2",
+                "desc": "The system must display the available time slots in the selected doctor's schedule.",
+                "sim": 0.8354729413986206
+              },
+              {
+                "id": "ACE13.1",
+                "desc": "The system must allow selecting the specialty and doctor for the appointment.",
+                "sim": 0.6797237396240234
+              },
+              {
+                "id": "ACE13.3",
+                "desc": "The system must display an error if an appointment already exists at that time slot.",
+                "sim": 0.5031257271766663
+              },
+              {
+                "id": "ACE13.4",
+                "desc": "The system must change the appointment status to \"Confirmed\" after a successful registration.",
+                "sim": 0.3048022389411926
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "HU7",
+    "desc": "As an administrative staff member, I want to modify or cancel existing appointments, so that changes can be managed as needed.",
+    "h_sim": [
+      {
+        "id": "HUE14",
+        "desc": "As administrative staff, I want to cancel an existing appointment to free up the time slot in the schedule.",
+        "sim": 0.8234935402870178,
+        "ac": [
+          {
+            "id": "AC7.1",
+            "desc": "The system allows editing and canceling of appointments.",
+            "ac_sim": [
+              {
+                "id": "ACE14.1",
+                "desc": "The system must allow changing the appointment status to \"Canceled\".",
+                "sim": 0.7613110542297363
+              },
+              {
+                "id": "ACE14.2",
+                "desc": "The system must make the previous time slot available again in the doctor's schedule.",
+                "sim": 0.4953491687774658
+              }
+            ]
+          },
+          {
+            "id": "AC7.2",
+            "desc": "Patients are notified of changes.",
+            "ac_sim": [
+              {
+                "id": "ACE14.2",
+                "desc": "The system must make the previous time slot available again in the doctor's schedule.",
+                "sim": 0.5094019174575806
+              },
+              {
+                "id": "ACE14.1",
+                "desc": "The system must allow changing the appointment status to \"Canceled\".",
+                "sim": 0.2727605104446411
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "HUE15",
+        "desc": "As administrative staff, I want to edit an existing appointment to change its date without losing the information.",
+        "sim": 0.806688129901886,
+        "ac": [
+          {
+            "id": "AC7.1",
+            "desc": "The system allows editing and canceling of appointments.",
+            "ac_sim": [
+              {
+                "id": "ACE15.1",
+                "desc": "The system must allow editing the date and time of an existing appointment.",
+                "sim": 0.7606890201568604
+              },
+              {
+                "id": "ACE15.2",
+                "desc": "The system must validate that the new time slot is available.",
+                "sim": 0.4465612769126892
+              }
+            ]
+          },
+          {
+            "id": "AC7.2",
+            "desc": "Patients are notified of changes.",
+            "ac_sim": [
+              {
+                "id": "ACE15.1",
+                "desc": "The system must allow editing the date and time of an existing appointment.",
+                "sim": 0.39059433341026306
+              },
+              {
+                "id": "ACE15.2",
+                "desc": "The system must validate that the new time slot is available.",
+                "sim": 0.30829617381095886
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "HUE24",
+        "desc": "As administrative staff, I want to edit a doctor's attention hours to keep the information up to date.",
+        "sim": 0.6964181661605835,
+        "ac": [
+          {
+            "id": "AC7.1",
+            "desc": "The system allows editing and canceling of appointments.",
+            "ac_sim": [
+              {
+                "id": "ACE24.2",
+                "desc": "The system must allow editing the start time and end time for a day of the week.",
+                "sim": 0.5920417308807373
+              },
+              {
+                "id": "ACE24.1",
+                "desc": "The system must allow editing the days of the week for attention.",
+                "sim": 0.540532112121582
+              },
+              {
+                "id": "ACE24.3",
+                "desc": "The system must display an error if the time slots for the same day overlap.",
+                "sim": 0.4051562547683716
+              },
+              {
+                "id": "ACE24.4",
+                "desc": "The system must display an error if the start times precede the end times.",
+                "sim": 0.26100948452949524
+              }
+            ]
+          },
+          {
+            "id": "AC7.2",
+            "desc": "Patients are notified of changes.",
+            "ac_sim": [
+              {
+                "id": "ACE24.1",
+                "desc": "The system must allow editing the days of the week for attention.",
+                "sim": 0.316397488117218
+              },
+              {
+                "id": "ACE24.2",
+                "desc": "The system must allow editing the start time and end time for a day of the week.",
+                "sim": 0.23414845764636993
+              },
+              {
+                "id": "ACE24.3",
+                "desc": "The system must display an error if the time slots for the same day overlap.",
+                "sim": 0.2007032334804535
+              },
+              {
+                "id": "ACE24.4",
+                "desc": "The system must display an error if the start times precede the end times.",
+                "sim": 0.1532062143087387
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "HUE13",
+        "desc": "As administrative staff, I want to register an appointment to schedule a patient's medical care.",
+        "sim": 0.6025980710983276,
+        "ac": [
+          {
+            "id": "AC7.1",
+            "desc": "The system allows editing and canceling of appointments.",
+            "ac_sim": [
+              {
+                "id": "ACE13.3",
+                "desc": "The system must display an error if an appointment already exists at that time slot.",
+                "sim": 0.560478925704956
+              },
+              {
+                "id": "ACE13.4",
+                "desc": "The system must change the appointment status to \"Confirmed\" after a successful registration.",
+                "sim": 0.491962194442749
+              },
+              {
+                "id": "ACE13.2",
+                "desc": "The system must display the available time slots in the selected doctor's schedule.",
+                "sim": 0.4704020321369171
+              },
+              {
+                "id": "ACE13.1",
+                "desc": "The system must allow selecting the specialty and doctor for the appointment.",
+                "sim": 0.4282863140106201
+              }
+            ]
+          },
+          {
+            "id": "AC7.2",
+            "desc": "Patients are notified of changes.",
+            "ac_sim": [
+              {
+                "id": "ACE13.1",
+                "desc": "The system must allow selecting the specialty and doctor for the appointment.",
+                "sim": 0.4759579300880432
+              },
+              {
+                "id": "ACE13.2",
+                "desc": "The system must display the available time slots in the selected doctor's schedule.",
+                "sim": 0.3907073736190796
+              },
+              {
+                "id": "ACE13.4",
+                "desc": "The system must change the appointment status to \"Confirmed\" after a successful registration.",
+                "sim": 0.34136489033699036
+              },
+              {
+                "id": "ACE13.3",
+                "desc": "The system must display an error if an appointment already exists at that time slot.",
+                "sim": 0.2900717258453369
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "HUE12",
+        "desc": "As administrative staff, I want to view a patient's scheduled appointments to consult their information.",
+        "sim": 0.5762932300567627,
+        "ac": [
+          {
+            "id": "AC7.1",
+            "desc": "The system allows editing and canceling of appointments.",
+            "ac_sim": [
+              {
+                "id": "ACE12.1",
+                "desc": "The system must display the appointment details: specialty, doctor, schedule, and status.",
+                "sim": 0.48346424102783203
+              }
+            ]
+          },
+          {
+            "id": "AC7.2",
+            "desc": "Patients are notified of changes.",
+            "ac_sim": [
+              {
+                "id": "ACE12.1",
+                "desc": "The system must display the appointment details: specialty, doctor, schedule, and status.",
+                "sim": 0.560962975025177
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "HU8",
+    "desc": "As a patient, I want to receive notifications when my appointment is modified or canceled, so that I am always informed about my schedule.",
+    "h_sim": [
+      {
+        "id": "HUE16",
+        "desc": "As a patient, I want to be notified by email when my appointment is modified so I stay informed.",
+        "sim": 0.909567654132843,
+        "ac": [
+          {
+            "id": "AC8.1",
+            "desc": "Notifications are sent promptly after changes.",
+            "ac_sim": [
+              {
+                "id": "ACE16.2",
+                "desc": "The system must indicate in the notification if the appointment had a schedule change.",
+                "sim": 0.5310935974121094
+              },
+              {
+                "id": "ACE16.3",
+                "desc": "The system must include the new appointment date in the notification when a date change occurs.",
+                "sim": 0.4937420189380646
+              },
+              {
+                "id": "ACE16.1",
+                "desc": "The system must indicate in the notification if the appointment was canceled.",
+                "sim": 0.28959113359451294
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "HUE17",
+        "desc": "As a patient, I want to be notified by text message to my phone number when my appointment is modified so I stay informed.",
+        "sim": 0.8544334769248962,
+        "ac": [
+          {
+            "id": "AC8.1",
+            "desc": "Notifications are sent promptly after changes.",
+            "ac_sim": [
+              {
+                "id": "ACE17.2",
+                "desc": "The system must indicate in the notification if the appointment had a schedule change.",
+                "sim": 0.5310935974121094
+              },
+              {
+                "id": "ACE17.3",
+                "desc": "The system must include the new appointment date in the notification when a date change occurs.",
+                "sim": 0.4937420189380646
+              },
+              {
+                "id": "ACE17.1",
+                "desc": "The system must indicate in the notification if the appointment was canceled.",
+                "sim": 0.28959113359451294
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "HUE12",
+        "desc": "As administrative staff, I want to view a patient's scheduled appointments to consult their information.",
+        "sim": 0.6655009984970093,
+        "ac": [
+          {
+            "id": "AC8.1",
+            "desc": "Notifications are sent promptly after changes.",
+            "ac_sim": [
+              {
+                "id": "ACE12.1",
+                "desc": "The system must display the appointment details: specialty, doctor, schedule, and status.",
+                "sim": 0.2087016999721527
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "HUE24",
+        "desc": "As administrative staff, I want to edit a doctor's attention hours to keep the information up to date.",
+        "sim": 0.6074865460395813,
+        "ac": [
+          {
+            "id": "AC8.1",
+            "desc": "Notifications are sent promptly after changes.",
+            "ac_sim": [
+              {
+                "id": "ACE24.1",
+                "desc": "The system must allow editing the days of the week for attention.",
+                "sim": 0.27651217579841614
+              },
+              {
+                "id": "ACE24.2",
+                "desc": "The system must allow editing the start time and end time for a day of the week.",
+                "sim": 0.19897088408470154
+              },
+              {
+                "id": "ACE24.3",
+                "desc": "The system must display an error if the time slots for the same day overlap.",
+                "sim": 0.18418681621551514
+              },
+              {
+                "id": "ACE24.4",
+                "desc": "The system must display an error if the start times precede the end times.",
+                "sim": 0.13476060330867767
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "HUE13",
+        "desc": "As administrative staff, I want to register an appointment to schedule a patient's medical care.",
+        "sim": 0.6063112616539001,
+        "ac": [
+          {
+            "id": "AC8.1",
+            "desc": "Notifications are sent promptly after changes.",
+            "ac_sim": [
+              {
+                "id": "ACE13.4",
+                "desc": "The system must change the appointment status to \"Confirmed\" after a successful registration.",
+                "sim": 0.3223014771938324
+              },
+              {
+                "id": "ACE13.3",
+                "desc": "The system must display an error if an appointment already exists at that time slot.",
+                "sim": 0.19469177722930908
+              },
+              {
+                "id": "ACE13.2",
+                "desc": "The system must display the available time slots in the selected doctor's schedule.",
+                "sim": 0.15515325963497162
+              },
+              {
+                "id": "ACE13.1",
+                "desc": "The system must allow selecting the specialty and doctor for the appointment.",
+                "sim": 0.13162963092327118
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "HU9",
+    "desc": "As an administrative staff member, I want to manage the status of appointments throughout their lifecycle, so that the hospital can track appointment outcomes.",
+    "h_sim": [
+      {
+        "id": "HUE13",
+        "desc": "As administrative staff, I want to register an appointment to schedule a patient's medical care.",
+        "sim": 0.7575075626373291,
+        "ac": [
+          {
+            "id": "AC9.1",
+            "desc": "Appointment statuses include Confirmed, Canceled, Attended, Not attended.",
+            "ac_sim": [
+              {
+                "id": "ACE13.4",
+                "desc": "The system must change the appointment status to \"Confirmed\" after a successful registration.",
+                "sim": 0.5972095727920532
+              },
+              {
+                "id": "ACE13.3",
+                "desc": "The system must display an error if an appointment already exists at that time slot.",
+                "sim": 0.485868364572525
+              },
+              {
+                "id": "ACE13.2",
+                "desc": "The system must display the available time slots in the selected doctor's schedule.",
+                "sim": 0.4316018223762512
+              },
+              {
+                "id": "ACE13.1",
+                "desc": "The system must allow selecting the specialty and doctor for the appointment.",
+                "sim": 0.4145457446575165
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "HUE12",
+        "desc": "As administrative staff, I want to view a patient's scheduled appointments to consult their information.",
+        "sim": 0.7292633056640625,
+        "ac": [
+          {
+            "id": "AC9.1",
+            "desc": "Appointment statuses include Confirmed, Canceled, Attended, Not attended.",
+            "ac_sim": [
+              {
+                "id": "ACE12.1",
+                "desc": "The system must display the appointment details: specialty, doctor, schedule, and status.",
+                "sim": 0.5909757018089294
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "HUE22",
+        "desc": "As administrative staff, I want to define a doctor's attention hours to enable appointment assignment.",
+        "sim": 0.6764017939567566,
+        "ac": [
+          {
+            "id": "AC9.1",
+            "desc": "Appointment statuses include Confirmed, Canceled, Attended, Not attended.",
+            "ac_sim": [
+              {
+                "id": "ACE22.3",
+                "desc": "The system must display an error if the time slots for the same day overlap.",
+                "sim": 0.2996296286582947
+              },
+              {
+                "id": "ACE22.4",
+                "desc": "The system must display an error if the start times precede the end times.",
+                "sim": 0.23266206681728363
+              },
+              {
+                "id": "ACE22.1",
+                "desc": "The system must allow defining the start time and end time per day of the week.",
+                "sim": 0.21317258477210999
+              },
+              {
+                "id": "ACE22.2",
+                "desc": "The system must allow defining more than one time slot per day.",
+                "sim": 0.20195314288139343
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "HUE19",
+        "desc": "As a doctor, I want to register the diagnosis made during the appointment to document the medical care provided.",
+        "sim": 0.6672351360321045,
+        "ac": [
+          {
+            "id": "AC9.1",
+            "desc": "Appointment statuses include Confirmed, Canceled, Attended, Not attended.",
+            "ac_sim": [
+              {
+                "id": "ACE19.3",
+                "desc": "The system must allow marking the appointment as Not attended.",
+                "sim": 0.6876734495162964
+              },
+              {
+                "id": "ACE19.2",
+                "desc": "The system must allow marking the appointment as Attended when a diagnosis is registered.",
+                "sim": 0.6199085712432861
+              },
+              {
+                "id": "ACE19.4",
+                "desc": "The system must prevent registering a diagnosis when the appointment is marked as Not attended.",
+                "sim": 0.5734416246414185
+              },
+              {
+                "id": "ACE19.1",
+                "desc": "The system must include the date, name, and specialty of the responsible doctor in each record.",
+                "sim": 0.432019978761673
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "HUE24",
+        "desc": "As administrative staff, I want to edit a doctor's attention hours to keep the information up to date.",
+        "sim": 0.649925708770752,
+        "ac": [
+          {
+            "id": "AC9.1",
+            "desc": "Appointment statuses include Confirmed, Canceled, Attended, Not attended.",
+            "ac_sim": [
+              {
+                "id": "ACE24.3",
+                "desc": "The system must display an error if the time slots for the same day overlap.",
+                "sim": 0.2996296286582947
+              },
+              {
+                "id": "ACE24.1",
+                "desc": "The system must allow editing the days of the week for attention.",
+                "sim": 0.25569188594818115
+              },
+              {
+                "id": "ACE24.2",
+                "desc": "The system must allow editing the start time and end time for a day of the week.",
+                "sim": 0.23866140842437744
+              },
+              {
+                "id": "ACE24.4",
+                "desc": "The system must display an error if the start times precede the end times.",
+                "sim": 0.23266206681728363
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "HU10",
+    "desc": "As a doctor, I want to register diagnoses, treatments, and patient’s clinical progress in the electronic clinical record, so that patient care is well documented.",
+    "h_sim": [
+      {
+        "id": "HUE4",
+        "desc": "As administrative staff, I want to register a patient's medical background in their electronic clinical record to understand their health status.",
+        "sim": 0.8206973075866699,
+        "ac": [
+          {
+            "id": "AC10.1",
+            "desc": "The system allows entry and editing of clinical records.",
+            "ac_sim": [
+              {
+                "id": "ACE4.1",
+                "desc": "The system must allow entering the patient's blood type.",
+                "sim": 0.5351347923278809
+              },
+              {
+                "id": "ACE4.2",
+                "desc": "The system must allow entering chronic diseases, allergies, relevant injuries, and regular medications along with the date they started/occurred, with the option to indicate \"from birth\".",
+                "sim": 0.5178114771842957
+              }
+            ]
+          },
+          {
+            "id": "AC10.2",
+            "desc": "Each entry is timestamped.",
+            "ac_sim": [
+              {
+                "id": "ACE4.2",
+                "desc": "The system must allow entering chronic diseases, allergies, relevant injuries, and regular medications along with the date they started/occurred, with the option to indicate \"from birth\".",
+                "sim": 0.34155821800231934
+              },
+              {
+                "id": "ACE4.1",
+                "desc": "The system must allow entering the patient's blood type.",
+                "sim": 0.13420160114765167
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "HUE19",
+        "desc": "As a doctor, I want to register the diagnosis made during the appointment to document the medical care provided.",
+        "sim": 0.7201403379440308,
+        "ac": [
+          {
+            "id": "AC10.1",
+            "desc": "The system allows entry and editing of clinical records.",
+            "ac_sim": [
+              {
+                "id": "ACE19.1",
+                "desc": "The system must include the date, name, and specialty of the responsible doctor in each record.",
+                "sim": 0.6667524576187134
+              },
+              {
+                "id": "ACE19.2",
+                "desc": "The system must allow marking the appointment as Attended when a diagnosis is registered.",
+                "sim": 0.5734590888023376
+              },
+              {
+                "id": "ACE19.4",
+                "desc": "The system must prevent registering a diagnosis when the appointment is marked as Not attended.",
+                "sim": 0.4271610975265503
+              },
+              {
+                "id": "ACE19.3",
+                "desc": "The system must allow marking the appointment as Not attended.",
+                "sim": 0.3890168070793152
+              }
+            ]
+          },
+          {
+            "id": "AC10.2",
+            "desc": "Each entry is timestamped.",
+            "ac_sim": [
+              {
+                "id": "ACE19.1",
+                "desc": "The system must include the date, name, and specialty of the responsible doctor in each record.",
+                "sim": 0.4174899458885193
+              },
+              {
+                "id": "ACE19.3",
+                "desc": "The system must allow marking the appointment as Not attended.",
+                "sim": 0.28169041872024536
+              },
+              {
+                "id": "ACE19.2",
+                "desc": "The system must allow marking the appointment as Attended when a diagnosis is registered.",
+                "sim": 0.2621959149837494
+              },
+              {
+                "id": "ACE19.4",
+                "desc": "The system must prevent registering a diagnosis when the appointment is marked as Not attended.",
+                "sim": 0.18711049854755402
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "HUE20",
+        "desc": "As a patient, I want to consult my electronic clinical record to access my medical information.",
+        "sim": 0.6892874240875244,
+        "ac": [
+          {
+            "id": "AC10.1",
+            "desc": "The system allows entry and editing of clinical records.",
+            "ac_sim": [
+              {
+                "id": "ACE20.1",
+                "desc": "The system must list all appointments associated with the patient.",
+                "sim": 0.6231918334960938
+              },
+              {
+                "id": "ACE20.4",
+                "desc": "The system must allow sorting the information by date, responsible doctor, or specialty.",
+                "sim": 0.5950577259063721
+              },
+              {
+                "id": "ACE20.2",
+                "desc": "The system must list all medications associated with the patient.",
+                "sim": 0.5349124670028687
+              },
+              {
+                "id": "ACE20.3",
+                "desc": "The system must list all invoices associated with the patient.",
+                "sim": 0.5150934457778931
+              },
+              {
+                "id": "ACE20.5",
+                "desc": "The system must allow viewing the details of each listed item.",
+                "sim": 0.4128667414188385
+              }
+            ]
+          },
+          {
+            "id": "AC10.2",
+            "desc": "Each entry is timestamped.",
+            "ac_sim": [
+              {
+                "id": "ACE20.5",
+                "desc": "The system must allow viewing the details of each listed item.",
+                "sim": 0.38678333163261414
+              },
+              {
+                "id": "ACE20.4",
+                "desc": "The system must allow sorting the information by date, responsible doctor, or specialty.",
+                "sim": 0.3798479735851288
+              },
+              {
+                "id": "ACE20.1",
+                "desc": "The system must list all appointments associated with the patient.",
+                "sim": 0.3740742802619934
+              },
+              {
+                "id": "ACE20.3",
+                "desc": "The system must list all invoices associated with the patient.",
+                "sim": 0.24941828846931458
+              },
+              {
+                "id": "ACE20.2",
+                "desc": "The system must list all medications associated with the patient.",
+                "sim": 0.23404963314533234
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "HUE1",
+        "desc": "As administrative staff, I want to register a new patient's data to enroll them in the system.",
+        "sim": 0.6373454928398132,
+        "ac": [
+          {
+            "id": "AC10.1",
+            "desc": "The system allows entry and editing of clinical records.",
+            "ac_sim": [
+              {
+                "id": "ACE1.3",
+                "desc": "The system must assign a unique patient number to the new patient.",
+                "sim": 0.613300085067749
+              },
+              {
+                "id": "ACE1.2",
+                "desc": "The system must display an error if a patient with the entered identity document already exists.",
+                "sim": 0.4550766944885254
+              },
+              {
+                "id": "ACE1.1",
+                "desc": "The system must request the full name, date of birth, sex, identity document, and contact details (email address and phone number).",
+                "sim": 0.3491742014884949
+              }
+            ]
+          },
+          {
+            "id": "AC10.2",
+            "desc": "Each entry is timestamped.",
+            "ac_sim": [
+              {
+                "id": "ACE1.3",
+                "desc": "The system must assign a unique patient number to the new patient.",
+                "sim": 0.2730258107185364
+              },
+              {
+                "id": "ACE1.1",
+                "desc": "The system must request the full name, date of birth, sex, identity document, and contact details (email address and phone number).",
+                "sim": 0.19411872327327728
+              },
+              {
+                "id": "ACE1.2",
+                "desc": "The system must display an error if a patient with the entered identity document already exists.",
+                "sim": 0.18038959801197052
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "HUE38",
+        "desc": "As a pharmacist, I want to register medications to keep the hospital inventory up to date.",
+        "sim": 0.6089714765548706,
+        "ac": [
+          {
+            "id": "AC10.1",
+            "desc": "The system allows entry and editing of clinical records.",
+            "ac_sim": [
+              {
+                "id": "ACE38.1",
+                "desc": "The system must register each medication with name, manufacturer, available units, stock number, and expiration date.",
+                "sim": 0.6010066270828247
+              },
+              {
+                "id": "ACE38.4",
+                "desc": "The system must display an error if the medication name is left empty.",
+                "sim": 0.3842492401599884
+              },
+              {
+                "id": "ACE38.3",
+                "desc": "The system must display an error if the stock number is not unique.",
+                "sim": 0.2102261483669281
+              },
+              {
+                "id": "ACE38.2",
+                "desc": "The system must display an error if the expiration date is earlier than the current date.",
+                "sim": 0.15523818135261536
+              },
+              {
+                "id": "ACE38.5",
+                "desc": "The system must display an error if the number of available units is less than 0.",
+                "sim": 0.11743319779634476
+              }
+            ]
+          },
+          {
+            "id": "AC10.2",
+            "desc": "Each entry is timestamped.",
+            "ac_sim": [
+              {
+                "id": "ACE38.1",
+                "desc": "The system must register each medication with name, manufacturer, available units, stock number, and expiration date.",
+                "sim": 0.33229127526283264
+              },
+              {
+                "id": "ACE38.2",
+                "desc": "The system must display an error if the expiration date is earlier than the current date.",
+                "sim": 0.315464049577713
+              },
+              {
+                "id": "ACE38.3",
+                "desc": "The system must display an error if the stock number is not unique.",
+                "sim": 0.23816101253032684
+              },
+              {
+                "id": "ACE38.4",
+                "desc": "The system must display an error if the medication name is left empty.",
+                "sim": 0.1612030565738678
+              },
+              {
+                "id": "ACE38.5",
+                "desc": "The system must display an error if the number of available units is less than 0.",
+                "sim": 0.05007905513048172
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "HU11",
+    "desc": "As a patient, I want to consult my electronic clinical record, so that I can stay informed about my health history.",
+    "h_sim": [
+      {
+        "id": "HUE20",
+        "desc": "As a patient, I want to consult my electronic clinical record to access my medical information.",
+        "sim": 0.9514197707176208,
+        "ac": [
+          {
+            "id": "AC11.1",
+            "desc": "Patients can view but not edit their records.",
+            "ac_sim": [
+              {
+                "id": "ACE20.1",
+                "desc": "The system must list all appointments associated with the patient.",
+                "sim": 0.3732418417930603
+              },
+              {
+                "id": "ACE20.4",
+                "desc": "The system must allow sorting the information by date, responsible doctor, or specialty.",
+                "sim": 0.3554823398590088
+              },
+              {
+                "id": "ACE20.3",
+                "desc": "The system must list all invoices associated with the patient.",
+                "sim": 0.3103179335594177
+              },
+              {
+                "id": "ACE20.2",
+                "desc": "The system must list all medications associated with the patient.",
+                "sim": 0.2833883762359619
+              },
+              {
+                "id": "ACE20.5",
+                "desc": "The system must allow viewing the details of each listed item.",
+                "sim": 0.2764616906642914
+              }
+            ]
+          },
+          {
+            "id": "AC11.2",
+            "desc": "Access is restricted to authorized users.",
+            "ac_sim": [
+              {
+                "id": "ACE20.5",
+                "desc": "The system must allow viewing the details of each listed item.",
+                "sim": 0.2515183687210083
+              },
+              {
+                "id": "ACE20.1",
+                "desc": "The system must list all appointments associated with the patient.",
+                "sim": 0.11780383437871933
+              },
+              {
+                "id": "ACE20.4",
+                "desc": "The system must allow sorting the information by date, responsible doctor, or specialty.",
+                "sim": 0.11108559370040894
+              },
+              {
+                "id": "ACE20.2",
+                "desc": "The system must list all medications associated with the patient.",
+                "sim": 0.07456424832344055
+              },
+              {
+                "id": "ACE20.3",
+                "desc": "The system must list all invoices associated with the patient.",
+                "sim": 0.06526751071214676
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "HUE4",
+        "desc": "As administrative staff, I want to register a patient's medical background in their electronic clinical record to understand their health status.",
+        "sim": 0.8082257509231567,
+        "ac": [
+          {
+            "id": "AC11.1",
+            "desc": "Patients can view but not edit their records.",
+            "ac_sim": [
+              {
+                "id": "ACE4.2",
+                "desc": "The system must allow entering chronic diseases, allergies, relevant injuries, and regular medications along with the date they started/occurred, with the option to indicate \"from birth\".",
+                "sim": 0.33254724740982056
+              },
+              {
+                "id": "ACE4.1",
+                "desc": "The system must allow entering the patient's blood type.",
+                "sim": 0.3090255856513977
+              }
+            ]
+          },
+          {
+            "id": "AC11.2",
+            "desc": "Access is restricted to authorized users.",
+            "ac_sim": [
+              {
+                "id": "ACE4.1",
+                "desc": "The system must allow entering the patient's blood type.",
+                "sim": 0.14006130397319794
+              },
+              {
+                "id": "ACE4.2",
+                "desc": "The system must allow entering chronic diseases, allergies, relevant injuries, and regular medications along with the date they started/occurred, with the option to indicate \"from birth\".",
+                "sim": 0.042258910834789276
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "HUE18",
+        "desc": "As a doctor, I want to access a patient's clinical record to review their prior information.",
+        "sim": 0.7763671875,
+        "ac": [
+          {
+            "id": "AC11.1",
+            "desc": "Patients can view but not edit their records.",
+            "ac_sim": [
+              {
+                "id": "ACE18.1",
+                "desc": "The system must allow access to the clinical record only to users with the doctor role.",
+                "sim": 0.6123671531677246
+              },
+              {
+                "id": "ACE18.3",
+                "desc": "The system must display the patient's medical background.",
+                "sim": 0.42021846771240234
+              },
+              {
+                "id": "ACE18.2",
+                "desc": "The system must list the diagnoses for each appointment confirmed by the patient.",
+                "sim": 0.3523772656917572
+              }
+            ]
+          },
+          {
+            "id": "AC11.2",
+            "desc": "Access is restricted to authorized users.",
+            "ac_sim": [
+              {
+                "id": "ACE18.1",
+                "desc": "The system must allow access to the clinical record only to users with the doctor role.",
+                "sim": 0.42610469460487366
+              },
+              {
+                "id": "ACE18.3",
+                "desc": "The system must display the patient's medical background.",
+                "sim": 0.09316499531269073
+              },
+              {
+                "id": "ACE18.2",
+                "desc": "The system must list the diagnoses for each appointment confirmed by the patient.",
+                "sim": 0.0535992868244648
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "HUE11",
+        "desc": "As administrative staff, I want to view a patient's complete information to consult their personal data.",
+        "sim": 0.7405574321746826,
+        "ac": [
+          {
+            "id": "AC11.1",
+            "desc": "Patients can view but not edit their records.",
+            "ac_sim": [
+              {
+                "id": "ACE11.1",
+                "desc": "The system must display the patient's personal data: full name, date of birth, sex, identity document, and contact details (email address and phone number).",
+                "sim": 0.4819904565811157
+              },
+              {
+                "id": "ACE11.2",
+                "desc": "The system must display the patient number.",
+                "sim": 0.41973525285720825
+              }
+            ]
+          },
+          {
+            "id": "AC11.2",
+            "desc": "Access is restricted to authorized users.",
+            "ac_sim": [
+              {
+                "id": "ACE11.1",
+                "desc": "The system must display the patient's personal data: full name, date of birth, sex, identity document, and contact details (email address and phone number).",
+                "sim": 0.14677271246910095
+              },
+              {
+                "id": "ACE11.2",
+                "desc": "The system must display the patient number.",
+                "sim": 0.11595992743968964
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "HUE19",
+        "desc": "As a doctor, I want to register the diagnosis made during the appointment to document the medical care provided.",
+        "sim": 0.6778534650802612,
+        "ac": [
+          {
+            "id": "AC11.1",
+            "desc": "Patients can view but not edit their records.",
+            "ac_sim": [
+              {
+                "id": "ACE19.4",
+                "desc": "The system must prevent registering a diagnosis when the appointment is marked as Not attended.",
+                "sim": 0.48818403482437134
+              },
+              {
+                "id": "ACE19.1",
+                "desc": "The system must include the date, name, and specialty of the responsible doctor in each record.",
+                "sim": 0.3825027048587799
+              },
+              {
+                "id": "ACE19.2",
+                "desc": "The system must allow marking the appointment as Attended when a diagnosis is registered.",
+                "sim": 0.37835219502449036
+              },
+              {
+                "id": "ACE19.3",
+                "desc": "The system must allow marking the appointment as Not attended.",
+                "sim": 0.37320464849472046
+              }
+            ]
+          },
+          {
+            "id": "AC11.2",
+            "desc": "Access is restricted to authorized users.",
+            "ac_sim": [
+              {
+                "id": "ACE19.4",
+                "desc": "The system must prevent registering a diagnosis when the appointment is marked as Not attended.",
+                "sim": 0.16484972834587097
+              },
+              {
+                "id": "ACE19.3",
+                "desc": "The system must allow marking the appointment as Not attended.",
+                "sim": 0.14283224940299988
+              },
+              {
+                "id": "ACE19.2",
+                "desc": "The system must allow marking the appointment as Attended when a diagnosis is registered.",
+                "sim": 0.13764259219169617
+              },
+              {
+                "id": "ACE19.1",
+                "desc": "The system must include the date, name, and specialty of the responsible doctor in each record.",
+                "sim": 0.04595059156417847
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "HU12",
+    "desc": "As an administrator, I want to register medical professionals with their personal and contact details and associate specialties, so that the hospital can manage staff information.",
+    "h_sim": [
+      {
+        "id": "HUE21",
+        "desc": "As administrative staff, I want to register doctors with their respective specialties to enroll them in the system.",
+        "sim": 0.8331976532936096,
+        "ac": [
+          {
+            "id": "AC12.1",
+            "desc": "The system allows entry and editing of staff data and specialties.",
+            "ac_sim": [
+              {
+                "id": "ACE21.1",
+                "desc": "The system must allow registering the doctor's full name, identity document number, and contact details (email address and phone number).",
+                "sim": 0.4845595359802246
+              },
+              {
+                "id": "ACE21.2",
+                "desc": "The system must allow associating a specialty with the doctor being registered.",
+                "sim": 0.44698286056518555
+              },
+              {
+                "id": "ACE21.3",
+                "desc": "The system must allow defining the doctor's status as active or inactive.",
+                "sim": 0.4000028371810913
+              },
+              {
+                "id": "ACE21.4",
+                "desc": "The doctor's name and identity document cannot be left empty in the registration.",
+                "sim": 0.27374112606048584
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "HUE26",
+        "desc": "As administrative staff, I want to activate a registered doctor to keep the information up to date.",
+        "sim": 0.7226264476776123,
+        "ac": [
+          {
+            "id": "AC12.1",
+            "desc": "The system allows entry and editing of staff data and specialties.",
+            "ac_sim": [
+              {
+                "id": "ACE26.1",
+                "desc": "The system must allow changing the doctor's status to active.",
+                "sim": 0.3951890766620636
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "HUE1",
+        "desc": "As administrative staff, I want to register a new patient's data to enroll them in the system.",
+        "sim": 0.7186564207077026,
+        "ac": [
+          {
+            "id": "AC12.1",
+            "desc": "The system allows entry and editing of staff data and specialties.",
+            "ac_sim": [
+              {
+                "id": "ACE1.3",
+                "desc": "The system must assign a unique patient number to the new patient.",
+                "sim": 0.44845473766326904
+              },
+              {
+                "id": "ACE1.1",
+                "desc": "The system must request the full name, date of birth, sex, identity document, and contact details (email address and phone number).",
+                "sim": 0.34223973751068115
+              },
+              {
+                "id": "ACE1.2",
+                "desc": "The system must display an error if a patient with the entered identity document already exists.",
+                "sim": 0.29254961013793945
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "HUE13",
+        "desc": "As administrative staff, I want to register an appointment to schedule a patient's medical care.",
+        "sim": 0.7092331051826477,
+        "ac": [
+          {
+            "id": "AC12.1",
+            "desc": "The system allows entry and editing of staff data and specialties.",
+            "ac_sim": [
+              {
+                "id": "ACE13.2",
+                "desc": "The system must display the available time slots in the selected doctor's schedule.",
+                "sim": 0.4604983329772949
+              },
+              {
+                "id": "ACE13.1",
+                "desc": "The system must allow selecting the specialty and doctor for the appointment.",
+                "sim": 0.43769699335098267
+              },
+              {
+                "id": "ACE13.3",
+                "desc": "The system must display an error if an appointment already exists at that time slot.",
+                "sim": 0.237740159034729
+              },
+              {
+                "id": "ACE13.4",
+                "desc": "The system must change the appointment status to \"Confirmed\" after a successful registration.",
+                "sim": 0.23536533117294312
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "HUE4",
+        "desc": "As administrative staff, I want to register a patient's medical background in their electronic clinical record to understand their health status.",
+        "sim": 0.6672890186309814,
+        "ac": [
+          {
+            "id": "AC12.1",
+            "desc": "The system allows entry and editing of staff data and specialties.",
+            "ac_sim": [
+              {
+                "id": "ACE4.1",
+                "desc": "The system must allow entering the patient's blood type.",
+                "sim": 0.34631118178367615
+              },
+              {
+                "id": "ACE4.2",
+                "desc": "The system must allow entering chronic diseases, allergies, relevant injuries, and regular medications along with the date they started/occurred, with the option to indicate \"from birth\".",
+                "sim": 0.30265477299690247
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "HU13",
+    "desc": "As an administrator, I want to define and modify attention hours and activate/deactivate professionals for scheduling, so that doctor availability is accurately reflected.",
+    "h_sim": [
+      {
+        "id": "HUE22",
+        "desc": "As administrative staff, I want to define a doctor's attention hours to enable appointment assignment.",
+        "sim": 0.8293026089668274,
+        "ac": [
+          {
+            "id": "AC13.1",
+            "desc": "The system supports setting and updating working hours.",
+            "ac_sim": [
+              {
+                "id": "ACE22.1",
+                "desc": "The system must allow defining the start time and end time per day of the week.",
+                "sim": 0.6611567735671997
+              },
+              {
+                "id": "ACE22.2",
+                "desc": "The system must allow defining more than one time slot per day.",
+                "sim": 0.6303398609161377
+              },
+              {
+                "id": "ACE22.3",
+                "desc": "The system must display an error if the time slots for the same day overlap.",
+                "sim": 0.49244681000709534
+              },
+              {
+                "id": "ACE22.4",
+                "desc": "The system must display an error if the start times precede the end times.",
+                "sim": 0.3876820504665375
+              }
+            ]
+          },
+          {
+            "id": "AC13.2",
+            "desc": "Professionals can be activated or deactivated for scheduling.",
+            "ac_sim": [
+              {
+                "id": "ACE22.2",
+                "desc": "The system must allow defining more than one time slot per day.",
+                "sim": 0.4157572090625763
+              },
+              {
+                "id": "ACE22.1",
+                "desc": "The system must allow defining the start time and end time per day of the week.",
+                "sim": 0.39241814613342285
+              },
+              {
+                "id": "ACE22.3",
+                "desc": "The system must display an error if the time slots for the same day overlap.",
+                "sim": 0.3372294306755066
+              },
+              {
+                "id": "ACE22.4",
+                "desc": "The system must display an error if the start times precede the end times.",
+                "sim": 0.2061202973127365
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "HUE24",
+        "desc": "As administrative staff, I want to edit a doctor's attention hours to keep the information up to date.",
+        "sim": 0.7910474538803101,
+        "ac": [
+          {
+            "id": "AC13.1",
+            "desc": "The system supports setting and updating working hours.",
+            "ac_sim": [
+              {
+                "id": "ACE24.2",
+                "desc": "The system must allow editing the start time and end time for a day of the week.",
+                "sim": 0.7197401523590088
+              },
+              {
+                "id": "ACE24.1",
+                "desc": "The system must allow editing the days of the week for attention.",
+                "sim": 0.6150462627410889
+              },
+              {
+                "id": "ACE24.3",
+                "desc": "The system must display an error if the time slots for the same day overlap.",
+                "sim": 0.49244681000709534
+              },
+              {
+                "id": "ACE24.4",
+                "desc": "The system must display an error if the start times precede the end times.",
+                "sim": 0.3876820504665375
+              }
+            ]
+          },
+          {
+            "id": "AC13.2",
+            "desc": "Professionals can be activated or deactivated for scheduling.",
+            "ac_sim": [
+              {
+                "id": "ACE24.2",
+                "desc": "The system must allow editing the start time and end time for a day of the week.",
+                "sim": 0.4474373459815979
+              },
+              {
+                "id": "ACE24.1",
+                "desc": "The system must allow editing the days of the week for attention.",
+                "sim": 0.42843788862228394
+              },
+              {
+                "id": "ACE24.3",
+                "desc": "The system must display an error if the time slots for the same day overlap.",
+                "sim": 0.3372294306755066
+              },
+              {
+                "id": "ACE24.4",
+                "desc": "The system must display an error if the start times precede the end times.",
+                "sim": 0.2061202973127365
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "HUE13",
+        "desc": "As administrative staff, I want to register an appointment to schedule a patient's medical care.",
+        "sim": 0.6735475659370422,
+        "ac": [
+          {
+            "id": "AC13.1",
+            "desc": "The system supports setting and updating working hours.",
+            "ac_sim": [
+              {
+                "id": "ACE13.2",
+                "desc": "The system must display the available time slots in the selected doctor's schedule.",
+                "sim": 0.5385808944702148
+              },
+              {
+                "id": "ACE13.3",
+                "desc": "The system must display an error if an appointment already exists at that time slot.",
+                "sim": 0.4338645339012146
+              },
+              {
+                "id": "ACE13.4",
+                "desc": "The system must change the appointment status to \"Confirmed\" after a successful registration.",
+                "sim": 0.2796787917613983
+              },
+              {
+                "id": "ACE13.1",
+                "desc": "The system must allow selecting the specialty and doctor for the appointment.",
+                "sim": 0.27600836753845215
+              }
+            ]
+          },
+          {
+            "id": "AC13.2",
+            "desc": "Professionals can be activated or deactivated for scheduling.",
+            "ac_sim": [
+              {
+                "id": "ACE13.2",
+                "desc": "The system must display the available time slots in the selected doctor's schedule.",
+                "sim": 0.48886242508888245
+              },
+              {
+                "id": "ACE13.3",
+                "desc": "The system must display an error if an appointment already exists at that time slot.",
+                "sim": 0.4416622519493103
+              },
+              {
+                "id": "ACE13.4",
+                "desc": "The system must change the appointment status to \"Confirmed\" after a successful registration.",
+                "sim": 0.42776310443878174
+              },
+              {
+                "id": "ACE13.1",
+                "desc": "The system must allow selecting the specialty and doctor for the appointment.",
+                "sim": 0.42497482895851135
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "HUE12",
+        "desc": "As administrative staff, I want to view a patient's scheduled appointments to consult their information.",
+        "sim": 0.6199449300765991,
+        "ac": [
+          {
+            "id": "AC13.1",
+            "desc": "The system supports setting and updating working hours.",
+            "ac_sim": [
+              {
+                "id": "ACE12.1",
+                "desc": "The system must display the appointment details: specialty, doctor, schedule, and status.",
+                "sim": 0.43335720896720886
+              }
+            ]
+          },
+          {
+            "id": "AC13.2",
+            "desc": "Professionals can be activated or deactivated for scheduling.",
+            "ac_sim": [
+              {
+                "id": "ACE12.1",
+                "desc": "The system must display the appointment details: specialty, doctor, schedule, and status.",
+                "sim": 0.44896095991134644
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "HUE26",
+        "desc": "As administrative staff, I want to activate a registered doctor to keep the information up to date.",
+        "sim": 0.602165162563324,
+        "ac": [
+          {
+            "id": "AC13.1",
+            "desc": "The system supports setting and updating working hours.",
+            "ac_sim": [
+              {
+                "id": "ACE26.1",
+                "desc": "The system must allow changing the doctor's status to active.",
+                "sim": 0.3469933867454529
+              }
+            ]
+          },
+          {
+            "id": "AC13.2",
+            "desc": "Professionals can be activated or deactivated for scheduling.",
+            "ac_sim": [
+              {
+                "id": "ACE26.1",
+                "desc": "The system must allow changing the doctor's status to active.",
+                "sim": 0.5034817457199097
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "HU14",
+    "desc": "As an administrator, I want to manage roles and access permissions to system functionalities, so that users only access features relevant to their role.",
+    "h_sim": [
+      {
+        "id": "HUE27",
+        "desc": "As the system, I want to define system roles to organize access to functionalities.",
+        "sim": 0.7749392986297607,
+        "ac": [
+          {
+            "id": "AC14.1",
+            "desc": "The system enforces role-based access control.",
+            "ac_sim": [
+              {
+                "id": "ACE27.1",
+                "desc": "The system must define the following roles: administrative staff, doctor, pharmacist, analyst, and patient.",
+                "sim": 0.4629555940628052
+              }
+            ]
+          },
+          {
+            "id": "AC14.2",
+            "desc": "Permissions are validated before actions are executed.",
+            "ac_sim": [
+              {
+                "id": "ACE27.1",
+                "desc": "The system must define the following roles: administrative staff, doctor, pharmacist, analyst, and patient.",
+                "sim": 0.15771913528442383
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "HUE28",
+        "desc": "As the system, I want to associate permissions with each role to control access to system functionalities.",
+        "sim": 0.759575366973877,
+        "ac": [
+          {
+            "id": "AC14.1",
+            "desc": "The system enforces role-based access control.",
+            "ac_sim": [
+              {
+                "id": "ACE28.2",
+                "desc": "The system must display an error if a user accesses a functionality not defined in their role.",
+                "sim": 0.6323266625404358
+              },
+              {
+                "id": "ACE28.1",
+                "desc": "The system must associate functionalities with each role.",
+                "sim": 0.6027379035949707
+              }
+            ]
+          },
+          {
+            "id": "AC14.2",
+            "desc": "Permissions are validated before actions are executed.",
+            "ac_sim": [
+              {
+                "id": "ACE28.2",
+                "desc": "The system must display an error if a user accesses a functionality not defined in their role.",
+                "sim": 0.564251184463501
+              },
+              {
+                "id": "ACE28.1",
+                "desc": "The system must associate functionalities with each role.",
+                "sim": 0.2806398868560791
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "HUE24",
+        "desc": "As administrative staff, I want to edit a doctor's attention hours to keep the information up to date.",
+        "sim": 0.2862640917301178,
+        "ac": [
+          {
+            "id": "AC14.1",
+            "desc": "The system enforces role-based access control.",
+            "ac_sim": [
+              {
+                "id": "ACE24.3",
+                "desc": "The system must display an error if the time slots for the same day overlap.",
+                "sim": 0.30270877480506897
+              },
+              {
+                "id": "ACE24.2",
+                "desc": "The system must allow editing the start time and end time for a day of the week.",
+                "sim": 0.269707590341568
+              },
+              {
+                "id": "ACE24.1",
+                "desc": "The system must allow editing the days of the week for attention.",
+                "sim": 0.25331926345825195
+              },
+              {
+                "id": "ACE24.4",
+                "desc": "The system must display an error if the start times precede the end times.",
+                "sim": 0.18337827920913696
+              }
+            ]
+          },
+          {
+            "id": "AC14.2",
+            "desc": "Permissions are validated before actions are executed.",
+            "ac_sim": [
+              {
+                "id": "ACE24.3",
+                "desc": "The system must display an error if the time slots for the same day overlap.",
+                "sim": 0.22220253944396973
+              },
+              {
+                "id": "ACE24.4",
+                "desc": "The system must display an error if the start times precede the end times.",
+                "sim": 0.14848947525024414
+              },
+              {
+                "id": "ACE24.1",
+                "desc": "The system must allow editing the days of the week for attention.",
+                "sim": 0.13968907296657562
+              },
+              {
+                "id": "ACE24.2",
+                "desc": "The system must allow editing the start time and end time for a day of the week.",
+                "sim": 0.132722407579422
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "HUE22",
+        "desc": "As administrative staff, I want to define a doctor's attention hours to enable appointment assignment.",
+        "sim": 0.28296607732772827,
+        "ac": [
+          {
+            "id": "AC14.1",
+            "desc": "The system enforces role-based access control.",
+            "ac_sim": [
+              {
+                "id": "ACE22.2",
+                "desc": "The system must allow defining more than one time slot per day.",
+                "sim": 0.3597351312637329
+              },
+              {
+                "id": "ACE22.1",
+                "desc": "The system must allow defining the start time and end time per day of the week.",
+                "sim": 0.3369629681110382
+              },
+              {
+                "id": "ACE22.3",
+                "desc": "The system must display an error if the time slots for the same day overlap.",
+                "sim": 0.30270877480506897
+              },
+              {
+                "id": "ACE22.4",
+                "desc": "The system must display an error if the start times precede the end times.",
+                "sim": 0.18337827920913696
+              }
+            ]
+          },
+          {
+            "id": "AC14.2",
+            "desc": "Permissions are validated before actions are executed.",
+            "ac_sim": [
+              {
+                "id": "ACE22.3",
+                "desc": "The system must display an error if the time slots for the same day overlap.",
+                "sim": 0.22220253944396973
+              },
+              {
+                "id": "ACE22.4",
+                "desc": "The system must display an error if the start times precede the end times.",
+                "sim": 0.14848947525024414
+              },
+              {
+                "id": "ACE22.2",
+                "desc": "The system must allow defining more than one time slot per day.",
+                "sim": 0.10738318413496017
+              },
+              {
+                "id": "ACE22.1",
+                "desc": "The system must allow defining the start time and end time per day of the week.",
+                "sim": 0.04228261113166809
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "HUE3",
+        "desc": "As administrative staff, I want to edit a registered patient's data to keep the information up to date.",
+        "sim": 0.2698711156845093,
+        "ac": [
+          {
+            "id": "AC14.1",
+            "desc": "The system enforces role-based access control.",
+            "ac_sim": [
+              {
+                "id": "ACE3.1",
+                "desc": "The system must allow modifying the full name, date of birth, sex, identity document, and contact details (email address and phone number).",
+                "sim": 0.336311936378479
+              }
+            ]
+          },
+          {
+            "id": "AC14.2",
+            "desc": "Permissions are validated before actions are executed.",
+            "ac_sim": [
+              {
+                "id": "ACE3.1",
+                "desc": "The system must allow modifying the full name, date of birth, sex, identity document, and contact details (email address and phone number).",
+                "sim": 0.20742076635360718
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "HU15",
+    "desc": "As an administrative staff member, I want to generate electronic invoices for medical consultations and medication delivery, so that billing is accurate and efficient.",
+    "h_sim": [
+      {
+        "id": "HUE34",
+        "desc": "As administrative staff, I want to generate an invoice associated with a medication to have a payment receipt.",
+        "sim": 0.8436040282249451,
+        "ac": [
+          {
+            "id": "AC15.1",
+            "desc": "The system generates invoices with unique identifiers.",
+            "ac_sim": [
+              {
+                "id": "ACE34.2",
+                "desc": "The system must include a unique identifier in the invoice.",
+                "sim": 0.8521527647972107
+              },
+              {
+                "id": "ACE34.3",
+                "desc": "The system must associate the invoice with the patient and the medication.",
+                "sim": 0.6476167440414429
+              },
+              {
+                "id": "ACE34.1",
+                "desc": "The system must include in the invoice the patient's full name, medication name, date, and total cost.",
+                "sim": 0.5773929953575134
+              }
+            ]
+          },
+          {
+            "id": "AC15.2",
+            "desc": "Invoices are associated with patients and services.",
+            "ac_sim": [
+              {
+                "id": "ACE34.3",
+                "desc": "The system must associate the invoice with the patient and the medication.",
+                "sim": 0.7879618406295776
+              },
+              {
+                "id": "ACE34.1",
+                "desc": "The system must include in the invoice the patient's full name, medication name, date, and total cost.",
+                "sim": 0.7343815565109253
+              },
+              {
+                "id": "ACE34.2",
+                "desc": "The system must include a unique identifier in the invoice.",
+                "sim": 0.5834125280380249
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "HUE29",
+        "desc": "As administrative staff, I want to generate an invoice associated with an appointment to have a payment receipt.",
+        "sim": 0.817711353302002,
+        "ac": [
+          {
+            "id": "AC15.1",
+            "desc": "The system generates invoices with unique identifiers.",
+            "ac_sim": [
+              {
+                "id": "ACE29.2",
+                "desc": "The system must include a unique identifier in the invoice.",
+                "sim": 0.8521527647972107
+              },
+              {
+                "id": "ACE29.3",
+                "desc": "The system must associate the invoice with the patient and the appointment.",
+                "sim": 0.6628828048706055
+              },
+              {
+                "id": "ACE29.1",
+                "desc": "The system must include in the invoice the patient's full name, appointment specialty, date, and total cost.",
+                "sim": 0.5517171621322632
+              }
+            ]
+          },
+          {
+            "id": "AC15.2",
+            "desc": "Invoices are associated with patients and services.",
+            "ac_sim": [
+              {
+                "id": "ACE29.3",
+                "desc": "The system must associate the invoice with the patient and the appointment.",
+                "sim": 0.8195598125457764
+              },
+              {
+                "id": "ACE29.1",
+                "desc": "The system must include in the invoice the patient's full name, appointment specialty, date, and total cost.",
+                "sim": 0.7295497059822083
+              },
+              {
+                "id": "ACE29.2",
+                "desc": "The system must include a unique identifier in the invoice.",
+                "sim": 0.5834125280380249
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "HUE31",
+        "desc": "As a pharmacist, I want to generate an invoice associated with a medication to have a payment receipt.",
+        "sim": 0.7646281719207764,
+        "ac": [
+          {
+            "id": "AC15.1",
+            "desc": "The system generates invoices with unique identifiers.",
+            "ac_sim": [
+              {
+                "id": "ACE31.2",
+                "desc": "The system must include a unique identifier in the invoice.",
+                "sim": 0.8521527647972107
+              },
+              {
+                "id": "ACE31.3",
+                "desc": "The system must associate the invoice with the patient and the medication.",
+                "sim": 0.6476167440414429
+              },
+              {
+                "id": "ACE31.1",
+                "desc": "The system must include in the invoice the patient's full name, medication name, date, and total cost.",
+                "sim": 0.5773929953575134
+              }
+            ]
+          },
+          {
+            "id": "AC15.2",
+            "desc": "Invoices are associated with patients and services.",
+            "ac_sim": [
+              {
+                "id": "ACE31.3",
+                "desc": "The system must associate the invoice with the patient and the medication.",
+                "sim": 0.7879618406295776
+              },
+              {
+                "id": "ACE31.1",
+                "desc": "The system must include in the invoice the patient's full name, medication name, date, and total cost.",
+                "sim": 0.7343815565109253
+              },
+              {
+                "id": "ACE31.2",
+                "desc": "The system must include a unique identifier in the invoice.",
+                "sim": 0.5834125280380249
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "HUE36",
+        "desc": "As a patient, I want to receive an email notification with the invoice attached to access the payment receipt.",
+        "sim": 0.5841235518455505,
+        "ac": [
+          {
+            "id": "AC15.1",
+            "desc": "The system generates invoices with unique identifiers.",
+            "ac_sim": [
+              {
+                "id": "ACE36.3",
+                "desc": "The system must include the invoice attached in PDF format.",
+                "sim": 0.5920917987823486
+              },
+              {
+                "id": "ACE36.1",
+                "desc": "The system must send an email to the patient's email address containing: invoice identifier, patient name, date, and service type (appointment or medication).",
+                "sim": 0.5438429117202759
+              },
+              {
+                "id": "ACE36.2",
+                "desc": "The system must include in the subject line that it is a hospital invoice.",
+                "sim": 0.5391929149627686
+              },
+              {
+                "id": "ACE36.4",
+                "desc": "The system must send the email within 10 minutes after the invoice is generated.",
+                "sim": 0.459412157535553
+              }
+            ]
+          },
+          {
+            "id": "AC15.2",
+            "desc": "Invoices are associated with patients and services.",
+            "ac_sim": [
+              {
+                "id": "ACE36.2",
+                "desc": "The system must include in the subject line that it is a hospital invoice.",
+                "sim": 0.7315391302108765
+              },
+              {
+                "id": "ACE36.1",
+                "desc": "The system must send an email to the patient's email address containing: invoice identifier, patient name, date, and service type (appointment or medication).",
+                "sim": 0.6676781177520752
+              },
+              {
+                "id": "ACE36.3",
+                "desc": "The system must include the invoice attached in PDF format.",
+                "sim": 0.6021789312362671
+              },
+              {
+                "id": "ACE36.4",
+                "desc": "The system must send the email within 10 minutes after the invoice is generated.",
+                "sim": 0.4165785610675812
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "HUE37",
+        "desc": "As a patient, I want to be notified by text message to my phone number with the invoice information to stay informed about the charge.",
+        "sim": 0.5621364116668701,
+        "ac": [
+          {
+            "id": "AC15.1",
+            "desc": "The system generates invoices with unique identifiers.",
+            "ac_sim": [
+              {
+                "id": "ACE37.2",
+                "desc": "The system must include the total cost of the invoice.",
+                "sim": 0.5865088105201721
+              },
+              {
+                "id": "ACE37.1",
+                "desc": "The system must send a text message to the patient's phone number containing: invoice identifier, patient name, date, and service type (appointment or medication).",
+                "sim": 0.4989567995071411
+              },
+              {
+                "id": "ACE37.3",
+                "desc": "The system must send the text message within 10 minutes after the invoice is generated.",
+                "sim": 0.4529712498188019
+              }
+            ]
+          },
+          {
+            "id": "AC15.2",
+            "desc": "Invoices are associated with patients and services.",
+            "ac_sim": [
+              {
+                "id": "ACE37.1",
+                "desc": "The system must send a text message to the patient's phone number containing: invoice identifier, patient name, date, and service type (appointment or medication).",
+                "sim": 0.6362507939338684
+              },
+              {
+                "id": "ACE37.2",
+                "desc": "The system must include the total cost of the invoice.",
+                "sim": 0.5815909504890442
+              },
+              {
+                "id": "ACE37.3",
+                "desc": "The system must send the text message within 10 minutes after the invoice is generated.",
+                "sim": 0.4353298842906952
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "HU16",
+    "desc": "As a patient, I want to receive automatic notifications with attached digital invoices when an invoice is generated, so that I am promptly informed about charges.",
+    "h_sim": [
+      {
+        "id": "HUE37",
+        "desc": "As a patient, I want to be notified by text message to my phone number with the invoice information to stay informed about the charge.",
+        "sim": 0.7937950491905212,
+        "ac": [
+          {
+            "id": "AC16.1",
+            "desc": "Notifications are sent with invoice attachments.",
+            "ac_sim": [
+              {
+                "id": "ACE37.3",
+                "desc": "The system must send the text message within 10 minutes after the invoice is generated.",
+                "sim": 0.5985326170921326
+              },
+              {
+                "id": "ACE37.1",
+                "desc": "The system must send a text message to the patient's phone number containing: invoice identifier, patient name, date, and service type (appointment or medication).",
+                "sim": 0.5578883290290833
+              },
+              {
+                "id": "ACE37.2",
+                "desc": "The system must include the total cost of the invoice.",
+                "sim": 0.3767995834350586
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "HUE36",
+        "desc": "As a patient, I want to receive an email notification with the invoice attached to access the payment receipt.",
+        "sim": 0.7842453122138977,
+        "ac": [
+          {
+            "id": "AC16.1",
+            "desc": "Notifications are sent with invoice attachments.",
+            "ac_sim": [
+              {
+                "id": "ACE36.4",
+                "desc": "The system must send the email within 10 minutes after the invoice is generated.",
+                "sim": 0.6337158679962158
+              },
+              {
+                "id": "ACE36.1",
+                "desc": "The system must send an email to the patient's email address containing: invoice identifier, patient name, date, and service type (appointment or medication).",
+                "sim": 0.629685640335083
+              },
+              {
+                "id": "ACE36.3",
+                "desc": "The system must include the invoice attached in PDF format.",
+                "sim": 0.5805776119232178
+              },
+              {
+                "id": "ACE36.2",
+                "desc": "The system must include in the subject line that it is a hospital invoice.",
+                "sim": 0.5589895248413086
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "HUE34",
+        "desc": "As administrative staff, I want to generate an invoice associated with a medication to have a payment receipt.",
+        "sim": 0.6949561238288879,
+        "ac": [
+          {
+            "id": "AC16.1",
+            "desc": "Notifications are sent with invoice attachments.",
+            "ac_sim": [
+              {
+                "id": "ACE34.3",
+                "desc": "The system must associate the invoice with the patient and the medication.",
+                "sim": 0.511669933795929
+              },
+              {
+                "id": "ACE34.2",
+                "desc": "The system must include a unique identifier in the invoice.",
+                "sim": 0.47407016158103943
+              },
+              {
+                "id": "ACE34.1",
+                "desc": "The system must include in the invoice the patient's full name, medication name, date, and total cost.",
+                "sim": 0.4149214029312134
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "HUE29",
+        "desc": "As administrative staff, I want to generate an invoice associated with an appointment to have a payment receipt.",
+        "sim": 0.682033360004425,
+        "ac": [
+          {
+            "id": "AC16.1",
+            "desc": "Notifications are sent with invoice attachments.",
+            "ac_sim": [
+              {
+                "id": "ACE29.3",
+                "desc": "The system must associate the invoice with the patient and the appointment.",
+                "sim": 0.5314549207687378
+              },
+              {
+                "id": "ACE29.2",
+                "desc": "The system must include a unique identifier in the invoice.",
+                "sim": 0.47407016158103943
+              },
+              {
+                "id": "ACE29.1",
+                "desc": "The system must include in the invoice the patient's full name, appointment specialty, date, and total cost.",
+                "sim": 0.4022100567817688
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "HUE31",
+        "desc": "As a pharmacist, I want to generate an invoice associated with a medication to have a payment receipt.",
+        "sim": 0.6445319652557373,
+        "ac": [
+          {
+            "id": "AC16.1",
+            "desc": "Notifications are sent with invoice attachments.",
+            "ac_sim": [
+              {
+                "id": "ACE31.3",
+                "desc": "The system must associate the invoice with the patient and the medication.",
+                "sim": 0.511669933795929
+              },
+              {
+                "id": "ACE31.2",
+                "desc": "The system must include a unique identifier in the invoice.",
+                "sim": 0.47407016158103943
+              },
+              {
+                "id": "ACE31.1",
+                "desc": "The system must include in the invoice the patient's full name, medication name, date, and total cost.",
+                "sim": 0.4149214029312134
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "HU17",
+    "desc": "As a pharmacist, I want to register medications and supplies with identification, stock, and expiration date, so that inventory is accurately tracked.",
+    "h_sim": [
+      {
+        "id": "HUE39",
+        "desc": "As a pharmacist, I want to register supplies to keep the hospital inventory up to date.",
+        "sim": 0.8840276002883911,
+        "ac": [
+          {
+            "id": "AC17.1",
+            "desc": "The system allows entry of medication/supply data.",
+            "ac_sim": [
+              {
+                "id": "ACE39.1",
+                "desc": "The system must register each supply with name, manufacturer, available units, stock number, and expiration date.",
+                "sim": 0.6441165208816528
+              },
+              {
+                "id": "ACE39.2",
+                "desc": "The system must display an error if the expiration date is less than or equal to the current date.",
+                "sim": 0.3260982930660248
+              },
+              {
+                "id": "ACE39.3",
+                "desc": "The system must display an error if the stock number already exists in the system.",
+                "sim": 0.31113186478614807
+              },
+              {
+                "id": "ACE39.5",
+                "desc": "The system must display an error if the number of available units is less than 0.",
+                "sim": 0.24775393307209015
+              },
+              {
+                "id": "ACE39.4",
+                "desc": "The system must display an error if the supply name is left empty.",
+                "sim": 0.2460329681634903
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "HUE38",
+        "desc": "As a pharmacist, I want to register medications to keep the hospital inventory up to date.",
+        "sim": 0.8820039629936218,
+        "ac": [
+          {
+            "id": "AC17.1",
+            "desc": "The system allows entry of medication/supply data.",
+            "ac_sim": [
+              {
+                "id": "ACE38.1",
+                "desc": "The system must register each medication with name, manufacturer, available units, stock number, and expiration date.",
+                "sim": 0.8067770004272461
+              },
+              {
+                "id": "ACE38.4",
+                "desc": "The system must display an error if the medication name is left empty.",
+                "sim": 0.5674861669540405
+              },
+              {
+                "id": "ACE38.3",
+                "desc": "The system must display an error if the stock number is not unique.",
+                "sim": 0.3498479723930359
+              },
+              {
+                "id": "ACE38.2",
+                "desc": "The system must display an error if the expiration date is earlier than the current date.",
+                "sim": 0.3048756718635559
+              },
+              {
+                "id": "ACE38.5",
+                "desc": "The system must display an error if the number of available units is less than 0.",
+                "sim": 0.24775393307209015
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "HUE44",
+        "desc": "As a pharmacist, I want to consult the medication inventory sorted by expiration date to identify medications about to expire.",
+        "sim": 0.7715839147567749,
+        "ac": [
+          {
+            "id": "AC17.1",
+            "desc": "The system allows entry of medication/supply data.",
+            "ac_sim": [
+              {
+                "id": "ACE44.1",
+                "desc": "The system must display the medication name and the expiration date.",
+                "sim": 0.7303865551948547
+              },
+              {
+                "id": "ACE44.2",
+                "desc": "The system sorts from lowest to highest.",
+                "sim": 0.252041757106781
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "HUE46",
+        "desc": "As a pharmacist, I want to consult the supply inventory sorted by expiration date to identify supplies about to expire.",
+        "sim": 0.7607625722885132,
+        "ac": [
+          {
+            "id": "AC17.1",
+            "desc": "The system allows entry of medication/supply data.",
+            "ac_sim": [
+              {
+                "id": "ACE46.1",
+                "desc": "The system must display the supply name and the expiration date.",
+                "sim": 0.561716616153717
+              },
+              {
+                "id": "ACE46.2",
+                "desc": "The system sorts from lowest to highest.",
+                "sim": 0.252041757106781
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "HUE43",
+        "desc": "As a pharmacist, I want to consult the medication inventory sorted by available quantity to quickly identify medications with the lowest or highest stock.",
+        "sim": 0.686186671257019,
+        "ac": [
+          {
+            "id": "AC17.1",
+            "desc": "The system allows entry of medication/supply data.",
+            "ac_sim": [
+              {
+                "id": "ACE43.1",
+                "desc": "The system must display the medication name and the number of available units.",
+                "sim": 0.8016833066940308
+              },
+              {
+                "id": "ACE43.2",
+                "desc": "The system sorts from lowest to highest.",
+                "sim": 0.252041757106781
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "HU18",
+    "desc": "As a pharmacist, I want to automatically update stock when registering medication deliveries, so that inventory levels remain current.",
+    "h_sim": [
+      {
+        "id": "HUE38",
+        "desc": "As a pharmacist, I want to register medications to keep the hospital inventory up to date.",
+        "sim": 0.6955901980400085,
+        "ac": [
+          {
+            "id": "AC18.1",
+            "desc": "Stock is updated in real time upon delivery.",
+            "ac_sim": [
+              {
+                "id": "ACE38.3",
+                "desc": "The system must display an error if the stock number is not unique.",
+                "sim": 0.393865168094635
+              },
+              {
+                "id": "ACE38.1",
+                "desc": "The system must register each medication with name, manufacturer, available units, stock number, and expiration date.",
+                "sim": 0.2542232871055603
+              },
+              {
+                "id": "ACE38.2",
+                "desc": "The system must display an error if the expiration date is earlier than the current date.",
+                "sim": 0.1810169816017151
+              },
+              {
+                "id": "ACE38.5",
+                "desc": "The system must display an error if the number of available units is less than 0.",
+                "sim": 0.16076789796352386
+              },
+              {
+                "id": "ACE38.4",
+                "desc": "The system must display an error if the medication name is left empty.",
+                "sim": 0.1124296709895134
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "HUE39",
+        "desc": "As a pharmacist, I want to register supplies to keep the hospital inventory up to date.",
+        "sim": 0.6825560927391052,
+        "ac": [
+          {
+            "id": "AC18.1",
+            "desc": "Stock is updated in real time upon delivery.",
+            "ac_sim": [
+              {
+                "id": "ACE39.3",
+                "desc": "The system must display an error if the stock number already exists in the system.",
+                "sim": 0.40844792127609253
+              },
+              {
+                "id": "ACE39.1",
+                "desc": "The system must register each supply with name, manufacturer, available units, stock number, and expiration date.",
+                "sim": 0.324321985244751
+              },
+              {
+                "id": "ACE39.2",
+                "desc": "The system must display an error if the expiration date is less than or equal to the current date.",
+                "sim": 0.16919469833374023
+              },
+              {
+                "id": "ACE39.5",
+                "desc": "The system must display an error if the number of available units is less than 0.",
+                "sim": 0.16076789796352386
+              },
+              {
+                "id": "ACE39.4",
+                "desc": "The system must display an error if the supply name is left empty.",
+                "sim": 0.0996454656124115
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "HUE40",
+        "desc": "As a pharmacist, I want to edit how many medications are available to keep the hospital inventory up to date.",
+        "sim": 0.6625889539718628,
+        "ac": [
+          {
+            "id": "AC18.1",
+            "desc": "Stock is updated in real time upon delivery.",
+            "ac_sim": [
+              {
+                "id": "ACE40.1",
+                "desc": "The system must allow modifying the available units.",
+                "sim": 0.2357763797044754
+              },
+              {
+                "id": "ACE40.2",
+                "desc": "The system must display an error if the number of available units is less than 0.",
+                "sim": 0.16076798737049103
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "HUE43",
+        "desc": "As a pharmacist, I want to consult the medication inventory sorted by available quantity to quickly identify medications with the lowest or highest stock.",
+        "sim": 0.6448027491569519,
+        "ac": [
+          {
+            "id": "AC18.1",
+            "desc": "Stock is updated in real time upon delivery.",
+            "ac_sim": [
+              {
+                "id": "ACE43.1",
+                "desc": "The system must display the medication name and the number of available units.",
+                "sim": 0.2707044184207916
+              },
+              {
+                "id": "ACE43.2",
+                "desc": "The system sorts from lowest to highest.",
+                "sim": 0.16140951216220856
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "HUE41",
+        "desc": "As a pharmacist, I want to edit how many supplies are available to keep the hospital inventory up to date.",
+        "sim": 0.6422282457351685,
+        "ac": [
+          {
+            "id": "AC18.1",
+            "desc": "Stock is updated in real time upon delivery.",
+            "ac_sim": [
+              {
+                "id": "ACE41.1",
+                "desc": "The system must allow modifying the available units.",
+                "sim": 0.2357763797044754
+              },
+              {
+                "id": "ACE41.2",
+                "desc": "The system must display an error if the number of available units is less than 0.",
+                "sim": 0.16076798737049103
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "HU19",
+    "desc": "As a pharmacist, I want to be notified when stock is low or items are about to expire, so that I can take timely action.",
+    "h_sim": [
+      {
+        "id": "HUE46",
+        "desc": "As a pharmacist, I want to consult the supply inventory sorted by expiration date to identify supplies about to expire.",
+        "sim": 0.7368255257606506,
+        "ac": [
+          {
+            "id": "AC19.1",
+            "desc": "The system detects minimum stock and upcoming expirations and sends notifications.",
+            "ac_sim": [
+              {
+                "id": "ACE46.1",
+                "desc": "The system must display the supply name and the expiration date.",
+                "sim": 0.5502499938011169
+              },
+              {
+                "id": "ACE46.2",
+                "desc": "The system sorts from lowest to highest.",
+                "sim": 0.3318386971950531
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "HUE52",
+        "desc": "As a pharmacist, I want to know when a supply is about to expire to make timely decisions.",
+        "sim": 0.7102000713348389,
+        "ac": [
+          {
+            "id": "AC19.1",
+            "desc": "The system detects minimum stock and upcoming expirations and sends notifications.",
+            "ac_sim": [
+              {
+                "id": "ACE52.2",
+                "desc": "The system must display the supply's expiration date.",
+                "sim": 0.5813727378845215
+              },
+              {
+                "id": "ACE52.3",
+                "desc": "The system must highlight in red when one month remains before the supply expires.",
+                "sim": 0.5353839993476868
+              },
+              {
+                "id": "ACE52.1",
+                "desc": "The system must allow listing all supplies and sorting them by expiration date.",
+                "sim": 0.5319178700447083
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "HUE44",
+        "desc": "As a pharmacist, I want to consult the medication inventory sorted by expiration date to identify medications about to expire.",
+        "sim": 0.7092223167419434,
+        "ac": [
+          {
+            "id": "AC19.1",
+            "desc": "The system detects minimum stock and upcoming expirations and sends notifications.",
+            "ac_sim": [
+              {
+                "id": "ACE44.1",
+                "desc": "The system must display the medication name and the expiration date.",
+                "sim": 0.4969399869441986
+              },
+              {
+                "id": "ACE44.2",
+                "desc": "The system sorts from lowest to highest.",
+                "sim": 0.3318386971950531
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "HUE51",
+        "desc": "As a pharmacist, I want to know when a medication is about to expire to make timely decisions.",
+        "sim": 0.6483432054519653,
+        "ac": [
+          {
+            "id": "AC19.1",
+            "desc": "The system detects minimum stock and upcoming expirations and sends notifications.",
+            "ac_sim": [
+              {
+                "id": "ACE51.2",
+                "desc": "The system must display the medication's expiration date.",
+                "sim": 0.5300477743148804
+              },
+              {
+                "id": "ACE51.3",
+                "desc": "The system must highlight in red when one month remains before the medication expires.",
+                "sim": 0.5072148442268372
+              },
+              {
+                "id": "ACE51.1",
+                "desc": "The system must allow listing all medications and sorting them by expiration date.",
+                "sim": 0.4565339982509613
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "HUE45",
+        "desc": "As a pharmacist, I want to consult the supply inventory sorted by available quantity to quickly identify supplies with the lowest or highest stock.",
+        "sim": 0.6475881338119507,
+        "ac": [
+          {
+            "id": "AC19.1",
+            "desc": "The system detects minimum stock and upcoming expirations and sends notifications.",
+            "ac_sim": [
+              {
+                "id": "ACE45.1",
+                "desc": "The system must display the supply name and the number of available units.",
+                "sim": 0.3969113230705261
+              },
+              {
+                "id": "ACE45.2",
+                "desc": "The system sorts from lowest to highest.",
+                "sim": 0.3318386971950531
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "HU20",
+    "desc": "As a pharmacist, I want to consult inventory sorted by available quantity or expiration date, so that I can manage stock efficiently.",
+    "h_sim": [
+      {
+        "id": "HUE46",
+        "desc": "As a pharmacist, I want to consult the supply inventory sorted by expiration date to identify supplies about to expire.",
+        "sim": 0.8703727126121521,
+        "ac": [
+          {
+            "id": "AC20.1",
+            "desc": "Inventory can be sorted by quantity or expiration.",
+            "ac_sim": [
+              {
+                "id": "ACE46.1",
+                "desc": "The system must display the supply name and the expiration date.",
+                "sim": 0.5577573180198669
+              },
+              {
+                "id": "ACE46.2",
+                "desc": "The system sorts from lowest to highest.",
+                "sim": 0.440615713596344
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "HUE45",
+        "desc": "As a pharmacist, I want to consult the supply inventory sorted by available quantity to quickly identify supplies with the lowest or highest stock.",
+        "sim": 0.8611047267913818,
+        "ac": [
+          {
+            "id": "AC20.1",
+            "desc": "Inventory can be sorted by quantity or expiration.",
+            "ac_sim": [
+              {
+                "id": "ACE45.2",
+                "desc": "The system sorts from lowest to highest.",
+                "sim": 0.440615713596344
+              },
+              {
+                "id": "ACE45.1",
+                "desc": "The system must display the supply name and the number of available units.",
+                "sim": 0.3334536552429199
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "HUE43",
+        "desc": "As a pharmacist, I want to consult the medication inventory sorted by available quantity to quickly identify medications with the lowest or highest stock.",
+        "sim": 0.860111653804779,
+        "ac": [
+          {
+            "id": "AC20.1",
+            "desc": "Inventory can be sorted by quantity or expiration.",
+            "ac_sim": [
+              {
+                "id": "ACE43.1",
+                "desc": "The system must display the medication name and the number of available units.",
+                "sim": 0.44722750782966614
+              },
+              {
+                "id": "ACE43.2",
+                "desc": "The system sorts from lowest to highest.",
+                "sim": 0.440615713596344
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "HUE44",
+        "desc": "As a pharmacist, I want to consult the medication inventory sorted by expiration date to identify medications about to expire.",
+        "sim": 0.8354376554489136,
+        "ac": [
+          {
+            "id": "AC20.1",
+            "desc": "Inventory can be sorted by quantity or expiration.",
+            "ac_sim": [
+              {
+                "id": "ACE44.1",
+                "desc": "The system must display the medication name and the expiration date.",
+                "sim": 0.49104130268096924
+              },
+              {
+                "id": "ACE44.2",
+                "desc": "The system sorts from lowest to highest.",
+                "sim": 0.440615713596344
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "HUE52",
+        "desc": "As a pharmacist, I want to know when a supply is about to expire to make timely decisions.",
+        "sim": 0.6632443070411682,
+        "ac": [
+          {
+            "id": "AC20.1",
+            "desc": "Inventory can be sorted by quantity or expiration.",
+            "ac_sim": [
+              {
+                "id": "ACE52.1",
+                "desc": "The system must allow listing all supplies and sorting them by expiration date.",
+                "sim": 0.7754166126251221
+              },
+              {
+                "id": "ACE52.2",
+                "desc": "The system must display the supply's expiration date.",
+                "sim": 0.5246710181236267
+              },
+              {
+                "id": "ACE52.3",
+                "desc": "The system must highlight in red when one month remains before the supply expires.",
+                "sim": 0.4402441680431366
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "HU21",
+    "desc": "As an analyst, I want to generate reports on consultations by specialty, appointment status, financial income, and medication/supplies consumption, with date range filters, so that I can analyze hospital performance.",
+    "h_sim": [
+      {
+        "id": "HUE56",
+        "desc": "As an analyst, I want to view financial reports of the services to evaluate the hospital's income and economic performance.",
+        "sim": 0.6317234039306641,
+        "ac": [
+          {
+            "id": "AC21.1",
+            "desc": "Reports include all specified metrics.",
+            "ac_sim": [
+              {
+                "id": "ACE56.1",
+                "desc": "The system must display the hospital's total income.",
+                "sim": 0.31966954469680786
+              },
+              {
+                "id": "ACE56.2",
+                "desc": "The system must display the income by specialty.",
+                "sim": 0.2779213488101959
+              },
+              {
+                "id": "ACE56.3",
+                "desc": "The system must display the income by medication.",
+                "sim": 0.24085421860218048
+              },
+              {
+                "id": "ACE56.4",
+                "desc": "The system must allow choosing the query date range.",
+                "sim": 0.1377488374710083
+              },
+              {
+                "id": "ACE56.6",
+                "desc": "The system must display an error if the end date is later than the current date.",
+                "sim": 0.06464066356420517
+              }
+            ]
+          },
+          {
+            "id": "AC21.2",
+            "desc": "Reports can be filtered by date range.",
+            "ac_sim": [
+              {
+                "id": "ACE56.4",
+                "desc": "The system must allow choosing the query date range.",
+                "sim": 0.6172288656234741
+              },
+              {
+                "id": "ACE56.5",
+                "desc": "The system must display an error if the start date is later than the end date.",
+                "sim": 0.39931929111480713
+              },
+              {
+                "id": "ACE56.6",
+                "desc": "The system must display an error if the end date is later than the current date.",
+                "sim": 0.38963523507118225
+              },
+              {
+                "id": "ACE56.2",
+                "desc": "The system must display the income by specialty.",
+                "sim": 0.2768504023551941
+              },
+              {
+                "id": "ACE56.3",
+                "desc": "The system must display the income by medication.",
+                "sim": 0.27586549520492554
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "HUE55",
+        "desc": "As an analyst, I want to view appointment statistics by specialty to evaluate the workload.",
+        "sim": 0.6165250539779663,
+        "ac": [
+          {
+            "id": "AC21.1",
+            "desc": "Reports include all specified metrics.",
+            "ac_sim": [
+              {
+                "id": "ACE55.1",
+                "desc": "The system must list all existing specialties.",
+                "sim": 0.425644189119339
+              },
+              {
+                "id": "ACE55.3",
+                "desc": "The system must display the total number of appointments: overall, attended, canceled, confirmed, and not attended.",
+                "sim": 0.25530821084976196
+              },
+              {
+                "id": "ACE55.4",
+                "desc": "The system must allow choosing a date range.",
+                "sim": 0.12268976867198944
+              },
+              {
+                "id": "ACE55.2",
+                "desc": "The system must allow choosing a specialty.",
+                "sim": 0.11086633801460266
+              },
+              {
+                "id": "ACE55.6",
+                "desc": "The system must display an error if the end date is later than the current date.",
+                "sim": 0.06464063376188278
+              }
+            ]
+          },
+          {
+            "id": "AC21.2",
+            "desc": "Reports can be filtered by date range.",
+            "ac_sim": [
+              {
+                "id": "ACE55.4",
+                "desc": "The system must allow choosing a date range.",
+                "sim": 0.5742564797401428
+              },
+              {
+                "id": "ACE55.5",
+                "desc": "The system must display an error if the start date is later than the end date.",
+                "sim": 0.39931923151016235
+              },
+              {
+                "id": "ACE55.6",
+                "desc": "The system must display an error if the end date is later than the current date.",
+                "sim": 0.38963520526885986
+              },
+              {
+                "id": "ACE55.3",
+                "desc": "The system must display the total number of appointments: overall, attended, canceled, confirmed, and not attended.",
+                "sim": 0.21553638577461243
+              },
+              {
+                "id": "ACE55.1",
+                "desc": "The system must list all existing specialties.",
+                "sim": 0.15778958797454834
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "HUE57",
+        "desc": "As an analyst, I want to view supply consumption to evaluate the hospital's inventory usage.",
+        "sim": 0.5420498847961426,
+        "ac": [
+          {
+            "id": "AC21.1",
+            "desc": "Reports include all specified metrics.",
+            "ac_sim": [
+              {
+                "id": "ACE57.3",
+                "desc": "The system must display the total number of units collected.",
+                "sim": 0.3092781603336334
+              },
+              {
+                "id": "ACE57.2",
+                "desc": "The system must list all supplies sorted by consumption (number of units collected).",
+                "sim": 0.26400303840637207
+              },
+              {
+                "id": "ACE57.1",
+                "desc": "The system must allow filtering by name.",
+                "sim": 0.17811347544193268
+              },
+              {
+                "id": "ACE57.4",
+                "desc": "The system must allow choosing the query date range.",
+                "sim": 0.1377488374710083
+              },
+              {
+                "id": "ACE57.6",
+                "desc": "The system must display an error if the end date is later than the current date.",
+                "sim": 0.06464066356420517
+              }
+            ]
+          },
+          {
+            "id": "AC21.2",
+            "desc": "Reports can be filtered by date range.",
+            "ac_sim": [
+              {
+                "id": "ACE57.4",
+                "desc": "The system must allow choosing the query date range.",
+                "sim": 0.6172288656234741
+              },
+              {
+                "id": "ACE57.1",
+                "desc": "The system must allow filtering by name.",
+                "sim": 0.4307221472263336
+              },
+              {
+                "id": "ACE57.5",
+                "desc": "The system must display an error if the start date is later than the end date.",
+                "sim": 0.39931929111480713
+              },
+              {
+                "id": "ACE57.6",
+                "desc": "The system must display an error if the end date is later than the current date.",
+                "sim": 0.38963523507118225
+              },
+              {
+                "id": "ACE57.2",
+                "desc": "The system must list all supplies sorted by consumption (number of units collected).",
+                "sim": 0.17976990342140198
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "HUE11",
+        "desc": "As administrative staff, I want to view a patient's complete information to consult their personal data.",
+        "sim": 0.5238321423530579,
+        "ac": [
+          {
+            "id": "AC21.1",
+            "desc": "Reports include all specified metrics.",
+            "ac_sim": [
+              {
+                "id": "ACE11.1",
+                "desc": "The system must display the patient's personal data: full name, date of birth, sex, identity document, and contact details (email address and phone number).",
+                "sim": 0.19198638200759888
+              },
+              {
+                "id": "ACE11.2",
+                "desc": "The system must display the patient number.",
+                "sim": 0.1703290343284607
+              }
+            ]
+          },
+          {
+            "id": "AC21.2",
+            "desc": "Reports can be filtered by date range.",
+            "ac_sim": [
+              {
+                "id": "ACE11.2",
+                "desc": "The system must display the patient number.",
+                "sim": 0.17154178023338318
+              },
+              {
+                "id": "ACE11.1",
+                "desc": "The system must display the patient's personal data: full name, date of birth, sex, identity document, and contact details (email address and phone number).",
+                "sim": 0.16142131388187408
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "HUE12",
+        "desc": "As administrative staff, I want to view a patient's scheduled appointments to consult their information.",
+        "sim": 0.511269748210907,
+        "ac": [
+          {
+            "id": "AC21.1",
+            "desc": "Reports include all specified metrics.",
+            "ac_sim": [
+              {
+                "id": "ACE12.1",
+                "desc": "The system must display the appointment details: specialty, doctor, schedule, and status.",
+                "sim": 0.23392122983932495
+              }
+            ]
+          },
+          {
+            "id": "AC21.2",
+            "desc": "Reports can be filtered by date range.",
+            "ac_sim": [
+              {
+                "id": "ACE12.1",
+                "desc": "The system must display the appointment details: specialty, doctor, schedule, and status.",
+                "sim": 0.23183397948741913
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "HU22",
+    "desc": "As a system administrator, I want to ensure date validations prevent invalid ranges, so that data integrity is maintained.",
+    "h_sim": [
+      {
+        "id": "HUE46",
+        "desc": "As a pharmacist, I want to consult the supply inventory sorted by expiration date to identify supplies about to expire.",
+        "sim": 0.3132343292236328,
+        "ac": [
+          {
+            "id": "AC22.1",
+            "desc": "The system does not allow invalid date ranges.",
+            "ac_sim": [
+              {
+                "id": "ACE46.1",
+                "desc": "The system must display the supply name and the expiration date.",
+                "sim": 0.3381679952144623
+              },
+              {
+                "id": "ACE46.2",
+                "desc": "The system sorts from lowest to highest.",
+                "sim": 0.16210229694843292
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "HUE44",
+        "desc": "As a pharmacist, I want to consult the medication inventory sorted by expiration date to identify medications about to expire.",
+        "sim": 0.3044160008430481,
+        "ac": [
+          {
+            "id": "AC22.1",
+            "desc": "The system does not allow invalid date ranges.",
+            "ac_sim": [
+              {
+                "id": "ACE44.1",
+                "desc": "The system must display the medication name and the expiration date.",
+                "sim": 0.30091729760169983
+              },
+              {
+                "id": "ACE44.2",
+                "desc": "The system sorts from lowest to highest.",
+                "sim": 0.16210229694843292
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "HUE51",
+        "desc": "As a pharmacist, I want to know when a medication is about to expire to make timely decisions.",
+        "sim": 0.29910582304000854,
+        "ac": [
+          {
+            "id": "AC22.1",
+            "desc": "The system does not allow invalid date ranges.",
+            "ac_sim": [
+              {
+                "id": "ACE51.3",
+                "desc": "The system must highlight in red when one month remains before the medication expires.",
+                "sim": 0.42020905017852783
+              },
+              {
+                "id": "ACE51.2",
+                "desc": "The system must display the medication's expiration date.",
+                "sim": 0.4154185652732849
+              },
+              {
+                "id": "ACE51.1",
+                "desc": "The system must allow listing all medications and sorting them by expiration date.",
+                "sim": 0.3314429521560669
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "HUE52",
+        "desc": "As a pharmacist, I want to know when a supply is about to expire to make timely decisions.",
+        "sim": 0.29237931966781616,
+        "ac": [
+          {
+            "id": "AC22.1",
+            "desc": "The system does not allow invalid date ranges.",
+            "ac_sim": [
+              {
+                "id": "ACE52.2",
+                "desc": "The system must display the supply's expiration date.",
+                "sim": 0.4535159766674042
+              },
+              {
+                "id": "ACE52.3",
+                "desc": "The system must highlight in red when one month remains before the supply expires.",
+                "sim": 0.4154326617717743
+              },
+              {
+                "id": "ACE52.1",
+                "desc": "The system must allow listing all supplies and sorting them by expiration date.",
+                "sim": 0.36929619312286377
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "HUE15",
+        "desc": "As administrative staff, I want to edit an existing appointment to change its date without losing the information.",
+        "sim": 0.2900480031967163,
+        "ac": [
+          {
+            "id": "AC22.1",
+            "desc": "The system does not allow invalid date ranges.",
+            "ac_sim": [
+              {
+                "id": "ACE15.1",
+                "desc": "The system must allow editing the date and time of an existing appointment.",
+                "sim": 0.444742351770401
+              },
+              {
+                "id": "ACE15.2",
+                "desc": "The system must validate that the new time slot is available.",
+                "sim": 0.4326528012752533
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "HU23",
+    "desc": "As a system administrator, I want to ensure notifications are sent within a reasonable time after triggering events, so that users are promptly informed.",
+    "h_sim": [
+      {
+        "id": "HUE16",
+        "desc": "As a patient, I want to be notified by email when my appointment is modified so I stay informed.",
+        "sim": 0.4149360656738281,
+        "ac": [
+          {
+            "id": "AC23.1",
+            "desc": "Notifications are sent shortly after relevant events.",
+            "ac_sim": [
+              {
+                "id": "ACE16.3",
+                "desc": "The system must include the new appointment date in the notification when a date change occurs.",
+                "sim": 0.5526919960975647
+              },
+              {
+                "id": "ACE16.2",
+                "desc": "The system must indicate in the notification if the appointment had a schedule change.",
+                "sim": 0.5330666899681091
+              },
+              {
+                "id": "ACE16.1",
+                "desc": "The system must indicate in the notification if the appointment was canceled.",
+                "sim": 0.366151362657547
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "HUE52",
+        "desc": "As a pharmacist, I want to know when a supply is about to expire to make timely decisions.",
+        "sim": 0.34417879581451416,
+        "ac": [
+          {
+            "id": "AC23.1",
+            "desc": "Notifications are sent shortly after relevant events.",
+            "ac_sim": [
+              {
+                "id": "ACE52.3",
+                "desc": "The system must highlight in red when one month remains before the supply expires.",
+                "sim": 0.24851927161216736
+              },
+              {
+                "id": "ACE52.2",
+                "desc": "The system must display the supply's expiration date.",
+                "sim": 0.1754799634218216
+              },
+              {
+                "id": "ACE52.1",
+                "desc": "The system must allow listing all supplies and sorting them by expiration date.",
+                "sim": 0.12244230508804321
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "HUE17",
+        "desc": "As a patient, I want to be notified by text message to my phone number when my appointment is modified so I stay informed.",
+        "sim": 0.3434874713420868,
+        "ac": [
+          {
+            "id": "AC23.1",
+            "desc": "Notifications are sent shortly after relevant events.",
+            "ac_sim": [
+              {
+                "id": "ACE17.3",
+                "desc": "The system must include the new appointment date in the notification when a date change occurs.",
+                "sim": 0.5526919960975647
+              },
+              {
+                "id": "ACE17.2",
+                "desc": "The system must indicate in the notification if the appointment had a schedule change.",
+                "sim": 0.5330666899681091
+              },
+              {
+                "id": "ACE17.1",
+                "desc": "The system must indicate in the notification if the appointment was canceled.",
+                "sim": 0.366151362657547
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "HUE24",
+        "desc": "As administrative staff, I want to edit a doctor's attention hours to keep the information up to date.",
+        "sim": 0.3193485140800476,
+        "ac": [
+          {
+            "id": "AC23.1",
+            "desc": "Notifications are sent shortly after relevant events.",
+            "ac_sim": [
+              {
+                "id": "ACE24.1",
+                "desc": "The system must allow editing the days of the week for attention.",
+                "sim": 0.28913480043411255
+              },
+              {
+                "id": "ACE24.3",
+                "desc": "The system must display an error if the time slots for the same day overlap.",
+                "sim": 0.2675362229347229
+              },
+              {
+                "id": "ACE24.4",
+                "desc": "The system must display an error if the start times precede the end times.",
+                "sim": 0.2497396469116211
+              },
+              {
+                "id": "ACE24.2",
+                "desc": "The system must allow editing the start time and end time for a day of the week.",
+                "sim": 0.19897328317165375
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "HUE51",
+        "desc": "As a pharmacist, I want to know when a medication is about to expire to make timely decisions.",
+        "sim": 0.3110230565071106,
+        "ac": [
+          {
+            "id": "AC23.1",
+            "desc": "Notifications are sent shortly after relevant events.",
+            "ac_sim": [
+              {
+                "id": "ACE51.3",
+                "desc": "The system must highlight in red when one month remains before the medication expires.",
+                "sim": 0.24352987110614777
+              },
+              {
+                "id": "ACE51.2",
+                "desc": "The system must display the medication's expiration date.",
+                "sim": 0.17026185989379883
+              },
+              {
+                "id": "ACE51.1",
+                "desc": "The system must allow listing all medications and sorting them by expiration date.",
+                "sim": 0.10642775148153305
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

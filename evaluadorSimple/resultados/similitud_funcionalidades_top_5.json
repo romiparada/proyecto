@@ -1,0 +1,2644 @@
+[
+  {
+    "id": "F1",
+    "desc": "Register patients with personal and medical data",
+    "h_sim": [
+      {
+        "id": "HU1",
+        "desc": "As an administrative staff member, I want to register patients with personal data and medical background, so that the hospital can maintain accurate and complete patient records.",
+        "ac": [
+          "The system allows entry of personal and medical background data.",
+          "Each patient receives a unique identifier.",
+          "Duplicate identity documents or identifiers are not allowed."
+        ],
+        "sim": 0.8504810333251953
+      },
+      {
+        "id": "HU12",
+        "desc": "As an administrator, I want to register medical professionals with their personal and contact details and associate specialties, so that the hospital can manage staff information.",
+        "ac": [
+          "The system allows entry and editing of staff data and specialties."
+        ],
+        "sim": 0.6906793713569641
+      },
+      {
+        "id": "HU2",
+        "desc": "As an administrative staff member, I want to modify the personal and contact details of a registered patient, so that patient information remains up to date.",
+        "ac": [
+          "The system allows editing of existing patient records."
+        ],
+        "sim": 0.5798618197441101
+      },
+      {
+        "id": "HU5",
+        "desc": "As an administrative staff member, I want to create medical appointments by associating the patient, specialty, and professional, so that appointments are scheduled accurately.",
+        "ac": [
+          "The system allows selection of patient, specialty, and doctor.",
+          "Overlapping appointments are prevented."
+        ],
+        "sim": 0.5577728748321533
+      },
+      {
+        "id": "HU10",
+        "desc": "As a doctor, I want to register diagnoses, treatments, and patient’s clinical progress in the electronic clinical record, so that patient care is well documented.",
+        "ac": [
+          "The system allows entry and editing of clinical records.",
+          "Each entry is timestamped."
+        ],
+        "sim": 0.5564466714859009
+      }
+    ]
+  },
+  {
+    "id": "F2",
+    "desc": "Assign a unique identifier to each patient",
+    "h_sim": [
+      {
+        "id": "HU5",
+        "desc": "As an administrative staff member, I want to create medical appointments by associating the patient, specialty, and professional, so that appointments are scheduled accurately.",
+        "ac": [
+          "The system allows selection of patient, specialty, and doctor.",
+          "Overlapping appointments are prevented."
+        ],
+        "sim": 0.5327528715133667
+      },
+      {
+        "id": "HU1",
+        "desc": "As an administrative staff member, I want to register patients with personal data and medical background, so that the hospital can maintain accurate and complete patient records.",
+        "ac": [
+          "The system allows entry of personal and medical background data.",
+          "Each patient receives a unique identifier.",
+          "Duplicate identity documents or identifiers are not allowed."
+        ],
+        "sim": 0.5319581031799316
+      },
+      {
+        "id": "HU3",
+        "desc": "As an administrative staff member, I want to search for patients by name, identity document, or identifier number, so that I can quickly locate patient records.",
+        "ac": [
+          "The system supports search by name, document, or identifier."
+        ],
+        "sim": 0.5239272713661194
+      },
+      {
+        "id": "HU2",
+        "desc": "As an administrative staff member, I want to modify the personal and contact details of a registered patient, so that patient information remains up to date.",
+        "ac": [
+          "The system allows editing of existing patient records."
+        ],
+        "sim": 0.4428849518299103
+      },
+      {
+        "id": "HU9",
+        "desc": "As an administrative staff member, I want to manage the status of appointments throughout their lifecycle, so that the hospital can track appointment outcomes.",
+        "ac": [
+          "Appointment statuses include Confirmed, Canceled, Attended, Not attended."
+        ],
+        "sim": 0.4359031915664673
+      }
+    ]
+  },
+  {
+    "id": "F3",
+    "desc": "Modify patient personal and contact information",
+    "h_sim": [
+      {
+        "id": "HU2",
+        "desc": "As an administrative staff member, I want to modify the personal and contact details of a registered patient, so that patient information remains up to date.",
+        "ac": [
+          "The system allows editing of existing patient records."
+        ],
+        "sim": 0.9010364413261414
+      },
+      {
+        "id": "HU1",
+        "desc": "As an administrative staff member, I want to register patients with personal data and medical background, so that the hospital can maintain accurate and complete patient records.",
+        "ac": [
+          "The system allows entry of personal and medical background data.",
+          "Each patient receives a unique identifier.",
+          "Duplicate identity documents or identifiers are not allowed."
+        ],
+        "sim": 0.6316258907318115
+      },
+      {
+        "id": "HU12",
+        "desc": "As an administrator, I want to register medical professionals with their personal and contact details and associate specialties, so that the hospital can manage staff information.",
+        "ac": [
+          "The system allows entry and editing of staff data and specialties."
+        ],
+        "sim": 0.5896642804145813
+      },
+      {
+        "id": "HU5",
+        "desc": "As an administrative staff member, I want to create medical appointments by associating the patient, specialty, and professional, so that appointments are scheduled accurately.",
+        "ac": [
+          "The system allows selection of patient, specialty, and doctor.",
+          "Overlapping appointments are prevented."
+        ],
+        "sim": 0.5505613088607788
+      },
+      {
+        "id": "HU4",
+        "desc": "As an authorized user, I want to visualize a patient's complete information, so that I can review all relevant details for care or administration.",
+        "ac": [
+          "The system displays all patient data in a single view."
+        ],
+        "sim": 0.5105352997779846
+      }
+    ]
+  },
+  {
+    "id": "F4",
+    "desc": "Record patient medical background such as allergies or chronic diseases",
+    "h_sim": [
+      {
+        "id": "HU1",
+        "desc": "As an administrative staff member, I want to register patients with personal data and medical background, so that the hospital can maintain accurate and complete patient records.",
+        "ac": [
+          "The system allows entry of personal and medical background data.",
+          "Each patient receives a unique identifier.",
+          "Duplicate identity documents or identifiers are not allowed."
+        ],
+        "sim": 0.6643303632736206
+      },
+      {
+        "id": "HU10",
+        "desc": "As a doctor, I want to register diagnoses, treatments, and patient’s clinical progress in the electronic clinical record, so that patient care is well documented.",
+        "ac": [
+          "The system allows entry and editing of clinical records.",
+          "Each entry is timestamped."
+        ],
+        "sim": 0.5978075265884399
+      },
+      {
+        "id": "HU11",
+        "desc": "As a patient, I want to consult my electronic clinical record, so that I can stay informed about my health history.",
+        "ac": [
+          "Patients can view but not edit their records.",
+          "Access is restricted to authorized users."
+        ],
+        "sim": 0.5779744386672974
+      },
+      {
+        "id": "HU5",
+        "desc": "As an administrative staff member, I want to create medical appointments by associating the patient, specialty, and professional, so that appointments are scheduled accurately.",
+        "ac": [
+          "The system allows selection of patient, specialty, and doctor.",
+          "Overlapping appointments are prevented."
+        ],
+        "sim": 0.5271271467208862
+      },
+      {
+        "id": "HU9",
+        "desc": "As an administrative staff member, I want to manage the status of appointments throughout their lifecycle, so that the hospital can track appointment outcomes.",
+        "ac": [
+          "Appointment statuses include Confirmed, Canceled, Attended, Not attended."
+        ],
+        "sim": 0.5056213736534119
+      }
+    ]
+  },
+  {
+    "id": "F5",
+    "desc": "Search patients by name, identity document or identifier",
+    "h_sim": [
+      {
+        "id": "HU3",
+        "desc": "As an administrative staff member, I want to search for patients by name, identity document, or identifier number, so that I can quickly locate patient records.",
+        "ac": [
+          "The system supports search by name, document, or identifier."
+        ],
+        "sim": 0.8749357461929321
+      },
+      {
+        "id": "HU1",
+        "desc": "As an administrative staff member, I want to register patients with personal data and medical background, so that the hospital can maintain accurate and complete patient records.",
+        "ac": [
+          "The system allows entry of personal and medical background data.",
+          "Each patient receives a unique identifier.",
+          "Duplicate identity documents or identifiers are not allowed."
+        ],
+        "sim": 0.6048946380615234
+      },
+      {
+        "id": "HU5",
+        "desc": "As an administrative staff member, I want to create medical appointments by associating the patient, specialty, and professional, so that appointments are scheduled accurately.",
+        "ac": [
+          "The system allows selection of patient, specialty, and doctor.",
+          "Overlapping appointments are prevented."
+        ],
+        "sim": 0.49833425879478455
+      },
+      {
+        "id": "HU12",
+        "desc": "As an administrator, I want to register medical professionals with their personal and contact details and associate specialties, so that the hospital can manage staff information.",
+        "ac": [
+          "The system allows entry and editing of staff data and specialties."
+        ],
+        "sim": 0.4761527180671692
+      },
+      {
+        "id": "HU4",
+        "desc": "As an authorized user, I want to visualize a patient's complete information, so that I can review all relevant details for care or administration.",
+        "ac": [
+          "The system displays all patient data in a single view."
+        ],
+        "sim": 0.46580788493156433
+      }
+    ]
+  },
+  {
+    "id": "F6",
+    "desc": "View complete patient information",
+    "h_sim": [
+      {
+        "id": "HU4",
+        "desc": "As an authorized user, I want to visualize a patient's complete information, so that I can review all relevant details for care or administration.",
+        "ac": [
+          "The system displays all patient data in a single view."
+        ],
+        "sim": 0.7575284838676453
+      },
+      {
+        "id": "HU11",
+        "desc": "As a patient, I want to consult my electronic clinical record, so that I can stay informed about my health history.",
+        "ac": [
+          "Patients can view but not edit their records.",
+          "Access is restricted to authorized users."
+        ],
+        "sim": 0.6321467161178589
+      },
+      {
+        "id": "HU1",
+        "desc": "As an administrative staff member, I want to register patients with personal data and medical background, so that the hospital can maintain accurate and complete patient records.",
+        "ac": [
+          "The system allows entry of personal and medical background data.",
+          "Each patient receives a unique identifier.",
+          "Duplicate identity documents or identifiers are not allowed."
+        ],
+        "sim": 0.5662193298339844
+      },
+      {
+        "id": "HU10",
+        "desc": "As a doctor, I want to register diagnoses, treatments, and patient’s clinical progress in the electronic clinical record, so that patient care is well documented.",
+        "ac": [
+          "The system allows entry and editing of clinical records.",
+          "Each entry is timestamped."
+        ],
+        "sim": 0.5589869022369385
+      },
+      {
+        "id": "HU3",
+        "desc": "As an administrative staff member, I want to search for patients by name, identity document, or identifier number, so that I can quickly locate patient records.",
+        "ac": [
+          "The system supports search by name, document, or identifier."
+        ],
+        "sim": 0.5528126955032349
+      }
+    ]
+  },
+  {
+    "id": "F7",
+    "desc": "Access patient personal and clinical information",
+    "h_sim": [
+      {
+        "id": "HU1",
+        "desc": "As an administrative staff member, I want to register patients with personal data and medical background, so that the hospital can maintain accurate and complete patient records.",
+        "ac": [
+          "The system allows entry of personal and medical background data.",
+          "Each patient receives a unique identifier.",
+          "Duplicate identity documents or identifiers are not allowed."
+        ],
+        "sim": 0.682410717010498
+      },
+      {
+        "id": "HU11",
+        "desc": "As a patient, I want to consult my electronic clinical record, so that I can stay informed about my health history.",
+        "ac": [
+          "Patients can view but not edit their records.",
+          "Access is restricted to authorized users."
+        ],
+        "sim": 0.6721223592758179
+      },
+      {
+        "id": "HU4",
+        "desc": "As an authorized user, I want to visualize a patient's complete information, so that I can review all relevant details for care or administration.",
+        "ac": [
+          "The system displays all patient data in a single view."
+        ],
+        "sim": 0.6640796661376953
+      },
+      {
+        "id": "HU2",
+        "desc": "As an administrative staff member, I want to modify the personal and contact details of a registered patient, so that patient information remains up to date.",
+        "ac": [
+          "The system allows editing of existing patient records."
+        ],
+        "sim": 0.6098465919494629
+      },
+      {
+        "id": "HU12",
+        "desc": "As an administrator, I want to register medical professionals with their personal and contact details and associate specialties, so that the hospital can manage staff information.",
+        "ac": [
+          "The system allows entry and editing of staff data and specialties."
+        ],
+        "sim": 0.5834875106811523
+      }
+    ]
+  },
+  {
+    "id": "F8",
+    "desc": "Create medical appointments linking patient, specialty and doctor",
+    "h_sim": [
+      {
+        "id": "HU5",
+        "desc": "As an administrative staff member, I want to create medical appointments by associating the patient, specialty, and professional, so that appointments are scheduled accurately.",
+        "ac": [
+          "The system allows selection of patient, specialty, and doctor.",
+          "Overlapping appointments are prevented."
+        ],
+        "sim": 0.875446081161499
+      },
+      {
+        "id": "HU6",
+        "desc": "As an administrative staff member, I want to visualize the availability of registered doctors, so that I can schedule appointments efficiently.",
+        "ac": [
+          "The system displays doctors’ schedules and availability."
+        ],
+        "sim": 0.6099950075149536
+      },
+      {
+        "id": "HU9",
+        "desc": "As an administrative staff member, I want to manage the status of appointments throughout their lifecycle, so that the hospital can track appointment outcomes.",
+        "ac": [
+          "Appointment statuses include Confirmed, Canceled, Attended, Not attended."
+        ],
+        "sim": 0.5952731966972351
+      },
+      {
+        "id": "HU12",
+        "desc": "As an administrator, I want to register medical professionals with their personal and contact details and associate specialties, so that the hospital can manage staff information.",
+        "ac": [
+          "The system allows entry and editing of staff data and specialties."
+        ],
+        "sim": 0.563771665096283
+      },
+      {
+        "id": "HU1",
+        "desc": "As an administrative staff member, I want to register patients with personal data and medical background, so that the hospital can maintain accurate and complete patient records.",
+        "ac": [
+          "The system allows entry of personal and medical background data.",
+          "Each patient receives a unique identifier.",
+          "Duplicate identity documents or identifiers are not allowed."
+        ],
+        "sim": 0.5395301580429077
+      }
+    ]
+  },
+  {
+    "id": "F9",
+    "desc": "View availability of registered doctors",
+    "h_sim": [
+      {
+        "id": "HU6",
+        "desc": "As an administrative staff member, I want to visualize the availability of registered doctors, so that I can schedule appointments efficiently.",
+        "ac": [
+          "The system displays doctors’ schedules and availability."
+        ],
+        "sim": 0.7268349528312683
+      },
+      {
+        "id": "HU12",
+        "desc": "As an administrator, I want to register medical professionals with their personal and contact details and associate specialties, so that the hospital can manage staff information.",
+        "ac": [
+          "The system allows entry and editing of staff data and specialties."
+        ],
+        "sim": 0.6069509983062744
+      },
+      {
+        "id": "HU5",
+        "desc": "As an administrative staff member, I want to create medical appointments by associating the patient, specialty, and professional, so that appointments are scheduled accurately.",
+        "ac": [
+          "The system allows selection of patient, specialty, and doctor.",
+          "Overlapping appointments are prevented."
+        ],
+        "sim": 0.5422155857086182
+      },
+      {
+        "id": "HU1",
+        "desc": "As an administrative staff member, I want to register patients with personal data and medical background, so that the hospital can maintain accurate and complete patient records.",
+        "ac": [
+          "The system allows entry of personal and medical background data.",
+          "Each patient receives a unique identifier.",
+          "Duplicate identity documents or identifiers are not allowed."
+        ],
+        "sim": 0.5413665175437927
+      },
+      {
+        "id": "HU9",
+        "desc": "As an administrative staff member, I want to manage the status of appointments throughout their lifecycle, so that the hospital can track appointment outcomes.",
+        "ac": [
+          "Appointment statuses include Confirmed, Canceled, Attended, Not attended."
+        ],
+        "sim": 0.4679417014122009
+      }
+    ]
+  },
+  {
+    "id": "F10",
+    "desc": "Prevent overlapping medical appointments",
+    "h_sim": [
+      {
+        "id": "HU5",
+        "desc": "As an administrative staff member, I want to create medical appointments by associating the patient, specialty, and professional, so that appointments are scheduled accurately.",
+        "ac": [
+          "The system allows selection of patient, specialty, and doctor.",
+          "Overlapping appointments are prevented."
+        ],
+        "sim": 0.5690890550613403
+      },
+      {
+        "id": "HU9",
+        "desc": "As an administrative staff member, I want to manage the status of appointments throughout their lifecycle, so that the hospital can track appointment outcomes.",
+        "ac": [
+          "Appointment statuses include Confirmed, Canceled, Attended, Not attended."
+        ],
+        "sim": 0.534018337726593
+      },
+      {
+        "id": "HU13",
+        "desc": "As an administrator, I want to define and modify attention hours and activate/deactivate professionals for scheduling, so that doctor availability is accurately reflected.",
+        "ac": [
+          "The system supports setting and updating working hours.",
+          "Professionals can be activated or deactivated for scheduling."
+        ],
+        "sim": 0.47853779792785645
+      },
+      {
+        "id": "HU8",
+        "desc": "As a patient, I want to receive notifications when my appointment is modified or canceled, so that I am always informed about my schedule.",
+        "ac": [
+          "Notifications are sent promptly after changes."
+        ],
+        "sim": 0.4483483135700226
+      },
+      {
+        "id": "HU7",
+        "desc": "As an administrative staff member, I want to modify or cancel existing appointments, so that changes can be managed as needed.",
+        "ac": [
+          "The system allows editing and canceling of appointments.",
+          "Patients are notified of changes."
+        ],
+        "sim": 0.4394243061542511
+      }
+    ]
+  },
+  {
+    "id": "F11",
+    "desc": "Modify appointment date and time",
+    "h_sim": [
+      {
+        "id": "HU7",
+        "desc": "As an administrative staff member, I want to modify or cancel existing appointments, so that changes can be managed as needed.",
+        "ac": [
+          "The system allows editing and canceling of appointments.",
+          "Patients are notified of changes."
+        ],
+        "sim": 0.7490205764770508
+      },
+      {
+        "id": "HU13",
+        "desc": "As an administrator, I want to define and modify attention hours and activate/deactivate professionals for scheduling, so that doctor availability is accurately reflected.",
+        "ac": [
+          "The system supports setting and updating working hours.",
+          "Professionals can be activated or deactivated for scheduling."
+        ],
+        "sim": 0.5357499122619629
+      },
+      {
+        "id": "HU2",
+        "desc": "As an administrative staff member, I want to modify the personal and contact details of a registered patient, so that patient information remains up to date.",
+        "ac": [
+          "The system allows editing of existing patient records."
+        ],
+        "sim": 0.4933962821960449
+      },
+      {
+        "id": "HU9",
+        "desc": "As an administrative staff member, I want to manage the status of appointments throughout their lifecycle, so that the hospital can track appointment outcomes.",
+        "ac": [
+          "Appointment statuses include Confirmed, Canceled, Attended, Not attended."
+        ],
+        "sim": 0.4876193702220917
+      },
+      {
+        "id": "HU5",
+        "desc": "As an administrative staff member, I want to create medical appointments by associating the patient, specialty, and professional, so that appointments are scheduled accurately.",
+        "ac": [
+          "The system allows selection of patient, specialty, and doctor.",
+          "Overlapping appointments are prevented."
+        ],
+        "sim": 0.48137009143829346
+      }
+    ]
+  },
+  {
+    "id": "F12",
+    "desc": "Cancel existing appointments",
+    "h_sim": [
+      {
+        "id": "HU7",
+        "desc": "As an administrative staff member, I want to modify or cancel existing appointments, so that changes can be managed as needed.",
+        "ac": [
+          "The system allows editing and canceling of appointments.",
+          "Patients are notified of changes."
+        ],
+        "sim": 0.7144713401794434
+      },
+      {
+        "id": "HU8",
+        "desc": "As a patient, I want to receive notifications when my appointment is modified or canceled, so that I am always informed about my schedule.",
+        "ac": [
+          "Notifications are sent promptly after changes."
+        ],
+        "sim": 0.4787081480026245
+      },
+      {
+        "id": "HU9",
+        "desc": "As an administrative staff member, I want to manage the status of appointments throughout their lifecycle, so that the hospital can track appointment outcomes.",
+        "ac": [
+          "Appointment statuses include Confirmed, Canceled, Attended, Not attended."
+        ],
+        "sim": 0.4144589602947235
+      },
+      {
+        "id": "HU13",
+        "desc": "As an administrator, I want to define and modify attention hours and activate/deactivate professionals for scheduling, so that doctor availability is accurately reflected.",
+        "ac": [
+          "The system supports setting and updating working hours.",
+          "Professionals can be activated or deactivated for scheduling."
+        ],
+        "sim": 0.36932557821273804
+      },
+      {
+        "id": "HU5",
+        "desc": "As an administrative staff member, I want to create medical appointments by associating the patient, specialty, and professional, so that appointments are scheduled accurately.",
+        "ac": [
+          "The system allows selection of patient, specialty, and doctor.",
+          "Overlapping appointments are prevented."
+        ],
+        "sim": 0.33643513917922974
+      }
+    ]
+  },
+  {
+    "id": "F13",
+    "desc": "Notify patients when appointments are modified or canceled",
+    "h_sim": [
+      {
+        "id": "HU8",
+        "desc": "As a patient, I want to receive notifications when my appointment is modified or canceled, so that I am always informed about my schedule.",
+        "ac": [
+          "Notifications are sent promptly after changes."
+        ],
+        "sim": 0.8102291822433472
+      },
+      {
+        "id": "HU9",
+        "desc": "As an administrative staff member, I want to manage the status of appointments throughout their lifecycle, so that the hospital can track appointment outcomes.",
+        "ac": [
+          "Appointment statuses include Confirmed, Canceled, Attended, Not attended."
+        ],
+        "sim": 0.6129981279373169
+      },
+      {
+        "id": "HU7",
+        "desc": "As an administrative staff member, I want to modify or cancel existing appointments, so that changes can be managed as needed.",
+        "ac": [
+          "The system allows editing and canceling of appointments.",
+          "Patients are notified of changes."
+        ],
+        "sim": 0.6089280843734741
+      },
+      {
+        "id": "HU13",
+        "desc": "As an administrator, I want to define and modify attention hours and activate/deactivate professionals for scheduling, so that doctor availability is accurately reflected.",
+        "ac": [
+          "The system supports setting and updating working hours.",
+          "Professionals can be activated or deactivated for scheduling."
+        ],
+        "sim": 0.5082288384437561
+      },
+      {
+        "id": "HU5",
+        "desc": "As an administrative staff member, I want to create medical appointments by associating the patient, specialty, and professional, so that appointments are scheduled accurately.",
+        "ac": [
+          "The system allows selection of patient, specialty, and doctor.",
+          "Overlapping appointments are prevented."
+        ],
+        "sim": 0.504554033279419
+      }
+    ]
+  },
+  {
+    "id": "F14",
+    "desc": "Manage appointment lifecycle and status",
+    "h_sim": [
+      {
+        "id": "HU9",
+        "desc": "As an administrative staff member, I want to manage the status of appointments throughout their lifecycle, so that the hospital can track appointment outcomes.",
+        "ac": [
+          "Appointment statuses include Confirmed, Canceled, Attended, Not attended."
+        ],
+        "sim": 0.7930425405502319
+      },
+      {
+        "id": "HU5",
+        "desc": "As an administrative staff member, I want to create medical appointments by associating the patient, specialty, and professional, so that appointments are scheduled accurately.",
+        "ac": [
+          "The system allows selection of patient, specialty, and doctor.",
+          "Overlapping appointments are prevented."
+        ],
+        "sim": 0.6056466102600098
+      },
+      {
+        "id": "HU7",
+        "desc": "As an administrative staff member, I want to modify or cancel existing appointments, so that changes can be managed as needed.",
+        "ac": [
+          "The system allows editing and canceling of appointments.",
+          "Patients are notified of changes."
+        ],
+        "sim": 0.5464538335800171
+      },
+      {
+        "id": "HU13",
+        "desc": "As an administrator, I want to define and modify attention hours and activate/deactivate professionals for scheduling, so that doctor availability is accurately reflected.",
+        "ac": [
+          "The system supports setting and updating working hours.",
+          "Professionals can be activated or deactivated for scheduling."
+        ],
+        "sim": 0.5142958164215088
+      },
+      {
+        "id": "HU8",
+        "desc": "As a patient, I want to receive notifications when my appointment is modified or canceled, so that I am always informed about my schedule.",
+        "ac": [
+          "Notifications are sent promptly after changes."
+        ],
+        "sim": 0.4875677824020386
+      }
+    ]
+  },
+  {
+    "id": "F15",
+    "desc": "Track appointment states such as confirmed, canceled or attended",
+    "h_sim": [
+      {
+        "id": "HU9",
+        "desc": "As an administrative staff member, I want to manage the status of appointments throughout their lifecycle, so that the hospital can track appointment outcomes.",
+        "ac": [
+          "Appointment statuses include Confirmed, Canceled, Attended, Not attended."
+        ],
+        "sim": 0.6798989176750183
+      },
+      {
+        "id": "HU8",
+        "desc": "As a patient, I want to receive notifications when my appointment is modified or canceled, so that I am always informed about my schedule.",
+        "ac": [
+          "Notifications are sent promptly after changes."
+        ],
+        "sim": 0.5382212400436401
+      },
+      {
+        "id": "HU7",
+        "desc": "As an administrative staff member, I want to modify or cancel existing appointments, so that changes can be managed as needed.",
+        "ac": [
+          "The system allows editing and canceling of appointments.",
+          "Patients are notified of changes."
+        ],
+        "sim": 0.51688551902771
+      },
+      {
+        "id": "HU5",
+        "desc": "As an administrative staff member, I want to create medical appointments by associating the patient, specialty, and professional, so that appointments are scheduled accurately.",
+        "ac": [
+          "The system allows selection of patient, specialty, and doctor.",
+          "Overlapping appointments are prevented."
+        ],
+        "sim": 0.4881472587585449
+      },
+      {
+        "id": "HU13",
+        "desc": "As an administrator, I want to define and modify attention hours and activate/deactivate professionals for scheduling, so that doctor availability is accurately reflected.",
+        "ac": [
+          "The system supports setting and updating working hours.",
+          "Professionals can be activated or deactivated for scheduling."
+        ],
+        "sim": 0.43130767345428467
+      }
+    ]
+  },
+  {
+    "id": "F16",
+    "desc": "Register diagnoses, treatments and clinical progress",
+    "h_sim": [
+      {
+        "id": "HU10",
+        "desc": "As a doctor, I want to register diagnoses, treatments, and patient’s clinical progress in the electronic clinical record, so that patient care is well documented.",
+        "ac": [
+          "The system allows entry and editing of clinical records.",
+          "Each entry is timestamped."
+        ],
+        "sim": 0.7249699831008911
+      },
+      {
+        "id": "HU11",
+        "desc": "As a patient, I want to consult my electronic clinical record, so that I can stay informed about my health history.",
+        "ac": [
+          "Patients can view but not edit their records.",
+          "Access is restricted to authorized users."
+        ],
+        "sim": 0.5177460312843323
+      },
+      {
+        "id": "HU1",
+        "desc": "As an administrative staff member, I want to register patients with personal data and medical background, so that the hospital can maintain accurate and complete patient records.",
+        "ac": [
+          "The system allows entry of personal and medical background data.",
+          "Each patient receives a unique identifier.",
+          "Duplicate identity documents or identifiers are not allowed."
+        ],
+        "sim": 0.4783947467803955
+      },
+      {
+        "id": "HU9",
+        "desc": "As an administrative staff member, I want to manage the status of appointments throughout their lifecycle, so that the hospital can track appointment outcomes.",
+        "ac": [
+          "Appointment statuses include Confirmed, Canceled, Attended, Not attended."
+        ],
+        "sim": 0.4583595395088196
+      },
+      {
+        "id": "HU12",
+        "desc": "As an administrator, I want to register medical professionals with their personal and contact details and associate specialties, so that the hospital can manage staff information.",
+        "ac": [
+          "The system allows entry and editing of staff data and specialties."
+        ],
+        "sim": 0.40428054332733154
+      }
+    ]
+  },
+  {
+    "id": "F17",
+    "desc": "Edit electronic clinical records",
+    "h_sim": [
+      {
+        "id": "HU10",
+        "desc": "As a doctor, I want to register diagnoses, treatments, and patient’s clinical progress in the electronic clinical record, so that patient care is well documented.",
+        "ac": [
+          "The system allows entry and editing of clinical records.",
+          "Each entry is timestamped."
+        ],
+        "sim": 0.739605188369751
+      },
+      {
+        "id": "HU11",
+        "desc": "As a patient, I want to consult my electronic clinical record, so that I can stay informed about my health history.",
+        "ac": [
+          "Patients can view but not edit their records.",
+          "Access is restricted to authorized users."
+        ],
+        "sim": 0.7200771570205688
+      },
+      {
+        "id": "HU2",
+        "desc": "As an administrative staff member, I want to modify the personal and contact details of a registered patient, so that patient information remains up to date.",
+        "ac": [
+          "The system allows editing of existing patient records."
+        ],
+        "sim": 0.6263439655303955
+      },
+      {
+        "id": "HU1",
+        "desc": "As an administrative staff member, I want to register patients with personal data and medical background, so that the hospital can maintain accurate and complete patient records.",
+        "ac": [
+          "The system allows entry of personal and medical background data.",
+          "Each patient receives a unique identifier.",
+          "Duplicate identity documents or identifiers are not allowed."
+        ],
+        "sim": 0.5507339239120483
+      },
+      {
+        "id": "HU15",
+        "desc": "As an administrative staff member, I want to generate electronic invoices for medical consultations and medication delivery, so that billing is accurate and efficient.",
+        "ac": [
+          "The system generates invoices with unique identifiers.",
+          "Invoices are associated with patients and services."
+        ],
+        "sim": 0.5224760174751282
+      }
+    ]
+  },
+  {
+    "id": "F18",
+    "desc": "Associate a date with each clinical record entry",
+    "h_sim": [
+      {
+        "id": "HU10",
+        "desc": "As a doctor, I want to register diagnoses, treatments, and patient’s clinical progress in the electronic clinical record, so that patient care is well documented.",
+        "ac": [
+          "The system allows entry and editing of clinical records.",
+          "Each entry is timestamped."
+        ],
+        "sim": 0.6071735620498657
+      },
+      {
+        "id": "HU5",
+        "desc": "As an administrative staff member, I want to create medical appointments by associating the patient, specialty, and professional, so that appointments are scheduled accurately.",
+        "ac": [
+          "The system allows selection of patient, specialty, and doctor.",
+          "Overlapping appointments are prevented."
+        ],
+        "sim": 0.5872853398323059
+      },
+      {
+        "id": "HU9",
+        "desc": "As an administrative staff member, I want to manage the status of appointments throughout their lifecycle, so that the hospital can track appointment outcomes.",
+        "ac": [
+          "Appointment statuses include Confirmed, Canceled, Attended, Not attended."
+        ],
+        "sim": 0.5706812143325806
+      },
+      {
+        "id": "HU1",
+        "desc": "As an administrative staff member, I want to register patients with personal data and medical background, so that the hospital can maintain accurate and complete patient records.",
+        "ac": [
+          "The system allows entry of personal and medical background data.",
+          "Each patient receives a unique identifier.",
+          "Duplicate identity documents or identifiers are not allowed."
+        ],
+        "sim": 0.520203709602356
+      },
+      {
+        "id": "HU21",
+        "desc": "As an analyst, I want to generate reports on consultations by specialty, appointment status, financial income, and medication/supplies consumption, with date range filters, so that I can analyze hospital performance.",
+        "ac": [
+          "Reports include all specified metrics.",
+          "Reports can be filtered by date range."
+        ],
+        "sim": 0.5080182552337646
+      }
+    ]
+  },
+  {
+    "id": "F19",
+    "desc": "Store patient medical and clinical information",
+    "h_sim": [
+      {
+        "id": "HU10",
+        "desc": "As a doctor, I want to register diagnoses, treatments, and patient’s clinical progress in the electronic clinical record, so that patient care is well documented.",
+        "ac": [
+          "The system allows entry and editing of clinical records.",
+          "Each entry is timestamped."
+        ],
+        "sim": 0.6765543222427368
+      },
+      {
+        "id": "HU1",
+        "desc": "As an administrative staff member, I want to register patients with personal data and medical background, so that the hospital can maintain accurate and complete patient records.",
+        "ac": [
+          "The system allows entry of personal and medical background data.",
+          "Each patient receives a unique identifier.",
+          "Duplicate identity documents or identifiers are not allowed."
+        ],
+        "sim": 0.6680725812911987
+      },
+      {
+        "id": "HU5",
+        "desc": "As an administrative staff member, I want to create medical appointments by associating the patient, specialty, and professional, so that appointments are scheduled accurately.",
+        "ac": [
+          "The system allows selection of patient, specialty, and doctor.",
+          "Overlapping appointments are prevented."
+        ],
+        "sim": 0.6071587800979614
+      },
+      {
+        "id": "HU11",
+        "desc": "As a patient, I want to consult my electronic clinical record, so that I can stay informed about my health history.",
+        "ac": [
+          "Patients can view but not edit their records.",
+          "Access is restricted to authorized users."
+        ],
+        "sim": 0.580194354057312
+      },
+      {
+        "id": "HU4",
+        "desc": "As an authorized user, I want to visualize a patient's complete information, so that I can review all relevant details for care or administration.",
+        "ac": [
+          "The system displays all patient data in a single view."
+        ],
+        "sim": 0.5626746416091919
+      }
+    ]
+  },
+  {
+    "id": "F20",
+    "desc": "Restrict access to clinical information to authorized users",
+    "h_sim": [
+      {
+        "id": "HU1",
+        "desc": "As an administrative staff member, I want to register patients with personal data and medical background, so that the hospital can maintain accurate and complete patient records.",
+        "ac": [
+          "The system allows entry of personal and medical background data.",
+          "Each patient receives a unique identifier.",
+          "Duplicate identity documents or identifiers are not allowed."
+        ],
+        "sim": 0.5886948108673096
+      },
+      {
+        "id": "HU4",
+        "desc": "As an authorized user, I want to visualize a patient's complete information, so that I can review all relevant details for care or administration.",
+        "ac": [
+          "The system displays all patient data in a single view."
+        ],
+        "sim": 0.564603328704834
+      },
+      {
+        "id": "HU12",
+        "desc": "As an administrator, I want to register medical professionals with their personal and contact details and associate specialties, so that the hospital can manage staff information.",
+        "ac": [
+          "The system allows entry and editing of staff data and specialties."
+        ],
+        "sim": 0.5227689743041992
+      },
+      {
+        "id": "HU2",
+        "desc": "As an administrative staff member, I want to modify the personal and contact details of a registered patient, so that patient information remains up to date.",
+        "ac": [
+          "The system allows editing of existing patient records."
+        ],
+        "sim": 0.5031619071960449
+      },
+      {
+        "id": "HU3",
+        "desc": "As an administrative staff member, I want to search for patients by name, identity document, or identifier number, so that I can quickly locate patient records.",
+        "ac": [
+          "The system supports search by name, document, or identifier."
+        ],
+        "sim": 0.5028878450393677
+      }
+    ]
+  },
+  {
+    "id": "F21",
+    "desc": "Allow doctors to access and review patient clinical history",
+    "h_sim": [
+      {
+        "id": "HU11",
+        "desc": "As a patient, I want to consult my electronic clinical record, so that I can stay informed about my health history.",
+        "ac": [
+          "Patients can view but not edit their records.",
+          "Access is restricted to authorized users."
+        ],
+        "sim": 0.6379024982452393
+      },
+      {
+        "id": "HU10",
+        "desc": "As a doctor, I want to register diagnoses, treatments, and patient’s clinical progress in the electronic clinical record, so that patient care is well documented.",
+        "ac": [
+          "The system allows entry and editing of clinical records.",
+          "Each entry is timestamped."
+        ],
+        "sim": 0.5799368619918823
+      },
+      {
+        "id": "HU1",
+        "desc": "As an administrative staff member, I want to register patients with personal data and medical background, so that the hospital can maintain accurate and complete patient records.",
+        "ac": [
+          "The system allows entry of personal and medical background data.",
+          "Each patient receives a unique identifier.",
+          "Duplicate identity documents or identifiers are not allowed."
+        ],
+        "sim": 0.5614744424819946
+      },
+      {
+        "id": "HU4",
+        "desc": "As an authorized user, I want to visualize a patient's complete information, so that I can review all relevant details for care or administration.",
+        "ac": [
+          "The system displays all patient data in a single view."
+        ],
+        "sim": 0.5377680063247681
+      },
+      {
+        "id": "HU9",
+        "desc": "As an administrative staff member, I want to manage the status of appointments throughout their lifecycle, so that the hospital can track appointment outcomes.",
+        "ac": [
+          "Appointment statuses include Confirmed, Canceled, Attended, Not attended."
+        ],
+        "sim": 0.502049446105957
+      }
+    ]
+  },
+  {
+    "id": "F22",
+    "desc": "Allow patients to consult their electronic clinical record",
+    "h_sim": [
+      {
+        "id": "HU11",
+        "desc": "As a patient, I want to consult my electronic clinical record, so that I can stay informed about my health history.",
+        "ac": [
+          "Patients can view but not edit their records.",
+          "Access is restricted to authorized users."
+        ],
+        "sim": 0.7987211346626282
+      },
+      {
+        "id": "HU10",
+        "desc": "As a doctor, I want to register diagnoses, treatments, and patient’s clinical progress in the electronic clinical record, so that patient care is well documented.",
+        "ac": [
+          "The system allows entry and editing of clinical records.",
+          "Each entry is timestamped."
+        ],
+        "sim": 0.7044453024864197
+      },
+      {
+        "id": "HU4",
+        "desc": "As an authorized user, I want to visualize a patient's complete information, so that I can review all relevant details for care or administration.",
+        "ac": [
+          "The system displays all patient data in a single view."
+        ],
+        "sim": 0.5946188569068909
+      },
+      {
+        "id": "HU1",
+        "desc": "As an administrative staff member, I want to register patients with personal data and medical background, so that the hospital can maintain accurate and complete patient records.",
+        "ac": [
+          "The system allows entry of personal and medical background data.",
+          "Each patient receives a unique identifier.",
+          "Duplicate identity documents or identifiers are not allowed."
+        ],
+        "sim": 0.5656355023384094
+      },
+      {
+        "id": "HU15",
+        "desc": "As an administrative staff member, I want to generate electronic invoices for medical consultations and medication delivery, so that billing is accurate and efficient.",
+        "ac": [
+          "The system generates invoices with unique identifiers.",
+          "Invoices are associated with patients and services."
+        ],
+        "sim": 0.47474634647369385
+      }
+    ]
+  },
+  {
+    "id": "F23",
+    "desc": "Secure management of electronic medical records",
+    "h_sim": [
+      {
+        "id": "HU10",
+        "desc": "As a doctor, I want to register diagnoses, treatments, and patient’s clinical progress in the electronic clinical record, so that patient care is well documented.",
+        "ac": [
+          "The system allows entry and editing of clinical records.",
+          "Each entry is timestamped."
+        ],
+        "sim": 0.5698691606521606
+      },
+      {
+        "id": "HU1",
+        "desc": "As an administrative staff member, I want to register patients with personal data and medical background, so that the hospital can maintain accurate and complete patient records.",
+        "ac": [
+          "The system allows entry of personal and medical background data.",
+          "Each patient receives a unique identifier.",
+          "Duplicate identity documents or identifiers are not allowed."
+        ],
+        "sim": 0.5371127724647522
+      },
+      {
+        "id": "HU11",
+        "desc": "As a patient, I want to consult my electronic clinical record, so that I can stay informed about my health history.",
+        "ac": [
+          "Patients can view but not edit their records.",
+          "Access is restricted to authorized users."
+        ],
+        "sim": 0.5289592146873474
+      },
+      {
+        "id": "HU15",
+        "desc": "As an administrative staff member, I want to generate electronic invoices for medical consultations and medication delivery, so that billing is accurate and efficient.",
+        "ac": [
+          "The system generates invoices with unique identifiers.",
+          "Invoices are associated with patients and services."
+        ],
+        "sim": 0.46558091044425964
+      },
+      {
+        "id": "HU4",
+        "desc": "As an authorized user, I want to visualize a patient's complete information, so that I can review all relevant details for care or administration.",
+        "ac": [
+          "The system displays all patient data in a single view."
+        ],
+        "sim": 0.4462004601955414
+      }
+    ]
+  },
+  {
+    "id": "F24",
+    "desc": "Register medical professionals with personal information",
+    "h_sim": [
+      {
+        "id": "HU12",
+        "desc": "As an administrator, I want to register medical professionals with their personal and contact details and associate specialties, so that the hospital can manage staff information.",
+        "ac": [
+          "The system allows entry and editing of staff data and specialties."
+        ],
+        "sim": 0.7957522869110107
+      },
+      {
+        "id": "HU1",
+        "desc": "As an administrative staff member, I want to register patients with personal data and medical background, so that the hospital can maintain accurate and complete patient records.",
+        "ac": [
+          "The system allows entry of personal and medical background data.",
+          "Each patient receives a unique identifier.",
+          "Duplicate identity documents or identifiers are not allowed."
+        ],
+        "sim": 0.7826347351074219
+      },
+      {
+        "id": "HU5",
+        "desc": "As an administrative staff member, I want to create medical appointments by associating the patient, specialty, and professional, so that appointments are scheduled accurately.",
+        "ac": [
+          "The system allows selection of patient, specialty, and doctor.",
+          "Overlapping appointments are prevented."
+        ],
+        "sim": 0.5650701522827148
+      },
+      {
+        "id": "HU2",
+        "desc": "As an administrative staff member, I want to modify the personal and contact details of a registered patient, so that patient information remains up to date.",
+        "ac": [
+          "The system allows editing of existing patient records."
+        ],
+        "sim": 0.5549179911613464
+      },
+      {
+        "id": "HU3",
+        "desc": "As an administrative staff member, I want to search for patients by name, identity document, or identifier number, so that I can quickly locate patient records.",
+        "ac": [
+          "The system supports search by name, document, or identifier."
+        ],
+        "sim": 0.4859825074672699
+      }
+    ]
+  },
+  {
+    "id": "F25",
+    "desc": "Associate medical specialties with professionals",
+    "h_sim": [
+      {
+        "id": "HU5",
+        "desc": "As an administrative staff member, I want to create medical appointments by associating the patient, specialty, and professional, so that appointments are scheduled accurately.",
+        "ac": [
+          "The system allows selection of patient, specialty, and doctor.",
+          "Overlapping appointments are prevented."
+        ],
+        "sim": 0.6695049405097961
+      },
+      {
+        "id": "HU12",
+        "desc": "As an administrator, I want to register medical professionals with their personal and contact details and associate specialties, so that the hospital can manage staff information.",
+        "ac": [
+          "The system allows entry and editing of staff data and specialties."
+        ],
+        "sim": 0.6161085963249207
+      },
+      {
+        "id": "HU1",
+        "desc": "As an administrative staff member, I want to register patients with personal data and medical background, so that the hospital can maintain accurate and complete patient records.",
+        "ac": [
+          "The system allows entry of personal and medical background data.",
+          "Each patient receives a unique identifier.",
+          "Duplicate identity documents or identifiers are not allowed."
+        ],
+        "sim": 0.4581264555454254
+      },
+      {
+        "id": "HU6",
+        "desc": "As an administrative staff member, I want to visualize the availability of registered doctors, so that I can schedule appointments efficiently.",
+        "ac": [
+          "The system displays doctors’ schedules and availability."
+        ],
+        "sim": 0.42189690470695496
+      },
+      {
+        "id": "HU13",
+        "desc": "As an administrator, I want to define and modify attention hours and activate/deactivate professionals for scheduling, so that doctor availability is accurately reflected.",
+        "ac": [
+          "The system supports setting and updating working hours.",
+          "Professionals can be activated or deactivated for scheduling."
+        ],
+        "sim": 0.41119498014450073
+      }
+    ]
+  },
+  {
+    "id": "F26",
+    "desc": "Manage medical professional information",
+    "h_sim": [
+      {
+        "id": "HU12",
+        "desc": "As an administrator, I want to register medical professionals with their personal and contact details and associate specialties, so that the hospital can manage staff information.",
+        "ac": [
+          "The system allows entry and editing of staff data and specialties."
+        ],
+        "sim": 0.7271795272827148
+      },
+      {
+        "id": "HU5",
+        "desc": "As an administrative staff member, I want to create medical appointments by associating the patient, specialty, and professional, so that appointments are scheduled accurately.",
+        "ac": [
+          "The system allows selection of patient, specialty, and doctor.",
+          "Overlapping appointments are prevented."
+        ],
+        "sim": 0.6980151534080505
+      },
+      {
+        "id": "HU1",
+        "desc": "As an administrative staff member, I want to register patients with personal data and medical background, so that the hospital can maintain accurate and complete patient records.",
+        "ac": [
+          "The system allows entry of personal and medical background data.",
+          "Each patient receives a unique identifier.",
+          "Duplicate identity documents or identifiers are not allowed."
+        ],
+        "sim": 0.6669279336929321
+      },
+      {
+        "id": "HU2",
+        "desc": "As an administrative staff member, I want to modify the personal and contact details of a registered patient, so that patient information remains up to date.",
+        "ac": [
+          "The system allows editing of existing patient records."
+        ],
+        "sim": 0.568482518196106
+      },
+      {
+        "id": "HU9",
+        "desc": "As an administrative staff member, I want to manage the status of appointments throughout their lifecycle, so that the hospital can track appointment outcomes.",
+        "ac": [
+          "Appointment statuses include Confirmed, Canceled, Attended, Not attended."
+        ],
+        "sim": 0.5574510097503662
+      }
+    ]
+  },
+  {
+    "id": "F27",
+    "desc": "Define and modify doctor attention hours",
+    "h_sim": [
+      {
+        "id": "HU13",
+        "desc": "As an administrator, I want to define and modify attention hours and activate/deactivate professionals for scheduling, so that doctor availability is accurately reflected.",
+        "ac": [
+          "The system supports setting and updating working hours.",
+          "Professionals can be activated or deactivated for scheduling."
+        ],
+        "sim": 0.7584553956985474
+      },
+      {
+        "id": "HU5",
+        "desc": "As an administrative staff member, I want to create medical appointments by associating the patient, specialty, and professional, so that appointments are scheduled accurately.",
+        "ac": [
+          "The system allows selection of patient, specialty, and doctor.",
+          "Overlapping appointments are prevented."
+        ],
+        "sim": 0.49332839250564575
+      },
+      {
+        "id": "HU9",
+        "desc": "As an administrative staff member, I want to manage the status of appointments throughout their lifecycle, so that the hospital can track appointment outcomes.",
+        "ac": [
+          "Appointment statuses include Confirmed, Canceled, Attended, Not attended."
+        ],
+        "sim": 0.46286144852638245
+      },
+      {
+        "id": "HU8",
+        "desc": "As a patient, I want to receive notifications when my appointment is modified or canceled, so that I am always informed about my schedule.",
+        "ac": [
+          "Notifications are sent promptly after changes."
+        ],
+        "sim": 0.41097190976142883
+      },
+      {
+        "id": "HU7",
+        "desc": "As an administrative staff member, I want to modify or cancel existing appointments, so that changes can be managed as needed.",
+        "ac": [
+          "The system allows editing and canceling of appointments.",
+          "Patients are notified of changes."
+        ],
+        "sim": 0.4104229211807251
+      }
+    ]
+  },
+  {
+    "id": "F28",
+    "desc": "Activate or deactivate medical professionals for scheduling",
+    "h_sim": [
+      {
+        "id": "HU13",
+        "desc": "As an administrator, I want to define and modify attention hours and activate/deactivate professionals for scheduling, so that doctor availability is accurately reflected.",
+        "ac": [
+          "The system supports setting and updating working hours.",
+          "Professionals can be activated or deactivated for scheduling."
+        ],
+        "sim": 0.7178399562835693
+      },
+      {
+        "id": "HU5",
+        "desc": "As an administrative staff member, I want to create medical appointments by associating the patient, specialty, and professional, so that appointments are scheduled accurately.",
+        "ac": [
+          "The system allows selection of patient, specialty, and doctor.",
+          "Overlapping appointments are prevented."
+        ],
+        "sim": 0.5693301558494568
+      },
+      {
+        "id": "HU12",
+        "desc": "As an administrator, I want to register medical professionals with their personal and contact details and associate specialties, so that the hospital can manage staff information.",
+        "ac": [
+          "The system allows entry and editing of staff data and specialties."
+        ],
+        "sim": 0.5347763299942017
+      },
+      {
+        "id": "HU9",
+        "desc": "As an administrative staff member, I want to manage the status of appointments throughout their lifecycle, so that the hospital can track appointment outcomes.",
+        "ac": [
+          "Appointment statuses include Confirmed, Canceled, Attended, Not attended."
+        ],
+        "sim": 0.5296132564544678
+      },
+      {
+        "id": "HU6",
+        "desc": "As an administrative staff member, I want to visualize the availability of registered doctors, so that I can schedule appointments efficiently.",
+        "ac": [
+          "The system displays doctors’ schedules and availability."
+        ],
+        "sim": 0.49269479513168335
+      }
+    ]
+  },
+  {
+    "id": "F29",
+    "desc": "Manage healthcare staff availability",
+    "h_sim": [
+      {
+        "id": "HU13",
+        "desc": "As an administrator, I want to define and modify attention hours and activate/deactivate professionals for scheduling, so that doctor availability is accurately reflected.",
+        "ac": [
+          "The system supports setting and updating working hours.",
+          "Professionals can be activated or deactivated for scheduling."
+        ],
+        "sim": 0.5957862138748169
+      },
+      {
+        "id": "HU12",
+        "desc": "As an administrator, I want to register medical professionals with their personal and contact details and associate specialties, so that the hospital can manage staff information.",
+        "ac": [
+          "The system allows entry and editing of staff data and specialties."
+        ],
+        "sim": 0.5880379676818848
+      },
+      {
+        "id": "HU6",
+        "desc": "As an administrative staff member, I want to visualize the availability of registered doctors, so that I can schedule appointments efficiently.",
+        "ac": [
+          "The system displays doctors’ schedules and availability."
+        ],
+        "sim": 0.5797193050384521
+      },
+      {
+        "id": "HU9",
+        "desc": "As an administrative staff member, I want to manage the status of appointments throughout their lifecycle, so that the hospital can track appointment outcomes.",
+        "ac": [
+          "Appointment statuses include Confirmed, Canceled, Attended, Not attended."
+        ],
+        "sim": 0.5770876407623291
+      },
+      {
+        "id": "HU5",
+        "desc": "As an administrative staff member, I want to create medical appointments by associating the patient, specialty, and professional, so that appointments are scheduled accurately.",
+        "ac": [
+          "The system allows selection of patient, specialty, and doctor.",
+          "Overlapping appointments are prevented."
+        ],
+        "sim": 0.5684866905212402
+      }
+    ]
+  },
+  {
+    "id": "F30",
+    "desc": "Manage user roles and access permissions",
+    "h_sim": [
+      {
+        "id": "HU14",
+        "desc": "As an administrator, I want to manage roles and access permissions to system functionalities, so that users only access features relevant to their role.",
+        "ac": [
+          "The system enforces role-based access control.",
+          "Permissions are validated before actions are executed."
+        ],
+        "sim": 0.7333183884620667
+      },
+      {
+        "id": "HU12",
+        "desc": "As an administrator, I want to register medical professionals with their personal and contact details and associate specialties, so that the hospital can manage staff information.",
+        "ac": [
+          "The system allows entry and editing of staff data and specialties."
+        ],
+        "sim": 0.33545225858688354
+      },
+      {
+        "id": "HU2",
+        "desc": "As an administrative staff member, I want to modify the personal and contact details of a registered patient, so that patient information remains up to date.",
+        "ac": [
+          "The system allows editing of existing patient records."
+        ],
+        "sim": 0.27736204862594604
+      },
+      {
+        "id": "HU13",
+        "desc": "As an administrator, I want to define and modify attention hours and activate/deactivate professionals for scheduling, so that doctor availability is accurately reflected.",
+        "ac": [
+          "The system supports setting and updating working hours.",
+          "Professionals can be activated or deactivated for scheduling."
+        ],
+        "sim": 0.2734333574771881
+      },
+      {
+        "id": "HU5",
+        "desc": "As an administrative staff member, I want to create medical appointments by associating the patient, specialty, and professional, so that appointments are scheduled accurately.",
+        "ac": [
+          "The system allows selection of patient, specialty, and doctor.",
+          "Overlapping appointments are prevented."
+        ],
+        "sim": 0.250702440738678
+      }
+    ]
+  },
+  {
+    "id": "F31",
+    "desc": "Validate permissions before performing system actions",
+    "h_sim": [
+      {
+        "id": "HU14",
+        "desc": "As an administrator, I want to manage roles and access permissions to system functionalities, so that users only access features relevant to their role.",
+        "ac": [
+          "The system enforces role-based access control.",
+          "Permissions are validated before actions are executed."
+        ],
+        "sim": 0.4574618637561798
+      },
+      {
+        "id": "HU22",
+        "desc": "As a system administrator, I want to ensure date validations prevent invalid ranges, so that data integrity is maintained.",
+        "ac": [
+          "The system does not allow invalid date ranges."
+        ],
+        "sim": 0.3398813009262085
+      },
+      {
+        "id": "HU23",
+        "desc": "As a system administrator, I want to ensure notifications are sent within a reasonable time after triggering events, so that users are promptly informed.",
+        "ac": [
+          "Notifications are sent shortly after relevant events."
+        ],
+        "sim": 0.236055389046669
+      },
+      {
+        "id": "HU13",
+        "desc": "As an administrator, I want to define and modify attention hours and activate/deactivate professionals for scheduling, so that doctor availability is accurately reflected.",
+        "ac": [
+          "The system supports setting and updating working hours.",
+          "Professionals can be activated or deactivated for scheduling."
+        ],
+        "sim": 0.13223159313201904
+      },
+      {
+        "id": "HU18",
+        "desc": "As a pharmacist, I want to automatically update stock when registering medication deliveries, so that inventory levels remain current.",
+        "ac": [
+          "Stock is updated in real time upon delivery."
+        ],
+        "sim": 0.09190596640110016
+      }
+    ]
+  },
+  {
+    "id": "F32",
+    "desc": "Generate electronic invoices for medical consultations",
+    "h_sim": [
+      {
+        "id": "HU15",
+        "desc": "As an administrative staff member, I want to generate electronic invoices for medical consultations and medication delivery, so that billing is accurate and efficient.",
+        "ac": [
+          "The system generates invoices with unique identifiers.",
+          "Invoices are associated with patients and services."
+        ],
+        "sim": 0.8978207111358643
+      },
+      {
+        "id": "HU16",
+        "desc": "As a patient, I want to receive automatic notifications with attached digital invoices when an invoice is generated, so that I am promptly informed about charges.",
+        "ac": [
+          "Notifications are sent with invoice attachments."
+        ],
+        "sim": 0.7043527364730835
+      },
+      {
+        "id": "HU21",
+        "desc": "As an analyst, I want to generate reports on consultations by specialty, appointment status, financial income, and medication/supplies consumption, with date range filters, so that I can analyze hospital performance.",
+        "ac": [
+          "Reports include all specified metrics.",
+          "Reports can be filtered by date range."
+        ],
+        "sim": 0.56452476978302
+      },
+      {
+        "id": "HU5",
+        "desc": "As an administrative staff member, I want to create medical appointments by associating the patient, specialty, and professional, so that appointments are scheduled accurately.",
+        "ac": [
+          "The system allows selection of patient, specialty, and doctor.",
+          "Overlapping appointments are prevented."
+        ],
+        "sim": 0.5337949395179749
+      },
+      {
+        "id": "HU10",
+        "desc": "As a doctor, I want to register diagnoses, treatments, and patient’s clinical progress in the electronic clinical record, so that patient care is well documented.",
+        "ac": [
+          "The system allows entry and editing of clinical records.",
+          "Each entry is timestamped."
+        ],
+        "sim": 0.5279965400695801
+      }
+    ]
+  },
+  {
+    "id": "F33",
+    "desc": "Generate invoices for medication delivery",
+    "h_sim": [
+      {
+        "id": "HU15",
+        "desc": "As an administrative staff member, I want to generate electronic invoices for medical consultations and medication delivery, so that billing is accurate and efficient.",
+        "ac": [
+          "The system generates invoices with unique identifiers.",
+          "Invoices are associated with patients and services."
+        ],
+        "sim": 0.7859845757484436
+      },
+      {
+        "id": "HU16",
+        "desc": "As a patient, I want to receive automatic notifications with attached digital invoices when an invoice is generated, so that I am promptly informed about charges.",
+        "ac": [
+          "Notifications are sent with invoice attachments."
+        ],
+        "sim": 0.6441693305969238
+      },
+      {
+        "id": "HU17",
+        "desc": "As a pharmacist, I want to register medications and supplies with identification, stock, and expiration date, so that inventory is accurately tracked.",
+        "ac": [
+          "The system allows entry of medication/supply data."
+        ],
+        "sim": 0.5902566909790039
+      },
+      {
+        "id": "HU18",
+        "desc": "As a pharmacist, I want to automatically update stock when registering medication deliveries, so that inventory levels remain current.",
+        "ac": [
+          "Stock is updated in real time upon delivery."
+        ],
+        "sim": 0.5350320935249329
+      },
+      {
+        "id": "HU21",
+        "desc": "As an analyst, I want to generate reports on consultations by specialty, appointment status, financial income, and medication/supplies consumption, with date range filters, so that I can analyze hospital performance.",
+        "ac": [
+          "Reports include all specified metrics.",
+          "Reports can be filtered by date range."
+        ],
+        "sim": 0.4498775005340576
+      }
+    ]
+  },
+  {
+    "id": "F34",
+    "desc": "Associate invoices with patients and medical services",
+    "h_sim": [
+      {
+        "id": "HU15",
+        "desc": "As an administrative staff member, I want to generate electronic invoices for medical consultations and medication delivery, so that billing is accurate and efficient.",
+        "ac": [
+          "The system generates invoices with unique identifiers.",
+          "Invoices are associated with patients and services."
+        ],
+        "sim": 0.6890925765037537
+      },
+      {
+        "id": "HU16",
+        "desc": "As a patient, I want to receive automatic notifications with attached digital invoices when an invoice is generated, so that I am promptly informed about charges.",
+        "ac": [
+          "Notifications are sent with invoice attachments."
+        ],
+        "sim": 0.6159688234329224
+      },
+      {
+        "id": "HU5",
+        "desc": "As an administrative staff member, I want to create medical appointments by associating the patient, specialty, and professional, so that appointments are scheduled accurately.",
+        "ac": [
+          "The system allows selection of patient, specialty, and doctor.",
+          "Overlapping appointments are prevented."
+        ],
+        "sim": 0.5306133031845093
+      },
+      {
+        "id": "HU1",
+        "desc": "As an administrative staff member, I want to register patients with personal data and medical background, so that the hospital can maintain accurate and complete patient records.",
+        "ac": [
+          "The system allows entry of personal and medical background data.",
+          "Each patient receives a unique identifier.",
+          "Duplicate identity documents or identifiers are not allowed."
+        ],
+        "sim": 0.4611072540283203
+      },
+      {
+        "id": "HU21",
+        "desc": "As an analyst, I want to generate reports on consultations by specialty, appointment status, financial income, and medication/supplies consumption, with date range filters, so that I can analyze hospital performance.",
+        "ac": [
+          "Reports include all specified metrics.",
+          "Reports can be filtered by date range."
+        ],
+        "sim": 0.45637449622154236
+      }
+    ]
+  },
+  {
+    "id": "F35",
+    "desc": "Assign a unique identifier to each invoice",
+    "h_sim": [
+      {
+        "id": "HU15",
+        "desc": "As an administrative staff member, I want to generate electronic invoices for medical consultations and medication delivery, so that billing is accurate and efficient.",
+        "ac": [
+          "The system generates invoices with unique identifiers.",
+          "Invoices are associated with patients and services."
+        ],
+        "sim": 0.4896070659160614
+      },
+      {
+        "id": "HU16",
+        "desc": "As a patient, I want to receive automatic notifications with attached digital invoices when an invoice is generated, so that I am promptly informed about charges.",
+        "ac": [
+          "Notifications are sent with invoice attachments."
+        ],
+        "sim": 0.4201369881629944
+      },
+      {
+        "id": "HU17",
+        "desc": "As a pharmacist, I want to register medications and supplies with identification, stock, and expiration date, so that inventory is accurately tracked.",
+        "ac": [
+          "The system allows entry of medication/supply data."
+        ],
+        "sim": 0.3268052637577057
+      },
+      {
+        "id": "HU3",
+        "desc": "As an administrative staff member, I want to search for patients by name, identity document, or identifier number, so that I can quickly locate patient records.",
+        "ac": [
+          "The system supports search by name, document, or identifier."
+        ],
+        "sim": 0.2680675983428955
+      },
+      {
+        "id": "HU5",
+        "desc": "As an administrative staff member, I want to create medical appointments by associating the patient, specialty, and professional, so that appointments are scheduled accurately.",
+        "ac": [
+          "The system allows selection of patient, specialty, and doctor.",
+          "Overlapping appointments are prevented."
+        ],
+        "sim": 0.2238498032093048
+      }
+    ]
+  },
+  {
+    "id": "F36",
+    "desc": "Send automatic notifications when invoices are generated",
+    "h_sim": [
+      {
+        "id": "HU16",
+        "desc": "As a patient, I want to receive automatic notifications with attached digital invoices when an invoice is generated, so that I am promptly informed about charges.",
+        "ac": [
+          "Notifications are sent with invoice attachments."
+        ],
+        "sim": 0.7875944375991821
+      },
+      {
+        "id": "HU15",
+        "desc": "As an administrative staff member, I want to generate electronic invoices for medical consultations and medication delivery, so that billing is accurate and efficient.",
+        "ac": [
+          "The system generates invoices with unique identifiers.",
+          "Invoices are associated with patients and services."
+        ],
+        "sim": 0.5449241995811462
+      },
+      {
+        "id": "HU23",
+        "desc": "As a system administrator, I want to ensure notifications are sent within a reasonable time after triggering events, so that users are promptly informed.",
+        "ac": [
+          "Notifications are sent shortly after relevant events."
+        ],
+        "sim": 0.43294215202331543
+      },
+      {
+        "id": "HU8",
+        "desc": "As a patient, I want to receive notifications when my appointment is modified or canceled, so that I am always informed about my schedule.",
+        "ac": [
+          "Notifications are sent promptly after changes."
+        ],
+        "sim": 0.3861614763736725
+      },
+      {
+        "id": "HU18",
+        "desc": "As a pharmacist, I want to automatically update stock when registering medication deliveries, so that inventory levels remain current.",
+        "ac": [
+          "Stock is updated in real time upon delivery."
+        ],
+        "sim": 0.38597404956817627
+      }
+    ]
+  },
+  {
+    "id": "F37",
+    "desc": "Attach digital invoices to patient notifications",
+    "h_sim": [
+      {
+        "id": "HU16",
+        "desc": "As a patient, I want to receive automatic notifications with attached digital invoices when an invoice is generated, so that I am promptly informed about charges.",
+        "ac": [
+          "Notifications are sent with invoice attachments."
+        ],
+        "sim": 0.8018560409545898
+      },
+      {
+        "id": "HU15",
+        "desc": "As an administrative staff member, I want to generate electronic invoices for medical consultations and medication delivery, so that billing is accurate and efficient.",
+        "ac": [
+          "The system generates invoices with unique identifiers.",
+          "Invoices are associated with patients and services."
+        ],
+        "sim": 0.6489428281784058
+      },
+      {
+        "id": "HU10",
+        "desc": "As a doctor, I want to register diagnoses, treatments, and patient’s clinical progress in the electronic clinical record, so that patient care is well documented.",
+        "ac": [
+          "The system allows entry and editing of clinical records.",
+          "Each entry is timestamped."
+        ],
+        "sim": 0.45383232831954956
+      },
+      {
+        "id": "HU8",
+        "desc": "As a patient, I want to receive notifications when my appointment is modified or canceled, so that I am always informed about my schedule.",
+        "ac": [
+          "Notifications are sent promptly after changes."
+        ],
+        "sim": 0.405655175447464
+      },
+      {
+        "id": "HU11",
+        "desc": "As a patient, I want to consult my electronic clinical record, so that I can stay informed about my health history.",
+        "ac": [
+          "Patients can view but not edit their records.",
+          "Access is restricted to authorized users."
+        ],
+        "sim": 0.39107823371887207
+      }
+    ]
+  },
+  {
+    "id": "F38",
+    "desc": "Manage billing related to healthcare services",
+    "h_sim": [
+      {
+        "id": "HU15",
+        "desc": "As an administrative staff member, I want to generate electronic invoices for medical consultations and medication delivery, so that billing is accurate and efficient.",
+        "ac": [
+          "The system generates invoices with unique identifiers.",
+          "Invoices are associated with patients and services."
+        ],
+        "sim": 0.5094059705734253
+      },
+      {
+        "id": "HU1",
+        "desc": "As an administrative staff member, I want to register patients with personal data and medical background, so that the hospital can maintain accurate and complete patient records.",
+        "ac": [
+          "The system allows entry of personal and medical background data.",
+          "Each patient receives a unique identifier.",
+          "Duplicate identity documents or identifiers are not allowed."
+        ],
+        "sim": 0.47174912691116333
+      },
+      {
+        "id": "HU9",
+        "desc": "As an administrative staff member, I want to manage the status of appointments throughout their lifecycle, so that the hospital can track appointment outcomes.",
+        "ac": [
+          "Appointment statuses include Confirmed, Canceled, Attended, Not attended."
+        ],
+        "sim": 0.46546632051467896
+      },
+      {
+        "id": "HU5",
+        "desc": "As an administrative staff member, I want to create medical appointments by associating the patient, specialty, and professional, so that appointments are scheduled accurately.",
+        "ac": [
+          "The system allows selection of patient, specialty, and doctor.",
+          "Overlapping appointments are prevented."
+        ],
+        "sim": 0.4653978645801544
+      },
+      {
+        "id": "HU21",
+        "desc": "As an analyst, I want to generate reports on consultations by specialty, appointment status, financial income, and medication/supplies consumption, with date range filters, so that I can analyze hospital performance.",
+        "ac": [
+          "Reports include all specified metrics.",
+          "Reports can be filtered by date range."
+        ],
+        "sim": 0.4570925533771515
+      }
+    ]
+  },
+  {
+    "id": "F39",
+    "desc": "Store financial documents and proof of payment",
+    "h_sim": [
+      {
+        "id": "HU15",
+        "desc": "As an administrative staff member, I want to generate electronic invoices for medical consultations and medication delivery, so that billing is accurate and efficient.",
+        "ac": [
+          "The system generates invoices with unique identifiers.",
+          "Invoices are associated with patients and services."
+        ],
+        "sim": 0.342612624168396
+      },
+      {
+        "id": "HU17",
+        "desc": "As a pharmacist, I want to register medications and supplies with identification, stock, and expiration date, so that inventory is accurately tracked.",
+        "ac": [
+          "The system allows entry of medication/supply data."
+        ],
+        "sim": 0.28609657287597656
+      },
+      {
+        "id": "HU16",
+        "desc": "As a patient, I want to receive automatic notifications with attached digital invoices when an invoice is generated, so that I am promptly informed about charges.",
+        "ac": [
+          "Notifications are sent with invoice attachments."
+        ],
+        "sim": 0.27244308590888977
+      },
+      {
+        "id": "HU10",
+        "desc": "As a doctor, I want to register diagnoses, treatments, and patient’s clinical progress in the electronic clinical record, so that patient care is well documented.",
+        "ac": [
+          "The system allows entry and editing of clinical records.",
+          "Each entry is timestamped."
+        ],
+        "sim": 0.23219910264015198
+      },
+      {
+        "id": "HU21",
+        "desc": "As an analyst, I want to generate reports on consultations by specialty, appointment status, financial income, and medication/supplies consumption, with date range filters, so that I can analyze hospital performance.",
+        "ac": [
+          "Reports include all specified metrics.",
+          "Reports can be filtered by date range."
+        ],
+        "sim": 0.21262754499912262
+      }
+    ]
+  },
+  {
+    "id": "F40",
+    "desc": "Register medications and medical supplies in the system",
+    "h_sim": [
+      {
+        "id": "HU17",
+        "desc": "As a pharmacist, I want to register medications and supplies with identification, stock, and expiration date, so that inventory is accurately tracked.",
+        "ac": [
+          "The system allows entry of medication/supply data."
+        ],
+        "sim": 0.772774338722229
+      },
+      {
+        "id": "HU10",
+        "desc": "As a doctor, I want to register diagnoses, treatments, and patient’s clinical progress in the electronic clinical record, so that patient care is well documented.",
+        "ac": [
+          "The system allows entry and editing of clinical records.",
+          "Each entry is timestamped."
+        ],
+        "sim": 0.5804461240768433
+      },
+      {
+        "id": "HU1",
+        "desc": "As an administrative staff member, I want to register patients with personal data and medical background, so that the hospital can maintain accurate and complete patient records.",
+        "ac": [
+          "The system allows entry of personal and medical background data.",
+          "Each patient receives a unique identifier.",
+          "Duplicate identity documents or identifiers are not allowed."
+        ],
+        "sim": 0.5783727169036865
+      },
+      {
+        "id": "HU18",
+        "desc": "As a pharmacist, I want to automatically update stock when registering medication deliveries, so that inventory levels remain current.",
+        "ac": [
+          "Stock is updated in real time upon delivery."
+        ],
+        "sim": 0.5439276695251465
+      },
+      {
+        "id": "HU12",
+        "desc": "As an administrator, I want to register medical professionals with their personal and contact details and associate specialties, so that the hospital can manage staff information.",
+        "ac": [
+          "The system allows entry and editing of staff data and specialties."
+        ],
+        "sim": 0.5106995701789856
+      }
+    ]
+  },
+  {
+    "id": "F41",
+    "desc": "Store stock levels and expiration dates of medications",
+    "h_sim": [
+      {
+        "id": "HU20",
+        "desc": "As a pharmacist, I want to consult inventory sorted by available quantity or expiration date, so that I can manage stock efficiently.",
+        "ac": [
+          "Inventory can be sorted by quantity or expiration."
+        ],
+        "sim": 0.741208553314209
+      },
+      {
+        "id": "HU17",
+        "desc": "As a pharmacist, I want to register medications and supplies with identification, stock, and expiration date, so that inventory is accurately tracked.",
+        "ac": [
+          "The system allows entry of medication/supply data."
+        ],
+        "sim": 0.7404437065124512
+      },
+      {
+        "id": "HU19",
+        "desc": "As a pharmacist, I want to be notified when stock is low or items are about to expire, so that I can take timely action.",
+        "ac": [
+          "The system detects minimum stock and upcoming expirations and sends notifications."
+        ],
+        "sim": 0.6215319633483887
+      },
+      {
+        "id": "HU18",
+        "desc": "As a pharmacist, I want to automatically update stock when registering medication deliveries, so that inventory levels remain current.",
+        "ac": [
+          "Stock is updated in real time upon delivery."
+        ],
+        "sim": 0.5933603048324585
+      },
+      {
+        "id": "HU21",
+        "desc": "As an analyst, I want to generate reports on consultations by specialty, appointment status, financial income, and medication/supplies consumption, with date range filters, so that I can analyze hospital performance.",
+        "ac": [
+          "Reports include all specified metrics.",
+          "Reports can be filtered by date range."
+        ],
+        "sim": 0.38919317722320557
+      }
+    ]
+  },
+  {
+    "id": "F42",
+    "desc": "Update inventory stock when medication deliveries are recorded",
+    "h_sim": [
+      {
+        "id": "HU18",
+        "desc": "As a pharmacist, I want to automatically update stock when registering medication deliveries, so that inventory levels remain current.",
+        "ac": [
+          "Stock is updated in real time upon delivery."
+        ],
+        "sim": 0.8420976996421814
+      },
+      {
+        "id": "HU17",
+        "desc": "As a pharmacist, I want to register medications and supplies with identification, stock, and expiration date, so that inventory is accurately tracked.",
+        "ac": [
+          "The system allows entry of medication/supply data."
+        ],
+        "sim": 0.6026492714881897
+      },
+      {
+        "id": "HU20",
+        "desc": "As a pharmacist, I want to consult inventory sorted by available quantity or expiration date, so that I can manage stock efficiently.",
+        "ac": [
+          "Inventory can be sorted by quantity or expiration."
+        ],
+        "sim": 0.5527888536453247
+      },
+      {
+        "id": "HU19",
+        "desc": "As a pharmacist, I want to be notified when stock is low or items are about to expire, so that I can take timely action.",
+        "ac": [
+          "The system detects minimum stock and upcoming expirations and sends notifications."
+        ],
+        "sim": 0.5518479943275452
+      },
+      {
+        "id": "HU9",
+        "desc": "As an administrative staff member, I want to manage the status of appointments throughout their lifecycle, so that the hospital can track appointment outcomes.",
+        "ac": [
+          "Appointment statuses include Confirmed, Canceled, Attended, Not attended."
+        ],
+        "sim": 0.43025535345077515
+      }
+    ]
+  },
+  {
+    "id": "F43",
+    "desc": "Detect minimum stock levels in the inventory",
+    "h_sim": [
+      {
+        "id": "HU20",
+        "desc": "As a pharmacist, I want to consult inventory sorted by available quantity or expiration date, so that I can manage stock efficiently.",
+        "ac": [
+          "Inventory can be sorted by quantity or expiration."
+        ],
+        "sim": 0.49880990386009216
+      },
+      {
+        "id": "HU19",
+        "desc": "As a pharmacist, I want to be notified when stock is low or items are about to expire, so that I can take timely action.",
+        "ac": [
+          "The system detects minimum stock and upcoming expirations and sends notifications."
+        ],
+        "sim": 0.485600084066391
+      },
+      {
+        "id": "HU18",
+        "desc": "As a pharmacist, I want to automatically update stock when registering medication deliveries, so that inventory levels remain current.",
+        "ac": [
+          "Stock is updated in real time upon delivery."
+        ],
+        "sim": 0.41497868299484253
+      },
+      {
+        "id": "HU17",
+        "desc": "As a pharmacist, I want to register medications and supplies with identification, stock, and expiration date, so that inventory is accurately tracked.",
+        "ac": [
+          "The system allows entry of medication/supply data."
+        ],
+        "sim": 0.3097238540649414
+      },
+      {
+        "id": "HU22",
+        "desc": "As a system administrator, I want to ensure date validations prevent invalid ranges, so that data integrity is maintained.",
+        "ac": [
+          "The system does not allow invalid date ranges."
+        ],
+        "sim": 0.20859378576278687
+      }
+    ]
+  },
+  {
+    "id": "F44",
+    "desc": "Notify when medications or supplies are about to expire",
+    "h_sim": [
+      {
+        "id": "HU19",
+        "desc": "As a pharmacist, I want to be notified when stock is low or items are about to expire, so that I can take timely action.",
+        "ac": [
+          "The system detects minimum stock and upcoming expirations and sends notifications."
+        ],
+        "sim": 0.7359622716903687
+      },
+      {
+        "id": "HU17",
+        "desc": "As a pharmacist, I want to register medications and supplies with identification, stock, and expiration date, so that inventory is accurately tracked.",
+        "ac": [
+          "The system allows entry of medication/supply data."
+        ],
+        "sim": 0.6347641944885254
+      },
+      {
+        "id": "HU20",
+        "desc": "As a pharmacist, I want to consult inventory sorted by available quantity or expiration date, so that I can manage stock efficiently.",
+        "ac": [
+          "Inventory can be sorted by quantity or expiration."
+        ],
+        "sim": 0.5695171356201172
+      },
+      {
+        "id": "HU18",
+        "desc": "As a pharmacist, I want to automatically update stock when registering medication deliveries, so that inventory levels remain current.",
+        "ac": [
+          "Stock is updated in real time upon delivery."
+        ],
+        "sim": 0.5562646389007568
+      },
+      {
+        "id": "HU8",
+        "desc": "As a patient, I want to receive notifications when my appointment is modified or canceled, so that I am always informed about my schedule.",
+        "ac": [
+          "Notifications are sent promptly after changes."
+        ],
+        "sim": 0.4457465410232544
+      }
+    ]
+  },
+  {
+    "id": "F45",
+    "desc": "Consult inventory sorted by quantity or expiration date",
+    "h_sim": [
+      {
+        "id": "HU20",
+        "desc": "As a pharmacist, I want to consult inventory sorted by available quantity or expiration date, so that I can manage stock efficiently.",
+        "ac": [
+          "Inventory can be sorted by quantity or expiration."
+        ],
+        "sim": 0.8543205857276917
+      },
+      {
+        "id": "HU17",
+        "desc": "As a pharmacist, I want to register medications and supplies with identification, stock, and expiration date, so that inventory is accurately tracked.",
+        "ac": [
+          "The system allows entry of medication/supply data."
+        ],
+        "sim": 0.5867179036140442
+      },
+      {
+        "id": "HU19",
+        "desc": "As a pharmacist, I want to be notified when stock is low or items are about to expire, so that I can take timely action.",
+        "ac": [
+          "The system detects minimum stock and upcoming expirations and sends notifications."
+        ],
+        "sim": 0.5060936212539673
+      },
+      {
+        "id": "HU18",
+        "desc": "As a pharmacist, I want to automatically update stock when registering medication deliveries, so that inventory levels remain current.",
+        "ac": [
+          "Stock is updated in real time upon delivery."
+        ],
+        "sim": 0.41602569818496704
+      },
+      {
+        "id": "HU21",
+        "desc": "As an analyst, I want to generate reports on consultations by specialty, appointment status, financial income, and medication/supplies consumption, with date range filters, so that I can analyze hospital performance.",
+        "ac": [
+          "Reports include all specified metrics.",
+          "Reports can be filtered by date range."
+        ],
+        "sim": 0.33616217970848083
+      }
+    ]
+  },
+  {
+    "id": "F46",
+    "desc": "Track pharmacy inventory and supplies availability",
+    "h_sim": [
+      {
+        "id": "HU17",
+        "desc": "As a pharmacist, I want to register medications and supplies with identification, stock, and expiration date, so that inventory is accurately tracked.",
+        "ac": [
+          "The system allows entry of medication/supply data."
+        ],
+        "sim": 0.7492381930351257
+      },
+      {
+        "id": "HU20",
+        "desc": "As a pharmacist, I want to consult inventory sorted by available quantity or expiration date, so that I can manage stock efficiently.",
+        "ac": [
+          "Inventory can be sorted by quantity or expiration."
+        ],
+        "sim": 0.6896246671676636
+      },
+      {
+        "id": "HU18",
+        "desc": "As a pharmacist, I want to automatically update stock when registering medication deliveries, so that inventory levels remain current.",
+        "ac": [
+          "Stock is updated in real time upon delivery."
+        ],
+        "sim": 0.6692801713943481
+      },
+      {
+        "id": "HU19",
+        "desc": "As a pharmacist, I want to be notified when stock is low or items are about to expire, so that I can take timely action.",
+        "ac": [
+          "The system detects minimum stock and upcoming expirations and sends notifications."
+        ],
+        "sim": 0.6399883031845093
+      },
+      {
+        "id": "HU9",
+        "desc": "As an administrative staff member, I want to manage the status of appointments throughout their lifecycle, so that the hospital can track appointment outcomes.",
+        "ac": [
+          "Appointment statuses include Confirmed, Canceled, Attended, Not attended."
+        ],
+        "sim": 0.4657430350780487
+      }
+    ]
+  },
+  {
+    "id": "F47",
+    "desc": "Manage medication and supplies stock control",
+    "h_sim": [
+      {
+        "id": "HU17",
+        "desc": "As a pharmacist, I want to register medications and supplies with identification, stock, and expiration date, so that inventory is accurately tracked.",
+        "ac": [
+          "The system allows entry of medication/supply data."
+        ],
+        "sim": 0.6974557042121887
+      },
+      {
+        "id": "HU18",
+        "desc": "As a pharmacist, I want to automatically update stock when registering medication deliveries, so that inventory levels remain current.",
+        "ac": [
+          "Stock is updated in real time upon delivery."
+        ],
+        "sim": 0.6330001950263977
+      },
+      {
+        "id": "HU20",
+        "desc": "As a pharmacist, I want to consult inventory sorted by available quantity or expiration date, so that I can manage stock efficiently.",
+        "ac": [
+          "Inventory can be sorted by quantity or expiration."
+        ],
+        "sim": 0.630131721496582
+      },
+      {
+        "id": "HU19",
+        "desc": "As a pharmacist, I want to be notified when stock is low or items are about to expire, so that I can take timely action.",
+        "ac": [
+          "The system detects minimum stock and upcoming expirations and sends notifications."
+        ],
+        "sim": 0.5527963638305664
+      },
+      {
+        "id": "HU9",
+        "desc": "As an administrative staff member, I want to manage the status of appointments throughout their lifecycle, so that the hospital can track appointment outcomes.",
+        "ac": [
+          "Appointment statuses include Confirmed, Canceled, Attended, Not attended."
+        ],
+        "sim": 0.43258053064346313
+      }
+    ]
+  },
+  {
+    "id": "F48",
+    "desc": "Generate statistical reports for healthcare data",
+    "h_sim": [
+      {
+        "id": "HU21",
+        "desc": "As an analyst, I want to generate reports on consultations by specialty, appointment status, financial income, and medication/supplies consumption, with date range filters, so that I can analyze hospital performance.",
+        "ac": [
+          "Reports include all specified metrics.",
+          "Reports can be filtered by date range."
+        ],
+        "sim": 0.6538982391357422
+      },
+      {
+        "id": "HU1",
+        "desc": "As an administrative staff member, I want to register patients with personal data and medical background, so that the hospital can maintain accurate and complete patient records.",
+        "ac": [
+          "The system allows entry of personal and medical background data.",
+          "Each patient receives a unique identifier.",
+          "Duplicate identity documents or identifiers are not allowed."
+        ],
+        "sim": 0.4800056219100952
+      },
+      {
+        "id": "HU10",
+        "desc": "As a doctor, I want to register diagnoses, treatments, and patient’s clinical progress in the electronic clinical record, so that patient care is well documented.",
+        "ac": [
+          "The system allows entry and editing of clinical records.",
+          "Each entry is timestamped."
+        ],
+        "sim": 0.4630485773086548
+      },
+      {
+        "id": "HU6",
+        "desc": "As an administrative staff member, I want to visualize the availability of registered doctors, so that I can schedule appointments efficiently.",
+        "ac": [
+          "The system displays doctors’ schedules and availability."
+        ],
+        "sim": 0.4230169355869293
+      },
+      {
+        "id": "HU5",
+        "desc": "As an administrative staff member, I want to create medical appointments by associating the patient, specialty, and professional, so that appointments are scheduled accurately.",
+        "ac": [
+          "The system allows selection of patient, specialty, and doctor.",
+          "Overlapping appointments are prevented."
+        ],
+        "sim": 0.42104893922805786
+      }
+    ]
+  },
+  {
+    "id": "F49",
+    "desc": "Generate financial reports of hospital income",
+    "h_sim": [
+      {
+        "id": "HU21",
+        "desc": "As an analyst, I want to generate reports on consultations by specialty, appointment status, financial income, and medication/supplies consumption, with date range filters, so that I can analyze hospital performance.",
+        "ac": [
+          "Reports include all specified metrics.",
+          "Reports can be filtered by date range."
+        ],
+        "sim": 0.6898609399795532
+      },
+      {
+        "id": "HU15",
+        "desc": "As an administrative staff member, I want to generate electronic invoices for medical consultations and medication delivery, so that billing is accurate and efficient.",
+        "ac": [
+          "The system generates invoices with unique identifiers.",
+          "Invoices are associated with patients and services."
+        ],
+        "sim": 0.4680507779121399
+      },
+      {
+        "id": "HU9",
+        "desc": "As an administrative staff member, I want to manage the status of appointments throughout their lifecycle, so that the hospital can track appointment outcomes.",
+        "ac": [
+          "Appointment statuses include Confirmed, Canceled, Attended, Not attended."
+        ],
+        "sim": 0.4527527391910553
+      },
+      {
+        "id": "HU1",
+        "desc": "As an administrative staff member, I want to register patients with personal data and medical background, so that the hospital can maintain accurate and complete patient records.",
+        "ac": [
+          "The system allows entry of personal and medical background data.",
+          "Each patient receives a unique identifier.",
+          "Duplicate identity documents or identifiers are not allowed."
+        ],
+        "sim": 0.44407162070274353
+      },
+      {
+        "id": "HU12",
+        "desc": "As an administrator, I want to register medical professionals with their personal and contact details and associate specialties, so that the hospital can manage staff information.",
+        "ac": [
+          "The system allows entry and editing of staff data and specialties."
+        ],
+        "sim": 0.42841190099716187
+      }
+    ]
+  },
+  {
+    "id": "F50",
+    "desc": "Report number of consultations by medical specialty",
+    "h_sim": [
+      {
+        "id": "HU21",
+        "desc": "As an analyst, I want to generate reports on consultations by specialty, appointment status, financial income, and medication/supplies consumption, with date range filters, so that I can analyze hospital performance.",
+        "ac": [
+          "Reports include all specified metrics.",
+          "Reports can be filtered by date range."
+        ],
+        "sim": 0.6201409101486206
+      },
+      {
+        "id": "HU6",
+        "desc": "As an administrative staff member, I want to visualize the availability of registered doctors, so that I can schedule appointments efficiently.",
+        "ac": [
+          "The system displays doctors’ schedules and availability."
+        ],
+        "sim": 0.5854419469833374
+      },
+      {
+        "id": "HU5",
+        "desc": "As an administrative staff member, I want to create medical appointments by associating the patient, specialty, and professional, so that appointments are scheduled accurately.",
+        "ac": [
+          "The system allows selection of patient, specialty, and doctor.",
+          "Overlapping appointments are prevented."
+        ],
+        "sim": 0.5600659251213074
+      },
+      {
+        "id": "HU9",
+        "desc": "As an administrative staff member, I want to manage the status of appointments throughout their lifecycle, so that the hospital can track appointment outcomes.",
+        "ac": [
+          "Appointment statuses include Confirmed, Canceled, Attended, Not attended."
+        ],
+        "sim": 0.5194828510284424
+      },
+      {
+        "id": "HU12",
+        "desc": "As an administrator, I want to register medical professionals with their personal and contact details and associate specialties, so that the hospital can manage staff information.",
+        "ac": [
+          "The system allows entry and editing of staff data and specialties."
+        ],
+        "sim": 0.49006491899490356
+      }
+    ]
+  },
+  {
+    "id": "F51",
+    "desc": "Report appointment status statistics",
+    "h_sim": [
+      {
+        "id": "HU9",
+        "desc": "As an administrative staff member, I want to manage the status of appointments throughout their lifecycle, so that the hospital can track appointment outcomes.",
+        "ac": [
+          "Appointment statuses include Confirmed, Canceled, Attended, Not attended."
+        ],
+        "sim": 0.7140511274337769
+      },
+      {
+        "id": "HU21",
+        "desc": "As an analyst, I want to generate reports on consultations by specialty, appointment status, financial income, and medication/supplies consumption, with date range filters, so that I can analyze hospital performance.",
+        "ac": [
+          "Reports include all specified metrics.",
+          "Reports can be filtered by date range."
+        ],
+        "sim": 0.5928895473480225
+      },
+      {
+        "id": "HU6",
+        "desc": "As an administrative staff member, I want to visualize the availability of registered doctors, so that I can schedule appointments efficiently.",
+        "ac": [
+          "The system displays doctors’ schedules and availability."
+        ],
+        "sim": 0.5869166851043701
+      },
+      {
+        "id": "HU5",
+        "desc": "As an administrative staff member, I want to create medical appointments by associating the patient, specialty, and professional, so that appointments are scheduled accurately.",
+        "ac": [
+          "The system allows selection of patient, specialty, and doctor.",
+          "Overlapping appointments are prevented."
+        ],
+        "sim": 0.5181844234466553
+      },
+      {
+        "id": "HU1",
+        "desc": "As an administrative staff member, I want to register patients with personal data and medical background, so that the hospital can maintain accurate and complete patient records.",
+        "ac": [
+          "The system allows entry of personal and medical background data.",
+          "Each patient receives a unique identifier.",
+          "Duplicate identity documents or identifiers are not allowed."
+        ],
+        "sim": 0.4466617703437805
+      }
+    ]
+  },
+  {
+    "id": "F52",
+    "desc": "Report medication and supplies consumption",
+    "h_sim": [
+      {
+        "id": "HU17",
+        "desc": "As a pharmacist, I want to register medications and supplies with identification, stock, and expiration date, so that inventory is accurately tracked.",
+        "ac": [
+          "The system allows entry of medication/supply data."
+        ],
+        "sim": 0.5795954465866089
+      },
+      {
+        "id": "HU21",
+        "desc": "As an analyst, I want to generate reports on consultations by specialty, appointment status, financial income, and medication/supplies consumption, with date range filters, so that I can analyze hospital performance.",
+        "ac": [
+          "Reports include all specified metrics.",
+          "Reports can be filtered by date range."
+        ],
+        "sim": 0.5038790106773376
+      },
+      {
+        "id": "HU20",
+        "desc": "As a pharmacist, I want to consult inventory sorted by available quantity or expiration date, so that I can manage stock efficiently.",
+        "ac": [
+          "Inventory can be sorted by quantity or expiration."
+        ],
+        "sim": 0.4752522110939026
+      },
+      {
+        "id": "HU10",
+        "desc": "As a doctor, I want to register diagnoses, treatments, and patient’s clinical progress in the electronic clinical record, so that patient care is well documented.",
+        "ac": [
+          "The system allows entry and editing of clinical records.",
+          "Each entry is timestamped."
+        ],
+        "sim": 0.444421648979187
+      },
+      {
+        "id": "HU18",
+        "desc": "As a pharmacist, I want to automatically update stock when registering medication deliveries, so that inventory levels remain current.",
+        "ac": [
+          "Stock is updated in real time upon delivery."
+        ],
+        "sim": 0.4159170091152191
+      }
+    ]
+  },
+  {
+    "id": "F53",
+    "desc": "Filter reports using date ranges",
+    "h_sim": [
+      {
+        "id": "HU21",
+        "desc": "As an analyst, I want to generate reports on consultations by specialty, appointment status, financial income, and medication/supplies consumption, with date range filters, so that I can analyze hospital performance.",
+        "ac": [
+          "Reports include all specified metrics.",
+          "Reports can be filtered by date range."
+        ],
+        "sim": 0.5610793828964233
+      },
+      {
+        "id": "HU22",
+        "desc": "As a system administrator, I want to ensure date validations prevent invalid ranges, so that data integrity is maintained.",
+        "ac": [
+          "The system does not allow invalid date ranges."
+        ],
+        "sim": 0.39715442061424255
+      },
+      {
+        "id": "HU20",
+        "desc": "As a pharmacist, I want to consult inventory sorted by available quantity or expiration date, so that I can manage stock efficiently.",
+        "ac": [
+          "Inventory can be sorted by quantity or expiration."
+        ],
+        "sim": 0.26370567083358765
+      },
+      {
+        "id": "HU19",
+        "desc": "As a pharmacist, I want to be notified when stock is low or items are about to expire, so that I can take timely action.",
+        "ac": [
+          "The system detects minimum stock and upcoming expirations and sends notifications."
+        ],
+        "sim": 0.1584109365940094
+      },
+      {
+        "id": "HU17",
+        "desc": "As a pharmacist, I want to register medications and supplies with identification, stock, and expiration date, so that inventory is accurately tracked.",
+        "ac": [
+          "The system allows entry of medication/supply data."
+        ],
+        "sim": 0.15282562375068665
+      }
+    ]
+  },
+  {
+    "id": "F54",
+    "desc": "Analyze system usage and healthcare metrics",
+    "h_sim": [
+      {
+        "id": "HU21",
+        "desc": "As an analyst, I want to generate reports on consultations by specialty, appointment status, financial income, and medication/supplies consumption, with date range filters, so that I can analyze hospital performance.",
+        "ac": [
+          "Reports include all specified metrics.",
+          "Reports can be filtered by date range."
+        ],
+        "sim": 0.49808406829833984
+      },
+      {
+        "id": "HU1",
+        "desc": "As an administrative staff member, I want to register patients with personal data and medical background, so that the hospital can maintain accurate and complete patient records.",
+        "ac": [
+          "The system allows entry of personal and medical background data.",
+          "Each patient receives a unique identifier.",
+          "Duplicate identity documents or identifiers are not allowed."
+        ],
+        "sim": 0.4581521153450012
+      },
+      {
+        "id": "HU10",
+        "desc": "As a doctor, I want to register diagnoses, treatments, and patient’s clinical progress in the electronic clinical record, so that patient care is well documented.",
+        "ac": [
+          "The system allows entry and editing of clinical records.",
+          "Each entry is timestamped."
+        ],
+        "sim": 0.4342159926891327
+      },
+      {
+        "id": "HU6",
+        "desc": "As an administrative staff member, I want to visualize the availability of registered doctors, so that I can schedule appointments efficiently.",
+        "ac": [
+          "The system displays doctors’ schedules and availability."
+        ],
+        "sim": 0.42651209235191345
+      },
+      {
+        "id": "HU9",
+        "desc": "As an administrative staff member, I want to manage the status of appointments throughout their lifecycle, so that the hospital can track appointment outcomes.",
+        "ac": [
+          "Appointment statuses include Confirmed, Canceled, Attended, Not attended."
+        ],
+        "sim": 0.4177802503108978
+      }
+    ]
+  }
+]
