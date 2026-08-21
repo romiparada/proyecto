@@ -1,1039 +1,1039 @@
 [
   {
     "id": "AC1.1",
-    "desc": "The system allows entry of personal and medical background data.",
+    "desc": "The system allows entry of personal and medical background data",
     "ac_sim": [
       {
         "id": "ACE1.1",
-        "desc": "The system must request the full name, date of birth, sex, identity document, and contact details (email address and phone number).",
-        "sim": 0.6262912154197693
+        "desc": "The system must request the full name, date of birth, sex, identity document, and contact details (email address and phone number)",
+        "sim": 0.6640785932540894
       },
       {
         "id": "ACE4.2",
-        "desc": "The system must allow entering chronic diseases, allergies, relevant injuries, and regular medications along with the date they started/occurred, with the option to indicate \"from birth\".",
-        "sim": 0.5473064184188843
+        "desc": "The system must allow entering chronic diseases, allergies, relevant injuries, and regular medications along with the date they started/occurred, with the option to indicate \"from birth\"",
+        "sim": 0.5260884165763855
       },
       {
         "id": "ACE1.3",
-        "desc": "The system must assign a unique patient number to the new patient.",
-        "sim": 0.5087906718254089
+        "desc": "The system must assign a unique patient number to the new patient",
+        "sim": 0.4913009703159332
       },
       {
         "id": "ACE4.1",
-        "desc": "The system must allow entering the patient's blood type.",
-        "sim": 0.475571870803833
+        "desc": "The system must allow entering the patient's blood type",
+        "sim": 0.4361308813095093
       },
       {
         "id": "ACE1.2",
-        "desc": "The system must display an error if a patient with the entered identity document already exists.",
-        "sim": 0.46177083253860474
+        "desc": "The system must display an error if a patient with the entered identity document already exists",
+        "sim": 0.3821205794811249
       }
     ]
   },
   {
     "id": "AC1.2",
-    "desc": "Each patient receives a unique identifier.",
+    "desc": "Each patient receives a unique identifier",
     "ac_sim": [
       {
         "id": "ACE1.3",
-        "desc": "The system must assign a unique patient number to the new patient.",
-        "sim": 0.7944409847259521
+        "desc": "The system must assign a unique patient number to the new patient",
+        "sim": 0.7772951126098633
       },
       {
         "id": "ACE1.2",
-        "desc": "The system must display an error if a patient with the entered identity document already exists.",
-        "sim": 0.5879970788955688
+        "desc": "The system must display an error if a patient with the entered identity document already exists",
+        "sim": 0.5492705702781677
       },
       {
         "id": "ACE4.2",
-        "desc": "The system must allow entering chronic diseases, allergies, relevant injuries, and regular medications along with the date they started/occurred, with the option to indicate \"from birth\".",
-        "sim": 0.4882555603981018
+        "desc": "The system must allow entering chronic diseases, allergies, relevant injuries, and regular medications along with the date they started/occurred, with the option to indicate \"from birth\"",
+        "sim": 0.48335540294647217
       },
       {
         "id": "ACE4.1",
-        "desc": "The system must allow entering the patient's blood type.",
-        "sim": 0.46315205097198486
+        "desc": "The system must allow entering the patient's blood type",
+        "sim": 0.41388335824012756
       },
       {
         "id": "ACE1.1",
-        "desc": "The system must request the full name, date of birth, sex, identity document, and contact details (email address and phone number).",
-        "sim": 0.3561069965362549
+        "desc": "The system must request the full name, date of birth, sex, identity document, and contact details (email address and phone number)",
+        "sim": 0.36536282300949097
       }
     ]
   },
   {
     "id": "AC1.3",
-    "desc": "Duplicate identity documents or identifiers are not allowed.",
+    "desc": "Duplicate identity documents or identifiers are not allowed",
     "ac_sim": [
       {
         "id": "ACE1.2",
-        "desc": "The system must display an error if a patient with the entered identity document already exists.",
-        "sim": 0.6143319606781006
+        "desc": "The system must display an error if a patient with the entered identity document already exists",
+        "sim": 0.7388114929199219
       },
       {
         "id": "ACE1.1",
-        "desc": "The system must request the full name, date of birth, sex, identity document, and contact details (email address and phone number).",
-        "sim": 0.4339950978755951
+        "desc": "The system must request the full name, date of birth, sex, identity document, and contact details (email address and phone number)",
+        "sim": 0.427859365940094
       },
       {
         "id": "ACE1.3",
-        "desc": "The system must assign a unique patient number to the new patient.",
-        "sim": 0.405264288187027
+        "desc": "The system must assign a unique patient number to the new patient",
+        "sim": 0.39562663435935974
       },
       {
         "id": "ACE4.2",
-        "desc": "The system must allow entering chronic diseases, allergies, relevant injuries, and regular medications along with the date they started/occurred, with the option to indicate \"from birth\".",
-        "sim": 0.2216443568468094
+        "desc": "The system must allow entering chronic diseases, allergies, relevant injuries, and regular medications along with the date they started/occurred, with the option to indicate \"from birth\"",
+        "sim": 0.23755258321762085
       },
       {
         "id": "ACE4.1",
-        "desc": "The system must allow entering the patient's blood type.",
-        "sim": 0.13783791661262512
+        "desc": "The system must allow entering the patient's blood type",
+        "sim": 0.16274237632751465
       }
     ]
   },
   {
     "id": "AC2.1",
-    "desc": "The system allows editing of existing patient records.",
+    "desc": "The system allows editing of existing patient records",
     "ac_sim": [
       {
         "id": "ACE3.1",
-        "desc": "The system must allow modifying the full name, date of birth, sex, identity document, and contact details (email address and phone number).",
-        "sim": 0.5526004433631897
+        "desc": "The system must allow modifying the full name, date of birth, sex, identity document, and contact details (email address and phone number)",
+        "sim": 0.5968238115310669
       }
     ]
   },
   {
     "id": "AC3.1",
-    "desc": "The system supports search by name, document, or identifier.",
+    "desc": "The system supports search by name, document, or identifier",
     "ac_sim": [
       {
         "id": "ACE6.1",
-        "desc": "The system must display a search field that allows entering the identity document.",
-        "sim": 0.62112957239151
+        "desc": "The system must display a search field that allows entering the identity document",
+        "sim": 0.6148688197135925
       },
       {
         "id": "ACE5.1",
-        "desc": "The system must display a search field that allows entering the name.",
-        "sim": 0.6144641637802124
+        "desc": "The system must display a search field that allows entering the name",
+        "sim": 0.6018537282943726
       },
       {
         "id": "ACE7.1",
-        "desc": "The system must display a search field that allows entering the patient number.",
-        "sim": 0.523820161819458
+        "desc": "The system must display a search field that allows entering the patient number",
+        "sim": 0.4783822000026703
       },
       {
         "id": "ACE6.2",
-        "desc": "The system must display a list of patients whose documents match the entered data.",
-        "sim": 0.4894271492958069
+        "desc": "The system must display a list of patients whose documents match the entered data",
+        "sim": 0.4356357455253601
       },
       {
         "id": "ACE5.2",
-        "desc": "The system must display a list of patients whose names match the entered data.",
-        "sim": 0.44173508882522583
+        "desc": "The system must display a list of patients whose names match the entered data",
+        "sim": 0.36523866653442383
       },
       {
         "id": "ACE7.2",
-        "desc": "The system must display a list of patients whose patient numbers match the entered data.",
-        "sim": 0.3676239550113678
+        "desc": "The system must display a list of patients whose patient numbers match the entered data",
+        "sim": 0.299124538898468
       }
     ]
   },
   {
     "id": "AC4.1",
-    "desc": "The system displays all patient data in a single view.",
+    "desc": "The system displays all patient data in a single view",
     "ac_sim": [
       {
         "id": "ACE18.3",
-        "desc": "The system must display the patient's medical background.",
-        "sim": 0.6568102836608887
-      },
-      {
-        "id": "ACE11.2",
-        "desc": "The system must display the patient number.",
-        "sim": 0.6183780431747437
+        "desc": "The system must display the patient's medical background",
+        "sim": 0.7241952419281006
       },
       {
         "id": "ACE11.1",
-        "desc": "The system must display the patient's personal data: full name, date of birth, sex, identity document, and contact details (email address and phone number).",
-        "sim": 0.5973355174064636
+        "desc": "The system must display the patient's personal data: full name, date of birth, sex, identity document, and contact details (email address and phone number)",
+        "sim": 0.6637827754020691
+      },
+      {
+        "id": "ACE11.2",
+        "desc": "The system must display the patient number",
+        "sim": 0.6615907549858093
       },
       {
         "id": "ACE18.2",
-        "desc": "The system must list the diagnoses for each appointment confirmed by the patient.",
-        "sim": 0.5643596053123474
+        "desc": "The system must list the diagnoses for each appointment confirmed by the patient",
+        "sim": 0.6169978380203247
       },
       {
         "id": "ACE18.1",
-        "desc": "The system must allow access to the clinical record only to users with the doctor role.",
-        "sim": 0.38127338886260986
+        "desc": "The system must allow access to the clinical record only to users with the doctor role",
+        "sim": 0.45201823115348816
       }
     ]
   },
   {
     "id": "AC5.1",
-    "desc": "The system allows selection of patient, specialty, and doctor.",
+    "desc": "The system allows selection of patient, specialty, and doctor",
     "ac_sim": [
       {
         "id": "ACE13.1",
-        "desc": "The system must allow selecting the specialty and doctor for the appointment.",
-        "sim": 0.882560670375824
+        "desc": "The system must allow selecting the specialty and doctor for the appointment",
+        "sim": 0.8747435808181763
       },
       {
         "id": "ACE13.2",
-        "desc": "The system must display the available time slots in the selected doctor's schedule.",
-        "sim": 0.6266120672225952
-      },
-      {
-        "id": "ACE13.3",
-        "desc": "The system must display an error if an appointment already exists at that time slot.",
-        "sim": 0.2930790185928345
+        "desc": "The system must display the available time slots in the selected doctor's schedule",
+        "sim": 0.5915887355804443
       },
       {
         "id": "ACE13.4",
-        "desc": "The system must change the appointment status to \"Confirmed\" after a successful registration.",
-        "sim": 0.28038591146469116
+        "desc": "The system must change the appointment status to \"Confirmed\" after a successful registration",
+        "sim": 0.291866660118103
+      },
+      {
+        "id": "ACE13.3",
+        "desc": "The system must display an error if an appointment already exists at that time slot",
+        "sim": 0.26117223501205444
       }
     ]
   },
   {
     "id": "AC5.2",
-    "desc": "Overlapping appointments are prevented.",
+    "desc": "Overlapping appointments are prevented",
     "ac_sim": [
       {
         "id": "ACE13.3",
-        "desc": "The system must display an error if an appointment already exists at that time slot.",
-        "sim": 0.6279420256614685
+        "desc": "The system must display an error if an appointment already exists at that time slot",
+        "sim": 0.6486024260520935
       },
       {
         "id": "ACE13.2",
-        "desc": "The system must display the available time slots in the selected doctor's schedule.",
-        "sim": 0.43891245126724243
+        "desc": "The system must display the available time slots in the selected doctor's schedule",
+        "sim": 0.485145628452301
       },
       {
         "id": "ACE13.1",
-        "desc": "The system must allow selecting the specialty and doctor for the appointment.",
-        "sim": 0.42420071363449097
+        "desc": "The system must allow selecting the specialty and doctor for the appointment",
+        "sim": 0.4399832785129547
       },
       {
         "id": "ACE13.4",
-        "desc": "The system must change the appointment status to \"Confirmed\" after a successful registration.",
-        "sim": 0.4074971377849579
+        "desc": "The system must change the appointment status to \"Confirmed\" after a successful registration",
+        "sim": 0.4265829026699066
       }
     ]
   },
   {
     "id": "AC7.1",
-    "desc": "The system allows editing and canceling of appointments.",
+    "desc": "The system allows editing and canceling of appointments",
     "ac_sim": [
       {
-        "id": "ACE14.1",
-        "desc": "The system must allow changing the appointment status to \"Canceled\".",
-        "sim": 0.7613110542297363
+        "id": "ACE15.1",
+        "desc": "The system must allow editing the date and time of an existing appointment",
+        "sim": 0.7258211374282837
       },
       {
-        "id": "ACE15.1",
-        "desc": "The system must allow editing the date and time of an existing appointment.",
-        "sim": 0.7606890201568604
+        "id": "ACE14.1",
+        "desc": "The system must allow changing the appointment status to \"Canceled\"",
+        "sim": 0.7247785329818726
       },
       {
         "id": "ACE14.2",
-        "desc": "The system must make the previous time slot available again in the doctor's schedule.",
-        "sim": 0.4953491687774658
+        "desc": "The system must make the previous time slot available again in the doctor's schedule",
+        "sim": 0.5261150598526001
       },
       {
         "id": "ACE15.2",
-        "desc": "The system must validate that the new time slot is available.",
-        "sim": 0.4465612769126892
+        "desc": "The system must validate that the new time slot is available",
+        "sim": 0.3958719074726105
       }
     ]
   },
   {
     "id": "AC7.2",
-    "desc": "Patients are notified of changes.",
+    "desc": "Patients are notified of changes",
     "ac_sim": [
       {
         "id": "ACE14.2",
-        "desc": "The system must make the previous time slot available again in the doctor's schedule.",
-        "sim": 0.5094019174575806
+        "desc": "The system must make the previous time slot available again in the doctor's schedule",
+        "sim": 0.4327256381511688
       },
       {
         "id": "ACE15.1",
-        "desc": "The system must allow editing the date and time of an existing appointment.",
-        "sim": 0.39059433341026306
-      },
-      {
-        "id": "ACE15.2",
-        "desc": "The system must validate that the new time slot is available.",
-        "sim": 0.30829617381095886
+        "desc": "The system must allow editing the date and time of an existing appointment",
+        "sim": 0.3074173927307129
       },
       {
         "id": "ACE14.1",
-        "desc": "The system must allow changing the appointment status to \"Canceled\".",
-        "sim": 0.2727605104446411
+        "desc": "The system must allow changing the appointment status to \"Canceled\"",
+        "sim": 0.29920175671577454
+      },
+      {
+        "id": "ACE15.2",
+        "desc": "The system must validate that the new time slot is available",
+        "sim": 0.18974518775939941
       }
     ]
   },
   {
     "id": "AC8.1",
-    "desc": "Notifications are sent promptly after changes.",
+    "desc": "Notifications are sent promptly after changes",
     "ac_sim": [
       {
         "id": "ACE16.2",
-        "desc": "The system must indicate in the notification if the appointment had a schedule change.",
-        "sim": 0.5310935974121094
+        "desc": "The system must indicate in the notification if the appointment had a schedule change",
+        "sim": 0.5653361678123474
       },
       {
         "id": "ACE17.2",
-        "desc": "The system must indicate in the notification if the appointment had a schedule change.",
-        "sim": 0.5310935974121094
+        "desc": "The system must indicate in the notification if the appointment had a schedule change",
+        "sim": 0.5653361678123474
       },
       {
         "id": "ACE16.3",
-        "desc": "The system must include the new appointment date in the notification when a date change occurs.",
-        "sim": 0.4937420189380646
+        "desc": "The system must include the new appointment date in the notification when a date change occurs",
+        "sim": 0.5310533046722412
       },
       {
         "id": "ACE17.3",
-        "desc": "The system must include the new appointment date in the notification when a date change occurs.",
-        "sim": 0.4937420189380646
+        "desc": "The system must include the new appointment date in the notification when a date change occurs",
+        "sim": 0.5310533046722412
       },
       {
         "id": "ACE16.1",
-        "desc": "The system must indicate in the notification if the appointment was canceled.",
-        "sim": 0.28959113359451294
+        "desc": "The system must indicate in the notification if the appointment was canceled",
+        "sim": 0.40723851323127747
       },
       {
         "id": "ACE17.1",
-        "desc": "The system must indicate in the notification if the appointment was canceled.",
-        "sim": 0.28959113359451294
+        "desc": "The system must indicate in the notification if the appointment was canceled",
+        "sim": 0.40723851323127747
       }
     ]
   },
   {
     "id": "AC10.1",
-    "desc": "The system allows entry and editing of clinical records.",
+    "desc": "The system allows entry and editing of clinical records",
     "ac_sim": [
       {
         "id": "ACE19.1",
-        "desc": "The system must include the date, name, and specialty of the responsible doctor in each record.",
-        "sim": 0.6667524576187134
+        "desc": "The system must include the date, name, and specialty of the responsible doctor in each record",
+        "sim": 0.7007613182067871
       },
       {
         "id": "ACE19.2",
-        "desc": "The system must allow marking the appointment as Attended when a diagnosis is registered.",
-        "sim": 0.5734590888023376
+        "desc": "The system must allow marking the appointment as Attended when a diagnosis is registered",
+        "sim": 0.5949408411979675
       },
       {
         "id": "ACE19.4",
-        "desc": "The system must prevent registering a diagnosis when the appointment is marked as Not attended.",
-        "sim": 0.4271610975265503
+        "desc": "The system must prevent registering a diagnosis when the appointment is marked as Not attended",
+        "sim": 0.5013864040374756
       },
       {
         "id": "ACE19.3",
-        "desc": "The system must allow marking the appointment as Not attended.",
-        "sim": 0.3890168070793152
+        "desc": "The system must allow marking the appointment as Not attended",
+        "sim": 0.4245884120464325
       }
     ]
   },
   {
     "id": "AC10.2",
-    "desc": "Each entry is timestamped.",
+    "desc": "Each entry is timestamped",
     "ac_sim": [
       {
         "id": "ACE19.1",
-        "desc": "The system must include the date, name, and specialty of the responsible doctor in each record.",
-        "sim": 0.4174899458885193
+        "desc": "The system must include the date, name, and specialty of the responsible doctor in each record",
+        "sim": 0.3192179799079895
       },
       {
         "id": "ACE19.3",
-        "desc": "The system must allow marking the appointment as Not attended.",
-        "sim": 0.28169041872024536
-      },
-      {
-        "id": "ACE19.2",
-        "desc": "The system must allow marking the appointment as Attended when a diagnosis is registered.",
-        "sim": 0.2621959149837494
+        "desc": "The system must allow marking the appointment as Not attended",
+        "sim": 0.23044705390930176
       },
       {
         "id": "ACE19.4",
-        "desc": "The system must prevent registering a diagnosis when the appointment is marked as Not attended.",
-        "sim": 0.18711049854755402
+        "desc": "The system must prevent registering a diagnosis when the appointment is marked as Not attended",
+        "sim": 0.1948399543762207
+      },
+      {
+        "id": "ACE19.2",
+        "desc": "The system must allow marking the appointment as Attended when a diagnosis is registered",
+        "sim": 0.19346588850021362
       }
     ]
   },
   {
     "id": "AC11.1",
-    "desc": "Patients can view but not edit their records.",
+    "desc": "Patients can view but not edit their records",
     "ac_sim": [
       {
         "id": "ACE20.1",
-        "desc": "The system must list all appointments associated with the patient.",
-        "sim": 0.3732418417930603
+        "desc": "The system must list all appointments associated with the patient",
+        "sim": 0.40880700945854187
       },
       {
         "id": "ACE20.4",
-        "desc": "The system must allow sorting the information by date, responsible doctor, or specialty.",
-        "sim": 0.3554823398590088
+        "desc": "The system must allow sorting the information by date, responsible doctor, or specialty",
+        "sim": 0.33667218685150146
       },
       {
         "id": "ACE20.3",
-        "desc": "The system must list all invoices associated with the patient.",
-        "sim": 0.3103179335594177
-      },
-      {
-        "id": "ACE20.2",
-        "desc": "The system must list all medications associated with the patient.",
-        "sim": 0.2833883762359619
+        "desc": "The system must list all invoices associated with the patient",
+        "sim": 0.3313780426979065
       },
       {
         "id": "ACE20.5",
-        "desc": "The system must allow viewing the details of each listed item.",
-        "sim": 0.2764616906642914
+        "desc": "The system must allow viewing the details of each listed item",
+        "sim": 0.3290281295776367
+      },
+      {
+        "id": "ACE20.2",
+        "desc": "The system must list all medications associated with the patient",
+        "sim": 0.2735450565814972
       }
     ]
   },
   {
     "id": "AC11.2",
-    "desc": "Access is restricted to authorized users.",
+    "desc": "Access is restricted to authorized users",
     "ac_sim": [
       {
         "id": "ACE20.5",
-        "desc": "The system must allow viewing the details of each listed item.",
-        "sim": 0.2515183687210083
+        "desc": "The system must allow viewing the details of each listed item",
+        "sim": 0.2572055459022522
       },
       {
         "id": "ACE20.1",
-        "desc": "The system must list all appointments associated with the patient.",
-        "sim": 0.11780383437871933
-      },
-      {
-        "id": "ACE20.4",
-        "desc": "The system must allow sorting the information by date, responsible doctor, or specialty.",
-        "sim": 0.11108559370040894
+        "desc": "The system must list all appointments associated with the patient",
+        "sim": 0.10793498903512955
       },
       {
         "id": "ACE20.2",
-        "desc": "The system must list all medications associated with the patient.",
-        "sim": 0.07456424832344055
+        "desc": "The system must list all medications associated with the patient",
+        "sim": 0.05968525633215904
       },
       {
         "id": "ACE20.3",
-        "desc": "The system must list all invoices associated with the patient.",
-        "sim": 0.06526751071214676
+        "desc": "The system must list all invoices associated with the patient",
+        "sim": 0.05580059438943863
+      },
+      {
+        "id": "ACE20.4",
+        "desc": "The system must allow sorting the information by date, responsible doctor, or specialty",
+        "sim": 0.047895774245262146
       }
     ]
   },
   {
     "id": "AC12.1",
-    "desc": "The system allows entry and editing of staff data and specialties.",
+    "desc": "The system allows entry and editing of staff data and specialties",
     "ac_sim": [
       {
         "id": "ACE21.1",
-        "desc": "The system must allow registering the doctor's full name, identity document number, and contact details (email address and phone number).",
-        "sim": 0.4845595359802246
-      },
-      {
-        "id": "ACE21.2",
-        "desc": "The system must allow associating a specialty with the doctor being registered.",
-        "sim": 0.44698286056518555
+        "desc": "The system must allow registering the doctor's full name, identity document number, and contact details (email address and phone number)",
+        "sim": 0.5189989805221558
       },
       {
         "id": "ACE21.3",
-        "desc": "The system must allow defining the doctor's status as active or inactive.",
-        "sim": 0.4000028371810913
+        "desc": "The system must allow defining the doctor's status as active or inactive",
+        "sim": 0.4410160779953003
+      },
+      {
+        "id": "ACE21.2",
+        "desc": "The system must allow associating a specialty with the doctor being registered",
+        "sim": 0.4356902837753296
       },
       {
         "id": "ACE21.4",
-        "desc": "The doctor's name and identity document cannot be left empty in the registration.",
-        "sim": 0.27374112606048584
+        "desc": "The doctor's name and identity document cannot be left empty in the registration",
+        "sim": 0.27794259786605835
       }
     ]
   },
   {
     "id": "AC13.1",
-    "desc": "The system supports setting and updating working hours.",
+    "desc": "The system supports setting and updating working hours",
     "ac_sim": [
       {
         "id": "ACE24.2",
-        "desc": "The system must allow editing the start time and end time for a day of the week.",
-        "sim": 0.7197401523590088
+        "desc": "The system must allow editing the start time and end time for a day of the week",
+        "sim": 0.6668330430984497
       },
       {
         "id": "ACE22.1",
-        "desc": "The system must allow defining the start time and end time per day of the week.",
-        "sim": 0.6611567735671997
+        "desc": "The system must allow defining the start time and end time per day of the week",
+        "sim": 0.6626793146133423
       },
       {
         "id": "ACE22.2",
-        "desc": "The system must allow defining more than one time slot per day.",
-        "sim": 0.6303398609161377
+        "desc": "The system must allow defining more than one time slot per day",
+        "sim": 0.5968348383903503
       },
       {
         "id": "ACE24.1",
-        "desc": "The system must allow editing the days of the week for attention.",
-        "sim": 0.6150462627410889
+        "desc": "The system must allow editing the days of the week for attention",
+        "sim": 0.5707363486289978
       },
       {
         "id": "ACE22.3",
-        "desc": "The system must display an error if the time slots for the same day overlap.",
-        "sim": 0.49244681000709534
+        "desc": "The system must display an error if the time slots for the same day overlap",
+        "sim": 0.40363094210624695
       },
       {
         "id": "ACE24.3",
-        "desc": "The system must display an error if the time slots for the same day overlap.",
-        "sim": 0.49244681000709534
+        "desc": "The system must display an error if the time slots for the same day overlap",
+        "sim": 0.40363094210624695
       },
       {
         "id": "ACE22.4",
-        "desc": "The system must display an error if the start times precede the end times.",
-        "sim": 0.3876820504665375
+        "desc": "The system must display an error if the start times precede the end times",
+        "sim": 0.3823860287666321
       },
       {
         "id": "ACE24.4",
-        "desc": "The system must display an error if the start times precede the end times.",
-        "sim": 0.3876820504665375
+        "desc": "The system must display an error if the start times precede the end times",
+        "sim": 0.3823860287666321
       },
       {
         "id": "ACE26.1",
-        "desc": "The system must allow changing the doctor's status to active.",
-        "sim": 0.3469933867454529
+        "desc": "The system must allow changing the doctor's status to active",
+        "sim": 0.31560373306274414
       }
     ]
   },
   {
     "id": "AC13.2",
-    "desc": "Professionals can be activated or deactivated for scheduling.",
+    "desc": "Professionals can be activated or deactivated for scheduling",
     "ac_sim": [
       {
         "id": "ACE26.1",
-        "desc": "The system must allow changing the doctor's status to active.",
-        "sim": 0.5034817457199097
-      },
-      {
-        "id": "ACE24.2",
-        "desc": "The system must allow editing the start time and end time for a day of the week.",
-        "sim": 0.4474373459815979
-      },
-      {
-        "id": "ACE24.1",
-        "desc": "The system must allow editing the days of the week for attention.",
-        "sim": 0.42843788862228394
+        "desc": "The system must allow changing the doctor's status to active",
+        "sim": 0.5391213893890381
       },
       {
         "id": "ACE22.2",
-        "desc": "The system must allow defining more than one time slot per day.",
-        "sim": 0.4157572090625763
+        "desc": "The system must allow defining more than one time slot per day",
+        "sim": 0.4560691714286804
+      },
+      {
+        "id": "ACE24.2",
+        "desc": "The system must allow editing the start time and end time for a day of the week",
+        "sim": 0.4390829801559448
+      },
+      {
+        "id": "ACE24.1",
+        "desc": "The system must allow editing the days of the week for attention",
+        "sim": 0.42835623025894165
       },
       {
         "id": "ACE22.1",
-        "desc": "The system must allow defining the start time and end time per day of the week.",
-        "sim": 0.39241814613342285
+        "desc": "The system must allow defining the start time and end time per day of the week",
+        "sim": 0.3990807831287384
       },
       {
         "id": "ACE22.3",
-        "desc": "The system must display an error if the time slots for the same day overlap.",
-        "sim": 0.3372294306755066
+        "desc": "The system must display an error if the time slots for the same day overlap",
+        "sim": 0.2795047163963318
       },
       {
         "id": "ACE24.3",
-        "desc": "The system must display an error if the time slots for the same day overlap.",
-        "sim": 0.3372294306755066
+        "desc": "The system must display an error if the time slots for the same day overlap",
+        "sim": 0.2795047163963318
       },
       {
         "id": "ACE22.4",
-        "desc": "The system must display an error if the start times precede the end times.",
-        "sim": 0.2061202973127365
+        "desc": "The system must display an error if the start times precede the end times",
+        "sim": 0.1844763606786728
       },
       {
         "id": "ACE24.4",
-        "desc": "The system must display an error if the start times precede the end times.",
-        "sim": 0.2061202973127365
+        "desc": "The system must display an error if the start times precede the end times",
+        "sim": 0.1844763606786728
       }
     ]
   },
   {
     "id": "AC14.1",
-    "desc": "The system enforces role-based access control.",
+    "desc": "The system enforces role-based access control",
     "ac_sim": [
       {
-        "id": "ACE28.2",
-        "desc": "The system must display an error if a user accesses a functionality not defined in their role.",
-        "sim": 0.6323266625404358
+        "id": "ACE28.1",
+        "desc": "The system must associate functionalities with each role",
+        "sim": 0.6091434359550476
       },
       {
-        "id": "ACE28.1",
-        "desc": "The system must associate functionalities with each role.",
-        "sim": 0.6027379035949707
+        "id": "ACE28.2",
+        "desc": "The system must display an error if a user accesses a functionality not defined in their role",
+        "sim": 0.5871655344963074
       },
       {
         "id": "ACE27.1",
-        "desc": "The system must define the following roles: administrative staff, doctor, pharmacist, analyst, and patient.",
-        "sim": 0.4629555940628052
+        "desc": "The system must define the following roles: administrative staff, doctor, pharmacist, analyst, and patient",
+        "sim": 0.4494866132736206
       }
     ]
   },
   {
     "id": "AC14.2",
-    "desc": "Permissions are validated before actions are executed.",
+    "desc": "Permissions are validated before actions are executed",
     "ac_sim": [
       {
         "id": "ACE28.2",
-        "desc": "The system must display an error if a user accesses a functionality not defined in their role.",
-        "sim": 0.564251184463501
+        "desc": "The system must display an error if a user accesses a functionality not defined in their role",
+        "sim": 0.5315656065940857
       },
       {
         "id": "ACE28.1",
-        "desc": "The system must associate functionalities with each role.",
-        "sim": 0.2806398868560791
+        "desc": "The system must associate functionalities with each role",
+        "sim": 0.2800207734107971
       },
       {
         "id": "ACE27.1",
-        "desc": "The system must define the following roles: administrative staff, doctor, pharmacist, analyst, and patient.",
-        "sim": 0.15771913528442383
+        "desc": "The system must define the following roles: administrative staff, doctor, pharmacist, analyst, and patient",
+        "sim": 0.12902754545211792
       }
     ]
   },
   {
     "id": "AC15.1",
-    "desc": "The system generates invoices with unique identifiers.",
+    "desc": "The system generates invoices with unique identifiers",
     "ac_sim": [
       {
         "id": "ACE34.2",
-        "desc": "The system must include a unique identifier in the invoice.",
-        "sim": 0.8521527647972107
+        "desc": "The system must include a unique identifier in the invoice",
+        "sim": 0.8105676174163818
       },
       {
         "id": "ACE29.2",
-        "desc": "The system must include a unique identifier in the invoice.",
-        "sim": 0.8521527647972107
+        "desc": "The system must include a unique identifier in the invoice",
+        "sim": 0.8105676174163818
       },
       {
         "id": "ACE29.3",
-        "desc": "The system must associate the invoice with the patient and the appointment.",
-        "sim": 0.6628828048706055
+        "desc": "The system must associate the invoice with the patient and the appointment",
+        "sim": 0.6195836663246155
       },
       {
         "id": "ACE34.3",
-        "desc": "The system must associate the invoice with the patient and the medication.",
-        "sim": 0.6476167440414429
+        "desc": "The system must associate the invoice with the patient and the medication",
+        "sim": 0.6004743576049805
       },
       {
         "id": "ACE34.1",
-        "desc": "The system must include in the invoice the patient's full name, medication name, date, and total cost.",
-        "sim": 0.5773929953575134
+        "desc": "The system must include in the invoice the patient's full name, medication name, date, and total cost",
+        "sim": 0.5592737197875977
       },
       {
         "id": "ACE29.1",
-        "desc": "The system must include in the invoice the patient's full name, appointment specialty, date, and total cost.",
-        "sim": 0.5517171621322632
+        "desc": "The system must include in the invoice the patient's full name, appointment specialty, date, and total cost",
+        "sim": 0.5192723274230957
       }
     ]
   },
   {
     "id": "AC15.2",
-    "desc": "Invoices are associated with patients and services.",
+    "desc": "Invoices are associated with patients and services",
     "ac_sim": [
       {
         "id": "ACE29.3",
-        "desc": "The system must associate the invoice with the patient and the appointment.",
-        "sim": 0.8195598125457764
+        "desc": "The system must associate the invoice with the patient and the appointment",
+        "sim": 0.816055417060852
       },
       {
         "id": "ACE34.3",
-        "desc": "The system must associate the invoice with the patient and the medication.",
-        "sim": 0.7879618406295776
-      },
-      {
-        "id": "ACE34.1",
-        "desc": "The system must include in the invoice the patient's full name, medication name, date, and total cost.",
-        "sim": 0.7343815565109253
+        "desc": "The system must associate the invoice with the patient and the medication",
+        "sim": 0.7809830904006958
       },
       {
         "id": "ACE29.1",
-        "desc": "The system must include in the invoice the patient's full name, appointment specialty, date, and total cost.",
-        "sim": 0.7295497059822083
+        "desc": "The system must include in the invoice the patient's full name, appointment specialty, date, and total cost",
+        "sim": 0.7553547620773315
+      },
+      {
+        "id": "ACE34.1",
+        "desc": "The system must include in the invoice the patient's full name, medication name, date, and total cost",
+        "sim": 0.754378080368042
       },
       {
         "id": "ACE34.2",
-        "desc": "The system must include a unique identifier in the invoice.",
-        "sim": 0.5834125280380249
+        "desc": "The system must include a unique identifier in the invoice",
+        "sim": 0.5945385694503784
       },
       {
         "id": "ACE29.2",
-        "desc": "The system must include a unique identifier in the invoice.",
-        "sim": 0.5834125280380249
+        "desc": "The system must include a unique identifier in the invoice",
+        "sim": 0.5945385694503784
       }
     ]
   },
   {
     "id": "AC16.1",
-    "desc": "Notifications are sent with invoice attachments.",
+    "desc": "Notifications are sent with invoice attachments",
     "ac_sim": [
       {
         "id": "ACE36.4",
-        "desc": "The system must send the email within 10 minutes after the invoice is generated.",
-        "sim": 0.6337158679962158
-      },
-      {
-        "id": "ACE36.1",
-        "desc": "The system must send an email to the patient's email address containing: invoice identifier, patient name, date, and service type (appointment or medication).",
-        "sim": 0.629685640335083
-      },
-      {
-        "id": "ACE37.3",
-        "desc": "The system must send the text message within 10 minutes after the invoice is generated.",
-        "sim": 0.5985326170921326
+        "desc": "The system must send the email within 10 minutes after the invoice is generated",
+        "sim": 0.551124632358551
       },
       {
         "id": "ACE36.3",
-        "desc": "The system must include the invoice attached in PDF format.",
-        "sim": 0.5805776119232178
+        "desc": "The system must include the invoice attached in PDF format",
+        "sim": 0.5049267411231995
+      },
+      {
+        "id": "ACE37.3",
+        "desc": "The system must send the text message within 10 minutes after the invoice is generated",
+        "sim": 0.48185697197914124
       },
       {
         "id": "ACE36.2",
-        "desc": "The system must include in the subject line that it is a hospital invoice.",
-        "sim": 0.5589895248413086
+        "desc": "The system must include in the subject line that it is a hospital invoice",
+        "sim": 0.4637657403945923
+      },
+      {
+        "id": "ACE36.1",
+        "desc": "The system must send an email to the patient's email address containing: invoice identifier, patient name, date, and service type (appointment or medication)",
+        "sim": 0.43735718727111816
       },
       {
         "id": "ACE37.1",
-        "desc": "The system must send a text message to the patient's phone number containing: invoice identifier, patient name, date, and service type (appointment or medication).",
-        "sim": 0.5578883290290833
+        "desc": "The system must send a text message to the patient's phone number containing: invoice identifier, patient name, date, and service type (appointment or medication)",
+        "sim": 0.36255061626434326
       },
       {
         "id": "ACE37.2",
-        "desc": "The system must include the total cost of the invoice.",
-        "sim": 0.3767995834350586
+        "desc": "The system must include the total cost of the invoice",
+        "sim": 0.29701587557792664
       }
     ]
   },
   {
     "id": "AC17.1",
-    "desc": "The system allows entry of medication/supply data.",
+    "desc": "The system allows entry of medication/supply data",
     "ac_sim": [
       {
         "id": "ACE38.1",
-        "desc": "The system must register each medication with name, manufacturer, available units, stock number, and expiration date.",
-        "sim": 0.8067770004272461
+        "desc": "The system must register each medication with name, manufacturer, available units, stock number, and expiration date",
+        "sim": 0.800250768661499
       },
       {
         "id": "ACE39.1",
-        "desc": "The system must register each supply with name, manufacturer, available units, stock number, and expiration date.",
-        "sim": 0.6441165208816528
+        "desc": "The system must register each supply with name, manufacturer, available units, stock number, and expiration date",
+        "sim": 0.6305478811264038
       },
       {
         "id": "ACE38.4",
-        "desc": "The system must display an error if the medication name is left empty.",
-        "sim": 0.5674861669540405
+        "desc": "The system must display an error if the medication name is left empty",
+        "sim": 0.4737406075000763
       },
       {
         "id": "ACE38.3",
-        "desc": "The system must display an error if the stock number is not unique.",
-        "sim": 0.3498479723930359
-      },
-      {
-        "id": "ACE39.2",
-        "desc": "The system must display an error if the expiration date is less than or equal to the current date.",
-        "sim": 0.3260982930660248
+        "desc": "The system must display an error if the stock number is not unique",
+        "sim": 0.2607613205909729
       },
       {
         "id": "ACE39.3",
-        "desc": "The system must display an error if the stock number already exists in the system.",
-        "sim": 0.31113186478614807
+        "desc": "The system must display an error if the stock number already exists in the system",
+        "sim": 0.2490515112876892
+      },
+      {
+        "id": "ACE39.2",
+        "desc": "The system must display an error if the expiration date is less than or equal to the current date",
+        "sim": 0.24543702602386475
       },
       {
         "id": "ACE38.2",
-        "desc": "The system must display an error if the expiration date is earlier than the current date.",
-        "sim": 0.3048756718635559
-      },
-      {
-        "id": "ACE39.5",
-        "desc": "The system must display an error if the number of available units is less than 0.",
-        "sim": 0.24775393307209015
-      },
-      {
-        "id": "ACE38.5",
-        "desc": "The system must display an error if the number of available units is less than 0.",
-        "sim": 0.24775393307209015
+        "desc": "The system must display an error if the expiration date is earlier than the current date",
+        "sim": 0.211544007062912
       },
       {
         "id": "ACE39.4",
-        "desc": "The system must display an error if the supply name is left empty.",
-        "sim": 0.2460329681634903
+        "desc": "The system must display an error if the supply name is left empty",
+        "sim": 0.1847815215587616
+      },
+      {
+        "id": "ACE39.5",
+        "desc": "The system must display an error if the number of available units is less than 0",
+        "sim": 0.18460804224014282
+      },
+      {
+        "id": "ACE38.5",
+        "desc": "The system must display an error if the number of available units is less than 0",
+        "sim": 0.18460804224014282
       }
     ]
   },
   {
     "id": "AC19.1",
-    "desc": "The system detects minimum stock and upcoming expirations and sends notifications.",
+    "desc": "The system detects minimum stock and upcoming expirations and sends notifications",
     "ac_sim": [
       {
         "id": "ACE52.2",
-        "desc": "The system must display the supply's expiration date.",
-        "sim": 0.5813727378845215
-      },
-      {
-        "id": "ACE52.3",
-        "desc": "The system must highlight in red when one month remains before the supply expires.",
-        "sim": 0.5353839993476868
-      },
-      {
-        "id": "ACE52.1",
-        "desc": "The system must allow listing all supplies and sorting them by expiration date.",
-        "sim": 0.5319178700447083
+        "desc": "The system must display the supply's expiration date",
+        "sim": 0.5447574257850647
       },
       {
         "id": "ACE51.2",
-        "desc": "The system must display the medication's expiration date.",
-        "sim": 0.5300477743148804
+        "desc": "The system must display the medication's expiration date",
+        "sim": 0.5267174243927002
+      },
+      {
+        "id": "ACE52.1",
+        "desc": "The system must allow listing all supplies and sorting them by expiration date",
+        "sim": 0.518179714679718
+      },
+      {
+        "id": "ACE52.3",
+        "desc": "The system must highlight in red when one month remains before the supply expires",
+        "sim": 0.5096859335899353
       },
       {
         "id": "ACE51.3",
-        "desc": "The system must highlight in red when one month remains before the medication expires.",
-        "sim": 0.5072148442268372
+        "desc": "The system must highlight in red when one month remains before the medication expires",
+        "sim": 0.4947584867477417
       },
       {
         "id": "ACE51.1",
-        "desc": "The system must allow listing all medications and sorting them by expiration date.",
-        "sim": 0.4565339982509613
+        "desc": "The system must allow listing all medications and sorting them by expiration date",
+        "sim": 0.48000985383987427
       }
     ]
   },
   {
     "id": "AC20.1",
-    "desc": "Inventory can be sorted by quantity or expiration.",
+    "desc": "Inventory can be sorted by quantity or expiration",
     "ac_sim": [
       {
         "id": "ACE46.1",
-        "desc": "The system must display the supply name and the expiration date.",
-        "sim": 0.5577573180198669
+        "desc": "The system must display the supply name and the expiration date",
+        "sim": 0.5208281874656677
       },
       {
         "id": "ACE44.1",
-        "desc": "The system must display the medication name and the expiration date.",
-        "sim": 0.49104130268096924
+        "desc": "The system must display the medication name and the expiration date",
+        "sim": 0.4938862919807434
       },
       {
         "id": "ACE43.1",
-        "desc": "The system must display the medication name and the number of available units.",
-        "sim": 0.44722750782966614
+        "desc": "The system must display the medication name and the number of available units",
+        "sim": 0.4485124349594116
       },
       {
         "id": "ACE46.2",
-        "desc": "The system sorts from lowest to highest.",
-        "sim": 0.440615713596344
-      },
-      {
-        "id": "ACE45.2",
-        "desc": "The system sorts from lowest to highest.",
-        "sim": 0.440615713596344
-      },
-      {
-        "id": "ACE43.2",
-        "desc": "The system sorts from lowest to highest.",
-        "sim": 0.440615713596344
+        "desc": "The system sorts from lowest to highest",
+        "sim": 0.44651511311531067
       },
       {
         "id": "ACE44.2",
-        "desc": "The system sorts from lowest to highest.",
-        "sim": 0.440615713596344
+        "desc": "The system sorts from lowest to highest",
+        "sim": 0.44651511311531067
+      },
+      {
+        "id": "ACE45.2",
+        "desc": "The system sorts from lowest to highest",
+        "sim": 0.4465150237083435
+      },
+      {
+        "id": "ACE43.2",
+        "desc": "The system sorts from lowest to highest",
+        "sim": 0.4465150237083435
       },
       {
         "id": "ACE45.1",
-        "desc": "The system must display the supply name and the number of available units.",
-        "sim": 0.3334536552429199
+        "desc": "The system must display the supply name and the number of available units",
+        "sim": 0.29901018738746643
       }
     ]
   },
   {
     "id": "AC21.1",
-    "desc": "Reports include all specified metrics.",
+    "desc": "Reports include all specified metrics",
     "ac_sim": [
       {
-        "id": "ACE55.1",
-        "desc": "The system must list all existing specialties.",
-        "sim": 0.425644189119339
-      },
-      {
-        "id": "ACE56.1",
-        "desc": "The system must display the hospital's total income.",
-        "sim": 0.31966954469680786
+        "id": "ACE56.2",
+        "desc": "The system must display the income by specialty",
+        "sim": 0.2601364850997925
       },
       {
         "id": "ACE57.3",
-        "desc": "The system must display the total number of units collected.",
-        "sim": 0.3092781603336334
+        "desc": "The system must display the total number of units collected",
+        "sim": 0.25844475626945496
       },
       {
-        "id": "ACE56.2",
-        "desc": "The system must display the income by specialty.",
-        "sim": 0.2779213488101959
+        "id": "ACE55.1",
+        "desc": "The system must list all existing specialties",
+        "sim": 0.2571526765823364
+      },
+      {
+        "id": "ACE56.1",
+        "desc": "The system must display the hospital's total income",
+        "sim": 0.2519691586494446
       },
       {
         "id": "ACE57.2",
-        "desc": "The system must list all supplies sorted by consumption (number of units collected).",
-        "sim": 0.26400303840637207
+        "desc": "The system must list all supplies sorted by consumption (number of units collected)",
+        "sim": 0.24697017669677734
       },
       {
         "id": "ACE55.3",
-        "desc": "The system must display the total number of appointments: overall, attended, canceled, confirmed, and not attended.",
-        "sim": 0.25530821084976196
+        "desc": "The system must display the total number of appointments: overall, attended, canceled, confirmed, and not attended",
+        "sim": 0.2367628514766693
       },
       {
         "id": "ACE56.3",
-        "desc": "The system must display the income by medication.",
-        "sim": 0.24085421860218048
+        "desc": "The system must display the income by medication",
+        "sim": 0.21577225625514984
       },
       {
         "id": "ACE57.1",
-        "desc": "The system must allow filtering by name.",
-        "sim": 0.17811347544193268
+        "desc": "The system must allow filtering by name",
+        "sim": 0.2074255347251892
       },
       {
         "id": "ACE56.4",
-        "desc": "The system must allow choosing the query date range.",
-        "sim": 0.1377488374710083
+        "desc": "The system must allow choosing the query date range",
+        "sim": 0.19337299466133118
       },
       {
         "id": "ACE57.4",
-        "desc": "The system must allow choosing the query date range.",
-        "sim": 0.1377488374710083
-      },
-      {
-        "id": "ACE55.4",
-        "desc": "The system must allow choosing a date range.",
-        "sim": 0.12268976867198944
+        "desc": "The system must allow choosing the query date range",
+        "sim": 0.19337299466133118
       },
       {
         "id": "ACE55.2",
-        "desc": "The system must allow choosing a specialty.",
-        "sim": 0.11086633801460266
+        "desc": "The system must allow choosing a specialty",
+        "sim": 0.11678190529346466
       },
       {
-        "id": "ACE56.6",
-        "desc": "The system must display an error if the end date is later than the current date.",
-        "sim": 0.06464066356420517
-      },
-      {
-        "id": "ACE57.6",
-        "desc": "The system must display an error if the end date is later than the current date.",
-        "sim": 0.06464066356420517
-      },
-      {
-        "id": "ACE55.6",
-        "desc": "The system must display an error if the end date is later than the current date.",
-        "sim": 0.06464063376188278
+        "id": "ACE55.4",
+        "desc": "The system must allow choosing a date range",
+        "sim": 0.11493869125843048
       },
       {
         "id": "ACE56.5",
-        "desc": "The system must display an error if the start date is later than the end date.",
-        "sim": 0.06373561918735504
+        "desc": "The system must display an error if the start date is later than the end date",
+        "sim": 0.05829838663339615
       },
       {
         "id": "ACE57.5",
-        "desc": "The system must display an error if the start date is later than the end date.",
-        "sim": 0.06373561918735504
+        "desc": "The system must display an error if the start date is later than the end date",
+        "sim": 0.05829838663339615
       },
       {
         "id": "ACE55.5",
-        "desc": "The system must display an error if the start date is later than the end date.",
-        "sim": 0.06373555958271027
+        "desc": "The system must display an error if the start date is later than the end date",
+        "sim": 0.05829836428165436
+      },
+      {
+        "id": "ACE56.6",
+        "desc": "The system must display an error if the end date is later than the current date",
+        "sim": 0.0457095205783844
+      },
+      {
+        "id": "ACE57.6",
+        "desc": "The system must display an error if the end date is later than the current date",
+        "sim": 0.0457095205783844
+      },
+      {
+        "id": "ACE55.6",
+        "desc": "The system must display an error if the end date is later than the current date",
+        "sim": 0.045709460973739624
       }
     ]
   },
   {
     "id": "AC21.2",
-    "desc": "Reports can be filtered by date range.",
+    "desc": "Reports can be filtered by date range",
     "ac_sim": [
       {
         "id": "ACE56.4",
-        "desc": "The system must allow choosing the query date range.",
-        "sim": 0.6172288656234741
+        "desc": "The system must allow choosing the query date range",
+        "sim": 0.6023159623146057
       },
       {
         "id": "ACE57.4",
-        "desc": "The system must allow choosing the query date range.",
-        "sim": 0.6172288656234741
+        "desc": "The system must allow choosing the query date range",
+        "sim": 0.6023159623146057
       },
       {
         "id": "ACE55.4",
-        "desc": "The system must allow choosing a date range.",
-        "sim": 0.5742564797401428
+        "desc": "The system must allow choosing a date range",
+        "sim": 0.5540381669998169
       },
       {
         "id": "ACE57.1",
-        "desc": "The system must allow filtering by name.",
-        "sim": 0.4307221472263336
+        "desc": "The system must allow filtering by name",
+        "sim": 0.3460201025009155
       },
       {
         "id": "ACE56.5",
-        "desc": "The system must display an error if the start date is later than the end date.",
-        "sim": 0.39931929111480713
-      },
-      {
-        "id": "ACE57.5",
-        "desc": "The system must display an error if the start date is later than the end date.",
-        "sim": 0.39931929111480713
+        "desc": "The system must display an error if the start date is later than the end date",
+        "sim": 0.30708229541778564
       },
       {
         "id": "ACE55.5",
-        "desc": "The system must display an error if the start date is later than the end date.",
-        "sim": 0.39931923151016235
+        "desc": "The system must display an error if the start date is later than the end date",
+        "sim": 0.30708229541778564
+      },
+      {
+        "id": "ACE57.5",
+        "desc": "The system must display an error if the start date is later than the end date",
+        "sim": 0.30708229541778564
       },
       {
         "id": "ACE56.6",
-        "desc": "The system must display an error if the end date is later than the current date.",
-        "sim": 0.38963523507118225
+        "desc": "The system must display an error if the end date is later than the current date",
+        "sim": 0.2793360948562622
       },
       {
         "id": "ACE57.6",
-        "desc": "The system must display an error if the end date is later than the current date.",
-        "sim": 0.38963523507118225
+        "desc": "The system must display an error if the end date is later than the current date",
+        "sim": 0.2793360948562622
       },
       {
         "id": "ACE55.6",
-        "desc": "The system must display an error if the end date is later than the current date.",
-        "sim": 0.38963520526885986
+        "desc": "The system must display an error if the end date is later than the current date",
+        "sim": 0.2793360650539398
       },
       {
         "id": "ACE56.2",
-        "desc": "The system must display the income by specialty.",
-        "sim": 0.2768504023551941
+        "desc": "The system must display the income by specialty",
+        "sim": 0.2484544962644577
       },
       {
         "id": "ACE56.3",
-        "desc": "The system must display the income by medication.",
-        "sim": 0.27586549520492554
-      },
-      {
-        "id": "ACE55.3",
-        "desc": "The system must display the total number of appointments: overall, attended, canceled, confirmed, and not attended.",
-        "sim": 0.21553638577461243
+        "desc": "The system must display the income by medication",
+        "sim": 0.24399057030677795
       },
       {
         "id": "ACE56.1",
-        "desc": "The system must display the hospital's total income.",
-        "sim": 0.18429435789585114
+        "desc": "The system must display the hospital's total income",
+        "sim": 0.1610753983259201
       },
       {
-        "id": "ACE57.2",
-        "desc": "The system must list all supplies sorted by consumption (number of units collected).",
-        "sim": 0.17976990342140198
+        "id": "ACE55.3",
+        "desc": "The system must display the total number of appointments: overall, attended, canceled, confirmed, and not attended",
+        "sim": 0.15465539693832397
       },
       {
         "id": "ACE55.1",
-        "desc": "The system must list all existing specialties.",
-        "sim": 0.15778958797454834
+        "desc": "The system must list all existing specialties",
+        "sim": 0.15346463024616241
+      },
+      {
+        "id": "ACE57.2",
+        "desc": "The system must list all supplies sorted by consumption (number of units collected)",
+        "sim": 0.13527357578277588
       },
       {
         "id": "ACE57.3",
-        "desc": "The system must display the total number of units collected.",
-        "sim": 0.15445619821548462
+        "desc": "The system must display the total number of units collected",
+        "sim": 0.10951577126979828
       },
       {
         "id": "ACE55.2",
-        "desc": "The system must allow choosing a specialty.",
-        "sim": 0.12648676335811615
+        "desc": "The system must allow choosing a specialty",
+        "sim": 0.10870116949081421
       }
     ]
   }
