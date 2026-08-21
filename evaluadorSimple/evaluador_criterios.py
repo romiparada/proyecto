@@ -39,7 +39,27 @@ with open("resultados/evaluador_historias_criterios.json", "w", encoding="utf-8"
 
 res = []
 evaluar_similares(res, criterios_similares, "ac_sim")
-    
+
+# res = []
+# for historia_similar_alineada in historias_similares_alineadas:
+#     criterios = historia_similar_alineada["ac"]
+#     evaluar_similares(res, criterios, "ac_sim", 3)    
+#     print("1- Siguiente historia")
+#     print("2- Salir")
+#     while True:
+#         try:
+#             opcion = int(input("Ingrese opcion: "))
+
+#             if opcion in [1, 2]:
+#                 salir = True
+#                 break
+
+
+
+#         except ValueError:
+#             pass
+#     if opcion != 1:
+#         break    
 
 with open(f"resultados/evaluador_criterios.json", "w", encoding="utf-8") as file:
     json.dump(res, file, indent=2, ensure_ascii=False)
