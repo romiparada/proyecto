@@ -14,6 +14,10 @@ def evaluar_similares(res, elementos, sim_key, current_top=5):
             top = top + 1
             print(similar["id"])
             print(similar["desc"])
+            if "ac" in similar:
+                print("Criterios de aceptacion")
+                for criterio in similar["ac"]:
+                    print("- " + criterio)
 
             print("\nClasificación")
             print("1 - Alineada")
