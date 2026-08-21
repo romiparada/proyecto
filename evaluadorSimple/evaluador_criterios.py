@@ -19,26 +19,26 @@ for i in range(len(historias_evaluadas)):
                     if historia_evaluada_alineacion["id"] == similitud_historia["id"]:
                         historias_similares_alineadas.append(similitud_historia)
 
+criterios_similares = []
+for i in range(len(historias_similares_alineadas)):
+    for criterio_i in historias_similares_alineadas[i]["ac"]:
+        encontrado = False
+        for c_sim in criterios_similares:
+            if c_sim["id"] == criterio_i["id"]:
+                encontrado = True
+                c_sim["ac_sim"] = sorted(
+                    c_sim["ac_sim"] + criterio_i["ac_sim"],
+                    key=lambda x: x["sim"],
+                    reverse=True
+                )
+        if not encontrado:
+            criterios_similares.append(criterio_i)
+
+with open("resultados/evaluador_historias_criterios.json", "w", encoding="utf-8") as file:
+    json.dump(criterios_similares, file, indent=2, ensure_ascii=False)
+
 res = []
-for historia_similar_alineada in historias_similares_alineadas:
-    criterios = historia_similar_alineada["ac"]
-    evaluar_similares(res, criterios, "ac_sim", 3)    
-    print("1- Siguiente historia")
-    print("2- Salir")
-    while True:
-        try:
-            opcion = int(input("Ingrese opcion: "))
-
-            if opcion in [1, 2]:
-                salir = True
-                break
-
-
-
-        except ValueError:
-            pass
-    if opcion != 1:
-        break
+evaluar_similares(res, criterios_similares, "ac_sim")
     
 
 with open(f"resultados/evaluador_criterios.json", "w", encoding="utf-8") as file:
