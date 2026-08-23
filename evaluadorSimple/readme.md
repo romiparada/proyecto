@@ -28,7 +28,6 @@ pip install -r requirements.txt
 - resultados/evaluador_funcionalidades.json
 ### Criterios
 - python alineador_criterios.py (Utiliza similitud_hisotiras_criterios.json y evaluador_historias.py)
-    - resultados/similitud_historias_alineadas_criterios_all.json (criterios incluyen id y desc de la historia)
-    - resultados/similitud_historias_alineadas_criterios_simple_all.json
+    - resultados/similitud_historias_alineadas_criterios_all.json
 - python evaluador_criterios.py 
     - resultados/evaluador_criterios.json

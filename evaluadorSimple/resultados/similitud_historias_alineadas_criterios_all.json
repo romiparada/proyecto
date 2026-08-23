@@ -1,2017 +1,1024 @@
 [
   {
-    "h_id": "HU1",
-    "h_desc": "As an administrative staff member, I want to register patients with personal data and medical background, so that the hospital can maintain accurate and complete patient records.",
     "id": "AC1.1",
     "desc": "The system allows entry of personal and medical background data.",
     "ac_sim": [
       {
         "id": "ACE1.1",
         "desc": "The system must request the full name, date of birth, sex, identity document, and contact details (email address and phone number).",
-        "sim": 0.6262912154197693,
-        "h_id": "HUE1",
-        "h_desc": "As administrative staff, I want to register a new patient's data to enroll them in the system."
+        "sim": 0.6262912154197693
       },
       {
         "id": "ACE4.2",
         "desc": "The system must allow entering chronic diseases, allergies, relevant injuries, and regular medications along with the date they started/occurred, with the option to indicate \"from birth\".",
-        "sim": 0.5473064184188843,
-        "h_id": "HUE1",
-        "h_desc": "As administrative staff, I want to register a new patient's data to enroll them in the system."
-      },
-      {
-        "id": "ACE4.2",
-        "desc": "The system must allow entering chronic diseases, allergies, relevant injuries, and regular medications along with the date they started/occurred, with the option to indicate \"from birth\".",
-        "sim": 0.5473064184188843,
-        "h_id": "HUE4",
-        "h_desc": "As administrative staff, I want to register a patient's medical background in their electronic clinical record to understand their health status."
+        "sim": 0.5473064184188843
       },
       {
         "id": "ACE1.3",
         "desc": "The system must assign a unique patient number to the new patient.",
-        "sim": 0.5087906718254089,
-        "h_id": "HUE1",
-        "h_desc": "As administrative staff, I want to register a new patient's data to enroll them in the system."
+        "sim": 0.5087906718254089
       },
       {
         "id": "ACE4.1",
         "desc": "The system must allow entering the patient's blood type.",
-        "sim": 0.475571870803833,
-        "h_id": "HUE1",
-        "h_desc": "As administrative staff, I want to register a new patient's data to enroll them in the system."
-      },
-      {
-        "id": "ACE4.1",
-        "desc": "The system must allow entering the patient's blood type.",
-        "sim": 0.475571870803833,
-        "h_id": "HUE4",
-        "h_desc": "As administrative staff, I want to register a patient's medical background in their electronic clinical record to understand their health status."
+        "sim": 0.475571870803833
       },
       {
         "id": "ACE1.2",
         "desc": "The system must display an error if a patient with the entered identity document already exists.",
-        "sim": 0.46177083253860474,
-        "h_id": "HUE1",
-        "h_desc": "As administrative staff, I want to register a new patient's data to enroll them in the system."
+        "sim": 0.46177083253860474
       }
     ]
   },
   {
-    "h_id": "HU1",
-    "h_desc": "As an administrative staff member, I want to register patients with personal data and medical background, so that the hospital can maintain accurate and complete patient records.",
     "id": "AC1.2",
     "desc": "Each patient receives a unique identifier.",
     "ac_sim": [
       {
         "id": "ACE1.3",
         "desc": "The system must assign a unique patient number to the new patient.",
-        "sim": 0.7944409847259521,
-        "h_id": "HUE1",
-        "h_desc": "As administrative staff, I want to register a new patient's data to enroll them in the system."
+        "sim": 0.7944409847259521
       },
       {
         "id": "ACE1.2",
         "desc": "The system must display an error if a patient with the entered identity document already exists.",
-        "sim": 0.5879970788955688,
-        "h_id": "HUE1",
-        "h_desc": "As administrative staff, I want to register a new patient's data to enroll them in the system."
+        "sim": 0.5879970788955688
       },
       {
         "id": "ACE4.2",
         "desc": "The system must allow entering chronic diseases, allergies, relevant injuries, and regular medications along with the date they started/occurred, with the option to indicate \"from birth\".",
-        "sim": 0.4882555603981018,
-        "h_id": "HUE1",
-        "h_desc": "As administrative staff, I want to register a new patient's data to enroll them in the system."
-      },
-      {
-        "id": "ACE4.2",
-        "desc": "The system must allow entering chronic diseases, allergies, relevant injuries, and regular medications along with the date they started/occurred, with the option to indicate \"from birth\".",
-        "sim": 0.4882555603981018,
-        "h_id": "HUE4",
-        "h_desc": "As administrative staff, I want to register a patient's medical background in their electronic clinical record to understand their health status."
+        "sim": 0.4882555603981018
       },
       {
         "id": "ACE4.1",
         "desc": "The system must allow entering the patient's blood type.",
-        "sim": 0.46315205097198486,
-        "h_id": "HUE1",
-        "h_desc": "As administrative staff, I want to register a new patient's data to enroll them in the system."
-      },
-      {
-        "id": "ACE4.1",
-        "desc": "The system must allow entering the patient's blood type.",
-        "sim": 0.46315205097198486,
-        "h_id": "HUE4",
-        "h_desc": "As administrative staff, I want to register a patient's medical background in their electronic clinical record to understand their health status."
+        "sim": 0.46315205097198486
       },
       {
         "id": "ACE1.1",
         "desc": "The system must request the full name, date of birth, sex, identity document, and contact details (email address and phone number).",
-        "sim": 0.3561069965362549,
-        "h_id": "HUE1",
-        "h_desc": "As administrative staff, I want to register a new patient's data to enroll them in the system."
+        "sim": 0.3561069965362549
       }
     ]
   },
   {
-    "h_id": "HU1",
-    "h_desc": "As an administrative staff member, I want to register patients with personal data and medical background, so that the hospital can maintain accurate and complete patient records.",
     "id": "AC1.3",
     "desc": "Duplicate identity documents or identifiers are not allowed.",
     "ac_sim": [
       {
         "id": "ACE1.2",
         "desc": "The system must display an error if a patient with the entered identity document already exists.",
-        "sim": 0.6143319606781006,
-        "h_id": "HUE1",
-        "h_desc": "As administrative staff, I want to register a new patient's data to enroll them in the system."
+        "sim": 0.6143319606781006
       },
       {
         "id": "ACE1.1",
         "desc": "The system must request the full name, date of birth, sex, identity document, and contact details (email address and phone number).",
-        "sim": 0.4339950978755951,
-        "h_id": "HUE1",
-        "h_desc": "As administrative staff, I want to register a new patient's data to enroll them in the system."
+        "sim": 0.4339950978755951
       },
       {
         "id": "ACE1.3",
         "desc": "The system must assign a unique patient number to the new patient.",
-        "sim": 0.405264288187027,
-        "h_id": "HUE1",
-        "h_desc": "As administrative staff, I want to register a new patient's data to enroll them in the system."
+        "sim": 0.405264288187027
       },
       {
         "id": "ACE4.2",
         "desc": "The system must allow entering chronic diseases, allergies, relevant injuries, and regular medications along with the date they started/occurred, with the option to indicate \"from birth\".",
-        "sim": 0.2216443568468094,
-        "h_id": "HUE1",
-        "h_desc": "As administrative staff, I want to register a new patient's data to enroll them in the system."
-      },
-      {
-        "id": "ACE4.2",
-        "desc": "The system must allow entering chronic diseases, allergies, relevant injuries, and regular medications along with the date they started/occurred, with the option to indicate \"from birth\".",
-        "sim": 0.2216443568468094,
-        "h_id": "HUE4",
-        "h_desc": "As administrative staff, I want to register a patient's medical background in their electronic clinical record to understand their health status."
+        "sim": 0.2216443568468094
       },
       {
         "id": "ACE4.1",
         "desc": "The system must allow entering the patient's blood type.",
-        "sim": 0.13783791661262512,
-        "h_id": "HUE1",
-        "h_desc": "As administrative staff, I want to register a new patient's data to enroll them in the system."
-      },
-      {
-        "id": "ACE4.1",
-        "desc": "The system must allow entering the patient's blood type.",
-        "sim": 0.13783791661262512,
-        "h_id": "HUE4",
-        "h_desc": "As administrative staff, I want to register a patient's medical background in their electronic clinical record to understand their health status."
+        "sim": 0.13783791661262512
       }
     ]
   },
   {
-    "h_id": "HU2",
-    "h_desc": "As an administrative staff member, I want to modify the personal and contact details of a registered patient, so that patient information remains up to date.",
     "id": "AC2.1",
     "desc": "The system allows editing of existing patient records.",
     "ac_sim": [
       {
         "id": "ACE3.1",
         "desc": "The system must allow modifying the full name, date of birth, sex, identity document, and contact details (email address and phone number).",
-        "sim": 0.5526004433631897,
-        "h_id": "HUE3",
-        "h_desc": "As administrative staff, I want to edit a registered patient's data to keep the information up to date."
+        "sim": 0.5526004433631897
       }
     ]
   },
   {
-    "h_id": "HU3",
-    "h_desc": "As an administrative staff member, I want to search for patients by name, identity document, or identifier number, so that I can quickly locate patient records.",
     "id": "AC3.1",
     "desc": "The system supports search by name, document, or identifier.",
     "ac_sim": [
       {
         "id": "ACE6.1",
         "desc": "The system must display a search field that allows entering the identity document.",
-        "sim": 0.62112957239151,
-        "h_id": "HUE7",
-        "h_desc": "As administrative staff, I want to search for a patient by their patient number to retrieve their record."
-      },
-      {
-        "id": "ACE6.1",
-        "desc": "The system must display a search field that allows entering the identity document.",
-        "sim": 0.62112957239151,
-        "h_id": "HUE6",
-        "h_desc": "As administrative staff, I want to search for a patient by their identity document to retrieve their record."
+        "sim": 0.62112957239151
       },
       {
         "id": "ACE5.1",
         "desc": "The system must display a search field that allows entering the name.",
-        "sim": 0.6144641637802124,
-        "h_id": "HUE7",
-        "h_desc": "As administrative staff, I want to search for a patient by their patient number to retrieve their record."
-      },
-      {
-        "id": "ACE5.1",
-        "desc": "The system must display a search field that allows entering the name.",
-        "sim": 0.6144641637802124,
-        "h_id": "HUE5",
-        "h_desc": "As administrative staff, I want to search for a patient by their name to access their information."
+        "sim": 0.6144641637802124
       },
       {
         "id": "ACE7.1",
         "desc": "The system must display a search field that allows entering the patient number.",
-        "sim": 0.523820161819458,
-        "h_id": "HUE7",
-        "h_desc": "As administrative staff, I want to search for a patient by their patient number to retrieve their record."
+        "sim": 0.523820161819458
       },
       {
         "id": "ACE6.2",
         "desc": "The system must display a list of patients whose documents match the entered data.",
-        "sim": 0.4894271492958069,
-        "h_id": "HUE7",
-        "h_desc": "As administrative staff, I want to search for a patient by their patient number to retrieve their record."
-      },
-      {
-        "id": "ACE6.2",
-        "desc": "The system must display a list of patients whose documents match the entered data.",
-        "sim": 0.4894271492958069,
-        "h_id": "HUE6",
-        "h_desc": "As administrative staff, I want to search for a patient by their identity document to retrieve their record."
+        "sim": 0.4894271492958069
       },
       {
         "id": "ACE5.2",
         "desc": "The system must display a list of patients whose names match the entered data.",
-        "sim": 0.44173508882522583,
-        "h_id": "HUE7",
-        "h_desc": "As administrative staff, I want to search for a patient by their patient number to retrieve their record."
-      },
-      {
-        "id": "ACE5.2",
-        "desc": "The system must display a list of patients whose names match the entered data.",
-        "sim": 0.44173508882522583,
-        "h_id": "HUE5",
-        "h_desc": "As administrative staff, I want to search for a patient by their name to access their information."
+        "sim": 0.44173508882522583
       },
       {
         "id": "ACE7.2",
         "desc": "The system must display a list of patients whose patient numbers match the entered data.",
-        "sim": 0.3676239550113678,
-        "h_id": "HUE7",
-        "h_desc": "As administrative staff, I want to search for a patient by their patient number to retrieve their record."
+        "sim": 0.3676239550113678
       }
     ]
   },
   {
-    "h_id": "HU4",
-    "h_desc": "As an authorized user, I want to visualize a patient's complete information, so that I can review all relevant details for care or administration.",
     "id": "AC4.1",
     "desc": "The system displays all patient data in a single view.",
     "ac_sim": [
       {
-        "id": "ACE18.3",
-        "desc": "The system must display the patient's medical background.",
-        "sim": 0.6568102836608887,
-        "h_id": "HUE11",
-        "h_desc": "As administrative staff, I want to view a patient's complete information to consult their personal data."
-      },
-      {
-        "id": "ACE18.3",
-        "desc": "The system must display the patient's medical background.",
-        "sim": 0.6568102836608887,
-        "h_id": "HUE18",
-        "h_desc": "As a doctor, I want to access a patient's clinical record to review their prior information."
-      },
-      {
         "id": "ACE11.2",
         "desc": "The system must display the patient number.",
-        "sim": 0.6183780431747437,
-        "h_id": "HUE11",
-        "h_desc": "As administrative staff, I want to view a patient's complete information to consult their personal data."
+        "sim": 0.6183780431747437
       },
       {
         "id": "ACE11.1",
         "desc": "The system must display the patient's personal data: full name, date of birth, sex, identity document, and contact details (email address and phone number).",
-        "sim": 0.5973355174064636,
-        "h_id": "HUE11",
-        "h_desc": "As administrative staff, I want to view a patient's complete information to consult their personal data."
-      },
-      {
-        "id": "ACE18.2",
-        "desc": "The system must list the diagnoses for each appointment confirmed by the patient.",
-        "sim": 0.5643596053123474,
-        "h_id": "HUE11",
-        "h_desc": "As administrative staff, I want to view a patient's complete information to consult their personal data."
-      },
-      {
-        "id": "ACE18.2",
-        "desc": "The system must list the diagnoses for each appointment confirmed by the patient.",
-        "sim": 0.5643596053123474,
-        "h_id": "HUE18",
-        "h_desc": "As a doctor, I want to access a patient's clinical record to review their prior information."
-      },
-      {
-        "id": "ACE18.1",
-        "desc": "The system must allow access to the clinical record only to users with the doctor role.",
-        "sim": 0.38127338886260986,
-        "h_id": "HUE11",
-        "h_desc": "As administrative staff, I want to view a patient's complete information to consult their personal data."
-      },
-      {
-        "id": "ACE18.1",
-        "desc": "The system must allow access to the clinical record only to users with the doctor role.",
-        "sim": 0.38127338886260986,
-        "h_id": "HUE18",
-        "h_desc": "As a doctor, I want to access a patient's clinical record to review their prior information."
+        "sim": 0.5973355174064636
       }
     ]
   },
   {
-    "h_id": "HU5",
-    "h_desc": "As an administrative staff member, I want to create medical appointments by associating the patient, specialty, and professional, so that appointments are scheduled accurately.",
     "id": "AC5.1",
     "desc": "The system allows selection of patient, specialty, and doctor.",
     "ac_sim": [
       {
         "id": "ACE13.1",
         "desc": "The system must allow selecting the specialty and doctor for the appointment.",
-        "sim": 0.882560670375824,
-        "h_id": "HUE13",
-        "h_desc": "As administrative staff, I want to register an appointment to schedule a patient's medical care."
+        "sim": 0.882560670375824
       },
       {
         "id": "ACE13.2",
         "desc": "The system must display the available time slots in the selected doctor's schedule.",
-        "sim": 0.6266120672225952,
-        "h_id": "HUE13",
-        "h_desc": "As administrative staff, I want to register an appointment to schedule a patient's medical care."
+        "sim": 0.6266120672225952
       },
       {
         "id": "ACE13.3",
         "desc": "The system must display an error if an appointment already exists at that time slot.",
-        "sim": 0.2930790185928345,
-        "h_id": "HUE13",
-        "h_desc": "As administrative staff, I want to register an appointment to schedule a patient's medical care."
+        "sim": 0.2930790185928345
       },
       {
         "id": "ACE13.4",
         "desc": "The system must change the appointment status to \"Confirmed\" after a successful registration.",
-        "sim": 0.28038591146469116,
-        "h_id": "HUE13",
-        "h_desc": "As administrative staff, I want to register an appointment to schedule a patient's medical care."
+        "sim": 0.28038591146469116
       }
     ]
   },
   {
-    "h_id": "HU5",
-    "h_desc": "As an administrative staff member, I want to create medical appointments by associating the patient, specialty, and professional, so that appointments are scheduled accurately.",
     "id": "AC5.2",
     "desc": "Overlapping appointments are prevented.",
     "ac_sim": [
       {
         "id": "ACE13.3",
         "desc": "The system must display an error if an appointment already exists at that time slot.",
-        "sim": 0.6279420256614685,
-        "h_id": "HUE13",
-        "h_desc": "As administrative staff, I want to register an appointment to schedule a patient's medical care."
+        "sim": 0.6279420256614685
       },
       {
         "id": "ACE13.2",
         "desc": "The system must display the available time slots in the selected doctor's schedule.",
-        "sim": 0.43891245126724243,
-        "h_id": "HUE13",
-        "h_desc": "As administrative staff, I want to register an appointment to schedule a patient's medical care."
+        "sim": 0.43891245126724243
       },
       {
         "id": "ACE13.1",
         "desc": "The system must allow selecting the specialty and doctor for the appointment.",
-        "sim": 0.42420071363449097,
-        "h_id": "HUE13",
-        "h_desc": "As administrative staff, I want to register an appointment to schedule a patient's medical care."
+        "sim": 0.42420071363449097
       },
       {
         "id": "ACE13.4",
         "desc": "The system must change the appointment status to \"Confirmed\" after a successful registration.",
-        "sim": 0.4074971377849579,
-        "h_id": "HUE13",
-        "h_desc": "As administrative staff, I want to register an appointment to schedule a patient's medical care."
+        "sim": 0.4074971377849579
       }
     ]
   },
   {
-    "h_id": "HU7",
-    "h_desc": "As an administrative staff member, I want to modify or cancel existing appointments, so that changes can be managed as needed.",
     "id": "AC7.1",
     "desc": "The system allows editing and canceling of appointments.",
     "ac_sim": [
       {
         "id": "ACE14.1",
         "desc": "The system must allow changing the appointment status to \"Canceled\".",
-        "sim": 0.7613110542297363,
-        "h_id": "HUE14",
-        "h_desc": "As administrative staff, I want to cancel an existing appointment to free up the time slot in the schedule."
+        "sim": 0.7613110542297363
       },
       {
         "id": "ACE15.1",
         "desc": "The system must allow editing the date and time of an existing appointment.",
-        "sim": 0.7606890201568604,
-        "h_id": "HUE14",
-        "h_desc": "As administrative staff, I want to cancel an existing appointment to free up the time slot in the schedule."
-      },
-      {
-        "id": "ACE15.1",
-        "desc": "The system must allow editing the date and time of an existing appointment.",
-        "sim": 0.7606890201568604,
-        "h_id": "HUE15",
-        "h_desc": "As administrative staff, I want to edit an existing appointment to change its date without losing the information."
+        "sim": 0.7606890201568604
       },
       {
         "id": "ACE14.2",
         "desc": "The system must make the previous time slot available again in the doctor's schedule.",
-        "sim": 0.4953491687774658,
-        "h_id": "HUE14",
-        "h_desc": "As administrative staff, I want to cancel an existing appointment to free up the time slot in the schedule."
+        "sim": 0.4953491687774658
       },
       {
         "id": "ACE15.2",
         "desc": "The system must validate that the new time slot is available.",
-        "sim": 0.4465612769126892,
-        "h_id": "HUE14",
-        "h_desc": "As administrative staff, I want to cancel an existing appointment to free up the time slot in the schedule."
-      },
-      {
-        "id": "ACE15.2",
-        "desc": "The system must validate that the new time slot is available.",
-        "sim": 0.4465612769126892,
-        "h_id": "HUE15",
-        "h_desc": "As administrative staff, I want to edit an existing appointment to change its date without losing the information."
+        "sim": 0.4465612769126892
       }
     ]
   },
   {
-    "h_id": "HU7",
-    "h_desc": "As an administrative staff member, I want to modify or cancel existing appointments, so that changes can be managed as needed.",
     "id": "AC7.2",
     "desc": "Patients are notified of changes.",
     "ac_sim": [
       {
         "id": "ACE14.2",
         "desc": "The system must make the previous time slot available again in the doctor's schedule.",
-        "sim": 0.5094019174575806,
-        "h_id": "HUE14",
-        "h_desc": "As administrative staff, I want to cancel an existing appointment to free up the time slot in the schedule."
+        "sim": 0.5094019174575806
       },
       {
         "id": "ACE15.1",
         "desc": "The system must allow editing the date and time of an existing appointment.",
-        "sim": 0.39059433341026306,
-        "h_id": "HUE14",
-        "h_desc": "As administrative staff, I want to cancel an existing appointment to free up the time slot in the schedule."
-      },
-      {
-        "id": "ACE15.1",
-        "desc": "The system must allow editing the date and time of an existing appointment.",
-        "sim": 0.39059433341026306,
-        "h_id": "HUE15",
-        "h_desc": "As administrative staff, I want to edit an existing appointment to change its date without losing the information."
+        "sim": 0.39059433341026306
       },
       {
         "id": "ACE15.2",
         "desc": "The system must validate that the new time slot is available.",
-        "sim": 0.30829617381095886,
-        "h_id": "HUE14",
-        "h_desc": "As administrative staff, I want to cancel an existing appointment to free up the time slot in the schedule."
-      },
-      {
-        "id": "ACE15.2",
-        "desc": "The system must validate that the new time slot is available.",
-        "sim": 0.30829617381095886,
-        "h_id": "HUE15",
-        "h_desc": "As administrative staff, I want to edit an existing appointment to change its date without losing the information."
+        "sim": 0.30829617381095886
       },
       {
         "id": "ACE14.1",
         "desc": "The system must allow changing the appointment status to \"Canceled\".",
-        "sim": 0.2727605104446411,
-        "h_id": "HUE14",
-        "h_desc": "As administrative staff, I want to cancel an existing appointment to free up the time slot in the schedule."
+        "sim": 0.2727605104446411
       }
     ]
   },
   {
-    "h_id": "HU8",
-    "h_desc": "As a patient, I want to receive notifications when my appointment is modified or canceled, so that I am always informed about my schedule.",
     "id": "AC8.1",
     "desc": "Notifications are sent promptly after changes.",
     "ac_sim": [
       {
         "id": "ACE16.2",
         "desc": "The system must indicate in the notification if the appointment had a schedule change.",
-        "sim": 0.5310935974121094,
-        "h_id": "HUE16",
-        "h_desc": "As a patient, I want to be notified by email when my appointment is modified so I stay informed."
+        "sim": 0.5310935974121094
       },
       {
         "id": "ACE17.2",
         "desc": "The system must indicate in the notification if the appointment had a schedule change.",
-        "sim": 0.5310935974121094,
-        "h_id": "HUE16",
-        "h_desc": "As a patient, I want to be notified by email when my appointment is modified so I stay informed."
-      },
-      {
-        "id": "ACE17.2",
-        "desc": "The system must indicate in the notification if the appointment had a schedule change.",
-        "sim": 0.5310935974121094,
-        "h_id": "HUE17",
-        "h_desc": "As a patient, I want to be notified by text message to my phone number when my appointment is modified so I stay informed."
+        "sim": 0.5310935974121094
       },
       {
         "id": "ACE16.3",
         "desc": "The system must include the new appointment date in the notification when a date change occurs.",
-        "sim": 0.4937420189380646,
-        "h_id": "HUE16",
-        "h_desc": "As a patient, I want to be notified by email when my appointment is modified so I stay informed."
+        "sim": 0.4937420189380646
       },
       {
         "id": "ACE17.3",
         "desc": "The system must include the new appointment date in the notification when a date change occurs.",
-        "sim": 0.4937420189380646,
-        "h_id": "HUE16",
-        "h_desc": "As a patient, I want to be notified by email when my appointment is modified so I stay informed."
-      },
-      {
-        "id": "ACE17.3",
-        "desc": "The system must include the new appointment date in the notification when a date change occurs.",
-        "sim": 0.4937420189380646,
-        "h_id": "HUE17",
-        "h_desc": "As a patient, I want to be notified by text message to my phone number when my appointment is modified so I stay informed."
+        "sim": 0.4937420189380646
       },
       {
         "id": "ACE16.1",
         "desc": "The system must indicate in the notification if the appointment was canceled.",
-        "sim": 0.28959113359451294,
-        "h_id": "HUE16",
-        "h_desc": "As a patient, I want to be notified by email when my appointment is modified so I stay informed."
+        "sim": 0.28959113359451294
       },
       {
         "id": "ACE17.1",
         "desc": "The system must indicate in the notification if the appointment was canceled.",
-        "sim": 0.28959113359451294,
-        "h_id": "HUE16",
-        "h_desc": "As a patient, I want to be notified by email when my appointment is modified so I stay informed."
-      },
-      {
-        "id": "ACE17.1",
-        "desc": "The system must indicate in the notification if the appointment was canceled.",
-        "sim": 0.28959113359451294,
-        "h_id": "HUE17",
-        "h_desc": "As a patient, I want to be notified by text message to my phone number when my appointment is modified so I stay informed."
+        "sim": 0.28959113359451294
       }
     ]
   },
   {
-    "h_id": "HU10",
-    "h_desc": "As a doctor, I want to register diagnoses, treatments, and patient’s clinical progress in the electronic clinical record, so that patient care is well documented.",
     "id": "AC10.1",
     "desc": "The system allows entry and editing of clinical records.",
     "ac_sim": [
       {
         "id": "ACE19.1",
         "desc": "The system must include the date, name, and specialty of the responsible doctor in each record.",
-        "sim": 0.6667524576187134,
-        "h_id": "HUE19",
-        "h_desc": "As a doctor, I want to register the diagnosis made during the appointment to document the medical care provided."
+        "sim": 0.6667524576187134
       },
       {
         "id": "ACE19.2",
         "desc": "The system must allow marking the appointment as Attended when a diagnosis is registered.",
-        "sim": 0.5734590888023376,
-        "h_id": "HUE19",
-        "h_desc": "As a doctor, I want to register the diagnosis made during the appointment to document the medical care provided."
+        "sim": 0.5734590888023376
       },
       {
         "id": "ACE19.4",
         "desc": "The system must prevent registering a diagnosis when the appointment is marked as Not attended.",
-        "sim": 0.4271610975265503,
-        "h_id": "HUE19",
-        "h_desc": "As a doctor, I want to register the diagnosis made during the appointment to document the medical care provided."
+        "sim": 0.4271610975265503
       },
       {
         "id": "ACE19.3",
         "desc": "The system must allow marking the appointment as Not attended.",
-        "sim": 0.3890168070793152,
-        "h_id": "HUE19",
-        "h_desc": "As a doctor, I want to register the diagnosis made during the appointment to document the medical care provided."
+        "sim": 0.3890168070793152
       }
     ]
   },
   {
-    "h_id": "HU10",
-    "h_desc": "As a doctor, I want to register diagnoses, treatments, and patient’s clinical progress in the electronic clinical record, so that patient care is well documented.",
     "id": "AC10.2",
     "desc": "Each entry is timestamped.",
     "ac_sim": [
       {
         "id": "ACE19.1",
         "desc": "The system must include the date, name, and specialty of the responsible doctor in each record.",
-        "sim": 0.4174899458885193,
-        "h_id": "HUE19",
-        "h_desc": "As a doctor, I want to register the diagnosis made during the appointment to document the medical care provided."
+        "sim": 0.4174899458885193
       },
       {
         "id": "ACE19.3",
         "desc": "The system must allow marking the appointment as Not attended.",
-        "sim": 0.28169041872024536,
-        "h_id": "HUE19",
-        "h_desc": "As a doctor, I want to register the diagnosis made during the appointment to document the medical care provided."
+        "sim": 0.28169041872024536
       },
       {
         "id": "ACE19.2",
         "desc": "The system must allow marking the appointment as Attended when a diagnosis is registered.",
-        "sim": 0.2621959149837494,
-        "h_id": "HUE19",
-        "h_desc": "As a doctor, I want to register the diagnosis made during the appointment to document the medical care provided."
+        "sim": 0.2621959149837494
       },
       {
         "id": "ACE19.4",
         "desc": "The system must prevent registering a diagnosis when the appointment is marked as Not attended.",
-        "sim": 0.18711049854755402,
-        "h_id": "HUE19",
-        "h_desc": "As a doctor, I want to register the diagnosis made during the appointment to document the medical care provided."
+        "sim": 0.18711049854755402
       }
     ]
   },
   {
-    "h_id": "HU11",
-    "h_desc": "As a patient, I want to consult my electronic clinical record, so that I can stay informed about my health history.",
     "id": "AC11.1",
     "desc": "Patients can view but not edit their records.",
     "ac_sim": [
       {
         "id": "ACE20.1",
         "desc": "The system must list all appointments associated with the patient.",
-        "sim": 0.3732418417930603,
-        "h_id": "HUE20",
-        "h_desc": "As a patient, I want to consult my electronic clinical record to access my medical information."
+        "sim": 0.3732418417930603
       },
       {
         "id": "ACE20.4",
         "desc": "The system must allow sorting the information by date, responsible doctor, or specialty.",
-        "sim": 0.3554823398590088,
-        "h_id": "HUE20",
-        "h_desc": "As a patient, I want to consult my electronic clinical record to access my medical information."
+        "sim": 0.3554823398590088
       },
       {
         "id": "ACE20.3",
         "desc": "The system must list all invoices associated with the patient.",
-        "sim": 0.3103179335594177,
-        "h_id": "HUE20",
-        "h_desc": "As a patient, I want to consult my electronic clinical record to access my medical information."
+        "sim": 0.3103179335594177
       },
       {
         "id": "ACE20.2",
         "desc": "The system must list all medications associated with the patient.",
-        "sim": 0.2833883762359619,
-        "h_id": "HUE20",
-        "h_desc": "As a patient, I want to consult my electronic clinical record to access my medical information."
+        "sim": 0.2833883762359619
       },
       {
         "id": "ACE20.5",
         "desc": "The system must allow viewing the details of each listed item.",
-        "sim": 0.2764616906642914,
-        "h_id": "HUE20",
-        "h_desc": "As a patient, I want to consult my electronic clinical record to access my medical information."
+        "sim": 0.2764616906642914
       }
     ]
   },
   {
-    "h_id": "HU11",
-    "h_desc": "As a patient, I want to consult my electronic clinical record, so that I can stay informed about my health history.",
     "id": "AC11.2",
     "desc": "Access is restricted to authorized users.",
     "ac_sim": [
       {
         "id": "ACE20.5",
         "desc": "The system must allow viewing the details of each listed item.",
-        "sim": 0.2515183687210083,
-        "h_id": "HUE20",
-        "h_desc": "As a patient, I want to consult my electronic clinical record to access my medical information."
+        "sim": 0.2515183687210083
       },
       {
         "id": "ACE20.1",
         "desc": "The system must list all appointments associated with the patient.",
-        "sim": 0.11780383437871933,
-        "h_id": "HUE20",
-        "h_desc": "As a patient, I want to consult my electronic clinical record to access my medical information."
+        "sim": 0.11780383437871933
       },
       {
         "id": "ACE20.4",
         "desc": "The system must allow sorting the information by date, responsible doctor, or specialty.",
-        "sim": 0.11108559370040894,
-        "h_id": "HUE20",
-        "h_desc": "As a patient, I want to consult my electronic clinical record to access my medical information."
+        "sim": 0.11108559370040894
       },
       {
         "id": "ACE20.2",
         "desc": "The system must list all medications associated with the patient.",
-        "sim": 0.07456424832344055,
-        "h_id": "HUE20",
-        "h_desc": "As a patient, I want to consult my electronic clinical record to access my medical information."
+        "sim": 0.07456424832344055
       },
       {
         "id": "ACE20.3",
         "desc": "The system must list all invoices associated with the patient.",
-        "sim": 0.06526751071214676,
-        "h_id": "HUE20",
-        "h_desc": "As a patient, I want to consult my electronic clinical record to access my medical information."
+        "sim": 0.06526751071214676
       }
     ]
   },
   {
-    "h_id": "HU12",
-    "h_desc": "As an administrator, I want to register medical professionals with their personal and contact details and associate specialties, so that the hospital can manage staff information.",
     "id": "AC12.1",
     "desc": "The system allows entry and editing of staff data and specialties.",
     "ac_sim": [
       {
         "id": "ACE21.1",
         "desc": "The system must allow registering the doctor's full name, identity document number, and contact details (email address and phone number).",
-        "sim": 0.4845595359802246,
-        "h_id": "HUE21",
-        "h_desc": "As administrative staff, I want to register doctors with their respective specialties to enroll them in the system."
+        "sim": 0.4845595359802246
       },
       {
         "id": "ACE21.2",
         "desc": "The system must allow associating a specialty with the doctor being registered.",
-        "sim": 0.44698286056518555,
-        "h_id": "HUE21",
-        "h_desc": "As administrative staff, I want to register doctors with their respective specialties to enroll them in the system."
+        "sim": 0.44698286056518555
       },
       {
         "id": "ACE21.3",
         "desc": "The system must allow defining the doctor's status as active or inactive.",
-        "sim": 0.4000028371810913,
-        "h_id": "HUE21",
-        "h_desc": "As administrative staff, I want to register doctors with their respective specialties to enroll them in the system."
+        "sim": 0.4000028371810913
       },
       {
         "id": "ACE21.4",
         "desc": "The doctor's name and identity document cannot be left empty in the registration.",
-        "sim": 0.27374112606048584,
-        "h_id": "HUE21",
-        "h_desc": "As administrative staff, I want to register doctors with their respective specialties to enroll them in the system."
+        "sim": 0.27374112606048584
       }
     ]
   },
   {
-    "h_id": "HU13",
-    "h_desc": "As an administrator, I want to define and modify attention hours and activate/deactivate professionals for scheduling, so that doctor availability is accurately reflected.",
     "id": "AC13.1",
     "desc": "The system supports setting and updating working hours.",
     "ac_sim": [
       {
         "id": "ACE24.2",
         "desc": "The system must allow editing the start time and end time for a day of the week.",
-        "sim": 0.7197401523590088,
-        "h_id": "HUE22",
-        "h_desc": "As administrative staff, I want to define a doctor's attention hours to enable appointment assignment."
-      },
-      {
-        "id": "ACE24.2",
-        "desc": "The system must allow editing the start time and end time for a day of the week.",
-        "sim": 0.7197401523590088,
-        "h_id": "HUE24",
-        "h_desc": "As administrative staff, I want to edit a doctor's attention hours to keep the information up to date."
+        "sim": 0.7197401523590088
       },
       {
         "id": "ACE22.1",
         "desc": "The system must allow defining the start time and end time per day of the week.",
-        "sim": 0.6611567735671997,
-        "h_id": "HUE22",
-        "h_desc": "As administrative staff, I want to define a doctor's attention hours to enable appointment assignment."
+        "sim": 0.6611567735671997
       },
       {
         "id": "ACE22.2",
         "desc": "The system must allow defining more than one time slot per day.",
-        "sim": 0.6303398609161377,
-        "h_id": "HUE22",
-        "h_desc": "As administrative staff, I want to define a doctor's attention hours to enable appointment assignment."
+        "sim": 0.6303398609161377
       },
       {
         "id": "ACE24.1",
         "desc": "The system must allow editing the days of the week for attention.",
-        "sim": 0.6150462627410889,
-        "h_id": "HUE22",
-        "h_desc": "As administrative staff, I want to define a doctor's attention hours to enable appointment assignment."
-      },
-      {
-        "id": "ACE24.1",
-        "desc": "The system must allow editing the days of the week for attention.",
-        "sim": 0.6150462627410889,
-        "h_id": "HUE24",
-        "h_desc": "As administrative staff, I want to edit a doctor's attention hours to keep the information up to date."
+        "sim": 0.6150462627410889
       },
       {
         "id": "ACE22.3",
         "desc": "The system must display an error if the time slots for the same day overlap.",
-        "sim": 0.49244681000709534,
-        "h_id": "HUE22",
-        "h_desc": "As administrative staff, I want to define a doctor's attention hours to enable appointment assignment."
+        "sim": 0.49244681000709534
       },
       {
         "id": "ACE24.3",
         "desc": "The system must display an error if the time slots for the same day overlap.",
-        "sim": 0.49244681000709534,
-        "h_id": "HUE22",
-        "h_desc": "As administrative staff, I want to define a doctor's attention hours to enable appointment assignment."
-      },
-      {
-        "id": "ACE24.3",
-        "desc": "The system must display an error if the time slots for the same day overlap.",
-        "sim": 0.49244681000709534,
-        "h_id": "HUE24",
-        "h_desc": "As administrative staff, I want to edit a doctor's attention hours to keep the information up to date."
+        "sim": 0.49244681000709534
       },
       {
         "id": "ACE22.4",
         "desc": "The system must display an error if the start times precede the end times.",
-        "sim": 0.3876820504665375,
-        "h_id": "HUE22",
-        "h_desc": "As administrative staff, I want to define a doctor's attention hours to enable appointment assignment."
+        "sim": 0.3876820504665375
       },
       {
         "id": "ACE24.4",
         "desc": "The system must display an error if the start times precede the end times.",
-        "sim": 0.3876820504665375,
-        "h_id": "HUE22",
-        "h_desc": "As administrative staff, I want to define a doctor's attention hours to enable appointment assignment."
-      },
-      {
-        "id": "ACE24.4",
-        "desc": "The system must display an error if the start times precede the end times.",
-        "sim": 0.3876820504665375,
-        "h_id": "HUE24",
-        "h_desc": "As administrative staff, I want to edit a doctor's attention hours to keep the information up to date."
+        "sim": 0.3876820504665375
       },
       {
         "id": "ACE26.1",
         "desc": "The system must allow changing the doctor's status to active.",
-        "sim": 0.3469933867454529,
-        "h_id": "HUE22",
-        "h_desc": "As administrative staff, I want to define a doctor's attention hours to enable appointment assignment."
-      },
-      {
-        "id": "ACE26.1",
-        "desc": "The system must allow changing the doctor's status to active.",
-        "sim": 0.3469933867454529,
-        "h_id": "HUE26",
-        "h_desc": "As administrative staff, I want to activate a registered doctor to keep the information up to date."
+        "sim": 0.3469933867454529
       }
     ]
   },
   {
-    "h_id": "HU13",
-    "h_desc": "As an administrator, I want to define and modify attention hours and activate/deactivate professionals for scheduling, so that doctor availability is accurately reflected.",
     "id": "AC13.2",
     "desc": "Professionals can be activated or deactivated for scheduling.",
     "ac_sim": [
       {
         "id": "ACE26.1",
         "desc": "The system must allow changing the doctor's status to active.",
-        "sim": 0.5034817457199097,
-        "h_id": "HUE22",
-        "h_desc": "As administrative staff, I want to define a doctor's attention hours to enable appointment assignment."
-      },
-      {
-        "id": "ACE26.1",
-        "desc": "The system must allow changing the doctor's status to active.",
-        "sim": 0.5034817457199097,
-        "h_id": "HUE26",
-        "h_desc": "As administrative staff, I want to activate a registered doctor to keep the information up to date."
+        "sim": 0.5034817457199097
       },
       {
         "id": "ACE24.2",
         "desc": "The system must allow editing the start time and end time for a day of the week.",
-        "sim": 0.4474373459815979,
-        "h_id": "HUE22",
-        "h_desc": "As administrative staff, I want to define a doctor's attention hours to enable appointment assignment."
-      },
-      {
-        "id": "ACE24.2",
-        "desc": "The system must allow editing the start time and end time for a day of the week.",
-        "sim": 0.4474373459815979,
-        "h_id": "HUE24",
-        "h_desc": "As administrative staff, I want to edit a doctor's attention hours to keep the information up to date."
+        "sim": 0.4474373459815979
       },
       {
         "id": "ACE24.1",
         "desc": "The system must allow editing the days of the week for attention.",
-        "sim": 0.42843788862228394,
-        "h_id": "HUE22",
-        "h_desc": "As administrative staff, I want to define a doctor's attention hours to enable appointment assignment."
-      },
-      {
-        "id": "ACE24.1",
-        "desc": "The system must allow editing the days of the week for attention.",
-        "sim": 0.42843788862228394,
-        "h_id": "HUE24",
-        "h_desc": "As administrative staff, I want to edit a doctor's attention hours to keep the information up to date."
+        "sim": 0.42843788862228394
       },
       {
         "id": "ACE22.2",
         "desc": "The system must allow defining more than one time slot per day.",
-        "sim": 0.4157572090625763,
-        "h_id": "HUE22",
-        "h_desc": "As administrative staff, I want to define a doctor's attention hours to enable appointment assignment."
+        "sim": 0.4157572090625763
       },
       {
         "id": "ACE22.1",
         "desc": "The system must allow defining the start time and end time per day of the week.",
-        "sim": 0.39241814613342285,
-        "h_id": "HUE22",
-        "h_desc": "As administrative staff, I want to define a doctor's attention hours to enable appointment assignment."
+        "sim": 0.39241814613342285
       },
       {
         "id": "ACE22.3",
         "desc": "The system must display an error if the time slots for the same day overlap.",
-        "sim": 0.3372294306755066,
-        "h_id": "HUE22",
-        "h_desc": "As administrative staff, I want to define a doctor's attention hours to enable appointment assignment."
+        "sim": 0.3372294306755066
       },
       {
         "id": "ACE24.3",
         "desc": "The system must display an error if the time slots for the same day overlap.",
-        "sim": 0.3372294306755066,
-        "h_id": "HUE22",
-        "h_desc": "As administrative staff, I want to define a doctor's attention hours to enable appointment assignment."
-      },
-      {
-        "id": "ACE24.3",
-        "desc": "The system must display an error if the time slots for the same day overlap.",
-        "sim": 0.3372294306755066,
-        "h_id": "HUE24",
-        "h_desc": "As administrative staff, I want to edit a doctor's attention hours to keep the information up to date."
+        "sim": 0.3372294306755066
       },
       {
         "id": "ACE22.4",
         "desc": "The system must display an error if the start times precede the end times.",
-        "sim": 0.2061202973127365,
-        "h_id": "HUE22",
-        "h_desc": "As administrative staff, I want to define a doctor's attention hours to enable appointment assignment."
+        "sim": 0.2061202973127365
       },
       {
         "id": "ACE24.4",
         "desc": "The system must display an error if the start times precede the end times.",
-        "sim": 0.2061202973127365,
-        "h_id": "HUE22",
-        "h_desc": "As administrative staff, I want to define a doctor's attention hours to enable appointment assignment."
-      },
-      {
-        "id": "ACE24.4",
-        "desc": "The system must display an error if the start times precede the end times.",
-        "sim": 0.2061202973127365,
-        "h_id": "HUE24",
-        "h_desc": "As administrative staff, I want to edit a doctor's attention hours to keep the information up to date."
+        "sim": 0.2061202973127365
       }
     ]
   },
   {
-    "h_id": "HU14",
-    "h_desc": "As an administrator, I want to manage roles and access permissions to system functionalities, so that users only access features relevant to their role.",
     "id": "AC14.1",
     "desc": "The system enforces role-based access control.",
     "ac_sim": [
       {
         "id": "ACE28.2",
         "desc": "The system must display an error if a user accesses a functionality not defined in their role.",
-        "sim": 0.6323266625404358,
-        "h_id": "HUE27",
-        "h_desc": "As the system, I want to define system roles to organize access to functionalities."
-      },
-      {
-        "id": "ACE28.2",
-        "desc": "The system must display an error if a user accesses a functionality not defined in their role.",
-        "sim": 0.6323266625404358,
-        "h_id": "HUE28",
-        "h_desc": "As the system, I want to associate permissions with each role to control access to system functionalities."
+        "sim": 0.6323266625404358
       },
       {
         "id": "ACE28.1",
         "desc": "The system must associate functionalities with each role.",
-        "sim": 0.6027379035949707,
-        "h_id": "HUE27",
-        "h_desc": "As the system, I want to define system roles to organize access to functionalities."
-      },
-      {
-        "id": "ACE28.1",
-        "desc": "The system must associate functionalities with each role.",
-        "sim": 0.6027379035949707,
-        "h_id": "HUE28",
-        "h_desc": "As the system, I want to associate permissions with each role to control access to system functionalities."
+        "sim": 0.6027379035949707
       },
       {
         "id": "ACE27.1",
         "desc": "The system must define the following roles: administrative staff, doctor, pharmacist, analyst, and patient.",
-        "sim": 0.4629555940628052,
-        "h_id": "HUE27",
-        "h_desc": "As the system, I want to define system roles to organize access to functionalities."
+        "sim": 0.4629555940628052
       }
     ]
   },
   {
-    "h_id": "HU14",
-    "h_desc": "As an administrator, I want to manage roles and access permissions to system functionalities, so that users only access features relevant to their role.",
     "id": "AC14.2",
     "desc": "Permissions are validated before actions are executed.",
     "ac_sim": [
       {
         "id": "ACE28.2",
         "desc": "The system must display an error if a user accesses a functionality not defined in their role.",
-        "sim": 0.564251184463501,
-        "h_id": "HUE27",
-        "h_desc": "As the system, I want to define system roles to organize access to functionalities."
-      },
-      {
-        "id": "ACE28.2",
-        "desc": "The system must display an error if a user accesses a functionality not defined in their role.",
-        "sim": 0.564251184463501,
-        "h_id": "HUE28",
-        "h_desc": "As the system, I want to associate permissions with each role to control access to system functionalities."
+        "sim": 0.564251184463501
       },
       {
         "id": "ACE28.1",
         "desc": "The system must associate functionalities with each role.",
-        "sim": 0.2806398868560791,
-        "h_id": "HUE27",
-        "h_desc": "As the system, I want to define system roles to organize access to functionalities."
-      },
-      {
-        "id": "ACE28.1",
-        "desc": "The system must associate functionalities with each role.",
-        "sim": 0.2806398868560791,
-        "h_id": "HUE28",
-        "h_desc": "As the system, I want to associate permissions with each role to control access to system functionalities."
+        "sim": 0.2806398868560791
       },
       {
         "id": "ACE27.1",
         "desc": "The system must define the following roles: administrative staff, doctor, pharmacist, analyst, and patient.",
-        "sim": 0.15771913528442383,
-        "h_id": "HUE27",
-        "h_desc": "As the system, I want to define system roles to organize access to functionalities."
+        "sim": 0.15771913528442383
       }
     ]
   },
   {
-    "h_id": "HU15",
-    "h_desc": "As an administrative staff member, I want to generate electronic invoices for medical consultations and medication delivery, so that billing is accurate and efficient.",
     "id": "AC15.1",
     "desc": "The system generates invoices with unique identifiers.",
     "ac_sim": [
       {
         "id": "ACE34.2",
         "desc": "The system must include a unique identifier in the invoice.",
-        "sim": 0.8521527647972107,
-        "h_id": "HUE34",
-        "h_desc": "As administrative staff, I want to generate an invoice associated with a medication to have a payment receipt."
+        "sim": 0.8521527647972107
       },
       {
         "id": "ACE29.2",
         "desc": "The system must include a unique identifier in the invoice.",
-        "sim": 0.8521527647972107,
-        "h_id": "HUE34",
-        "h_desc": "As administrative staff, I want to generate an invoice associated with a medication to have a payment receipt."
-      },
-      {
-        "id": "ACE29.2",
-        "desc": "The system must include a unique identifier in the invoice.",
-        "sim": 0.8521527647972107,
-        "h_id": "HUE29",
-        "h_desc": "As administrative staff, I want to generate an invoice associated with an appointment to have a payment receipt."
+        "sim": 0.8521527647972107
       },
       {
         "id": "ACE29.3",
         "desc": "The system must associate the invoice with the patient and the appointment.",
-        "sim": 0.6628828048706055,
-        "h_id": "HUE34",
-        "h_desc": "As administrative staff, I want to generate an invoice associated with a medication to have a payment receipt."
-      },
-      {
-        "id": "ACE29.3",
-        "desc": "The system must associate the invoice with the patient and the appointment.",
-        "sim": 0.6628828048706055,
-        "h_id": "HUE29",
-        "h_desc": "As administrative staff, I want to generate an invoice associated with an appointment to have a payment receipt."
+        "sim": 0.6628828048706055
       },
       {
         "id": "ACE34.3",
         "desc": "The system must associate the invoice with the patient and the medication.",
-        "sim": 0.6476167440414429,
-        "h_id": "HUE34",
-        "h_desc": "As administrative staff, I want to generate an invoice associated with a medication to have a payment receipt."
+        "sim": 0.6476167440414429
       },
       {
         "id": "ACE34.1",
         "desc": "The system must include in the invoice the patient's full name, medication name, date, and total cost.",
-        "sim": 0.5773929953575134,
-        "h_id": "HUE34",
-        "h_desc": "As administrative staff, I want to generate an invoice associated with a medication to have a payment receipt."
+        "sim": 0.5773929953575134
       },
       {
         "id": "ACE29.1",
         "desc": "The system must include in the invoice the patient's full name, appointment specialty, date, and total cost.",
-        "sim": 0.5517171621322632,
-        "h_id": "HUE34",
-        "h_desc": "As administrative staff, I want to generate an invoice associated with a medication to have a payment receipt."
-      },
-      {
-        "id": "ACE29.1",
-        "desc": "The system must include in the invoice the patient's full name, appointment specialty, date, and total cost.",
-        "sim": 0.5517171621322632,
-        "h_id": "HUE29",
-        "h_desc": "As administrative staff, I want to generate an invoice associated with an appointment to have a payment receipt."
+        "sim": 0.5517171621322632
       }
     ]
   },
   {
-    "h_id": "HU15",
-    "h_desc": "As an administrative staff member, I want to generate electronic invoices for medical consultations and medication delivery, so that billing is accurate and efficient.",
     "id": "AC15.2",
     "desc": "Invoices are associated with patients and services.",
     "ac_sim": [
       {
         "id": "ACE29.3",
         "desc": "The system must associate the invoice with the patient and the appointment.",
-        "sim": 0.8195598125457764,
-        "h_id": "HUE34",
-        "h_desc": "As administrative staff, I want to generate an invoice associated with a medication to have a payment receipt."
-      },
-      {
-        "id": "ACE29.3",
-        "desc": "The system must associate the invoice with the patient and the appointment.",
-        "sim": 0.8195598125457764,
-        "h_id": "HUE29",
-        "h_desc": "As administrative staff, I want to generate an invoice associated with an appointment to have a payment receipt."
+        "sim": 0.8195598125457764
       },
       {
         "id": "ACE34.3",
         "desc": "The system must associate the invoice with the patient and the medication.",
-        "sim": 0.7879618406295776,
-        "h_id": "HUE34",
-        "h_desc": "As administrative staff, I want to generate an invoice associated with a medication to have a payment receipt."
+        "sim": 0.7879618406295776
       },
       {
         "id": "ACE34.1",
         "desc": "The system must include in the invoice the patient's full name, medication name, date, and total cost.",
-        "sim": 0.7343815565109253,
-        "h_id": "HUE34",
-        "h_desc": "As administrative staff, I want to generate an invoice associated with a medication to have a payment receipt."
+        "sim": 0.7343815565109253
       },
       {
         "id": "ACE29.1",
         "desc": "The system must include in the invoice the patient's full name, appointment specialty, date, and total cost.",
-        "sim": 0.7295497059822083,
-        "h_id": "HUE34",
-        "h_desc": "As administrative staff, I want to generate an invoice associated with a medication to have a payment receipt."
-      },
-      {
-        "id": "ACE29.1",
-        "desc": "The system must include in the invoice the patient's full name, appointment specialty, date, and total cost.",
-        "sim": 0.7295497059822083,
-        "h_id": "HUE29",
-        "h_desc": "As administrative staff, I want to generate an invoice associated with an appointment to have a payment receipt."
+        "sim": 0.7295497059822083
       },
       {
         "id": "ACE34.2",
         "desc": "The system must include a unique identifier in the invoice.",
-        "sim": 0.5834125280380249,
-        "h_id": "HUE34",
-        "h_desc": "As administrative staff, I want to generate an invoice associated with a medication to have a payment receipt."
+        "sim": 0.5834125280380249
       },
       {
         "id": "ACE29.2",
         "desc": "The system must include a unique identifier in the invoice.",
-        "sim": 0.5834125280380249,
-        "h_id": "HUE34",
-        "h_desc": "As administrative staff, I want to generate an invoice associated with a medication to have a payment receipt."
-      },
-      {
-        "id": "ACE29.2",
-        "desc": "The system must include a unique identifier in the invoice.",
-        "sim": 0.5834125280380249,
-        "h_id": "HUE29",
-        "h_desc": "As administrative staff, I want to generate an invoice associated with an appointment to have a payment receipt."
+        "sim": 0.5834125280380249
       }
     ]
   },
   {
-    "h_id": "HU16",
-    "h_desc": "As a patient, I want to receive automatic notifications with attached digital invoices when an invoice is generated, so that I am promptly informed about charges.",
     "id": "AC16.1",
     "desc": "Notifications are sent with invoice attachments.",
     "ac_sim": [
       {
         "id": "ACE36.4",
         "desc": "The system must send the email within 10 minutes after the invoice is generated.",
-        "sim": 0.6337158679962158,
-        "h_id": "HUE37",
-        "h_desc": "As a patient, I want to be notified by text message to my phone number with the invoice information to stay informed about the charge."
-      },
-      {
-        "id": "ACE36.4",
-        "desc": "The system must send the email within 10 minutes after the invoice is generated.",
-        "sim": 0.6337158679962158,
-        "h_id": "HUE36",
-        "h_desc": "As a patient, I want to receive an email notification with the invoice attached to access the payment receipt."
+        "sim": 0.6337158679962158
       },
       {
         "id": "ACE36.1",
         "desc": "The system must send an email to the patient's email address containing: invoice identifier, patient name, date, and service type (appointment or medication).",
-        "sim": 0.629685640335083,
-        "h_id": "HUE37",
-        "h_desc": "As a patient, I want to be notified by text message to my phone number with the invoice information to stay informed about the charge."
-      },
-      {
-        "id": "ACE36.1",
-        "desc": "The system must send an email to the patient's email address containing: invoice identifier, patient name, date, and service type (appointment or medication).",
-        "sim": 0.629685640335083,
-        "h_id": "HUE36",
-        "h_desc": "As a patient, I want to receive an email notification with the invoice attached to access the payment receipt."
+        "sim": 0.629685640335083
       },
       {
         "id": "ACE37.3",
         "desc": "The system must send the text message within 10 minutes after the invoice is generated.",
-        "sim": 0.5985326170921326,
-        "h_id": "HUE37",
-        "h_desc": "As a patient, I want to be notified by text message to my phone number with the invoice information to stay informed about the charge."
+        "sim": 0.5985326170921326
       },
       {
         "id": "ACE36.3",
         "desc": "The system must include the invoice attached in PDF format.",
-        "sim": 0.5805776119232178,
-        "h_id": "HUE37",
-        "h_desc": "As a patient, I want to be notified by text message to my phone number with the invoice information to stay informed about the charge."
-      },
-      {
-        "id": "ACE36.3",
-        "desc": "The system must include the invoice attached in PDF format.",
-        "sim": 0.5805776119232178,
-        "h_id": "HUE36",
-        "h_desc": "As a patient, I want to receive an email notification with the invoice attached to access the payment receipt."
+        "sim": 0.5805776119232178
       },
       {
         "id": "ACE36.2",
         "desc": "The system must include in the subject line that it is a hospital invoice.",
-        "sim": 0.5589895248413086,
-        "h_id": "HUE37",
-        "h_desc": "As a patient, I want to be notified by text message to my phone number with the invoice information to stay informed about the charge."
-      },
-      {
-        "id": "ACE36.2",
-        "desc": "The system must include in the subject line that it is a hospital invoice.",
-        "sim": 0.5589895248413086,
-        "h_id": "HUE36",
-        "h_desc": "As a patient, I want to receive an email notification with the invoice attached to access the payment receipt."
+        "sim": 0.5589895248413086
       },
       {
         "id": "ACE37.1",
         "desc": "The system must send a text message to the patient's phone number containing: invoice identifier, patient name, date, and service type (appointment or medication).",
-        "sim": 0.5578883290290833,
-        "h_id": "HUE37",
-        "h_desc": "As a patient, I want to be notified by text message to my phone number with the invoice information to stay informed about the charge."
+        "sim": 0.5578883290290833
       },
       {
         "id": "ACE37.2",
         "desc": "The system must include the total cost of the invoice.",
-        "sim": 0.3767995834350586,
-        "h_id": "HUE37",
-        "h_desc": "As a patient, I want to be notified by text message to my phone number with the invoice information to stay informed about the charge."
+        "sim": 0.3767995834350586
       }
     ]
   },
   {
-    "h_id": "HU17",
-    "h_desc": "As a pharmacist, I want to register medications and supplies with identification, stock, and expiration date, so that inventory is accurately tracked.",
     "id": "AC17.1",
     "desc": "The system allows entry of medication/supply data.",
     "ac_sim": [
       {
         "id": "ACE38.1",
         "desc": "The system must register each medication with name, manufacturer, available units, stock number, and expiration date.",
-        "sim": 0.8067770004272461,
-        "h_id": "HUE39",
-        "h_desc": "As a pharmacist, I want to register supplies to keep the hospital inventory up to date."
-      },
-      {
-        "id": "ACE38.1",
-        "desc": "The system must register each medication with name, manufacturer, available units, stock number, and expiration date.",
-        "sim": 0.8067770004272461,
-        "h_id": "HUE38",
-        "h_desc": "As a pharmacist, I want to register medications to keep the hospital inventory up to date."
+        "sim": 0.8067770004272461
       },
       {
         "id": "ACE39.1",
         "desc": "The system must register each supply with name, manufacturer, available units, stock number, and expiration date.",
-        "sim": 0.6441165208816528,
-        "h_id": "HUE39",
-        "h_desc": "As a pharmacist, I want to register supplies to keep the hospital inventory up to date."
+        "sim": 0.6441165208816528
       },
       {
         "id": "ACE38.4",
         "desc": "The system must display an error if the medication name is left empty.",
-        "sim": 0.5674861669540405,
-        "h_id": "HUE39",
-        "h_desc": "As a pharmacist, I want to register supplies to keep the hospital inventory up to date."
-      },
-      {
-        "id": "ACE38.4",
-        "desc": "The system must display an error if the medication name is left empty.",
-        "sim": 0.5674861669540405,
-        "h_id": "HUE38",
-        "h_desc": "As a pharmacist, I want to register medications to keep the hospital inventory up to date."
+        "sim": 0.5674861669540405
       },
       {
         "id": "ACE38.3",
         "desc": "The system must display an error if the stock number is not unique.",
-        "sim": 0.3498479723930359,
-        "h_id": "HUE39",
-        "h_desc": "As a pharmacist, I want to register supplies to keep the hospital inventory up to date."
-      },
-      {
-        "id": "ACE38.3",
-        "desc": "The system must display an error if the stock number is not unique.",
-        "sim": 0.3498479723930359,
-        "h_id": "HUE38",
-        "h_desc": "As a pharmacist, I want to register medications to keep the hospital inventory up to date."
+        "sim": 0.3498479723930359
       },
       {
         "id": "ACE39.2",
         "desc": "The system must display an error if the expiration date is less than or equal to the current date.",
-        "sim": 0.3260982930660248,
-        "h_id": "HUE39",
-        "h_desc": "As a pharmacist, I want to register supplies to keep the hospital inventory up to date."
+        "sim": 0.3260982930660248
       },
       {
         "id": "ACE39.3",
         "desc": "The system must display an error if the stock number already exists in the system.",
-        "sim": 0.31113186478614807,
-        "h_id": "HUE39",
-        "h_desc": "As a pharmacist, I want to register supplies to keep the hospital inventory up to date."
+        "sim": 0.31113186478614807
       },
       {
         "id": "ACE38.2",
         "desc": "The system must display an error if the expiration date is earlier than the current date.",
-        "sim": 0.3048756718635559,
-        "h_id": "HUE39",
-        "h_desc": "As a pharmacist, I want to register supplies to keep the hospital inventory up to date."
-      },
-      {
-        "id": "ACE38.2",
-        "desc": "The system must display an error if the expiration date is earlier than the current date.",
-        "sim": 0.3048756718635559,
-        "h_id": "HUE38",
-        "h_desc": "As a pharmacist, I want to register medications to keep the hospital inventory up to date."
+        "sim": 0.3048756718635559
       },
       {
         "id": "ACE39.5",
         "desc": "The system must display an error if the number of available units is less than 0.",
-        "sim": 0.24775393307209015,
-        "h_id": "HUE39",
-        "h_desc": "As a pharmacist, I want to register supplies to keep the hospital inventory up to date."
+        "sim": 0.24775393307209015
       },
       {
         "id": "ACE38.5",
         "desc": "The system must display an error if the number of available units is less than 0.",
-        "sim": 0.24775393307209015,
-        "h_id": "HUE39",
-        "h_desc": "As a pharmacist, I want to register supplies to keep the hospital inventory up to date."
-      },
-      {
-        "id": "ACE38.5",
-        "desc": "The system must display an error if the number of available units is less than 0.",
-        "sim": 0.24775393307209015,
-        "h_id": "HUE38",
-        "h_desc": "As a pharmacist, I want to register medications to keep the hospital inventory up to date."
+        "sim": 0.24775393307209015
       },
       {
         "id": "ACE39.4",
         "desc": "The system must display an error if the supply name is left empty.",
-        "sim": 0.2460329681634903,
-        "h_id": "HUE39",
-        "h_desc": "As a pharmacist, I want to register supplies to keep the hospital inventory up to date."
+        "sim": 0.2460329681634903
       }
     ]
   },
   {
-    "h_id": "HU19",
-    "h_desc": "As a pharmacist, I want to be notified when stock is low or items are about to expire, so that I can take timely action.",
     "id": "AC19.1",
     "desc": "The system detects minimum stock and upcoming expirations and sends notifications.",
     "ac_sim": [
       {
         "id": "ACE52.2",
         "desc": "The system must display the supply's expiration date.",
-        "sim": 0.5813727378845215,
-        "h_id": "HUE52",
-        "h_desc": "As a pharmacist, I want to know when a supply is about to expire to make timely decisions."
+        "sim": 0.5813727378845215
       },
       {
         "id": "ACE52.3",
         "desc": "The system must highlight in red when one month remains before the supply expires.",
-        "sim": 0.5353839993476868,
-        "h_id": "HUE52",
-        "h_desc": "As a pharmacist, I want to know when a supply is about to expire to make timely decisions."
+        "sim": 0.5353839993476868
       },
       {
         "id": "ACE52.1",
         "desc": "The system must allow listing all supplies and sorting them by expiration date.",
-        "sim": 0.5319178700447083,
-        "h_id": "HUE52",
-        "h_desc": "As a pharmacist, I want to know when a supply is about to expire to make timely decisions."
+        "sim": 0.5319178700447083
       },
       {
         "id": "ACE51.2",
         "desc": "The system must display the medication's expiration date.",
-        "sim": 0.5300477743148804,
-        "h_id": "HUE52",
-        "h_desc": "As a pharmacist, I want to know when a supply is about to expire to make timely decisions."
-      },
-      {
-        "id": "ACE51.2",
-        "desc": "The system must display the medication's expiration date.",
-        "sim": 0.5300477743148804,
-        "h_id": "HUE51",
-        "h_desc": "As a pharmacist, I want to know when a medication is about to expire to make timely decisions."
+        "sim": 0.5300477743148804
       },
       {
         "id": "ACE51.3",
         "desc": "The system must highlight in red when one month remains before the medication expires.",
-        "sim": 0.5072148442268372,
-        "h_id": "HUE52",
-        "h_desc": "As a pharmacist, I want to know when a supply is about to expire to make timely decisions."
-      },
-      {
-        "id": "ACE51.3",
-        "desc": "The system must highlight in red when one month remains before the medication expires.",
-        "sim": 0.5072148442268372,
-        "h_id": "HUE51",
-        "h_desc": "As a pharmacist, I want to know when a medication is about to expire to make timely decisions."
+        "sim": 0.5072148442268372
       },
       {
         "id": "ACE51.1",
         "desc": "The system must allow listing all medications and sorting them by expiration date.",
-        "sim": 0.4565339982509613,
-        "h_id": "HUE52",
-        "h_desc": "As a pharmacist, I want to know when a supply is about to expire to make timely decisions."
-      },
-      {
-        "id": "ACE51.1",
-        "desc": "The system must allow listing all medications and sorting them by expiration date.",
-        "sim": 0.4565339982509613,
-        "h_id": "HUE51",
-        "h_desc": "As a pharmacist, I want to know when a medication is about to expire to make timely decisions."
+        "sim": 0.4565339982509613
       }
     ]
   },
   {
-    "h_id": "HU20",
-    "h_desc": "As a pharmacist, I want to consult inventory sorted by available quantity or expiration date, so that I can manage stock efficiently.",
     "id": "AC20.1",
     "desc": "Inventory can be sorted by quantity or expiration.",
     "ac_sim": [
       {
         "id": "ACE46.1",
         "desc": "The system must display the supply name and the expiration date.",
-        "sim": 0.5577573180198669,
-        "h_id": "HUE46",
-        "h_desc": "As a pharmacist, I want to consult the supply inventory sorted by expiration date to identify supplies about to expire."
+        "sim": 0.5577573180198669
       },
       {
         "id": "ACE44.1",
         "desc": "The system must display the medication name and the expiration date.",
-        "sim": 0.49104130268096924,
-        "h_id": "HUE46",
-        "h_desc": "As a pharmacist, I want to consult the supply inventory sorted by expiration date to identify supplies about to expire."
-      },
-      {
-        "id": "ACE44.1",
-        "desc": "The system must display the medication name and the expiration date.",
-        "sim": 0.49104130268096924,
-        "h_id": "HUE44",
-        "h_desc": "As a pharmacist, I want to consult the medication inventory sorted by expiration date to identify medications about to expire."
+        "sim": 0.49104130268096924
       },
       {
         "id": "ACE43.1",
         "desc": "The system must display the medication name and the number of available units.",
-        "sim": 0.44722750782966614,
-        "h_id": "HUE46",
-        "h_desc": "As a pharmacist, I want to consult the supply inventory sorted by expiration date to identify supplies about to expire."
-      },
-      {
-        "id": "ACE43.1",
-        "desc": "The system must display the medication name and the number of available units.",
-        "sim": 0.44722750782966614,
-        "h_id": "HUE43",
-        "h_desc": "As a pharmacist, I want to consult the medication inventory sorted by available quantity to quickly identify medications with the lowest or highest stock."
+        "sim": 0.44722750782966614
       },
       {
         "id": "ACE46.2",
         "desc": "The system sorts from lowest to highest.",
-        "sim": 0.440615713596344,
-        "h_id": "HUE46",
-        "h_desc": "As a pharmacist, I want to consult the supply inventory sorted by expiration date to identify supplies about to expire."
+        "sim": 0.440615713596344
       },
       {
         "id": "ACE45.2",
         "desc": "The system sorts from lowest to highest.",
-        "sim": 0.440615713596344,
-        "h_id": "HUE46",
-        "h_desc": "As a pharmacist, I want to consult the supply inventory sorted by expiration date to identify supplies about to expire."
+        "sim": 0.440615713596344
       },
       {
         "id": "ACE43.2",
         "desc": "The system sorts from lowest to highest.",
-        "sim": 0.440615713596344,
-        "h_id": "HUE46",
-        "h_desc": "As a pharmacist, I want to consult the supply inventory sorted by expiration date to identify supplies about to expire."
+        "sim": 0.440615713596344
       },
       {
         "id": "ACE44.2",
         "desc": "The system sorts from lowest to highest.",
-        "sim": 0.440615713596344,
-        "h_id": "HUE46",
-        "h_desc": "As a pharmacist, I want to consult the supply inventory sorted by expiration date to identify supplies about to expire."
-      },
-      {
-        "id": "ACE45.2",
-        "desc": "The system sorts from lowest to highest.",
-        "sim": 0.440615713596344,
-        "h_id": "HUE45",
-        "h_desc": "As a pharmacist, I want to consult the supply inventory sorted by available quantity to quickly identify supplies with the lowest or highest stock."
-      },
-      {
-        "id": "ACE43.2",
-        "desc": "The system sorts from lowest to highest.",
-        "sim": 0.440615713596344,
-        "h_id": "HUE43",
-        "h_desc": "As a pharmacist, I want to consult the medication inventory sorted by available quantity to quickly identify medications with the lowest or highest stock."
-      },
-      {
-        "id": "ACE44.2",
-        "desc": "The system sorts from lowest to highest.",
-        "sim": 0.440615713596344,
-        "h_id": "HUE44",
-        "h_desc": "As a pharmacist, I want to consult the medication inventory sorted by expiration date to identify medications about to expire."
+        "sim": 0.440615713596344
       },
       {
         "id": "ACE45.1",
         "desc": "The system must display the supply name and the number of available units.",
-        "sim": 0.3334536552429199,
-        "h_id": "HUE46",
-        "h_desc": "As a pharmacist, I want to consult the supply inventory sorted by expiration date to identify supplies about to expire."
-      },
-      {
-        "id": "ACE45.1",
-        "desc": "The system must display the supply name and the number of available units.",
-        "sim": 0.3334536552429199,
-        "h_id": "HUE45",
-        "h_desc": "As a pharmacist, I want to consult the supply inventory sorted by available quantity to quickly identify supplies with the lowest or highest stock."
+        "sim": 0.3334536552429199
       }
     ]
   },
   {
-    "h_id": "HU21",
-    "h_desc": "As an analyst, I want to generate reports on consultations by specialty, appointment status, financial income, and medication/supplies consumption, with date range filters, so that I can analyze hospital performance.",
     "id": "AC21.1",
     "desc": "Reports include all specified metrics.",
     "ac_sim": [
       {
         "id": "ACE55.1",
         "desc": "The system must list all existing specialties.",
-        "sim": 0.425644189119339,
-        "h_id": "HUE56",
-        "h_desc": "As an analyst, I want to view financial reports of the services to evaluate the hospital's income and economic performance."
-      },
-      {
-        "id": "ACE55.1",
-        "desc": "The system must list all existing specialties.",
-        "sim": 0.425644189119339,
-        "h_id": "HUE55",
-        "h_desc": "As an analyst, I want to view appointment statistics by specialty to evaluate the workload."
+        "sim": 0.425644189119339
       },
       {
         "id": "ACE56.1",
         "desc": "The system must display the hospital's total income.",
-        "sim": 0.31966954469680786,
-        "h_id": "HUE56",
-        "h_desc": "As an analyst, I want to view financial reports of the services to evaluate the hospital's income and economic performance."
+        "sim": 0.31966954469680786
       },
       {
         "id": "ACE57.3",
         "desc": "The system must display the total number of units collected.",
-        "sim": 0.3092781603336334,
-        "h_id": "HUE56",
-        "h_desc": "As an analyst, I want to view financial reports of the services to evaluate the hospital's income and economic performance."
-      },
-      {
-        "id": "ACE57.3",
-        "desc": "The system must display the total number of units collected.",
-        "sim": 0.3092781603336334,
-        "h_id": "HUE57",
-        "h_desc": "As an analyst, I want to view supply consumption to evaluate the hospital's inventory usage."
+        "sim": 0.3092781603336334
       },
       {
         "id": "ACE56.2",
         "desc": "The system must display the income by specialty.",
-        "sim": 0.2779213488101959,
-        "h_id": "HUE56",
-        "h_desc": "As an analyst, I want to view financial reports of the services to evaluate the hospital's income and economic performance."
+        "sim": 0.2779213488101959
       },
       {
         "id": "ACE57.2",
         "desc": "The system must list all supplies sorted by consumption (number of units collected).",
-        "sim": 0.26400303840637207,
-        "h_id": "HUE56",
-        "h_desc": "As an analyst, I want to view financial reports of the services to evaluate the hospital's income and economic performance."
-      },
-      {
-        "id": "ACE57.2",
-        "desc": "The system must list all supplies sorted by consumption (number of units collected).",
-        "sim": 0.26400303840637207,
-        "h_id": "HUE57",
-        "h_desc": "As an analyst, I want to view supply consumption to evaluate the hospital's inventory usage."
+        "sim": 0.26400303840637207
       },
       {
         "id": "ACE55.3",
         "desc": "The system must display the total number of appointments: overall, attended, canceled, confirmed, and not attended.",
-        "sim": 0.25530821084976196,
-        "h_id": "HUE56",
-        "h_desc": "As an analyst, I want to view financial reports of the services to evaluate the hospital's income and economic performance."
-      },
-      {
-        "id": "ACE55.3",
-        "desc": "The system must display the total number of appointments: overall, attended, canceled, confirmed, and not attended.",
-        "sim": 0.25530821084976196,
-        "h_id": "HUE55",
-        "h_desc": "As an analyst, I want to view appointment statistics by specialty to evaluate the workload."
+        "sim": 0.25530821084976196
       },
       {
         "id": "ACE56.3",
         "desc": "The system must display the income by medication.",
-        "sim": 0.24085421860218048,
-        "h_id": "HUE56",
-        "h_desc": "As an analyst, I want to view financial reports of the services to evaluate the hospital's income and economic performance."
+        "sim": 0.24085421860218048
       },
       {
         "id": "ACE57.1",
         "desc": "The system must allow filtering by name.",
-        "sim": 0.17811347544193268,
-        "h_id": "HUE56",
-        "h_desc": "As an analyst, I want to view financial reports of the services to evaluate the hospital's income and economic performance."
-      },
-      {
-        "id": "ACE57.1",
-        "desc": "The system must allow filtering by name.",
-        "sim": 0.17811347544193268,
-        "h_id": "HUE57",
-        "h_desc": "As an analyst, I want to view supply consumption to evaluate the hospital's inventory usage."
+        "sim": 0.17811347544193268
       },
       {
         "id": "ACE56.4",
         "desc": "The system must allow choosing the query date range.",
-        "sim": 0.1377488374710083,
-        "h_id": "HUE56",
-        "h_desc": "As an analyst, I want to view financial reports of the services to evaluate the hospital's income and economic performance."
+        "sim": 0.1377488374710083
       },
       {
         "id": "ACE57.4",
         "desc": "The system must allow choosing the query date range.",
-        "sim": 0.1377488374710083,
-        "h_id": "HUE56",
-        "h_desc": "As an analyst, I want to view financial reports of the services to evaluate the hospital's income and economic performance."
-      },
-      {
-        "id": "ACE57.4",
-        "desc": "The system must allow choosing the query date range.",
-        "sim": 0.1377488374710083,
-        "h_id": "HUE57",
-        "h_desc": "As an analyst, I want to view supply consumption to evaluate the hospital's inventory usage."
+        "sim": 0.1377488374710083
       },
       {
         "id": "ACE55.4",
         "desc": "The system must allow choosing a date range.",
-        "sim": 0.12268976867198944,
-        "h_id": "HUE56",
-        "h_desc": "As an analyst, I want to view financial reports of the services to evaluate the hospital's income and economic performance."
-      },
-      {
-        "id": "ACE55.4",
-        "desc": "The system must allow choosing a date range.",
-        "sim": 0.12268976867198944,
-        "h_id": "HUE55",
-        "h_desc": "As an analyst, I want to view appointment statistics by specialty to evaluate the workload."
+        "sim": 0.12268976867198944
       },
       {
         "id": "ACE55.2",
         "desc": "The system must allow choosing a specialty.",
-        "sim": 0.11086633801460266,
-        "h_id": "HUE56",
-        "h_desc": "As an analyst, I want to view financial reports of the services to evaluate the hospital's income and economic performance."
-      },
-      {
-        "id": "ACE55.2",
-        "desc": "The system must allow choosing a specialty.",
-        "sim": 0.11086633801460266,
-        "h_id": "HUE55",
-        "h_desc": "As an analyst, I want to view appointment statistics by specialty to evaluate the workload."
+        "sim": 0.11086633801460266
       },
       {
         "id": "ACE56.6",
         "desc": "The system must display an error if the end date is later than the current date.",
-        "sim": 0.06464066356420517,
-        "h_id": "HUE56",
-        "h_desc": "As an analyst, I want to view financial reports of the services to evaluate the hospital's income and economic performance."
+        "sim": 0.06464066356420517
       },
       {
         "id": "ACE57.6",
         "desc": "The system must display an error if the end date is later than the current date.",
-        "sim": 0.06464066356420517,
-        "h_id": "HUE56",
-        "h_desc": "As an analyst, I want to view financial reports of the services to evaluate the hospital's income and economic performance."
-      },
-      {
-        "id": "ACE57.6",
-        "desc": "The system must display an error if the end date is later than the current date.",
-        "sim": 0.06464066356420517,
-        "h_id": "HUE57",
-        "h_desc": "As an analyst, I want to view supply consumption to evaluate the hospital's inventory usage."
+        "sim": 0.06464066356420517
       },
       {
         "id": "ACE55.6",
         "desc": "The system must display an error if the end date is later than the current date.",
-        "sim": 0.06464063376188278,
-        "h_id": "HUE56",
-        "h_desc": "As an analyst, I want to view financial reports of the services to evaluate the hospital's income and economic performance."
-      },
-      {
-        "id": "ACE55.6",
-        "desc": "The system must display an error if the end date is later than the current date.",
-        "sim": 0.06464063376188278,
-        "h_id": "HUE55",
-        "h_desc": "As an analyst, I want to view appointment statistics by specialty to evaluate the workload."
+        "sim": 0.06464063376188278
       },
       {
         "id": "ACE56.5",
         "desc": "The system must display an error if the start date is later than the end date.",
-        "sim": 0.06373561918735504,
-        "h_id": "HUE56",
-        "h_desc": "As an analyst, I want to view financial reports of the services to evaluate the hospital's income and economic performance."
+        "sim": 0.06373561918735504
       },
       {
         "id": "ACE57.5",
         "desc": "The system must display an error if the start date is later than the end date.",
-        "sim": 0.06373561918735504,
-        "h_id": "HUE56",
-        "h_desc": "As an analyst, I want to view financial reports of the services to evaluate the hospital's income and economic performance."
-      },
-      {
-        "id": "ACE57.5",
-        "desc": "The system must display an error if the start date is later than the end date.",
-        "sim": 0.06373561918735504,
-        "h_id": "HUE57",
-        "h_desc": "As an analyst, I want to view supply consumption to evaluate the hospital's inventory usage."
+        "sim": 0.06373561918735504
       },
       {
         "id": "ACE55.5",
         "desc": "The system must display an error if the start date is later than the end date.",
-        "sim": 0.06373555958271027,
-        "h_id": "HUE56",
-        "h_desc": "As an analyst, I want to view financial reports of the services to evaluate the hospital's income and economic performance."
-      },
-      {
-        "id": "ACE55.5",
-        "desc": "The system must display an error if the start date is later than the end date.",
-        "sim": 0.06373555958271027,
-        "h_id": "HUE55",
-        "h_desc": "As an analyst, I want to view appointment statistics by specialty to evaluate the workload."
+        "sim": 0.06373555958271027
       }
     ]
   },
   {
-    "h_id": "HU21",
-    "h_desc": "As an analyst, I want to generate reports on consultations by specialty, appointment status, financial income, and medication/supplies consumption, with date range filters, so that I can analyze hospital performance.",
     "id": "AC21.2",
     "desc": "Reports can be filtered by date range.",
     "ac_sim": [
       {
         "id": "ACE56.4",
         "desc": "The system must allow choosing the query date range.",
-        "sim": 0.6172288656234741,
-        "h_id": "HUE56",
-        "h_desc": "As an analyst, I want to view financial reports of the services to evaluate the hospital's income and economic performance."
+        "sim": 0.6172288656234741
       },
       {
         "id": "ACE57.4",
         "desc": "The system must allow choosing the query date range.",
-        "sim": 0.6172288656234741,
-        "h_id": "HUE56",
-        "h_desc": "As an analyst, I want to view financial reports of the services to evaluate the hospital's income and economic performance."
-      },
-      {
-        "id": "ACE57.4",
-        "desc": "The system must allow choosing the query date range.",
-        "sim": 0.6172288656234741,
-        "h_id": "HUE57",
-        "h_desc": "As an analyst, I want to view supply consumption to evaluate the hospital's inventory usage."
+        "sim": 0.6172288656234741
       },
       {
         "id": "ACE55.4",
         "desc": "The system must allow choosing a date range.",
-        "sim": 0.5742564797401428,
-        "h_id": "HUE56",
-        "h_desc": "As an analyst, I want to view financial reports of the services to evaluate the hospital's income and economic performance."
-      },
-      {
-        "id": "ACE55.4",
-        "desc": "The system must allow choosing a date range.",
-        "sim": 0.5742564797401428,
-        "h_id": "HUE55",
-        "h_desc": "As an analyst, I want to view appointment statistics by specialty to evaluate the workload."
+        "sim": 0.5742564797401428
       },
       {
         "id": "ACE57.1",
         "desc": "The system must allow filtering by name.",
-        "sim": 0.4307221472263336,
-        "h_id": "HUE56",
-        "h_desc": "As an analyst, I want to view financial reports of the services to evaluate the hospital's income and economic performance."
-      },
-      {
-        "id": "ACE57.1",
-        "desc": "The system must allow filtering by name.",
-        "sim": 0.4307221472263336,
-        "h_id": "HUE57",
-        "h_desc": "As an analyst, I want to view supply consumption to evaluate the hospital's inventory usage."
+        "sim": 0.4307221472263336
       },
       {
         "id": "ACE56.5",
         "desc": "The system must display an error if the start date is later than the end date.",
-        "sim": 0.39931929111480713,
-        "h_id": "HUE56",
-        "h_desc": "As an analyst, I want to view financial reports of the services to evaluate the hospital's income and economic performance."
+        "sim": 0.39931929111480713
       },
       {
         "id": "ACE57.5",
         "desc": "The system must display an error if the start date is later than the end date.",
-        "sim": 0.39931929111480713,
-        "h_id": "HUE56",
-        "h_desc": "As an analyst, I want to view financial reports of the services to evaluate the hospital's income and economic performance."
-      },
-      {
-        "id": "ACE57.5",
-        "desc": "The system must display an error if the start date is later than the end date.",
-        "sim": 0.39931929111480713,
-        "h_id": "HUE57",
-        "h_desc": "As an analyst, I want to view supply consumption to evaluate the hospital's inventory usage."
+        "sim": 0.39931929111480713
       },
       {
         "id": "ACE55.5",
         "desc": "The system must display an error if the start date is later than the end date.",
-        "sim": 0.39931923151016235,
-        "h_id": "HUE56",
-        "h_desc": "As an analyst, I want to view financial reports of the services to evaluate the hospital's income and economic performance."
-      },
-      {
-        "id": "ACE55.5",
-        "desc": "The system must display an error if the start date is later than the end date.",
-        "sim": 0.39931923151016235,
-        "h_id": "HUE55",
-        "h_desc": "As an analyst, I want to view appointment statistics by specialty to evaluate the workload."
+        "sim": 0.39931923151016235
       },
       {
         "id": "ACE56.6",
         "desc": "The system must display an error if the end date is later than the current date.",
-        "sim": 0.38963523507118225,
-        "h_id": "HUE56",
-        "h_desc": "As an analyst, I want to view financial reports of the services to evaluate the hospital's income and economic performance."
+        "sim": 0.38963523507118225
       },
       {
         "id": "ACE57.6",
         "desc": "The system must display an error if the end date is later than the current date.",
-        "sim": 0.38963523507118225,
-        "h_id": "HUE56",
-        "h_desc": "As an analyst, I want to view financial reports of the services to evaluate the hospital's income and economic performance."
-      },
-      {
-        "id": "ACE57.6",
-        "desc": "The system must display an error if the end date is later than the current date.",
-        "sim": 0.38963523507118225,
-        "h_id": "HUE57",
-        "h_desc": "As an analyst, I want to view supply consumption to evaluate the hospital's inventory usage."
+        "sim": 0.38963523507118225
       },
       {
         "id": "ACE55.6",
         "desc": "The system must display an error if the end date is later than the current date.",
-        "sim": 0.38963520526885986,
-        "h_id": "HUE56",
-        "h_desc": "As an analyst, I want to view financial reports of the services to evaluate the hospital's income and economic performance."
-      },
-      {
-        "id": "ACE55.6",
-        "desc": "The system must display an error if the end date is later than the current date.",
-        "sim": 0.38963520526885986,
-        "h_id": "HUE55",
-        "h_desc": "As an analyst, I want to view appointment statistics by specialty to evaluate the workload."
+        "sim": 0.38963520526885986
       },
       {
         "id": "ACE56.2",
         "desc": "The system must display the income by specialty.",
-        "sim": 0.2768504023551941,
-        "h_id": "HUE56",
-        "h_desc": "As an analyst, I want to view financial reports of the services to evaluate the hospital's income and economic performance."
+        "sim": 0.2768504023551941
       },
       {
         "id": "ACE56.3",
         "desc": "The system must display the income by medication.",
-        "sim": 0.27586549520492554,
-        "h_id": "HUE56",
-        "h_desc": "As an analyst, I want to view financial reports of the services to evaluate the hospital's income and economic performance."
+        "sim": 0.27586549520492554
       },
       {
         "id": "ACE55.3",
         "desc": "The system must display the total number of appointments: overall, attended, canceled, confirmed, and not attended.",
-        "sim": 0.21553638577461243,
-        "h_id": "HUE56",
-        "h_desc": "As an analyst, I want to view financial reports of the services to evaluate the hospital's income and economic performance."
-      },
-      {
-        "id": "ACE55.3",
-        "desc": "The system must display the total number of appointments: overall, attended, canceled, confirmed, and not attended.",
-        "sim": 0.21553638577461243,
-        "h_id": "HUE55",
-        "h_desc": "As an analyst, I want to view appointment statistics by specialty to evaluate the workload."
+        "sim": 0.21553638577461243
       },
       {
         "id": "ACE56.1",
         "desc": "The system must display the hospital's total income.",
-        "sim": 0.18429435789585114,
-        "h_id": "HUE56",
-        "h_desc": "As an analyst, I want to view financial reports of the services to evaluate the hospital's income and economic performance."
+        "sim": 0.18429435789585114
       },
       {
         "id": "ACE57.2",
         "desc": "The system must list all supplies sorted by consumption (number of units collected).",
-        "sim": 0.17976990342140198,
-        "h_id": "HUE56",
-        "h_desc": "As an analyst, I want to view financial reports of the services to evaluate the hospital's income and economic performance."
-      },
-      {
-        "id": "ACE57.2",
-        "desc": "The system must list all supplies sorted by consumption (number of units collected).",
-        "sim": 0.17976990342140198,
-        "h_id": "HUE57",
-        "h_desc": "As an analyst, I want to view supply consumption to evaluate the hospital's inventory usage."
+        "sim": 0.17976990342140198
       },
       {
         "id": "ACE55.1",
         "desc": "The system must list all existing specialties.",
-        "sim": 0.15778958797454834,
-        "h_id": "HUE56",
-        "h_desc": "As an analyst, I want to view financial reports of the services to evaluate the hospital's income and economic performance."
-      },
-      {
-        "id": "ACE55.1",
-        "desc": "The system must list all existing specialties.",
-        "sim": 0.15778958797454834,
-        "h_id": "HUE55",
-        "h_desc": "As an analyst, I want to view appointment statistics by specialty to evaluate the workload."
+        "sim": 0.15778958797454834
       },
       {
         "id": "ACE57.3",
         "desc": "The system must display the total number of units collected.",
-        "sim": 0.15445619821548462,
-        "h_id": "HUE56",
-        "h_desc": "As an analyst, I want to view financial reports of the services to evaluate the hospital's income and economic performance."
-      },
-      {
-        "id": "ACE57.3",
-        "desc": "The system must display the total number of units collected.",
-        "sim": 0.15445619821548462,
-        "h_id": "HUE57",
-        "h_desc": "As an analyst, I want to view supply consumption to evaluate the hospital's inventory usage."
+        "sim": 0.15445619821548462
       },
       {
         "id": "ACE55.2",
         "desc": "The system must allow choosing a specialty.",
-        "sim": 0.12648676335811615,
-        "h_id": "HUE56",
-        "h_desc": "As an analyst, I want to view financial reports of the services to evaluate the hospital's income and economic performance."
-      },
-      {
-        "id": "ACE55.2",
-        "desc": "The system must allow choosing a specialty.",
-        "sim": 0.12648676335811615,
-        "h_id": "HUE55",
-        "h_desc": "As an analyst, I want to view appointment statistics by specialty to evaluate the workload."
+        "sim": 0.12648676335811615
       }
     ]
   }

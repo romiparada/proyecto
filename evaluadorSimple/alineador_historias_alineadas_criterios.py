@@ -24,7 +24,7 @@ def similitud_criterios(criterios_similares, historias_similares_alineadas):
 
 clasificacion = ["Alineada", "No Alineada"]
 
-historias_similares_alineadas_simple = []
+historias_similares_alineadas= []
 for i in range(len(historias_evaluadas)):
     if historias_evaluadas[i]["eval"] == clasificacion[0]:
         similitud_historia_evaluada = similitud_historias[i]["h_sim"]
@@ -32,28 +32,6 @@ for i in range(len(historias_evaluadas)):
             if historia_evaluada_alineacion["eval"] == clasificacion[0]:
                 for similitud_historia in similitud_historia_evaluada:
                     if historia_evaluada_alineacion["id"] == similitud_historia["id"]:
-                        historias_similares_alineadas_simple.append(similitud_historia)
-
-criterios_similares_simple = []
-similitud_criterios(criterios_similares_simple, historias_similares_alineadas_simple)
-
-with open("resultados/similitud_historias_alineadas_criterios_simple_all.json", "w", encoding="utf-8") as file:
-    json.dump(criterios_similares_simple, file, indent=2, ensure_ascii=False)
-
-historias_similares_alineadas = []
-for i in range(len(historias_evaluadas)):
-    if historias_evaluadas[i]["eval"] == clasificacion[0]:
-        similitud_historia_evaluada = similitud_historias[i]["h_sim"]
-        for historia_evaluada_alineacion in historias_evaluadas[i]["alineacion"]:
-            if historia_evaluada_alineacion["eval"] == clasificacion[0]:
-                for similitud_historia in similitud_historia_evaluada:
-                    if historia_evaluada_alineacion["id"] == similitud_historia["id"]:
-                        for j in range(len(similitud_historia["ac"])):
-                            criterio_generado = similitud_historia["ac"][j]
-                            for k in range(len(criterio_generado["ac_sim"])):
-                                criterio_esperado = criterio_generado["ac_sim"][k]
-                                criterio_generado["ac_sim"][k] = {**criterio_esperado, "h_id": historia_evaluada_alineacion["id"],"h_desc": historia_evaluada_alineacion["desc"]}
-                            similitud_historia["ac"][j] = {"h_id": historias_evaluadas[i]["id"],"h_desc": historias_evaluadas[i]["desc"], **criterio_generado}
                         historias_similares_alineadas.append(similitud_historia)
 
 criterios_similares = []
